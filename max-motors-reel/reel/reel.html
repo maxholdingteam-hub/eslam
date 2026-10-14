@@ -39,7 +39,7 @@
   .emoji { font: 128px/172px "Noto Color Emoji"; height: 172px; transform-origin: 50% 60%; }
 
   #cta { top: 1218px; }
-  #cta span { font: 900 54px/1 Cairo; color: #fff; text-shadow: 0 4px 18px rgba(0,0,0,.85), 0 0 2px #000; }
+  #cta span { text-align: center; font: 900 56px/1.45 Cairo; color: #fff; text-shadow: 0 4px 18px rgba(0,0,0,.85), 0 0 2px #000; }
   #cta b { color: #f2cf5b; }
 
   /* ---------- laptop ---------- */
@@ -133,15 +133,16 @@ const CONFIG = {
   hook:   'POV: لقيت سيارة أحلامك بالذكاء الاصطناعي',
   labelA: 'ماكس موتورز',
   labelB: 'AI',
-  cta:    'اكتب <b>«ماكس»</b> في التعليقات',
+  cta:    'اكتب نوع السيارة في التعليقات<br><b>وبنتواصل معاك</b>',
   url:    'maxmotors.sa',
   seconds: 15,
   fps: 30,
-  showText: false,   // true = hook + formula + CTA on top of the video
+  showHook: false,   // true = POV hook + logo formula on top
 };
-if (!CONFIG.showText) {
-  document.querySelectorAll('.ui').forEach(e => e.style.display = 'none');
+if (!CONFIG.showHook) {
+  ['hook', 'formula'].forEach(id => document.getElementById(id).style.display = 'none');
   document.getElementById('stage').style.top = '430px';
+  document.getElementById('cta').style.top = '1290px';
 }
 // ============================================================
 
