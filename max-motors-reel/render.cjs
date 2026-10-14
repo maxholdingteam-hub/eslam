@@ -1,5 +1,5 @@
 // Renders reel/reel.html frame by frame and encodes a 1080x1920 MP4.
-// Usage:  node render.cjs                 -> out/max-motors-reel.mp4  (PAGE=cinematic for the other cut)
+// Usage:  node render.cjs                 -> out/max-motors-cinematic.mp4  (PAGE=reel for the laptop version)
 //         node render.cjs --preview 0,3,7 -> stills at those seconds in out/preview/
 // Needs: playwright (chromium) + ffmpeg. Serves this folder on a local port itself.
 const { chromium } = require(process.env.PLAYWRIGHT_PATH || 'playwright');
@@ -10,8 +10,8 @@ const path = require('path');
 
 const ROOT = __dirname;
 const OUT = path.join(ROOT, 'out');
-const FPS = 30, SECONDS = 15, WORKERS = Number(process.env.WORKERS || 2);
-const PAGE = process.env.PAGE || 'reel';   // reel (laptop) | cinematic
+const FPS = 30; let SECONDS = 15; const WORKERS = Number(process.env.WORKERS || 2);
+const PAGE = process.env.PAGE || 'cinematic';   // reel (laptop) | cinematic
 const args = process.argv.slice(2);
 const previewIdx = args.indexOf('--preview');
 
@@ -32,6 +32,7 @@ async function openPage(browser, port) {
   page.on('pageerror', e => console.error('page error:', e.message));
   await page.goto(`http://localhost:${port}/reel/${PAGE}.html`);
   await page.evaluate(() => window.__ready);
+  SECONDS = await page.evaluate(() => window.__duration || 15);
   return page;
 }
 
@@ -45,10 +46,11 @@ async function openPage(browser, port) {
     const page = await openPage(browser, port);
     for (const s of secs) {
       await page.evaluate(f => window.__setFrame(f), Math.round(s * FPS));
-      await page.screenshot({ path: path.join(dir, `t${String(s).padStart(5, '0')}.jpg`), quality: 85 });
+      await page.screenshot({ path: path.join(dir, `t${s.toFixed(1).padStart(5, '0')}.jpg`), quality: 85 });
       console.log('preview', s);
     }
   } else {
+    await (await openPage(browser, port)).close();   // reads the page's duration
     const total = FPS * SECONDS, dir = path.join(OUT, 'frames');
     fs.rmSync(dir, { recursive: true, force: true }); fs.mkdirSync(dir, { recursive: true });
     let done = 0; const t0 = Date.now();
@@ -60,10 +62,11 @@ async function openPage(browser, port) {
         if (++done % 30 === 0) console.log(`${done}/${total} frames, ${((Date.now() - t0) / done / 1000).toFixed(2)}s/frame`);
       }
     }));
-    const sfx = path.join(ROOT, 'audio', 'intro.mp3');
+    const music = path.join(ROOT, 'audio', 'music.wav');
+    const sfx = path.join(ROOT, 'audio', PAGE === 'cinematic' && fs.existsSync(music) ? 'music.wav' : 'intro.mp3');
     const mp4 = path.join(OUT, `max-motors-${PAGE}.mp4`);
     const ff = ['-y', '-framerate', String(FPS), '-i', path.join(dir, '%05d.jpg')];
-    if (fs.existsSync(sfx)) ff.push('-i', sfx, '-filter_complex', `[1:a]volume=0.6,apad,atrim=0:${SECONDS}[a]`, '-map', '0:v', '-map', '[a]', '-c:a', 'aac', '-b:a', '160k');
+    if (fs.existsSync(sfx)) ff.push('-i', sfx, '-filter_complex', `[1:a]${PAGE === 'cinematic' ? 'loudnorm=I=-14:TP=-1.5' : 'volume=0.6'},apad,atrim=0:${SECONDS}[a]`, '-map', '0:v', '-map', '[a]', '-c:a', 'aac', '-b:a', '160k');
     ff.push('-c:v', 'libx264', '-preset', 'slow', '-crf', '18', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', '-t', String(SECONDS), mp4);
     execFileSync('ffmpeg', ff, { stdio: 'inherit' });
     console.log('wrote', mp4);

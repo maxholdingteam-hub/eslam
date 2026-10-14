@@ -22,15 +22,12 @@
   #title .sub { margin-top: 18px; font: 700 46px/1.3 Cairo; color: rgba(255,255,255,.88); text-shadow: 0 4px 24px rgba(0,0,0,.8); }
 
   #end { display: flex; flex-direction: column; align-items: center; justify-content: center; opacity: 0; }
-  #end img { width: 560px; mix-blend-mode: screen; }
+  #end img { width: 620px; filter: drop-shadow(0 0 40px rgba(242,182,50,.35)); }
   #end h1 { font: 900 112px/1 Cairo; margin-top: -40px; }
   #end h2 { font: 700 40px/1 Cairo; color: rgba(255,255,255,.75); letter-spacing: 18px; direction: ltr; margin-top: 18px; }
-  #end .cta { margin-top: 70px; font: 900 48px/1 Cairo; color: #0a0a0a; padding: 26px 64px 30px; border-radius: 999px;
-              background: linear-gradient(135deg, #fff1b8, #f2cf5b 30%, #c9a227 65%, #9c7a14); box-shadow: 0 20px 80px rgba(201,162,39,.5); }
-  #end .url { margin-top: 36px; font: 700 40px/1 Cairo; color: #fff; direction: ltr; }
+  #end .cta { margin-top: 30px; font: 900 64px/1.3 Cairo; color: #fff; text-shadow: 0 6px 30px rgba(0,0,0,.8); }
+  #end .url { margin-top: 10px; font: 900 76px/1.3 Cairo; }
 
-  #corner { position: absolute; top: 120px; left: 0; right: 0; display: flex; justify-content: center; opacity: 0; }
-  #corner img { width: 150px; mix-blend-mode: screen; }
 
   #flash { background: #fff; opacity: 0; mix-blend-mode: screen; }
   #vignette { background: radial-gradient(120% 75% at 50% 50%, rgba(0,0,0,0) 55%, rgba(0,0,0,.75) 100%),
@@ -42,13 +39,10 @@
 <div id="frame">
   <canvas id="gl" width="1080" height="1920"></canvas>
   <div class="layer" id="title"><div class="big" id="big"></div><div class="sub" id="sub"></div></div>
-  <div class="layer" id="corner"><img src="assets/logo-square.png" alt=""></div>
   <div class="layer" id="end">
-    <img src="assets/logo-square.png" alt="">
-    <h1 class="gold-text">ماكس موتورز</h1>
-    <h2>MAX MOTORS</h2>
+    <img src="assets/logo-alpha.png" alt="">
     <div class="cta" id="endCta"></div>
-    <div class="url" id="endUrl"></div>
+    <div class="url gold-text" id="endUrl"></div>
   </div>
   <div class="layer" id="vignette"></div>
   <canvas class="layer" id="grain" width="540" height="960"></canvas>
@@ -70,21 +64,14 @@ import { OutputPass } from 'three/addons/postprocessing/OutputPass.js';
 
 // ================= CONFIG — edit texts here =================
 const CONFIG = {
-  fps: 30, seconds: 15,
-  texts: {
-    reveal:   ['مش مجرد سيارة', ''],
-    wheel:    ['قوّة', ''],
-    lights:   ['حضور', ''],
-    drive:    ['أداء', 'يحسّه قلبك قبل رجلك'],
-    colors:   ['اختار لونك', ''],
-    top:      ['تمويل مرن', 'وتجربة قيادة بضغطة زر'],
-  },
-  cta: 'احجز تجربة قيادتك',
-  url: 'maxmotors.sa',
+  fps: 30, seconds: 30,
+  cta1: 'اكتب نوع السيارة في التعليقات',
+  cta2: 'وبنتواصل معاك',
 };
 // ============================================================
-document.getElementById('endCta').textContent = CONFIG.cta;
-document.getElementById('endUrl').textContent = CONFIG.url;
+document.getElementById('endCta').textContent = CONFIG.cta1;
+document.getElementById('endUrl').textContent = CONFIG.cta2;
+window.__duration = CONFIG.seconds;
 
 const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
 const smooth = (a, b, x) => { const t = clamp((x - a) / (b - a)); return t * t * (3 - 2 * t); };
@@ -157,7 +144,7 @@ function makeBars(target, k) {
   for (let i = 0; i < BAR_N; i++) {
     const top = new THREE.Mesh(new THREE.BoxGeometry(5.5, 0.08, 0.35), glow(0xfff1d0, k));
     top.position.y = 4.2;
-    const l = new THREE.Mesh(new THREE.BoxGeometry(0.06, 0.06, 2.6), glow(0xf2b632, k * 0.9)); l.position.set(-4.4, 0.5, 0);
+    const l = new THREE.Mesh(new THREE.BoxGeometry(0.06, 1.4, 0.5), glow(0xf2d08a, k * 0.9)); l.position.set(-4.4, 1.2, 0);
     const r = l.clone(); r.position.x = 4.4;
     const bar = new THREE.Group(); bar.add(top, l, r); g.add(bar);
   }
@@ -244,53 +231,72 @@ function world({ paint = 'black', road = 0, speed = 0, sweepZ = null, exposure =
 
 // ---------- the edit ----------
 // each shot: [start s, end s, fn(u 0..1, localSeconds)]; road distance accumulates by speed
+// [start s, end s, id, road speed, fn(u 0..1, local s)] — cut points sit on the 120 BPM grid of audio/music.wav
 const SHOTS = [
-  // 1. dark reveal: light bar sweeps across a black car, side profile
-  [0.0, 2.0, 'reveal', u => {
-    world({ sweepZ: lerp(9, -9, easeInOut(u)), exposure: lerp(0.35, 1.0, smooth(0, .5, u)), lights: smooth(.55, .75, u) * 1.4 });
-    orbit(lerp(262, 278, u), 3, lerp(8.6, 7.6, u), [0, 0.55, 0]);
+  // dark reveal: light bar sweeps across a black car (intro + riser)
+  [0, 4, 'reveal', 0, u => {
+    world({ sweepZ: lerp(10, -10, easeInOut(u)), exposure: lerp(0.3, 1.0, smooth(0, .45, u)), lights: smooth(.7, .85, u) * 1.6 });
+    orbit(lerp(258, 282, u), lerp(2, 4, u), lerp(9, 7.4, u), [0, 0.55, 0]);
   }],
-  // 2. front wheel close-up, rolling
-  [2.0, 3.4, 'wheel', u => {
-    world({ road: 1, speed: 26, bars: 1, exposure: 1.1 });
+  // DROP — front wheel close-up, rolling through the tunnel
+  [4, 6, 'wheel', 26, u => {
+    world({ road: 1, bars: 1, exposure: 1.1, fov: 34 });
     const c = wheelFL;
-    camera.position.set(c.x - 1.35, 0.32, c.z - lerp(0.9, 0.2, u));
-    camera.lookAt(c.x, c.y, c.z + 0.1);
-    camera.fov = 34; camera.updateProjectionMatrix();
+    camera.position.set(c.x - 1.35, 0.3, c.z - lerp(1.0, 0.1, u)); camera.lookAt(c.x, c.y, c.z + 0.1);
   }],
-  // 3. headlight push-in, low front
-  [3.4, 4.8, 'lights', u => {
-    world({ sweepZ: lerp(-6, 4, u), exposure: 1.05, lights: 2.2, fov: 26 });
-    orbit(lerp(206, 196, u), lerp(2, 5, u), lerp(4.4, 3.5, easeOut(u)), [0.55, 0.62, box.min.z + 0.4]);
+  // headlights push-in
+  [6, 8, 'lights', 0, u => {
+    world({ sweepZ: lerp(-6, 5, u), exposure: 1.05, lights: 2.4, fov: 26 });
+    orbit(lerp(208, 194, u), lerp(2, 6, u), lerp(4.6, 3.4, easeOut(u)), [0.55, 0.62, box.min.z + 0.4]);
   }],
-  // 4. driving through the light tunnel, tracking front 3/4 then whip around
-  [4.8, 7.6, 'drive', u => {
-    world({ road: 1, speed: 34, bars: 1, exposure: 1.15, lights: 2, fov: lerp(28, 36, u) });
-    orbit(lerp(212, 140, easeInOut(u)), lerp(4, 9, u), lerp(7.6, 6.6, u), [0, 0.5, 0]);
+  // tunnel drive, tracking front 3/4 round to the side
+  [8, 12, 'drive', 34, u => {
+    world({ road: 1, bars: 1, exposure: 1.15, lights: 2, fov: lerp(28, 36, u) });
+    orbit(lerp(214, 120, easeInOut(u)), lerp(4, 10, u), lerp(7.8, 6.4, u), [0, 0.5, 0]);
   }],
-  // 5. colour cuts, side profile, beat-synced
-  [7.6, 9.6, 'colors', (u, s) => {
-    const seq = ['white', 'blue', 'red', 'silver', 'gold'];
-    const i = Math.min(seq.length - 1, Math.floor(u * seq.length));
-    world({ paint: seq[i], sweepZ: lerp(5, -5, (u * seq.length) % 1), exposure: 1.05, ringK: 0.8 });
-    orbit(90 + i * 4 + ((u * seq.length) % 1) * 6, 3, 8.2, [0, 0.55, 0]);
+  // chase cam behind, low, tail lights
+  [12, 14, 'rear', 36, u => {
+    world({ road: 1, bars: 1, exposure: 1.1, lights: 2.4, fov: 34 });
+    orbit(lerp(-24, 18, u), lerp(2.5, 5, u), lerp(7.2, 6.2, u), [0, 0.5, 0]);
   }],
-  // 6. top-down spin with gold ring
-  [9.6, 11.4, 'top', u => {
-    world({ paint: 'gold', exposure: 1.05, ringK: 1, sweepZ: lerp(-6, 6, u) });
-    camera.position.set(0, lerp(11, 9.5, u), 0.001); camera.up.set(Math.sin(u * 1.6 + .4), 0, Math.cos(u * 1.6 + .4));
-    camera.lookAt(0, 0, 0); camera.fov = 34; camera.updateProjectionMatrix();
+  // colour cuts on the snare build
+  [14, 16, 'colors', 0, u => {
+    const seq = ['white', 'blue', 'red', 'silver'];
+    const k = u * seq.length, i = Math.min(seq.length - 1, Math.floor(k));
+    world({ paint: seq[i], sweepZ: lerp(5, -5, k % 1), exposure: 1.05, ringK: 0.8 });
+    orbit(90 + i * 5 + (k % 1) * 7, 3, 8.2, [0, 0.55, 0]);
   }],
-  // 7. end card: car front, darkening behind the logo
-  [11.4, 15.01, 'end', u => {
-    world({ paint: 'gold', exposure: lerp(1, 0.45, smooth(0.05, 0.5, u)), ringK: 1, lights: 2, sweepZ: lerp(-5, 5, u) });
-    orbit(180, lerp(6, 3, u), lerp(9.5, 8.5, u), [0, 0.55, 0]);
+  // 2nd DROP — top-down spin, gold
+  [16, 18, 'top', 0, u => {
+    world({ paint: 'gold', exposure: 0.95, ringK: 0.7, fov: 34 });
+    camera.position.set(0, lerp(11.5, 9.2, u), 0.001); camera.up.set(Math.sin(u * 1.8 + .4), 0, Math.cos(u * 1.8 + .4));
+    camera.lookAt(0, 0, 0);
+  }],
+  // side tracking, low and wide, speed
+  [18, 20, 'side', 38, u => {
+    world({ paint: 'gold', road: 1, bars: 1, exposure: 1.3, lights: 2, fov: 54 });
+    orbit(lerp(235, 285, u), lerp(10, 4, u), lerp(3.9, 3.5, u), [0, 0.5, lerp(0.8, -0.8, u)]);
+  }],
+  // head-on: car rushing at the camera
+  [20, 22, 'headon', 40, u => {
+    world({ paint: 'gold', road: 1, bars: 1, exposure: 1.15, lights: 2.6, fov: lerp(30, 42, u) });
+    orbit(180 + Math.sin(u * 3) * 6, lerp(3, 1.5, u), lerp(12, 5.2, easeInOut(u)), [0, 0.55, 0]);
+  }],
+  // fast studio orbit with gold ring
+  [22, 24, 'orbit', 0, u => {
+    world({ paint: 'gold', exposure: 1.05, ringK: 1, sweepZ: lerp(6, -6, u), lights: 2 });
+    orbit(lerp(150, 330, easeInOut(u)), lerp(14, 6, u), lerp(8.4, 7.6, u), [0, 0.5, 0]);
+  }],
+  // end card: logo + CTA over the darkened car
+  [24, 30.01, 'end', 0, u => {
+    world({ paint: 'gold', exposure: lerp(1, 0.4, smooth(0.02, 0.25, u)), ringK: 1, lights: 2, sweepZ: lerp(-5, 5, u) });
+    orbit(180, lerp(6, 3, u), lerp(9.5, 8.3, u), [0, 0.55, 0]);
   }],
 ];
-const CUTS = SHOTS.slice(1).map(s => s[0]).concat([7.6 + 0.4, 7.6 + 0.8, 7.6 + 1.2, 7.6 + 1.6]);
+const CUTS = SHOTS.slice(1).map(s => s[0]).concat([14.5, 15, 15.5]);
 
 const big = document.getElementById('big'), sub = document.getElementById('sub');
-const titleL = document.getElementById('title'), endL = document.getElementById('end'), cornerL = document.getElementById('corner');
+const titleL = document.getElementById('title'), endL = document.getElementById('end');
 const flash = document.getElementById('flash'), frameEl = document.getElementById('frame');
 const grain = document.getElementById('grain'), gg = grain.getContext('2d'), gImg = gg.createImageData(540, 960);
 let seed = 3; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
@@ -316,13 +322,10 @@ window.__setFrame = (f) => {
   const t = f / CONFIG.fps;
   // integrate road distance up to t (deterministic per frame)
   roadDist = 0;
-  for (const [a, b, id] of SHOTS) {
-    const sp = id === 'wheel' ? 26 : id === 'drive' ? 34 : 0;
-    roadDist += sp * Math.max(0, Math.min(t, b) - a);
-  }
+  for (const [a, b, , sp] of SHOTS) roadDist += sp * Math.max(0, Math.min(t, b) - a);
   camera.up.set(0, 1, 0);
   const shot = SHOTS.find(s => t >= s[0] && t < s[1]) || SHOTS[SHOTS.length - 1];
-  const [a, b, id, fn] = shot, u = clamp((t - a) / (b - a)), s = t - a;
+  const [a, b, id, , fn] = shot, u = clamp((t - a) / (b - a)), s = t - a;
   fn(u, s);
 
   // hit shake right after each cut
@@ -337,14 +340,12 @@ window.__setFrame = (f) => {
   // overlays
   if (id === 'end') {
     titleL.style.opacity = 0;
-    const e = smooth(0.12, 0.35, u);
+    const e = smooth(0.04, 0.16, u);
     endL.style.opacity = e;
     endL.style.transform = `scale(${lerp(1.15, 1, easeOut(e)) + u * 0.02})`;
     endL.style.filter = `blur(${(1 - e) * 10}px)`;
-    cornerL.style.opacity = 0;
   } else {
-    endL.style.opacity = 0; textFor(id, s, b - a);
-    cornerL.style.opacity = id === 'reveal' ? smooth(0.6, 1.0, s) * 0.9 : 0.9;
+    endL.style.opacity = 0; titleL.style.opacity = 0;
   }
   flash.style.opacity = Math.max(0, 0.85 - since * 9) + (id === 'end' ? Math.max(0, 0.5 - (t - a) * 4) * 0 : 0);
   frameEl.style.transform = `scale(${1 + Math.exp(-since * 8) * 0.03})`;
