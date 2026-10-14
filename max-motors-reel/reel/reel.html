@@ -1,0 +1,237 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>Max Motors Reel</title>
+<style>
+  @font-face { font-family: Cairo; src: url(../fonts/Cairo-Black.ttf); font-weight: 900; }
+  @font-face { font-family: Cairo; src: url(../fonts/Cairo-Bold.ttf); font-weight: 700; }
+  @font-face { font-family: Tajawal; src: url(../fonts/Tajawal-Medium.ttf); font-weight: 500; }
+  @font-face { font-family: Tajawal; src: url(../fonts/Tajawal-ExtraBold.ttf); font-weight: 800; }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { width: 1080px; height: 1920px; overflow: hidden; background: #05070b; }
+  #frame { position: relative; width: 1080px; height: 1920px; overflow: hidden; }
+
+  /* ---------- aurora sky ---------- */
+  #sky { position: absolute; inset: -120px; }
+  .blob { position: absolute; border-radius: 50%; filter: blur(90px); mix-blend-mode: screen; }
+  #stars { position: absolute; inset: 0; }
+
+  /* ---------- top overlays ---------- */
+  .ui { position: absolute; left: 0; right: 0; z-index: 10; display: flex; justify-content: center; }
+  #hook { top: 196px; }
+  #hook span {
+    background: #000; color: #fff; font: 500 47px/1.25 Tajawal; padding: 16px 30px 12px; border-radius: 14px;
+    white-space: nowrap; direction: rtl;
+  }
+  #formula { top: 320px; align-items: flex-end; gap: 26px; direction: rtl; }
+  .item { display: flex; flex-direction: column; align-items: center; gap: 14px; }
+  .item label { font: 900 34px/1 Cairo; color: #fff; text-shadow: 0 3px 14px rgba(0,0,0,.55); height: 40px; }
+  .tile {
+    width: 172px; height: 172px; border-radius: 40px; display: grid; place-items: center; overflow: hidden;
+    box-shadow: 0 14px 40px rgba(0,0,0,.35);
+  }
+  .tile.logo { background: #000; }
+  .tile.logo img { width: 150px; }
+  .tile.ai { background: #fff; }
+  .op { font: 900 58px/172px Cairo; color: #fff; text-shadow: 0 3px 14px rgba(0,0,0,.4); height: 172px; }
+  .emoji { font: 128px/172px "Noto Color Emoji"; height: 172px; transform-origin: 50% 60%; }
+
+  #cta { top: 1218px; }
+  #cta span { font: 900 54px/1 Cairo; color: #fff; text-shadow: 0 4px 18px rgba(0,0,0,.85), 0 0 2px #000; }
+  #cta b { color: #f2cf5b; }
+
+  /* ---------- laptop ---------- */
+  #rig { position: absolute; left: 0; top: 0; width: 1080px; height: 1920px; z-index: 5; }
+  #stage { position: absolute; left: 540px; top: 566px; perspective: 1500px; perspective-origin: 0 -200px; }
+  #laptop { position: absolute; transform-style: preserve-3d; }
+  #screen {
+    position: absolute; left: -592px; top: 0; width: 1184px; height: 744px; padding: 14px;
+    background: #0b0b0d; border-radius: 26px 26px 6px 6px;
+    transform-origin: 50% 100%; transform: rotateX(16deg);
+    box-shadow: 0 0 0 2px #2a2a2e, 0 30px 80px rgba(0,0,0,.6), 0 0 120px rgba(201,162,39,.12);
+  }
+  #display { position: relative; width: 1156px; height: 716px; overflow: hidden; border-radius: 12px; background: #000; }
+  #desktop { position: absolute; left: 0; top: 0; width: 1440px; height: 892px; transform-origin: 0 0; transform: scale(0.80278); }
+  #chrome { height: 56px; background: #202124; display: flex; align-items: center; gap: 18px; padding: 0 18px; direction: ltr; }
+  .dots { display: flex; gap: 9px; } .dots i { width: 13px; height: 13px; border-radius: 50%; }
+  .tab { height: 40px; align-self: flex-end; background: #35363a; border-radius: 10px 10px 0 0; padding: 0 16px; display: flex; align-items: center; gap: 10px;
+         color: #e8eaed; font: 700 14px Cairo; width: 260px; direction: rtl; }
+  .tab img { width: 20px; }
+  .url { flex: 1; height: 34px; background: #35363a; border-radius: 17px; color: #bdc1c6; font: 700 15px Cairo; display: flex; align-items: center; padding: 0 18px; gap: 10px; }
+  .url em { font-style: normal; color: #e8eaed; }
+  iframe { display: block; width: 1440px; height: 836px; border: 0; background: #000; }
+  #glare { position: absolute; inset: 0; pointer-events: none;
+           background: linear-gradient(115deg, rgba(255,255,255,.10) 0%, rgba(255,255,255,0) 32%, rgba(255,255,255,0) 70%, rgba(255,255,255,.05) 100%); }
+
+  #deck {
+    position: absolute; left: -680px; top: 744px; width: 1360px; height: 980px;
+    transform-origin: 50% 0; transform: rotateX(74deg);
+    background: linear-gradient(#2a2b30, #1a1b1f 60%, #121316);
+    border-radius: 0 0 40px 40px; padding: 60px 80px;
+  }
+  #keys { display: grid; grid-template-columns: repeat(14, 1fr); gap: 12px; }
+  #keys i { height: 70px; border-radius: 10px; background: linear-gradient(#1c1d21, #131417); box-shadow: inset 0 1px 0 rgba(255,255,255,.09), 0 2px 0 #050506; }
+  #keys i.w2 { grid-column: span 2; } #keys i.w6 { grid-column: span 6; }
+  #pad { margin: 34px auto 0; width: 520px; height: 300px; border-radius: 22px; background: #1d1e22; box-shadow: inset 0 0 0 1px rgba(255,255,255,.05); }
+  #spill { position: absolute; left: -700px; top: 744px; width: 1400px; height: 700px; pointer-events: none;
+           background: radial-gradient(60% 55% at 50% 0%, rgba(255,236,190,.22), rgba(0,0,0,0) 70%); transform-origin: 50% 0; transform: rotateX(74deg); }
+
+  /* room darkness at the bottom */
+  #vignette { position: absolute; inset: 0; z-index: 8; pointer-events: none;
+              background: linear-gradient(to bottom, rgba(0,0,0,0) 62%, rgba(0,0,0,.55) 82%, rgba(0,0,0,.85) 100%),
+                          radial-gradient(120% 70% at 50% 40%, rgba(0,0,0,0) 60%, rgba(0,0,0,.45) 100%); }
+  #grain { position: absolute; inset: 0; z-index: 9; pointer-events: none; opacity: .07; mix-blend-mode: overlay; }
+</style>
+</head>
+<body>
+<div id="frame">
+  <div id="sky"><canvas id="stars" width="1320" height="2160"></canvas></div>
+
+  <div id="rig">
+    <div id="stage"><div id="laptop">
+      <div id="spill"></div>
+      <div id="deck"><div id="keys"></div><div id="pad"></div></div>
+      <div id="screen"><div id="display">
+        <div id="desktop">
+          <div id="chrome">
+            <div class="dots"><i style="background:#ff5f57"></i><i style="background:#febc2e"></i><i style="background:#28c840"></i></div>
+            <div class="tab"><img src="assets/logo-square.png" alt="">ماكس موتورز | سيارات للبيع</div>
+            <div class="url">🔒 <em id="url"></em></div>
+          </div>
+          <iframe id="site" src="../site/index.html?capture"></iframe>
+        </div>
+        <div id="glare"></div>
+      </div></div>
+    </div></div>
+  </div>
+
+  <div class="ui" id="hook"><span id="hookText"></span></div>
+  <div class="ui" id="formula">
+    <div class="item"><label id="labelA"></label><div class="tile logo"><img src="assets/logo-square.png" alt=""></div></div>
+    <div class="op">+</div>
+    <div class="item"><label id="labelB"></label><div class="tile ai">
+      <svg width="112" height="112" viewBox="0 0 100 100">
+        <defs><linearGradient id="g" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#f6d977"/><stop offset=".55" stop-color="#c9a227"/><stop offset="1" stop-color="#8a6a10"/></linearGradient></defs>
+        <path fill="url(#g)" d="M44 8c3 20 10 30 34 36-24 6-31 16-34 36-3-20-10-30-34-36 24-6 31-16 34-36z"/>
+        <path fill="#111" d="M78 58c1.6 9 5 13.5 15 16-10 2.5-13.4 7-15 16-1.6-9-5-13.5-15-16 10-2.5 13.4-7 15-16z"/>
+      </svg>
+    </div></div>
+    <div class="op">=</div>
+    <div class="item"><label></label><div class="emoji" id="emoji">🤯</div></div>
+  </div>
+  <div class="ui" id="cta"><span id="ctaText"></span></div>
+
+  <div id="vignette"></div>
+  <canvas id="grain" width="540" height="960"></canvas>
+</div>
+
+<script>
+// ================= CONFIG — edit texts here =================
+const CONFIG = {
+  hook:   'POV: لقيت سيارة أحلامك بالذكاء الاصطناعي',
+  labelA: 'ماكس موتورز',
+  labelB: 'AI',
+  cta:    'اكتب <b>«ماكس»</b> في التعليقات',
+  url:    'maxmotors.sa',
+  seconds: 15,
+  fps: 30,
+  showText: false,   // true = hook + formula + CTA on top of the video
+};
+if (!CONFIG.showText) {
+  document.querySelectorAll('.ui').forEach(e => e.style.display = 'none');
+  document.getElementById('stage').style.top = '430px';
+}
+// ============================================================
+
+// keep a leading Latin tag like "POV:" on the reading-start side of the Arabic line
+document.getElementById('hookText').textContent = CONFIG.hook.replace(/^([A-Za-z]+):\s*/, '\u200E$1:\u200E ');
+document.getElementById('labelA').textContent = CONFIG.labelA;
+document.getElementById('labelB').textContent = CONFIG.labelB;
+document.getElementById('ctaText').innerHTML = CONFIG.cta;
+document.getElementById('url').textContent = CONFIG.url;
+
+// keyboard
+const keys = document.getElementById('keys');
+const rows = [14, 14, 14, 14];
+rows.forEach(n => { for (let i = 0; i < n; i++) keys.appendChild(document.createElement('i')); });
+['w2', '', '', '', 'w6', '', '', 'w2'].forEach(c => { const k = document.createElement('i'); if (c) k.className = c; keys.appendChild(k); });
+
+// seeded random
+let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+
+// stars
+{
+  const c = document.getElementById('stars'), g = c.getContext('2d');
+  for (let i = 0; i < 420; i++) {
+    const x = rnd() * 1320, y = rnd() * 1100, r = rnd() ** 3 * 1.8 + 0.3;
+    g.fillStyle = `rgba(255,255,255,${0.25 + rnd() * 0.7})`;
+    g.beginPath(); g.arc(x, y, r, 0, 7); g.fill();
+  }
+}
+
+// aurora blobs: [x, y, w, h, color, drift]
+const BLOBS = [
+  [520, -60, 900, 520, '#1aa6b7', 1.0],
+  [ 80, 260, 820, 420, '#1f9e5b', 1.3],
+  [640, 300, 760, 520, '#d9e021', 0.8],
+  [880,  40, 520, 520, '#16c4d8', 1.1],
+  [260, 120, 600, 300, '#7fd36b', 1.6],
+  [-60, -40, 560, 420, '#0b1830', 0.6],
+];
+const sky = document.getElementById('sky');
+const blobEls = BLOBS.map(([x, y, w, h, col]) => {
+  const d = document.createElement('div'); d.className = 'blob';
+  Object.assign(d.style, { left: x + 'px', top: y + 'px', width: w + 'px', height: h + 'px',
+    background: `radial-gradient(closest-side, ${col}, transparent)`, opacity: 0.9 });
+  sky.appendChild(d); return d;
+});
+
+// film grain
+const grain = document.getElementById('grain'), gg = grain.getContext('2d');
+const grainImg = gg.createImageData(540, 960);
+function drawGrain() {
+  const d = grainImg.data;
+  for (let i = 0; i < d.length; i += 4) { const v = rnd() * 255; d[i] = d[i + 1] = d[i + 2] = v; d[i + 3] = 255; }
+  gg.putImageData(grainImg, 0, 0);
+}
+
+const site = document.getElementById('site');
+const rig = document.getElementById('rig');
+const emoji = document.getElementById('emoji');
+
+// scroll curve: hold, then mostly-linear scroll with soft ends, then hold
+function progressAt(t) {
+  const T = CONFIG.seconds, a = 0.35, b = T - 0.6;
+  const u = Math.min(1, Math.max(0, (t - a) / (b - a)));
+  return 0.55 * u + 0.45 * (0.5 - 0.5 * Math.cos(Math.PI * u));
+}
+
+window.__setFrame = async (f) => {
+  const t = f / CONFIG.fps;
+  // handheld camera drift on the laptop
+  const sx = Math.sin(t * 1.3) * 5 + Math.sin(t * 3.1 + 1) * 2;
+  const sy = Math.cos(t * 1.05) * 4 + Math.sin(t * 2.3) * 1.5;
+  const rz = Math.sin(t * 0.7) * 0.35;
+  rig.style.transform = `translate(${sx}px, ${sy}px) rotate(${rz}deg) scale(1.01)`;
+  // aurora drift
+  blobEls.forEach((el, i) => {
+    const k = BLOBS[i][5];
+    el.style.transform = `translate(${Math.sin(t * 0.35 * k + i) * 50}px, ${Math.cos(t * 0.27 * k + i * 2) * 30}px) scale(${1 + Math.sin(t * 0.4 * k + i) * 0.08})`;
+  });
+  emoji.style.transform = `scale(${1 + Math.sin(t * 4) * 0.035}) rotate(${Math.sin(t * 2) * 3}deg)`;
+  if (f % 2 === 0) drawGrain();
+  site.contentWindow.__setProgress(progressAt(t));
+};
+
+window.__ready = (async () => {
+  await document.fonts.load('900 40px Cairo'); await document.fonts.load('500 40px Tajawal');
+  await document.fonts.ready;
+  await new Promise(r => site.contentWindow.__ready ? r() : site.addEventListener('load', r));
+  await site.contentWindow.__ready;
+  await window.__setFrame(0);
+})();
+</script>
+</body>
+</html>
