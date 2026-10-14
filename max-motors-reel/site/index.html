@@ -1,0 +1,331 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ماكس موتورز | Max Motors</title>
+<style>
+  @font-face { font-family: Cairo; src: url(../fonts/Cairo-Regular.ttf); font-weight: 400; }
+  @font-face { font-family: Cairo; src: url(../fonts/Cairo-Bold.ttf); font-weight: 700; }
+  @font-face { font-family: Cairo; src: url(../fonts/Cairo-Black.ttf); font-weight: 900; }
+
+  :root { --accent: #c9a227; --ink: #f4f1ec; --muted: rgba(244,241,236,.62); }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body { background: #07070a; color: var(--ink); font-family: Cairo, sans-serif; }
+  body { height: 600vh; }
+  canvas#gl { position: fixed; inset: 0; width: 100vw; height: 100vh; display: block; }
+
+  nav {
+    position: fixed; top: 0; inset-inline: 0; height: 84px; padding: 0 56px;
+    display: flex; align-items: center; justify-content: space-between; z-index: 5;
+  }
+  .brand { display: flex; align-items: center; gap: 14px; font-weight: 900; font-size: 22px; letter-spacing: .5px; }
+  .brand img { width: 52px; height: auto; filter: drop-shadow(0 0 18px rgba(201,162,39,.45)); }
+  .brand small { display: block; font-weight: 700; font-size: 11px; letter-spacing: 4px; color: var(--muted); direction: ltr; }
+  nav ul { display: flex; gap: 38px; list-style: none; font-weight: 700; font-size: 15px; color: var(--muted); }
+  nav ul li:first-child { color: var(--ink); }
+  .btn {
+    background: var(--ink); color: #0a0a0a; font: 700 15px Cairo; padding: 11px 26px; border-radius: 999px; border: 0;
+  }
+  .btn.gold { background: linear-gradient(135deg,#f3d36b,#c9a227 55%,#9c7a14); color: #0a0a0a; box-shadow: 0 10px 40px rgba(201,162,39,.45); }
+
+  .panel { position: fixed; z-index: 4; opacity: 0; will-change: transform, opacity, filter; pointer-events: none; }
+  .eyebrow { font-weight: 700; font-size: 14px; letter-spacing: 3px; color: var(--accent); margin-bottom: 14px; }
+  .panel h2 { font-weight: 900; font-size: 72px; line-height: 1.05; margin-bottom: 18px; }
+  .panel p { font-size: 19px; line-height: 1.8; color: var(--muted); max-width: 440px; }
+
+  #p-hero { right: 90px; bottom: 170px; }
+  #p-hero h1 { font-weight: 900; font-size: 92px; line-height: 1; margin-bottom: 16px; }
+  #p-hero h1 span { color: var(--accent); }
+  .scroll-hint { margin-top: 26px; display: flex; gap: 12px; align-items: center; font-size: 14px; color: var(--muted); }
+  .scroll-hint i { width: 22px; height: 36px; border: 2px solid var(--muted); border-radius: 12px; position: relative; }
+  .scroll-hint i::after { content: ""; position: absolute; top: 6px; left: 50%; width: 4px; height: 8px; margin-left: -2px; border-radius: 2px; background: var(--ink); }
+
+  #p-design { right: 90px; top: 50%; translate: 0 -50%; }
+  #p-power { left: 90px; top: 50%; translate: 0 -50%; text-align: left; direction: rtl; }
+  #p-power p { margin-right: auto; }
+  .stats { display: flex; gap: 14px; margin-top: 26px; }
+  .stat { border: 1px solid rgba(255,255,255,.14); background: rgba(255,255,255,.04); border-radius: 18px; padding: 16px 22px; text-align: right; }
+  .stat b { display: block; font-size: 26px; font-weight: 900; }
+  .stat span { font-size: 13px; color: var(--muted); }
+
+  #p-colors { right: 90px; bottom: 190px; }
+  .swatches { display: flex; gap: 14px; margin-top: 22px; }
+  .sw { width: 46px; height: 46px; border-radius: 50%; border: 3px solid transparent; outline: 2px solid rgba(255,255,255,.18); transition: none; }
+  .sw.on { border-color: #07070a; outline: 3px solid var(--ink); }
+
+  #p-cta { left: 0; right: 0; bottom: 150px; text-align: center; }
+  #p-cta h2 { font-size: 84px; }
+  #p-cta p { margin: 0 auto 26px; max-width: 560px; }
+  #p-cta .btn { font-size: 18px; padding: 15px 40px; }
+
+  .rail { position: fixed; left: 40px; top: 50%; translate: 0 -50%; display: flex; flex-direction: column; gap: 14px; z-index: 5; }
+  .rail b { width: 6px; height: 6px; border-radius: 3px; background: rgba(255,255,255,.28); }
+  .rail b.on { height: 30px; background: var(--accent); }
+</style>
+</head>
+<body>
+<canvas id="gl"></canvas>
+
+<nav>
+  <div class="brand"><img src="assets/logo.png" alt=""><div>ماكس موتورز<small>MAX MOTORS</small></div></div>
+  <ul><li>الرئيسية</li><li>عن المعرض</li><li>السيارات</li><li>طلب قرض</li><li>تواصل معنا</li></ul>
+  <button class="btn gold">تسجيل الدخول</button>
+</nav>
+
+<div class="rail"><b></b><b></b><b></b><b></b><b></b></div>
+
+<section class="panel" id="p-hero">
+  <div class="eyebrow">MAX MOTORS — 2026</div>
+  <h1>فخامة <span>تتحرك</span></h1>
+  <p>سيارات جديدة ومستعملة، تمويل مناسب، وتجربة قيادة بضغطة زر.</p>
+  <div class="scroll-hint"><i></i>انزل لتحت واكتشف</div>
+</section>
+
+<section class="panel" id="p-design">
+  <div class="eyebrow">01 — التصميم</div>
+  <h2>تصميم<br>يخطف الأنظار</h2>
+  <p>خطوط انسيابية وتفاصيل مصنوعة بعناية، من أول نظرة تعرف إنها مختلفة.</p>
+</section>
+
+<section class="panel" id="p-power">
+  <div class="eyebrow">02 — MAX AI</div>
+  <h2>دوّر بالذكاء<br>الاصطناعي</h2>
+  <p>صوّر أي سيارة أو اكتب اللي في بالك، ونطلع لك الأنسب من بين مئات المركبات.</p>
+  <div class="stats">
+    <div class="stat"><b>بحث بالصورة</b><span>صوّر واعرف</span></div>
+    <div class="stat"><b>طلب قرض</b><span>تمويل مناسب</span></div>
+    <div class="stat"><b>تجربة قيادة</b><span>احجزها أونلاين</span></div>
+  </div>
+</section>
+
+<section class="panel" id="p-colors">
+  <div class="eyebrow">03 — الألوان</div>
+  <h2>اختر لونك</h2>
+  <p>كل سيارة بأكثر من لون، شوفها قدامك قبل ما تقرر.</p>
+  <div class="swatches" id="swatches"></div>
+</section>
+
+<section class="panel" id="p-cta">
+  <div class="eyebrow">MAX MOTORS</div>
+  <h2>سيارتك الجاية هنا</h2>
+  <p>maxmotors.sa — زورنا أو احجز تجربة قيادة اليوم.</p>
+  <button class="btn gold">احجز تجربة قيادة</button>
+</section>
+
+<script type="importmap">
+{ "imports": { "three": "./vendor/three.module.js", "three/addons/": "./vendor/jsm/" } }
+</script>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { DRACOLoader } from 'three/addons/loaders/DRACOLoader.js';
+import { RoomEnvironment } from 'three/addons/environments/RoomEnvironment.js';
+import { Reflector } from 'three/addons/objects/Reflector.js';
+
+const CAPTURE = new URLSearchParams(location.search).has('capture');
+
+// ---------- helpers ----------
+const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const smooth = (a, b, x) => { const t = clamp((x - a) / (b - a)); return t * t * (3 - 2 * t); };
+const lerp = (a, b, t) => a + (b - a) * t;
+// sample a keyframe track [[p, value], ...] with smoothstep between keys
+function track(keys, p) {
+  if (p <= keys[0][0]) return keys[0][1];
+  for (let i = 0; i < keys.length - 1; i++) {
+    const [p0, v0] = keys[i], [p1, v1] = keys[i + 1];
+    if (p <= p1) {
+      const t = smooth(p0, p1, p);
+      return Array.isArray(v0) ? v0.map((v, j) => lerp(v, v1[j], t)) : lerp(v0, v1, t);
+    }
+  }
+  return keys[keys.length - 1][1];
+}
+const hex = h => { const c = new THREE.Color(h); return [c.r, c.g, c.b]; };
+
+// ---------- renderer / scene ----------
+const canvas = document.getElementById('gl');
+const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, preserveDrawingBuffer: CAPTURE });
+renderer.setPixelRatio(CAPTURE ? 0.8 : Math.min(devicePixelRatio, 2));
+renderer.toneMapping = THREE.ACESFilmicToneMapping;
+renderer.toneMappingExposure = 0.95;
+
+const scene = new THREE.Scene();
+const pmrem = new THREE.PMREMGenerator(renderer);
+scene.environment = pmrem.fromScene(new RoomEnvironment(renderer), 0.04).texture;
+scene.background = new THREE.Color('#07070a');
+
+const camera = new THREE.PerspectiveCamera(32, 1, 0.1, 200);
+
+// mirror floor + fade-out vignette over it
+const mirror = new Reflector(new THREE.CircleGeometry(40, 64), {
+  textureWidth: 896, textureHeight: 896, color: 0x4a4a52,
+});
+mirror.rotation.x = -Math.PI / 2;
+scene.add(mirror);
+
+function radialTexture(stops) {
+  const c = document.createElement('canvas'); c.width = c.height = 512;
+  const g = c.getContext('2d'), gr = g.createRadialGradient(256, 256, 0, 256, 256, 256);
+  stops.forEach(([o, col]) => gr.addColorStop(o, col));
+  g.fillStyle = gr; g.fillRect(0, 0, 512, 512);
+  const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
+}
+const fadeMat = new THREE.MeshBasicMaterial({
+  map: radialTexture([[0, 'rgba(255,255,255,0)'], [0.16, 'rgba(255,255,255,0.35)'], [0.42, 'rgba(255,255,255,1)']]),
+  transparent: true, depthWrite: false, toneMapped: false,
+});
+const fade = new THREE.Mesh(new THREE.PlaneGeometry(80, 80), fadeMat);
+fade.rotation.x = -Math.PI / 2; fade.position.y = 0.002;
+scene.add(fade);
+
+// glowing ring under the car
+const ringMat = new THREE.MeshBasicMaterial({
+  map: radialTexture([[0, 'rgba(255,255,255,0)'], [0.52, 'rgba(255,255,255,0)'], [0.6, 'rgba(255,255,255,.9)'], [0.66, 'rgba(255,255,255,.25)'], [0.8, 'rgba(255,255,255,0)']]),
+  transparent: true, blending: THREE.AdditiveBlending, depthWrite: false, toneMapped: false,
+});
+const ring = new THREE.Mesh(new THREE.PlaneGeometry(7.2, 7.2), ringMat);
+ring.rotation.x = -Math.PI / 2; ring.position.y = 0.004;
+scene.add(ring);
+
+// huge brand word behind the car (billboarded toward the camera)
+const wordCanvas = document.createElement('canvas'); wordCanvas.width = 4096; wordCanvas.height = 900;
+const wordTex = new THREE.CanvasTexture(wordCanvas); wordTex.colorSpace = THREE.SRGBColorSpace;
+const WORD_W = 11, WORD_H = WORD_W * 900 / 4096;
+const word = new THREE.Mesh(new THREE.PlaneGeometry(WORD_W, WORD_H),
+  new THREE.MeshBasicMaterial({ map: wordTex, transparent: true, depthWrite: false, toneMapped: false }));
+scene.add(word);
+function drawWord() {
+  const g = wordCanvas.getContext('2d');
+  g.clearRect(0, 0, 4096, 900);
+  const gr = g.createLinearGradient(0, 120, 0, 820);
+  gr.addColorStop(0, 'rgba(255,255,255,1)'); gr.addColorStop(1, 'rgba(255,255,255,.3)');
+  g.fillStyle = gr; g.font = '900 720px Cairo'; g.textAlign = 'center'; g.textBaseline = 'middle';
+  g.fillText('MAX MOTORS', 2048, 470);
+  wordTex.needsUpdate = true;
+}
+
+// ---------- car ----------
+const bodyMat = new THREE.MeshPhysicalMaterial({ color: 0xb3121b, metalness: 1, roughness: 0.45, clearcoat: 1, clearcoatRoughness: 0.03 });
+const detailMat = new THREE.MeshStandardMaterial({ color: 0xd9d9d9, metalness: 1, roughness: 0.3 });
+const glassMat = new THREE.MeshPhysicalMaterial({ color: 0x111114, metalness: 0.2, roughness: 0, transparent: true, opacity: 0.55 });
+const capMat = new THREE.MeshStandardMaterial({ color: 0x1a1a1d, metalness: 0.8, roughness: 0.35 });
+let wheels = [];
+const car = new THREE.Group(); scene.add(car);
+
+const draco = new DRACOLoader(); draco.setDecoderPath('./vendor/draco/');
+const loader = new GLTFLoader(); loader.setDRACOLoader(draco);
+const ready = Promise.all([
+  new Promise((res, rej) => loader.load('./assets/car.glb', gltf => {
+    const m = gltf.scene.children[0];
+    m.getObjectByName('body').material = bodyMat;
+    ['rim_fl', 'rim_fr', 'rim_rr', 'rim_rl', 'trim'].forEach(n => m.getObjectByName(n).material = detailMat);
+    m.getObjectByName('glass').material = glassMat;
+    // no factory badges: drop the yellow shields, darken wheel caps
+    ['yellow_trim', 'blue'].forEach(n => { const o = m.getObjectByName(n); if (o) o.visible = false; });
+    m.traverse(o => { if (o.name === 'centre') o.traverse(c => { if (c.isMesh) c.material = capMat; }); });
+    wheels = ['wheel_fl', 'wheel_fr', 'wheel_rl', 'wheel_rr'].map(n => m.getObjectByName(n));
+    const ao = new THREE.TextureLoader().load('./assets/ao.png');
+    const shadow = new THREE.Mesh(new THREE.PlaneGeometry(0.655 * 4, 1.3 * 4),
+      new THREE.MeshBasicMaterial({ map: ao, blending: THREE.MultiplyBlending, toneMapped: false, transparent: true }));
+    shadow.rotation.x = -Math.PI / 2; shadow.position.y = 0.006; shadow.renderOrder = 2;
+    m.add(shadow);
+    car.add(m); res();
+  }, undefined, rej)),
+  document.fonts.load('900 100px Cairo').then(() => document.fonts.ready).then(drawWord),
+]);
+
+// ---------- choreography (p = 0..1 page progress) ----------
+// camera: [azimuth deg (0 = front), elevation deg, distance, target y]
+// camera: [azimuth deg (0 = car front), elevation deg, distance, target y, horizontal frame shift]
+const CAM = [
+  [0.00, [212, 9, 9.4, 0.55, 6]],
+  [0.20, [270, 4, 8.2, 0.55, 7]],
+  [0.40, [330, 7, 7.6, 0.6, -7]],
+  [0.60, [395, 32, 8.6, 0.45, 6]],
+  [0.82, [505, 8, 8.0, 0.6, 2]],
+  [1.00, [540, 6, 8.8, 0.75, 0]],
+];
+const PAINTS = ['#0e0e11', '#e8e6e1', '#7d8085', '#142a5c', '#b88a2c'];
+const SW_HEX = ['#18181c', '#f2f0eb', '#9a9da2', '#1f3f8a', '#c9a227'];
+const BODY = [
+  [0.00, hex(PAINTS[0])], [0.60, hex(PAINTS[0])], [0.645, hex(PAINTS[1])], [0.69, hex(PAINTS[2])],
+  [0.735, hex(PAINTS[3])], [0.78, hex(PAINTS[4])], [0.86, hex(PAINTS[4])], [0.94, hex(PAINTS[0])],
+];
+// scene mood (background / floor fade color) and ring glow color
+const BG = [[0, hex('#0b0904')], [0.3, hex('#080806')], [0.5, hex('#0a0905')], [0.7, hex('#070708')], [1, hex('#0c0a04')]];
+const GLOW = [[0, hex('#e0b23a')], [0.3, hex('#ffcf5a')], [0.45, hex('#f0a830')], [0.62, hex('#fff1c4')], [0.85, hex('#e0b23a')]];
+
+const panels = [
+  ['p-hero', -1, 0.0, 0.14],
+  ['p-design', 0.16, 0.22, 0.34],
+  ['p-power', 0.36, 0.42, 0.54],
+  ['p-colors', 0.57, 0.62, 0.79],
+  ['p-cta', 0.84, 0.9, 2],
+].map(([id, a, b, c]) => ({ el: document.getElementById(id), a, b, c }));
+const rail = [...document.querySelectorAll('.rail b')];
+const swWrap = document.getElementById('swatches');
+SW_HEX.forEach(c => { const d = document.createElement('i'); d.className = 'sw'; d.style.background = c; swWrap.appendChild(d); });
+const sws = [...swWrap.children];
+
+function setProgress(p) {
+  // camera orbit
+  const [az, el, dist, ty, shift] = track(CAM, p);
+  camera.filmOffset = shift; camera.updateProjectionMatrix();
+  const A = THREE.MathUtils.degToRad(az), E = THREE.MathUtils.degToRad(el);
+  camera.position.set(Math.sin(A) * Math.cos(E) * dist, Math.sin(E) * dist + ty, Math.cos(A) * Math.cos(E) * dist);
+  camera.lookAt(0, ty, 0);
+
+  // word sits behind the car on the far side from the camera
+  const back = new THREE.Vector3(-Math.sin(A), 0, -Math.cos(A)).multiplyScalar(3.4);
+  word.position.set(back.x, WORD_H / 2 + 0.02, back.z);
+  word.lookAt(camera.position.x, WORD_H / 2 + 0.02, camera.position.z);
+  word.material.opacity = 0.9 - 0.75 * smooth(0.12, 0.3, p) + 0.75 * smooth(0.82, 0.95, p);
+
+  for (const w of wheels) w.rotation.x = -p * Math.PI * 14;
+  bodyMat.color.setRGB(...track(BODY, p));
+  const bg = track(BG, p); scene.background.setRGB(...bg); fadeMat.color.setRGB(...bg);
+  const gl = track(GLOW, p); ringMat.color.setRGB(...gl);
+  ringMat.opacity = 0.55 + 0.45 * Math.sin(p * Math.PI * 6) ** 2;
+
+  // HTML panels: fade/slide/blur in, then out
+  for (const { el: e, a, b, c } of panels) {
+    const inT = a < 0 ? 1 : smooth(a, b, p), outT = smooth(c, c + 0.05, p);
+    const v = inT * (1 - outT);
+    e.style.opacity = v;
+    e.style.transform = `translateY(${(1 - inT) * 50 - outT * 40}px)`;
+    e.style.filter = `blur(${(1 - v) * 12}px)`;
+  }
+  const sec = Math.min(4, Math.floor(p * 5 + 0.08));
+  rail.forEach((b, i) => b.classList.toggle('on', i === sec));
+  const swOn = p < 0.62 ? 0 : Math.min(4, Math.round((p - 0.6) / 0.045));
+  sws.forEach((s, i) => s.classList.toggle('on', i === swOn));
+
+  renderer.render(scene, camera);
+}
+
+function resize() {
+  renderer.setSize(innerWidth, innerHeight, false);
+  camera.aspect = innerWidth / innerHeight;
+  camera.updateProjectionMatrix();
+}
+addEventListener('resize', resize); resize();
+
+// capture hook for the reel renderer
+window.__setProgress = p => setProgress(p);
+window.__ready = ready.then(() => setProgress(0));
+
+if (!CAPTURE) {
+  // live site: smooth scroll-driven progress
+  let cur = 0;
+  ready.then(function loop() {
+    const max = document.documentElement.scrollHeight - innerHeight;
+    const target = max > 0 ? scrollY / max : 0;
+    cur += (target - cur) * 0.08;
+    setProgress(cur);
+    requestAnimationFrame(loop);
+  });
+}
+</script>
+</body>
+</html>
