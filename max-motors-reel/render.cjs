@@ -1,5 +1,5 @@
 // Renders reel/reel.html frame by frame and encodes a 1080x1920 MP4.
-// Usage:  node render.cjs                 -> out/max-motors-cinematic.mp4  (PAGE=reel for the laptop version)
+// Usage:  node render.cjs                 -> out/max-motors-desert.mp4  (PAGE=cinematic | reel for the other cuts)
 //         node render.cjs --preview 0,3,7 -> stills at those seconds in out/preview/
 // Needs: playwright (chromium) + ffmpeg. Serves this folder on a local port itself.
 const { chromium } = require(process.env.PLAYWRIGHT_PATH || 'playwright');
@@ -11,7 +11,7 @@ const path = require('path');
 const ROOT = __dirname;
 const OUT = path.join(ROOT, 'out');
 const FPS = 30; let SECONDS = 15; const WORKERS = Number(process.env.WORKERS || 2);
-const PAGE = process.env.PAGE || 'cinematic';   // reel (laptop) | cinematic
+const PAGE = process.env.PAGE || 'desert';   // desert | cinematic | reel (laptop)
 const args = process.argv.slice(2);
 const previewIdx = args.indexOf('--preview');
 
@@ -63,10 +63,10 @@ async function openPage(browser, port) {
       }
     }));
     const music = path.join(ROOT, 'audio', 'music.wav');
-    const sfx = path.join(ROOT, 'audio', PAGE === 'cinematic' && fs.existsSync(music) ? 'music.wav' : 'intro.mp3');
+    const sfx = path.join(ROOT, 'audio', PAGE !== 'reel' && fs.existsSync(music) ? 'music.wav' : 'intro.mp3');
     const mp4 = path.join(OUT, `max-motors-${PAGE}.mp4`);
     const ff = ['-y', '-framerate', String(FPS), '-i', path.join(dir, '%05d.jpg')];
-    if (fs.existsSync(sfx)) ff.push('-i', sfx, '-filter_complex', `[1:a]${PAGE === 'cinematic' ? 'loudnorm=I=-14:TP=-1.5' : 'volume=0.6'},apad,atrim=0:${SECONDS}[a]`, '-map', '0:v', '-map', '[a]', '-c:a', 'aac', '-b:a', '160k');
+    if (fs.existsSync(sfx)) ff.push('-i', sfx, '-filter_complex', `[1:a]${PAGE !== 'reel' ? 'loudnorm=I=-14:TP=-1.5' : 'volume=0.6'},apad,atrim=0:${SECONDS}[a]`, '-map', '0:v', '-map', '[a]', '-c:a', 'aac', '-b:a', '160k');
     ff.push('-c:v', 'libx264', '-preset', 'slow', '-crf', '18', '-pix_fmt', 'yuv420p', '-movflags', '+faststart', '-t', String(SECONDS), mp4);
     execFileSync('ffmpeg', ff, { stdio: 'inherit' });
     console.log('wrote', mp4);
