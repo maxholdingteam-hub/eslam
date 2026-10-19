@@ -1,0 +1,173 @@
+TOYOTA COROLLA CROSS - SAUDI ARABIA (KSA) - STRUCTURED SPECS PER GRADE
+=======================================================================
+Source: official KSA distributor site (Abdul Latif Jameel), captured 2026-10-19
+  https://www.toyota.com.sa/en/vehicles/corollacross            (+ /ar/ version)
+  https://www.toyota.com.sa/en/vehicles/corollacross/corolla-cross-specs   (+ /ar/ version)
+  https://www.toyota.com.sa/en/vehicles/corollacross/full-specs (same compare table as the overview page)
+Model year on site: "Corolla CROSS 2025" (titles, H1, spec page, image file names). The EN CMS field "MobileTitle"
+  says "Corolla CROSS 2026" (the AR one says 2025). No separate 2026/2027 Corolla Cross page exists on the site.
+Rule: only what the site shows. Anything the site does not state = "NOT ON SITE".
+Exact wording (EN + AR) is in specs_verbatim_site_text.txt.
+(c) Abdul Latif Jameel Motors / Toyota - all rights reserved.
+
+GRADES ON SALE (4), ALL HYBRID
+------------------------------
+  1. LE HEV            SAR 103,845
+  2. XLE HEV           SAR 113,505
+  3. Limited HEV       SAR 129,260
+  4. Limited Plus HEV  SAR 130,410
+  Price note (site): "All prices include 15% VAT, excluding registration fees and car insurance."
+  No previous/strike-through prices and no freight charges listed. No petrol grade is listed.
+
+=======================================================================
+A. POWERTRAIN & DIMENSIONS - IDENTICAL ON ALL 4 GRADES
+=======================================================================
+Engine type ........... Hybrid (HEV). Site: "Engine: 1.8L HEV, 4-Cylinders"
+Engine code ........... 2ZR-FXE (features tab: "2ZR-FXE Engine - 1.8L Hybrid 4-Cylinder Inline Engine")
+Displacement .......... 1.8 L (exact cc: NOT ON SITE)
+Cylinders ............. 4, inline
+Engine HP @ rpm ....... NOT ON SITE (site gives only the combined figure below)
+System output ......... 121 HP (combined)  - rpm NOT ON SITE
+Engine torque ......... 142 N.m @ 3600 rpm  ("Max Torque (Engine): 142 N.m / 3600 RPM")
+Electric motor ........ torque 163 N.m ("Max Torque (Electric Motor): 163 N.m"); motor power (kW/hp): NOT ON SITE
+Hybrid battery ........ NOT ON SITE (type/capacity not given)
+Transmission .......... CVT ("Continuous Variable Transmission (CVT)")
+Drive ................. Front Wheel Drive (FWD). No AWD / E-Four grade listed.
+Drive modes ........... Drive Mode Select (Eco / Normal / Power) on all grades; features tab also mentions a separately
+                        switchable EV Mode
+Suspension ............ Front MacPherson strut; rear "New Torsion Beam" (features tab)
+Fuel economy .......... 25.8 km/L
+Fuel tank ............. 36 L
+Fuel sticker .......... "Fuel Sticker 91 (Made in South Africa)*" listed on all grades (dealer-fitted item)
+Wheels / tyres ........ 17" alloy wheels, 215/60R17 (all grades)
+Dimensions (L-W-H) .... 4460 - 1825 - 1620 mm
+Wheelbase ............. NOT ON SITE
+Ground clearance ...... NOT ON SITE
+Kerb/gross weight ..... NOT ON SITE
+Cargo volume .......... NOT ON SITE (only "TOP-CLASS LUGGAGE CAPACITY", split-folding rear seats)
+Seating ............... 5 passengers (including driver)
+0-100 km/h / top speed  NOT ON SITE
+Warranty .............. 3 years or 100,000 km (whichever first); plus complimentary "Toyota Hybrid Extra Care Program"
+                        offer (all grades)
+
+=======================================================================
+B. SAFETY
+=======================================================================
+Toyota Safety Sense (TSS) ... NOT ON SITE - not mentioned anywhere on the Corolla Cross pages. No Pre-Collision System,
+                              Lane Departure Alert/Lane Tracing Assist, Dynamic Radar (adaptive) Cruise or Automatic
+                              High Beam is listed for any grade. Cruise control listed = conventional "Cruise Control".
+Airbags:
+  LE HEV ........... 2 - "Airbags (Driver & Front Passenger)"
+  XLE HEV .......... 2 - "Airbags (Driver & Front Passenger)"
+  Limited HEV ...... 7 - "Airbags (Driver & Front Passenger + Knee + Side + Curtain)"
+                     (features tab: "7 SRS Airbags including Driver's knee airbag")
+  Limited Plus HEV . 7 - same as Limited HEV
+All grades ........ ABS, Vehicle Stability Control (VSC), Hill-Start Assist Control (HAC), Tire Pressure Warning
+                    System (TPWS), Engine Immobilizer, Electronic Parking Brake (EPB) (features tab adds Brake Hold),
+                    Rear Parking Sensors, Rear Camera, Cruise Control
+XLE and up ........ + Front Parking Sensors
+Limited & Ltd Plus  + Blind Spot Monitor (BSM), + Rear Cross Traffic Alert (RCTA)
+
+=======================================================================
+C. PER-GRADE SUMMARY
+=======================================================================
+LE HEV - SAR 103,845
+  Engine: 1.8L 4-cyl hybrid, 121 HP combined, CVT, FWD, 25.8 km/L, 17" alloys
+  Lights: halogen headlights, DRL
+  Seats: fabric; 4.2" multi-information display; 8" touchscreen; Apple CarPlay; USB-C; 6 speakers
+  Safety: 2 airbags; rear sensors + rear camera; ABS/VSC/HAC/TPWS/EPB
+XLE HEV - SAR 113,505  (= LE plus:)
+  + LED front fog lamps, roof rails, moon roof, front parking sensors, tonneau cover,
+    sun visors with ILLUMINATED vanity mirrors
+  Still: halogen headlights, fabric seats, 4.2" MID, 8" screen, 2 airbags
+Limited HEV - SAR 129,260  (= XLE plus:)
+  + LED headlamps, LED DRL, LED rear lamps
+  + leather seats, leather steering wheel, 12.3" multi-information display (features tab: "12.3-inch Full Graphic
+    Display Meter"), 10" touchscreen, wireless charger, interior blue ambient lighting
+  + power back door, BSM, RCTA, 7 airbags
+Limited Plus HEV - SAR 130,410
+  Site text and compare table list exactly the Limited HEV content EXCEPT "Wireless Charger", which is missing for
+  Limited Plus in both EN and AR. No feature is listed that Limited Plus has and Limited lacks.
+  The colour selector (incl. the 4 black-roof two-tone colours) is attached only to Limited Plus HEV.
+  -> What Limited Plus adds for the extra SAR 1,150: NOT ON SITE (possibly the two-tone roof, but the site does not
+     say so; the missing wireless charger may be a site error - confirm with ALJ before advertising).
+
+=======================================================================
+D. KEY FEATURES x GRADE  (Y = listed for that grade on site, - = not listed)
+=======================================================================
+Feature                                         LE   XLE  LTD  LTD+
+1.8L HEV 4-cyl, 121 HP, CVT, FWD                Y    Y    Y    Y
+17" alloy wheels, 215/60R17                     Y    Y    Y    Y
+Halogen headlights                              Y    Y    -    -
+LED headlamps                                   -    -    Y    Y
+Daytime Running Light (DRL) (LED on LTD/LTD+)   Y    Y    Y    Y
+LED rear lamps                                  -    -    Y    Y
+LED front fog lamps                             -    Y    Y    Y
+Smart entry (driver + front passenger)          Y    Y    Y    Y
+Powered, auto-retractable mirrors w/ TSL        Y    Y    Y    Y
+Colored outside door handles                    Y    Y    Y    Y
+Rear spoiler                                    Y    Y    Y    Y
+Roof rails                                      -    Y    Y    Y
+Moon roof                                       -    Y    Y    Y
+Push start button                               Y    Y    Y    Y
+Seats                                           Fab  Fab  Lea  Lea
+Leather steering wheel                          -    -    Y    Y
+Steering wheel controls, telescopic wheel       Y    Y    Y    Y
+Driver seat vertical adjuster                   Y    Y    Y    Y
+Multi-information display                       4.2" 4.2" 12.3" 12.3"
+Front automatic climate control + rear A/C duct Y    Y    Y    Y
+Auto power windows (all doors)                  Y    Y    Y    Y
+Sun visors with vanity mirrors                  Y    Y    Y    Y     (LE plain; XLE/LTD/LTD+ 'Illuminated')
+Interior blue ambient lighting                  -    -    Y    Y
+Touchscreen (Display Audio)                     8"   8"   10"  10"
+Apple CarPlay                                   Y    Y    Y    Y     (Android Auto: NOT ON SITE)
+USB-C port                                      Y    Y    Y    Y
+Speakers                                        6    6    6    6
+Wireless charger                                -    -    Y    -  (as listed on site, see note above)
+Cruise control                                  Y    Y    Y    Y
+Drive Mode Select (Eco/Normal/Power)            Y    Y    Y    Y
+Rear parking sensors                            Y    Y    Y    Y
+Front parking sensors                           -    Y    Y    Y
+Rear camera                                     Y    Y    Y    Y
+Power back door                                 -    -    Y    Y
+Electronic parking brake                        Y    Y    Y    Y
+Blind Spot Monitor (BSM)                        -    -    Y    Y
+Rear Cross Traffic Alert (RCTA)                 -    -    Y    Y
+Airbags                                         2    2    7    7
+ABS / VSC / TPWS / HAC / immobilizer            Y    Y    Y    Y
+Tonneau cover                                   -    Y    Y    Y
+Floor mats, safety kit, tire inflator, 91 fuel sticker (dealer-fitted in KSA)  Y on all
+Interior colour "Terra Rossa" (red-brown): site says fabric on LE & XLE, leather on "LTD" grade.
+
+Items marked "(Made in Malaysia/Thailand/South Africa/China)*" on the site are, per the site, "installed in the
+Kingdom of Saudi Arabia, by one of the Abdul Latif Jameel specialized companies". Which items carry the asterisk
+differs by grade (e.g. LE rear sensors + rear camera; XLE front sensors + rear camera; LTD/LTD+ front sensors) -
+see specs_verbatim_site_text.txt for the exact per-grade markings.
+
+=======================================================================
+E. EXTERIOR COLOURS (site colour selector, shown under Limited Plus HEV only)
+=======================================================================
+  #  EN name                   AR name                  swatch hex   image
+  1  Super White               أبيض سوبر                #fdfcfc      colors/ksa_color_01-...
+  2  Platinum White Pearl      أبيض لؤلؤيِ بلاتينم       #f2f2f2      colors/ksa_color_02-...
+  3  Silver Metallic           فضي معدني                #a3a4a5      colors/ksa_color_03-...
+  4  Gray Metallic             رمادي معدني              #434445      colors/ksa_color_04-...
+  5  Celestite Gray Metallic   رمادي سيليستي معدني      #4c5967      colors/ksa_color_05-...
+  6  Black Mica                أسود مايكا               #0c0d0e      colors/ksa_color_06-...
+  7  Red Mica Metallic         أحمر مايكا معدني         #bd2926      colors/ksa_color_07-...
+  8  White With Black Roof     أبيض بسقف أسود           #fdfcfc      colors/ksa_color_08-...
+  9  Silver With Black Roof    فضي بسقف أسود            #a3a4a5      colors/ksa_color_09-...
+ 10  Gray With Black Roof      رصاصي غامق بسقف أسود     #434445      colors/ksa_color_10-...
+ 11  Red With Black Roof       أحمر بسقف أسود           #bd2926      colors/ksa_color_11-...
+  Colour availability per grade (LE / XLE / Limited): NOT ON SITE (no colour data attached to those grades).
+  Interior colour options other than Terra Rossa: NOT ON SITE.
+
+=======================================================================
+F. OTHER
+=======================================================================
+Tagline .......... EN "Live Elevated" / AR "عش تطلعاتك"
+Brochure ......... NOT ON SITE ("Download Brochure" link points to /en, no file)
+Video ............ NOT ON SITE (hero video fields empty; gallery has images only)
+Featured offer ... generic Toyota hybrid "Enjoy up to 10 years of peace of mind*" (Extended Hybrid Battery Care
+                   Program + Roadside Assistance) banner shown on the page; terms in the banner fine print, not in
+                   the spec text.

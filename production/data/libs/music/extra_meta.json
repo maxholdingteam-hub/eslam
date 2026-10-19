@@ -1,0 +1,84 @@
+{
+ "_doc": "Metadata for non-Mixkit tracks, merged by build_catalog.py (overrides the Mixkit defaults for these ids). custom_windows = hand-computed 55-60 s cuts for the Saudi Hilux brief (times in track seconds; 'reveal' = offset of the big hit inside the cut). Bucket 6 = Arabic / Middle-Eastern EPIC (non-Mixkit).",
+ "ot_13971": {
+  "title": "熱砂を駆ける", "title_en": "Racing Across the Burning Sands", "artist": "Yosame Yu",
+  "genre": "Orchestral (Arabian style)", "tags": ["明るい bright", "力強い powerful", "激しい intense", "軽快 lively", "壮大 epic", "民族系 ethnic", "弦楽器 strings", "パーカッション percussion", "民族楽器 ethnic instruments"],
+  "source": "OpenTracks (formerly DOVA-SYNDROME)", "source_url": "https://opentracks.com/bgm/detail/13971/download",
+  "source_pages": ["https://opentracks.com/bgm/detail/13971", "https://opentracks.com/creator/detail/396"],
+  "license": "OpenTracks Audio Source Usage License (https://opentracks.com/help/articles/license/) - free, commercial/corporate use incl. online ads and TV commercials as background music, NO credit required, no account; composer terms: site-compliant (credit appreciated, not required); no Content-ID/JASRAC registration, no standalone redistribution, no political/religious content; see LICENSE_opentracks.txt",
+  "mood_bucket": 6, "rank_in_bucket": 1, "bpm_stated": null, "date": "2021-02-04",
+  "notes": "Composer: 'Arabian-atmosphere orchestral piece'. Bright, heroic, constant high energy (LRA 5.0); B-hijaz lines over a G-major orchestral bed (pitch profile C B D G F# E G# D#; global oriental 0.009, segments 75-90 s and 135-150 s +0.13). Drops 91.2 / 124.6 / 145.4 s, big hit 109.2 s, final hit rings at 163.6 s. Best structural fit: 60 s cut 104.81-164.81 = reveal hit at +4.42 s AND natural ringing end. 160 kbps mp3 source.",
+  "custom_windows": [
+   {"len": 60.0, "start": 104.81, "end": 164.81, "reveal": 4.42, "reveal_t": 109.23, "end_kind": "natural ring (final hit 163.63, rings ~3 s)"},
+   {"len": 55.3, "start": 110.3, "end": 165.6, "reveal": 14.3, "reveal_t": 124.6, "end_kind": "natural ring", "note": "late reveal: build 116.6 -> drop 124.6"}
+  ]
+ },
+ "ot_20880": {
+  "title": "太陽の絨毯、砂漠の彼方", "title_en": "Carpet of the Sun, Beyond the Desert (Track 1, normal version)", "artist": "Addpico",
+  "genre": "Cinematic world (Arabian / Middle-East)", "tags": ["力強い powerful", "シリアス serious", "暗い dark", "情熱 passion", "壮大 epic", "シネマ cinema", "シタール sitar (lead)", "A.ギター", "弦楽器 strings", "パーカッション percussion", "民族楽器 ethnic instruments"],
+  "source": "OpenTracks (formerly DOVA-SYNDROME)", "source_url": "https://opentracks.com/bgm/detail/20880/download",
+  "source_pages": ["https://opentracks.com/bgm/detail/20880"],
+  "license": "OpenTracks Audio Source Usage License (https://opentracks.com/help/articles/license/) - free, commercial use incl. online ads and TV commercials, NO credit required, no account; composer terms: site-compliant; see LICENSE_opentracks.txt",
+  "mood_bucket": 6, "rank_in_bucket": 2, "bpm_stated": 94, "date": "2024-07-31",
+  "notes": "Strongest maqam colour in the whole library: oriental 0.28 overall and +0.17..+0.33 in EVERY 15 s segment; pitch profile G D A F# C# C Bb Eb = Hijaz on D / Nawa-Athar on G. Composer: Arabian / Middle-East, sitar is the lead instrument (can read slightly Indian - check by ear), plus strings, guitar, percussion. Powerful, serious/dark rather than bright. Loud master (-8.9 LUFS). Hits 35.1 / 96.4 s, section drops 55.9 / 117.1 s; ending is soft (music stops 143.44 s, tail to 148.7) - put the logo impact on 143.4. Tracks 2 (heat-warped FX) and 3 (dance-beat) not downloaded.",
+  "custom_windows": [
+   {"len": 56.5, "start": 92.24, "end": 148.72, "reveal": 4.13, "reveal_t": 96.37, "end_kind": "soft stop at 143.44 (+51.2 s), tail", "note": "second drop 117.1 at +24.9"},
+   {"len": 60.0, "splice": [[30.96, 50.76], [104.36, 144.57]], "reveal": 4.13, "reveal_t": 35.10, "end_kind": "soft stop", "note": "butt-cut on downbeats (analyser splice, similarity 0.82)"}
+  ]
+ },
+ "ot_9389": {
+  "title": "ルフの翼", "title_en": "Wings of the Roc", "artist": "corico",
+  "genre": "Ethnic / Arabian Nights", "tags": ["力強い powerful", "不思議 mysterious", "ファンタジー fantasy", "民族系 ethnic", "弦楽器 strings", "木管楽器 woodwinds", "民族楽器 ethnic instruments"],
+  "source": "OpenTracks (formerly DOVA-SYNDROME)", "source_url": "https://opentracks.com/bgm/detail/9389/download",
+  "source_pages": ["https://opentracks.com/bgm/detail/9389"],
+  "license": "OpenTracks Audio Source Usage License (https://opentracks.com/help/articles/license/) - free, commercial use incl. online ads and TV commercials, NO credit required, no account; composer terms: site-compliant; see LICENSE_opentracks.txt",
+  "mood_bucket": 6, "rank_in_bucket": 3, "bpm_stated": null, "date": "2018-07-06",
+  "notes": "Composer: 'ethnic piece that would play in an Arabian Nights story' (Roc = the giant bird of the Arabian Nights - fits the falcon idea). Best reveal moment of the shortlist: quiet section 36-56 s, then a massive re-entry (hit 58.03 = strongest, 56.2/57.2 lead-ins), drop 80.6, final hit rings 106.9. Scale reads minor/diatonic overall (-0.117; +0.07..0.09 in the first 45 s) - less hijaz than #1/#2. Hot master (-9.4 LUFS, true peak above 0 dBTP after decode) - normalise/limit.",
+  "custom_windows": [
+   {"len": 55.8, "start": 54.01, "end": 109.80, "reveal": 4.02, "reveal_t": 58.03, "end_kind": "natural ring (106.88 at +52.9 s)", "note": "drop 80.6 at +26.6"}
+  ]
+ },
+ "fpd_desert_conflict": {
+  "title": "Desert Conflict", "title_en": "Desert Conflict", "artist": "unknown (FreePD library; file carries no composer tag)",
+  "genre": "World / desert action", "tags": ["FreePD world category", "public domain"],
+  "source": "FreePD.com (public domain) - site closed 2025; file from the archive.org FreePD mirror", "source_url": "https://archive.org/download/freepd/world/Desert%20Conflict.mp3",
+  "source_pages": ["https://archive.org/details/freepd", "https://archive.org/details/abook-music-freepd-cc0"],
+  "license": "Public domain / CC0 as published on FreePD.com (all FreePD music was released to the public domain; mirror item archive.org/details/freepd, malware-checked by archive.org). No attribution, any commercial use incl. TV/broadcast. Composer not identified in the file - keep the archive.org link as provenance. See LICENSE_freepd.txt",
+  "mood_bucket": 6, "rank_in_bucket": 4, "bpm_stated": null, "date": null,
+  "notes": "Clear Hijaz / double-harmonic colour on A (pitch profile A E Bb C# D B G#; oriental 0.166, +0.27 in the intro, +0.16 around the 90 s hit, +0.24 at 135-150 s). Driving 120 BPM, strong low end (low 0.48, sub 0.14), dense. Drop 16.7 s, biggest hit 90.69 s after a calmer mid section, final hit rings 154.7 s. Safest licence of the shortlist. Instrumentation not documented - check by ear.",
+  "custom_windows": [
+   {"len": 60.0, "splice": [[86.60, 112.67], [122.68, 156.61]], "reveal": 4.09, "reveal_t": 90.69, "end_kind": "natural ring 154.68", "note": "analyser splice, butt-cut on downbeats, similarity 0.71"},
+   {"len": 70.0, "start": 86.14, "end": 156.14, "reveal": 4.55, "reveal_t": 90.69, "end_kind": "natural ring", "note": "continuous version if the cut can run 70 s"}
+  ]
+ },
+ "ot_9922": {
+  "title": "Battle - 砂漠", "title_en": "Battle - Desert (Track 1, with intro)", "artist": "lei",
+  "genre": "Orchestral game / RPG battle (Arabian)", "tags": ["力強い powerful", "緊張感 tension", "激しい intense", "壮大 epic", "クラシック classical", "弦楽器 strings", "金管楽器 brass", "木管楽器 woodwinds", "パーカッション percussion"],
+  "source": "OpenTracks (formerly DOVA-SYNDROME)", "source_url": "https://opentracks.com/bgm/detail/9922/download",
+  "source_pages": ["https://opentracks.com/bgm/detail/9922"],
+  "license": "OpenTracks Audio Source Usage License (https://opentracks.com/help/articles/license/) - free, commercial use incl. online ads and TV commercials, NO credit required, no account; composer terms: site-compliant; see LICENSE_opentracks.txt",
+  "mood_bucket": 6, "rank_in_bucket": 5, "bpm_stated": 110, "date": "2018-10-20",
+  "notes": "Composer: 'orchestral Arabian game-music / RPG battle BGM, desert and ruins'. Biggest dynamics of the shortlist (LRA 12.9): drop 10.0, breakdown 20-46, long build 46.6 -> drop 61.5, build 81.1 -> drop 89.9; ends on a baked-in fade (106.8) - add an impact for the logo. Hijaz colour in the first 30 s (+0.24) and 60-75 s (+0.19). Stated 110 BPM (analyser reads 145.5). Can sound 'video-game'.",
+  "custom_windows": [
+   {"len": 60.0, "start": 50.04, "end": 110.04, "reveal": 11.46, "reveal_t": 61.5, "end_kind": "baked-in fade from 106.8", "note": "late reveal after a 15 s build; second build/drop at +31.1/+39.9"}
+  ]
+ },
+ "ot_12426": {
+  "title": "ハンニバル", "title_en": "Hannibal (Track 1)", "artist": "田中芳典 (Yoshinori Tanaka)",
+  "genre": "Orchestral (taiga-drama style)", "tags": ["力強い powerful", "激しい intense", "民族系 ethnic", "コーラス choir", "金管 brass", "ドラム drums"],
+  "source": "OpenTracks (formerly DOVA-SYNDROME)", "source_url": "https://opentracks.com/bgm/detail/12426/download",
+  "source_pages": ["https://opentracks.com/bgm/detail/12426"],
+  "license": "OpenTracks Audio Source Usage License (https://opentracks.com/help/articles/license/) - see LICENSE_opentracks.txt",
+  "mood_bucket": null, "rank_in_bucket": null, "bpm_stated": null, "date": "2020-03-18",
+  "notes": "Screened, not shortlisted: big orchestral/choir build-drop (drop 88.4) but plainly diatonic (D minor, oriental -0.266) - not Arabic-sounding."
+ },
+ "ot_23035": {
+  "title": "渦巻く砂漠の風", "title_en": "Swirling Desert Wind (loop version)", "artist": "マニーラ (Maniira)",
+  "genre": "Orchestral game battle", "tags": ["力強い powerful", "激しい intense", "壮大 epic"],
+  "source": "OpenTracks (formerly DOVA-SYNDROME)", "source_url": "https://opentracks.com/bgm/detail/23035/download",
+  "source_pages": ["https://opentracks.com/bgm/detail/23035"],
+  "license": "OpenTracks Audio Source Usage License (https://opentracks.com/help/articles/license/) - see LICENSE_opentracks.txt",
+  "mood_bucket": null, "rank_in_bucket": null, "bpm_stated": null, "date": null,
+  "notes": "Screened, not shortlisted: game loop, static/repetitive, very loud (-6.7 LUFS), diatonic (-0.191)."
+ }
+}

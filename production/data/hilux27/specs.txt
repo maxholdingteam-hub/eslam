@@ -1,0 +1,292 @@
+TOYOTA HILUX 2027 (NEW GENERATION) - SAUDI ARABIA (Abdul Latif Jameel / toyota.com.sa) - SPEC SHEET FOR AD
+Researched 2026-10-19. Numbers/names are copied exactly as the site prints them. Nothing below is guessed; anything that is my
+visual observation (not site text) is marked "OBSERVED". Where the site disagrees with itself it is listed under CONTRADICTIONS (sec. 11).
+
+==========================================================================================
+0. SUMMARY (read this first)
+==========================================================================================
+ * The site sells "Hilux 2027" = the all-new generation (home-page banner: "LEGEND HILUX - The All-New 2027" /
+   "الأسطورة HILUX - 2027 الجديدة كلياً"). 10 grades on one page: 7 DOUBLE CAB (DC) + 3 SINGLE CAB (SC). ALL are 4x4.
+ * 3 ENGINES, 2 FUEL TYPES (petrol + diesel). NO hybrid, NO 48V, NO electric anywhere on the KSA page.
+     - 2.7L 4-cyl petrol VVT-i   164 HP / 5200 rpm, 245 NM / 4000 rpm      -> DC-GL (5MT), DC-SGLX (6AT), SC-GL (5MT)
+     - 4.0L 6-cyl petrol VVT-i   235 HP / 5200 rpm, 376 NM / 3800 rpm      -> DC-Premium (6AT) ONLY
+     - 2.8L 4-cyl turbo diesel   201 HP, 420 NM (6MT) / 500 NM (6AT)        -> DC-GL DSL (MT/AT), DC-GLX DSL, DC-SGLX DSL, SC-GL DSL (MT/AT)
+   Engine codes named on the site (feature card "Engine Line-Up"): 1GD-FTV (2.8 turbo diesel), 1GR-FE and 2TR-FE (petrol; the site
+   does not say which code is which displacement). The site never writes "V6"; it says "6 cylinders".
+ * DC prices (SAR, incl. 15% VAT and shipping fee, excl. registration + insurance):
+     DC-GL 2.7 MT 125,867.50 | DC-SGLX 2.7 AT 157,032.50 | DC-Premium 4.0 AT 179,515 | DC-GL DSL MT 133,515 |
+     DC-GL DSL AT 140,242.50 | DC-GLX DSL AT 159,447.50 | DC-SGLX DSL AT 179,687.50 (the most expensive grade).
+ * HERO LOOK = DC-PREMIUM 4.0L (petrol, 4.0L 6-cyl, 235 HP, 6AT). Evidence: (a) the studio/gallery white car carries a black "PREMIUM"
+   tailgate emblem (spec: 'Model Black Emblem "Premium"' exists only on DC-Premium); (b) every exterior photo (hero, gallery, cutouts,
+   key visual) shows black over-fender mouldings - "Over Fender Moulding" is listed ONLY for DC-Premium; (c) the colour selector /
+   all 7 colour cutouts exist ONLY under "DC- Premium 4.0L - 4X4 AT" ("Double Cap Premium 4.0L - 4X4 AT"); (d) 18in diamond-cut/gloss-black
+   wheels (Premium/SGLX only). The page hero itself shows no grade badge (front 3/4), but it is the same over-fender/18in body.
+ * RECOMMENDATION: build the ad on the DC-Premium 4.0L PETROL (4.0L 6-cylinder, 235 HP / 376 NM, 6-speed automatic, 4x4, SAR 179,515).
+   End "versions" scene: the other engine types are the 2.8L TURBO DIESEL (201 HP; 420 NM manual / 500 NM automatic; GL DSL MT/AT,
+   GLX DSL, SGLX DSL) and the 2.7L 4-cyl PETROL (164 HP; GL MT, SGLX AT). Optionally mention "also available as Single Cab".
+   Caution: do NOT pair the Premium with the site's engine photo (it shows a 4-cylinder turbo engine = the diesel type), nor with
+   Multi-Terrain Select / DAC / auto stop-start claims (diesel GLX/SGLX only). No TSS, no 7 airbags, no hybrid - see sec. 6.
+
+SOURCES (cited in [brackets] below)
+ [OV-EN] https://www.toyota.com.sa/en/vehicles/hilux-2027      (overview: hero, feature tabs, grade cards, compare table, colours, gallery)
+ [OV-AR] https://www.toyota.com.sa/ar/vehicles/hilux-2027
+ [SP-EN] https://www.toyota.com.sa/en/vehicles/hilux-2027/hilux-specs   ("Full specs" button -> "View Hilux Full specs": per-grade text lists, warranty)
+ [SP-AR] https://www.toyota.com.sa/ar/vehicles/hilux-2027/hilux-specs   ("اكتشف مواصفات Hilux" / "المواصفات الكاملة")
+ [CT]    = the "Compare Grades"/FULL SPECS table embedded in [OV-EN]/[OV-AR]
+ Full verbatim EN+AR spec lists and compare tables: specs_verbatim_site_text.txt (same folder).
+ [HOME]  https://www.toyota.com.sa/en and /ar  (hero slider slide "hillux27" -> "Discover more" -> /en/vehicles/hilux-2027)
+ [STALE] https://www.toyota.com.sa/en/vehicles/hilux-2027/full-specs  (in sitemap, but holds OLD-generation content - see C#2)
+ [OLD]   https://www.toyota.com.sa/en/vehicles/commercial/1419/hiluxdc ("Hilux Double Cab 2026", previous generation, still live, not in menu)
+ NOTE: the slug given in the brief, /en/vehicles/commercial/hiluxdc-2027, 301-redirects to /en/vehicles/hiluxdc-2027 which is 404.
+ Method: the pages' embedded Sitecore/Next.js JSON (__NEXT_DATA__) was extracted in EN and AR; EN and AR overview pages were also rendered
+ in headless Chromium to confirm what a visitor sees (e.g. "Price 125,867.50 / Includes Shipping fee of 6,267.50"; AR "السعر ... شاملة
+ مصاريف شحن اضافية"). Operator: Abdul Latif Jameel Motors (ALJ logo; key visual carries the ALJ Motors + "80 years" logos).
+
+==========================================================================================
+1. MODEL YEAR / NAMING SHOWN
+==========================================================================================
+ "Hilux 2027" - page title, section title, model code, menu entry, EN+AR  [OV-EN][OV-AR]. Browser title EN "Toyota Hilux 2027-Pickup Truck | Toyota KSA",
+ AR "تويوتا هايلكس 2027 - الرفيق المثالي لكل مغامرة | تويوتا السعودية". Page title EN "HiluX 2027| Toyota Saudi Arabia" (sic).
+ Home banner: EN "LEGEND HILUX" + "The All-New 2027"; AR "الأسطورة" + "HILUX" + "2027 الجديدة كلياً"  [HOME].
+ Tagline field: EN "Built to Conquer" / AR "ما يوقف في طريقه شي" (stored in the page data, NOT rendered on the page).
+ Hero CTA: "REGISTER YOUR INTEREST" / "سجل اهتمامك" (other commercial models show "REQUEST A CALL"; Hilux 2027 has no buy-online code).
+ Site default grade: "SC - GL 2.7L - 4X4 MT" (a Single Cab).
+ The AR feature text calls it "الجيل الجديد من هايلكس" (the new generation of Hilux); EN says "The evolution of the HILUX".
+
+==========================================================================================
+2. ENGINES - HOW MANY TYPES?
+==========================================================================================
+ PETROL AND DIESEL ONLY. 3 engines, 2 fuel types. Filter chips on the grade cards: "Gas (4)" "Diesel (6)" / AR "بنزين (4)" "ديزل (6)"  [OV rendered].
+ (Double Cab only: 3 petrol grades + 4 diesel grades.)
+   EN (exact) / AR (exact):
+   - "2.7L , 4 cylinders, Petrol, VVT-I" / "2.7 لتر, 4 سلندر, بنزين, نظام التوقيت المتغير الذكى للصمامات"   fuel sticker "91"
+   - "4.0L , 6 cylinders ,Petrol, VVT-I" / "4.0 لتر, 6 سلندر, بنزين, نظام التوقيت المتغير الذكى للصمامات"   fuel sticker "95"
+   - "2.8L, 4 cylinders, Diesel, Turbo" / "2.8 لتر, 4 سلندر, ديزل, تربو"                                     sticker "Diesel Euro 5"
+ Feature card "Engine Line-Up": "The 1GD-FTV 2.8-liter turbo diesel engine with direct fuel injection by common rail delivers ample torque and power,
+ excellent fuel economy and reduced emissions. The 1GR-FE and 2TR-FE gasoline engines generate powerful performance together with good fuel efficiency."
+ AR: "يوفر محرك الديزل التيربو (1GD-FTV) سعة 2.8 لتر ... كما توفر محركات البنزين (1GR-FE) و (2TR-FE) ..."
+ The 2.8 diesel has two outputs depending on gearbox: MT "201 HP / 3400 rpm", "420 NM / 1400 - 3400 rpm"; AT "201 HP / 3000 - 3400 rpm", "500 NM / 1600 - 2800 rpm".
+ Engine Auto Stop/Start System: listed for every DIESEL grade only (AR "نظام إيقاف وتشغيل المحرك الأوتوماتيكي لتوفير الوقود").
+
+==========================================================================================
+3. GRADES, PRICES, POWERTRAIN (10 grades; DC = Double Cab = the ad subject)
+==========================================================================================
+ Price = "Price" on the grade card, SAR. Tooltip (info icon): "All prices include 15% VAT, excluding registration fees and car insurance."
+ AR: "الأسعار تشمل ضريبة القيمة المضافة 15%، ولا تشمل رسوم التسجيل أو التأمين على المركبة." Each card also says "Includes Shipping fee of X"
+ (AR "شاملة مصاريف شحن اضافية X") = the shipping fee is INSIDE the price. No previous/discount price on any grade. [OV-EN][OV-AR]
+ Page disclaimer field (not rendered): "* All mentioned prices are inclusive of 15% VAT, but do not include the registration fees and car insurance premium."
+ Grade names are printed in Latin letters in BOTH languages (card name / specs-page name).
+
+ DOUBLE CAB (7)
+ #  | Grade card name (EN=AR)         | Specs-page name          | Price SAR   | Ship fee | Fuel   | Max output            | Max torque               | Trans.            | km/L | Wheels / tyres              | Seats* | L-W-H mm           | GVW/Curb/Payload kg
+ D1 | DC- GL 2.7L - 4X4 MT            | DC-GL  2.7L- 4X4 MT      | 125,867.50  | 6,267.50 | Petrol | 164 HP / 5200 rpm     | 245 NM / 4000 rpm        | 5 Speed Manual    | 10.1 | 17 inch Steel, 265/65R17     | 6 (bench) | 5320 - 1855 - 1865 | 2800 / 1900 / 900
+ D2 | DC- SGLX 2.7L - 4X4 AT          | DC- SGLX -2.7L- 4X4 AT   | 157,032.50  | 6,267.50 | Petrol | 164 HP / 5200 rpm     | 245 NM / 4000 rpm        | 6 Speed Automatic | 10.0 | 18 inch Alloy, 265/60R18     | 5      | 5320 - 1855 - 1865 | 2800 / 1940 / 860
+ D3 | DC- Premium 4.0L - 4X4 AT       | DC- Premium - 4.0L - 4X4 AT | 179,515  | 6,095    | Petrol | 235 HP / 5200 rpm     | 376 NM / 3800 rpm        | 6 Speed Automatic | 9.5  | 18 inch Alloy, 265/60R18     | 5      | 5320 - 1885 - 1865 | 2850 / 1980 / 870
+ D4 | DC- GL DSL 2.8L - 4X4 MT        | DC-GL-DSL 2.8L-4X4 MT    | 133,515     | 6,095    | Diesel | 201 HP / 3400 rpm     | 420 NM / 1400 - 3400 rpm | 6 Speed Manual    | 15.3 | 17 inch Steel, 265/65R17     | 6 (bench) | 5320 - 1855 - 1815 | 2950 / 2045 / 905
+ D5 | DC- GL DSL 2.8L - 4X4 AT        | DC-GL-DSL 2.8L-4X4 AT    | 140,242.50  | 6,267.50 | Diesel | 201 HP / 3000 - 3400 rpm | 500 NM / 1600 - 2800 rpm | 6 Speed Automatic | 14.7 | 17 inch Steel, 265/65R17  | 5      | 5320 - 1855 - 1815 | 2950 / 2060 / 890
+ D6 | DC- GLX DSL 2.8L - 4X4 AT       | DC-GLX-DSL 2.8L-4X4 AT   | 159,447.50  | 6,267.50 | Diesel | 201 HP / 3000 - 3400 rpm | 500 NM / 1600 - 2800 rpm | 6 Speed Automatic | 14.7 | 17 inch Alloy, 265/65R17  | 5      | 5320 - 1855 - 1815 | 2950 / 2065 / 885
+ D7 | DC-SGLX DSL 2.8L - 4X4 AT       | DC-SGLX-DSL 2.8L-4X4 AT  | 179,687.50  | 6,267.50 | Diesel | 201 HP / 3000 - 3400 rpm | 500 NM / 1600 - 2800 rpm | 6 Speed Automatic | 14.7 | 18 inch Alloy, 265/60R18  | 5      | 5320 - 1885 - 1815 | 2950 / 2050 / 900
+ SINGLE CAB (3) - not pictured anywhere on the site
+ S1 | SC - GL 2.7L - 4X4 MT (AR "SC- GL 2.7L - 4X4 MT") | SC-GL-2.7L-4X4 MT | 113,505 | 6,210 | Petrol | 164 HP / 5200 rpm | 245 NM / 4000 rpm | 5 Speed Manual | 10.1 | 17 inch Steel, 265/65R17 | 3 (bench) | 5320 - 1855 - 1855 | 2800 / 1830 / 970
+ S2 | SC- GL DSL 2.8L - 4X4 MT        | SC-GL-DSL 2.8L-4X4 MT    | 122,015     | 5,980    | Diesel | 201 HP / 3400 rpm     | 420 NM / 1400 - 3400 rpm | 6 Speed Manual    | 15.3 | 17 inch Steel, 265/65R17     | 3 (bench) | 5320 - 1855 - 1795 | 2850 / 1905 / 945
+ S3 | SC- GL DSL 2.8L - 4X4 AT        | SC-GL- DSL 2.8L-4X4 AT   | 129,662.50  | 5,807.50 | Diesel | 201 HP / 3000 - 3400 rpm | 500 NM / 1600 - 2800 rpm | 6 Speed Automatic | 14.7 | 17 inch Steel, 265/65R17  | 2 (separate) | 5320 - 1855 - 1795 | 2850 / 1910 / 940
+ *Seats = "N Passengers (including Driver)" / AR "N ركاب (شامل السائق)"; bench/separate = "Front Seats (Bench)" / "Front Separate Seats".
+ Drive: every grade "Four Wheel Drive (4x4)" / "دفع رباعي (4x4)". Feature card "4WD System": "the part-time 4WD system incorporates 2WD/4WD transfer
+   shifting and High-Low range gearing" (AR "نظام الدفع الرباعي الجزئي Part-Time (4WD) ... High / Low"). Photo shows a 2H / 4H / 4L switch.
+ Fuel tank: "Fuel Tank: 80 L" all grades. Fuel economy wording "Fuel Economy 10.1 Km/L" / "استهلاك الوقود 10.1 كم / لتر".
+ Payload: printed as "Net Payload (KG)" (above). TOWING CAPACITY: NOT given anywhere on the KSA page.
+ Prices in the page data: SC stored with commas ("113,505"), DC without ("125867.5"); rendered identically with commas and 2 decimals.
+ Sources: price/ship fee/engine/hp/torque/trans/drive/dims/seats = grade cards + [CT] + [SP-EN][SP-AR] (all three agree, EN=AR numbers checked by script);
+ km/L, tyres, weights = [SP-EN][SP-AR] + [CT].
+ Warranty [SP-EN]: "According to the warranty’s terms, TOYOTA warrants repairing the manufacturing defects of your vehicle for 3 Gregorian Years starting
+ from the purchase date or reaches 100,000 KM of use (Whichever Comes First)". AR [SP-AR]: "طبقاً لشروط الضمان، تضمن تويوتا اصلاح الاعطال المصنعية لسيارتك
+ لمدة 3 سنوات ميلادية من تاريخ الشراء أو قطع مسافة 100,000 كم (أيهما يسبق)".
+
+==========================================================================================
+4. COMMON EQUIPMENT (listed for ALL 10 grades in [SP-EN]/[SP-AR])
+==========================================================================================
+ Four Wheel Drive (4x4); Fuel Tank 80 L; Remote Central Door Locking; LED Stop Lamp on Deck Door; Side Step (عتبة جانبية);
+ Bed Liner (Made in Thailand)*; Front Suspension: Coil spring; Steering Wheel Controls; Power Central Door Locking; Power Windows (All);
+ Overhead console; Front cup holders; Sliding Back Window (IR-cut on D2 D3 D7); Digital Audio Broadcasting (DAB); USB-C; Airbags: Driver - Driver Knee - Front Passenger;
+ Anti-Lock Break System (ABS) [sic]; Electronic Brake-force Distribution (EBD); Vehicle Stability Control (VSC); Engine Immobilizer System;
+ Floor Mats - Carpet (Made in Thailand)*. Also every grade: Apple CarPlay & Android auto (wired or wireless, see sec.5), LED projector headlamps,
+ power mirrors with turn signals, leaf-spring rear suspension, rear parking sensors (dealer-fitted on GL/GLX).
+ * = "The mentioned equipment are installed in the Kingdom of Saudi Arabia, by one of the Abdul Latif Jameel specialized companies." (dealer/locally
+   fitted: bed liner, A/C unit, rear sensors on GL/GLX, mats, side stripes, safety package, grade emblem, fuel sticker, horn, frame guard, prayer mat,
+   passenger door lock, tire inflator). AR adds "... وهي تعد من المواصفات الأساسية" (and they count as standard specification).
+   Other footnote: "The specifications set out above maybe subject to change without prior notice..."
+
+==========================================================================================
+5. PER-GRADE FEATURES (DOUBLE CAB) - [GL] marks grade-limited items  [SP-EN][SP-AR][CT]
+==========================================================================================
+ D1 DC-GL 2.7 MT (entry DC, petrol)
+   17in Steel Wheel 265/65R17; LED Projector Headlamp (CT: "LED Projector with DRL"); Halogen Rear Lamps; Halogen Rear Fog Lamp; plain power mirrors;
+   Fabric, Front Seats (Bench), 6 passengers; Manual Air Conditioning (Made in Saudi Arabia)*; Analog Combination Meter; Touch Screen 8 inch;
+   Apple CarPlay & Android auto (wired); 4 Speakers; Rear parking sensors*; Front Disk / Rear Drum brakes; Hydraulic power steering; TPWS;
+   Side Stripes*; Safety Package*; Model Black Emblem "GL"*; Fuel Sticker 91*; Premium Horn*; External Deck Hooks. NO rear diff lock, no cruise, no camera.
+ D2 DC-SGLX 2.7 AT (petrol) = D1 plus [GL]:
+   6AT; 18in Alloy 265/60R18; Smart Entry System and Engine Stop/Start Button; LED Projector Headlamp with Welcome LED DRL; Headlamp auto leveling;
+   LED Rear Lamps; LED Front Fog Lamp; LED Rear Fog Lamp; mirrors "Colored - Gloss Black"; Auto Retractable Power Side Mirrors; Front Bumper with
+   Silver Accent; Frame Guard*; Seat Material Fabric (High); Front Separate Seats, 5 passengers; Automatic Climate Control*; 12.3 inch Multi Information
+   Display; Touch Screen 12.3 inch; Wireless Apple CarPlay & Android auto; 8 Speakers; Wireless Charger; Front Passenger Door Lock*; Rear Air Conditioning
+   Vents + USB-C (2); Auto dimming rear view mirror; Rear seat armrest with cup holder; Glove Box Cooling Vent; IR Cut Glass; Front Seat Back Pocket +
+   Shopping Hook; Drive Mode Select (ECO / POWER); Cruise Control; Rear Camera; Front (Corner) + Rear Parking Sensors; Rear Differential lock;
+   Electric Parking Brake (EPB) + Brake Hold; Front and Rear Brake Disk; TPMS; Prayer Mat*; Model Black Emblem "SGLX"*.
+ D3 DC-Premium 4.0 AT (the HERO grade; petrol 4.0) = D2 equipment with these differences [GL]:
+   + 4.0L 6-cyl 235 HP; width 1885; "Over Fender Moulding" (ONLY grade); "Front Seats Ventilation" (ONLY grade; CT "Fabric (High) with Front Seats
+     Ventilation"); "Panoramic View Monitor (4 Cameras)" (ONLY grade, instead of Rear Camera); "Built In Tire Inflator"* (ONLY); "Internal Deck Hooks"
+     (others External); "Safety Regulation Kit"* (others "Safety Package"); Model Black Emblem "Premium"*; Fuel Sticker 95*; Front & Rear Mud Guard.
+   - NOT listed on Premium: Side Stripes*, Frame Guard*, Engine Auto Stop/Start, MTS, DAC. Steering = hydraulic.
+ D4 DC-GL DSL 2.8 MT = D1 with the diesel 201 HP/420 NM, 6MT, 15.3 km/L, Front & Rear Mud Guard, Engine Auto Stop/Start, Rear Differential lock [GL],
+   "Diesel Euro 5" sticker; 6 passengers (bench).
+ D5 DC-GL DSL 2.8 AT = D4 but 6AT 201 HP/500 NM, 14.7 km/L, Front Separate Seats, 5 passengers, Front Seat Back Pocket; NO rear diff lock (see C#13).
+ D6 DC-GLX DSL 2.8 AT = D5 plus [GL]: 17 inch Aloy [sic] Wheel 265/65R17; LED Projector Headlamp with Welcome LED DRL; Headlamp auto leveling; LED Rear Lamps;
+   LED Front + Rear Fog; Gloss Black mirrors; Front Bumper with Silver Accent; Frame Guard*; 7 inch Multi Information Display; Wireless Charger; Front
+   Passenger Door Lock*; 8 Speakers; Drive Mode Select (Eco/Normal/Sport/MTS); Cruise Control; Rear Camera; Rear Differential lock; Down-hill Assist
+   Control (DAC); TPMS; Prayer Mat*; Model Black Emblem "GLX"*. Keeps: fabric seats, MANUAL A/C, 8in screen (wired CarPlay/AA), rear drum brakes,
+   rear sensors only*, no smart entry, no EPB.
+ D7 DC-SGLX DSL 2.8 AT (most expensive) = D2 (SGLX) equipment with the diesel plus [GL]: Engine Auto Stop/Start; Drive Mode Select (Eco/Normal/Sport/MTS)
+   (MTS = Multi-Terrain Select); Down-hill Assist Control (DAC); Electric Power Assisted Steering (EPS) (ONLY grade; all others "Power steering (Hydraulic)");
+   Rear Suspension: Soft Leaf Spring (ONLY grade; CT "Leaf Spring (soft)"); Front & Rear Mud Guard; width 1885; Rear Camera (not PVM); Model Black Emblem "SGLX"*.
+ SINGLE CAB (S1-S3): GL equipment, 2 Speakers, Model Emblem "GL"* (not "Black"), no Premium Horn; diesels add mud guards + auto stop/start;
+   S3 adds Rear Differential lock + separate seats (2 passengers).
+
+ FEATURE CARDS ON THE PAGE vs WHICH DC GRADES REALLY HAVE THEM (cards carry no grade note):
+   Exterior : "Tough & Agile Design" (general) | "Headlamp - LED Daytime Running Lamp (With Secondary Illumination)" (welcome DRL: D2 D3 D6 D7) |
+              "Performance" (general) | "18” Alloy Wheel, Diamond Cut sections over Gloss Black Paint" (D2 D3 D7) | "Deck Side Step" (not itemised in specs) |
+              "LED Signature Tail Lamp" (D2 D3 D6 D7; GL = halogen)
+   Interior : "TOUGH and AGILE Design" (photo shows 12.3in screens: D2 D3 D7) | "Steering Wheel" | "Steering Wheel Controls" (all) |
+              "Electric Parking Brake (EPB) with (Auto Hold)" (D2 D3 D7) | "12.3-inch Center Display" (D2 D3 D7) | "12.3-inch Digital Meter" (D2 D3 D7) |
+              "Wireless Charger" (D2 D3 D6 D7) | "4WD System" (all) | "Air Conditioner - auto A/C with independent control for driver and front passenger"
+              (auto A/C: D2 D3 D7) | "Rear Ac Vents" (D2 D3 D7)
+   Performance: "Drive Mode Select - Three driving modes (Normal/ECO/SPORT)" (D2 D3 ECO/POWER; D6 D7 Eco/Normal/Sport/MTS; GL none) |
+              "Multi-Terrain Select - AUTO, DIRT, SAND, MUD, ROCK and DEEP SNOW" (D6 D7 only) | "Engine Line-Up" | "Differential lock" (D2 D3 D4 D6 D7)
+   Safety   : "Panoramic view monitor" (D3 only) | "Front / Rear Sensors" (front: D2 D3 D7) | "VSC Vehicle Stability Control" (all)
+   AR card titles: تصميم قوي و انسيابي / الأنوار الأمامية / الأداء / جنوط ألمنيوم مقاس 18 بوصة / عتبة جانبية للصندوق / الأنوار الخلفية LED / تصميم قوي للمقصورة /
+   عجلة القيادة / أزرار التحكم على عجلة القيادة / فرامل التوقف الكهربائية (EPB) مع خاصية (Auto Hold) / شاشة عرض وسطية بحجم 12.3 بوصة /
+   شاشة عدادات رقمية بحجم 12.3 بوصة / شاحن لاسلكي للهواتف الذكية / نظام الدفع الرباعي (4WD) / مكيف الهواء / فتحات تكييف خلفية /
+   نظام اختيار وضعية القيادة (Drive Mode Select) / نظام اختيار التضاريس المتعددة (Multi-Terrain Select) / خيارات المحركات /
+   قفل دفرنس خلفي (Differential Lock) / نظام الرؤية المحيطية (Panoramic View Monitor) / حساسات أمامية و خلفية / نظام التحكم في ثبات المركبة (VSC)
+
+==========================================================================================
+6. SAFETY SUMMARY
+==========================================================================================
+ - Airbags: every grade "Airbags: Driver - Driver Knee - Front Passenger" (AR "وسائد هوائية: للسائق - ركبة السائق - الراكب الأمامي"; CT "Driver + Knee &
+   Front Passenger"). = 3 positions. The site prints no airbag count and mentions NO side/curtain airbags.
+ - Toyota Safety Sense: NOT mentioned on any grade (no PCS, lane, adaptive cruise, BSM, RCTA). Cruise Control is conventional (D2 D3 D6 D7).
+ - All grades: ABS, EBD, VSC, immobilizer, TPWS (GL) / TPMS (D2 D3 D6 D7). HAC / TRC are not mentioned anywhere.
+ - DAC (Down-hill Assist Control): D6 D7 only. EPB + Brake Hold: D2 D3 D7. Front+rear disc brakes: D2 D3 D7 (others front disc / rear drum).
+ - Cameras: Panoramic View Monitor (4 Cameras) D3 only; Rear Camera D2 D6 D7; none on GL. Front corner sensors D2 D3 D7; rear sensors all (dealer-fitted* on GL/GLX).
+ - Dealer kit: "Safety Package (Made in China)*" (all but Premium) / "Safety Regulation Kit (Made in China)*" (Premium) - AR "حقيبة السلامة" / "حقيبة السلامة الأساسية".
+ - Do NOT claim TSS, 7 airbags, curtain airbags, hybrid or towing figures - none are on the KSA site.
+
+==========================================================================================
+7. COLOURS  [OV-EN][OV-AR] ("Explore & Customize" / "استكشف وخصص")
+==========================================================================================
+ Only ONE grade has colour data: "DC- Premium 4.0L - 4X4 AT" (selector header "Double Cap / Premium 4.0L - 4X4 AT" [sic], AR "غمارتين Premium 4.0L - 4X4 AT";
+ filter "Gas (1)" / "بنزين (1)"; default colour shown "ATTITUDE BLACK MC" / "أسود لامع"). The other 9 grades have NO colour list -> availability per grade
+ is NOT stated; confirm with ALJ. Hex = the swatch colour the website uses (screen swatch, not a paint code). Cutouts in colors/ (731x411 + mobile 329x185).
+   # | EN name (exact)           | AR name (exact) | Swatch   | Cutout file (colors/)
+   1 | Attitude Black MC         | أسود لامع       | #0A0A0A  | ksa_color_01_attitude_black_mc_0A0A0A_dcPremium40_front34_cutout_731x411.webp
+   2 | ASH                       | رمادي           | #4D4D4D  | ksa_color_02_ash_4D4D4D_dcPremium40_front34_cutout_731x411.webp
+   3 | Platinum White Pearl MC   | أبيض لؤلؤي      | #e6e8e3  | ksa_color_03_platinum_white_pearl_mc_e6e8e3_dcPremium40_front34_cutout_731x411.webp
+   4 | EMOTIONAL RED             | أحمر عاطفي      | #CF1F1F  | ksa_color_04_emotional_red_CF1F1F_dcPremium40_front34_cutout_731x411.webp
+   5 | Silver Me                 | فضي             | #BFBEC2  | ksa_color_05_silver_metallic_BFBEC2_dcPremium40_front34_cutout_731x411.webp
+   6 | SULFUR ME                 | أصفر شمسي       | #C68623  | ksa_color_06_sulfur_metallic_C68623_dcPremium40_front34_cutout_731x411.webp
+   7 | Super White Ii            | أبيض            | #F3F3F5  | ksa_color_07_super_white_ii_F3F3F5_dcPremium40_front34_cutout_731x411.webp
+ (The site renders the EN names in capitals, e.g. "ATTITUDE BLACK MC".) OBSERVED: on the cutouts the honeycomb grille panel is body-coloured
+ (red on red, yellow on Sulfur, black on black). The hero/gallery car is white (the site does not say which white; the 306x122 menu card file is named
+ "platinum-white-pearl-mica"). The home-page key visual and the Multi-Terrain photo show a grey car (closest to ASH; not named).
+
+==========================================================================================
+8. LOOK OF THE KSA CAR (what the site shows) + REJECT GUIDE
+==========================================================================================
+ Every Hilux 2027 photo on toyota.com.sa shows the NEW-GENERATION double cab in the HIGH-GRADE (Premium) trim. OBSERVED description
+ (assets: 92 official files in pro/ 64 (30 desktop + 27 mobile + 7 old-gen reject refs), gallery/ 14, colors/ 14 - see assets_manifest.txt):
+  FRONT : a thin full-width black band carrying white/silver block letters "TOYOTA", joined at each end by a slim LED headlamp (projector + L-shaped
+          LED light-guide DRL). Under it a wide honeycomb (hexagon-mesh) grille panel (body-coloured / silver). Black arrow-shaped corner garnishes at
+          the grille ends. Lower bumper: black frame with a big lower intake, centre black plate with white italic "HILUX" letters, a silver skid-plate
+          style lower garnish ("Front Bumper with Silver Accent"), small round LED fog lamps in black lower corners. No Toyota oval emblem on the grille.
+  SIDE  : black over-fender mouldings on all four arches (Premium-only per specs), black side step, black "HILUX" badge on the front fender/door,
+          gloss-black mirror caps with turn signals, 18in multi-spoke alloys painted gloss black with diamond-cut (machined) faces, 265/60R18.
+  REAR  : body-colour tailgate with large embossed "TOYOTA" letters, black tailgate handle module (camera + red LED bar = "LED Stop Lamp on Deck Door"),
+          vertical C/hook-shaped red LED tail lamps, black rear bumper with corner steps and centre black "HILUX" plate, black "PREMIUM" emblem at the
+          lower-left of the tailgate, mud flaps embossed "HILUX".
+  CABIN : LEFT-HAND DRIVE; 12.3in floating centre touch screen with a row of hard keys under it; 12.3in digital meter (km/h); squared-hub steering wheel
+          with silver spoke trim and copper accents; leather shifter boot; 2H/4H/4L switch + "MODE SELECT" knob; red/burgundy seats in all interior photos.
+ Per grade (from spec lists - NOT pictured on the site): GL = 17in STEEL wheels, halogen rear lamps, no fog lamps, plain mirrors, no silver bumper accent,
+   no over-fenders, "GL" black emblem*, side-stripe decals* (design not shown), analog meter, 8in screen. GLX DSL = 17in alloy, LED rear + fog lamps,
+   gloss-black mirrors, silver bumper accent, frame guard*, side stripes*, "GLX" emblem*, 7in MID. SGLX (2.7/DSL) = 18in alloy, LED lamps, gloss-black
+   mirrors, silver accent, frame guard*, side stripes*, "SGLX" emblem*, 12.3in screens (over-fenders not listed; SGLX DSL width 1885 = Premium width).
+   Premium = as pictured, no side stripes.
+ REJECT (do not use for this ad):
+   - Previous generation (2016-2026 KSA "Hilux Double Cab 2026"/"Hilux Single Cab 2026"): big trapezoid grille with a central Toyota oval emblem,
+     chrome bars, swept headlamps, red/grey side-stripe decals, horizontal tail lamps. The site still shows this look in: the AR page's share image,
+     the stale full-specs page, the old DC page and the "Hilux Single Cab 2026" menu items (copies in pro/old_gen_DONOTUSE/).
+   - Old GR-Sport (black mesh grille with big "TOYOTA" letters and GR badges) - not part of Hilux 2027 KSA.
+   - Any new-generation material with right-hand drive, badges other than GL / GLX / SGLX / Premium, or "HYBRID"/"48V"/"ELECTRIC"/"BEV" marks:
+     no such variants exist on the KSA site.
+   - Interior/console shots showing MTS, DAC or auto stop-start buttons when the ad talks about the Premium 4.0 (they are diesel-grade items).
+
+==========================================================================================
+9. VIDEOS / BROCHURE / OTHER LINKS
+==========================================================================================
+ - VIDEO: none. VideoLink and VideoLinkMobile are empty on EN and AR; the gallery has only images (a YouTube play-icon asset is configured but no
+   video item); headless Chromium loaded only the generic YouTube iframe API, no video ID. Footer link: https://www.youtube.com/user/ToyotaALJ (channel).
+ - BROCHURE: none. "Download Brochure" / "تحميل الكتيب" links to "/en" / "/ar"; every grade's brochure field is empty. No PDF to download.
+ - Full specs button -> /en/vehicles/hilux-2027/hilux-specs (used above). "Register Your Interest" -> /en/forms/register-your-interest.
+ - Latest Offers block: generic ("Latest Offers - Drive More. Pay Less." -> /en/offers). The site's /en/offers/hiluxdc page is an ALJ Finance offer for
+   OLD-model grades (e.g. "DC 2.7 Pick Up Petrol Manual 4x4 GL2" monthly 1,921) - not Hilux 2027 grades.
+
+==========================================================================================
+10. QUICK FACTS FOR AD COPY (safe, verified)
+==========================================================================================
+ EN: "Hilux 2027" / "The All-New 2027" / "LEGEND HILUX" ; AR: "هايلكس 2027" / "2027 الجديدة كلياً" / "الأسطورة".
+ Hero grade DC-Premium 4.0L: 4.0L 6-cylinder petrol, 235 HP @ 5200 rpm, 376 Nm @ 3800 rpm, 6-speed automatic, 4x4 (part-time with High/Low),
+ rear diff lock, 18in alloys, 12.3in touch screen + 12.3in digital meter, wireless Apple CarPlay & Android Auto, 8 speakers, ventilated front seats,
+ auto A/C, Panoramic View Monitor (4 cameras), smart entry + push start, EPB with Brake Hold, LED lamps, 5 seats, payload 870 kg, SAR 179,515.
+ Range: from SAR 125,867.50 (DC-GL 2.7 MT) to SAR 179,687.50 (DC-SGLX DSL); Single Cab from SAR 113,505. Warranty 3 years / 100,000 km.
+
+==========================================================================================
+11. CONTRADICTIONS / INCONSISTENCIES ON THE SITE
+==========================================================================================
+ C#1  URL: the lineup slug /en/vehicles/commercial/hiluxdc-2027 redirects (301) to /en/vehicles/hiluxdc-2027 = 404. The live page is
+      /en/vehicles/hilux-2027 (media folder still "hiluxdc-2027"); the page mixes DC and SC grades and its default grade is a Single Cab.
+ C#2  Stale/old content under the 2027 name: the sitemap page /en/vehicles/hilux-2027/full-specs (and /ar/) is titled "Hilux DC - Full Specs",
+      browser title "Toyota Hilux 2025" / "هايلكس 2025", parent "Hilux Double Cab 2026", and lists 11 OLD grades with old prices (GLX1 2.7L 4X2 AT 120865,
+      GLX2 2.7L 4X2 MT 123280, SGLX 2.7L 4X4 MT 142772.5, SGLX 2.7L 4X4 AT 148177.5, Adventure 4.0L 174,455, GR-S 4.0L 189865, GR-S Rally Edition 186300,
+      GL 2.4L DSL 4X2 MT 113850, GL2 2.4L DSL 4X4 MT 132192.5, SGLX 2.4L DSL 165312.5, SGLX 2.8L DSL 175087.5) + a "Hybrid Care" promo. IGNORE IT.
+      The previous-generation page "Hilux Double Cab 2026" is still live at /en/vehicles/commercial/1419/hiluxdc (same tagline "Built to Conquer"),
+      and the menu still lists "Hilux Single Cab 2026" (old generation) while the 2027 page also sells 3 Single Cab grades.
+ C#3  Share image: the AR Hilux 2027 page's OpenGraph image is an OLD-generation Hilux DC with stripes (hiluxdc/dc-vehicle-thumbnail-520x220.png);
+      the EN page uses the new 2027 thumbnail. The "Hilux Single Cab 2026" menu entry uses an old Hilux DC GR thumbnail.
+ C#4  Drive modes: card "Three driving modes (Normal/ECO/SPORT)" (AR "العادي / الاقتصادي / الرياضي") vs specs "Drive Mode Select (ECO / POWER)" for
+      SGLX 2.7 + Premium, CT "(Eco / PWR)" / AR "(إقتصادي / PWR)", and "(Eco/Normal/Sport/MTS)" for GLX DSL + SGLX DSL; GL grades have none.
+ C#5  Mixed-grade interior photos: the 4WD / Drive Mode / Diff-lock cards show a console with MTS, auto stop-start "A OFF" and a DAC button - per specs
+      these exist only on diesel GLX/SGLX (MTS, DAC) and diesels (stop/start), not on the Premium 4.0 shown outside; the A/C card shows front-seat
+      ventilation buttons (Premium only). The engine photo shows a 4-cylinder turbo engine (diesel type), no picture of the 4.0 6-cylinder.
+ C#6  "Panoramic view monitor" card (AR "نظام الرؤية المحيطية") shows a plain rear-camera view with guide lines, not a bird's-eye view; PVM is Premium-only.
+ C#7  Feature cards present grade-limited items without any grade note (18in wheels, 12.3in screens, EPB, auto A/C, rear vents, wireless charger,
+      LED tail lamps, front sensors, MTS, PVM, diff lock) - see the mapping in sec. 5. The AR 18in-wheel card does say "للفئات العليا" (top grades).
+ C#8  EN vs AR text differences: Headlamp card EN "LED Daytime Running Lamp (With Secondary Illumination)" vs AR "أنوار أمامية بإضاءة LED و أنوار
+      ترحيبية (مع أنوار نهارية LED)"; 18in wheel EN "Diamond Cut sections over Gloss Black Paint" vs AR "بتصميم مميز للفئات العليا"; page description
+      EN "Double the fun. Dramatically expand your limits for sport, work and pleasure." vs AR (a sentence about the sharp headlamps); tagline EN
+      "Built to Conquer" vs AR "ما يوقف في طريقه شي" (both not rendered). Specs footnote: AR adds "وهي تعد من المواصفات الأساسية" (EN lacks it).
+      All NUMBERS are identical EN vs AR (checked per grade).
+ C#9  Colour names EN vs AR: "Attitude Black MC" vs "أسود لامع" (glossy black); "ASH" vs "رمادي" (grey); "Platinum White Pearl MC" vs "أبيض لؤلؤي";
+      "Silver Me" (truncated) vs "فضي"; "SULFUR ME" (truncated) vs "أصفر شمسي" (sun yellow); "Super White Ii" vs "أبيض". Selector header typo
+      "Double Cap" (AR "غمارتين" = double cab). Cutout files are named "-732x411" but are 731x411.
+ C#10 Colours only exist for DC-Premium 4.0L; the other 9 grades have no colour list at all.
+ C#11 Width: SGLX DSL is 1885 mm like the Premium (others 1855) but "Over Fender Moulding" is listed only for the Premium - not stated whether SGLX DSL
+      has over-fenders. Heights: petrol DC 1865 vs diesel DC 1815 (as printed).
+ C#12 Price logic: DC-SGLX DSL (179,687.50) costs more than DC-Premium 4.0 (179,515). Shipping fee varies: 6,267.50 (most DC), 6,095 (Premium and
+      DC-GL DSL MT), SC 6,210 / 5,980 / 5,807.50.
+ C#13 Rear diff lock: DC-GL DSL MT has it but DC-GL DSL AT does not; SC-GL DSL AT has it but the SC MT grades do not (specs and CT agree - confirm with ALJ).
+ C#14 GL headlamp wording: specs "LED Projector Headlamp" vs CT "LED Projector with DRL". Tyre-pressure naming: GL "Tire Pressure Warning System (TPWS)",
+      higher grades "Tire Pressure Monitoring System (TPMS)". A/C card says "independent control for driver and front passenger"; specs only say
+      "Automatic Climate Control".
+ C#15 Interior photos show red/burgundy upholstery; KSA specs only say "Fabric" / "Fabric (High)" - seat colour is not stated.
+ C#16 Compare table has several rows WITHOUT a label (meter type, power steering, drive mode, front suspension, one "Available" row). Spelling on site:
+      "Anti-Lock Break System", "Aloy Wheel", "Windsheild", "HiluX 2027".
+ C#17 VSC card picture is a diagram taken from the OLD "hiluxdc" media folder (diagram only, no car look).
+ C#18 "Download Brochure" exists but links to the home page; no brochure PDF.
