@@ -1,0 +1,1264 @@
+VERBATIM SITE TEXT - Toyota Corolla Cross (KSA) - toyota.com.sa (Abdul Latif Jameel)
+==============================================================================
+Captured: 2026-10-19  |  Text copied from the pages' embedded data; only HTML tags removed and
+whitespace collapsed. Spelling/typos kept as on the site (e.g. 'Anti-Lock Break System', 'Number of Passenegrs').
+Pages:
+  EN overview : https://www.toyota.com.sa/en/vehicles/corollacross
+  AR overview : https://www.toyota.com.sa/ar/vehicles/corollacross
+  EN specs    : https://www.toyota.com.sa/en/vehicles/corollacross/corolla-cross-specs
+  AR specs    : https://www.toyota.com.sa/ar/vehicles/corollacross/corolla-cross-specs
+  EN/AR compare table also at /{en,ar}/vehicles/corollacross/full-specs (identical data to the overview 'Compare Grades').
+(c) Abdul Latif Jameel Motors / Toyota - all rights reserved.
+
+##############################################################################
+# [EN] PART 1 - OVERVIEW PAGE HEADER TEXT
+##############################################################################
+Title: Corolla CROSS 2025
+MobileTitle: Corolla CROSS 2026
+TagLine: Live Elevated
+Description: Introducing the Toyota Cross: designed for those who aspire to elevate their lifestyle. The new Cross SUV from Toyota complements your way of living with its advanced hybrid technology, delivering powerful performance and a quiet engine. Experience dynamic agility with every turn. Embrace freedom with its bold design, cutting-edge features, and spacious interiors. Redefine your ride with the new Toyota Cross.
+Disclaimer: *The mentioned price is inclusive of 15% VAT, but does not include the registration fees and car insurance premium.
+BrowserTitle: Corolla Cross 2025 | Toyota Saudi Arabia - ALJ
+MetaDescription: The new Cross SUV from Toyota keeps up with the way you live. Thanks to its Hybrid technology that gives you all the power with a quiet engine, you’ll experience its dynamic agility with every turn.
+
+##############################################################################
+# [EN] PART 2 - GRADE CARDS ('Grades')
+##############################################################################
+--- LE HEV
+  nowPrice: 103845   previousPrice: (empty)   freightCharges: (empty)   [currency: SAR symbol icon]
+  price tooltip: All prices include 15% VAT, excluding registration fees and car insurance.
+  main spec: Engine: 1.8L HEV, 4-Cylinders
+  fuel type: Hybrid
+  Max Output (hp): 121
+  Transmission: CVT
+  Power Train: Front Wheel Drive (FWD)
+  Fuel Tank Capacity (Liter): 36
+  Fuel Economy Km/L: 25.8
+  Number of Passenegrs: 5 Passengers
+--- XLE HEV
+  nowPrice: 113505   previousPrice: (empty)   freightCharges: (empty)   [currency: SAR symbol icon]
+  price tooltip: All prices include 15% VAT, excluding registration fees and car insurance.
+  main spec: Engine: 1.8L HEV, 4-Cylinders
+  fuel type: Hybrid
+  Max Output (hp): 121
+  Transmission: CVT
+  Power Train: Front Wheel Drive (FWD)
+  Fuel Tank Capacity (Liter): 36
+  Fuel Economy Km/L: 25.8
+  Number of Passenegrs: 5 Passengers
+--- Limited HEV
+  nowPrice: 129260   previousPrice: (empty)   freightCharges: (empty)   [currency: SAR symbol icon]
+  price tooltip: All prices include 15% VAT, excluding registration fees and car insurance.
+  main spec: Engine: 1.8L HEV, 4-Cylinders
+  fuel type: Hybrid
+  Max Output (hp): 121
+  Transmission: CVT
+  Power Train: Front Wheel Drive (FWD)
+  Fuel Tank Capacity (Liter): 36
+  Fuel Economy Km/L: 25.8
+  Number of Passenegrs: 5 Passengers
+--- Limited Plus HEV
+  nowPrice: 130410   previousPrice: (empty)   freightCharges: (empty)   [currency: SAR symbol icon]
+  price tooltip: All prices include 15% VAT, excluding registration fees and car insurance.
+  main spec: Engine: 1.8L HEV, 4-Cylinders
+  fuel type: Hybrid
+  Max Output (hp): 121
+  Transmission: CVT
+  Power Train: Front Wheel Drive (FWD)
+  Fuel Tank Capacity (Liter): 36
+  Fuel Economy Km/L: 25.8
+  Number of Passenegrs: 5 Passengers
+
+##############################################################################
+# [EN] PART 3 - FULL SPECS PAGE (corolla-cross-specs): 'View Corolla Cross Full specs'
+##############################################################################
+[section: FULL SPECS]
+
+============================================================
+GRADE: LE HEV
+============================================================
+Technical Features
+- Engine: 1.8L HEV, 4-Cylinders
+- Max Output: 121 HP (combined)
+- Max Torque (Engine): 142 N.m / 3600 RPM
+- Max Torque (Electric Motor): 163 N.m
+- Continuous Variable Transmission (CVT)
+- Front Wheel Drive
+- Fuel Tank Capacity: 36L
+- Fuel Consumption: 25.8 Km/L
+- Dimensions L - W - H (mm): 4460 - 1825 - 1620
+- 5 Passengers (including Driver)
+Exterior Features
+- 17" Alloy Wheel
+- Tires Size: 215/60R17
+- Halogen Head Lights
+- Daytime Running Light (DRL)
+- Smart Entry System for Driver and Front Passenger
+- Colored and Powered Outside Rear View Mirrors With TSL
+- Auto Retractable Power Side Mirrors
+- Colored Outside Door Handles
+- Rear Spoiler
+Interior Features
+- Engine Push Start Button
+- Fabric Seat
+- Driver Seat Vertical Adjuster
+- Telescopic steering wheel
+- Steering Wheel Controls
+- 4.2 Inch Multi Information Display
+- Automatic Power window all doors
+- Front Automatic Climate Control
+- Front Passenger Door Lock (Made in Malaysia)*
+- Rear A/C Duct
+- Sun Visors with Vanity Mirrors
+Audio & Entertainment System
+- Display Audio Multimedia Touch Screen 8 inch
+- Apple CarPlay System
+- USB-C Port
+- 6 Speakers
+Convenience & Safety Features
+- Cruise Control
+- Drive Mode Select (Eco / Normal / Power)
+- Rear Parking Sensors (Made in Malaysia)*
+- Rear Camera (Made in Malaysia)*
+- Electronic Parking Brake (EPB)
+- Airbags (Driver & Front Passenger)
+- Anti-Lock Break System (ABS)
+- Vehicle Stability Control (VSC)
+- Tire Pressure Warning System (TPWS)
+- Anti-Theft System (Engine Immobilizer)
+- Hill-Start Assist Control (HAC)
+- Floor Mat (Made in Thailand)*
+- Fuel Sticker 91 (Made in South Africa)*
+- Safety Regulation Kit (Made in China)*
+- Tire Inflator (Made in China)*
+- * The mentioned equipment are installed in the Kingdom of Saudi Arabia, by one of the Abdul Latif Jameel specialized companies.
+- The specifications set out above maybe subject to change without prior notice. Please contact our sales associates for latest updates and more professional advice on a specific Car and Details
+- According to the warranty’s terms, TOYOTA warrants repairing the manufacturing defects of your vehicle for 3 Gregorian Years starting from the purchase date or reaches 100,000 KM of use (whichever comes First)
+- This vehicle also comes with a complimentary “Toyota Hybrid Extra Care Program” Offer
+
+============================================================
+GRADE: XLE HEV
+============================================================
+Technical Features
+- Engine: 1.8L HEV, 4-Cylinders
+- Max Output: 121 HP (combined)
+- Max Torque (Engine): 142 N.m / 3600 RPM
+- Max Torque (Electric Motor): 163 N.m
+- Continuous Variable Transmission (CVT)
+- Front Wheel Drive
+- Fuel Tank Capacity: 36L
+- Fuel Consumption: 25.8 Km/L
+- Dimensions L - W - H (mm): 4460 - 1825 - 1620
+- 5 Passengers (including Driver)
+Exterior Features
+- 17" Alloy Wheel
+- Tires Size: 215/60R17
+- Halogen Head Lights
+- Daytime Running Light (DRL)
+- LED Front Fog Lamps
+- Smart Entry System for Driver and Front Passenger
+- Colored and Powered Outside Rear View Mirrors With TSL
+- Auto Retractable Power Side Mirrors
+- Colored Outside Door Handles
+- Roof Rails
+- Rear Spoiler
+- Moon Roof
+Interior Features
+- Engine Push Start Button
+- Fabric Seat
+- Driver Seat Vertical Adjuster
+- Telescopic steering wheel
+- Steering Wheel Controls
+- 4.2 Inch Multi Information Display
+- Automatic Power window all doors
+- Front Automatic Climate Control
+- Front Passenger Door Lock (Made in Malaysia)*
+- Rear A/C Duct
+- Sun Visors with Illuminated Vanity Mirrors
+Audio & Entertainment System
+- Display Audio Multimedia Touch Screen 8 inch
+- Apple CarPlay System
+- USB-C Port
+- 6 Speakers
+Convenience & Safety Features
+- Cruise Control
+- Drive Mode Select (Eco / Normal / Power)
+- Front Parking Sensors (Made in Malaysia)*
+- Rear Parking Sensors
+- Rear Camera (Made in Malaysia)*
+- Electronic Parking Brake (EPB)
+- Airbags (Driver & Front Passenger)
+- Anti-Lock Break System (ABS)
+- Vehicle Stability Control (VSC)
+- Tire Pressure Warning System (TPWS)
+- Anti-Theft System (Engine Immobilizer)
+- Hill-Start Assist Control (HAC)
+- Tonneau Cover
+- Floor Mat (Made in Thailand)*
+- Fuel Sticker 91 (Made in South Africa)*
+- Safety Regulation Kit (Made in China)*
+- Tire Inflator (Made in China)*
+- * The mentioned equipment are installed in the Kingdom of Saudi Arabia, by one of the Abdul Latif Jameel specialized companies.
+- The specifications set out above maybe subject to change without prior notice. Please contact our sales associates for latest updates and more professional advice on a specific Car and Details
+- According to the warranty’s terms, TOYOTA warrants repairing the manufacturing defects of your vehicle for 3 Gregorian Years starting from the purchase date or reaches 100,000 KM of use (whichever comes First)
+- This vehicle also comes with a complimentary “Toyota Hybrid Extra Care Program” Offer
+
+============================================================
+GRADE: LIMITED HEV
+============================================================
+Technical Features
+- Engine: 1.8L HEV, 4-Cylinders
+- Max Output: 121 HP (combined)
+- Max Torque (Engine): 142 N.m / 3600 RPM
+- Max Torque (Electric Motor): 163 N.m
+- Continuous Variable Transmission (CVT)
+- Front Wheel Drive
+- Fuel Tank Capacity: 36L
+- Fuel Consumption: 25.8 Km/L
+- Dimensions L - W - H (mm): 4460 - 1825 - 1620
+- 5 Passengers (including Driver)
+Exterior Features
+- 17" Alloy Wheel
+- Tires Size: 215/60R17
+- LED Headlamps
+- LED Daytime Running Light (DRL)
+- LED Rear Lamps
+- LED Front Fog Lamps
+- Smart Entry System for Driver and Front Passenger
+- Colored and Powered Outside Rear View Mirrors With TSL
+- Auto Retractable Power Side Mirrors
+- Colored Outside Door Handles
+- Roof Rails
+- Rear Spoiler
+- Moon Roof
+Interior Features
+- Engine Push Start Button
+- Leather Seats
+- Driver Seat Vertical Adjuster
+- Telescopic steering wheel
+- Leather Steering Wheel
+- Steering Wheel Controls
+- 12.3 Inch Multi Information Display
+- Automatic Power window all doors
+- Front Automatic Climate Control
+- Front Passenger Door Lock (Made in Malaysia)*
+- Rear A/C Duct
+- Sun Visors with Illuminated Vanity Mirrors
+- Interior blue ambient lighting
+Audio & Entertainment System
+- Display Audio Multimedia Touch Screen 10 inch
+- Apple CarPlay System
+- USB-C Port
+- 6 Speakers
+Convenience & Safety Features
+- Cruise Control
+- Drive Mode Select (Eco / Normal / Power)
+- Front Parking Sensors (Made in Malaysia)*
+- Rear Parking Sensors
+- Power Back Door
+- Rear Camera
+- Wireless Charger
+- Electronic Parking Brake (EPB)
+- Blind Spot Monitor (BSM)
+- Rear Cross Traffic Alert (RCTA)
+- Airbags (Driver & Front Passenger + Knee + Side + Curtain)
+- Anti-Lock Break System (ABS)
+- Vehicle Stability Control (VSC)
+- Tire Pressure Warning System (TPWS)
+- Anti-Theft System (Engine Immobilizer)
+- Hill-Start Assist Control (HAC)
+- Tonneau Cover
+- Floor Mat (Made in Thailand)*
+- Fuel Sticker 91 (Made in South Africa)*
+- Safety Regulation Kit (Made in China)*
+- Tire Inflator (Made in China)*
+- * The mentioned equipment are installed in the Kingdom of Saudi Arabia, by one of the Abdul Latif Jameel specialized companies.
+- The specifications set out above maybe subject to change without prior notice. Please contact our sales associates for latest updates and more professional advice on a specific Car and Details
+- According to the warranty’s terms, TOYOTA warrants repairing the manufacturing defects of your vehicle for 3 Gregorian Years starting from the purchase date or reaches 100,000 KM of use (whichever comes First)
+- This vehicle also comes with a complimentary “Toyota Hybrid Extra Care Program” Offer
+
+============================================================
+GRADE: LIMITED PLUS HEV
+============================================================
+Technical Features
+- Engine: 1.8L HEV, 4-Cylinders
+- Max Output: 121 HP (combined)
+- Max Torque (Engine): 142 N.m / 3600 RPM
+- Max Torque (Electric Motor): 163 N.m
+- Continuous Variable Transmission (CVT)
+- Front Wheel Drive
+- Fuel Tank Capacity: 36L
+- Fuel Consumption: 25.8 Km/L
+- Dimensions L - W - H (mm): 4460 - 1825 - 1620
+- 5 Passengers (including Driver)
+Exterior Features
+- 17" Alloy Wheel
+- Tires Size: 215/60R17
+- LED Headlamps
+- LED Daytime Running Light (DRL)
+- LED Rear Lamps
+- LED Front Fog Lamps
+- Smart Entry System for Driver and Front Passenger
+- Colored and Powered Outside Rear View Mirrors With TSL
+- Auto Retractable Power Side Mirrors
+- Colored Outside Door Handles
+- Roof Rails
+- Rear Spoiler
+- Moon Roof
+Interior Features
+- Engine Push Start Button
+- Leather Seats
+- Driver Seat Vertical Adjuster
+- Telescopic steering wheel
+- Leather Steering Wheel
+- Steering Wheel Controls
+- 12.3 Inch Multi Information Display
+- Automatic Power window all doors
+- Front Automatic Climate Control
+- Front Passenger Door Lock (Made in Malaysia)*
+- Rear A/C Duct
+- Sun Visors with Illuminated Vanity Mirrors
+- Interior blue ambient lighting
+Audio & Entertainment System
+- Display Audio Multimedia Touch Screen 10 inch
+- Apple CarPlay System
+- USB-C Port
+- 6 Speakers
+Convenience & Safety Features
+- Cruise Control
+- Drive Mode Select (Eco / Normal / Power)
+- Front Parking Sensors (Made in Malaysia)*
+- Rear Parking Sensors
+- Power Back Door
+- Rear Camera
+- Electronic Parking Brake (EPB)
+- Blind Spot Monitor (BSM)
+- Rear Cross Traffic Alert (RCTA)
+- Airbags (Driver & Front Passenger + Knee + Side + Curtain)
+- Anti-Lock Break System (ABS)
+- Vehicle Stability Control (VSC)
+- Tire Pressure Warning System (TPWS)
+- Anti-Theft System (Engine Immobilizer)
+- Hill-Start Assist Control (HAC)
+- Tonneau Cover
+- Floor Mat (Made in Thailand)*
+- Fuel Sticker 91 (Made in South Africa)*
+- Safety Regulation Kit (Made in China)*
+- Tire Inflator (Made in China)*
+- * The mentioned equipment are installed in the Kingdom of Saudi Arabia, by one of the Abdul Latif Jameel specialized companies.
+- The specifications set out above maybe subject to change without prior notice. Please contact our sales associates for latest updates and more professional advice on a specific Car and Details
+- According to the warranty’s terms, TOYOTA warrants repairing the manufacturing defects of your vehicle for 3 Gregorian Years starting from the purchase date or reaches 100,000 KM of use (whichever comes First)
+- This vehicle also comes with a complimentary “Toyota Hybrid Extra Care Program” Offer
+
+##############################################################################
+# [EN] PART 4 - COMPARE GRADES TABLE ('Compare Grades', also on /full-specs)
+##############################################################################
+
+=== LE HEV  | nowPrice: 103845
+[Technical Features]
+  Engine: 1.8L HEV, 4-Cylinders
+  Max Output (hp): 121
+  Transmission: CVT
+  Power Train: Front Wheel Drive (FWD)
+  Fuel Tank Capacity (Liter): 36
+  Fuel Economy Km/L: 25.8
+  Number of Passenegrs: 5 Passengers
+[Exterior Features]
+  Wheel Type/Size: 17 inch Alloy Wheels
+  Tire Size: 215/60R17
+  Daytime Running Light (DRL): available
+  Smart Entry System: available
+  Colored and Powered Outside Rear View Mirrors With TSL: available
+  Auto Retractable Power Side Mirrors: available
+  Rear Spoiler: available
+[Interior Features]
+  Engine Push Start Button: available
+  Seat Material: Fabric
+  Driver Seat Vertical Adjuster: available
+  Front Automatic Climate Control: available
+  Rear A/C Duct: available
+  Steering Wheel Controls: available
+  Telescopic Steering Wheel: available
+  Multi Information Display: 4.2 Inch
+  Automatic Power window all doors: available
+  USB-C Port: available
+  Front Passenger Door Lock: available
+[Audio & Entertainment System]
+  Display Audio Touch Screen: 8 Inch
+  Apple CarPlay: available
+  Number Of Speakers: 6 speakers
+[Safety & Convenience Features]
+  Cruise Control: available
+  Drive Mode Select (Eco / Normal / Power): available
+  Rear Parking Sensors: available
+  Rear Camera: available
+  Electronic Parking Brake (EPB): available
+  Airbags: Driver & Front Passenger
+  Anti-Lock Break System (ABS): available
+  Vehicle Stability Control (VSC): available
+  Tire Pressure Warning System (TPWS): available
+  Anti-Theft System (Engine Immobilizer): available
+  Hill-Start Assist Control (HAC): available
+  Floor Mat: available
+  Fuel Sticker 91: available
+  Safety Regulation Kit: available
+  Tire Inflator: available
+
+=== XLE HEV  | nowPrice: 113505
+[Technical Features]
+  Engine: 1.8L HEV, 4-Cylinders
+  Max Output (hp): 121
+  Transmission: CVT
+  Power Train: Front Wheel Drive (FWD)
+  Fuel Tank Capacity (Liter): 36
+  Fuel Economy Km/L: 25.8
+  Number of Passenegrs: 5 Passengers
+[Exterior Features]
+  Wheel Type/Size: 17 inch Alloy Wheels
+  Tire Size: 215/60R17
+  Daytime Running Light (DRL): available
+  LED Front Fog Lamps: available
+  Smart Entry System: available
+  Colored and Powered Outside Rear View Mirrors With TSL: available
+  Auto Retractable Power Side Mirrors: available
+  Roof Rails: available
+  Rear Spoiler: available
+  Moon Roof: available
+[Interior Features]
+  Engine Push Start Button: available
+  Seat Material: Fabric
+  Driver Seat Vertical Adjuster: available
+  Front Automatic Climate Control: available
+  Rear A/C Duct: available
+  Steering Wheel Controls: available
+  Telescopic Steering Wheel: available
+  Multi Information Display: 4.2 Inch
+  Automatic Power window all doors: available
+  USB-C Port: available
+  Front Passenger Door Lock: available
+[Audio & Entertainment System]
+  Display Audio Touch Screen: 8 Inch
+  Apple CarPlay: available
+  Number Of Speakers: 6 speakers
+[Safety & Convenience Features]
+  Cruise Control: available
+  Drive Mode Select (Eco / Normal / Power): available
+  Rear Parking Sensors: available
+  Front Parking Sensors: available
+  Rear Camera: available
+  Electronic Parking Brake (EPB): available
+  Airbags: Driver & Front Passenger
+  Anti-Lock Break System (ABS): available
+  Vehicle Stability Control (VSC): available
+  Tire Pressure Warning System (TPWS): available
+  Anti-Theft System (Engine Immobilizer): available
+  Hill-Start Assist Control (HAC): available
+  Tonneau Cover: available
+  Floor Mat: available
+  Fuel Sticker 91: available
+  Safety Regulation Kit: available
+  Tire Inflator: available
+
+=== Limited HEV  | nowPrice: 129260
+[Technical Features]
+  Engine: 1.8L HEV, 4-Cylinders
+  Max Output (hp): 121
+  Transmission: CVT
+  Power Train: Front Wheel Drive (FWD)
+  Fuel Tank Capacity (Liter): 36
+  Fuel Economy Km/L: 25.8
+  Number of Passenegrs: 5 Passengers
+[Exterior Features]
+  Wheel Type/Size: 17 inch Alloy Wheels
+  Tire Size: 215/60R17
+  LED Head Lights: available
+  LED Rear Lamps: available
+  Daytime Running Light (DRL): available
+  LED Front Fog Lamps: available
+  Smart Entry System: available
+  Colored and Powered Outside Rear View Mirrors With TSL: available
+  Auto Retractable Power Side Mirrors: available
+  Roof Rails: available
+  Rear Spoiler: available
+  Moon Roof: available
+[Interior Features]
+  Engine Push Start Button: available
+  Seat Material: Leather
+  Driver Seat Vertical Adjuster: available
+  Front Automatic Climate Control: available
+  Rear A/C Duct: available
+  Leather Steering Wheel: available
+  Steering Wheel Controls: available
+  Telescopic Steering Wheel: available
+  Multi Information Display: 12.3 Inch
+  Automatic Power window all doors: available
+  USB-C Port: available
+  Wireless Charger: available
+  Front Passenger Door Lock: available
+  Interior blue ambient lighting: available
+[Audio & Entertainment System]
+  Display Audio Touch Screen: 10 Inch
+  Apple CarPlay: available
+  Number Of Speakers: 6 speakers
+[Safety & Convenience Features]
+  Cruise Control: available
+  Drive Mode Select (Eco / Normal / Power): available
+  Rear Parking Sensors: available
+  Front Parking Sensors: available
+  Rear Camera: available
+  Blind Spot Monitor (BSM): available
+  Electronic Parking Brake (EPB): available
+  Power Back Door: available
+  Rear Cross Traffic Alert (RCTA): available
+  Airbags: Driver & Front Passenger + Knee + Side + Curtain
+  Anti-Lock Break System (ABS): available
+  Vehicle Stability Control (VSC): available
+  Tire Pressure Warning System (TPWS): available
+  Anti-Theft System (Engine Immobilizer): available
+  Hill-Start Assist Control (HAC): available
+  Tonneau Cover: available
+  Floor Mat: available
+  Fuel Sticker 91: available
+  Safety Regulation Kit: available
+  Tire Inflator: available
+
+=== Limited Plus HEV  | nowPrice: 130410
+[Technical Features]
+  Engine: 1.8L HEV, 4-Cylinders
+  Max Output (hp): 121
+  Transmission: CVT
+  Power Train: Front Wheel Drive (FWD)
+  Fuel Tank Capacity (Liter): 36
+  Fuel Economy Km/L: 25.8
+  Number of Passenegrs: 5 Passengers
+[Exterior Features]
+  Wheel Type/Size: 17 inch Alloy Wheels
+  Tire Size: 215/60R17
+  LED Head Lights: available
+  LED Rear Lamps: available
+  Daytime Running Light (DRL): available
+  LED Front Fog Lamps: available
+  Smart Entry System: available
+  Colored and Powered Outside Rear View Mirrors With TSL: available
+  Auto Retractable Power Side Mirrors: available
+  Roof Rails: available
+  Rear Spoiler: available
+  Moon Roof: available
+[Interior Features]
+  Engine Push Start Button: available
+  Seat Material: Leather
+  Driver Seat Vertical Adjuster: available
+  Front Automatic Climate Control: available
+  Rear A/C Duct: available
+  Leather Steering Wheel: available
+  Steering Wheel Controls: available
+  Telescopic Steering Wheel: available
+  Multi Information Display: 12.3 Inch
+  Automatic Power window all doors: available
+  USB-C Port: available
+  Front Passenger Door Lock: available
+  Interior blue ambient lighting: available
+[Audio & Entertainment System]
+  Display Audio Touch Screen: 10 Inch
+  Apple CarPlay: available
+  Number Of Speakers: 6 speakers
+[Safety & Convenience Features]
+  Cruise Control: available
+  Drive Mode Select (Eco / Normal / Power): available
+  Rear Parking Sensors: available
+  Front Parking Sensors: available
+  Rear Camera: available
+  Blind Spot Monitor (BSM): available
+  Electronic Parking Brake (EPB): available
+  Power Back Door: available
+  Rear Cross Traffic Alert (RCTA): available
+  Airbags: Driver & Front Passenger + Knee + Side + Curtain
+  Anti-Lock Break System (ABS): available
+  Vehicle Stability Control (VSC): available
+  Tire Pressure Warning System (TPWS): available
+  Anti-Theft System (Engine Immobilizer): available
+  Hill-Start Assist Control (HAC): available
+  Tonneau Cover: available
+  Floor Mat: available
+  Fuel Sticker 91: available
+  Safety Regulation Kit: available
+  Tire Inflator: available
+(Download brochure link text: 'Download Brochure' -> href '/en' i.e. no brochure file)
+
+##############################################################################
+# [EN] PART 5 - FEATURE TABS ('Features') - heading | description | image file
+##############################################################################
+== Exterior
+  * Modern front design with LED Front Fog Lamp, LED Head Lamps & LED Daytime Running Light | - | corolla-c-2025_exterior-01_desktop-view_856x481.webp
+  * LED Rear Lamps | - | corolla-c-2025_exterior-05_desktop-view_856x481.webp
+  * 17inch Alloy Wheel | - | corolla-c-2025_exterior-02_desktop-view_856x481.webp
+  * Moon Roof | - | corolla-c-2025_exterior-03_desktop-view_856x481.webp
+  * Side View Mirrors | Powered and Auto Retractable with TSL | corolla-c-2025_exterior-04_desktop-view_856x481.webp
+  * Power back door | - | corolla-c-2025_exterior-06_desktop-view_856x481.webp
+== Interior
+  * HIGH SENSORY QUALITY | A slim instrument panel wrapped in soft leather, paired with steering wheel controls featuring cruise control and blue ambient lighting. | corolla-c-2025_exterior-01_desktop-view_856x481.webp
+  * 10-inch Display Audio Multimedia Touchscreen with Apple CarPlay. | - | corolla-c-2025_exterior-02_desktop-view_856x481.webp
+  * 12.3-inch Full Graphic Display Meter | - | corolla-c-2025_exterior-03_desktop-view_856x481.webp
+  * interior | The 2025 Toyota Corolla Cross offers a refined and welcoming interior designed for both comfort and versatility. With its modern aesthetic and attention to detail, the cabin creates a relaxing environment for every drive. Spacious and thoughtfully crafted, it’s the perfect blend of style and practicality. | corolla-c-2025_exterior-04_desktop-view_856x481.webp
+  * SPACIOUS SPACE INTERIOR WITH MODREN COLOR - TERRA ROSSA | gorgeous and powerful space that shows off the urban SUV image. Color available with Fabric on both LE & XLE grade And with Leather on LTD grade | corolla-c-2025_exterior-06_desktop-view_856x481.webp
+  * TOP-CLASS LUGGAGE CAPACITY. | Split rear seats that fold flat to maximize luggage space | corolla-c-2025_exterior-05_desktop-view_856x481.webp
+  * Push Start button | - | corolla-c-2025_exterior-07_desktop-view_856x481.webp
+  * Rear Cooling Vent | - | corolla-c-2025_exterior-08_desktop-view_856x481.webp
+== Performance
+  * 2ZR-FXE Engine | 1.8L Hybrid 4-Cylinder Inline Engine with an impressive fuel economy of 25.8 KM/L. | corolla-c-2025_performance-02_desktop-view_856x481.webp
+  * Hybrid system | The electric motor delivers seamless acceleration and quick responsiveness at startup, a unique feature of hybrid technology. It combines excellent fuel economy with a smooth, responsive driving experience that instantly reacts to the driver’s input. | corolla-c-2025_performance-03_desktop-view_856x481.webp
+  * Drive Mode Select | 1- ECO Mode: Optimized for maximum fuel efficiency. 2- NORMAL Mode: Perfect for everyday driving. 3- POWER Mode: Provides enhanced acceleration response for a more dynamic driving experience. 4- EV Mode (separately switchable): Enables electric-only, silent, and emission-free driving at low speeds for short distances. | corolla-c-2025_performance-06_desktop-view_856x481.webp
+  * Suspension | Front Suspension: MacPherson Strut, specifically optimized for SUV performance and handling. Rear Suspension: New Torsion Beam, delivering an exceptional balance of comfort and stability. | corolla-c-2025_performance-04_desktop-view_856x481.webp
+  * Electric Parking Brake (EPB) + Brake Hold Function | - | corolla-c-2025_performance-05_desktop-view_856x481.webp
+  * ACCELERATION | Continuously Variable Transmission (CVT) | corolla-c-2025_performance-01_desktop-view_856x481.webp
+== Safety
+  * 7 SRS Airbags including Driver’s knee airbag | - | corolla-c-2025_safety-01_desktop-view_856x481.webp
+  * Blind Spot Monitor (BSM) | - | corolla-c-2025_safety-02_desktop-view_856x481.webp
+  * Rear Cross Traffic Alert (RCTA) | - | corolla-c-2025_safety-03_desktop-view_856x481.webp
+  * Anti-Lock Break System (ABS) | - | corolla-c-2025_safety-04_desktop-view_856x481.webp
+
+##############################################################################
+# [EN] PART 6 - COLOUR SELECTOR ('Explore & Customize')
+##############################################################################
+  grade 'LE HEV': no colour data on site
+  grade 'XLE HEV': no colour data on site
+  grade 'Limited HEV': no colour data on site
+  grade 'Limited Plus HEV' - tab 'Exterior':
+    Super White | primary #fdfcfc | secondary - | super-white-731x411.webp
+    Platinum White Pearl | primary #f2f2f2 | secondary - | platinum-white-pearl-731x411.webp
+    Silver Metallic | primary #a3a4a5 | secondary - | silver-metallic-731x411.webp
+    Gray Metallic | primary #434445 | secondary - | gray-metallic-731x411.webp
+    Celestite Gray Metallic | primary #4c5967 | secondary - | celestite-gray-metallic-731x411.webp
+    Black Mica | primary #0c0d0e | secondary - | black-mica-731x411.webp
+    Red Mica Metallic | primary #bd2926 | secondary - | red-mica-metallic-731x411.webp
+    White With Black Roof | primary #fdfcfc | secondary - | super-white-2----black-mica-731x411.webp
+    Silver With Black Roof | primary #a3a4a5 | secondary - | silver-metallic----black-mica-731x411.webp
+    Gray With Black Roof | primary #434445 | secondary - | gray-metallic-black-mica-731x411.webp
+    Red With Black Roof | primary #bd2926 | secondary - | red-mica-metallic-black-mica-731x411.webp
+
+##############################################################################
+# [AR] PART 1 - OVERVIEW PAGE HEADER TEXT
+##############################################################################
+Title: Corolla Cross 2025
+MobileTitle: Corolla Cross 2025
+TagLine: عش تطلعاتك
+Description: لكل من يبحث عن رحلة جديدة تمتاز بالجرأة والرقي، إليك كورولا كروس إبداع جديد من تويوتا يلائم طموحاتك ويلبّي احتياجاتك، بفضل محرك الهايبرد القوي والهادئ في آن واحد، وانسيابية حركتها الديناميكية التي ستشعر بها عند كل منعطف. اكتشف روعة تصميمها الخارجي الأنيق ومزاياها الداخلية المزودة بأحدث التقنيات، ومساحتها المريحة التي تدعوك لتنطلق بحريّة وتعيش تجربة فريدة في كل رحلة.
+Disclaimer: جميع الأسعار المذكورة تشمل نسبة ضريبة القيمة المضافة 15% ، ولا تشمل رسوم التسجيل وقسط التأمين على المركبة.
+BrowserTitle: كورولا كروس 2025 | تويوتا السعودية - عبد اللطيف جميل
+MetaDescription: لكل من يبحث عن رحلة جديدة تمتاز بالجرأة والرقي، إليك كروس إبداع جديد من تويوتا يلائم طموحاتك ويلبي احتياجاتك. اكتشف روعة تصميمها الخارجي الأنيق ومزاياها الداخلية المزودة بأحدث التقنيات، ومساحتها المريحة التي تدعوك لتنطلق بحريّة وتعيش تجربة فريدة في كل رحلة.
+
+##############################################################################
+# [AR] PART 2 - GRADE CARDS ('الفئات')
+##############################################################################
+--- LE HEV
+  nowPrice: 103845   previousPrice: (empty)   freightCharges: (empty)   [currency: SAR symbol icon]
+  price tooltip: الأسعار تشمل ضريبة القيمة المضافة 15%، ولا تشمل رسوم التسجيل أو التأمين على المركبة.
+  main spec: المحرك: المحرك: 1.8 لتر هايبرد، 4-اسطوانات 
+  fuel type: هجين
+  القوة القصوى (hp): 121
+  ناقل الحركة: CVT
+  نظام الدفع: دفع أمامي
+  سعة خزان الوقود (لتر): 36
+  الاستهلاك الاقتصادي للوقود كم / لتر: 25.8
+  عدد الركاب: 5 ركاب (شاملة السائق)
+--- XLE HEV
+  nowPrice: 113505   previousPrice: (empty)   freightCharges: (empty)   [currency: SAR symbol icon]
+  price tooltip: الأسعار تشمل ضريبة القيمة المضافة 15%، ولا تشمل رسوم التسجيل أو التأمين على المركبة.
+  main spec: المحرك: المحرك: 1.8 لتر هايبرد، 4-اسطوانات 
+  fuel type: هجين
+  القوة القصوى (hp): 121
+  ناقل الحركة: CVT
+  نظام الدفع: دفع أمامي
+  سعة خزان الوقود (لتر): 36
+  الاستهلاك الاقتصادي للوقود كم / لتر: 25.8
+  عدد الركاب: 5 ركاب (شاملة السائق)
+--- Limited HEV
+  nowPrice: 129260   previousPrice: (empty)   freightCharges: (empty)   [currency: SAR symbol icon]
+  price tooltip: الأسعار تشمل ضريبة القيمة المضافة 15%، ولا تشمل رسوم التسجيل أو التأمين على المركبة.
+  main spec: المحرك: المحرك: 1.8 لتر هايبرد، 4-اسطوانات 
+  fuel type: هجين
+  القوة القصوى (hp): 121
+  ناقل الحركة: CVT
+  نظام الدفع: دفع أمامي
+  سعة خزان الوقود (لتر): 36
+  الاستهلاك الاقتصادي للوقود كم / لتر: 25.8
+  عدد الركاب: 5 ركاب (شاملة السائق)
+--- Limited Plus HEV
+  nowPrice: 130410   previousPrice: (empty)   freightCharges: (empty)   [currency: SAR symbol icon]
+  price tooltip: الأسعار تشمل ضريبة القيمة المضافة 15%، ولا تشمل رسوم التسجيل أو التأمين على المركبة.
+  main spec: المحرك: المحرك: 1.8 لتر هايبرد، 4-اسطوانات 
+  fuel type: هجين
+  القوة القصوى (hp): 121
+  ناقل الحركة: CVT
+  نظام الدفع: دفع أمامي
+  سعة خزان الوقود (لتر): 36
+  الاستهلاك الاقتصادي للوقود كم / لتر: 25.8
+  عدد الركاب: 5 ركاب (شاملة السائق)
+
+##############################################################################
+# [AR] PART 3 - FULL SPECS PAGE (corolla-cross-specs): 'اكتشف مواصفات Corolla Cross'
+##############################################################################
+[section: المواصفات الكاملة]
+
+============================================================
+GRADE: LE HEV
+============================================================
+المزايا التقنية
+- المحرك: 1.8 لتر هايبرد، 4-اسطوانات
+- القوة القصوى: 121 حصان (مجمع)
+- العزم الأقصى (المحرك): 142 ن.م. / 3600 د.د
+- العزم الأقصى (الموتور الكهربائي): 163 نيوتن متر
+- ناقل حركة تتابعي متغير CVT
+- دفع أمامي
+- سعة خزان الوقود: 36 لتر
+- كفاءة استهلاك الوقود: 25.8 كم/لتر
+- الأبعاد طول - عرض - ارتفاع (مم): 4460 - 1825 - 1620
+- 5 ركاب (شاملة السائق)
+المزايا الخارجية
+- جنوط ألمنيوم مقاس 17 بوصة
+- مقاس الإطارات: 215/60R17
+- انوار أمامية هالوجين
+- إضاءة نهارية (DRL)
+- نظام الدخول الذكي للسائق و الراكب الأمامي
+- المرايا الخارجية بلون الهيكل بتحكم كهربائي مع اشارات انعطاف
+- طي كهربائي اوتوماتيكي للمرايات الجانبية
+- مقابض الابواب الخارجية بلون الهيكل
+- جناح خلفي
+المزايا الداخلية
+- زر تشغيل المحرك
+- مقاعد قماش
+- تحكم بارتفاع مقعد السائق
+- عجلة القيادة تلسكوبية
+- ازرار تحكم على المقود
+- شاشة معلومات متعددة 4.2 بوصة
+- تحكم أوتوماتيكي لجميع النوافذ
+- مكيف أمامي بتحكم اوتوماتيكي
+- تحكم بالقفل المركزي من باب الراكب الأمامي (صنع في ماليزيا)*
+- فتحات تكييف خلفية
+- واقيات شمس بمرآة
+النظام الصوتي والترفيهي
+- نظام صوتي مع شاشة لمس متعددة الوسائط 8 بوصة
+- نظام Apple CarPlay
+- منفذ USB-C
+- 6 سماعات
+مزايا الراحة والأمان
+- مثبت سرعة
+- نظام التحكم في وضعيات القيادة (إقتصادي / عادي / قوة)
+- حساسات خلفية للمساعدة على الوقوف (صنع في ماليزيا)*
+- كاميرا خلفية (صنع في ماليزيا)*
+- مكابح وقوف كهربائية ( EPB)
+- وسائد هوائية (للسائق والراكب الأمامي)
+- فرامل مانعه للإنغلاق (ABS)
+- نظام التحكم بالتوازن (VSC)
+- نظام مراقبة ضغط الاطارات (TPWS)
+- نظام حماية ضد السرقة لمنع تشغيل المحرك
+- نظام المساعدة على صعود المرتفعات (HAC)
+- فرشات أرضية (صنع في تايلاند)*
+- ملصق نوع الوقود 91 (صنع في جنوب أفريقيا)*
+- حقيبة السلامة الأساسية (صنع في الصين)*
+- منفاخ هواء (صنع في الصين)*
+- *التجهيزات المشار اليها تم تركيبها في المملكة العربية السعودية بواسطة احدى شركات عبد اللطيف جميل المتخصصة وهي تعد من المواصفات الأساسية
+- المواصفات المبينة أعلاه قد تتغير دون إشعار مسبق. لذا يرجى الإتصال بالزملاء في قسم المبيعات للوقوف على آخر التحديثات و مزيد من الإرشادات و التفاصيل المتعلقة بسيارة ما بعينها.
+- طبقا لشروط الضمان, تضمن تويوتا إصلاح الأعطال المصنعية لسيارتك لمدة 3 سنوات ميلادية من تاريخ الشراء أو قطع مسافة 100,000 كم (أيهما أسبق)
+- السیّارة مشمولة بعرض برنامج العنایة الممتدة لسیارات تويوتا الهايبرد
+
+============================================================
+GRADE: XLE HEV
+============================================================
+المزايا التقنية
+- المحرك: 1.8 لتر هايبرد، 4-اسطوانات
+- القوة القصوى: 121 حصان (مجمع)
+- العزم الأقصى (المحرك): 142 ن.م. / 3600 د.د
+- العزم الأقصى (الموتور الكهربائي): 163 نيوتن متر
+- ناقل حركة تتابعي متغير CVT
+- دفع أمامي
+- سعة خزان الوقود: 36 لتر
+- كفاءة استهلاك الوقود: 25.8 كم/لتر
+- الأبعاد طول - عرض - ارتفاع (مم): 4460 - 1825 - 1620
+- 5 ركاب (شاملة السائق)
+المزايا الخارجية
+- جنوط ألمنيوم مقاس 17 بوصة
+- مقاس الإطارات: 215/60R17
+- انوار أمامية هالوجين
+- إضاءة نهارية (DRL)
+- كشافات ضباب أمامية (LED)
+- نظام الدخول الذكي للسائق و الراكب الأمامي
+- المرايا الخارجية بلون الهيكل بتحكم كهربائي مع اشارات انعطاف
+- طي كهربائي اوتوماتيكي للمرايات الجانبية
+- مقابض الابواب الخارجية بلون الهيكل
+- عوارض سقف
+- جناح خلفي
+- فتحة سقف
+المزايا الداخلية
+- زر تشغيل المحرك
+- مقاعد قماش
+- تحكم بارتفاع مقعد السائق
+- عجلة القيادة تلسكوبية
+- ازرار تحكم على المقود
+- شاشة معلومات متعددة 4.2 بوصة
+- تحكم أوتوماتيكي لجميع النوافذ
+- مكيف أمامي بتحكم اوتوماتيكي
+- تحكم بالقفل المركزي من باب الراكب الأمامي (صنع في ماليزيا)*
+- فتحات تكييف خلفية
+- واقيات شمس بمرآة و اضاءة
+النظام الصوتي والترفيهي
+- نظام صوتي مع شاشة لمس متعددة الوسائط 8 بوصة
+- نظام Apple CarPlay
+- منفذ USB-C
+- 6 سماعات
+مزايا الراحة والأمان
+- مثبت سرعة
+- نظام التحكم في وضعيات القيادة (إقتصادي / عادي / قوة)
+- حساسات أمامية للمساعدة على الوقوف (صنع في ماليزيا)*
+- حساسات خلفية للمساعدة على الوقوف
+- كاميرا خلفية (صنع في ماليزيا)*
+- مكابح وقوف كهربائية ( EPB)
+- وسائد هوائية (للسائق والراكب الأمامي)
+- فرامل مانعه للإنغلاق (ABS)
+- نظام التحكم بالتوازن (VSC)
+- نظام مراقبة ضغط الاطارات (TPWS)
+- نظام حماية ضد السرقة لمنع تشغيل المحرك
+- نظام المساعدة على صعود المرتفعات (HAC)
+- غطاء سحاب لصندوق الأمتعة
+- فرشات أرضية (صنع في تايلاند)*
+- ملصق نوع الوقود 91 (صنع في جنوب أفريقيا)*
+- حقيبة السلامة الأساسية (صنع في الصين)*
+- منفاخ هواء (صنع في الصين)*
+- *التجهيزات المشار اليها تم تركيبها في المملكة العربية السعودية بواسطة احدى شركات عبد اللطيف جميل المتخصصة وهي تعد من المواصفات الأساسية
+- المواصفات المبينة أعلاه قد تتغير دون إشعار مسبق. لذا يرجى الإتصال بالزملاء في قسم المبيعات للوقوف على آخر التحديثات و مزيد من الإرشادات و التفاصيل المتعلقة بسيارة ما بعينها.
+- طبقا لشروط الضمان, تضمن تويوتا إصلاح الأعطال المصنعية لسيارتك لمدة 3 سنوات ميلادية من تاريخ الشراء أو قطع مسافة 100,000 كم (أيهما أسبق)
+- السیّارة مشمولة بعرض برنامج العنایة الممتدة لسیارات تويوتا الهايبرد
+
+============================================================
+GRADE: LIMITED HEV
+============================================================
+المزايا التقنية
+- المحرك: 1.8 لتر هايبرد، 4-اسطوانات
+- القوة القصوى: 121 حصان (مجمع)
+- العزم الأقصى (المحرك): 142 ن.م. / 3600 د.د
+- العزم الأقصى (الموتور الكهربائي): 163 نيوتن متر
+- ناقل حركة تتابعي متغير CVT
+- دفع أمامي
+- سعة خزان الوقود: 36 لتر
+- كفاءة استهلاك الوقود: 25.8 كم/لتر
+- الأبعاد طول - عرض - ارتفاع (مم): 4460 - 1825 - 1620
+- 5 ركاب (شاملة السائق)
+المزايا الخارجية
+- جنوط ألمنيوم مقاس 17 بوصة
+- مقاس الإطارات: 215/60R17
+- انوار أمامية (LED)
+- إضاءة نهارية (LED)
+- انوار خلفية (LED)
+- كشافات ضباب أمامية (LED)
+- نظام الدخول الذكي للسائق و الراكب الأمامي
+- المرايا الخارجية بلون الهيكل بتحكم كهربائي مع اشارات انعطاف
+- طي كهربائي اوتوماتيكي للمرايات الجانبية
+- مقابض الابواب الخارجية بلون الهيكل
+- عوارض سقف
+- جناح خلفي
+- فتحة سقف
+المزايا الداخلية
+- زر تشغيل المحرك
+- مقاعد جلد
+- تحكم بارتفاع مقعد السائق
+- عجلة القيادة تلسكوبية
+- مقود مكسو بالجلد
+- ازرار تحكم على المقود
+- شاشة معلومات متعددة 12.3 بوصة
+- تحكم أوتوماتيكي لجميع النوافذ
+- مكيف أمامي بتحكم اوتوماتيكي
+- تحكم بالقفل المركزي من باب الراكب الأمامي (صنع في ماليزيا)*
+- فتحات تكييف خلفية
+- واقيات شمس بمرآة و اضاءة
+- اضاءة داخلية محيطية باللون الازرق
+النظام الصوتي والترفيهي
+- نظام صوتي مع شاشة لمس متعددة الوسائط 10 بوصة
+- نظام Apple CarPlay
+- منفذ USB-C
+- 6 سماعات
+مزايا الراحة والأمان
+- مثبت سرعة
+- نظام التحكم في وضعيات القيادة (إقتصادي / عادي / قوة)
+- حساسات أمامية للمساعدة على الوقوف (صنع في ماليزيا)*
+- حساسات خلفية للمساعدة على الوقوف
+- باب خلفي كهربائي
+- كاميرا خلفية
+- شاحن لاسلكي
+- مكابح وقوف كهربائية ( EPB)
+- نظام التحذير للنقاط العمياء (BSM)
+- نظام تنبيه حركة المرور الخلفية (RCTA)
+- وسائد هوائية (للسائق والراكب الأمامي + للركبة + جانبية + ستائرية)
+- فرامل مانعه للإنغلاق (ABS)
+- نظام التحكم بالتوازن (VSC)
+- نظام مراقبة ضغط الاطارات (TPWS)
+- نظام حماية ضد السرقة لمنع تشغيل المحرك
+- نظام المساعدة على صعود المرتفعات (HAC)
+- غطاء سحاب لصندوق الأمتعة
+- فرشات أرضية (صنع في تايلاند)*
+- ملصق نوع الوقود 91 (صنع في جنوب أفريقيا)*
+- حقيبة السلامة الأساسية (صنع في الصين)*
+- منفاخ هواء (صنع في الصين)*
+- *التجهيزات المشار اليها تم تركيبها في المملكة العربية السعودية بواسطة احدى شركات عبد اللطيف جميل المتخصصة وهي تعد من المواصفات الأساسية
+- المواصفات المبينة أعلاه قد تتغير دون إشعار مسبق. لذا يرجى الإتصال بالزملاء في قسم المبيعات للوقوف على آخر التحديثات و مزيد من الإرشادات و التفاصيل المتعلقة بسيارة ما بعينها.
+- طبقا لشروط الضمان, تضمن تويوتا إصلاح الأعطال المصنعية لسيارتك لمدة 3 سنوات ميلادية من تاريخ الشراء أو قطع مسافة 100,000 كم (أيهما أسبق)
+- السیّارة مشمولة بعرض برنامج العنایة الممتدة لسیارات تويوتا الهايبرد
+
+============================================================
+GRADE: LIMITED PLUS HEV
+============================================================
+المزايا التقنية
+- المحرك: 1.8 لتر هايبرد، 4-اسطوانات
+- القوة القصوى: 121 حصان (مجمع)
+- العزم الأقصى (المحرك): 142 ن.م. / 3600 د.د
+- العزم الأقصى (الموتور الكهربائي): 163 نيوتن متر
+- ناقل حركة تتابعي متغير CVT
+- دفع أمامي
+- سعة خزان الوقود: 36 لتر
+- كفاءة استهلاك الوقود: 25.8 كم/لتر
+- الأبعاد طول - عرض - ارتفاع (مم): 4460 - 1825 - 1620
+- 5 ركاب (شاملة السائق)
+المزايا الخارجية
+- جنوط ألمنيوم مقاس 17 بوصة
+- مقاس الإطارات: 215/60R17
+- انوار أمامية (LED)
+- إضاءة نهارية (LED)
+- انوار خلفية (LED)
+- كشافات ضباب أمامية (LED)
+- نظام الدخول الذكي للسائق و الراكب الأمامي
+- المرايا الخارجية بلون الهيكل بتحكم كهربائي مع اشارات انعطاف
+- طي كهربائي اوتوماتيكي للمرايات الجانبية
+- مقابض الابواب الخارجية بلون الهيكل
+- عوارض سقف
+- جناح خلفي
+- فتحة سقف
+المزايا الداخلية
+- زر تشغيل المحرك
+- مقاعد جلد
+- تحكم بارتفاع مقعد السائق
+- عجلة القيادة تلسكوبية
+- مقود مكسو بالجلد
+- ازرار تحكم على المقود
+- شاشة معلومات متعددة 12.3 بوصة
+- تحكم أوتوماتيكي لجميع النوافذ
+- مكيف أمامي بتحكم اوتوماتيكي
+- تحكم بالقفل المركزي من باب الراكب الأمامي (صنع في ماليزيا)*
+- فتحات تكييف خلفية
+- واقيات شمس بمرآة و اضاءة
+- اضاءة داخلية محيطية باللون الازرق
+النظام الصوتي والترفيهي
+- نظام صوتي مع شاشة لمس متعددة الوسائط 10 بوصة
+- نظام Apple CarPlay
+- منفذ USB-C
+- 6 سماعات
+مزايا الراحة والأمان
+- مثبت سرعة
+- نظام التحكم في وضعيات القيادة (إقتصادي / عادي / قوة)
+- حساسات أمامية للمساعدة على الوقوف (صنع في ماليزيا)*
+- حساسات خلفية للمساعدة على الوقوف
+- باب خلفي كهربائي
+- كاميرا خلفية
+- مكابح وقوف كهربائية ( EPB)
+- نظام التحذير للنقاط العمياء (BSM)
+- نظام تنبيه حركة المرور الخلفية (RCTA)
+- وسائد هوائية (للسائق والراكب الأمامي + للركبة + جانبية + ستائرية)
+- فرامل مانعه للإنغلاق (ABS)
+- نظام التحكم بالتوازن (VSC)
+- نظام مراقبة ضغط الاطارات (TPWS)
+- نظام حماية ضد السرقة لمنع تشغيل المحرك
+- نظام المساعدة على صعود المرتفعات (HAC)
+- غطاء سحاب لصندوق الأمتعة
+- فرشات أرضية (صنع في تايلاند)*
+- ملصق نوع الوقود 91 (صنع في جنوب أفريقيا)*
+- حقيبة السلامة الأساسية (صنع في الصين)*
+- منفاخ هواء (صنع في الصين)*
+- *التجهيزات المشار اليها تم تركيبها في المملكة العربية السعودية بواسطة احدى شركات عبد اللطيف جميل المتخصصة وهي تعد من المواصفات الأساسية
+- المواصفات المبينة أعلاه قد تتغير دون إشعار مسبق. لذا يرجى الإتصال بالزملاء في قسم المبيعات للوقوف على آخر التحديثات و مزيد من الإرشادات و التفاصيل المتعلقة بسيارة ما بعينها.
+- طبقا لشروط الضمان, تضمن تويوتا إصلاح الأعطال المصنعية لسيارتك لمدة 3 سنوات ميلادية من تاريخ الشراء أو قطع مسافة 100,000 كم (أيهما أسبق)
+- السیّارة مشمولة بعرض برنامج العنایة الممتدة لسیارات تويوتا الهايبرد
+
+##############################################################################
+# [AR] PART 4 - COMPARE GRADES TABLE ('مقارنة الفئات', also on /full-specs)
+##############################################################################
+
+=== LE HEV  | nowPrice: 103845
+[المزايا التقنية]
+  المحرك: المحرك: 1.8 لتر هايبرد، 4-اسطوانات 
+  القوة القصوى (hp): 121
+  ناقل الحركة: CVT
+  نظام الدفع: دفع أمامي
+  سعة خزان الوقود (لتر): 36
+  الاستهلاك الاقتصادي للوقود كم / لتر: 25.8
+  عدد الركاب: 5 ركاب (شاملة السائق)
+[المزايا الخارجية]
+  مقاس ونوع العجلات: جنوط ألمنيوم مقاس 17 بوصة
+  مقاس الإطارات: 215/60R17
+  إضاءة نهارية (DRL): متاح
+  نظام الدخول الذكي: متاح
+  المرايا الخارجية بلون الهيكل بتحكم كهربائي مع اشارات انعطاف: متاح
+  طي كهربائي اوتوماتيكي للمرايات الجانبية: متاح
+  جناح خلفي: متاح
+[المزايا الداخلية]
+  زر تشغيل المحرك: متاح
+  فرش المقاعد: قماش
+  تحكم بارتفاع مقعد السائق: متاح
+  مكيف أمامي بتحكم اوتوماتيكي: متاح
+  فتحات تكييف خلفية: متاح
+  ازرار تحكم على المقود: متاح
+  عجلة قيادة تلسكوبية: متاح
+  شاشة معلومات متعددة: 4.2 بوصة
+  تحكم أوتوماتيكي لجميع النوافذ: متاح
+  منفذ USB-C Port: متاح
+  تحكم بالقفل المركزي من باب الراكب الأمامي: متاح
+[النظام الصوتي والترفيهي]
+  نظام صوتي بشاشة لمس: 8 بوصة
+  نظام Apple CarPlay: متاح
+  عدد المكبرات الصوتية: 6 سماعات
+[مزايا الأمان و الراحة]
+  مثبت سرعة: متاح
+  نظام التحكم في وضعيات القيادة (إقتصادي / عادي / قوة): متاح
+  حساسات خلفية للمساعدة على الوقوف: متاح
+  كاميرا خلفية: متاح
+  مكابح وقوف كهربائية ( EPB): متاح
+  وسائد هوائية: وسائد هوائية (للسائق والراكب الأمامي)
+  فرامل مانعه للإنغلاق (ABS): متاح
+  نظام التحكم بالتوازن (VSC): متاح
+  نظام مراقبة ضغط الاطارات: متاح
+  نظام حماية ضد السرقة لمنع تشغيل المحرك: متاح
+  نظام المساعدة على صعود المرتفعات (HAC): متاح
+  فرشات أرضية: متاح
+  ملصق نوع الوقود 91: متاح
+  حقيبة السلامة الأساسية: متاح
+  منفاخ هواء: متاح
+
+=== XLE HEV  | nowPrice: 113505
+[المزايا التقنية]
+  المحرك: المحرك: 1.8 لتر هايبرد، 4-اسطوانات 
+  القوة القصوى (hp): 121
+  ناقل الحركة: CVT
+  نظام الدفع: دفع أمامي
+  سعة خزان الوقود (لتر): 36
+  الاستهلاك الاقتصادي للوقود كم / لتر: 25.8
+  عدد الركاب: 5 ركاب (شاملة السائق)
+[المزايا الخارجية]
+  مقاس ونوع العجلات: جنوط ألمنيوم مقاس 17 بوصة
+  مقاس الإطارات: 215/60R17
+  إضاءة نهارية (DRL): متاح
+  كشافات ضباب أمامية (LED): متاح
+  نظام الدخول الذكي: متاح
+  المرايا الخارجية بلون الهيكل بتحكم كهربائي مع اشارات انعطاف: متاح
+  طي كهربائي اوتوماتيكي للمرايات الجانبية: متاح
+  عوارض سقف: متاح
+  جناح خلفي: متاح
+  فتحة سقف: متاح
+[المزايا الداخلية]
+  زر تشغيل المحرك: متاح
+  فرش المقاعد: قماش
+  تحكم بارتفاع مقعد السائق: متاح
+  مكيف أمامي بتحكم اوتوماتيكي: متاح
+  فتحات تكييف خلفية: متاح
+  ازرار تحكم على المقود: متاح
+  عجلة قيادة تلسكوبية: متاح
+  شاشة معلومات متعددة: 4.2 بوصة
+  تحكم أوتوماتيكي لجميع النوافذ: متاح
+  منفذ USB-C Port: متاح
+  تحكم بالقفل المركزي من باب الراكب الأمامي: متاح
+[النظام الصوتي والترفيهي]
+  نظام صوتي بشاشة لمس: 8 بوصة
+  نظام Apple CarPlay: متاح
+  عدد المكبرات الصوتية: 6 سماعات
+[مزايا الأمان و الراحة]
+  مثبت سرعة: متاح
+  نظام التحكم في وضعيات القيادة (إقتصادي / عادي / قوة): متاح
+  حساسات خلفية للمساعدة على الوقوف: متاح
+  حساسات أمامية للمساعدة على الوقوف: متاح
+  كاميرا خلفية: متاح
+  مكابح وقوف كهربائية ( EPB): متاح
+  وسائد هوائية: وسائد هوائية (للسائق والراكب الأمامي)
+  فرامل مانعه للإنغلاق (ABS): متاح
+  نظام التحكم بالتوازن (VSC): متاح
+  نظام مراقبة ضغط الاطارات: متاح
+  نظام حماية ضد السرقة لمنع تشغيل المحرك: متاح
+  نظام المساعدة على صعود المرتفعات (HAC): متاح
+  غطاء سحاب لصندوق الأمتعة: متاح
+  فرشات أرضية: متاح
+  ملصق نوع الوقود 91: متاح
+  حقيبة السلامة الأساسية: متاح
+  منفاخ هواء: متاح
+
+=== Limited HEV  | nowPrice: 129260
+[المزايا التقنية]
+  المحرك: المحرك: 1.8 لتر هايبرد، 4-اسطوانات 
+  القوة القصوى (hp): 121
+  ناقل الحركة: CVT
+  نظام الدفع: دفع أمامي
+  سعة خزان الوقود (لتر): 36
+  الاستهلاك الاقتصادي للوقود كم / لتر: 25.8
+  عدد الركاب: 5 ركاب (شاملة السائق)
+[المزايا الخارجية]
+  مقاس ونوع العجلات: جنوط ألمنيوم مقاس 17 بوصة
+  مقاس الإطارات: 215/60R17
+  انوار أمامية (LED): متاح
+  انوار خلفية (LED): متاح
+  إضاءة نهارية (DRL): متاح
+  كشافات ضباب أمامية (LED): متاح
+  نظام الدخول الذكي: متاح
+  المرايا الخارجية بلون الهيكل بتحكم كهربائي مع اشارات انعطاف: متاح
+  طي كهربائي اوتوماتيكي للمرايات الجانبية: متاح
+  عوارض سقف: متاح
+  جناح خلفي: متاح
+  فتحة سقف: متاح
+[المزايا الداخلية]
+  زر تشغيل المحرك: متاح
+  فرش المقاعد: جلد
+  تحكم بارتفاع مقعد السائق: متاح
+  مكيف أمامي بتحكم اوتوماتيكي: متاح
+  فتحات تكييف خلفية: متاح
+  مقود مكسو بالجلد: متاح
+  ازرار تحكم على المقود: متاح
+  عجلة قيادة تلسكوبية: متاح
+  شاشة معلومات متعددة: 12.3 بوصة
+  تحكم أوتوماتيكي لجميع النوافذ: متاح
+  منفذ USB-C Port: متاح
+  شاحن لاسلكي: متاح
+  تحكم بالقفل المركزي من باب الراكب الأمامي: متاح
+  اضاءة داخلية محيطية باللون الازرق: متاح
+[النظام الصوتي والترفيهي]
+  نظام صوتي بشاشة لمس: 10 بوصة
+  نظام Apple CarPlay: متاح
+  عدد المكبرات الصوتية: 6 سماعات
+[مزايا الأمان و الراحة]
+  مثبت سرعة: متاح
+  نظام التحكم في وضعيات القيادة (إقتصادي / عادي / قوة): متاح
+  حساسات خلفية للمساعدة على الوقوف: متاح
+  حساسات أمامية للمساعدة على الوقوف: متاح
+  كاميرا خلفية: متاح
+  نظام التحذير للنقاط العمياء (BSM): متاح
+  مكابح وقوف كهربائية ( EPB): متاح
+  باب خلفي كهربائي: متاح
+  نظام تنبيه حركة المرور الخلفية (RCTA): متاح
+  وسائد هوائية: وسائد هوائية (للسائق والراكب الأمامي + للركبة + جانبية + ستائرية)
+  فرامل مانعه للإنغلاق (ABS): متاح
+  نظام التحكم بالتوازن (VSC): متاح
+  نظام مراقبة ضغط الاطارات: متاح
+  نظام حماية ضد السرقة لمنع تشغيل المحرك: متاح
+  نظام المساعدة على صعود المرتفعات (HAC): متاح
+  غطاء سحاب لصندوق الأمتعة: متاح
+  فرشات أرضية: متاح
+  ملصق نوع الوقود 91: متاح
+  حقيبة السلامة الأساسية: متاح
+  منفاخ هواء: متاح
+
+=== Limited Plus HEV  | nowPrice: 130410
+[المزايا التقنية]
+  المحرك: المحرك: 1.8 لتر هايبرد، 4-اسطوانات 
+  القوة القصوى (hp): 121
+  ناقل الحركة: CVT
+  نظام الدفع: دفع أمامي
+  سعة خزان الوقود (لتر): 36
+  الاستهلاك الاقتصادي للوقود كم / لتر: 25.8
+  عدد الركاب: 5 ركاب (شاملة السائق)
+[المزايا الخارجية]
+  مقاس ونوع العجلات: جنوط ألمنيوم مقاس 17 بوصة
+  مقاس الإطارات: 215/60R17
+  انوار أمامية (LED): متاح
+  انوار خلفية (LED): متاح
+  إضاءة نهارية (DRL): متاح
+  كشافات ضباب أمامية (LED): متاح
+  نظام الدخول الذكي: متاح
+  المرايا الخارجية بلون الهيكل بتحكم كهربائي مع اشارات انعطاف: متاح
+  طي كهربائي اوتوماتيكي للمرايات الجانبية: متاح
+  عوارض سقف: متاح
+  جناح خلفي: متاح
+  فتحة سقف: متاح
+[المزايا الداخلية]
+  زر تشغيل المحرك: متاح
+  فرش المقاعد: جلد
+  تحكم بارتفاع مقعد السائق: متاح
+  مكيف أمامي بتحكم اوتوماتيكي: متاح
+  فتحات تكييف خلفية: متاح
+  مقود مكسو بالجلد: متاح
+  ازرار تحكم على المقود: متاح
+  عجلة قيادة تلسكوبية: متاح
+  شاشة معلومات متعددة: 12.3 بوصة
+  تحكم أوتوماتيكي لجميع النوافذ: متاح
+  منفذ USB-C Port: متاح
+  تحكم بالقفل المركزي من باب الراكب الأمامي: متاح
+  اضاءة داخلية محيطية باللون الازرق: متاح
+[النظام الصوتي والترفيهي]
+  نظام صوتي بشاشة لمس: 10 بوصة
+  نظام Apple CarPlay: متاح
+  عدد المكبرات الصوتية: 6 سماعات
+[مزايا الأمان و الراحة]
+  مثبت سرعة: متاح
+  نظام التحكم في وضعيات القيادة (إقتصادي / عادي / قوة): متاح
+  حساسات خلفية للمساعدة على الوقوف: متاح
+  حساسات أمامية للمساعدة على الوقوف: متاح
+  كاميرا خلفية: متاح
+  نظام التحذير للنقاط العمياء (BSM): متاح
+  مكابح وقوف كهربائية ( EPB): متاح
+  باب خلفي كهربائي: متاح
+  نظام تنبيه حركة المرور الخلفية (RCTA): متاح
+  وسائد هوائية: وسائد هوائية (للسائق والراكب الأمامي + للركبة + جانبية + ستائرية)
+  فرامل مانعه للإنغلاق (ABS): متاح
+  نظام التحكم بالتوازن (VSC): متاح
+  نظام مراقبة ضغط الاطارات: متاح
+  نظام حماية ضد السرقة لمنع تشغيل المحرك: متاح
+  نظام المساعدة على صعود المرتفعات (HAC): متاح
+  غطاء سحاب لصندوق الأمتعة: متاح
+  فرشات أرضية: متاح
+  ملصق نوع الوقود 91: متاح
+  حقيبة السلامة الأساسية: متاح
+  منفاخ هواء: متاح
+(Download brochure link text: 'تحميل الكتيب' -> href '/ar' i.e. no brochure file)
+
+##############################################################################
+# [AR] PART 5 - FEATURE TABS ('المميزات') - heading | description | image file
+##############################################################################
+== المزايا الخارجية
+  * تصميم أمامي عصري, كشافات ضباب أمامية LED انوار أمامية LED مع إضاءة نهارية LED | - | corolla-c-2025_exterior-01_desktop-view_856x481.webp
+  * انوار خلفية (LED) | - | corolla-c-2025_exterior-05_desktop-view_856x481.webp
+  * جنوط ألمنيوم مقاس 17 بوصة | - | corolla-c-2025_exterior-02_desktop-view_856x481.webp
+  * فتحة سقف | - | corolla-c-2025_exterior-03_desktop-view_856x481.webp
+  * المرايات الجانبية | بتحكم كهربائي مع إشارات انعطاف بنظام طي كهربائي أوتوماتيكي | corolla-c-2025_exterior-04_desktop-view_856x481.webp
+  * باب خلفي كهربائي | - | corolla-c-2025_exterior-06_desktop-view_856x481.webp
+== المزايا الداخلية
+  * الجودة تخاطب الأحاسيس | لوحة العدادات مكسوة بجلد ناعم وازرار تحكم على المقود مع مثبت السرعة واضاءة محيطية باللون الازرق | corolla-c-2025_exterior-01_desktop-view_856x481.webp
+  * شاشة متعددة الوسائط مقاس 10 بوصة مع تطبيق أبل كاربلاي | - | corolla-c-2025_exterior-02_desktop-view_856x481.webp
+  * شاشة معلومات متعددة 12.3 بوصة | - | corolla-c-2025_exterior-03_desktop-view_856x481.webp
+  * المقصورة | تقدم تويوتا كورولا كروس 2025 مقصورة أنيقة وجذابة مصممة لتوفير الراحة والتنوع. بفضل تصميمها العصري والاهتمام بأدق التفاصيل، توفر المقصورة بيئة مريحة لكل رحلة. تتميز بالرحابة والتصميم المتقن، مما يجعلها المزيج المثالي بين الأناقة والعملية. | corolla-c-2025_exterior-04_desktop-view_856x481.webp
+  * مساحة داخلية واسعة بالاضافه الى لون داخلي عصري - أحمر (تيرا روسا) | مساحة رائعة وقوية تبرز الصورة العصرية للسيارة الرياضية متعددة الأغراض. اللون متوفر على فئتي LE وXLE بخامة القماش وعلى فئة ليمتد بخامة الجلد | corolla-c-2025_exterior-06_desktop-view_856x481.webp
+  * سعة تخزين الأمتعة المتميزة | مقاعد خلفية منفصلة قابلة للطي لتناسب المزيد من الأمتعة | corolla-c-2025_exterior-05_desktop-view_856x481.webp
+  * زر تشغيل/إيقاف المحرك | - | corolla-c-2025_exterior-07_desktop-view_856x481.webp
+  * فتحة التبريد الخلفية | - | corolla-c-2025_exterior-08_desktop-view_856x481.webp
+== الأداء
+  * المحرّك 2ZR-FXE | 1.8 لتر هايبرد، 4-اسطوانات وكفاءة استهلاك وقود استثنائية 25.8 كم/لتر | corolla-c-2025_performance-02_desktop-view_856x481.webp
+  * النظام الهجين | يوفر الموتور الكهربائي تسارعًا سلسًا واستجابة سريعة عند الانطلاق والتي لا يمكن أن توفرها إلا السيارة الهجينة، مما يوفر اقتصادا ممتازا في استهلاك الوقود واستجابه رائعة تتفاعل على الفور. | corolla-c-2025_performance-03_desktop-view_856x481.webp
+  * وضع القيادة | 1-الوضع الاقتصادي للحصول على أقصى قدر من الكفاءة. 2-الوضع العادي الذي يعد الخيار المثالي للقيادة اليومية. 3-POWER Mode لتحسين استجابة التسارع. 4-وضع المركبة الكهربائية (EV قابل للتبديل بشكل منفصل)،حيث إنه يسمح بالقيادة الكهربائية فقط والصامتة والخالية من الانبعاثات بسرعات منخفضة ولمسافات قصيرة | corolla-c-2025_performance-06_desktop-view_856x481.webp
+  * التعليق | نظام تعليق ماكفيرسون الأمامي مع خصائص محسنة للاستخدام في السيارة الرياضية المتعددة الأغراض نظام التعليق الخلفي الجديد ذو العارضة القابلة للالتواء يقدم توازناً رائعاً بين الراحة والثبات | corolla-c-2025_performance-04_desktop-view_856x481.webp
+  * مكابح وقوف كهربائية (EPB) + خاصية الوقوف المؤقت | - | corolla-c-2025_performance-05_desktop-view_856x481.webp
+  * التسارع | ناقل حركة تتابعي متغيرCVT | corolla-c-2025_performance-01_desktop-view_856x481.webp
+== الأمان
+  * الوسائد الهوائية السبعة المتضمنة في نظام تقييد الحركة التكميلي (SRS) بما في ذلك الوسادة الهوائية لركبة السائق. | - | corolla-c-2025_safety-01_desktop-view_856x481.webp
+  * نظام التحذير للنقاط العمياء (BSM) | - | corolla-c-2025_safety-02_desktop-view_856x481.webp
+  * نظام تنبيه حركة المرور الخلفية (RCTA) | - | corolla-c-2025_safety-03_desktop-view_856x481.webp
+  * فرامل مانعه للإنغلاق (ABS) | - | corolla-c-2025_safety-04_desktop-view_856x481.webp
+
+##############################################################################
+# [AR] PART 6 - COLOUR SELECTOR ('استكشف وخصص')
+##############################################################################
+  grade 'LE HEV': no colour data on site
+  grade 'XLE HEV': no colour data on site
+  grade 'Limited HEV': no colour data on site
+  grade 'Limited Plus HEV' - tab 'الخارجي':
+    أبيض سوبر | primary #fdfcfc | secondary - | super-white-731x411.webp
+    أبيض لؤلؤيِ بلاتينم | primary #f2f2f2 | secondary - | platinum-white-pearl-731x411.webp
+    فضي معدني | primary #a3a4a5 | secondary - | silver-metallic-731x411.webp
+    رمادي معدني | primary #434445 | secondary - | gray-metallic-731x411.webp
+    رمادي سيليستي معدني | primary #4c5967 | secondary - | celestite-gray-metallic-731x411.webp
+    أسود مايكا | primary #0c0d0e | secondary - | black-mica-731x411.webp
+    أحمر مايكا معدني | primary #bd2926 | secondary - | red-mica-metallic-731x411.webp
+    أبيض بسقف أسود | primary #fdfcfc | secondary - | super-white-2----black-mica-731x411.webp
+    فضي بسقف أسود | primary #a3a4a5 | secondary - | silver-metallic----black-mica-731x411.webp
+    رصاصي غامق بسقف أسود | primary #434445 | secondary - | gray-metallic-black-mica-731x411.webp
+    أحمر بسقف أسود | primary #bd2926 | secondary - | red-mica-metallic-black-mica-731x411.webp
+

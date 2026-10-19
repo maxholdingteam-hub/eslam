@@ -1,0 +1,424 @@
+{
+ "_src": "Toyota Hilux 2027 (KSA) - specs: toyota.com.sa (specs.txt). Car stills: toyota.com.sa official images, AI-upscaled x2. Atmosphere: Mixkit/Coverr free-licence stock (lib/stock). Overlays: lib/mg (free licence / procedural). Music: Mixkit 1150 'No Warning' (edited on downbeats).",
+ "dur": 61.5,
+ "acc": "#D4AF6A",
+ "bars": 150,
+ "wm": 0.42,
+ "fadeIn": 0.9,
+ "leak": {
+  "dir": "mgv/leak/proc_leak_burn_a/jpg",
+  "pre": "f_",
+  "pad": 5,
+  "start": 0,
+  "n": 120,
+  "peak": 60,
+  "fps": 60,
+  "gain": 0.95
+ },
+ "shots": [
+  {
+   "kind": "seq",
+   "src": "v/dunes",
+   "n": 132,
+   "fps": 30,
+   "speed": 0.9,
+   "t0": 0.0,
+   "t1": 4.269,
+   "z0": 1.0,
+   "z1": 1.07,
+   "dust": 0.5,
+   "tout": "leak"
+  },
+  {
+   "kind": "seq",
+   "src": "v/falcon",
+   "n": 109,
+   "fps": 24,
+   "speed": 1.0,
+   "t0": 4.269,
+   "t1": 8.635,
+   "z0": 1.04,
+   "z1": 1.12,
+   "tin": "leak"
+  },
+  {
+   "kind": "seq",
+   "src": "v/camels",
+   "n": 58,
+   "fps": 24,
+   "speed": 1.0,
+   "t0": 8.635,
+   "t1": 10.818,
+   "fit": "contain",
+   "fy": 960,
+   "z0": 1.0,
+   "z1": 1.04
+  },
+  {
+   "kind": "seq",
+   "src": "v/peaks",
+   "n": 72,
+   "fps": 30,
+   "speed": 1.0,
+   "t0": 10.818,
+   "t1": 13.0,
+   "z0": 1.0,
+   "z1": 1.1,
+   "dust": 0.4
+  },
+  {
+   "kind": "still",
+   "src": "st/hero.jpg",
+   "t0": 13.0,
+   "t1": 17.366,
+   "z0": 1.0,
+   "z1": 1.06,
+   "tin": "flash",
+   "dust": 0.6,
+   "grade": "contrast(1.06) saturate(1.05)",
+   "fit": "contain",
+   "fz": 1.3,
+   "fy": 1010,
+   "blur": true
+  },
+  {
+   "kind": "still",
+   "src": "st/dunes_rear.jpg",
+   "t0": 17.366,
+   "t1": 21.731,
+   "fit": "contain",
+   "fy": 860,
+   "z0": 1.0,
+   "z1": 1.07,
+   "blur": true,
+   "dust": 0.5,
+   "grade": "contrast(1.05) saturate(1.06)"
+  },
+  {
+   "kind": "still",
+   "src": "st/headlamp.jpg",
+   "t0": 21.731,
+   "t1": 23.914,
+   "fit": "contain",
+   "fz": 1.45,
+   "fy": 900,
+   "z0": 1.0,
+   "z1": 1.06,
+   "grade": "contrast(1.1) brightness(.92) sepia(.12)",
+   "bg": "#0b0b0c"
+  },
+  {
+   "kind": "still",
+   "src": "st/wheel.jpg",
+   "t0": 23.914,
+   "t1": 26.096,
+   "fit": "contain",
+   "fz": 1.45,
+   "fy": 900,
+   "z0": 1.06,
+   "z1": 1.0,
+   "grade": "contrast(1.1) brightness(.9) sepia(.12)",
+   "bg": "#0b0b0c"
+  },
+  {
+   "kind": "still",
+   "src": "st/hero.jpg",
+   "t0": 26.096,
+   "t1": 30.462,
+   "cx0": 0.36,
+   "cx1": 0.4,
+   "cy0": 0.52,
+   "cy1": 0.52,
+   "z0": 1.35,
+   "z1": 1.42,
+   "grade": "brightness(.3) contrast(1.2) saturate(.9)"
+  },
+  {
+   "kind": "seq",
+   "src": "v/travel",
+   "n": 111,
+   "fps": 24,
+   "speed": 1.0,
+   "t0": 30.462,
+   "t1": 34.827,
+   "fit": "contain",
+   "fy": 860,
+   "z0": 1.0,
+   "z1": 1.05
+  },
+  {
+   "kind": "seq",
+   "src": "v/sunset",
+   "n": 72,
+   "fps": 30,
+   "speed": 0.9,
+   "t0": 34.827,
+   "t1": 37.01,
+   "fit": "contain",
+   "fy": 960,
+   "z0": 1.0,
+   "z1": 1.06,
+   "tout": "dip"
+  },
+  {
+   "kind": "seq",
+   "src": "v/fire",
+   "n": 77,
+   "fps": 24,
+   "speed": 1.0,
+   "t0": 37.01,
+   "t1": 40.0,
+   "z0": 1.0,
+   "z1": 1.06,
+   "tin": "dip"
+  },
+  {
+   "kind": "seq",
+   "src": "v/coffee",
+   "n": 96,
+   "fps": 30,
+   "speed": 1.0,
+   "t0": 40.0,
+   "t1": 43.0,
+   "z0": 1.02,
+   "z1": 1.08
+  },
+  {
+   "kind": "seq",
+   "src": "v/stars",
+   "n": 90,
+   "fps": 30,
+   "speed": 1.0,
+   "t0": 43.0,
+   "t1": 45.741,
+   "z0": 1.0,
+   "z1": 1.05,
+   "grade": "brightness(1.35) contrast(1.08)"
+  },
+  {
+   "kind": "still",
+   "src": "st/hero.jpg",
+   "t0": 45.741,
+   "t1": 49.839,
+   "cx0": 0.34,
+   "cx1": 0.36,
+   "cy0": 0.6,
+   "cy1": 0.6,
+   "z0": 1.16,
+   "z1": 1.08,
+   "tin": "fade",
+   "tlen": 0.7,
+   "dust": 0.5,
+   "grade": "contrast(1.1) brightness(.88)"
+  }
+ ],
+ "mg": [
+  {
+   "type": "title",
+   "t0": 13.05,
+   "t1": 17.3,
+   "logo": "pro/ksa_logo_hilux_wordmark_italic.svg",
+   "w": 620,
+   "h": 102,
+   "y": 250,
+   "year": "2027",
+   "ar": "الجديدة <acc>كلياً</acc>"
+  },
+  {
+   "type": "chips",
+   "t0": 17.8,
+   "t1": 21.6,
+   "y": 1250,
+   "s0": 0.1,
+   "st": 0.25,
+   "items": [
+    "محرك [4.0] لتر",
+    "[6] سلندر · بنزين",
+    "دفع رباعي [4×4]"
+   ]
+  },
+  {
+   "type": "chips",
+   "t0": 22.0,
+   "t1": 23.85,
+   "y": 1290,
+   "s0": 0.1,
+   "items": [
+    "مصابيح [LED]"
+   ]
+  },
+  {
+   "type": "chips",
+   "t0": 24.2,
+   "t1": 26.0,
+   "y": 1290,
+   "s0": 0.1,
+   "items": [
+    "جنوط [18] إنش · فئة [Premium]"
+   ]
+  },
+  {
+   "type": "counter",
+   "t0": 26.15,
+   "t1": 30.4,
+   "y": 700,
+   "num": 235,
+   "unit": "حصان",
+   "sub": "عزم [376] نيوتن متر · أوتوماتيك [6] سرعات",
+   "c0": 0.25,
+   "cnt": 1.1
+  },
+  {
+   "type": "chips",
+   "t0": 30.8,
+   "t1": 34.7,
+   "y": 1250,
+   "s0": 0.1,
+   "st": 0.3,
+   "items": [
+    "دفع رباعي بدوام جزئي [4H · 4L]",
+    "قفل دفرنس خلفي"
+   ]
+  },
+  {
+   "type": "flare",
+   "t0": 45.9,
+   "t1": 47.3,
+   "y": 900,
+   "x0": -300,
+   "x1": 1380
+  },
+  {
+   "type": "engines",
+   "t0": 49.839,
+   "t1": 54.85,
+   "kicker": "ENGINES",
+   "title": "تقدر <acc>تطلبها</acc>",
+   "img": "cut/platinum_white.png",
+   "rows": [
+    [
+     "بنزين [4.0] لتر · [6] سلندر",
+     "[235] حصان"
+    ],
+    [
+     "ديزل [2.8] لتر تيربو",
+     "[201] حصان"
+    ],
+    [
+     "بنزين [2.7] لتر",
+     "[164] حصان"
+    ]
+   ],
+   "note": "المواصفات والتجهيزات تختلف حسب الفئة"
+  },
+  {
+   "type": "end",
+   "t0": 54.85,
+   "t1": 61.5,
+   "name": "تويوتا <acc>هايلكس</acc> [2027]",
+   "cta": "اطلبها الحين من ماكس موتورز"
+  }
+ ],
+ "texts": [
+  {
+   "t0": 46.4,
+   "t1": 49.75,
+   "y": 1300,
+   "cls": "k",
+   "html": "HILUX 2027",
+   "anim": "track",
+   "ls": 16
+  },
+  {
+   "t0": 46.7,
+   "t1": 49.75,
+   "y": 1350,
+   "cls": "t2",
+   "html": "رفيقك في <acc>كل مشوار</acc>"
+  }
+ ],
+ "captions": [
+  {
+   "t0": 1.1,
+   "t1": 4.7,
+   "html": "في البر… للوقت معنى ثاني."
+  },
+  {
+   "t0": 5.1,
+   "t1": 10.75,
+   "html": "فنجال… ورفقة… وطريق ما له نهاية."
+  },
+  {
+   "t0": 14.35,
+   "t1": 21.55,
+   "html": "هايلكس [2027]… الأسطورة رجعت، جديدة كلياً."
+  },
+  {
+   "t0": 22.05,
+   "t1": 26.5,
+   "html": "تشيل عزمك… وتوصلك وين ما تبي."
+  },
+  {
+   "t0": 40.55,
+   "t1": 44.6,
+   "html": "ولين يجي الليل… تلقاها جنبك."
+  },
+  {
+   "t0": 50.4,
+   "t1": 55.0,
+   "html": "هايلكس [2027]… الجديدة كلياً."
+  }
+ ],
+ "ovl": [
+  {
+   "t0": 13.0,
+   "t1": 21.7,
+   "dir": "mgv/particles/proc_gold_dust/jpg",
+   "pre": "f_",
+   "pad": 5,
+   "start": 0,
+   "n": 480,
+   "fps": 60,
+   "loop": true,
+   "op": 0.55
+  },
+  {
+   "t0": 26.1,
+   "t1": 30.45,
+   "dir": "mgv/smoke/51097/jpg",
+   "pre": "f_",
+   "pad": 5,
+   "start": 0,
+   "n": 134,
+   "fps": 24,
+   "op": 0.38
+  },
+  {
+   "t0": 45.75,
+   "t1": 47.35,
+   "dir": "mgv/flare/proc_anamorphic_streak/jpg",
+   "pre": "f_",
+   "pad": 5,
+   "start": 1,
+   "n": 96,
+   "fps": 60,
+   "op": 0.95,
+   "fin": 0.05,
+   "fout": 0.2
+  },
+  {
+   "t0": 45.75,
+   "t1": 49.8,
+   "dir": "mgv/particles/proc_gold_dust/jpg",
+   "pre": "f_",
+   "pad": 5,
+   "start": 0,
+   "n": 480,
+   "fps": 60,
+   "loop": true,
+   "op": 0.5,
+   "f0": 120
+  }
+ ],
+ "wmOff": 54.85
+}

@@ -1,0 +1,19 @@
+FreePD.com - public-domain music (track fpd_desert_conflict "Desert Conflict")
+Captured 2026-10-19.
+
+FreePD.com published its whole catalogue as Public Domain (CC0-style dedication: free for any use, commercial or not,
+no attribution, no account). The site is now CLOSED: freepd.com shows "FreePD.com is now permanently closed ... 2008-2025",
+and the category pages (freepd.com/world.php etc.) return 404. web.archive.org is not reachable from this session, so the
+original track page could not be re-checked.
+
+File source: Internet Archive mirror of the FreePD catalogue
+  item  https://archive.org/details/freepd  ("Free Public Domain Music", uploaded 2022-03-18, malware-checked by archive.org)
+  file  https://archive.org/download/freepd/world/Desert%20Conflict.mp3  (FreePD "world" category, 320 kbps VBR, 159.7 s,
+        md5 ba412c30cca6fdd24f57e72249b33680)
+  A second mirror states the licence explicitly: https://archive.org/details/abook-music-freepd-cc0
+  ("FreePD.com (public domain; the site closed ...) - CC0").
+
+Caveats: the mp3 carries no composer tag (FreePD's library was mostly Kevin MacLeod, Rafael Krux and Alexander Nakarada,
+who released these titles to the public domain on FreePD). Some Nakarada files in the same mirror carry a
+"CC BY 4.0" album tag from his own releases - "Desert Conflict" has no such tag. Keep this file and the archive.org link
+as provenance.
