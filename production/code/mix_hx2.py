@@ -62,7 +62,7 @@ tt = np.arange(N) / SR; mus *= np.clip((DUR - 0.1 - tt) / 3.0, 0, 1)[:, None]
 mus *= np.float32(10 ** (-9.0 / 20))                      # loud master (-8.9 LUFS) -> sits under VO/SFX
 
 # ---- VO (placeholder TTS or the client's recording: same file names v1..v8)
-VO_AT = {'1': 0.7, '2': 5.5, '3': 12.2, '4a': 20.85, '4b': 33.5, '5': 36.45, '6': 40.7, '7': 51.9, '8': 57.5}   # 4a with the engine chips, 4b right after 235 lands
+VO_AT = {'1': 0.6, '2': 5.2, '3': 12.0, '4a': 20.4, '4b': 33.3, '5': 36.7, '6': 40.4, '7': 51.7, '8': 57.3}   # 4a with the engine chips, 4b right after 235 lands
 hp = butter(2, 85, 'high', fs=SR, output='sos'); pres = butter(2, [2500, 6000], 'band', fs=SR, output='sos')
 for k, t in VO_AT.items():
     p = f'{VO_DIR}/v{k}.wav'
