@@ -60,7 +60,7 @@ mg = [
     dict(type='engines', t0=ENG, t1=END, dim=0.62, kicker='ENGINES', title='تقدر <acc>تطلبها</acc>',
          rows=[['بنزين [4.0] لتر · [6] سلندر', '[235] حصان'], ['ديزل [2.8] لتر تيربو', '[201] حصان'], ['بنزين [2.7] لتر', '[164] حصان']],
          note='المواصفات والتجهيزات تختلف حسب الفئة'),
-    dict(type='end', t0=END, t1=DUR, dim=0.72, name='تويوتا <acc>هايلكس</acc> [2027]', cta='اطلبها الآن من ماكس موتورز'),
+    dict(type='end', t0=END, t1=DUR, dim=0.72, wa=False, name='تويوتا <acc>هايلكس</acc> [2027]', cta='اطلبها الآن من ماكس موتورز'),
 ]
 texts = [
     dict(t0=HERO + 0.6, t1=50.95, y=1545, cls='k', html='HILUX 2027', anim='track', ls=16),

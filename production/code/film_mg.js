@@ -112,10 +112,10 @@
         <div class="e1 tx t2" style="top:900px;font-size:66px">${H(m.name)}</div>
         <div class="e2 tx sp" style="top:1010px">${H(m.cta)}</div>
         <div class="e3 tx os" style="top:1090px;font:600 128px Oswald;letter-spacing:3px">920018915</div>
-        <div class="e4" style="position:absolute;left:270px;top:1280px;width:540px;height:104px;border-radius:52px;background:var(--acc);display:flex;align-items:center;justify-content:center;gap:18px;color:#061018">
+        <div class="e4" style="${m.wa === false ? 'visibility:hidden;' : ''}position:absolute;left:270px;top:1280px;width:540px;height:104px;border-radius:52px;background:var(--acc);display:flex;align-items:center;justify-content:center;gap:18px;color:#061018">
           <svg width="46" height="46" viewBox="0 0 24 24" fill="none" stroke="#061018" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21l1.65-3.8a9 9 0 1 1 3.4 2.9L3 21"></path></svg>
           <span class="os" style="font-size:56px;font-weight:700">0533393397</span></div>
-        <div class="e5 tx os" style="top:1420px;font:600 42px Oswald;letter-spacing:3px;opacity:.85">maxmotors.sa</div>`;
+        <div class="e5 tx os" style="top:${m.wa === false ? 1290 : 1420}px;font:600 42px Oswald;letter-spacing:3px;opacity:.85">maxmotors.sa</div>`;
       await dec(q(el, '.lg'));
     },
     draw(el, m, lt) {
