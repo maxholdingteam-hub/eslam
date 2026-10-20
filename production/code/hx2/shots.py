@@ -63,7 +63,7 @@ def build(i, s):
 vids = [(i, s) for i, s in enumerate(C['shots']) if s.get('kind') == 'vid']
 for i, s in vids:
     if only is None or i in only: build(i, s)
-if PREV: sys.exit(0)
+if PREV or os.environ.get('NOCONCAT'): sys.exit(0)
 # frame-exact concat: shots must tile the timeline
 with open(f'{H2}/seg/list.txt', 'w') as f:
     for i, s in vids: f.write(f"file 's{i:02d}.mp4'\n")

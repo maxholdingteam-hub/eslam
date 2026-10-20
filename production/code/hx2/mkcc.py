@@ -1,5 +1,6 @@
 # Toyota Corolla Cross (KSA, 1.8 hybrid 121 hp, 25.8 km/L) cinematic film, text only: writes reg/web/cars/ccross26/film.json
 # Story: "جدة غير": Jeddah (Al-Balad, the Corniche, the waterfront at night) and the Asir mountains, Red Mica with black roof
+# v2: moving-car shots regenerated with a visible driver (cc2, cc4, cc6), repeats replaced by cc10 (drone Corniche) and cc11 (seaside cafe)
 # Footage: Saudi scenes generated on Higgsfield from the official toyota.com.sa images (GPT Image 2.5 keyframes -> Veo 3.1 clips)
 # Music (client pick #3): OpenTracks ot_9389 "Wings of the Roc" (corico), 113 BPM, cut on downbeats:
 #   A track 44.547 -> ad 0 (quiet mid, re-entry hit 58.027 = ad 13.48 reveal) .. 74.257 -> ad 29.71
@@ -23,18 +24,18 @@ shots = [
     v(12.690, R, 7, 4.2, z0=1.05, z1=1.12),
     # the re-entry hit: the Corniche and the fountain
     v(R, 16.939, 2, 0.3, z0=1.0, z1=1.06, tin='flash'),
-    v(16.939, HI, 1, 3.0, z0=1.0, z1=1.04),
+    v(16.939, HI, 10, 0.5, z0=1.0, z1=1.04),
     v(HI, 21.189, 8, 3.0, z0=1.0, z1=1.04),
     v(21.189, 23.313, 6, 3.0, z0=1.0, z1=1.04),
     v(23.313, 25.426, 2, 3.6, z0=1.0, z1=1.04),
     v(25.426, 27.551, 7, 3.6, z0=1.0, z1=1.04),
-    v(27.551, 29.710, 5, 3.6, z0=1.0, z1=1.05),
+    v(27.551, 29.710, 11, 0.5, z0=1.0, z1=1.04),
     # up to Abha, then the drop at night
     v(29.710, DROP, 3, 0.0, z0=1.0, z1=1.04),
     v(DROP, 33.948, 4, 0.4, z0=1.0, z1=1.06, tin='flash'),
     v(33.948, 36.072, 3, 2.4, z0=1.0, z1=1.04),
     v(36.072, 38.197, 4, 3.0, z0=1.0, z1=1.04),
-    v(38.197, 40.310, 8, 3.8, z0=1.0, z1=1.04),
+    v(38.197, 40.310, 10, 3.5, z0=1.0, z1=1.04),
     # hero on the pier
     v(40.310, ENG, 9, 0.5, z0=1.0, z1=1.06),
     v(ENG, END, 2, 1.5, z0=1.0, z1=1.03),
