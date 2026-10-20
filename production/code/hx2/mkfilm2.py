@@ -60,18 +60,18 @@ mg = [
     dict(type='engines', t0=ENG, t1=END, dim=0.62, kicker='ENGINES', title='تقدر <acc>تطلبها</acc>',
          rows=[['بنزين [4.0] لتر · [6] سلندر', '[235] حصان'], ['ديزل [2.8] لتر تيربو', '[201] حصان'], ['بنزين [2.7] لتر', '[164] حصان']],
          note='المواصفات والتجهيزات تختلف حسب الفئة'),
-    dict(type='end', t0=END, t1=DUR, dim=0.72, name='تويوتا <acc>هايلكس</acc> [2027]', cta='اطلبها الحين من ماكس موتورز'),
+    dict(type='end', t0=END, t1=DUR, dim=0.72, name='تويوتا <acc>هايلكس</acc> [2027]', cta='اطلبها الآن من ماكس موتورز'),
 ]
 texts = [
     dict(t0=HERO + 0.6, t1=50.95, y=1545, cls='k', html='HILUX 2027', anim='track', ls=16),
     dict(t0=HERO + 0.9, t1=50.95, y=1590, cls='t2', html='رفيقك في <acc>كل مشوار</acc>'),
 ]
-captions = [   # follow the VO lines (placeholder timing until the recorded VO arrives)
-    dict(t0=0.7, t1=5.0, html='في أرضٍ ما ترحم… ما يصمد إلا الأقوى.'),
-    dict(t0=5.3, t1=9.7, html='مثل الصقر… عينه دايم على القمة.'),
-    dict(t0=12.3, t1=20.8, html='هايلكس [2027]… الأسطورة رجعت، جديدة كلياً.'),
-    dict(t0=36.4, t1=40.6, html='دفع رباعي… ما يعرف المستحيل.'),
-    dict(t0=40.7, t1=44.75, html='ولين يجي الليل… تلقاها جنبك.'),
+captions = [   # Modern Standard Arabic, timed to the client's ElevenLabs take (scratchpad/vo_el2/take1, split at its pauses)
+    dict(t0=0.7, t1=4.8, html='في أرضٍ لا ترحم… لا يصمد إلا الأقوى.'),
+    dict(t0=5.4, t1=9.4, html='مثل الصقر… عينه دائماً على القمة.'),
+    dict(t0=12.2, t1=18.8, html='هايلكس [2027]… الأسطورة عادت، جديدة كلياً.'),
+    dict(t0=36.8, t1=40.5, html='دفع رباعي… لا يعرف المستحيل.'),
+    dict(t0=40.7, t1=44.6, html='وحين يحلّ الليل… تجدها بجانبك.'),
 ]
 C = dict(_src='Hilux 2027 v2: official Toyota press footage (EU newsroom 4K clip + AU Pressroom SR5 4K; editorial licence, ALJ/Toyota written consent needed for paid ads), Pexels stock (Pexels License), music OpenTracks ot_20880 (OpenTracks licence: commercial/ads OK, no credit).',
          dur=DUR, acc='#D4AF6A', bars=0, wm=0.42, wmOff=END, fadeIn=0.5, shots=shots, mg=mg, texts=texts, captions=captions, ovl=[])
