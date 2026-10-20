@@ -18,7 +18,7 @@
         <div class="s" style="position:absolute;left:0;right:0;top:${m.y + 255}px;text-align:center;font:500 38px Tajawal;color:#E9E3D8;text-shadow:0 3px 18px #000">${H(m.sub || '')}</div>`;
     },
     draw(el, m, lt) {
-      const kc = at(lt, m.c0 ?? 0.2, (m.c0 ?? 0.2) + (m.cnt ?? 1.1), 'out'), v = Math.round(m.num * kc), cy = m.y + 5, r = 230;
+      const kc = at(lt, m.c0 ?? 0.2, (m.c0 ?? 0.2) + (m.cnt ?? 1.1), 'out'), v = m.dec ? (m.num * kc).toFixed(m.dec) : Math.round(m.num * kc), cy = m.y + 5, r = 230;
       q(el, '.num').textContent = lt >= (m.c0 ?? 0.2) ? v : '';
       const a0 = 140, a1 = 400, aa = a0 + (a1 - a0) * kc, P = d => [540 + r * Math.cos(d * Math.PI / 180), cy + r * Math.sin(d * Math.PI / 180)];
       const arc = (d0, d1) => { const [x0, y0] = P(d0), [x1, y1] = P(d1); return `M${x0} ${y0} A${r} ${r} 0 ${d1 - d0 > 180 ? 1 : 0} 1 ${x1} ${y1}`; };
