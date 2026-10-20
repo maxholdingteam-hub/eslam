@@ -1,12 +1,12 @@
-# Hilux 2027 v2 mix (all real footage edit, film2.json): client music pick ot_20880 cut on downbeats, placeholder VO
-# (scratchpad/vo3, replaced by the client's recorded VO later), frame-accurate SFX from lib/sfx (+ extra: falcon, splash, campfire, pour, crickets)
+# Toyota Crown 2026 mix (crown26/film.json): client music pick Mixkit 846 cut on downbeats, client's ElevenLabs MSA VO,
+# frame-accurate SFX from lib/sfx (+ extra: bukhoor coals)
 import sys, os, json, wave
 import numpy as np
 from scipy.signal import butter, sosfilt, fftconvolve
 D = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, f'{D}/lib/sfx'); import sfxlib
 SR = 48000; DUR = 61.5; N = int((DUR + 4) * SR)
-VO_DIR = os.environ.get('VO_DIR', f'{D}/scratchpad/vo3')
+VO_DIR = os.environ.get('VO_DIR', f'{D}/scratchpad/vo_cr')
 
 
 def rd(p):
@@ -62,7 +62,17 @@ mseg(28.66, 63.16, 85.23 + 0.02, 0.04, 0.04)
 mseg(50.73, 107.29, 114.2, 0.04, 0.3)
 tt = np.arange(N) / SR; mus *= np.clip((DUR - 0.1 - tt) / 2.0, 0, 1)[:, None]
 mus *= np.float32(10 ** (-1.5 / 20))
-VO_AT = {}
+# ---- VO: client's ElevenLabs MSA take (scratchpad/vo_cr/take1.mp3, split at its pauses into v1..v9)
+VO_AT = {'1': 0.45, '2': 4.0, '3': 7.35, '4': 12.95, '5': 20.55, '6': 33.12, '7': 44.35, '8': 50.6, '9': 55.35}   # 6: "344" lands with the counter
+hp = butter(2, 85, 'high', fs=SR, output='sos'); pres = butter(2, [2500, 6000], 'band', fs=SR, output='sos')
+for k, t in VO_AT.items():
+    p = f'{VO_DIR}/v{k}.wav'
+    if not os.path.exists(p): continue
+    x = rd(p).mean(1); x = sosfilt(hp, x); x = x + 0.25 * sosfilt(pres, x)
+    e = np.sqrt(np.convolve(x ** 2, np.ones(480) / 480, 'same')) + 1e-6
+    gr = np.minimum(0, (-26 - 20 * np.log10(e)) * (1 - 1 / 3)); gr = np.convolve(gr, np.ones(2400) / 2400, 'same'); x = x * 10 ** (gr / 20)
+    sp = np.abs(x) > 0.01; x = x * (10 ** (-15.5 / 20) / np.sqrt((x[sp] ** 2).mean()))
+    put(vo, t, verb(np.repeat(x[:, None], 2, 1).astype(np.float32), 0.6, 0.09, seed=int(k) * 7))
 
 P = lambda t, e, **k: sfxlib.place(fx, t, e, **k)
 H = lambda t, e, **k: sfxlib.place(hit, t, e, **k)
