@@ -27,7 +27,7 @@ def build(i, s):
     pre = [f"setpts=(PTS-STARTPTS)/{sp}", f"fps={FPS}"]
     if s.get('mirror'): pre.append('hflip')
     for k, (mx, my, mw, mh, a, b) in enumerate(s.get('mask', [])):   # soft blur box over a plate/badge (source px, active a..b s of the shot)
-        pre.append(f"split[m{k}a][m{k}b];[m{k}b]crop={mw}:{mh}:{mx}:{my},boxblur=24:3[m{k}c];[m{k}a][m{k}c]overlay={mx}:{my}:enable='between(t,{a},{b})'")
+        pre.append(f"split[m{k}a][m{k}b];[m{k}b]crop={mw}:{mh}:{mx}:{my},boxblur=24:3:10:3[m{k}c];[m{k}a][m{k}c]overlay={mx}:{my}:enable='between(t,{a},{b})'")
     lut = s.get('lut')
     post = ([f"lut3d={H2}/lut/{lut}.cube"] if lut else []) + ([s['eq']] if s.get('eq') else [])
     if s.get('fit', 'full') == 'full':
