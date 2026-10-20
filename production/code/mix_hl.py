@@ -1,4 +1,4 @@
-# Toyota Highlander 2026 mix (highlander26/film.json): client music pick #1 Mixkit 587 "Discover" cut on downbeats, text only (no VO),
+# Toyota Highlander 2026 mix (highlander26/film.json): client music pick #1 Mixkit 587 "Discover" cut on downbeats, client's ElevenLabs MSA VO,
 # frame-accurate SFX from lib/sfx
 import sys, os, json, wave
 import numpy as np
@@ -6,6 +6,7 @@ from scipy.signal import butter, sosfilt, fftconvolve
 D = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, f'{D}/lib/sfx'); import sfxlib
 SR = 48000; DUR = 59.5; N = int((DUR + 4) * SR)
+VO_DIR = os.environ.get('VO_DIR', f'{D}/scratchpad/vo_hl')
 
 
 def rd(p):
@@ -60,6 +61,18 @@ mseg(18.33, 27.26, 60.941 + 0.02, 0.06, 0.06)
 mseg(52.01, 131.158, 142.0, 0.06, 0.3)
 tt = np.arange(N) / SR; mus *= np.clip((DUR - 0.1 - tt) / 2.5, 0, 1)[:, None]
 mus *= np.float32(10 ** (-1.0 / 20))
+
+# ---- VO: client's ElevenLabs MSA take (scratchpad/vo_hl/take1.mp3, split at its pauses into v1..v11)
+VO_AT = {1: 0.5, 2: 4.8, 3: 12.1, 4: 18.6, 5: 21.3, 6: 29.1, 7: 39.0, 8: 44.7, 9: 49.3, 10: 52.5, 11: 55.8}   # 3: "Toyota" on the reveal, 6: "240" on the drop
+hp = butter(2, 85, 'high', fs=SR, output='sos'); pres = butter(2, [2500, 6000], 'band', fs=SR, output='sos')
+for k, t in VO_AT.items():
+    p = f'{VO_DIR}/v{k}.wav'
+    if not os.path.exists(p): continue
+    x = rd(p).mean(1); x = sosfilt(hp, x); x = x + 0.25 * sosfilt(pres, x)
+    e = np.sqrt(np.convolve(x ** 2, np.ones(480) / 480, 'same')) + 1e-6
+    gr = np.minimum(0, (-26 - 20 * np.log10(e)) * (1 - 1 / 3)); gr = np.convolve(gr, np.ones(2400) / 2400, 'same'); x = x * 10 ** (gr / 20)
+    sp = np.abs(x) > 0.01; x = x * (10 ** (-15.5 / 20) / np.sqrt((x[sp] ** 2).mean()))
+    put(vo, t, verb(np.repeat(x[:, None], 2, 1).astype(np.float32), 0.7, 0.09, seed=k * 7))
 
 P = lambda t, e, **k: sfxlib.place(fx, t, e, **k)
 H = lambda t, e, **k: sfxlib.place(hit, t, e, **k)
