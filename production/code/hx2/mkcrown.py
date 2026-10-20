@@ -1,4 +1,4 @@
-# Toyota Crown 2026 (KSA) cinematic film, all real footage, text only (no VO): writes reg/web/cars/crown26/film.json
+# Toyota Crown 2026 (KSA) cinematic film, all real footage, client's ElevenLabs MSA VO (v1..v9): writes reg/web/cars/crown26/film.json
 # Music (client pick #2): Mixkit 846 "I Won't Surrender" (Mixkit free licence), 108 BPM, cut on downbeats:
 #   A track 21.04 -> ad 0 (silence 30.0 = ad 8.96 lights-on, big hit 33.866 = ad 12.83 reveal) .. 49.70 -> ad 28.66
 #   B track 63.16 -> ad 28.66 (drop 67.76 = ad 33.26: 344 hp) .. 85.23 -> ad 50.73
