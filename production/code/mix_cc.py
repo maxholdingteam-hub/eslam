@@ -6,7 +6,7 @@ from scipy.signal import butter, sosfilt, fftconvolve
 D = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, f'{D}/lib/sfx'); import sfxlib
 SR = 48000; DUR = 52.6; N = int((DUR + 4) * SR)
-VO_DIR = os.environ.get('VO_DIR', f'{D}/scratchpad/vo_cc')
+VO_DIR = os.environ.get('VO_DIR', f'{D}/scratchpad/vo_cc2')
 
 
 def rd(p):
@@ -62,8 +62,8 @@ mseg(42.435, 99.718, 110.5, 0.04, 0.3)
 tt = np.arange(N) / SR; mus *= np.clip((DUR - 0.1 - tt) / 1.5, 0, 1)[:, None]
 mus *= np.float32(10 ** (-6.0 / 20))                       # hot master (-9.4 LUFS)
 
-# ---- VO: client's ElevenLabs MSA take (scratchpad/vo_cc/take1.mp3, split at its pauses into v1..v12)
-VO_AT = {1: 0.4, 2: 4.3, 3: 8.0, 4: 13.7, 5: 16.6, 6: 23.4, 7: 29.2, 8: 32.05, 9: 36.7, 10: 41.0, 11: 45.0, 12: 49.5}   # 8: the number with the counter
+# ---- VO: client's ElevenLabs MSA take (scratchpad/vo_cc2/take2.mp3 (client's preferred second take), split at its pauses into v1..v12)
+VO_AT = {1: 0.4, 2: 4.3, 3: 8.0, 4: 13.7, 5: 16.6, 6: 23.0, 7: 29.2, 8: 32.05, 9: 36.8, 10: 41.0, 11: 45.0, 12: 49.5}   # 8: the number with the counter
 hp = butter(2, 85, 'high', fs=SR, output='sos'); pres = butter(2, [2500, 6000], 'band', fs=SR, output='sos')
 for k, t in VO_AT.items():
     p = f'{VO_DIR}/v{k}.wav'

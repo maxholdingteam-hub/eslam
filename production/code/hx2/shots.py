@@ -2,7 +2,7 @@
 #   python3 shots.py <film.json> [only_idx,...]        -> reg/hx2/seg/sNN.mp4 + reg/hx2/base.mp4
 # shot fields: src (path under D), ss (source in, s), t0/t1 (timeline, s), speed, fit 'full'|'band',
 #   cx0/cx1 (crop centre x, 0..1 of source width), cy (0..1), z0/z1 (zoom ramp), mirror, lut (reg/hx2/lut/<name>.cube),
-#   eq (extra ffmpeg filter string), fz (band width factor), by (band centre y in 1920-space), mask [[x,y,w,h,t0,t1],...] (blur boxes, source px)
+#   eq (extra ffmpeg filter string), fx ['punch'|'whipin'|'whipout'] (in-camera transitions), fz (band width factor), by (band centre y in 1920-space), mask [[x,y,w,h,t0,t1],...] (blur boxes, source px)
 import json, os, subprocess, sys
 D = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 H2 = f'{D}/reg/hx2'; W, HH, FPS = 2160, 3840, 60
@@ -24,12 +24,17 @@ def build(i, s):
     sp = s.get('speed', 1.0); z0, z1 = s.get('z0', 1.0), s.get('z1', s.get('z0', 1.0) * 1.05)
     ease = f"(0.5-0.5*cos(PI*min(t/{dur:.4f},1)))"
     Z = f"({z0}+({z1}-{z0})*{ease})"
+    fx = s.get('fx', [])   # in-camera transitions: 'punch' (zoom punch-in), 'whipin'/'whipout' (horizontal motion-blur whip at the head/tail)
+    if 'punch' in fx: Z = f"({Z}*(1+0.22*pow(max(0,1-t/0.28),2)))"
     pre = [f"setpts=(PTS-STARTPTS)/{sp}", f"fps={FPS}"]
     if s.get('mirror'): pre.append('hflip')
     for k, (mx, my, mw, mh, a, b) in enumerate(s.get('mask', [])):   # soft blur box over a plate/badge (source px, active a..b s of the shot)
         pre.append(f"split[m{k}a][m{k}b];[m{k}b]crop={mw}:{mh}:{mx}:{my},boxblur=24:3:10:3[m{k}c];[m{k}a][m{k}c]overlay={mx}:{my}:enable='between(t,{a},{b})'")
     lut = s.get('lut')
     post = ([f"lut3d={H2}/lut/{lut}.cube"] if lut else []) + ([s['eq']] if s.get('eq') else [])
+    if 'punch' in fx: post.append("gblur=sigma=14:enable='lt(t,0.07)'")
+    if 'whipin' in fx: post += ["avgblur=sizeX=60:sizeY=1:enable='lt(t,0.05)'", "avgblur=sizeX=28:sizeY=1:enable='between(t,0.05,0.1)'"]
+    if 'whipout' in fx: post += [f"avgblur=sizeX=28:sizeY=1:enable='between(t,{dur - 0.1:.3f},{dur - 0.05:.3f})'", f"avgblur=sizeX=60:sizeY=1:enable='gt(t,{dur - 0.05:.3f})'"]
     if s.get('fit', 'full') == 'full':
         ch = sh; cw = int(sh * 9 / 16) // 2 * 2
         cx0, cx1 = s.get('cx0', 0.5), s.get('cx1', s.get('cx0', 0.5))
