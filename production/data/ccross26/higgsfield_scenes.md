@@ -13,3 +13,13 @@ Keyframes GPT Image 2.5 (9:16, high, 2k) -> clips Veo 3.1 preview high 6 s (file
 | cc8 | top-down seaside road | 1973b22f-8ced-40c9-9472-e7704ddaa875 | 4c0f58ed-0df4-4188-90fc-75d4d73ff0f3 |
 | cc9 | hero on the pier, blue hour | cacfe1d2-addc-4659-949c-286b5dd5c80d | 62414370-a765-47cf-8b97-c272afd1fc4a |
 Music OpenTracks ot_9389 (pick #3). VO: client's second ElevenLabs take (vo/ccross26/final_take_MSA.mp3).
+
+## v2 fix (client review: cars moving with no driver, unnatural woman-driving shot, repeated shots)
+Patched with reg/hx2/patch.py (shots 4, 6, 7, 9, 10, 12, 14, 16, 17, 19):
+| clip | change | image job | video job |
+|---|---|---|---|
+| cc2 | Corniche, driver visible | fee97614-64c5-42ca-acfe-0052202599bf | 03f2b3e8-db7c-4f68-bdd8-35ef6967f21a |
+| cc4 | Jeddah night, driver visible, drives straight | 2a037faa-7afc-4fdc-8d61-a27d1dc31fa3 | fcf599a8-54a6-49fe-9e2b-74b6ed59d508 |
+| cc6 | young Saudi man in the driver seat (replaces the woman shot) | 02303204-eed0-46b5-bc1e-d4d5191f5d33 | 69b1b4c3-9cbf-4525-8acb-8326a2ce4ecb |
+| cc10 (new) | drone over the Corniche at sunset | c2b19656-ae98-4ae5-a8d6-bcb798dbe5bf | d4492bbe-ed30-4e76-91ab-b4f66d3d6f34 |
+| cc11 (new) | young man at a seaside cafe, car behind | 748bed93-ca71-4c56-8cff-6aee61bd9c74 | a7616b83-2e9f-4ecf-8190-3f9fbd64d7c6 |
