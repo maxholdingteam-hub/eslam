@@ -28,3 +28,6 @@ make('desert_strong', gw=0.95, gsat=0.6, warm=0.08)
 make('warm', gw=0.0, gsat=0.0, warm=0.07, con=0.08)    # already-desert stock: just warm + contrast
 make('night', gw=0.0, gsat=0.0, warm=-0.02, con=0.12, teal=0.05)
 print('luts ok')
+# Crown: cinematic teal & orange - greens pulled to warm olive, skin/paint warm, cool shadows, crushed blacks
+make('cine', green_to=42/360, gw=0.7, gsat=0.5, warm=0.09, con=0.16, sat=1.05, teal=0.09)
+make('cine_night', green_to=40/360, gw=0.6, gsat=0.6, warm=0.05, con=0.2, sat=1.0, teal=0.14)
