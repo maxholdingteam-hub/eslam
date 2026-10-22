@@ -83,7 +83,7 @@ S(f"""<div class="bleed" style="background-image:url(a/hero.jpg);left:38%"></div
 
 # ---------------------------------------------------------------- 2 about
 S(f"""{head("About Us", "من نحن", "WHO WE ARE", "تعرّف علينا")}
-<img class="sketch" src="a/sketch-gold.png">
+<img class="sketch" src="a/sketch-gold.jpg">
 <div class="about-in">
   <div class="col en">
     <p class="lead">At Max Design, we don't just design spaces — <em>we design a lifestyle.</em></p>
@@ -144,11 +144,11 @@ divider("01", "HITC Office Building", "مبنى مكاتب HITC", "003-003.jpg",
 S(f"""{head("Concept & Design Intent", "الفكرة والتوجه التصميمي", "PROJECT 01", "المشروع 01")}
 <div class="board"><img src="a/004-004.jpg"></div>""", "boardslide")
 S(f"""{head("Floor Plans", "المساقط الأفقية", "PROJECT 01", "المشروع 01")}
-<div class="grid g-plans">{sheet("d005-006.png", "Legend", "دليل الفراغات", "legend")}{sheet("d005-008.png", "Ground Floor Plan · 173 m²", "مسقط الدور الأرضي")}{sheet("d005-010.png", "First Floor Plan · 273 m²", "مسقط الدور الأول")}</div>""")
+<div class="grid g-plans">{sheet("d005-006.jpg", "Legend", "دليل الفراغات", "legend")}{sheet("d005-008.jpg", "Ground Floor Plan · 173 m²", "مسقط الدور الأرضي")}{sheet("d005-010.jpg", "First Floor Plan · 273 m²", "مسقط الدور الأول")}</div>""")
 grid("Structure & Section", "الشبكة الإنشائية والقطاع", "PROJECT 01", "المشروع 01",
-     [sheet("d006-016.png", "Grid Plan", "الشبكة الإنشائية"), sheet("d006-014.png", "Section A-A", "قطاع أ-أ")], "g-2w")
+     [sheet("d006-016.jpg", "Grid Plan", "الشبكة الإنشائية"), sheet("d006-014.jpg", "Section A-A", "قطاع أ-أ")], "g-2w")
 grid("Elevations", "الواجهات", "PROJECT 01", "المشروع 01",
-     [sheet("d007-018.png", "North Elevation", "الواجهة الشمالية"), sheet("d007-020.png", "East Elevation", "الواجهة الشرقية")], "g-rows")
+     [sheet("d007-018.jpg", "North Elevation", "الواجهة الشمالية"), sheet("d007-020.jpg", "East Elevation", "الواجهة الشرقية")], "g-rows")
 grid("On-Site Construction", "مراحل التنفيذ في الموقع", "PROJECT 01", "المشروع 01",
      [img("008-021.jpg"), img("008-024.jpg"), img("008-022.jpg"), img("008-023.jpg")], "g-onsite1")
 
@@ -158,11 +158,11 @@ divider("02", "Forest Villas – Green Acres", "مجمع فوريست فيلاز
         "مشروع يجسّد الكمال الجمالي — فكرته كلها قائمة على التباين والترابط.",
         [("Type", "النوع", "Residential"), ("Levels", "الأدوار", "B + G + 5"), ("Amenities", "المرافق", "Club · Gym · Pool")])
 grid("Basement & Ground Floor", "القبو والدور الأرضي", "PROJECT 02", "المشروع 02",
-     [sheet("d009-026.png", "Basement Plan", "مسقط القبو"), sheet("d009-030.png", "Ground Floor Plan", "مسقط الدور الأرضي")], "g-2t")
+     [sheet("d009-026.jpg", "Basement Plan", "مسقط القبو"), sheet("d009-030.jpg", "Ground Floor Plan", "مسقط الدور الأرضي")], "g-2t")
 grid("Typical Floors", "الأدوار المتكررة", "PROJECT 02", "المشروع 02",
-     [sheet("d010-032.png", "First Floor", "الدور الأول"), sheet("d010-034.png", "Second Floor", "الدور الثاني"), sheet("d010-036.png", "Third Floor", "الدور الثالث")], "g-3t")
+     [sheet("d010-032.jpg", "First Floor", "الدور الأول"), sheet("d010-034.jpg", "Second Floor", "الدور الثاني"), sheet("d010-036.jpg", "Third Floor", "الدور الثالث")], "g-3t")
 grid("Upper Floors", "الأدوار العليا", "PROJECT 02", "المشروع 02",
-     [sheet("d011-042.png", "Fourth Floor", "الدور الرابع"), sheet("d011-044.png", "Fifth Floor", "الدور الخامس"), img("012-047.jpg", "", "tall")], "g-3t")
+     [sheet("d011-042.jpg", "Fourth Floor", "الدور الرابع"), sheet("d011-044.jpg", "Fifth Floor", "الدور الخامس"), img("012-047.jpg", "", "tall")], "g-3t")
 grid("Exterior Renders", "التصورات الخارجية", "PROJECT 02", "المشروع 02",
      [img("012-046.jpg"), img("012-048.jpg"), img("012-047.jpg"), img("012-045.jpg")], "g-4")
 
@@ -172,10 +172,10 @@ divider("03", "Residential Villa", "فيلا سكنية", "013-049.jpg",
         "فيلا عائلية معاصرة — حجر وخشب وإضاءة في تناغم كامل.",
         [("Type", "النوع", "Villa"), ("Area", "المساحة", "500 m²"), ("Scope", "النطاق", "Design + Interior + Build")])
 grid("Measurement Plans", "المساقط الأفقية", "PROJECT 03", "المشروع 03",
-     [sheet("d014-051.png", "Basement · 2785 sft", "القبو"), sheet("d014-053.png", "Ground Floor · 2785 sft", "الدور الأرضي"), sheet("d014-055.png", "First Floor · 2195 sft", "الدور الأول")], "g-3t")
+     [sheet("d014-051.jpg", "Basement · 2785 sft", "القبو"), sheet("d014-053.jpg", "Ground Floor · 2785 sft", "الدور الأرضي"), sheet("d014-055.jpg", "First Floor · 2195 sft", "الدور الأول")], "g-3t")
 grid("Elevations & Sections", "الواجهات والقطاعات", "PROJECT 03", "المشروع 03",
-     [sheet("d015-057.png", "Front Elevation", "الواجهة الأمامية"), sheet("d015-059.png", "Section A-A", "قطاع أ-أ"),
-      sheet("d015-061.png", "Side Elevation", "الواجهة الجانبية"), sheet("d015-063.png", "Section B-B", "قطاع ب-ب")], "g-4")
+     [sheet("d015-057.jpg", "Front Elevation", "الواجهة الأمامية"), sheet("d015-059.jpg", "Section A-A", "قطاع أ-أ"),
+      sheet("d015-061.jpg", "Side Elevation", "الواجهة الجانبية"), sheet("d015-063.jpg", "Section B-B", "قطاع ب-ب")], "g-4")
 grid("Interior Colour Palettes", "لوحات الألوان الداخلية", "PROJECT 03", "المشروع 03",
      [img(f"016-0{n}.jpg", "", "mood") for n in range(64, 72)], "g-mood")
 grid("On-Site Construction", "مراحل التنفيذ في الموقع", "PROJECT 03", "المشروع 03",
@@ -189,7 +189,7 @@ divider("04", "PROGER DQ Office", "مكتب بروجر DQ", "019-084.jpg",
         "بيئة عمل عصرية ومرنة — تصميم وتنفيذ وتسليم في الرياض.",
         [("Type", "النوع", "Office Fit-out"), ("Area", "المساحة", "229.8 m²"), ("Completed", "التسليم", "Jan 2026")])
 S(f"""{head("Office Layout Plan", "مخطط توزيع المكتب", "PROJECT 04", "المشروع 04")}
-<div class="grid g-1">{sheet("d020-plan.png", "Gross Internal Area 229.76 m² · Scale 1:50", "إجمالي المساحة الداخلية ٢٢٩٫٧٦ م²")}</div>""")
+<div class="grid g-1">{sheet("d020-plan.jpg", "Gross Internal Area 229.76 m² · Scale 1:50", "إجمالي المساحة الداخلية ٢٢٩٫٧٦ م²")}</div>""")
 grid("Interior Renders", "التصورات الداخلية", "PROJECT 04", "المشروع 04",
      [img("021-087.jpg"), img("021-088.jpg"), img("021-089.jpg"), img("021-090.jpg")], "g-4")
 grid("Workspaces", "مساحات العمل", "PROJECT 04", "المشروع 04",
@@ -205,11 +205,11 @@ divider("05", "SIH Residence", "مسكن SIH", "025-108.jpg",
         "سكن مستوحى من العمارة التراثية — أقواس وقباب وأعمال طوب يدوية.",
         [("Type", "النوع", "Residence"), ("Style", "الطراز", "Heritage"), ("Status", "الحالة", "Built")])
 grid("Floor Plans", "المساقط الأفقية", "PROJECT 05", "المشروع 05",
-     [sheet("d026-109.png", "Ground Floor Plan", "مسقط الدور الأرضي"), sheet("d026-110.png", "First Floor Plan", "مسقط الدور الأول")], "g-2w")
+     [sheet("d026-109.jpg", "Ground Floor Plan", "مسقط الدور الأرضي"), sheet("d026-110.jpg", "First Floor Plan", "مسقط الدور الأول")], "g-2w")
 grid("Elevations", "الواجهات", "PROJECT 05", "المشروع 05",
-     [sheet("d027-111.png", "East & West Elevations", "الواجهتان الشرقية والغربية")], "g-1")
+     [sheet("d027-111.jpg", "East & West Elevations", "الواجهتان الشرقية والغربية")], "g-1")
 grid("Roof Plan & Section", "مسقط السطح والقطاع", "PROJECT 05", "المشروع 05",
-     [sheet("d028-112.png", "Roof Drainage Plan", "مسقط تصريف السطح"), sheet("d028-113.png", "Section A-A", "قطاع أ-أ")], "g-2w")
+     [sheet("d028-112.jpg", "Roof Drainage Plan", "مسقط تصريف السطح"), sheet("d028-113.jpg", "Section A-A", "قطاع أ-أ")], "g-2w")
 grid("Site Progress", "مراحل التنفيذ", "PROJECT 05", "المشروع 05",
      [img("029-114.jpg"), img("029-115.jpg"), img("029-116.jpg"), img("029-117.jpg"), img("029-118.jpg"), img("029-119.jpg")], "g-6")
 grid("Completion", "المشروع بعد التنفيذ", "PROJECT 05", "المشروع 05",
