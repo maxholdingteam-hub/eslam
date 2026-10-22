@@ -20,3 +20,4 @@ n1 dfede257-2e4d-462b-b2fb-98e47ca39c57
 n2 3a4bcf2c-da88-432a-9a11-91903dc11a39
 n3 cc5e288a-15f6-4696-85f9-fd5b278c9ab8
 n5 8d19d856-de0d-4592-a987-cdbe3b5a7059 front close-up, tripod zoom (replaces rz5: parked car slid sideways)
+n6 bc4815ee-055e-4e62-b7b6-b3f4d4434187 rose-farm car on tripod (replaces n3: orbit made the parked car look like it slid sideways; first 2.4 s used)

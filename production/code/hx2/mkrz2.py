@@ -18,7 +18,9 @@ def v(t0, t1, n, ss, **k):
 # v2 (music only): no faces. Dropped rz1 (farmer) and rz7 (friends): faces looked AI; rz2 (petals floating up) and
 # rz8 (empty car lights up, door opens, glitch). New no-face Higgsfield clips in dl/hfrz2: n1 hands picking roses,
 # n2 following the car (driver seen from behind), n3 car parked in the rose farm, n5 front close-up on a tripod
-# (replaces rz5, where the parked car slid sideways). Each clip used at most twice.
+# (replaces rz5, where the parked car slid sideways), n6 the rose-farm shot on a tripod (replaces n3: the camera
+# orbit made the parked car look like it slid sideways; only its first 2.4 s, a plain push-in, is used).
+# Each clip used at most twice, except the static sunset rz9, which carries on behind the trims and end cards.
 N2 = 'dl/hfrz2/n{}.mp4'
 def n(t0, t1, k, ss, **kw):
     return dict(kind='vid', src=N2.format(k), ss=ss, t0=t0, t1=t1, cx0=0.5, eq=NAT, **kw)
@@ -27,7 +29,7 @@ shots = [
     n(0.00, 4.10, 1, 0.3, z0=1.0, z1=1.06),
     v(4.10, R, 3, 0.3, z0=1.0, z1=1.08, fx=['whipin', 'whipout']),
     v(R, 12.00, 4, 0.3, z0=1.0, z1=1.06, fx=['punch'], tin='flash'),
-    n(12.00, 14.40, 3, 0.4, z0=1.0, z1=1.04),
+    n(12.00, 14.40, 6, 0.0, z0=1.0, z1=1.03),
     v(14.40, 16.80, 6, 0.4, z0=1.0, z1=1.04),
     n(16.80, 19.40, 2, 0.4, z0=1.0, z1=1.04, fx=['whipin']),
     n(19.40, 21.60, 5, 0.6, z0=1.0, z1=1.04),
@@ -36,8 +38,8 @@ shots = [
     v(26.60, 29.40, 6, 3.0, z0=1.08, z1=1.12),
     n(29.40, 32.20, 2, 3.1, z0=1.1, z1=1.14),
     v(32.20, 34.80, 3, 3.3, z0=1.12, z1=1.18, fx=['whipin']),
-    n(34.80, ENG, 3, 2.5, z0=1.08, z1=1.14),
-    v(ENG, END, 9, 0.3, z0=1.0, z1=1.04, tin='dip'),
+    v(34.80, ENG, 9, 0.2, z0=1.0, z1=1.04),
+    v(ENG, END, 9, 0.9, z0=1.06, z1=1.1, tin='dip'),
     v(END, DUR, 9, 1.6, z0=1.03, z1=1.0),
 ]
 mg = [
