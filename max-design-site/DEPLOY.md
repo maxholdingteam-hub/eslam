@@ -17,3 +17,13 @@ Static site: `index.html` + `img/`. No build step.
    (usually `A @ 76.76.21.21` and `CNAME www cname.vercel-dns.com`).
 
 Before switching DNS, also remove the custom domain from Google Sites (Settings → Custom domains).
+
+## Contact form
+The project-brief form is a Netlify Form (`name="contact"`). On Netlify, submissions appear under
+**Site → Forms**; turn on email notifications there (Forms → Form notifications → Email) to receive
+each request at info@maxdesign.sa. On any other host the form shows a message and the
+"Send on WhatsApp" button carries the filled-in brief.
+
+## SEO
+`index.html` has the page description, Open Graph image (`img/og.jpg`), and LocalBusiness structured
+data. After going live, add the site in Google Search Console and submit `https://maxdesign.sa/sitemap.xml`.
