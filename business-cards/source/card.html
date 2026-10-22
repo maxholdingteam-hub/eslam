@@ -2,71 +2,89 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="utf-8">
-<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@500;600&family=IBM+Plex+Sans+Arabic:wght@400;500&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=IBM+Plex+Sans+Arabic:wght@400;500&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 /* 90×50 mm trim + 3 mm bleed each side */
 @page{size:96mm 56mm;margin:0}
 *{box-sizing:border-box;margin:0;padding:0}
-:root{--bg:#0a0908;--gold:#d8b46a;--gold-l:#efd79f;--txt:#ece5d8;--mute:#9b9183}
+:root{--bg:#070605;--gold:#d8b46a;--gold-l:#f0dba6;--gold-d:#9c7a3c;--txt:#efe8da;--mute:#8f8677;
+  --foil:linear-gradient(135deg,#8a6a2f 0%,#d9b866 22%,#f6e3ae 40%,#c9a253 58%,#8d6b30 78%,#e3c37a 100%)}
 body{background:var(--bg)}
-.c{position:relative;width:96mm;height:56mm;overflow:hidden;page-break-after:always;color:var(--txt);
-  background:radial-gradient(60mm 40mm at 85% 0%,#20190f,transparent 70%),var(--bg)}
-.safe{position:absolute;inset:7mm 8mm}            /* 3mm bleed + 4-5mm safe zone */
-.frame{position:absolute;inset:6mm;border:.2mm solid rgba(216,180,106,.35)}
-/* front */
-.front .safe{display:flex;flex-direction:column;align-items:center;justify-content:center}
-.front img{width:17mm}
-.front .mk{font-family:Montserrat;font-weight:600;font-size:12pt;letter-spacing:.2em;color:var(--gold);margin-top:3mm;direction:ltr;padding-left:.2em}
-.front .sub{font-family:Montserrat;font-size:4.6pt;letter-spacing:.42em;color:var(--mute);margin-top:1.4mm;direction:ltr;padding-left:.42em}
-.front .ln{width:10mm;height:.25mm;background:var(--gold);margin-top:3mm;opacity:.7}
-.front .web{font-family:Montserrat;font-size:5pt;letter-spacing:.3em;color:var(--gold-l);margin-top:2.6mm;direction:ltr}
-/* back */
-.back .safe{display:grid;grid-template-columns:1fr auto;gap:5mm}
-.nm{font-family:Amiri;font-weight:700;font-size:17pt;line-height:1.1;color:var(--txt)}
-.en{font-family:"Cormorant Garamond";font-weight:600;font-size:11.5pt;color:var(--gold-l);direction:ltr;text-align:right;margin-top:.6mm}
-.ti{font-family:"IBM Plex Sans Arabic";font-size:6.4pt;color:var(--gold);margin-top:1.6mm}
-.ti span{font-family:Montserrat;font-size:4.6pt;letter-spacing:.25em;color:var(--mute);margin-inline-start:1.5mm}
-.rule{width:12mm;height:.25mm;background:linear-gradient(270deg,var(--gold),transparent);margin:3mm 0 2.6mm}
-.ct{display:grid;gap:1.35mm}
-.ct div{display:flex;align-items:center;gap:2mm;font-family:Montserrat;font-weight:500;font-size:6.6pt;direction:ltr;justify-content:flex-end;color:var(--txt)}
-.ct svg{width:2.6mm;height:2.6mm;flex:none;fill:none;stroke:var(--gold);stroke-width:1.6}
-.side{display:flex;flex-direction:column;align-items:center;justify-content:space-between;border-inline-start:.2mm solid rgba(216,180,106,.3);padding-inline-start:5mm}
-.side img.l{width:9mm}
-.side .qr{width:15mm;height:15mm;background:#e6c98a;padding:1.3mm;border-radius:.6mm}
-.side small{font-family:Montserrat;font-size:3.8pt;letter-spacing:.3em;color:var(--mute);direction:ltr}
+.c{position:relative;width:96mm;height:56mm;overflow:hidden;page-break-after:always;color:var(--txt);background:var(--bg)}
+
+/* ---------- FRONT: marble + blueprint ---------- */
+.front .mb{position:absolute;inset:0;background:url(tv.jpg) 50% 34%/150% auto no-repeat;filter:grayscale(.35) brightness(.42) contrast(1.15)}
+.front .vg{position:absolute;inset:0;background:radial-gradient(46mm 30mm at 50% 50%,rgba(7,6,5,.35),rgba(7,6,5,.93) 100%)}
+.front .grid{position:absolute;inset:0;opacity:.1;
+  background-image:linear-gradient(rgba(216,180,106,.9) .1mm,transparent .1mm),linear-gradient(90deg,rgba(216,180,106,.9) .1mm,transparent .1mm);
+  background-size:6mm 6mm;background-position:3mm 3mm;
+  -webkit-mask:radial-gradient(40mm 26mm at 50% 50%,transparent 40%,#000 100%);mask:radial-gradient(40mm 26mm at 50% 50%,transparent 40%,#000 100%)}
+.cn{position:absolute;width:6mm;height:6mm;border-color:var(--gold);border-style:solid;border-width:0}
+.cn.a{top:6mm;right:6mm;border-top-width:.3mm;border-right-width:.3mm}
+.cn.b{top:6mm;left:6mm;border-top-width:.3mm;border-left-width:.3mm}
+.cn.c1{bottom:6mm;right:6mm;border-bottom-width:.3mm;border-right-width:.3mm}
+.cn.d{bottom:6mm;left:6mm;border-bottom-width:.3mm;border-left-width:.3mm}
+.dim{position:absolute;left:14mm;right:14mm;bottom:8.3mm;height:2mm;direction:ltr;display:flex;align-items:center;gap:1.5mm}
+.dim i{flex:1;height:.15mm;background:rgba(216,180,106,.55);position:relative}
+.dim i::before,.dim i::after{content:"";position:absolute;top:-.8mm;width:.15mm;height:1.75mm;background:rgba(216,180,106,.7)}
+.dim i::before{left:0}.dim i::after{right:0}
+.dim span{font-family:Montserrat;font-size:3.6pt;letter-spacing:.35em;color:var(--gold);white-space:nowrap}
+.front .ctr{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding-bottom:2mm}
+.front img{width:19mm;filter:drop-shadow(0 .6mm 1.5mm rgba(0,0,0,.7))}
+.front .mk{font-family:Montserrat;font-weight:600;font-size:13pt;letter-spacing:.24em;padding-left:.24em;color:var(--gold-l);margin-top:2.6mm;direction:ltr}
+.front .sub{font-family:Montserrat;font-size:4.4pt;letter-spacing:.5em;padding-left:.5em;color:#b9ad97;margin-top:1.3mm;direction:ltr}
+
+/* ---------- BACK: foil band + type ---------- */
+.band{position:absolute;top:0;bottom:0;left:0;width:33mm;background:var(--foil)}
+.band::after{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(0,0,0,.05) 0 .35mm,transparent .35mm 1.4mm)}  /* fine fluting like the walnut slats */
+.band .in{position:absolute;inset:0;left:3mm;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:2.2mm;z-index:2}
+.band .qr{width:16.5mm;height:16.5mm;background:#f6ecd3;padding:1.4mm;border-radius:.5mm;box-shadow:0 .4mm 1.2mm rgba(60,40,10,.35)}
+.band small{font-family:Montserrat;font-weight:600;font-size:3.9pt;letter-spacing:.32em;padding-left:.32em;color:#2a1e0c;direction:ltr}
+.edge{position:absolute;top:0;bottom:0;left:33mm;width:.35mm;background:#000;opacity:.6}
+.back .txt{position:absolute;top:8.5mm;bottom:8mm;right:9mm;left:40mm;display:flex;flex-direction:column}
+.back .mono{position:absolute;right:-3mm;top:50%;transform:translateY(-50%);width:42mm;opacity:.05;filter:grayscale(1) brightness(2)}
+.nm{font-family:Amiri;font-weight:700;font-size:19pt;line-height:1;color:var(--txt);position:relative}
+.en{font-family:"Cormorant Garamond";font-style:italic;font-weight:500;font-size:12pt;color:var(--gold-l);direction:ltr;text-align:right;margin-top:1.4mm;position:relative}
+.ti{display:flex;align-items:center;gap:1.6mm;margin-top:2.2mm;position:relative;white-space:nowrap}
+.ti b{font-family:"IBM Plex Sans Arabic";font-weight:500;font-size:6.2pt;color:var(--gold)}
+.ti i{width:3mm;height:.2mm;background:var(--gold-d)}
+.ti span{font-family:Montserrat;font-size:4.3pt;letter-spacing:.3em;color:var(--mute);direction:ltr}
+.ct{margin-top:auto;display:grid;gap:1.25mm;position:relative}
+.ct div{display:flex;align-items:center;justify-content:flex-end;gap:2mm;direction:ltr;font-family:Montserrat;font-weight:500;font-size:6.2pt;color:var(--txt)}
+.ct div em{font-style:normal;font-size:3.7pt;letter-spacing:.3em;color:var(--gold-d);width:7mm;text-align:left}
+.ct div span{flex:none}
+.ct .ic{width:4.2mm;height:4.2mm;border:.2mm solid rgba(216,180,106,.55);border-radius:50%;display:grid;place-items:center;flex:none}
+.ct svg{width:2.2mm;height:2.2mm;fill:none;stroke:var(--gold);stroke-width:1.8}
 </style>
 </head>
 <body>
 
 <section class="c front">
-  <div class="frame"></div>
-  <div class="safe">
+  <div class="mb"></div><div class="vg"></div><div class="grid"></div>
+  <i class="cn a"></i><i class="cn b"></i><i class="cn c1"></i><i class="cn d"></i>
+  <div class="ctr">
     <img src="logo.png" alt="">
     <div class="mk">MAX DESIGN</div>
     <div class="sub">INTERIOR DESIGN &amp; EXECUTION</div>
-    <div class="ln"></div>
-    <div class="web">MAXDESIGN.SA</div>
   </div>
+  <div class="dim"><i></i><span>MAXDESIGN.SA</span><i></i></div>
 </section>
 
 <section class="c back">
-  <div class="safe">
-    <div>
-      <div class="nm">طلحة نياز</div>
-      <div class="en">Talha Niaz</div>
-      <div class="ti">المهندس المعماري المسؤول<span>LEAD ARCHITECT</span></div>
-      <div class="rule"></div>
-      <div class="ct">
-        <div>+966 55 031 3745<svg viewBox="0 0 24 24"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg></div>
-        <div>talhaniax@gmail.com<svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m3 7 9 6 9-6"/></svg></div>
-        <div>maxdesign.sa<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></div>
-        <div>Riyadh, Saudi Arabia<svg viewBox="0 0 24 24"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></div>
-      </div>
-    </div>
-    <div class="side">
-      <img class="l" src="logo.png" alt="">
-      <img class="qr" src="qr.svg" alt="">
-      <small>WHATSAPP</small>
+  <div class="band"><div class="in">
+    <img class="qr" src="qr.svg" alt="">
+    <small>SCAN · WHATSAPP</small>
+  </div></div>
+  <div class="edge"></div>
+  <div class="txt">
+    <img class="mono" src="logo.png" alt="">
+    <div class="nm">طلحة نياز</div>
+    <div class="en">Talha Niaz</div>
+    <div class="ti"><span>LEAD ARCHITECT</span><i></i><b>المهندس المعماري المسؤول</b></div>
+    <div class="ct">
+      <div><span>+966 55 031 3745</span><span class="ic"><svg viewBox="0 0 24 24"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg></span></div>
+      <div><span>talhaniax@gmail.com</span><span class="ic"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="1.5"/><path d="m3 7 9 6 9-6"/></svg></span></div>
+      <div><span>maxdesign.sa · Riyadh</span><span class="ic"><svg viewBox="0 0 24 24"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg></span></div>
     </div>
   </div>
 </section>
