@@ -412,7 +412,6 @@ html[lang=en] .next .nt{font-family:var(--d-en);text-transform:uppercase}
 </nav>
 
 <header class="hero bleed" id="top">
-  <div class="trail" id="trail" aria-hidden="true"></div>
   <div class="hero-txt">
     <h1 id="htitle" aria-label="MAX DESIGN">MAX DESIGN</h1>
     <div class="hero-foot">
@@ -1342,23 +1341,6 @@ if (window.THREE){
   if (RM || !window.gsap) build.set(.5);
 }
 
-
-/* ---------- hero image trail ---------- */
-if (HOVER && !RM && window.gsap){
-  const trail = $('#trail'), pool = [];
-  const srcs = ['s-villa','003-003','s-palace','012-046','013-049','s-office','025-108','021-088','s-retail','030-121','019-084','s-apartment'];
-  srcs.forEach(s => { const i = new Image(); i.src = 'img/' + s + '.webp'; i.alt = ''; trail.appendChild(i); pool.push(i); });
-  let k = 0, lx = 0, ly = 0;
-  $('.hero').addEventListener('pointermove', e => {
-    const r = trail.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top;
-    if (Math.hypot(x - lx, y - ly) < 110) return; lx = x; ly = y;
-    const im = pool[k++ % pool.length]; gsap.killTweensOf(im);
-    gsap.timeline()
-      .set(im, {x, y, xPercent:-50, yPercent:-50, scale:.5, rotate:(Math.random()-.5)*16, opacity:1, zIndex:k})
-      .to(im, {scale:1, duration:.6, ease:'expo.out'})
-      .to(im, {opacity:0, scale:.85, y:y+40, duration:.9, ease:'power2.in'}, '+=.35');
-  });
-}
 
 /* ---------- image tunnel (3D fly-through) ---------- */
 {
