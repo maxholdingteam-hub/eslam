@@ -1,0 +1,9 @@
+{
+  // Cloudflare Workers static assets: publish only the Max Design website folder
+  "name": "maxdesign",
+  "compatibility_date": "2025-09-01",
+  "assets": {
+    "directory": "./max-design-site",
+    "not_found_handling": "404-page"
+  }
+}
