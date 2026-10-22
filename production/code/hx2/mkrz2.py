@@ -20,6 +20,8 @@ def v(t0, t1, n, ss, **k):
 # n2 following the car (driver seen from behind), n3 car parked in the rose farm, n5 front close-up on a tripod
 # (replaces rz5, where the parked car slid sideways), n6 the rose-farm shot on a tripod (replaces n3: the camera
 # orbit made the parked car look like it slid sideways; only its first 2.4 s, a plain push-in, is used).
+# n7 follow shot on a straight road (replaces n2: the road curved while the car kept straight, so it looked
+# like it slid sideways; Seedance, from 2.0 s once the car is aligned with its lane).
 # Each clip used at most twice, except the static sunset rz9, which carries on behind the trims and end cards.
 N2 = 'dl/hfrz2/n{}.mp4'
 def n(t0, t1, k, ss, **kw):
@@ -31,12 +33,12 @@ shots = [
     v(R, 12.00, 4, 0.3, z0=1.0, z1=1.06, fx=['punch'], tin='flash'),
     n(12.00, 14.40, 6, 0.0, z0=1.0, z1=1.03),
     v(14.40, 16.80, 6, 0.4, z0=1.0, z1=1.04),
-    n(16.80, 19.40, 2, 0.4, z0=1.0, z1=1.04, fx=['whipin']),
+    n(16.80, 19.40, 7, 2.0, z0=1.0, z1=1.04, fx=['whipin']),
     n(19.40, 21.60, 5, 0.6, z0=1.0, z1=1.04),
     v(21.60, DROP, 4, 3.8, z0=1.0, z1=1.06, fx=['whipout']),
     n(DROP, 26.60, 5, 3.1, z0=1.0, z1=1.05, fx=['punch'], tin='flash'),
     v(26.60, 29.40, 6, 3.0, z0=1.08, z1=1.12),
-    n(29.40, 32.20, 2, 3.1, z0=1.1, z1=1.14),
+    n(29.40, 32.20, 7, 3.15, z0=1.1, z1=1.14),
     v(32.20, 34.80, 3, 3.3, z0=1.12, z1=1.18, fx=['whipin']),
     v(34.80, ENG, 9, 0.2, z0=1.0, z1=1.04),
     v(ENG, END, 9, 0.9, z0=1.06, z1=1.1, tin='dip'),
