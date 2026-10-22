@@ -1020,7 +1020,7 @@ if (window.THREE){
   };
   li.src = 'img/logo.png';
 
-  function size(){ renderer.setSize(innerWidth, innerHeight, false); U.uRes.value.set(innerWidth, innerHeight); U.uAspect.value = innerHeight / innerWidth; U.uScale.value = Math.min(1.25, innerWidth / innerHeight * .95); }
+  function size(){ renderer.setSize(innerWidth, innerHeight, false); U.uRes.value.set(innerWidth, innerHeight); U.uAspect.value = innerHeight / innerWidth; U.uScale.value = Math.min(.92, innerWidth / innerHeight * .8); }
   addEventListener('resize', size); size();
   const sm = new THREE.Vector2(0,0); let vel = 0, done1 = false;
   const clock = new THREE.Clock();
