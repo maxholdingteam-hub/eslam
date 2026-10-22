@@ -21,3 +21,4 @@ n2 3a4bcf2c-da88-432a-9a11-91903dc11a39
 n3 cc5e288a-15f6-4696-85f9-fd5b278c9ab8
 n5 8d19d856-de0d-4592-a987-cdbe3b5a7059 front close-up, tripod zoom (replaces rz5: parked car slid sideways)
 n6 bc4815ee-055e-4e62-b7b6-b3f4d4434187 rose-farm car on tripod (replaces n3: orbit made the parked car look like it slid sideways; first 2.4 s used)
+n7 a47a276b-2d6b-4209-840f-195d868ff7b4 Seedance follow shot on a straight road (replaces n2, car slid sideways on a curve; Veo try b9bf5a31 flagged nsfw)
