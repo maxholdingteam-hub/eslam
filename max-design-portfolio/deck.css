@@ -20,7 +20,7 @@ body{font-family:Montserrat,Cairo,sans-serif;color:var(--txt);-webkit-print-colo
 .kick .ar{letter-spacing:0;font-size:20px;font-weight:600}
 .ttl{display:flex;justify-content:space-between;align-items:baseline;margin-top:10px}
 .ttl h2{font-size:54px;font-weight:300;letter-spacing:.08em;text-transform:uppercase;color:#fff}
-.ttl h2.ar{font-size:56px;font-weight:700;letter-spacing:0;text-transform:none;background:var(--gg);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ttl h2.ar{font-size:56px;font-weight:700;letter-spacing:0;text-transform:none;color:#d8b46a}
 .rule{height:1px;margin-top:22px;background:linear-gradient(90deg,var(--gold),rgba(201,162,90,.15) 45%,rgba(201,162,90,.15) 55%,var(--gold))}
 
 /* footer */
@@ -80,7 +80,7 @@ body{font-family:Montserrat,Cairo,sans-serif;color:var(--txt);-webkit-print-colo
 .shade{position:absolute;inset:0;z-index:1;background:linear-gradient(90deg,rgba(6,6,6,.96) 0%,rgba(6,6,6,.86) 34%,rgba(6,6,6,.25) 62%,rgba(6,6,6,.05) 100%)}
 .shade.full{background:radial-gradient(ellipse at center,rgba(6,6,6,.72) 0%,rgba(6,6,6,.93) 70%)}
 .divider .div-in{position:relative;z-index:3;width:820px;padding-top:120px}
-.divider .no{font-size:230px;font-weight:800;line-height:.85;background:var(--gg);-webkit-background-clip:text;background-clip:text;color:transparent;letter-spacing:-.02em}
+.divider .no{font-size:230px;font-weight:800;line-height:.85;color:#d8b46a;letter-spacing:-.02em}
 .divider .lbl{display:flex;gap:18px;align-items:baseline;color:var(--gold);letter-spacing:.5em;font-size:18px;margin:22px 0 26px}
 .divider .lbl .ar{letter-spacing:0;font-size:22px}
 .divider h1{font-size:62px;font-weight:300;letter-spacing:.05em;text-transform:uppercase;color:#fff;line-height:1.1}
@@ -102,8 +102,8 @@ body{font-family:Montserrat,Cairo,sans-serif;color:var(--txt);-webkit-print-colo
 .cover-l{position:absolute;z-index:3;left:130px;top:110px;width:820px}
 .cover .tag{font-size:17px;letter-spacing:.55em;color:var(--mute)}
 .cover .tag i{font-style:normal;color:var(--gold);margin:0 8px}
-.logo-big{width:230px;display:block;margin:70px 0 26px;filter:drop-shadow(0 10px 30px rgba(201,162,90,.25))}
-.word{font-size:96px;font-weight:600;letter-spacing:.06em;line-height:1;background:var(--gg);-webkit-background-clip:text;background-clip:text;color:transparent}
+.logo-big{width:230px;display:block;margin:70px 0 26px}
+.word{font-size:96px;font-weight:600;letter-spacing:.06em;line-height:1;color:#d8b46a}
 .word-sub{font-size:19px;letter-spacing:.42em;color:var(--gold);margin-top:18px}
 .word-ar{font-size:30px;font-weight:600;color:var(--txt);margin-top:16px;text-align:left}
 .cv-t{font-size:40px;font-weight:300;letter-spacing:.5em;color:#fff;display:flex;align-items:baseline;gap:26px}
@@ -115,19 +115,19 @@ body{font-family:Montserrat,Cairo,sans-serif;color:var(--txt);-webkit-print-colo
 .cover-tr .ar{letter-spacing:0;font-size:24px;color:var(--gold-l);font-weight:600}
 
 /* about */
-.sketch{position:absolute;left:0;right:0;bottom:0;width:100%;opacity:.22;z-index:0}
+.sketch{position:absolute;left:0;right:0;bottom:0;width:100%;opacity:.25;z-index:0;mix-blend-mode:normal}
 .about-in{position:relative;z-index:2;display:grid;grid-template-columns:1fr 1fr;gap:110px;margin-top:30px}
 .about-in p{font-size:23px;line-height:1.75;color:#d7d1c5;font-weight:300;margin-bottom:22px}
 .about-in .ar p{font-size:25px;line-height:1.9}
 .about-in p.lead{font-size:36px;line-height:1.45;color:#fff;font-weight:400;margin-bottom:36px}
 .about-in .ar p.lead{font-size:38px;font-weight:600}
-.about-in em{font-style:normal;background:var(--gg);-webkit-background-clip:text;background-clip:text;color:transparent;font-weight:600}
+.about-in em{font-style:normal;color:#d8b46a;font-weight:600}
 .about-in b{color:var(--gold-l);font-weight:600}
 
 /* services */
 .svcs{display:grid;grid-template-columns:repeat(3,1fr);grid-template-rows:1fr 1fr;gap:22px;height:690px}
 .svc{border:1px solid rgba(201,162,90,.3);background:linear-gradient(160deg,#16130d,#0d0d0d 60%);padding:28px 36px;position:relative}
-.svc .n{font-size:46px;font-weight:800;background:var(--gg);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1}
+.svc .n{font-size:46px;font-weight:800;color:#d8b46a;line-height:1}
 .svc h3{font-size:25px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#fff;margin-top:16px}
 .svc h3.ar{font-size:28px;letter-spacing:0;text-transform:none;color:var(--gold-l);margin-top:6px;text-align:left}
 .svc p{font-size:18px;line-height:1.6;color:var(--mute);margin-top:16px}
@@ -152,19 +152,19 @@ body{font-family:Montserrat,Cairo,sans-serif;color:var(--txt);-webkit-print-colo
 .ix .im{position:absolute;inset:0;background-size:cover;background-position:center}
 .ix::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 35%,rgba(0,0,0,.92) 85%)}
 .ix .n,.ix h3{position:relative;z-index:2}
-.ix .n{position:absolute;left:28px;bottom:150px;font-size:72px;font-weight:800;background:var(--gg);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ix .n{position:absolute;left:28px;bottom:150px;font-size:72px;font-weight:800;color:#d8b46a}
 .ix h3{position:absolute;left:28px;right:20px;bottom:76px;font-size:21px;letter-spacing:.08em;text-transform:uppercase;color:#fff;font-weight:500;line-height:1.3}
 .ix h3.ar{bottom:34px;font-size:23px;letter-spacing:0;text-transform:none;color:var(--gold-l);text-align:left}
 
 /* concept board */
 .board{height:700px;display:flex;justify-content:center}
-.board img{height:100%;border:1px solid var(--gold-d);box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.board img{height:100%;border:1px solid var(--gold-d)}
 
 /* thank you */
 .thanks{padding:0}
 .ty{position:relative;z-index:3;text-align:center;padding-top:110px}
 .ty .logo-big{margin:0 auto 30px;width:200px}
-.ty h1{font-size:120px;font-weight:600;letter-spacing:.14em;background:var(--gg);-webkit-background-clip:text;background-clip:text;color:transparent;line-height:1}
+.ty h1{font-size:120px;font-weight:600;letter-spacing:.14em;color:#d8b46a;line-height:1}
 .ty h1.ar{font-size:72px;letter-spacing:0;font-weight:700;margin-top:18px;line-height:1.3;direction:rtl}
 .ty p{font-size:26px;color:#e3ddd1;font-weight:300;letter-spacing:.06em}
 .ty p.ar{font-size:30px;margin-top:4px;color:var(--gold-l);font-weight:600}
