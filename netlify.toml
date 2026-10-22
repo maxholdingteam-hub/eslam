@@ -1,0 +1,10 @@
+# Netlify: deploy only the Max Design website folder (keeps the rest of the repo off the web)
+[build]
+  base = "max-design-site"
+  publish = "."
+  command = ""
+
+[[headers]]
+  for = "/img/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
