@@ -22,15 +22,15 @@
 <script type="application/ld+json">{"@context": "https://schema.org", "@type": "InteriorDesigner", "name": "Max Design | ماكس ديزاين", "url": "https://maxdesign.sa/", "logo": "https://maxdesign.sa/img/logo.png", "image": "https://maxdesign.sa/img/og.jpg", "telephone": "+966579277975", "email": "info@maxdesign.sa", "address": {"@type": "PostalAddress", "streetAddress": "Wadi Al-Sukhayrah St., Al-Qadisiyah", "addressLocality": "Riyadh", "addressCountry": "SA"}, "areaServed": "Saudi Arabia", "sameAs": ["https://www.instagram.com/maxdesign.sa/", "https://www.tiktok.com/@maxdesign.sa"], "description": "تصميم داخلي وتنفيذ مشاريع: قصور، فلل، شقق، محلات تجارية ومقرات شركات في الرياض."}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&family=Archivo:wdth,wght@62..125,300..900&family=Manrope:wght@300;400;600&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@300;400;600&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
 <style>
 /* Layout: "the drafting table at night" — black void, gold linework; particles become the logo, the building comes apart, projects slide past like sheets on a light table */
 :root{
   --void:#070706; --void-2:#100f0c; --hair:#2a2418;
   --gold:#d9b46b; --gold-hot:#f6dc9c; --gold-deep:#7d5f2a;
   --bone:#efe8da; --ash:#8f8676; --paper:#f2ece0;
-  --d-en:"Archivo","Manrope",system-ui,sans-serif;
-  --d-ar:"Alexandria","IBM Plex Sans Arabic",Tahoma,sans-serif;
+  --d-en:"Cormorant Garamond","Cormorant",Georgia,"Times New Roman",serif;
+  --d-ar:"Amiri","Traditional Arabic","IBM Plex Sans Arabic",serif;
   --b-en:"Manrope",system-ui,"Segoe UI",sans-serif;
   --b-ar:"IBM Plex Sans Arabic","Alexandria",Tahoma,"Segoe UI",sans-serif;
   --mark:"Montserrat",system-ui,sans-serif;
@@ -266,7 +266,7 @@ html[lang=ar] .fact b{font-family:var(--b-ar)}
 .gal .cap{position:absolute;inset-inline:0;bottom:0;padding:8px 12px;font-size:13px;background:linear-gradient(0deg,rgba(0,0,0,.85),transparent)}
 .gal.paper .cap{position:static;background:none;color:var(--void);padding:8px 0 0}
 .gal button{animation:rise .7s cubic-bezier(.2,.8,.2,1) both}
-@keyframes rise{from{transform:translateY(24px)}to{transform:none}}
+@keyframes rise{from{clip-path:inset(100% 0 0 0);transform:translateY(40px)}to{clip-path:inset(0 0 0 0);transform:none}}
 
 /* lightbox */
 .lbx{position:fixed;inset:0;z-index:99;background:rgba(5,5,4,.97);display:grid;grid-template-rows:auto 1fr auto;gap:12px;
@@ -303,6 +303,40 @@ html[lang=en] .brief-h{font-family:var(--d-en);font-stretch:125%;text-transform:
 .clients{display:flex;flex-wrap:wrap;gap:12px 40px;justify-content:center;align-items:center;margin-top:60px;color:var(--ash)}
 .clients b{font-family:var(--d-en);font-stretch:125%;font-weight:700;font-size:22px;letter-spacing:.08em;color:var(--bone);opacity:.8}
 .clients small{display:block;font-size:12px;font-weight:400;letter-spacing:0;color:var(--ash);font-stretch:100%}
+
+
+/* display faces: Amiri (AR) + Cormorant Garamond (EN) */
+.num b,.card .n,.ps .k,.case-head .n,.next .nn,.pct,.mq-row span,.clients b,html[lang=en] .disp,html[lang=en] .svc-row .t,html[lang=en] .card h3,html[lang=en] .ps h3,html[lang=en] .manifesto p,html[lang=en] .hero-claim,html[lang=en] #menulist .mt,html[lang=en] .next .nt,html[lang=en] .brief-h{font-weight:600!important;font-stretch:100%!important}
+html[lang=en] .disp{letter-spacing:.01em;text-transform:none}
+html[lang=ar] .disp,html[lang=ar] .manifesto p,html[lang=ar] .svc-row .t,html[lang=ar] #menulist .mt,html[lang=ar] .card h3,html[lang=ar] .hero-claim,html[lang=ar] .next .nt,.kin-row.ar span{font-weight:700;line-height:1.5}
+html[lang=ar] .disp{line-height:1.45}
+.kin-row.ar span{line-height:1.6}
+
+/* hero image trail */
+.trail{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.trail img{position:absolute;left:0;top:0;width:clamp(150px,14vw,240px);aspect-ratio:4/5;object-fit:cover;opacity:0;border:1px solid rgba(217,180,107,.35);will-change:transform,opacity}
+
+/* image tunnel */
+.tunnel{height:330vh;position:relative;z-index:2}
+.tn-pin{position:sticky;top:0;height:100svh;overflow:hidden;perspective:1000px;display:grid;place-items:center;background:radial-gradient(circle at 50% 50%,#17130c,var(--void) 70%)}
+.tn-stage{position:absolute;inset:0;transform-style:preserve-3d;will-change:transform}
+.tn-stage figure{position:absolute;left:50%;top:50%;margin:0;width:clamp(220px,26vw,440px);aspect-ratio:4/3;will-change:transform,opacity;opacity:0}
+.tn-stage figure.tall{aspect-ratio:3/4;width:clamp(170px,18vw,320px)}
+.tn-stage img{width:100%;height:100%;object-fit:cover;display:block;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.tn-txt{position:relative;z-index:2;text-align:center;pointer-events:none;padding-inline:20px}
+.tn-txt h2{margin:10px 0 0;font-size:clamp(40px,7.5vw,128px);text-shadow:0 10px 50px rgba(0,0,0,.9)}
+.tn-txt p{margin:16px auto 0;color:var(--ash);max-width:40ch}
+.tn-count{font-family:var(--d-en);color:var(--gold);font-size:clamp(18px,1.6vw,24px);letter-spacing:.2em}
+
+/* kinetic type */
+.kin{direction:ltr;overflow:hidden;padding-block:12vh;position:relative;z-index:2;border-block:1px solid var(--hair)}
+.kin-row{display:flex;gap:4vw;width:max-content;white-space:nowrap;font-size:clamp(56px,11vw,190px);line-height:1.15;will-change:transform}
+.kin-row span{display:inline-block}
+.kin-row .o{color:transparent;-webkit-text-stroke:1px var(--gold-deep)}
+.kin-row .g{color:var(--gold)}
+.kin-row .w{color:var(--bone)}
+.kin-row.ar span{font-family:var(--d-ar);font-weight:700}
+.kin-row.en span{font-family:var(--d-en);text-transform:uppercase;letter-spacing:.04em}
 
 /* v3 additions */
 html[lang=ar] .disp{line-height:1.3}
@@ -378,6 +412,7 @@ html[lang=en] .next .nt{font-family:var(--d-en);text-transform:uppercase}
 </nav>
 
 <header class="hero bleed" id="top">
+  <div class="trail" id="trail" aria-hidden="true"></div>
   <div class="hero-txt">
     <h1 id="htitle" aria-label="MAX DESIGN">MAX DESIGN</h1>
     <div class="hero-foot">
@@ -436,6 +471,17 @@ html[lang=en] .next .nt{font-family:var(--d-en);text-transform:uppercase}
 
   <div class="mq bleed" aria-hidden="true"><div class="mq-row" id="mq"></div></div>
 
+  <section class="tunnel bleed" id="tunnel" aria-label="Project images">
+    <div class="tn-pin">
+      <div class="tn-stage" id="tnStage"></div>
+      <div class="tn-txt">
+        <div class="tn-count" id="tnCount"></div>
+        <h2 class="disp"><span data-l="ar">كل مساحة<br><span class="gold">حكاية.</span></span><span data-l="en">Every space<br><span class="gold">tells a story.</span></span></h2>
+        <p><span data-l="ar">انزل وعدّي وسط شغلنا: ريندرات، مخططات، وصور من الموقع.</span><span data-l="en">Scroll through our work: renders, drawings and photos from site.</span></p>
+      </div>
+    </div>
+  </section>
+
   <section class="work" id="work">
     <div class="in work-head">
       <div><div class="mono gold"><span data-l="ar" style="letter-spacing:0;font-family:var(--b-ar);font-size:15px">معرض الأعمال</span><span data-l="en">Selected work</span></div>
@@ -443,6 +489,12 @@ html[lang=en] .next .nt{font-family:var(--d-en);text-transform:uppercase}
       <p class="mono" style="letter-spacing:.2em"><span data-l="ar" style="letter-spacing:0;font-family:var(--b-ar);font-size:15px">اضغط على أي مشروع لتفاصيله</span><span data-l="en">Open a project</span></p>
     </div>
     <div class="hz bleed" id="hz"><div class="hz-track" id="track"></div></div>
+  </section>
+
+  <section class="kin bleed" aria-hidden="true">
+    <div class="kin-row ar" data-d="1"><span class="w">نصمّم</span><span class="g">·</span><span class="o">نشرف</span><span class="g">·</span><span class="w">ننفّذ</span><span class="g">·</span><span class="o">نسلّم</span><span class="g">·</span><span class="w">نصمّم</span><span class="g">·</span><span class="o">نشرف</span><span class="g">·</span><span class="w">ننفّذ</span><span class="g">·</span><span class="o">نسلّم</span></div>
+    <div class="kin-row en" data-d="-1"><span class="o">Palaces</span><span class="g">◆</span><span class="w">Villas</span><span class="g">◆</span><span class="o">Apartments</span><span class="g">◆</span><span class="w">Retail</span><span class="g">◆</span><span class="o">Offices</span><span class="g">◆</span><span class="w">Interiors</span><span class="g">◆</span><span class="o">Palaces</span><span class="g">◆</span><span class="w">Villas</span></div>
+    <div class="kin-row ar" data-d="1"><span class="g">قصور</span><span class="o">فلل</span><span class="w">شقق</span><span class="g">محلات</span><span class="o">مكاتب</span><span class="w">قصور</span><span class="g">فلل</span><span class="o">شقق</span><span class="w">محلات</span><span class="g">مكاتب</span></div>
   </section>
 
   <section class="proc in">
@@ -542,12 +594,12 @@ function setLang(l){
 
 /* ---------- data ---------- */
 const SVC = [
-  ['تصميم وتنفيذ القصور','Palaces','تصاميم فاخرة بتفاصيل دقيقة وخامات تعكس الفخامة في كل ركن.','Refined detail and premium materials in every corner.','030-121.webp'],
-  ['تصميم وتنفيذ الفلل','Villas','تصميم شامل لكل أدوار الفيلا مع إشراف كامل لين التسليم.','Every floor designed, supervised through handover.','013-049.webp'],
-  ['تصميم الشقق السكنية','Apartments','داخلي عصري وعملي، من توزيع المساحات للألوان والخامات.','Modern, practical interiors from layout to finishes.','018-077.webp'],
-  ['إدارة وتنفيذ المشاريع','Project management','نتابع التنفيذ خطوة بخطوة، من الخامات والمقاولين للتسليم.','Materials, contractors and delivery, step by step.','008-023.webp'],
-  ['تصميم المحلات التجارية','Retail stores','هوية بصرية تجذب العميل من أول نظرة.','An identity that draws customers in at first sight.','024-107.webp'],
-  ['المكاتب ومقرات الشركات','Offices & HQs','بيئة عمل احترافية تعكس هوية شركتك.','Workplaces that reflect your brand.','021-088.webp']
+  ['تصميم وتنفيذ القصور','Palaces','تصاميم فاخرة بتفاصيل دقيقة وخامات تعكس الفخامة في كل ركن.','Refined detail and premium materials in every corner.','s-palace.webp'],
+  ['تصميم وتنفيذ الفلل','Villas','تصميم شامل لكل أدوار الفيلا مع إشراف كامل لين التسليم.','Every floor designed, supervised through handover.','s-villa.webp'],
+  ['تصميم الشقق السكنية','Apartments','داخلي عصري وعملي، من توزيع المساحات للألوان والخامات.','Modern, practical interiors from layout to finishes.','s-apartment.webp'],
+  ['إدارة وتنفيذ المشاريع','Project management','نتابع التنفيذ خطوة بخطوة، من الخامات والمقاولين للتسليم.','Materials, contractors and delivery, step by step.','s-design.webp'],
+  ['تصميم المحلات التجارية','Retail stores','هوية بصرية تجذب العميل من أول نظرة.','An identity that draws customers in at first sight.','s-retail.webp'],
+  ['المكاتب ومقرات الشركات','Offices & HQs','بيئة عمل احترافية تعكس هوية شركتك.','Workplaces that reflect your brand.','s-office.webp']
 ];
 const STEPS = [
   ['التصميم','Design','الفكرة وتوزيع المساحات والتصور ثلاثي الأبعاد.','Concept, space planning and 3D visualisation.'],
@@ -981,7 +1033,7 @@ if (window.THREE){
         gl_FragColor = vec4(col * vig, a);
       }`});
   scene.add(new THREE.Mesh(new THREE.PlaneGeometry(2,2), bgMat));
-  new THREE.TextureLoader().load('img/hero.webp', t => { t.minFilter = THREE.LinearFilter; U.uTex.value = t; U.uImgRes.value.set(t.image.width, t.image.height); });
+  new THREE.TextureLoader().load('img/s-villa.webp', t => { t.minFilter = THREE.LinearFilter; U.uTex.value = t; U.uImgRes.value.set(t.image.width, t.image.height); });
 
   // particles sampled from the logo
   const pts = new THREE.Points(new THREE.BufferGeometry(), new THREE.ShaderMaterial({uniforms:U, transparent:true, depthWrite:false, blending:THREE.AdditiveBlending,
@@ -1290,6 +1342,55 @@ if (window.THREE){
   if (RM || !window.gsap) build.set(.5);
 }
 
+
+/* ---------- hero image trail ---------- */
+if (HOVER && !RM && window.gsap){
+  const trail = $('#trail'), pool = [];
+  const srcs = ['s-villa','003-003','s-palace','012-046','013-049','s-office','025-108','021-088','s-retail','030-121','019-084','s-apartment'];
+  srcs.forEach(s => { const i = new Image(); i.src = 'img/' + s + '.webp'; i.alt = ''; trail.appendChild(i); pool.push(i); });
+  let k = 0, lx = 0, ly = 0;
+  $('.hero').addEventListener('pointermove', e => {
+    const r = trail.getBoundingClientRect(), x = e.clientX - r.left, y = e.clientY - r.top;
+    if (Math.hypot(x - lx, y - ly) < 110) return; lx = x; ly = y;
+    const im = pool[k++ % pool.length]; gsap.killTweensOf(im);
+    gsap.timeline()
+      .set(im, {x, y, xPercent:-50, yPercent:-50, scale:.5, rotate:(Math.random()-.5)*16, opacity:1, zIndex:k})
+      .to(im, {scale:1, duration:.6, ease:'expo.out'})
+      .to(im, {opacity:0, scale:.85, y:y+40, duration:.9, ease:'power2.in'}, '+=.35');
+  });
+}
+
+/* ---------- image tunnel (3D fly-through) ---------- */
+{
+  const stage = $('#tnStage');
+  const all = [...new Set([...P.flatMap(p => p.tabs.flatMap(t => t[3] ? [] : t[2].map(it => it[0]))), 's-palace.webp','s-villa.webp','s-apartment.webp','s-design.webp','s-retail.webp','s-office.webp'])];
+  $('#tnCount').innerHTML = T(`${P.length} مشاريع · ${all.length} صورة`, `${P.length} projects · ${all.length} images`);
+  const pick = all.filter((_,i) => i % (innerWidth < 700 ? 3 : 2) === 0).slice(0, innerWidth < 700 ? 14 : 26);
+  let seed = 3; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+  const items = pick.map((src, i) => {
+    const f = document.createElement('figure'); if (i % 4 === 1) f.className = 'tall';
+    f.innerHTML = `<img src="img/${src}" alt="" loading="lazy">`; stage.appendChild(f);
+    const side = i % 2 ? 1 : -1, ang = rnd() * Math.PI;
+    return { f, x: side * (.22 + rnd() * .3), y: Math.cos(ang) * .32, z0: -i * 520 - 300 };
+  });
+  const span = items.length * 520 + 900;
+  let tp = 0, tsp = 0, tvis = false;
+  new IntersectionObserver(e => tvis = e[0].isIntersecting).observe($('#tunnel'));
+  window.tunnelSet = v => tp = v;
+  (function tl(){
+    requestAnimationFrame(tl); if (!tvis) return;
+    tsp += (tp - tsp) * .1;
+    const W = innerWidth, H = innerHeight;
+    stage.style.transform = RM ? '' : `rotateY(${mouse.nx * 5}deg) rotateX(${-mouse.ny * 4}deg)`;
+    items.forEach(it => {
+      const z = it.z0 + tsp * span;
+      const o = Math.min(1, Math.max(0, (z + 9000) / 3000)) * (1 - Math.min(1, Math.max(0, (z - 250) / 450)));
+      it.f.style.opacity = o.toFixed(3);
+      it.f.style.transform = `translate(-50%,-50%) translate3d(${it.x * W}px,${it.y * H}px,${z}px)`;
+    });
+  })();
+}
+
 /* ---------- smooth scroll + scroll motion ---------- */
 let lenis = null;
 if (window.gsap && window.ScrollTrigger){
@@ -1323,6 +1424,9 @@ if (window.gsap && window.ScrollTrigger){
     const tw = gsap.to(track, {x:() => -dist(), ease:'none', scrollTrigger:{trigger:'#hz', start:'center center', end:() => '+=' + dist(), pin:true, scrub:1, invalidateOnRefresh:true, anticipatePin:1}});
     $$('.card img').forEach(img => gsap.fromTo(img, {xPercent:6}, {xPercent:-6, ease:'none', scrollTrigger:{trigger:img.parentNode, containerAnimation:tw, start:'left right', end:'right left', scrub:true}}));
   });
+  ScrollTrigger.create({trigger:'#tunnel', start:'top top', end:'bottom bottom', scrub:true, onUpdate:s => window.tunnelSet && tunnelSet(s.progress)});
+  $$('.kin-row').forEach(r => { const d = +r.dataset.d; gsap.fromTo(r, {xPercent: d > 0 ? -38 : 0}, {xPercent: d > 0 ? 0 : -38, ease:'none', scrollTrigger:{trigger:'.kin', start:'top bottom', end:'bottom top', scrub:.6}}); });
+  if (!RM) $$('.disp').forEach(el => gsap.from(el, {clipPath:'inset(0 0 100% 0)', y:40, duration:1.2, ease:'expo.out', scrollTrigger:{trigger:el, start:'top 90%'}}));
   // marquee reacts to scroll velocity
   const mq = $('#mq'); let mx = 0, mv = 0;
   ScrollTrigger.create({trigger:'.mq', start:'top bottom', end:'bottom top', onUpdate:s => mv = s.getVelocity() / 300});
