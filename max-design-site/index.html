@@ -506,8 +506,7 @@ html[lang=en] .next .nt{font-family:var(--d-en);text-transform:uppercase}
     <div class="mono gold"><span data-l="ar" style="letter-spacing:0;font-family:var(--b-ar);font-size:15px">تواصل معنا</span><span data-l="en">Contact</span></div>
     <h2 class="disp big"><span data-l="ar">خلّنا نصمّم<br><span class="gold">مساحتك.</span></span><span data-l="en">Let's build<br><span class="gold">your vision.</span></span></h2>
     <a class="mag" id="mag" href="https://wa.me/966579277975" target="_blank" rel="noopener"><span data-l="ar">واتساب</span><span data-l="en">WhatsApp</span></a>
-    <form class="brief" id="brief" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot" novalidate>
-      <input type="hidden" name="form-name" value="contact"><p hidden><label>Leave empty <input name="bot" id="f-bot"></label></p>
+    <form class="brief" id="brief" novalidate>
       <div class="brief-h"><span data-l="ar">حدّثنا عن مشروعك</span><span data-l="en">Tell us about your project</span></div>
       <div class="brief-grid">
         <label class="fld"><span>{{T('الاسم','Name')}}</span><input id="f-name" name="name" autocomplete="name" required></label>
@@ -518,8 +517,9 @@ html[lang=en] .next .nt{font-family:var(--d-en);text-transform:uppercase}
         <label class="fld wide"><span>{{T('تفاصيل إضافية','Details')}}</span><textarea id="f-msg" name="message" rows="3"></textarea></label>
       </div>
       <div class="brief-act">
-        <button class="btn-gold" type="submit" id="f-send">{{T('أرسل الطلب','Send request')}}</button>
-        <a class="btn-line" id="f-wa" href="https://wa.me/966579277975" target="_blank" rel="noopener">{{T('أو أرسله عبر واتساب','Or send on WhatsApp')}}</a>
+        <button class="btn-gold" type="submit" id="f-send">{{T('أرسل الطلب عبر واتساب','Send via WhatsApp')}}</button>
+        <a id="f-wa" href="https://wa.me/966579277975" target="_blank" rel="noopener" hidden>WhatsApp</a>
+        <a class="btn-line" href="tel:+966579277975">{{T('أو اتصل: 0579277975','Or call +966 57 927 7975')}}</a>
         <span class="f-status" id="f-status" role="status"></span>
       </div>
     </form>
@@ -1464,22 +1464,16 @@ addEventListener('keydown', e => {
   }
   function upd(){ $('#f-wa').href = 'https://wa.me/966579277975?text=' + encodeURIComponent(msg()); }
   f.addEventListener('input', upd); upd(); $('#lang').addEventListener('click', upd);
-  f.addEventListener('submit', async e => {
+  f.addEventListener('submit', e => {
     e.preventDefault();
     const bad = ['#f-name','#f-phone'].filter(id => !val(id));
     $$('#f-name,#f-phone').forEach(i => i.setAttribute('aria-invalid', bad.includes('#'+i.id)));
     const st = $('#f-status');
     if (bad.length){ st.innerHTML = T('فضلاً أدخل الاسم ورقم الجوال لنتواصل معك.','Add your name and mobile so we can reply.'); return; }
-    st.innerHTML = T('جاري الإرسال…','Sending…');
-    try {
-      const body = new URLSearchParams(new FormData(f)); body.set('type', TYPES[type][1]);
-      const r = await fetch('/', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body});
-      if (!r.ok) throw 0;
-      st.innerHTML = T('وصلنا طلبك ✓ وسنتواصل معك قريباً.','Request received ✓ We will be in touch soon.'); SND.blip(990,.25,.06); f.reset(); upd();
-    } catch(err){
-      st.innerHTML = T('تعذّر الإرسال من هنا. اضغط «أرسله عبر واتساب» وستجد الرسالة جاهزة.','We could not send it from here. Tap "Send on WhatsApp" and the message is ready.');
-      $('#f-wa').focus();
-    }
+    upd(); SND.blip(990,.2,.05);
+    const w = window.open($('#f-wa').href, '_blank');
+    if (w) w.opener = null; else location.href = $('#f-wa').href;
+    st.innerHTML = T('فتحنا لك واتساب والرسالة جاهزة، اضغط «إرسال» هناك.','WhatsApp is open with your message ready. Tap Send there.');
   });
 }
 
