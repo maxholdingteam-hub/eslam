@@ -3,10 +3,23 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
-<link rel="icon" href="img/logo.png">
-<title>Max Design</title>
+<link rel="icon" href="/img/logo.png">
+<link rel="apple-touch-icon" href="/img/logo.png">
+<title>Max Design | ماكس ديزاين</title>
 <meta name="claude:viewport-fit-sides" content="cover">
-<meta name="description" content="Max Design — Architectural design, interiors and construction in Riyadh. ماكس ديزاين للتصميم المعماري والداخلي والتنفيذ.">
+<meta name="description" content="ماكس ديزاين: تصميم داخلي وتنفيذ مشاريع في الرياض — قصور، فلل، شقق، محلات تجارية ومقرات شركات. Max Design: interior design and project delivery in Riyadh.">
+<meta name="theme-color" content="#070706">
+<link rel="canonical" href="https://maxdesign.sa/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Max Design">
+<meta property="og:title" content="ماكس ديزاين | نصمم أسلوب حياة">
+<meta property="og:description" content="تصميم داخلي وتنفيذ مشاريع في الرياض: قصور، فلل، شقق، محلات ومقرات شركات.">
+<meta property="og:url" content="https://maxdesign.sa/">
+<meta property="og:image" content="https://maxdesign.sa/img/og.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:locale" content="ar_SA"><meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "InteriorDesigner", "name": "Max Design | ماكس ديزاين", "url": "https://maxdesign.sa/", "logo": "https://maxdesign.sa/img/logo.png", "image": "https://maxdesign.sa/img/og.jpg", "telephone": "+966579277975", "email": "info@maxdesign.sa", "address": {"@type": "PostalAddress", "streetAddress": "Wadi Al-Sukhayrah St., Al-Qadisiyah", "addressLocality": "Riyadh", "addressCountry": "SA"}, "areaServed": "Saudi Arabia", "sameAs": ["https://www.instagram.com/maxdesign.sa/", "https://www.tiktok.com/@maxdesign.sa"], "description": "تصميم داخلي وتنفيذ مشاريع: قصور، فلل، شقق، محلات تجارية ومقرات شركات في الرياض."}</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&family=Archivo:wdth,wght@62..125,300..900&family=Manrope:wght@300;400;600&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
@@ -264,6 +277,33 @@ html[lang=ar] .fact b{font-family:var(--b-ar)}
 .lbx-stage img.paper{background:var(--paper);padding:14px}
 .lbx-nav{display:flex;justify-content:center;gap:12px;align-items:center}
 
+
+/* brief form */
+.brief{margin:70px auto 0;max-width:980px;text-align:start;border:1px solid var(--hair);padding:clamp(20px,3vw,40px);background:linear-gradient(160deg,#14110c,#0b0a08)}
+.brief-h{font-family:var(--d-ar);font-weight:600;font-size:clamp(22px,2.4vw,32px);margin-bottom:24px}
+html[lang=en] .brief-h{font-family:var(--d-en);font-stretch:125%;text-transform:uppercase}
+.brief-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px 22px}
+.fld{display:grid;gap:8px;min-width:0}
+.fld.wide{grid-column:1/-1}
+.fld > span{font-size:13px;color:var(--ash)}
+.fld input,.fld textarea{font:inherit;color:var(--bone);background:transparent;border:0;border-bottom:1px solid var(--hair);padding:10px 2px;outline:none;transition:border-color .3s;width:100%}
+.fld input:focus,.fld textarea:focus{border-color:var(--gold)}
+.fld input[aria-invalid=true]{border-color:#d9776b}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips button{font:inherit;font-size:14px;background:none;border:1px solid var(--hair);color:var(--ash);padding:8px 16px;cursor:pointer;transition:all .25s}
+.chips button[aria-checked=true]{background:var(--gold);border-color:var(--gold);color:var(--void)}
+.brief-act{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:28px}
+.btn-gold{font:inherit;font-weight:600;background:var(--gold);color:var(--void);border:0;padding:14px 28px;cursor:pointer;transition:background .3s}
+.btn-gold:hover{background:var(--gold-hot)}
+.btn-line{color:var(--gold);text-decoration:none;border:1px solid var(--gold-deep);padding:13px 24px;transition:all .3s}
+.btn-line:hover{border-color:var(--gold);background:rgba(217,180,107,.08)}
+.f-status{font-size:14px;color:var(--gold-hot)}
+@media(max-width:640px){.brief-grid{grid-template-columns:1fr}}
+/* clients */
+.clients{display:flex;flex-wrap:wrap;gap:12px 40px;justify-content:center;align-items:center;margin-top:60px;color:var(--ash)}
+.clients b{font-family:var(--d-en);font-stretch:125%;font-weight:700;font-size:22px;letter-spacing:.08em;color:var(--bone);opacity:.8}
+.clients small{display:block;font-size:12px;font-weight:400;letter-spacing:0;color:var(--ash);font-stretch:100%}
+
 /* v3 additions */
 html[lang=ar] .disp{line-height:1.3}
 .snd{display:flex!important;align-items:flex-end;gap:2px;height:30px}
@@ -365,6 +405,12 @@ html[lang=en] .next .nt{font-family:var(--d-en);text-transform:uppercase}
     <div class="num"><b data-to="4">0</b><span><span data-l="ar">مراحل من الفكرة للمفتاح</span><span data-l="en">Stages from concept to keys</span></span></div>
   </div>
 
+  <div class="clients in" aria-label="Clients">
+    <span class="mono"><span data-l="ar" style="letter-spacing:0;font-family:var(--b-ar);font-size:14px">من عملائنا</span><span data-l="en">Clients</span></span>
+    <b>HITC<small>Home International Trading Co.</small></b>
+    <b>PROGER<small>DQ Office</small></b>
+  </div>
+
   <section class="in" id="services">
     <div class="svc-h">
       <div><div class="mono gold"><span data-l="ar" style="letter-spacing:0;font-family:var(--b-ar);font-size:15px">ماذا نقدم</span><span data-l="en">What we do</span></div>
@@ -409,6 +455,23 @@ html[lang=en] .next .nt{font-family:var(--d-en);text-transform:uppercase}
     <div class="mono gold"><span data-l="ar" style="letter-spacing:0;font-family:var(--b-ar);font-size:15px">تواصل معنا</span><span data-l="en">Contact</span></div>
     <h2 class="disp big"><span data-l="ar">يلا نبني<br><span class="gold">حلمك.</span></span><span data-l="en">Let's build<br><span class="gold">your vision.</span></span></h2>
     <a class="mag" id="mag" href="https://wa.me/966579277975" target="_blank" rel="noopener"><span data-l="ar">واتساب</span><span data-l="en">WhatsApp</span></a>
+    <form class="brief" id="brief" name="contact" method="POST" data-netlify="true" netlify-honeypot="bot" novalidate>
+      <input type="hidden" name="form-name" value="contact"><p hidden><label>Leave empty <input name="bot" id="f-bot"></label></p>
+      <div class="brief-h"><span data-l="ar">احكيلنا عن مشروعك</span><span data-l="en">Tell us about your project</span></div>
+      <div class="brief-grid">
+        <label class="fld"><span>{{T('الاسم','Name')}}</span><input id="f-name" name="name" autocomplete="name" required></label>
+        <label class="fld"><span>{{T('رقم الجوال','Mobile')}}</span><input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required dir="ltr"></label>
+        <div class="fld wide"><span>{{T('نوع المشروع','Project type')}}</span><div class="chips" id="f-type" role="radiogroup"></div></div>
+        <label class="fld"><span>{{T('المساحة التقريبية (م²)','Approx. area (m²)')}}</span><input id="f-area" name="area" inputmode="numeric" dir="ltr"></label>
+        <label class="fld"><span>{{T('المدينة / الحي','City / district')}}</span><input id="f-city" name="city"></label>
+        <label class="fld wide"><span>{{T('تفاصيل إضافية','Details')}}</span><textarea id="f-msg" name="message" rows="3"></textarea></label>
+      </div>
+      <div class="brief-act">
+        <button class="btn-gold" type="submit" id="f-send">{{T('ابعت الطلب','Send request')}}</button>
+        <a class="btn-line" id="f-wa" href="https://wa.me/966579277975" target="_blank" rel="noopener">{{T('أو ابعته واتساب','Or send on WhatsApp')}}</a>
+        <span class="f-status" id="f-status" role="status"></span>
+      </div>
+    </form>
     <div class="c-grid">
       <div class="cg"><small class="mono">Phone</small><b>+966 57 927 7975</b><button type="button" data-copy="+966579277975"><span data-l="ar">نسخ</span><span data-l="en">Copy</span></button></div>
       <div class="cg"><small class="mono">Email</small><b>info@maxdesign.sa</b><button type="button" data-copy="info@maxdesign.sa"><span data-l="ar">نسخ</span><span data-l="en">Copy</span></button></div>
@@ -445,6 +508,15 @@ html[lang=en] .next .nt{font-family:var(--d-en);text-transform:uppercase}
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/environments/RoomEnvironment.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/objects/Reflector.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/CopyShader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/LuminosityHighPassShader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/GammaCorrectionShader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/EffectComposer.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/RenderPass.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/ShaderPass.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/UnrealBloomPass.js"></script>
 <script>
 (() => {
 const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
@@ -470,12 +542,12 @@ function setLang(l){
 
 /* ---------- data ---------- */
 const SVC = [
-  ['تصميم وتنفيذ القصور','Palaces','تصاميم فاخرة بتفاصيل دقيقة وخامات تعكس الفخامة في كل ركن.','Refined detail and premium materials in every corner.','030-121.jpg'],
-  ['تصميم وتنفيذ الفلل','Villas','تصميم شامل لكل أدوار الفيلا مع إشراف كامل لين التسليم.','Every floor designed, supervised through handover.','013-049.jpg'],
-  ['تصميم الشقق السكنية','Apartments','داخلي عصري وعملي، من توزيع المساحات للألوان والخامات.','Modern, practical interiors from layout to finishes.','018-077.jpg'],
-  ['إدارة وتنفيذ المشاريع','Project management','نتابع التنفيذ خطوة بخطوة، من الخامات والمقاولين للتسليم.','Materials, contractors and delivery, step by step.','008-023.jpg'],
-  ['تصميم المحلات التجارية','Retail stores','هوية بصرية تجذب العميل من أول نظرة.','An identity that draws customers in at first sight.','024-107.jpg'],
-  ['المكاتب ومقرات الشركات','Offices & HQs','بيئة عمل احترافية تعكس هوية شركتك.','Workplaces that reflect your brand.','021-088.jpg']
+  ['تصميم وتنفيذ القصور','Palaces','تصاميم فاخرة بتفاصيل دقيقة وخامات تعكس الفخامة في كل ركن.','Refined detail and premium materials in every corner.','030-121.webp'],
+  ['تصميم وتنفيذ الفلل','Villas','تصميم شامل لكل أدوار الفيلا مع إشراف كامل لين التسليم.','Every floor designed, supervised through handover.','013-049.webp'],
+  ['تصميم الشقق السكنية','Apartments','داخلي عصري وعملي، من توزيع المساحات للألوان والخامات.','Modern, practical interiors from layout to finishes.','018-077.webp'],
+  ['إدارة وتنفيذ المشاريع','Project management','نتابع التنفيذ خطوة بخطوة، من الخامات والمقاولين للتسليم.','Materials, contractors and delivery, step by step.','008-023.webp'],
+  ['تصميم المحلات التجارية','Retail stores','هوية بصرية تجذب العميل من أول نظرة.','An identity that draws customers in at first sight.','024-107.webp'],
+  ['المكاتب ومقرات الشركات','Offices & HQs','بيئة عمل احترافية تعكس هوية شركتك.','Workplaces that reflect your brand.','021-088.webp']
 ];
 const STEPS = [
   ['التصميم','Design','الفكرة وتوزيع المساحات والتصور ثلاثي الأبعاد.','Concept, space planning and 3D visualisation.'],
@@ -484,53 +556,53 @@ const STEPS = [
   ['التسليم','Handover','تجربة سلسة لين تسليم المفتاح.','A seamless journey to the final key.']
 ];
 const P = [
- { id:'hitc', n:'01', ar:'مبنى مكاتب HITC', en:'HITC Office Building', hero:'003-003.jpg',
+ { id:'hitc', n:'01', ar:'مبنى مكاتب HITC', en:'HITC Office Building', hero:'003-003.webp',
    dAr:'شركة هوم الدولية للتجارة. مشروع مميّز يجمع بين الوظيفة والجمال.', dEn:'Home International Trading Company. A landmark serving both purpose and aesthetics.',
    tags:[['مكاتب','Office'],['446 م²','446 m²'],['تصميم + تنفيذ','Design + Build']],
    facts:[['مكاتب','Office','النوع','Type'],['173 م²','173 m²','الدور الأرضي','Ground floor'],['273 م²','273 m²','الدور الأول','First floor']],
-   ba:['003-003.jpg','008-022.jpg'],
+   ba:['003-003.webp','008-022.webp'],
    tabs:[
-    ['الفكرة','Concept',[['004-004.jpg','لوحة الفكرة والتوجه التصميمي','Concept & design intent board']],1],
-    ['المخططات','Drawings',[['d005-008.jpg','مسقط الدور الأرضي','Ground floor plan'],['d005-010.jpg','مسقط الدور الأول','First floor plan'],['d006-016.jpg','الشبكة الإنشائية','Grid plan'],['d006-014.jpg','قطاع أ-أ','Section A-A'],['d007-018.jpg','الواجهة الشمالية','North elevation'],['d007-020.jpg','الواجهة الشرقية','East elevation']],1],
-    ['التنفيذ','On site',[['008-022.jpg','المبنى بعد التنفيذ','Completed building'],['008-024.jpg','المدخل','Entrance'],['008-023.jpg','الهيكل الخرساني','Concrete frame'],['008-021.jpg','الفتحة الدائرية','Roof oculus']]]
+    ['الفكرة','Concept',[['004-004.webp','لوحة الفكرة والتوجه التصميمي','Concept & design intent board']],1],
+    ['المخططات','Drawings',[['d005-008.webp','مسقط الدور الأرضي','Ground floor plan'],['d005-010.webp','مسقط الدور الأول','First floor plan'],['d006-016.webp','الشبكة الإنشائية','Grid plan'],['d006-014.webp','قطاع أ-أ','Section A-A'],['d007-018.webp','الواجهة الشمالية','North elevation'],['d007-020.webp','الواجهة الشرقية','East elevation']],1],
+    ['التنفيذ','On site',[['008-022.webp','المبنى بعد التنفيذ','Completed building'],['008-024.webp','المدخل','Entrance'],['008-023.webp','الهيكل الخرساني','Concrete frame'],['008-021.webp','الفتحة الدائرية','Roof oculus']]]
    ]},
- { id:'forest', n:'02', ar:'مجمع فوريست فيلاز', en:'Forest Villas – Green Acres', hero:'012-046.jpg',
+ { id:'forest', n:'02', ar:'مجمع فوريست فيلاز', en:'Forest Villas – Green Acres', hero:'012-046.webp',
    dAr:'مشروع يجسّد الكمال الجمالي، وفكرته قائمة على التباين والترابط.', dEn:'Perfection, aesthetically. The whole idea is contrast and connection.',
    tags:[['سكني','Residential'],['B + G + 5','B + G + 5'],['نادي · جيم · مسبح','Club · Gym · Pool']],
    facts:[['سكني','Residential','النوع','Type'],['B + G + 5','B + G + 5','الأدوار','Levels'],['نادي · جيم · مسبح','Club · Gym · Pool','المرافق','Amenities']],
    tabs:[
-    ['التصورات','Renders',[['012-046.jpg','الواجهة ليلاً','Facade at night'],['012-048.jpg','البلوكات السكنية','Residential blocks'],['012-047.jpg','الفناء الداخلي','Courtyard'],['012-045.jpg','المدخل الرئيسي','Main approach']]],
-    ['المخططات','Drawings',[['d009-026.jpg','القبو','Basement'],['d009-030.jpg','الأرضي','Ground floor'],['d010-032.jpg','الأول','First floor'],['d010-034.jpg','الثاني','Second floor'],['d010-036.jpg','الثالث','Third floor'],['d011-042.jpg','الرابع','Fourth floor'],['d011-044.jpg','الخامس','Fifth floor']],1]
+    ['التصورات','Renders',[['012-046.webp','الواجهة ليلاً','Facade at night'],['012-048.webp','البلوكات السكنية','Residential blocks'],['012-047.webp','الفناء الداخلي','Courtyard'],['012-045.webp','المدخل الرئيسي','Main approach']]],
+    ['المخططات','Drawings',[['d009-026.webp','القبو','Basement'],['d009-030.webp','الأرضي','Ground floor'],['d010-032.webp','الأول','First floor'],['d010-034.webp','الثاني','Second floor'],['d010-036.webp','الثالث','Third floor'],['d011-042.webp','الرابع','Fourth floor'],['d011-044.webp','الخامس','Fifth floor']],1]
    ]},
- { id:'villa', n:'03', ar:'فيلا سكنية', en:'Residential Villa', hero:'013-049.jpg',
+ { id:'villa', n:'03', ar:'فيلا سكنية', en:'Residential Villa', hero:'013-049.webp',
    dAr:'فيلا عائلية معاصرة، حجر وخشب وإضاءة في تناغم كامل.', dEn:'A contemporary family villa where stone, timber and light work in harmony.',
    tags:[['فيلا','Villa'],['500 م²','500 m²'],['داخلي + تنفيذ','Interior + Build']],
    facts:[['فيلا','Villa','النوع','Type'],['500 م²','500 m²','المساحة','Area'],['تصميم + داخلي + تنفيذ','Design + Interior + Build','النطاق','Scope']],
    tabs:[
-    ['الداخلي','Interiors',[['018-077.jpg','الصالة','Lounge'],['018-078.jpg','غرفة النوم الرئيسية','Master bedroom'],['018-079.jpg','غرفة نوم','Bedroom'],['018-081.jpg','غرفة نوم','Bedroom'],['018-080.jpg','تفصيلة جدارية','Wall detail'],['018-083.jpg','جدار هندسي','Geometric wall']]],
-    ['لوحات الألوان','Palettes',[0,1,2,3,4,5,6,7].map(i=>[`016-0${64+i}.jpg`,'لوحة ألوان','Colour palette'])],
-    ['المخططات','Drawings',[['d014-051.jpg','القبو','Basement'],['d014-053.jpg','الأرضي','Ground floor'],['d014-055.jpg','الأول','First floor'],['d015-057.jpg','الواجهة الأمامية','Front elevation'],['d015-059.jpg','قطاع أ-أ','Section A-A'],['d015-061.jpg','الواجهة الجانبية','Side elevation'],['d015-063.jpg','قطاع ب-ب','Section B-B']],1],
-    ['التنفيذ','On site',[['017-072.jpg','الواجهة أثناء التنفيذ','Facade during works'],['017-073.jpg','تكسيات حجرية','Stone cladding'],['017-075.jpg','حجر طبيعي','Natural stone'],['017-076.jpg','رخام','Marble'],['017-074.jpg','أرضيات خارجية','External paving']]]
+    ['الداخلي','Interiors',[['018-077.webp','الصالة','Lounge'],['018-078.webp','غرفة النوم الرئيسية','Master bedroom'],['018-079.webp','غرفة نوم','Bedroom'],['018-081.webp','غرفة نوم','Bedroom'],['018-080.webp','تفصيلة جدارية','Wall detail'],['018-083.webp','جدار هندسي','Geometric wall']]],
+    ['لوحات الألوان','Palettes',[0,1,2,3,4,5,6,7].map(i=>[`016-0${64+i}.webp`,'لوحة ألوان','Colour palette'])],
+    ['المخططات','Drawings',[['d014-051.webp','القبو','Basement'],['d014-053.webp','الأرضي','Ground floor'],['d014-055.webp','الأول','First floor'],['d015-057.webp','الواجهة الأمامية','Front elevation'],['d015-059.webp','قطاع أ-أ','Section A-A'],['d015-061.webp','الواجهة الجانبية','Side elevation'],['d015-063.webp','قطاع ب-ب','Section B-B']],1],
+    ['التنفيذ','On site',[['017-072.webp','الواجهة أثناء التنفيذ','Facade during works'],['017-073.webp','تكسيات حجرية','Stone cladding'],['017-075.webp','حجر طبيعي','Natural stone'],['017-076.webp','رخام','Marble'],['017-074.webp','أرضيات خارجية','External paving']]]
    ]},
- { id:'proger', n:'04', ar:'مكتب بروجر DQ', en:'PROGER DQ Office', hero:'021-088.jpg',
+ { id:'proger', n:'04', ar:'مكتب بروجر DQ', en:'PROGER DQ Office', hero:'021-088.webp',
    dAr:'بيئة عمل عصرية ومرنة، من التصميم للتنفيذ والتسليم.', dEn:'A flexible, modern workplace, from design through build and handover.',
    tags:[['تجهيز مكاتب','Fit-out'],['229.8 م²','229.8 m²'],['2026','2026']],
    facts:[['تجهيز مكاتب','Office fit-out','النوع','Type'],['229.8 م²','229.8 m²','المساحة','Area'],['يناير 2026','Jan 2026','التسليم','Completed']],
-   ba:['019-084.jpg','024-107.jpg'],
+   ba:['019-084.webp','024-107.webp'],
    tabs:[
-    ['التصورات','Renders',[['019-084.jpg','الاستقبال','Reception'],['021-087.jpg','مكتب المدير','Manager office'],['021-088.jpg','قاعة الاجتماعات','Boardroom'],['021-089.jpg','الاستراحة','Pantry & lounge'],['021-090.jpg','الانتظار','Waiting'],['022-091.jpg','مساحة عمل','Workspace'],['022-092.jpg','مساحة عمل','Workspace'],['022-093.jpg','مساحة مرنة','Flexible space'],['022-094.jpg','الاستقبال','Lounge']]],
-    ['المخطط','Layout',[['d020-plan.jpg','مخطط التوزيع · 229.76 م²','Layout · 229.76 m²']],1],
-    ['التنفيذ','On site',[['023-096.jpg','البلوك','Blockwork'],['023-097.jpg','التكييف','HVAC'],['023-102.jpg','الأسقف','Ceilings'],['023-099.jpg','الكهرباء','Electrical'],['023-100.jpg','الجبس','Gypsum'],['023-101.jpg','الزجاج','Glass']]],
-    ['التسليم','Completion',[['024-107.jpg','الاستقبال','Reception'],['024-104.jpg','المدخل','Entrance'],['024-103.jpg','مكتب المدير','Manager office'],['024-105.jpg','الممر','Corridor'],['024-106.jpg','غرفة اجتماعات','Meeting room']]]
+    ['التصورات','Renders',[['019-084.webp','الاستقبال','Reception'],['021-087.webp','مكتب المدير','Manager office'],['021-088.webp','قاعة الاجتماعات','Boardroom'],['021-089.webp','الاستراحة','Pantry & lounge'],['021-090.webp','الانتظار','Waiting'],['022-091.webp','مساحة عمل','Workspace'],['022-092.webp','مساحة عمل','Workspace'],['022-093.webp','مساحة مرنة','Flexible space'],['022-094.webp','الاستقبال','Lounge']]],
+    ['المخطط','Layout',[['d020-plan.webp','مخطط التوزيع · 229.76 م²','Layout · 229.76 m²']],1],
+    ['التنفيذ','On site',[['023-096.webp','البلوك','Blockwork'],['023-097.webp','التكييف','HVAC'],['023-102.webp','الأسقف','Ceilings'],['023-099.webp','الكهرباء','Electrical'],['023-100.webp','الجبس','Gypsum'],['023-101.webp','الزجاج','Glass']]],
+    ['التسليم','Completion',[['024-107.webp','الاستقبال','Reception'],['024-104.webp','المدخل','Entrance'],['024-103.webp','مكتب المدير','Manager office'],['024-105.webp','الممر','Corridor'],['024-106.webp','غرفة اجتماعات','Meeting room']]]
    ]},
- { id:'sih', n:'05', ar:'مسكن SIH', en:'SIH Residence', hero:'025-108.jpg',
+ { id:'sih', n:'05', ar:'مسكن SIH', en:'SIH Residence', hero:'025-108.webp',
    dAr:'سكن مستوحى من العمارة التراثية: أقواس وقباب وطوب يدوي.', dEn:'Heritage-inspired: arches, domes and hand-laid brick.',
    tags:[['سكن','Residence'],['تراثي','Heritage'],['قباب طوب','Brick domes']],
    facts:[['سكن','Residence','النوع','Type'],['تراثي','Heritage','الطراز','Style']],
    tabs:[
-    ['بعد التنفيذ','Completion',[['030-121.jpg','الصالة','Main hall'],['030-122.jpg','الفناء','Courtyard'],['030-120.jpg','الباب المحفور','Carved door']]],
-    ['المخططات','Drawings',[['d026-109.jpg','الأرضي','Ground floor'],['d026-110.jpg','الأول','First floor'],['d027-111.jpg','الواجهات','Elevations'],['d028-112.jpg','السطح','Roof plan'],['d028-113.jpg','قطاع أ-أ','Section A-A']],1],
-    ['التنفيذ','Site progress',[['029-114.jpg','القبة','Dome'],['029-115.jpg','قبو الطوب','Brick vault'],['029-116.jpg','باطن القبة','Dome soffit'],['029-117.jpg','الأقواس','Arches'],['029-118.jpg','القبة من الداخل','Dome interior'],['029-119.jpg','القاعة','Hall']]]
+    ['بعد التنفيذ','Completion',[['030-121.webp','الصالة','Main hall'],['030-122.webp','الفناء','Courtyard'],['030-120.webp','الباب المحفور','Carved door']]],
+    ['المخططات','Drawings',[['d026-109.webp','الأرضي','Ground floor'],['d026-110.webp','الأول','First floor'],['d027-111.webp','الواجهات','Elevations'],['d028-112.webp','السطح','Roof plan'],['d028-113.webp','قطاع أ-أ','Section A-A']],1],
+    ['التنفيذ','Site progress',[['029-114.webp','القبة','Dome'],['029-115.webp','قبو الطوب','Brick vault'],['029-116.webp','باطن القبة','Dome soffit'],['029-117.webp','الأقواس','Arches'],['029-118.webp','القبة من الداخل','Dome interior'],['029-119.webp','القاعة','Hall']]]
    ]}
 ];
 
@@ -568,7 +640,7 @@ $('#snd').onclick = () => { const on = SND.toggle(); $('#snd').setAttribute('ari
 document.addEventListener('pointerover', e => { if (e.target.closest('.nav-r a,.nav-r button,.tab,.x')) SND.blip(1200,.05,.02); });
 
 /* ---------- loader ---------- */
-const imgs = [...new Set(['logo.png','hero.jpg',...P.map(p=>p.hero),...SVC.map(s=>s[4])])];
+const imgs = [...new Set(['logo.png','hero.webp',...P.map(p=>p.hero),...SVC.map(s=>s[4])])];
 let loaded = 0, shown = 0;
 const pct = $('#pct');
 imgs.forEach(src => { const i = new Image(); i.onload = i.onerror = () => loaded++; i.src = 'img/' + src; });
@@ -770,9 +842,9 @@ function curtain(mid){
 const menu = $('#menu'), mbtn = $('#menuBtn'), mbg = $('#menubg');
 const MENU = [
   ...P.map(p => ({k:'p', id:p.id, n:p.n, ar:p.ar, en:p.en, img:p.hero})),
-  {k:'s', id:'about', n:'—', ar:'من نحن', en:'About', img:'hero.jpg'},
-  {k:'s', id:'services', n:'—', ar:'خدماتنا', en:'Services', img:'030-121.jpg'},
-  {k:'s', id:'contact', n:'—', ar:'تواصل معنا', en:'Contact', img:'012-046.jpg'}
+  {k:'s', id:'about', n:'—', ar:'من نحن', en:'About', img:'hero.webp'},
+  {k:'s', id:'services', n:'—', ar:'خدماتنا', en:'Services', img:'030-121.webp'},
+  {k:'s', id:'contact', n:'—', ar:'تواصل معنا', en:'Contact', img:'012-046.webp'}
 ];
 $('#menulist').innerHTML = MENU.map(m => `<li><a href="#${m.id}" data-k="${m.k}" data-id="${m.id}" data-img="${m.img}"><span class="mn">${m.n}</span><span class="mt">${T(m.ar, m.en)}</span></a></li>`).join('');
 let menuOpen = false;
@@ -909,7 +981,7 @@ if (window.THREE){
         gl_FragColor = vec4(col * vig, a);
       }`});
   scene.add(new THREE.Mesh(new THREE.PlaneGeometry(2,2), bgMat));
-  new THREE.TextureLoader().load('img/hero.jpg', t => { t.minFilter = THREE.LinearFilter; U.uTex.value = t; U.uImgRes.value.set(t.image.width, t.image.height); });
+  new THREE.TextureLoader().load('img/hero.webp', t => { t.minFilter = THREE.LinearFilter; U.uTex.value = t; U.uImgRes.value.set(t.image.width, t.image.height); });
 
   // particles sampled from the logo
   const pts = new THREE.Points(new THREE.BufferGeometry(), new THREE.ShaderMaterial({uniforms:U, transparent:true, depthWrite:false, blending:THREE.AdditiveBlending,
@@ -980,10 +1052,10 @@ if (window.THREE){
   scene.fog = new THREE.FogExp2(0x0b0a08, .0055);
 
   // sky: night -> golden hour
-  const skyU = {uMix:{value:0}, uDusk:{value:0}};
+  const skyU = {uMix:{value:0}, uDusk:{value:0}, uLin:{value:0}};
   scene.add(new THREE.Mesh(new THREE.SphereGeometry(420, 32, 16), new THREE.ShaderMaterial({side:THREE.BackSide, depthWrite:false, fog:false, uniforms:skyU,
     vertexShader:`varying vec3 vP; void main(){ vP = normalize(position); gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.); }`,
-    fragmentShader:`uniform float uMix, uDusk; varying vec3 vP;
+    fragmentShader:`uniform float uMix, uDusk, uLin; varying vec3 vP;
       void main(){
         float h = vP.y;
         vec3 hor = mix(vec3(.98,.66,.36), vec3(.85,.42,.22), uDusk);
@@ -991,12 +1063,17 @@ if (window.THREE){
         vec3 c = mix(hor, top, smoothstep(-.02, .5, h));
         float sun = pow(max(dot(normalize(vP), normalize(vec3(-.75,.12,.55))), 0.), 220.);
         c += vec3(1.,.75,.45) * sun * 2.;
+        vec2 q = vP.xz / max(vP.y + .12, .05) * .35;
+        float cl = 0.; float a = .5; for (int i=0;i<5;i++){ cl += a * (sin(q.x*1.7 + float(i)*1.3) * cos(q.y*1.9 - float(i)*.7) * .5 + .5); q *= 2.03; a *= .5; }
+        cl = smoothstep(.55, .85, cl) * smoothstep(.0, .25, h) * (1. - smoothstep(.45, .9, h));
+        c = mix(c, mix(vec3(1.,.78,.6), vec3(.55,.35,.3), uDusk), cl * .55);
         c = mix(c, vec3(.05,.045,.035), smoothstep(.0, -.25, h));
-        gl_FragColor = vec4(mix(vec3(.028,.027,.024), c, uMix), 1.);
+        vec3 o = mix(vec3(.028,.027,.024), c, uMix);
+        gl_FragColor = vec4(mix(o, pow(o, vec3(2.2)), uLin), 1.);
       }`})));
 
   const pmrem = new THREE.PMREMGenerator(r);
-  if (THREE.RoomEnvironment) scene.environment = pmrem.fromScene(new THREE.RoomEnvironment(), .04).texture;
+  const envTex = THREE.RoomEnvironment ? pmrem.fromScene(new THREE.RoomEnvironment(), .04).texture : null;
 
   // board-formed concrete, drawn procedurally (panel joints + tie holes, like the HITC render)
   function concrete(){
@@ -1026,6 +1103,7 @@ if (window.THREE){
     dim: new THREE.LineBasicMaterial({color:0x8a6a2f, transparent:true, opacity:.9}),
     beam: new THREE.MeshBasicMaterial({color:0xffe2a8, transparent:true, opacity:0, side:THREE.DoubleSide, depthWrite:false, blending:THREE.AdditiveBlending})
   };
+  if (envTex){ M.glass.envMap = M.pool.envMap = envTex; M.glass.envMapIntensity = .8; }
   const W = 16.5, D = 15.6, H = 3.6, OX = -1.5;
   const model = new THREE.Group(); scene.add(model);
   const lines = [];
@@ -1082,14 +1160,34 @@ if (window.THREE){
   // oculus light shaft
   const beam = new THREE.Mesh(new THREE.CylinderGeometry(2.2, 2.6, H*2+.6, 48, 1, true), M.beam); beam.position.set(OX, H+.6, 0); model.add(beam);
   // landscape: pool, paving, olive trees
-  const site = new THREE.Group(); scene.add(site);
+  const site = new THREE.Group(); scene.add(site); const leafAll = [];
   const pool = new THREE.Mesh(new THREE.PlaneGeometry(26, 5).rotateX(-Math.PI/2), M.pool); pool.position.set(-2, .03, D/2+6.5); site.add(pool);
+  let mirror = null;
+  if (THREE.Reflector && !small){
+    mirror = new THREE.Reflector(new THREE.PlaneGeometry(25.6, 4.6), {clipBias:.003, textureWidth:1024, textureHeight:1024, color:0x6f7378});
+    mirror.rotation.x = -Math.PI/2; mirror.position.set(-2, .05, D/2+6.5); mirror.visible = false; site.add(mirror);
+  }
   for (let i=0;i<9;i++){ const s = new THREE.Mesh(new THREE.BoxGeometry(2.4,.08,.9), M.pave); s.position.set(5 + (i%2)*.2, .04, D/2+1.2+i*1.3); s.receiveShadow = true; site.add(s); }
+  const leafMats = [0x1b2414, 0x243019, 0x2e3b20, 0x1f2a17].map(c => { const m = M.leaf.clone(); m.color.setHex(c); m.flatShading = false; leafAll.push(m); return m; });
+  const leafGeo = new THREE.IcosahedronGeometry(1, 2);
+  let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
   function tree(x, z, k=1){
-    const t = new THREE.Group(); t.position.set(x,0,z); t.scale.setScalar(k);
-    const tr = new THREE.Mesh(new THREE.CylinderGeometry(.12,.22,2.2,6), M.bark); tr.position.y = 1.1; tr.castShadow = true; t.add(tr);
-    [[0,2.9,0,1.5],[.9,2.5,.4,1.1],[-.8,2.6,-.3,1.15],[.2,3.4,-.6,1]].forEach(([a,b,c,s]) => { const m = new THREE.Mesh(new THREE.IcosahedronGeometry(s,0), M.leaf); m.position.set(a,b,c); m.castShadow = true; t.add(m); });
+    const t = new THREE.Group(); t.position.set(x,0,z); t.scale.setScalar(k); t.rotation.y = rnd()*6;
+    const tr = new THREE.Mesh(new THREE.CylinderGeometry(.1,.24,2.4,7), M.bark); tr.position.y = 1.2; tr.rotation.z = (rnd()-.5)*.2; tr.castShadow = true; t.add(tr);
+    for (let i=0;i<16;i++){
+      const m = new THREE.Mesh(leafGeo, leafMats[i%4]); const a = rnd()*6.28, r = rnd()*1.5;
+      m.position.set(Math.cos(a)*r, 2.6 + rnd()*1.3 - r*.25, Math.sin(a)*r); m.scale.set(.55+rnd()*.5, .4+rnd()*.35, .55+rnd()*.5);
+      m.castShadow = true; t.add(m);
+    }
     site.add(t);
+  }
+  // lawn with procedural grass texture
+  { const c = document.createElement('canvas'); c.width = c.height = 256; const g = c.getContext('2d'); g.fillStyle = '#26321b'; g.fillRect(0,0,256,256);
+    for (let i=0;i<9000;i++){ const v = 30 + Math.random()*40; g.fillStyle = `rgba(${v*.7|0},${v|0},${v*.45|0},.5)`; g.fillRect(Math.random()*256, Math.random()*256, 1, 2+Math.random()*2); }
+    const gt = new THREE.CanvasTexture(c); gt.wrapS = gt.wrapT = THREE.RepeatWrapping; gt.repeat.set(10,10); gt.encoding = THREE.sRGBEncoding;
+    M.lawn = new THREE.MeshStandardMaterial({map:gt, roughness:1, envMapIntensity:.1, transparent:true, opacity:0});
+    const lawn = new THREE.Mesh(new THREE.PlaneGeometry(64, 46).rotateX(-Math.PI/2), M.lawn); lawn.position.set(0,.015,2); lawn.receiveShadow = true; site.add(lawn);
+    for (let i=0;i<22;i++){ const sh = new THREE.Mesh(leafGeo, leafMats[(i+1)%4]); const side = i < 11; sh.position.set(side ? -W/2-1.4 : -W/2 + (i-11)*1.5, .5, side ? -D/2 + i*1.45 : D/2+1.6); sh.scale.set(.75,.55,.75); sh.castShadow = true; site.add(sh); }
   }
   tree(-14, 9, 1.2); tree(-12, -6, 1); tree(15.5, 10, 1.1); tree(13, -9, .9); tree(-6, 13, .8); tree(9, 14, 1);
 
@@ -1104,8 +1202,8 @@ if (window.THREE){
   if (THREE.EffectComposer && THREE.UnrealBloomPass && !small){
     composer = new THREE.EffectComposer(r);
     composer.addPass(new THREE.RenderPass(scene, null));
-    bloom = new THREE.UnrealBloomPass(new THREE.Vector2(256,256), .0, .7, .78); composer.addPass(bloom);
-    if (THREE.GammaCorrectionShader) composer.addPass(new THREE.ShaderPass(THREE.GammaCorrectionShader));
+    bloom = new THREE.UnrealBloomPass(new THREE.Vector2(256,256), .0, .4, .9); composer.addPass(bloom);
+    // r128 already encodes to sRGB inside the render target, so no extra gamma pass here
   }
 
   const cam = new THREE.PerspectiveCamera(34, 1, .1, 900);
@@ -1123,8 +1221,8 @@ if (window.THREE){
     [.28, V(36,22,40),   V(0,3,0)],
     [.44, V(30,4.5,36),  V(0,4,0)],
     [.58, V(13,2.4,24),  V(-1,3.6,0)],
-    [.67, V(OX+1.1,1.5,1.6), V(OX-.4,12,-.3)],
-    [.74, V(OX+.9,1.5,1.2), V(OX-.2,12,-.1)],
+    [.67, V(OX+.6,1.6,.9), V(OX-.3,12,-.2)],
+    [.74, V(OX+.5,1.6,.7), V(OX-.2,12,-.1)],
     [.84, V(32,16,40),   V(0,7,0)],
     [1,   V(40,24,48),   V(0,10,0)]
   ];
@@ -1158,17 +1256,17 @@ if (window.THREE){
     beam.position.y = H + .6 + ex * 6; beam.scale.y = Math.max(.001, sCol);
     // materials
     M.conc.opacity = sSolid; M.conc.transparent = sSolid < .99; M.conc.depthWrite = sSolid > .5;
-    M.glass.opacity = .55 * sSolid; M.pave.opacity = M.pool.opacity = M.leaf.opacity = M.bark.opacity = sSolid;
+    M.glass.opacity = .55 * sSolid; M.pave.opacity = M.pool.opacity = M.leaf.opacity = M.bark.opacity = M.lawn.opacity = sSolid; leafAll.forEach(m => m.opacity = sSolid); if (mirror) mirror.visible = sSolid > .7;
     M.gold.opacity = 1 - sSolid * .9; M.dim.opacity = .9 - sSolid * .55;
     M.dim.color.setHex(0x8a6a2f).lerp(new THREE.Color(0x151515), sSolid * .8);
     plan.material.opacity = .9 * (1 - sSolid);
     skyU.uMix.value = sSun; skyU.uDusk.value = sDusk;
-    sun.intensity = 3.2 * sSun * (1 - sDusk * .6); hemi.intensity = .05 + .5 * sSun * (1 - sDusk*.5);
+    sun.intensity = 2.3 * sSun * (1 - sDusk * .55); hemi.intensity = .06 + .32 * sSun * (1 - sDusk*.5);
     sun.color.setHex(0xffb27a).lerp(new THREE.Color(0xff7a3c), sDusk);
     M.glow.opacity = .85 * sDusk * (1 - insideV * .9); lamps.forEach(l => l.intensity = 2.6 * sDusk);
-    M.beam.opacity = .1 * sSolid * (1 - ex*.7) + .22 * insideV;
-    r.toneMappingExposure = 1.1 - sDusk * .25;
-    if (bloom) bloom.strength = .15 + .9 * sDusk;
+    M.beam.opacity = .1 * sSolid * (1 - ex*.7) * (1 - insideV) + .06 * insideV;
+    r.toneMappingExposure = .95 - sDusk * .2;
+    if (bloom) bloom.strength = (.05 + .75 * sDusk) * (1 - insideV * .75);
     scene.fog.color.setHex(0x0b0a08).lerp(new THREE.Color(0x3a2a1c), sSun * (1 - sDusk*.6));
     // camera
     along(sp);
@@ -1261,6 +1359,43 @@ addEventListener('keydown', e => {
   if (!$('#lbx').hidden){ if (e.key === 'Escape') $('#lbx').hidden = true; if (e.key === 'ArrowRight') stepLbx(1); if (e.key === 'ArrowLeft') stepLbx(-1); return; }
   if (!caseEl.hidden && e.key === 'Escape') closeCase();
 });
+
+
+/* ---------- project brief form ---------- */
+{
+  const f = $('#brief');
+  f.innerHTML = f.innerHTML.replace(/\{\{T\('([^']*)','([^']*)'\)\}\}/g, (m,a,b) => T(a,b));
+  const TYPES = [['فيلا','Villa'],['قصر','Palace'],['شقة','Apartment'],['محل تجاري','Retail'],['مكتب / مقر شركة','Office'],['إدارة تنفيذ','Project management']];
+  let type = 0;
+  $('#f-type').innerHTML = TYPES.map((t,i) => `<button type="button" role="radio" aria-checked="${i===0}" data-i="${i}">${T(t[0],t[1])}</button>`).join('');
+  $('#f-type').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; type = +b.dataset.i; $$('#f-type button').forEach(x => x.setAttribute('aria-checked', x === b)); SND.blip(700,.08,.04); upd(); });
+  const val = id => $(id).value.trim();
+  function msg(){
+    const ar = root.lang === 'ar';
+    const L = ar ? ['السلام عليكم، حاب أطلب استشارة من ماكس ديزاين','الاسم','الجوال','نوع المشروع','المساحة','المدينة','التفاصيل'] : ['Hello Max Design, I would like a consultation','Name','Mobile','Project type','Area','City','Details'];
+    const rows = [[L[1],val('#f-name')],[L[2],val('#f-phone')],[L[3],TYPES[type][ar?0:1]],[L[4],val('#f-area') && val('#f-area')+' m²'],[L[5],val('#f-city')],[L[6],val('#f-msg')]].filter(r => r[1]);
+    return L[0] + '\n' + rows.map(r => `${r[0]}: ${r[1]}`).join('\n');
+  }
+  function upd(){ $('#f-wa').href = 'https://wa.me/966579277975?text=' + encodeURIComponent(msg()); }
+  f.addEventListener('input', upd); upd(); $('#lang').addEventListener('click', upd);
+  f.addEventListener('submit', async e => {
+    e.preventDefault();
+    const bad = ['#f-name','#f-phone'].filter(id => !val(id));
+    $$('#f-name,#f-phone').forEach(i => i.setAttribute('aria-invalid', bad.includes('#'+i.id)));
+    const st = $('#f-status');
+    if (bad.length){ st.innerHTML = T('اكتب الاسم ورقم الجوال عشان نقدر نرجعلك.','Add your name and mobile so we can reply.'); return; }
+    st.innerHTML = T('جاري الإرسال…','Sending…');
+    try {
+      const body = new URLSearchParams(new FormData(f)); body.set('type', TYPES[type][1]);
+      const r = await fetch('/', {method:'POST', headers:{'Content-Type':'application/x-www-form-urlencoded'}, body});
+      if (!r.ok) throw 0;
+      st.innerHTML = T('وصلنا طلبك ✓ هنتواصل معاك قريب.','Request received ✓ We will be in touch soon.'); SND.blip(990,.25,.06); f.reset(); upd();
+    } catch(err){
+      st.innerHTML = T('ما قدرنا نرسله من هنا. اضغط "ابعته واتساب" والرسالة جاهزة.','We could not send it from here. Tap "Send on WhatsApp" and the message is ready.');
+      $('#f-wa').focus();
+    }
+  });
+}
 
 /* ---------- copy ---------- */
 document.addEventListener('click', e => {
