@@ -17,7 +17,8 @@ def v(t0, t1, n, ss, **k):
 
 # v2 (music only): no faces. Dropped rz1 (farmer) and rz7 (friends): faces looked AI; rz2 (petals floating up) and
 # rz8 (empty car lights up, door opens, glitch). New no-face Higgsfield clips in dl/hfrz2: n1 hands picking roses,
-# n2 following the car (driver seen from behind), n3 car parked in the rose farm. Each clip used at most twice.
+# n2 following the car (driver seen from behind), n3 car parked in the rose farm, n5 front close-up on a tripod
+# (replaces rz5, where the parked car slid sideways). Each clip used at most twice.
 N2 = 'dl/hfrz2/n{}.mp4'
 def n(t0, t1, k, ss, **kw):
     return dict(kind='vid', src=N2.format(k), ss=ss, t0=t0, t1=t1, cx0=0.5, eq=NAT, **kw)
@@ -29,9 +30,9 @@ shots = [
     n(12.00, 14.40, 3, 0.4, z0=1.0, z1=1.04),
     v(14.40, 16.80, 6, 0.4, z0=1.0, z1=1.04),
     n(16.80, 19.40, 2, 0.4, z0=1.0, z1=1.04, fx=['whipin']),
-    v(19.40, 21.60, 5, 0.6, z0=1.0, z1=1.04),
+    n(19.40, 21.60, 5, 0.6, z0=1.0, z1=1.04),
     v(21.60, DROP, 4, 3.8, z0=1.0, z1=1.06, fx=['whipout']),
-    v(DROP, 26.60, 5, 3.1, z0=1.0, z1=1.05, fx=['punch'], tin='flash'),
+    n(DROP, 26.60, 5, 3.1, z0=1.0, z1=1.05, fx=['punch'], tin='flash'),
     v(26.60, 29.40, 6, 3.0, z0=1.08, z1=1.12),
     n(29.40, 32.20, 2, 3.1, z0=1.1, z1=1.14),
     v(32.20, 34.80, 3, 3.3, z0=1.12, z1=1.18, fx=['whipin']),
@@ -41,8 +42,8 @@ shots = [
 ]
 mg = [
     dict(type='chips', t0=21.75, t1=23.65, y=1330, s0=0.1, st=0.25, items=['محرك تيربو [1.0] لتر', 'ناقل [CVT]', 'دفع أمامي']),
-    dict(type='counter', t0=DROP, t1=26.5, y=640, num=97, unit='حصان', sub='تيربو [1.0] لتر · عزم [140] نيوتن متر · فئة [Limited]', c0=0.2, cnt=1.3),
-    dict(type='flare', t0=DROP + 0.05, t1=DROP + 1.4, y=820, x0=-300, x1=1380),
+    dict(type='counter', t0=DROP, t1=26.5, y=330, num=97, unit='حصان', sub='تيربو [1.0] لتر · عزم [140] نيوتن متر · فئة [Limited]', c0=0.2, cnt=1.3),
+    dict(type='flare', t0=DROP + 0.05, t1=DROP + 1.4, y=510, x0=-300, x1=1380),
     dict(type='chips', t0=26.75, t1=29.3, y=1330, s0=0.1, st=0.3, items=['مصابيح [LED] · فئة [Limited]', 'جنوط [17] إنش · فئة [Limited]']),
     dict(type='engines', t0=ENG, t1=END, dim=0.62, kicker='RAIZE 2026', title='اختر <acc>فئتك</acc>',
          rows=[['XLE · بنزين [1.2] لتر · جنوط [16]', '[87] حصان'], ['Limited · تيربو [1.0] لتر · جنوط [17]', '[97] حصان']],
