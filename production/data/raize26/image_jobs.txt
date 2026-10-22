@@ -7,3 +7,7 @@
 7 178ce53a-3635-495c-8fe9-4977cf8e645e friends at viewpoint with tea
 8 6135eda2-c6f0-49db-823c-c7a17bdef9b6 old Taif street, man with key
 9 f74c4c25-12a4-4265-a6b1-95b7e225dd63 sunset overlook hero
+# v2 no-face replacements (dl/hfrz2):
+n1 334e987e-104f-438d-a7d8-b92c8d8afdfa hands picking roses into basket (no face)
+n2 d34c32b5-653f-4a08-8ad3-9c8297d044a8 following the Raize on the mountain road, driver seen from behind
+n3 4176975b-6346-490e-a2c4-2a02ba1cb284 Raize parked in the rose farm at dawn, no people
