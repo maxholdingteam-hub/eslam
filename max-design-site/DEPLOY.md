@@ -1,29 +1,22 @@
-# Max Design website — deploy to maxdesign.sa
+# Max Design website — deploy
 
-Static site: `index.html` + `img/`. No build step.
+Static site: `index.html`, `img/`, `robots.txt`, `sitemap.xml`, `404.html`, `_headers`. No build step.
 
-## Option A — Netlify (free)
-1. Go to app.netlify.com → **Add new site → Deploy manually**, drag this `max-design-site` folder in.
-   (Or **Import from Git** → this repo → base directory `max-design-site`, no build command, publish directory `max-design-site`.)
-2. **Domain management → Add a domain** → `maxdesign.sa` and `www.maxdesign.sa`.
-3. At your domain registrar's DNS, remove the Google Sites records, then add what Netlify shows, typically:
-   - `A` record `@` → `75.2.60.5`
-   - `CNAME` record `www` → `<your-site>.netlify.app`
-4. Netlify issues HTTPS automatically once DNS resolves.
+## Cloudflare Pages (current host)
+1. dash.cloudflare.com → **Workers & Pages → Create → Pages → Connect to Git** → repo `maxholdingteam-hub/eslam`.
+2. Production branch: `main`. Framework preset: **None**. Build command: *(empty)*. Build output directory: `max-design-site`.
+3. Save and Deploy. Every merge to `main` redeploys automatically.
 
-## Option B — Vercel (free)
-1. vercel.com → **Add New → Project** → import this repo → Root Directory `max-design-site`, Framework "Other".
-2. **Settings → Domains** → add `maxdesign.sa` and follow the DNS records it shows
-   (usually `A @ 76.76.21.21` and `CNAME www cname.vercel-dns.com`).
-
-Before switching DNS, also remove the custom domain from Google Sites (Settings → Custom domains).
+## Custom domain maxdesign.sa
+1. Cloudflare → **Add a domain** → `maxdesign.sa` → Free plan. Cloudflare imports the existing DNS records
+   (keep the `google-site-verification` TXT record).
+2. At the registrar (DNET), replace the nameservers with the two Cloudflare nameservers shown.
+3. When the zone is active: Pages project → **Custom domains** → add `maxdesign.sa` and `www.maxdesign.sa`.
+   Cloudflare creates the DNS records and the HTTPS certificate.
 
 ## Contact form
-The project-brief form is a Netlify Form (`name="contact"`). On Netlify, submissions appear under
-**Site → Forms**; turn on email notifications there (Forms → Form notifications → Email) to receive
-each request at info@maxdesign.sa. On any other host the form shows a message and the
-"Send on WhatsApp" button carries the filled-in brief.
+The project-brief form opens WhatsApp (+966 57 927 7975) with the brief pre-filled. There is no
+server-side form storage on this host.
 
 ## SEO
-`index.html` has the page description, Open Graph image (`img/og.jpg`), and LocalBusiness structured
-data. After going live, add the site in Google Search Console and submit `https://maxdesign.sa/sitemap.xml`.
+After going live, add the site in Google Search Console and submit `https://maxdesign.sa/sitemap.xml`.
