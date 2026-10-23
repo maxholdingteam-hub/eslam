@@ -567,6 +567,7 @@ html[lang=en] .next .nt{font-family:var(--d-en);text-transform:uppercase}
         <a id="f-wa" href="https://wa.me/966579277975" target="_blank" rel="noopener" hidden>WhatsApp</a>
         <a class="btn-line" href="tel:+966579277975">{{T('أو اتصل: 0579277975','Or call +966 57 927 7975')}}</a>
         <a class="btn-line" href="/contact/">{{T('كل وسائل التواصل','All contact options')}}</a>
+        <a class="btn-line" href="/style/">{{T('اكتشف ستايلك','Find your style')}}</a>
         <span class="f-status" id="f-status" role="status"></span>
       </div>
     </form>
@@ -948,6 +949,7 @@ const MENU = [
   {k:'s', id:'about', n:'—', ar:'من نحن', en:'About', img:'hero.webp'},
   {k:'s', id:'services', n:'—', ar:'خدماتنا', en:'Services', img:'030-121.webp'},
   {k:'s', id:'architect', n:'—', ar:'المهندس المسؤول', en:'Lead architect', img:'003-003.webp'},
+  {k:'u', id:'style', url:'/style/', n:'—', ar:'اكتشف ستايلك', en:'Find your style', img:'hero.webp'},
   {k:'u', id:'contact', url:'/contact/', n:'—', ar:'تواصل معنا', en:'Contact', img:'012-046.webp'}
 ];
 $('#menulist').innerHTML = MENU.map(m => `<li><a href="${m.url || '#' + m.id}" data-k="${m.k}" data-id="${m.id}" data-img="${m.img}"><span class="mn">${m.n}</span><span class="mt">${T(m.ar, m.en)}</span></a></li>`).join('');
