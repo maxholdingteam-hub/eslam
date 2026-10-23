@@ -1,0 +1,260 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>Max Design · Interior Design Proposal</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Cormorant+Garamond:wght@500;600&family=IBM+Plex+Sans+Arabic:wght@300;400;500&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0908;--gold:#d8b46a;--gold-l:#efd79f;--txt:#ece5d8;--mute:#9b9183;--line:#2b2418;
+  --ar:"Amiri",serif;--en:"Cormorant Garamond",Georgia,serif;--body:"IBM Plex Sans Arabic",sans-serif;--mark:"Montserrat",sans-serif}
+@page{size:1920px 1080px;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:var(--bg);color:var(--txt);font-family:var(--body)}
+.s{position:relative;width:1920px;height:1080px;overflow:hidden;background:radial-gradient(1100px 700px at 15% -10%,#1c160d,transparent 60%),var(--bg)}
+.s::before{content:"";position:absolute;inset:30px;border:1px solid var(--line);z-index:6;pointer-events:none}
+.foot{position:absolute;z-index:7;left:70px;right:70px;bottom:52px;display:flex;justify-content:space-between;align-items:center;direction:ltr}
+.foot .b{display:flex;gap:12px;align-items:center}.foot img{height:26px}
+.foot span{font-family:var(--mark);font-size:13px;letter-spacing:.38em;color:var(--gold);font-weight:600}
+.foot .pg{font-family:var(--mark);font-size:13px;letter-spacing:.2em;color:var(--mute)}
+.k{font-family:var(--mark);font-size:15px;letter-spacing:.45em;color:var(--gold);direction:ltr;text-transform:uppercase}
+.ar{font-family:var(--ar)}
+h1,h2{font-weight:700;line-height:1.35}
+.en{font-family:var(--en);font-weight:600;direction:ltr;color:var(--gold-l)}
+.rule{width:120px;height:2px;background:linear-gradient(90deg,var(--gold),transparent);margin:30px 0}
+/* full-bleed */
+.bleed{position:absolute;inset:0;background-size:cover;background-position:center}
+.shade-r{position:absolute;inset:0;background:linear-gradient(270deg,rgba(8,7,6,.97) 0%,rgba(8,7,6,.86) 34%,rgba(8,7,6,.2) 64%,rgba(8,7,6,0) 100%)}
+/* cover */
+.cov{position:absolute;z-index:3;right:120px;top:150px;width:720px}
+.cov .logo{width:150px;margin-bottom:30px}
+.cov .mk{font-family:var(--mark);font-size:56px;letter-spacing:.12em;font-weight:600;color:var(--gold);direction:ltr;text-align:right}
+.cov .mk2{font-family:var(--mark);font-size:17px;letter-spacing:.42em;color:var(--mute);direction:ltr;text-align:right;margin-top:10px}
+.cov h1{font-family:var(--ar);font-size:92px;margin-top:70px}
+.cov .en{font-size:44px;margin-top:6px;text-align:right}
+.cov p{margin-top:34px;font-size:28px;color:#cfc6b6;line-height:1.8}
+/* split layouts */
+.split{position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr}
+.split .ph{position:relative;overflow:hidden}
+.split .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.split .tx{position:relative;z-index:3;padding:150px 110px 140px 90px;display:flex;flex-direction:column;justify-content:center}
+.split.rev .ph{order:-1}
+.no{font-family:var(--en);font-size:150px;line-height:.8;color:transparent;-webkit-text-stroke:1px var(--gold);direction:ltr;text-align:right}
+.tx h2{font-family:var(--ar);font-size:84px;margin-top:20px}
+.tx .en{font-size:40px}
+.tx p{font-size:27px;line-height:1.85;color:#d3cabb;margin-top:26px;max-width:720px}
+.feat{list-style:none;margin-top:30px;display:grid;gap:14px}
+.feat li{display:flex;gap:16px;align-items:baseline;font-size:25px;color:#e2d9ca}
+.feat li::before{content:"";flex:none;width:9px;height:9px;background:var(--gold);transform:rotate(45deg) translateY(-3px)}
+/* concept */
+.concept{position:absolute;inset:0;padding:130px 120px 130px;display:grid;grid-template-columns:1.05fr .95fr;gap:90px;z-index:3}
+.concept h2{font-family:var(--ar);font-size:84px;margin-top:18px}
+.concept .en{font-size:38px}
+.concept p{font-size:28px;line-height:1.9;color:#d3cabb;margin-top:26px}
+.sw{display:grid;grid-template-columns:repeat(3,1fr);gap:84px 18px;margin-top:10px}
+.sw div{height:130px;position:relative;border:1px solid rgba(216,180,106,.25)}
+.sw span{position:absolute;bottom:-38px;right:0;font-size:20px;color:var(--mute)}
+.sw b{position:absolute;bottom:-58px;right:0;font-family:var(--mark);font-size:12px;letter-spacing:.15em;color:#6f675c;font-weight:500;direction:ltr}
+.mats{margin-top:100px;display:grid;grid-template-columns:1fr 1fr;gap:16px 30px}
+.mats div{border-top:1px solid var(--line);padding-top:14px}
+.mats b{display:block;font-family:var(--ar);font-size:32px;color:var(--gold-l)}
+.mats span{font-size:19px;color:var(--mute)}
+/* moodboard */
+.mood{position:absolute;inset:0;padding:120px 110px 130px;display:grid;grid-template-columns:1.2fr .8fr .8fr;grid-template-rows:1fr 1fr;gap:18px;z-index:3}
+.mood div{background-size:cover;background-position:center;border:1px solid rgba(216,180,106,.25)}
+.mood div:first-child{grid-row:1/3}
+.mood .t{background:none;border:0;display:flex;flex-direction:column;justify-content:center;padding:0 20px}
+/* close */
+.close{position:absolute;inset:0;z-index:3;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.close .logo{width:150px}
+.close h2{font-family:var(--ar);font-size:96px;margin-top:30px;color:var(--gold)}
+.close .en{font-size:40px;margin-top:4px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:0;margin-top:60px;border-top:1px solid rgba(216,180,106,.4);width:1400px}
+.steps div{padding:26px 24px 0;border-inline-start:1px solid var(--line);text-align:right}
+.steps div:first-child{border:0}
+.steps i{font-style:normal;font-family:var(--en);font-size:44px;color:var(--gold)}
+.steps b{display:block;font-family:var(--ar);font-size:36px;margin-top:4px}
+.steps span{font-size:20px;color:var(--mute)}
+.ct{display:flex;gap:0;margin-top:60px}
+.ct div{padding:0 44px;border-inline-start:1px solid rgba(216,180,106,.35);display:grid;gap:6px}
+.ct div:first-child{border:0}
+.ct small{font-family:var(--mark);font-size:12px;letter-spacing:.3em;color:var(--gold)}
+.ct b{font-family:var(--mark);font-size:28px;font-weight:500;direction:ltr}
+.note{position:absolute;z-index:7;left:70px;bottom:92px;font-size:14px;color:#6f675c}
+</style>
+</head>
+<body>
+
+<!-- 1 cover -->
+<section class="s">
+  <div class="bleed" style="background-image:url(a/living.jpg)"></div><div class="shade-r"></div>
+  <div class="cov">
+    <img class="logo" src="a/logo.png" alt="">
+    <div class="mk">MAX DESIGN</div>
+    <div class="mk2">INTERIOR DESIGN &amp; EXECUTION</div>
+    <h1>مقترح التصميم الداخلي</h1>
+    <div class="en">Interior Design Proposal</div>
+    <div class="rule" style="margin-right:0;margin-left:auto;background:linear-gradient(270deg,var(--gold),transparent)"></div>
+    <p>شقة سكنية · صالة، جدار تلفزيون، غرفة طعام، وغرفتا نوم<br><span style="color:var(--mute);font-size:20px">Residential apartment · living, TV wall, dining and two bedrooms</span></p>
+  </div>
+</section>
+
+<!-- 2 concept -->
+<section class="s">
+  <div class="concept">
+    <div>
+      <div class="k">The concept</div>
+      <h2>الفخامة الهادئة</h2>
+      <div class="en">Quiet Luxury</div>
+      <p>مساحات دافئة بألوان ترابية ناعمة، يربطها الرخام بعروقه الذهبية وشرائح الخشب الطبيعي، وإضاءة مخفية تمنح كل غرفة توهجاً هادئاً في المساء. تصميم يجمع بين الراحة اليومية والأناقة الدائمة.</p>
+      <p style="font-size:20px;color:var(--mute);font-family:var(--en);direction:ltr;text-align:right;line-height:1.6">Warm, earthy spaces tied together by gold-veined marble, natural timber slats and concealed lighting that gives every room a soft evening glow.</p>
+    </div>
+    <div>
+      <div class="k" style="margin-bottom:24px">Palette</div>
+      <div class="sw">
+        <div style="background:#e8d8c7"><span>عاجي</span><b>#E8D8C7</b></div>
+        <div style="background:#cab3a4"><span>رملي</span><b>#CAB3A4</b></div>
+        <div style="background:#b18f70"><span>جملي</span><b>#B18F70</b></div>
+        <div style="background:#877060"><span>موكا</span><b>#877060</b></div>
+        <div style="background:#654d3b"><span>خشب الجوز</span><b>#654D3B</b></div>
+        <div style="background:#3b2516"><span>إسبريسو</span><b>#3B2516</b></div>
+      </div>
+      <div class="mats">
+        <div><b>رخام بعروق ذهبية</b><span>جدران مميزة وطاولات</span></div>
+        <div><b>شرائح خشب الجوز</b><span>خلفيات التلفزيون والأسرّة</span></div>
+        <div><b>إضاءة مخفية دافئة</b><span>أسقف، جدران، وقواعد الأسرّة</span></div>
+        <div><b>أقمشة مخملية ناعمة</b><span>بيج، توب، وموف هادئ</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><div class="b"><img src="a/logo.png" alt=""><span>MAX DESIGN</span></div><div class="pg">02</div></div>
+</section>
+
+<!-- 3 living -->
+<section class="s">
+  <div class="split">
+    <div class="tx">
+      <div class="no">01</div>
+      <h2>الصالة الرئيسية</h2>
+      <div class="en">Main Living Room</div>
+      <p>جلسة واسعة بخطوط بسيطة، تحيط بها جدران ببانوهات كلاسيكية، ورخام بعروق رمادية، وثريا كريستال دائرية تتوسط سقفاً بإضاءة مخفية.</p>
+      <ul class="feat">
+        <li>كنب مودولار بلون الكتان الفاتح</li>
+        <li>طاولة وسط رخامية وسجادة رمادية ناعمة</li>
+        <li>ستائر بطول الجدار لإحساس بالارتفاع</li>
+      </ul>
+    </div>
+    <div class="ph"><img src="a/living.jpg" alt=""></div>
+  </div>
+  <div class="foot"><div class="b"><img src="a/logo.png" alt=""><span>MAX DESIGN</span></div><div class="pg">03</div></div>
+</section>
+
+<!-- 4 tv wall -->
+<section class="s">
+  <div class="split rev">
+    <div class="tx">
+      <div class="no">02</div>
+      <h2>جدار التلفزيون</h2>
+      <div class="en">Feature TV Wall</div>
+      <p>لوح رخام أبيض بعروق ذهبية في المنتصف، تحيط به شرائح خشب الجوز من الجانبين، مع وحدة تلفزيون معلّقة وإضاءة خلفية تبرز التفاصيل.</p>
+      <ul class="feat">
+        <li>رخام بعروق ذهبية كقطعة فنية رئيسية</li>
+        <li>وحدة معلّقة بإضاءة سفلية تخفي الأسلاك</li>
+        <li>إضاءة جدارية رأسية بلمسة نحاسية</li>
+      </ul>
+    </div>
+    <div class="ph"><img src="a/tv.jpg" alt=""></div>
+  </div>
+  <div class="foot"><div class="b"><img src="a/logo.png" alt=""><span>MAX DESIGN</span></div><div class="pg">04</div></div>
+</section>
+
+<!-- 5 dining -->
+<section class="s">
+  <div class="split">
+    <div class="tx">
+      <div class="no">03</div>
+      <h2>غرفة الطعام</h2>
+      <div class="en">Dining Room</div>
+      <p>طاولة لستة أشخاص بلون كريمي وكراسي مخملية منحنية، تعلوها ثريا أسطوانية، ومرآة دائرية تعكس الضوء الطبيعي وتوسّع المساحة.</p>
+      <ul class="feat">
+        <li>طاولة بقاعدة مضلّعة وأطراف دائرية</li>
+        <li>بوفيه منخفض بلمسات خشبية</li>
+        <li>نباتات زيتون لإحساس طبيعي دافئ</li>
+      </ul>
+    </div>
+    <div class="ph"><img src="a/dining.jpg" alt=""></div>
+  </div>
+  <div class="foot"><div class="b"><img src="a/logo.png" alt=""><span>MAX DESIGN</span></div><div class="pg">05</div></div>
+</section>
+
+<!-- 6 master bedroom -->
+<section class="s">
+  <div class="split rev">
+    <div class="tx">
+      <div class="no">04</div>
+      <h2>غرفة النوم الرئيسية</h2>
+      <div class="en">Master Bedroom</div>
+      <p>درجات الرمادي الدافئ مع لمسات الموف، سرير بقاعدة مضيئة يبدو وكأنه معلّق، وخلفية مبطّنة بين شرائح خشبية، ودولاب لامع مع ركن تسريحة مضاء.</p>
+      <ul class="feat">
+        <li>قاعدة سرير بإضاءة مخفية</li>
+        <li>خلفية سرير مبطّنة بخطوط رأسية</li>
+        <li>دواليب لامعة مع رفوف عرض مضيئة</li>
+      </ul>
+    </div>
+    <div class="ph"><img src="a/master.jpg" alt=""></div>
+  </div>
+  <div class="foot"><div class="b"><img src="a/logo.png" alt=""><span>MAX DESIGN</span></div><div class="pg">06</div></div>
+</section>
+
+<!-- 7 bedroom 2 -->
+<section class="s">
+  <div class="split">
+    <div class="tx">
+      <div class="no">05</div>
+      <h2>غرفة النوم الثانية</h2>
+      <div class="en">Second Bedroom</div>
+      <p>خلفية سرير مقوّسة بنقش أغصان ذهبية، محاطة بشرائح خشب الجوز، وسقف بطبقات من الإضاءة المخفية، ودولاب كريمي مع رفوف خشبية مضيئة وتسريحة بمرآة دائرية.</p>
+      <ul class="feat">
+        <li>خلفية مقوّسة بنقش فني ذهبي</li>
+        <li>سقف متدرّج بإضاءة دافئة</li>
+        <li>أرضية رخامية بلون البيج مع سجادة منقوشة</li>
+      </ul>
+    </div>
+    <div class="ph"><img src="a/bed2.jpg" alt=""></div>
+  </div>
+  <div class="foot"><div class="b"><img src="a/logo.png" alt=""><span>MAX DESIGN</span></div><div class="pg">07</div></div>
+</section>
+
+<!-- 8 moodboard -->
+<section class="s">
+  <div class="mood">
+    <div style="background-image:url(a/living.jpg)"></div>
+    <div style="background-image:url(a/tv.jpg)"></div>
+    <div style="background-image:url(a/master.jpg)"></div>
+    <div style="background-image:url(a/dining.jpg)"></div>
+    <div style="background-image:url(a/bed2.jpg)"></div>
+  </div>
+  <div class="foot"><div class="b"><img src="a/logo.png" alt=""><span>MAX DESIGN</span></div><div class="pg">08</div></div>
+</section>
+
+<!-- 9 close -->
+<section class="s">
+  <div class="close">
+    <img class="logo" src="a/logo.png" alt="">
+    <h2>من التصميم إلى التسليم</h2>
+    <div class="en">From design to handover</div>
+    <div class="steps">
+      <div><i>01</i><b>التصميم</b><span>المخططات والتصور ثلاثي الأبعاد</span></div>
+      <div><i>02</i><b>الخامات</b><span>اختيار الخامات والألوان معك</span></div>
+      <div><i>03</i><b>التنفيذ</b><span>إشراف كامل في الموقع</span></div>
+      <div><i>04</i><b>التسليم</b><span>تسليم المفتاح بجودة نضمنها</span></div>
+    </div>
+    <div class="ct">
+      <div><small>WHATSAPP</small><b>+966 57 927 7975</b></div>
+      <div><small>EMAIL</small><b>maxdesign.sa@gmail.com</b></div>
+      <div><small>INSTAGRAM</small><b>@maxdesign.sa</b></div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
