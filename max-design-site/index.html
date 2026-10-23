@@ -436,7 +436,7 @@ html[lang=en] .next .nt{font-family:var(--d-en);text-transform:uppercase}
   <div class="nav-r">
     <a href="#services"><span data-l="ar">خدماتنا</span><span data-l="en">Services</span></a>
     <a href="#work"><span data-l="ar">أعمالنا</span><span data-l="en">Work</span></a>
-    <a href="#contact"><span data-l="ar">تواصل</span><span data-l="en">Contact</span></a>
+    <a href="/contact/"><span data-l="ar">تواصل</span><span data-l="en">Contact</span></a>
     <button class="snd" id="snd" type="button" aria-pressed="false" aria-label="Sound"><i></i><i></i><i></i><i></i><span data-l="ar">الصوت</span><span data-l="en">Sound</span></button>
     <button class="lang" id="lang" type="button">EN</button>
     <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="menu"><span></span><span></span><b data-l="ar">القائمة</b><b data-l="en">Menu</b></button>
@@ -566,6 +566,7 @@ html[lang=en] .next .nt{font-family:var(--d-en);text-transform:uppercase}
         <button class="btn-gold" type="submit" id="f-send">{{T('أرسل الطلب عبر واتساب','Send via WhatsApp')}}</button>
         <a id="f-wa" href="https://wa.me/966579277975" target="_blank" rel="noopener" hidden>WhatsApp</a>
         <a class="btn-line" href="tel:+966579277975">{{T('أو اتصل: 0579277975','Or call +966 57 927 7975')}}</a>
+        <a class="btn-line" href="/contact/">{{T('كل وسائل التواصل','All contact options')}}</a>
         <span class="f-status" id="f-status" role="status"></span>
       </div>
     </form>
@@ -947,9 +948,9 @@ const MENU = [
   {k:'s', id:'about', n:'—', ar:'من نحن', en:'About', img:'hero.webp'},
   {k:'s', id:'services', n:'—', ar:'خدماتنا', en:'Services', img:'030-121.webp'},
   {k:'s', id:'architect', n:'—', ar:'المهندس المسؤول', en:'Lead architect', img:'003-003.webp'},
-  {k:'s', id:'contact', n:'—', ar:'تواصل معنا', en:'Contact', img:'012-046.webp'}
+  {k:'u', id:'contact', url:'/contact/', n:'—', ar:'تواصل معنا', en:'Contact', img:'012-046.webp'}
 ];
-$('#menulist').innerHTML = MENU.map(m => `<li><a href="#${m.id}" data-k="${m.k}" data-id="${m.id}" data-img="${m.img}"><span class="mn">${m.n}</span><span class="mt">${T(m.ar, m.en)}</span></a></li>`).join('');
+$('#menulist').innerHTML = MENU.map(m => `<li><a href="${m.url || '#' + m.id}" data-k="${m.k}" data-id="${m.id}" data-img="${m.img}"><span class="mn">${m.n}</span><span class="mt">${T(m.ar, m.en)}</span></a></li>`).join('');
 let menuOpen = false;
 function setMenu(o){
   menuOpen = o; mbtn.setAttribute('aria-expanded', o); mbtn.classList.toggle('x', o);
@@ -977,7 +978,9 @@ $('#menulist').addEventListener('pointerover', e => {
   SND.blip(560 + Math.random()*300, .1, .035);
 });
 $('#menulist').addEventListener('click', e => {
-  const a = e.target.closest('a'); if (!a) return; e.preventDefault();
+  const a = e.target.closest('a'); if (!a) return;
+  if (a.dataset.k === 'u') return;
+  e.preventDefault();
   const id = a.dataset.id;
   if (a.dataset.k === 'p'){ setMenu(false); go(id); }
   else { setMenu(false); if (caseEl.classList.contains('open')) closeCase(true); const el = document.getElementById(id); setTimeout(() => lenis ? lenis.scrollTo(el, {offset:-40}) : el.scrollIntoView({behavior:'smooth'}), 500); }
