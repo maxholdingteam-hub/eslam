@@ -1,0 +1,124 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--gold:#d9b46b;--gold-l:#f6dc9c;--gold-d:#9c7a3c;
+  --foil:linear-gradient(180deg,#fff1c6 0%,#f0cf82 30%,#c99a45 62%,#f3d68f 100%);
+  --ar:"IBM Plex Sans Arabic",sans-serif;--en:"Montserrat",sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#111;font-family:var(--ar);color:#f4efe6}
+.p{position:relative;width:1080px;overflow:hidden;background:#070605}
+.r45{height:1350px}.r916{height:1920px}
+.bg{position:absolute;inset:0;background-size:cover;background-position:center}
+.shade{position:absolute;inset:0;pointer-events:none}
+.foil{background:var(--foil);-webkit-background-clip:text;background-clip:text;color:transparent}
+/* brand block */
+.brand{position:absolute;z-index:5;left:0;right:0;display:flex;flex-direction:column;align-items:center}
+.brand img{width:230px;filter:drop-shadow(0 8px 30px rgba(0,0,0,.6))}
+.brand .wm{font-family:var(--en);font-weight:700;font-size:74px;letter-spacing:.06em;line-height:1;margin-top:6px;direction:ltr;filter:drop-shadow(0 4px 14px rgba(0,0,0,.7))}
+.brand .tg{font-family:var(--en);font-weight:500;font-size:17px;letter-spacing:.34em;color:#d8c7a2;margin-top:14px;direction:ltr;padding-left:.34em}
+.r916 .brand img{width:300px}.r916 .brand .wm{font-size:80px}
+/* footer */
+.foot{position:absolute;z-index:6;left:0;right:0;bottom:0;height:112px;display:flex;align-items:center;justify-content:center;gap:34px;direction:ltr;
+  background:linear-gradient(180deg,rgba(7,6,5,.75),#070605);border-top:2px solid var(--gold-d)}
+.r916 .foot{height:140px}
+.foot .it{display:flex;align-items:center;gap:14px;font-family:var(--en);font-weight:500;font-size:34px;letter-spacing:.04em;color:var(--gold-l)}
+.foot svg{width:40px;height:40px}
+.foot .dot{width:8px;height:8px;border-radius:50%;background:var(--gold)}
+/* headings */
+.h{position:absolute;z-index:5;left:60px;right:60px;text-align:center}
+.h1{font-weight:700;line-height:1.25;filter:drop-shadow(0 6px 20px rgba(0,0,0,.85))}
+.sub{font-weight:500;color:#f1ead9;filter:drop-shadow(0 3px 10px rgba(0,0,0,.9))}
+/* P1 before/after */
+.tag{position:absolute;z-index:5;display:flex;flex-direction:column;align-items:center;gap:2px;padding:10px 22px;border:1.5px solid rgba(217,180,107,.7);background:rgba(7,6,5,.55);backdrop-filter:blur(6px)}
+.tag b{font-size:28px;font-weight:700;color:#fff}
+.tag span{font-family:var(--en);font-size:13px;letter-spacing:.3em;color:var(--gold);padding-left:.3em}
+/* P2 services */
+.grid{position:absolute;z-index:5;left:56px;right:56px;display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.card{position:relative;overflow:hidden;border:1.5px solid rgba(217,180,107,.55);background:#0b0a08;display:flex;flex-direction:column;align-items:center;justify-content:flex-end;padding:0 14px 26px;text-align:center}
+.card .ph{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.55}
+.card::before{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(180deg,rgba(7,6,5,.15) 0%,rgba(7,6,5,.55) 45%,rgba(7,6,5,.95) 100%)}
+.card::after{content:"";position:absolute;inset:8px;z-index:1;border:1px solid rgba(217,180,107,.18);pointer-events:none}
+.card svg{position:relative;z-index:2;width:104px;height:104px;fill:none;stroke:var(--gold-l);stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round;filter:drop-shadow(0 0 10px rgba(217,180,107,.5))}
+.card i{position:relative;z-index:2;display:block;width:60px;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:18px 0 16px}
+.card b{position:relative;z-index:2;font-size:27px;font-weight:600;line-height:1.35;color:#fff}
+/* P3 journey */
+.steps{position:absolute;z-index:5;left:56px;right:56px;display:flex;flex-direction:column;gap:0}
+.st{position:relative;display:grid;grid-template-columns:1fr 410px;align-items:stretch;border-bottom:2px solid var(--gold-d)}
+.st:first-child{border-top:2px solid var(--gold-d)}
+.st .im{background-size:cover;background-position:center;position:relative}
+.st .im::after{content:"";position:absolute;inset:0;background:linear-gradient(270deg,rgba(7,6,5,0) 60%,rgba(7,6,5,.9))}
+.st .lb{display:flex;align-items:center;gap:20px;padding-right:26px;background:linear-gradient(270deg,rgba(7,6,5,.0),rgba(7,6,5,.0))}
+.st .n{flex:none;width:76px;height:76px;border-radius:50%;display:grid;place-items:center;font-family:var(--en);font-weight:700;font-size:34px;color:#1a1206;
+  background:radial-gradient(circle at 35% 30%,#fff3c8,#e3b95e 45%,#9c7228 100%);box-shadow:0 0 0 4px rgba(217,180,107,.25),0 0 30px rgba(217,180,107,.45)}
+.st .lb b{display:block;font-size:32px;white-space:nowrap;font-weight:700;color:#fff}
+.st .lb small{display:block;font-size:20px;white-space:nowrap;color:#cdbf9f;margin-top:4px;font-weight:500}
+.rail{position:absolute;z-index:4;width:2px;background:linear-gradient(180deg,transparent,var(--gold),transparent)}
+/* P4 cta */
+.panel{position:absolute;z-index:5;left:60px;right:60px;border:1.5px solid rgba(217,180,107,.65);background:linear-gradient(180deg,rgba(14,12,9,.82),rgba(7,6,5,.92));backdrop-filter:blur(8px);padding:34px 40px 30px}
+.panel::before{content:"";position:absolute;inset:7px;border:1px solid rgba(217,180,107,.18);pointer-events:none}
+.pg{display:grid;grid-template-columns:1fr 1fr;gap:22px 30px;direction:ltr}
+.pg div{display:flex;align-items:center;gap:16px;font-family:var(--en);font-weight:500;font-size:29px;color:#f4efe6}
+.pg div.ar{font-family:var(--ar);font-size:26px;direction:rtl;justify-content:flex-end}
+.pg svg{flex:none;width:36px;height:36px;fill:none;stroke:var(--gold);stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
+.cta{display:flex;justify-content:center;margin-top:28px}
+.cta span{display:inline-flex;align-items:center;gap:14px;padding:16px 46px;font-size:30px;font-weight:700;color:#1a1206;background:linear-gradient(180deg,#f7dd9d,#d4a650 60%,#b9893a);border-radius:999px;box-shadow:0 10px 30px rgba(217,180,107,.35)}
+.cta svg{width:34px;height:34px;fill:#1a1206}
+</style>
+</head>
+<body>
+<script>
+const WA='<svg viewBox="0 0 32 32"><path fill="#d9b46b" d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2a13 13 0 0 0 6.6 1.8C23.2 28.8 29 23 29 15.8S23.2 3 16 3zm0 23.4c-2.1 0-4.1-.6-5.9-1.7l-.4-.3-3.8 1.2 1.2-3.7-.3-.4A10.4 10.4 0 0 1 5.6 15.8C5.6 10.1 10.3 5.5 16 5.5s10.4 4.6 10.4 10.3S21.7 26.4 16 26.4zm5.7-7.7c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.5-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6.3-.5c.1-.2 0-.4 0-.5l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5 2.5 1 3 .8 3.6.8.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.4z"/></svg>';
+const foot=()=>`<div class="foot"><div class="it">${WA}0533393397</div><span class="dot"></span><div class="it">maxdesign.sa</div></div>`;
+const brand=(top)=>`<div class="brand" style="top:${top}px"><img src="logo.png" alt=""><div class="wm foil">MAX DESIGN</div><div class="tg">ARCHITECTURE, INTERIOR &amp; PROJECT MANAGEMENT</div></div>`;
+const I={
+ palace:'<svg viewBox="0 0 64 64"><path d="M8 56h48M12 56V30h8v26M44 56V30h8v26M20 56V38h24v18M28 56v-9a4 4 0 0 1 8 0v9M16 30v-6M48 30v-6M16 24a3 3 0 1 1 0 0M48 24a3 3 0 1 1 0 0M22 38c0-8 4-14 10-17 6 3 10 9 10 17M32 21v-8M30 13h4"/><circle cx="16" cy="21" r="3"/><circle cx="48" cy="21" r="3"/></svg>',
+ villa:'<svg viewBox="0 0 64 64"><path d="M6 30 32 12l26 18M12 26v30h40V26M8 56h48M26 56V42a6 6 0 0 1 12 0v14M17 34h6v7h-6zM41 34h6v7h-6zM29 25h6v6h-6z"/></svg>',
+ apt:'<svg viewBox="0 0 64 64"><path d="M8 56h48M14 56V20h16v36M30 56V10h20v46M18 26h3M24 26h3M18 33h3M24 33h3M18 40h3M24 40h3M35 16h3M42 16h3M35 23h3M42 23h3M35 30h3M42 30h3M35 37h3M42 37h3M37 56v-9h6v9"/></svg>',
+ office:'<svg viewBox="0 0 64 64"><path d="M6 56h52M18 56V8h28v48M8 56V30h10M46 30h10v26M24 14h4M30 14h4M36 14h4M24 21h4M30 21h4M36 21h4M24 28h4M30 28h4M36 28h4M24 35h4M30 35h4M36 35h4M12 36h2M12 43h2M50 36h2M50 43h2M28 56v-12h8v12"/></svg>',
+ retail:'<svg viewBox="0 0 64 64"><path d="M10 26h44M12 26 16 12h32l4 14M10 26c0 4 3 6 6.5 6s6.5-2 6.5-6c0 4 3 6 6.5 6S36 30 36 26c0 4 3 6 6.5 6S49 30 49 26c0 4 3 6 5 6M14 32v24h36V32M8 56h48M20 56V40h10v16M36 40h10v8H36z"/></svg>',
+ pm:'<svg viewBox="0 0 64 64"><path d="M16 10h22l8 8v12M16 10v44h16M38 10v8h8M22 22h12M22 29h16M22 36h8"/><circle cx="29" cy="45" r="0"/><path d="M36 54a12 12 0 0 1 24 0zM48 42v-4M40 54v-4a8 8 0 0 1 16 0v4"/><path d="m22 44 3 3 6-6"/></svg>'
+};
+const cards=[['palace','s-palace.webp','تصميم وتنفيذ القصور'],['villa','s-villa.webp','تصميم وتنفيذ الفلل'],['apt','s-apartment.webp','تصميم الشقق السكنية'],['office','s-office.webp','المكاتب ومقرات الشركات'],['retail','s-retail.webp','المحلات التجارية'],['pm','s-design.webp','إدارة وتنفيذ المشاريع']];
+const C={phone:'<svg viewBox="0 0 24 24"><path d="M5 3h4l2 5-2.5 1.5a11 11 0 0 0 6 6L16 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 5a2 2 0 0 1 2-2z"/></svg>',
+ pin:'<svg viewBox="0 0 24 24"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>',
+ web:'<svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>',
+ ig:'<svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r=".6"/></svg>',
+ tt:'<svg viewBox="0 0 24 24"><path d="M14 3v11.5a3.5 3.5 0 1 1-3.5-3.5M14 3c.5 2.8 2.3 4.5 5 4.8"/></svg>',
+ sc:'<svg viewBox="0 0 24 24"><path d="M12 3c3 0 5 2.2 5 5v2.5l1.8-.6c.6 0 .8.8.2 1.1l-2 1c.6 1.6 1.8 2.8 3.5 3.4-.4.9-1.6 1-2.6 1.2-.3.5-.2 1.4-.9 1.4-.8 0-1.7-.4-2.7.2-.8.5-1.4 1.3-2.3 1.3s-1.5-.8-2.3-1.3c-1-.6-1.9-.2-2.7-.2-.7 0-.6-.9-.9-1.4-1-.2-2.2-.3-2.6-1.2 1.7-.6 2.9-1.8 3.5-3.4l-2-1c-.6-.3-.4-1.1.2-1.1l1.8.6V8c0-2.8 2-5 5-5z"/></svg>'};
+function P1(r){const s=r==='45';return `<section class="p r${r}"><div class="bg" style="background-image:url(a/p1_${r}.jpg)"></div>
+ <div class="shade" style="background:linear-gradient(180deg,rgba(7,6,5,.92) 0%,rgba(7,6,5,.55) ${s?24:20}%,rgba(7,6,5,0) ${s?40:34}%,rgba(7,6,5,0) ${s?58:60}%,rgba(7,6,5,.85) ${s?82:84}%,#070605 100%)"></div>
+ ${brand(s?40:90)}
+ <div class="tag" style="left:${s?70:60}px;top:${s?560:820}px"><b>قبل</b><span>BEFORE</span></div>
+ <div class="tag" style="right:${s?70:60}px;top:${s?470:700}px"><b>بعد</b><span>AFTER</span></div>
+ <div class="h" style="bottom:${s?150:230}px"><div class="h1" style="font-size:${s?92:104}px;color:#fff">ما نصمم مساحات</div><div class="h1 foil" style="font-size:${s?104:118}px">نصمم أسلوب حياة</div></div>
+ ${foot()}</section>`}
+function P2(r){const s=r==='45';const ch=s?296:440;return `<section class="p r${r}"><div class="bg" style="background-image:url(a/p2_${r}.jpg)"></div>
+ <div class="shade" style="background:linear-gradient(180deg,rgba(7,6,5,.7) 0%,rgba(7,6,5,.35) 30%,rgba(7,6,5,.55) 60%,rgba(7,6,5,.9) 100%)"></div>
+ ${brand(s?40:90)}
+ <div class="h" style="top:${s?345:470}px"><div class="h1 foil" style="font-size:${s?96:118}px">خدماتنا</div><div class="sub" style="font-size:${s?32:38}px;margin-top:${s?0:6}px">من الفكرة لين التسليم</div></div>
+ <div class="grid" style="top:${s?575:780}px">${cards.map(c=>`<div class="card" style="height:${ch}px"><div class="ph" style="background-image:url(a/${c[1]})"></div>${I[c[0]]}<i></i><b>${c[2]}</b></div>`).join('')}</div>
+ ${foot()}</section>`}
+function P3(r){const s=r==='45';const sh=s?150:232;const steps=[['4','التسليم النهائي','مفتاحك جاهز بجودة نضمنها','s4'],['3','الإشراف على التنفيذ','فريقنا في الموقع بكل مرحلة','s3'],['2','اختيار الخامات','نختارها معك بعناية','s2'],['1','التصميم','مخططات وتصور ثلاثي الأبعاد','s1']];
+ return `<section class="p r${r}"><div class="bg" style="background-image:url(a/m_${r}.jpg)"></div>
+ <div class="shade" style="background:linear-gradient(180deg,rgba(7,6,5,.55),rgba(7,6,5,.2) 40%,rgba(7,6,5,.5))"></div>
+ ${brand(s?40:90)}
+ <div class="h" style="top:${s?340:470}px"><div class="h1 foil" style="font-size:${s?78:96}px">رحلة مشروعك معنا</div><div class="sub" style="font-size:${s?30:36}px">ما تتعب نفسك بالتفاصيل</div></div>
+ <div class="steps" style="top:${s?525:720}px">${steps.map(t=>`<div class="st" style="height:${sh}px"><div class="im" style="background-image:url(a/${t[3]}.jpg)"></div><div class="lb"><span class="n">${t[0]}</span><div><b>${t[1]}</b><small>${t[2]}</small></div></div></div>`).join('')}</div>
+ ${foot()}</section>`}
+function P4(r){const s=r==='45';return `<section class="p r${r}"><div class="bg" style="background-image:url(a/p4_${r}.jpg)"></div>
+ <div class="shade" style="background:linear-gradient(180deg,rgba(7,6,5,.85) 0%,rgba(7,6,5,.2) ${s?26:22}%,rgba(7,6,5,0) 40%,rgba(7,6,5,.6) ${s?60:62}%,rgba(7,6,5,.95) ${s?78:80}%,#070605 100%)"></div>
+ ${brand(s?40:90)}
+ <div class="h" style="top:${s?600:1000}px"><div class="h1 foil" style="font-size:${s?104:120}px">ابدأ مشروعك اليوم</div><div class="sub" style="font-size:${s?32:38}px;margin-top:4px">ماكس ديزاين حاضرة تحوّل رؤيتك لواقع</div></div>
+ <div class="panel" style="bottom:${s?60:150}px"><div class="pg">
+  <div>${C.ig}@maxdesign.sa</div><div>${C.phone}0533393397</div>
+  <div>${C.tt}@maxdesign.sa</div><div class="ar">القادسية، الرياض${C.pin}</div>
+  <div>${C.sc}@maxdesign.sa</div><div>${C.web}maxdesign.sa</div></div>
+  <div class="cta"><span>${WA.replace('fill="#d9b46b"','')}تواصل عبر الواتساب</span></div></div>
+ ${s?'':''}</section>`}
+document.body.innerHTML=[P1('45'),P2('45'),P3('45'),P4('45'),P1('916'),P2('916'),P3('916'),P4('916')].join('');
+</script>
+</body>
+</html>
