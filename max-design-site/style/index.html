@@ -4,14 +4,14 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>اكتشف ستايلك | Max Design · ماكس ديزاين</title>
-<meta name="description" content="5 أسئلة بالصور تعرف بعدها ستايل التصميم الداخلي اللي يناسبك: مودرن هادئ، كلاسيك فرنسي، أو فخامة داكنة. من ماكس ديزاين، الرياض.">
+<meta name="description" content="اختبار بالصور يحدد ستايل التصميم اللي يناسب شقتك أو فيلتك أو قصرك أو شركتك أو محلك، ويجهّز لك ملخص مشروعك. من ماكس ديزاين، الرياض.">
 <meta name="theme-color" content="#070605">
 <link rel="icon" href="/img/logo.png">
 <link rel="apple-touch-icon" href="/img/logo.png">
 <link rel="canonical" href="https://maxdesign.sa/style/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="اكتشف ستايلك | Max Design">
-<meta property="og:description" content="5 أسئلة بالصور تعرف بعدها ستايل بيتك.">
+<meta property="og:description" content="اكتشف ستايل مشروعك بالصور في دقيقتين.">
 <meta property="og:url" content="https://maxdesign.sa/style/">
 <meta property="og:image" content="https://maxdesign.sa/img/og.jpg">
 <meta name="twitter:card" content="summary_large_image">
@@ -106,6 +106,34 @@ main{position:relative;z-index:1;max-width:1080px;margin:0 auto;padding:96px max
 .score .b{height:4px;border-radius:2px;background:rgba(217,180,107,.12);overflow:hidden}
 .score .b i{display:block;height:100%;background:var(--gold)}
 .score em{font-style:normal;font-family:var(--en);direction:ltr;text-align:left}
+
+/* type cards */
+.types{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}
+@media(max-width:900px){.types{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:560px){.types{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.type{position:relative;border:1px solid var(--line);border-radius:16px;overflow:hidden;background:var(--panel);cursor:pointer;padding:0;text-align:right;aspect-ratio:3/4;transition:transform .35s cubic-bezier(.2,.8,.2,1),border-color .3s}
+.type:hover{transform:translateY(-4px);border-color:rgba(217,180,107,.6)}
+.type img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.75;transition:opacity .4s,transform .8s}
+.type:hover img{opacity:.95;transform:scale(1.05)}
+.type::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(7,6,5,.92))}
+.type span{position:absolute;z-index:1;inset:auto 14px 14px 14px;font-weight:700;font-size:18px}
+.type small{display:block;font-weight:500;font-size:12.5px;color:var(--mute)}
+/* feature chips */
+.feats{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:28px}
+.feat{display:inline-flex;align-items:center;gap:10px;padding:11px 18px;border:1px solid var(--line);border-radius:999px;background:var(--panel);cursor:pointer;font-size:15.5px;transition:all .25s}
+.feat i{font-style:normal;width:20px;height:20px;border-radius:50%;border:1px solid var(--gold-d);display:grid;place-items:center;font-size:11px;color:transparent;transition:all .25s}
+.feat[aria-pressed="true"]{border-color:var(--gold);background:rgba(217,180,107,.1);color:var(--gold-l)}
+.feat[aria-pressed="true"] i{background:var(--gold);color:#1a1206;border-color:var(--gold)}
+.feat:hover{border-color:rgba(217,180,107,.6)}
+.grp{margin-bottom:26px}
+.grp h3{font-size:17px;font-weight:600;margin-bottom:12px;color:#e8dfcf}
+.next{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+/* project summary */
+.brief{border:1px solid var(--gold-d);border-radius:16px;padding:18px 20px;margin:0 0 24px;background:radial-gradient(500px 200px at 100% 0%,rgba(217,180,107,.08),transparent),var(--panel)}
+.brief h3{font-size:15px;color:var(--gold);font-weight:600;margin-bottom:10px}
+.brief dl{display:grid;grid-template-columns:auto 1fr;gap:6px 16px;font-size:15px}
+.brief dt{color:var(--mute)}
+.brief dd{margin:0}
 footer{margin-top:50px;font-family:var(--en);font-size:11px;letter-spacing:.24em;color:#6f6656;direction:ltr;text-align:center}
 @media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
 </style>
@@ -118,61 +146,118 @@ footer{margin-top:50px;font-family:var(--en);font-size:11px;letter-spacing:.24em
 <script>
 const WA='966579277975';
 const S={
- m:{name:'مودرن هادئ',en:'CALM MODERN',d:'تحب البساطة اللي فيها دفا: خطوط نظيفة، ألوان ترابية فاتحة، وخامات طبيعية زي الخشب والترافرتين، مع إضاءة مخفية تريح العين. بيت هادي ومرتب ويعيش معاك سنين.',
+ m:{name:'مودرن هادئ',en:'CALM MODERN',d:'تحب البساطة اللي فيها دفا: خطوط نظيفة، ألوان ترابية فاتحة، وخامات طبيعية زي الخشب والترافرتين، مع إضاءة مخفية تريح العين. مساحة هادية ومرتبة وتعيش معاك سنين.',
    sw:['#efe6d8','#d8c3a5','#b08d68','#7a5c43','#3e2f24'],
-   mats:[['خشب الجوز','شرائح على الجدران وخلف السرير'],['حجر الترافرتين','طاولات وأرضيات'],['أقمشة الكتان','بيج ورملي'],['إضاءة مخفية','دافية في الأسقف والجدران']],
-   img:['m-living','m-bed','m-dining']},
- c:{name:'كلاسيك فرنسي',en:'FRENCH CLASSIC',d:'ذوقك ملكي وخالد: بانوهات وزخارف على الجدران، أثاث منحوت بأقمشة كابتونيه، ثريات كريستال، وألوان عاجية مع لمسات ذهب. بيت فيه هيبة وفخامة ما تروح موضتها.',
+   mats:[['خشب الجوز','شرائح على الجدران وخلف السرير'],['حجر الترافرتين','طاولات وأرضيات'],['أقمشة الكتان','بيج ورملي'],['إضاءة مخفية','دافية في الأسقف والجدران']]},
+ c:{name:'كلاسيك فرنسي',en:'FRENCH CLASSIC',d:'ذوقك ملكي وخالد: بانوهات وزخارف على الجدران، أثاث منحوت بأقمشة كابتونيه، ثريات كريستال، وألوان عاجية مع لمسات ذهب. مساحة فيها هيبة وفخامة ما تروح موضتها.',
    sw:['#f3ead8','#e2d2b5','#c9a96e','#8a6a42','#5b6b80'],
-   mats:[['بانوهات وزخارف','جدران وأسقف بإطارات بارزة'],['خشب منحوت','كنب وكراسي وسفرة'],['كريستال وذهب','ثريات وإضاءات جدارية'],['رخام بيج مطعّم','أرضيات بتطعيمات']],
-   img:['c-living','c-bed','c-dining']},
+   mats:[['بانوهات وزخارف','جدران وأسقف بإطارات بارزة'],['خشب منحوت','كنب وكراسي وسفرة'],['كريستال وذهب','ثريات وإضاءات جدارية'],['رخام بيج مطعّم','أرضيات بتطعيمات']]},
  d:{name:'فخامة داكنة',en:'DARK LUXURY',d:'تحب الحضور القوي: رخام أسود بعروق ذهبي، إضاءة درامية، وتفاصيل نحاسية ومخمل غامق. مساحة تبهر أي ضيف من أول ما يدخل.',
    sw:['#0e0c0a','#2a2420','#5a4632','#b08840','#e8c879'],
-   mats:[['رخام أسود','بعروق ذهبية على الجدران والأرضيات'],['نحاس مصقول','إطارات وتفاصيل وإضاءة'],['مخمل غامق','كنب وكراسي وخلفيات أسرّة'],['إضاءة درامية','خطية ومخفية بدرجات دافية']],
-   img:['d-living','d-bed','d-dining']}
+   mats:[['رخام أسود','بعروق ذهبية على الجدران والأرضيات'],['نحاس مصقول','إطارات وتفاصيل وإضاءة'],['مخمل غامق','كنب وكراسي وخلفيات أسرّة'],['إضاءة درامية','خطية ومخفية بدرجات دافية']]}
 };
-const Q=[
- {q:'أنهي مجلس تحس إنه بيتك؟',s:'اختار اللي يشدك من أول نظرة.',o:[['m','m-living','بسيط ودافي'],['c','c-living','ملكي بزخارف'],['d','d-living','غامق وفخم']]},
- {q:'وغرفة النوم؟',s:'المكان اللي ترتاح فيه آخر اليوم.',o:[['m','m-bed','هادية وطبيعية'],['c','c-bed','كلاسيكية ناعمة'],['d','d-bed','دافية ودرامية']]},
- {q:'وسفرة العزايم؟',s:'تخيّل عزيمة العيد عندك.',o:[['m','m-dining','عصرية ومريحة'],['c','c-dining','فخمة ومنحوتة'],['d','d-dining','سوداء وذهبي']]},
- {q:'أنهي ألوان تريحك؟',s:'لوحة الألوان اللي تحب تعيش وسطها.',o:[['m','pal','ترابية فاتحة'],['c','pal','عاجي وذهبي'],['d','pal','أسود ونحاسي']]},
- {q:'وأنهي خامات تحب تلمسها؟',s:'آخر سؤال.',o:[['m','mat-m','خشب وحجر طبيعي'],['c','mat-c','زخارف وحرير'],['d','mat-d','رخام أسود ونحاس']]}
-];
+/* picture questions; each option key k is the style, img = prefix + '-' + k */
+const PQ={
+ living:{q:'أنهي مجلس تحس إنه بيتك؟',s:'اختار اللي يشدك من أول نظرة.',img:'living',o:{m:'بسيط ودافي',c:'ملكي بزخارف',d:'غامق وفخم'}},
+ bed:{q:'وغرفة النوم؟',s:'المكان اللي ترتاح فيه آخر اليوم.',img:'bed',o:{m:'هادية وطبيعية',c:'كلاسيكية ناعمة',d:'دافية ودرامية'}},
+ dining:{q:'وسفرة العزايم؟',s:'تخيّل عزيمة العيد عندك.',img:'dining',o:{m:'عصرية ومريحة',c:'فخمة ومنحوتة',d:'سوداء وذهبي'}},
+ facade:{q:'أنهي واجهة تحب تشوفها وإنت راجع البيت؟',s:'الانطباع الأول عن بيتك.',img:'facade',o:{m:'مودرن بسيطة',c:'كلاسيك بأعمدة',d:'داكنة بإضاءة'}},
+ outdoor:{q:'وأنهي جلسة خارجية ومسبح؟',s:'الحوش والحديقة والمسبح.',img:'outdoor',o:{m:'طبيعية وهادية',c:'حديقة ملكية',d:'سهرة فخمة'}},
+ reception:{q:'أنهي استقبال يعبّر عن شركتك؟',s:'أول مكان يشوفه العميل.',img:'reception',o:{m:'عصري وهادي',c:'كلاسيك راقي',d:'فخم وقوي'}},
+ meeting:{q:'وغرفة الاجتماعات؟',s:'المكان اللي تقفل فيه الصفقات.',img:'meeting',o:{m:'خفيفة ومريحة',c:'تنفيذية كلاسيك',d:'داكنة وفخمة'}},
+ store:{q:'أنهي محل تحب تدخله كعميل؟',s:'إحساس العميل أول ما يدخل.',img:'store',o:{m:'هادي وأنيق',c:'بوتيك كلاسيك',d:'فخم ودرامي'}},
+ pal:{q:'أنهي ألوان تريحك؟',s:'لوحة الألوان اللي تحب تعيش وسطها.',pal:true,o:{m:'ترابية فاتحة',c:'عاجي وذهبي',d:'أسود ونحاسي'}},
+ mat:{q:'وأنهي خامات تحب تلمسها؟',s:'آخر سؤال عن الذوق.',img:'mat',o:{m:'خشب وحجر طبيعي',c:'زخارف وحرير',d:'رخام أسود ونحاس'}}
+};
+const T={
+ apt:{ar:'شقة',sub:'سكني',img:'/img/s-apartment.webp',qs:['living','bed','dining','pal','mat'],
+   feats:['صالة مفتوحة على المطبخ','مطبخ مودرن','غرفة ملابس','مكتب منزلي','غرفة أطفال','مجلس ضيوف','بلكونة أو تراس','إضاءة ذكية','ستائر ومفروشات'],
+   area:['أقل من 150 م²','150 – 250 م²','250 – 400 م²','أكثر من 400 م²']},
+ villa:{ar:'فيلا',sub:'سكني',img:'/img/s-villa.webp',qs:['facade','living','bed','outdoor','pal','mat'],
+   feats:['مسبح','حديقة ولاندسكيب','جلسة خارجية وشواء','مجلس رجال','مجلس نساء','مطبخ تحضيري','غرفة سينما','جيم منزلي','غرفة ملابس','مصعد','سمارت هوم','ملحق خارجي'],
+   area:['أقل من 400 م²','400 – 700 م²','700 – 1000 م²','أكثر من 1000 م²']},
+ palace:{ar:'قصر',sub:'سكني فاخر',img:'/img/s-palace.webp',qs:['facade','living','dining','outdoor','pal','mat'],
+   feats:['مسبح','حديقة ونافورة','قاعة مناسبات','مجلس رجال','مجلس نساء','جناح ضيوف','مطبخ تحضيري','غرفة سينما','جيم وسبا','مصعد','سمارت هوم','ملحق للعمالة'],
+   area:['أقل من 1500 م²','1500 – 3000 م²','3000 – 5000 م²','أكثر من 5000 م²']},
+ office:{ar:'مكتب أو شركة',sub:'تجاري',img:'/img/s-office.webp',qs:['reception','meeting','pal','mat'],
+   feats:['استقبال','غرف اجتماعات','مكاتب مفتوحة','مكتب تنفيذي','ركن قهوة وضيافة','مصلى','قاعة تدريب','هوية الشركة على الجدران','غرفة سيرفرات'],
+   area:['أقل من 200 م²','200 – 500 م²','500 – 1000 م²','أكثر من 1000 م²']},
+ retail:{ar:'محل أو معرض',sub:'تجاري',img:'/img/s-retail.webp',qs:['store','pal','mat'],
+   feats:['واجهة ولوحة','فترينات عرض','كاشير','غرف قياس','مخزن','إضاءة عرض','هوية بصرية كاملة'],
+   area:['أقل من 80 م²','80 – 200 م²','200 – 500 م²','أكثر من 500 م²']}
+};
+const STAGE=['أرض فاضية (نبدأ من التصميم المعماري)','على العضم','مشطّب ويحتاج تجديد'];
+const SVC=['تصميم فقط','تصميم وتنفيذ','لسه ما قررت'];
 const app=document.getElementById('app');
-const img=k=>`/img/style/${k}.webp`;
-let i=0,ans=[];
-const esc=s=>s.replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
-function intro(){app.innerHTML=`<section class="screen intro">
+const im=k=>`/img/style/${k}.webp`;
+const esc=s=>String(s).replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+let st={};
+function reset(){st={type:null,step:0,ans:[],feats:[],area:null,stage:null,svc:null}}
+function total(){return st.type?T[st.type].qs.length+3:1}
+function prog(n){return `<div class="prog">${n>0?'<button type="button" id="prev">→ رجوع</button>':''}<div class="bar"><i style="width:${n/total()*100}%"></i></div><span>${st.type?(n+1)+' / '+total():''}</span></div>`}
+function wire(n){requestAnimationFrame(()=>{const b=app.querySelector('.bar i');b&&(b.style.width=((n+1)/total()*100)+'%')});
+ const p=document.getElementById('prev');if(p)p.onclick=back;scrollTo({top:0,behavior:'smooth'})}
+function back(){if(st.step===0){reset();typeQ();return}st.step--;render()}
+function intro(){reset();app.innerHTML=`<section class="screen intro">
   <div><div class="k">MAX DESIGN · STYLE FINDER</div><h1>اكتشف <span class="foil">ستايلك</span></h1>
-  <p>5 أسئلة بالصور، تختار فيها اللي يعجبك من غير ما تفكر كتير، وفي الآخر نقولك ستايل التصميم اللي يناسبك وألوانه وخاماته.</p>
-  <div class="meta"><span><b>5</b> أسئلة</span><span><b>1</b> دقيقة</span><span>بدون تسجيل</span></div>
-  <button class="go" id="start" type="button">ابدأ الاختبار <span aria-hidden="true">←</span></button></div>
-  <div class="stack" aria-hidden="true"><img src="${img('m-living')}" alt=""><img src="${img('c-living')}" alt=""><img src="${img('d-living')}" alt=""></div></section>`;
- document.getElementById('start').onclick=()=>{i=0;ans=[];q()};}
-function q(){const it=Q[i];
- app.innerHTML=`<section class="screen"><div class="prog">${i?'<button type="button" id="prev">→ رجوع</button>':''}<div class="bar"><i style="width:${(i/Q.length)*100}%"></i></div><span>${i+1} / ${Q.length}</span></div>
- <h2 class="qh">${it.q}</h2><p class="qs">${it.s}</p>
- <div class="opts">${it.o.map((o,k)=>`<button class="opt" type="button" data-k="${k}">${o[1]==='pal'?`<div class="pal">${S[o[0]].sw.map(c=>`<span style="background:${c}"></span>`).join('')}</div>`:`<div class="im"><img src="${img(o[1])}" alt="${esc(o[2])}" loading="eager"></div>`}<div class="lb"><b>${o[2]}</b><i aria-hidden="true">${['أ','ب','ج'][k]}</i></div></button>`).join('')}</div></section>`;
- requestAnimationFrame(()=>{const b=app.querySelector('.bar i');b.style.width=((i+1)/Q.length*100)+'%'});
- app.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{b.classList.add('picked');ans[i]=it.o[+b.dataset.k][0];setTimeout(()=>{i++;i<Q.length?q():result()},320)});
- const p=document.getElementById('prev');if(p)p.onclick=()=>{i--;q()};
- scrollTo({top:0,behavior:'smooth'});}
-function result(){const c={m:0,c:0,d:0};ans.forEach(a=>c[a]++);
- const k=Object.keys(c).sort((a,b)=>c[b]-c[a]||ans.indexOf(a)-ans.indexOf(b))[0],r=S[k];
- const msg=`السلام عليكم، سويت اختبار الستايل في موقعكم وطلع ستايلي: ${r.name}. أبغى أستفسر عن تصميم مشروعي.`;
+  <p>اختار نوع مشروعك، وجاوب بالصور على أسئلة بسيطة عن ذوقك واللي تحتاجه، وفي الآخر نقولك ستايل التصميم اللي يناسبك ونجهّز لك ملخص مشروعك تبعته لنا بضغطة.</p>
+  <div class="meta"><span><b>2</b> دقيقة</span><span>شقق · فلل · قصور · شركات · محلات</span><span>بدون تسجيل</span></div>
+  <button class="go" id="start" type="button">ابدأ <span aria-hidden="true">←</span></button></div>
+  <div class="stack" aria-hidden="true"><img src="${im('living-m')}" alt=""><img src="${im('facade-c')}" alt=""><img src="${im('living-d')}" alt=""></div></section>`;
+ document.getElementById('start').onclick=typeQ;}
+function typeQ(){st.type=null;app.innerHTML=`<section class="screen">${prog(0)}<h2 class="qh">إيش نوع مشروعك؟</h2><p class="qs">الأسئلة الجاية بتتغير حسب اختيارك.</p>
+ <div class="types">${Object.entries(T).map(([k,t])=>`<button class="type" type="button" data-k="${k}"><img src="${t.img}" alt=""><span>${t.ar}<small>${t.sub}</small></span></button>`).join('')}</div></section>`;
+ app.querySelectorAll('.type').forEach(b=>b.onclick=()=>{st.type=b.dataset.k;st.step=1;st.ans=[];st.feats=[];render()});
+ const p=document.getElementById('prev');if(p)p.onclick=()=>{intro()};
+ requestAnimationFrame(()=>{const b=app.querySelector('.bar i');b&&(b.style.width=(1/7*100)+'%')});scrollTo({top:0,behavior:'smooth'});}
+function render(){const t=T[st.type],qn=t.qs.length;
+ if(st.step<=qn)return pic(t.qs[st.step-1]);
+ if(st.step===qn+1)return feats();
+ if(st.step===qn+2)return details();
+ result();}
+function pic(key){const it=PQ[key],n=st.step;
+ app.innerHTML=`<section class="screen">${prog(n)}<h2 class="qh">${it.q}</h2><p class="qs">${it.s}</p>
+ <div class="opts">${['m','c','d'].map((k,i)=>`<button class="opt${st.ans[n-1]===k?' picked':''}" type="button" data-k="${k}">${it.pal?`<div class="pal">${S[k].sw.map(c=>`<span style="background:${c}"></span>`).join('')}</div>`:`<div class="im"><img src="${im(it.img+'-'+k)}" alt="${esc(it.o[k])}"></div>`}<div class="lb"><b>${it.o[k]}</b><i aria-hidden="true">${['أ','ب','ج'][i]}</i></div></button>`).join('')}</div></section>`;
+ app.querySelectorAll('.opt').forEach(b=>b.onclick=()=>{b.classList.add('picked');st.ans[n-1]=b.dataset.k;setTimeout(()=>{st.step++;render()},300)});
+ wire(n);}
+function feats(){const t=T[st.type],n=st.step;
+ app.innerHTML=`<section class="screen">${prog(n)}<h2 class="qh">إيش تبي يكون في ${t.ar}؟</h2><p class="qs">اختار كل اللي تحتاجه، تقدر تختار أكثر من شي.</p>
+ <div class="feats">${t.feats.map(f=>`<button class="feat" type="button" aria-pressed="${st.feats.includes(f)}" data-f="${esc(f)}"><i aria-hidden="true">✓</i>${f}</button>`).join('')}</div>
+ <div class="next"><button class="go" type="button" id="nx">التالي <span aria-hidden="true">←</span></button><span class="qs" style="margin:0" id="cnt"></span></div></section>`;
+ const cnt=()=>document.getElementById('cnt').textContent=st.feats.length?`اخترت ${st.feats.length}`:'ممكن تتخطى لو مو متأكد';cnt();
+ app.querySelectorAll('.feat').forEach(b=>b.onclick=()=>{const f=b.dataset.f,on=st.feats.includes(f);st.feats=on?st.feats.filter(x=>x!==f):st.feats.concat(f);b.setAttribute('aria-pressed',!on);cnt()});
+ document.getElementById('nx').onclick=()=>{st.step++;render()};wire(n);}
+function chips(name,list,val){return `<div class="feats" role="radiogroup">${list.map(v=>`<button class="feat" type="button" role="radio" data-g="${name}" aria-pressed="${val===v}" aria-checked="${val===v}" data-v="${esc(v)}"><i aria-hidden="true">✓</i>${v}</button>`).join('')}</div>`}
+function details(){const t=T[st.type],n=st.step;
+ app.innerHTML=`<section class="screen">${prog(n)}<h2 class="qh">آخر شي: تفاصيل المشروع</h2><p class="qs">عشان نجهّز لك ملخص واضح.</p>
+ <div class="grp"><h3>المساحة التقريبية</h3>${chips('area',t.area,st.area)}</div>
+ <div class="grp"><h3>وين وصل المشروع؟</h3>${chips('stage',STAGE,st.stage)}</div>
+ <div class="grp"><h3>إيش تحتاج منا؟</h3>${chips('svc',SVC,st.svc)}</div>
+ <div class="next"><button class="go" type="button" id="nx">شوف ستايلك <span aria-hidden="true">←</span></button></div></section>`;
+ app.querySelectorAll('.feat[data-g]').forEach(b=>b.onclick=()=>{const g=b.dataset.g;st[g]=b.dataset.v;app.querySelectorAll(`.feat[data-g="${g}"]`).forEach(x=>{const on=x===b;x.setAttribute('aria-pressed',on);x.setAttribute('aria-checked',on)})});
+ document.getElementById('nx').onclick=()=>{st.step++;render()};wire(n);}
+function result(){const t=T[st.type],c={m:0,c:0,d:0};st.ans.forEach(a=>c[a]++);
+ const k=Object.keys(c).sort((a,b)=>c[b]-c[a]||st.ans.indexOf(a)-st.ans.indexOf(b))[0],r=S[k],N=st.ans.length;
+ const pics=t.qs.filter(q=>PQ[q].img).map(q=>im(PQ[q].img+'-'+k)).slice(0,3);
+ const lines=[`السلام عليكم، سويت اختبار الستايل في موقعكم:`,`نوع المشروع: ${t.ar}`,`الستايل: ${r.name}`];
+ if(st.feats.length)lines.push(`أبي فيه: ${st.feats.join('، ')}`);
+ if(st.area)lines.push(`المساحة: ${st.area}`);if(st.stage)lines.push(`المرحلة: ${st.stage}`);if(st.svc)lines.push(`الخدمة: ${st.svc}`);
+ lines.push('أبغى أتواصل معكم بخصوص المشروع.');
+ const row=(a,b)=>b?`<dt>${a}</dt><dd>${esc(b)}</dd>`:'';
  app.innerHTML=`<section class="screen res">
-  <div class="mood">${r.img.map(n=>`<img src="${img(n)}" alt="">`).join('')}</div>
-  <div><div class="k">ستايلك هو</div><h2 class="foil">${r.name}</h2><div class="en">${r.en}</div>
+  <div class="mood">${pics.map(s=>`<img src="${s}" alt="">`).join('')}</div>
+  <div><div class="k">ستايل ${t.ar} اللي يناسبك</div><h2 class="foil">${r.name}</h2><div class="en">${r.en}</div>
    <p class="d">${r.d}</p>
-   <div class="sw">${r.sw.map(c=>`<span style="background:${c}" title="${c}"></span>`).join('')}</div>
+   <div class="sw">${r.sw.map(x=>`<span style="background:${x}" title="${x}"></span>`).join('')}</div>
    <div class="mats">${r.mats.map(m=>`<div><b>${m[0]}</b><small>${m[1]}</small></div>`).join('')}</div>
-   <div class="score">${Object.keys(S).map(x=>`<div><span>${S[x].name}</span><div class="b"><i style="width:${c[x]/Q.length*100}%"></i></div><em>${Math.round(c[x]/Q.length*100)}%</em></div>`).join('')}</div>
-   <div class="act"><a class="go" href="https://wa.me/${WA}?text=${encodeURIComponent(msg)}" target="_blank" rel="noopener">صمّم بيتك بالستايل ده <span aria-hidden="true">←</span></a>
+   <div class="brief"><h3>ملخص مشروعك</h3><dl>${row('النوع',t.ar)}${row('الستايل',r.name)}${row('يشمل',st.feats.join('، '))}${row('المساحة',st.area)}${row('المرحلة',st.stage)}${row('الخدمة',st.svc)}</dl></div>
+   <div class="score">${Object.keys(S).map(x=>`<div><span>${S[x].name}</span><div class="b"><i style="width:${c[x]/N*100}%"></i></div><em>${Math.round(c[x]/N*100)}%</em></div>`).join('')}</div>
+   <div class="act"><a class="go" href="https://wa.me/${WA}?text=${encodeURIComponent(lines.join('\n'))}" target="_blank" rel="noopener">ابعت ملخص مشروعك واتساب <span aria-hidden="true">←</span></a>
    <button class="ghost" type="button" id="again">أعد الاختبار</button><a class="ghost" href="/#work">شوف أعمالنا</a></div>
   </div></section><footer>© MAX DESIGN · RIYADH</footer>`;
- document.getElementById('again').onclick=()=>{i=0;ans=[];q()};scrollTo({top:0,behavior:'smooth'});}
-/* warm the image cache so each question shows instantly */
-['m','c','d'].forEach(s=>S[s].img.concat(['mat-'+s]).forEach(n=>{const im=new Image();im.src=img(n)}));
+ document.getElementById('again').onclick=intro;scrollTo({top:0,behavior:'smooth'});}
+/* warm the image cache so questions show instantly */
+setTimeout(()=>{Object.values(PQ).forEach(q=>q.img&&['m','c','d'].forEach(k=>{const i=new Image();i.src=im(q.img+'-'+k)}))},800);
 intro();
 </script>
 </body>
