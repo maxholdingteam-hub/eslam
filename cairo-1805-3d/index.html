@@ -1,0 +1,230 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+<title>ظلال القاهرة ١٨٠٥</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;800&family=Reem+Kufi:wght@500;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #1b120a; --panel: rgba(24,15,8,.84); --line: rgba(232,200,140,.22);
+    --text: #f3e3c0; --muted: #c7ad84; --gold: #e0a94a; --blood: #c0392b; --ok: #7fb069;
+    color-scheme: dark;
+  }
+  @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #1b120a; --text: #f3e3c0; } }
+  :root[data-theme="dark"] { --bg: #1b120a; --text: #f3e3c0; }
+  * { box-sizing: border-box; }
+  html, body { margin: 0; height: 100%; background: var(--bg); color: var(--text); overflow: hidden; font-family: 'Cairo', system-ui, sans-serif; touch-action: none; -webkit-user-select: none; user-select: none; -webkit-tap-highlight-color: transparent; }
+  canvas#game { position: fixed; inset: 0; width: 100%; height: 100%; display: block; }
+  .hidden { display: none !important; }
+  button { font-family: inherit; color: inherit; cursor: pointer; }
+
+  /* HUD */
+  #touch { position: fixed; inset: 0; z-index: 1; }
+  #hud { position: fixed; inset: 0; z-index: 2; pointer-events: none; }
+  .hud-top { position: absolute; top: max(10px, env(safe-area-inset-top)); left: 12px; right: 12px; display: grid; grid-template-columns: auto 1fr auto; gap: 12px; align-items: start; }
+  .hud-me { display: flex; flex-direction: column; gap: 6px; align-items: flex-start; }
+  #hp { display: flex; gap: 4px; }
+  #hp i { width: 14px; height: 14px; transform: rotate(45deg); background: linear-gradient(135deg, #f6e7c6, #d9a441); border: 1px solid rgba(0,0,0,.4); box-shadow: 0 0 6px rgba(224,169,74,.5); }
+  #hp i.off { background: rgba(40,25,12,.75); box-shadow: none; border-color: rgba(232,200,140,.3); }
+  #status { font-size: 12px; font-weight: 800; padding: 3px 10px; border-radius: 999px; background: var(--panel); border: 1px solid var(--line); }
+  #status[data-level="alert"] { background: rgba(160,30,20,.92); border-color: #ff8a65; animation: pulse .6s infinite alternate; }
+  #status[data-level="sus"] { background: rgba(140,90,20,.9); }
+  #status[data-level="hidden"] { background: rgba(40,60,70,.9); }
+  @keyframes pulse { to { box-shadow: 0 0 14px rgba(255,80,50,.8); } }
+  #objective { justify-self: center; max-width: 520px; text-align: center; font-size: 13px; font-weight: 600; line-height: 1.6; padding: 6px 14px; border-radius: 10px; background: var(--panel); border: 1px solid var(--line); }
+  #minimap { width: 180px; height: 132px; border-radius: 8px; border: 1px solid var(--line); box-shadow: 0 4px 18px rgba(0,0,0,.5); image-rendering: pixelated; opacity: .92; }
+  .hud-corner { position: absolute; bottom: max(12px, env(safe-area-inset-bottom)); left: 12px; display: flex; gap: 8px; pointer-events: auto; }
+  .btn-small { width: 38px; height: 38px; border-radius: 10px; border: 1px solid var(--line); background: var(--panel); display: grid; place-items: center; }
+  .btn-small svg { width: 18px; height: 18px; }
+  body.muted .ic-sound-on, body:not(.muted) .ic-sound-off { display: none; }
+  #keys-hint { position: absolute; bottom: max(14px, env(safe-area-inset-bottom)); right: 14px; font-size: 12px; color: var(--muted); background: var(--panel); padding: 6px 12px; border-radius: 8px; border: 1px solid var(--line); }
+  #keys-hint kbd { font-family: inherit; font-weight: 800; color: var(--text); background: rgba(255,255,255,.08); border-radius: 4px; padding: 0 5px; margin: 0 2px; }
+  .hud-buttons { direction: ltr; position: absolute; right: max(18px, env(safe-area-inset-right)); bottom: max(22px, env(safe-area-inset-bottom)); display: none; align-items: flex-end; gap: 14px; pointer-events: auto; }
+  body.touch .hud-buttons { display: flex; }
+  body.touch #keys-hint { display: none; }
+  body.touch .hud-corner { bottom: auto; top: calc(max(10px, env(safe-area-inset-top)) + 160px); }
+  .btn-round { border-radius: 50%; border: 2px solid rgba(232,200,140,.4); background: rgba(24,15,8,.72); display: grid; place-items: center; touch-action: none; }
+  #btn-eagle { width: 58px; height: 58px; margin-bottom: 70px; }
+  #btn-eagle svg { width: 28px; height: 28px; }
+  #btn-eagle.on { background: rgba(40,70,140,.85); border-color: #9ec1ff; box-shadow: 0 0 18px rgba(120,170,255,.6); }
+  .btn-action { width: 88px; height: 88px; font-weight: 800; font-size: 14px; opacity: .65; }
+  .btn-action.ready { opacity: 1; background: rgba(170,110,30,.92); border-color: #ffd58a; box-shadow: 0 0 22px rgba(224,169,74,.6); }
+  .btn-action.danger { background: rgba(180,40,30,.95); border-color: #ff9a80; }
+  #joy { position: fixed; width: 120px; height: 120px; border-radius: 50%; border: 2px solid rgba(232,200,140,.35); background: rgba(24,15,8,.35); z-index: 3; pointer-events: none; display: none; }
+  #joy.on { display: block; }
+  #joy-knob { position: absolute; left: 35px; top: 35px; width: 50px; height: 50px; border-radius: 50%; background: rgba(243,227,192,.75); }
+
+  #banner { position: fixed; top: 22%; left: 50%; transform: translate(-50%, -10px); z-index: 4; text-align: center; pointer-events: none; opacity: 0; transition: opacity .4s, transform .4s; }
+  #banner.show { opacity: 1; transform: translate(-50%, 0); }
+  #banner b { display: block; font-family: 'Reem Kufi', 'Cairo', sans-serif; font-size: clamp(26px, 6vw, 44px); color: var(--gold); text-shadow: 0 3px 16px rgba(0,0,0,.8); }
+  #banner span { font-size: 15px; font-weight: 600; text-shadow: 0 2px 8px rgba(0,0,0,.9); }
+  #subtitle { position: fixed; left: 50%; bottom: 18%; transform: translateX(-50%); z-index: 4; max-width: min(640px, 90vw); text-align: center; font-size: 15px; line-height: 1.8; padding: 10px 18px; border-radius: 10px; background: rgba(10,6,3,.82); opacity: 0; transition: opacity .5s; pointer-events: none; }
+  #subtitle.show { opacity: 1; }
+  #flash { position: fixed; inset: 0; z-index: 4; pointer-events: none; background: rgba(200,20,10,.35); opacity: 0; }
+  #flash.on { animation: fl .35s ease-out; }
+  @keyframes fl { from { opacity: 1; } to { opacity: 0; } }
+
+  /* Screens */
+  .screen { position: fixed; inset: 0; z-index: 5; display: grid; place-items: center; padding: 16px; background: radial-gradient(ellipse at center, rgba(27,18,10,.55), rgba(10,6,3,.92)); overflow-y: auto; }
+  .card { width: min(560px, 100%); text-align: center; padding: 28px 22px; border-radius: 16px; background: var(--panel); border: 1px solid var(--line); box-shadow: 0 20px 60px rgba(0,0,0,.6); }
+  .title-wrap { text-align: center; }
+  .title-wrap .eyebrow { letter-spacing: .3em; color: var(--muted); font-size: 13px; }
+  h1 { font-family: 'Reem Kufi', 'Cairo', sans-serif; font-size: clamp(48px, 13vw, 96px); margin: 6px 0 0; line-height: 1.1; color: var(--gold); text-shadow: 0 6px 30px rgba(224,169,74,.35), 0 2px 0 #5a3a14; }
+  .year { font-family: 'Reem Kufi', sans-serif; font-size: clamp(22px, 5vw, 32px); color: var(--text); opacity: .85; }
+  .tag { max-width: 420px; margin: 14px auto 26px; color: var(--muted); line-height: 1.8; }
+  h2 { font-family: 'Reem Kufi', 'Cairo', sans-serif; color: var(--gold); font-size: 30px; margin: 0 0 12px; }
+  .btn { display: inline-block; min-width: 160px; padding: 12px 26px; border-radius: 12px; border: 1px solid #ffd58a; background: linear-gradient(180deg, #e7b25a, #b9832f); color: #1b120a; font-size: 17px; font-weight: 800; box-shadow: 0 6px 20px rgba(224,169,74,.35); }
+  .btn.ghost { background: transparent; color: var(--text); border-color: var(--line); box-shadow: none; }
+  .row { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; margin-top: 18px; }
+  #story-text { font-size: 18px; line-height: 2; min-height: 6em; }
+  #story-dots { display: flex; gap: 6px; justify-content: center; margin-top: 8px; }
+  #story-dots i { width: 8px; height: 8px; border-radius: 50%; background: rgba(232,200,140,.25); }
+  #story-dots i.on { background: var(--gold); }
+  .brief { text-align: right; line-height: 1.9; font-size: 15px; }
+  .brief ul { padding-inline-start: 20px; margin: 6px 0 14px; }
+  .controls { display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; font-size: 14px; text-align: right; background: rgba(0,0,0,.2); border-radius: 10px; padding: 12px 14px; }
+  .controls b { color: var(--gold); white-space: nowrap; }
+  body.touch .ctl-keys, body:not(.touch) .ctl-touch { display: none; }
+  .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; margin: 16px 0; }
+  .stats div { background: rgba(0,0,0,.25); border-radius: 10px; padding: 10px 4px; }
+  .stats b { display: block; color: var(--gold); font-size: 16px; }
+  .stats span { font-size: 12px; color: var(--muted); }
+  .teaser { font-size: 14px; line-height: 1.9; color: var(--muted); border-top: 1px solid var(--line); padding-top: 12px; }
+  .teaser b { color: var(--text); }
+  #screen-end[data-kind="dead"] h2, #screen-end[data-kind="escape"] h2 { color: #e2604a; }
+
+  @media (max-width: 720px) {
+    .hud-top { grid-template-columns: auto auto; }
+    #objective { grid-column: 1 / -1; grid-row: 2; font-size: 12px; justify-self: stretch; }
+    #minimap { width: 120px; height: 88px; justify-self: end; }
+    .stats { grid-template-columns: repeat(2, 1fr); }
+  }
+
+  #hud-canvas { position: fixed; inset: 0; width: 100%; height: 100%; z-index: 2; pointer-events: none; }
+  canvas#game { transition: filter .25s; }
+  canvas#game.mono { filter: grayscale(1) contrast(1.5) brightness(1.1); }
+  canvas#game.eagle { filter: saturate(.25) brightness(.75) sepia(.35) hue-rotate(180deg); }
+  .bars { position: absolute; left: max(16px, env(safe-area-inset-left)); bottom: max(16px, env(safe-area-inset-bottom)); width: min(260px, 40vw); display: grid; gap: 6px; direction: ltr; }
+  .hpbar { height: 7px; background: rgba(0,0,0,.5); border: 1px solid rgba(255,255,255,.25); }
+  #hp-fill { height: 100%; width: 100%; background: linear-gradient(90deg, #f6efe0, #ffffff); box-shadow: 0 0 8px rgba(255,255,255,.6); transition: width .2s; }
+  #stam { display: flex; gap: 4px; }
+  #stam i { flex: 1; height: 4px; background: #7fd3ff; box-shadow: 0 0 6px rgba(127,211,255,.7); }
+  #stam i.off { background: rgba(127,211,255,.2); box-shadow: none; }
+  .hud-top3 { position: absolute; top: max(44px, env(safe-area-inset-top)); left: 0; right: 0; display: flex; flex-direction: column; align-items: center; gap: 6px; padding-inline: 16px; }
+  body.touch .hud-top3 { top: 84px; }
+  #prompt { position: absolute; left: 50%; bottom: 22%; transform: translateX(-50%); display: flex; gap: 8px; align-items: center; opacity: 0; transition: opacity .15s; font-weight: 800; font-size: 16px; text-shadow: 0 2px 6px #000; }
+  #prompt.show { opacity: 1; }
+  #prompt kbd { font-family: inherit; border: 1.5px solid #f3e3c0; border-radius: 4px; padding: 0 7px; background: rgba(0,0,0,.5); }
+  body.touch #prompt kbd { display: none; }
+  .tbtns { position: absolute; right: max(14px, env(safe-area-inset-right)); bottom: max(14px, env(safe-area-inset-bottom)); width: 220px; height: 220px; display: none; pointer-events: auto; }
+  body.touch .tbtns { display: block; }
+  body.touch #keys-hint { display: none; }
+  .tb { position: absolute; border-radius: 50%; border: 2px solid rgba(232,200,140,.45); background: rgba(24,15,8,.6); color: var(--text); font-weight: 800; font-size: 12px; display: grid; place-items: center; touch-action: none; }
+  .tb.down { background: rgba(224,169,74,.6); }
+  #b-attack { width: 82px; height: 82px; right: 0; bottom: 0; font-size: 14px; }
+  #b-heavy { width: 54px; height: 54px; right: 92px; bottom: 6px; }
+  #b-dodge { width: 54px; height: 54px; right: 6px; bottom: 92px; }
+  #b-jump { width: 54px; height: 54px; right: 150px; bottom: 50px; }
+  #b-parry { width: 54px; height: 54px; right: 70px; bottom: 76px; }
+  #b-action { width: 60px; height: 60px; right: 120px; bottom: 120px; opacity: .45; }
+  #b-action.ready { opacity: 1; background: rgba(170,110,30,.92); border-color: #ffd58a; box-shadow: 0 0 18px rgba(224,169,74,.6); }
+  #b-eagle { position: absolute; top: max(14px, env(safe-area-inset-top)); right: max(14px, env(safe-area-inset-right)); width: 48px; height: 48px; display: none; pointer-events: auto; }
+  body.touch #b-eagle { display: grid; }
+  #b-eagle.on { background: rgba(40,70,140,.85); border-color: #9ec1ff; }
+  .hud-corner { top: max(12px, env(safe-area-inset-top)); bottom: auto; }
+  #status { align-self: center; }
+</style>
+</head>
+<body>
+<canvas id="game"></canvas>
+<canvas id="hud-canvas"></canvas>
+<div id="touch"></div>
+<div id="joy"><div id="joy-knob"></div></div>
+<div id="hud" class="hidden">
+  <div class="hud-top3"><div id="objective"></div><div id="status" data-level="calm">مجهول</div></div>
+  <div class="bars"><div class="hpbar"><div id="hp-fill"></div></div><div id="stam"></div></div>
+  <div id="prompt"><kbd>F</kbd><span></span></div>
+  <div class="hud-corner">
+    <button class="btn-small" id="btn-pause" aria-label="إيقاف مؤقت"><svg viewBox="0 0 24 24" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1"/><rect x="14" y="5" width="4" height="14" rx="1"/></svg></button>
+    <button class="btn-small" id="btn-sound" aria-label="الصوت"><svg class="ic-sound-on" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M16 8a5 5 0 0 1 0 8M19 5a9 9 0 0 1 0 14"/></svg><svg class="ic-sound-off" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 9h4l5-4v14l-5-4H4z" fill="currentColor"/><path d="M17 9l5 6M22 9l-5 6"/></svg></button>
+  </div>
+  <div id="keys-hint"><kbd>WASD</kbd> حركة · <kbd>ماوس</kbd> كاميرا · <kbd>Shift</kbd> جري · <kbd>Space</kbd> نط · <kbd>كليك</kbd> ضربة · <kbd>كليك يمين</kbd> ضربة تقيلة · <kbd>Q</kbd> صد · <kbd>C</kbd> تفادي · <kbd>F</kbd> اغتيال · <kbd>V</kbd> عين الصقر</div>
+  <button class="tb" id="b-eagle" aria-label="عين الصقر"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 12s4-7 10-7 10 7 10 7-4 7-10 7S2 12 2 12z"/><circle cx="12" cy="12" r="3" fill="currentColor"/></svg></button>
+  <div class="tbtns">
+    <button class="tb" id="b-attack"><span>ضربة</span></button>
+    <button class="tb" id="b-heavy"><span>تقيلة</span></button>
+    <button class="tb" id="b-dodge"><span>تفادي</span></button>
+    <button class="tb" id="b-jump"><span>نط</span></button>
+    <button class="tb" id="b-parry"><span>صد</span></button>
+    <button class="tb" id="b-action"><span>فعل</span></button>
+  </div>
+</div>
+<div id="banner"><b></b><span></span></div>
+<div id="subtitle"></div>
+<div id="flash"></div>
+<section id="screen-title" class="screen">
+  <div class="title-wrap">
+    <div class="eyebrow">رابطة الخفاء</div>
+    <h1>ظلال القاهرة</h1>
+    <div class="year">١٨٠٥</div>
+    <p class="tag">القاهرة تحت حكم خورشيد باشا، والأزهر بيجهز للثورة. اتسلق، واضرب من الضل، وواجه الإنكشارية بالسيف.</p>
+    <button class="btn" id="btn-start">ابدأ</button>
+  </div>
+</section>
+
+<section id="screen-story" class="screen hidden">
+  <div class="card">
+    <h2 id="story-title"></h2>
+    <p id="story-text"></p>
+    <div id="story-dots"></div>
+    <div class="row"><button class="btn" id="story-next">التالي</button><button class="btn ghost" id="story-skip">تخطّي</button></div>
+  </div>
+</section>
+
+<section id="screen-brief" class="screen hidden">
+  <div class="card brief">
+    <h2 style="text-align:center">المهمة: الجابي</h2>
+    <ul>
+      <li><b>اغتال حسن آغا</b>: عمامة كبيرة وقفطان أخضر، ومعاه حارسين.</li>
+      <li>لو حس بيك، هيجري على <b>باب القلعة</b> في الجنوب. ماتسيبوش يوصل.</li>
+      <li>اطلع <b>مئذنة الأزهر</b> تكشف مكانه، ومن فوق نط في عربية القش.</li>
+      <li>بعد الاغتيال، اهرب على <b>البيت الآمن</b> من غير ما حد يكون وراك.</li>
+    </ul>
+    <div class="controls ctl-keys">
+      <b>WASD + الماوس</b><span>حركة وكاميرا (اضغط على الشاشة عشان تمسك الماوس). امشي في الحيطة عشان تتسلق</span>
+      <b>كليك / كليك يمين</b><span>ضربة سريعة / ضربة تقيلة بتكسر التوازن</span>
+      <b>Q / C</b><span>صد (لما العلامة البرتقالي تظهر) / تفادي (للضربة الحمرا)</span>
+      <b>F</b><span>اغتيال، اغتيال جوي من فوق، إعدام لما الحارس يترنّح، شيل الجثة</span>
+      <b>V</b><span>عين الصقر</span>
+    </div>
+    <div class="controls ctl-touch">
+      <b>العصا (شمال)</b><span>حركة، زقها للآخر عشان تجري. اسحب على اليمين للكاميرا</span>
+      <b>الزراير</b><span>ضربة، تقيلة، صد، تفادي، نط، وزرار الفعل للاغتيال والإعدام</span>
+    </div>
+    <div class="row"><button class="btn" id="btn-go">يلا بينا</button></div>
+  </div>
+</section>
+
+<section id="screen-pause" class="screen hidden">
+  <div class="card">
+    <h2>وقفة</h2>
+    <div class="row"><button class="btn" id="btn-resume">كمّل</button><button class="btn ghost" id="btn-restart">من الأول</button><button class="btn ghost" id="btn-sound2">الصوت</button></div>
+  </div>
+</section>
+
+<section id="screen-end" class="screen hidden">
+  <div class="card">
+    <h2></h2>
+    <p class="end-text" style="line-height:1.9"></p>
+    <div class="end-extra"></div>
+    <div class="row"><button class="btn" id="btn-retry">العب تاني</button><button class="btn ghost" id="btn-menu">القائمة</button></div>
+  </div>
+</section>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="game3d.js"></script>
+</body>
+</html>
