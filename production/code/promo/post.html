@@ -30,7 +30,7 @@
   .li .ck{flex:none;width:52px;height:52px;border-radius:50%;background:var(--gold);display:flex;align-items:center;justify-content:center}
   .bar{position:absolute;left:0;right:0;bottom:0;padding:26px 44px 30px;background:linear-gradient(180deg,rgba(5,5,6,0),rgba(5,5,6,.92) 30%);}
   .bar .ln{height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin-bottom:22px}
-  .row{display:flex;justify-content:center;align-items:center;gap:34px;direction:ltr}
+  .row{display:flex;justify-content:center;align-items:center;gap:70px;direction:ltr}
   .it{display:flex;align-items:center;gap:12px;font:600 40px Oswald;letter-spacing:1px;color:#fff}
   .it small{font:700 26px Tajawal;color:var(--gold);letter-spacing:0;margin-left:4px}
   .terms{text-align:center;font:500 22px Tajawal;color:#B9B2A6;margin-top:16px}
@@ -81,12 +81,11 @@ if (d.contact) {
   h += `<div class="kick" style="top:${L.chead - 70}px">${d.kick}</div><div class="head" style="top:${L.chead}px;font-size:110px">${d.head}</div>
   <div class="cards" style="top:${L.cards}px">
     <div class="cd"><span class="ic">${ic.phone.replace(/#D4AF6A/g, ink)}</span><span class="tx"><span class="lb">الرقم الموحد</span><span class="vl">920018915</span></span></div>
-    <div class="cd"><span class="ic">${ic.wa.replace(/#D4AF6A/g, ink)}</span><span class="tx"><span class="lb">واتساب</span><span class="vl">0533393397</span></span></div>
     <div class="cd"><span class="ic">${ic.web.replace(/#D4AF6A/g, ink)}</span><span class="tx"><span class="lb">الموقع الإلكتروني</span><span class="vl" style="font-size:60px">maxmotors.sa</span></span></div>
   </div>`;
 } else {
   h += `<div class="bar"><div class="ln"></div><div class="row">
-    <span class="it">${ic.phone}920018915</span><span class="it">${ic.wa}0533393397</span><span class="it">${ic.web}maxmotors.sa</span></div>
+    <span class="it">${ic.phone}920018915</span><span class="it">${ic.web}maxmotors.sa</span></div>
     ${d.terms ? '<div class="terms">*تطبّق الشروط والأحكام</div>' : ''}</div>`;
 }
 c.innerHTML = h;
