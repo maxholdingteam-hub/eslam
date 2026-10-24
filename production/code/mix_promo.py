@@ -74,10 +74,10 @@ P(11.2, ('car_passby', 0), align='peak', gain_db=-12)
 # lowest margin: band drop, Camry crosses, figures
 P(15.7, ('swoosh_long', 0), align='peak', gain_db=-18); P(16.9, ('car_passby', 1), align='peak', gain_db=-12)
 for i, t in enumerate([17.5, 17.62, 17.74]): P(t, ('ui_pop', 0), align='peak', gain_db=-19, seed=80 + i)
-# protection: photo, details, shield
-P(21.0, ('light_switch', 0), align='peak', gain_db=-17)
-for i, t in enumerate([21.7, 21.88, 22.06]): P(t, ('ui_click', 1), align='peak', gain_db=-18, seed=90 + i)
-P(22.6, ('sparkle', 1), align='peak', gain_db=-18)
+# protection: the shield draws (shimmer), the Prado rises, two paint sheens (sparkle), three tiles pop
+P(20.95, ('reverse_swell', 1), align='peak', gain_db=-19); P(21.5, ('whoosh_short', 2), align='peak', gain_db=-18)
+P(22.15, ('sparkle', 1), align='peak', gain_db=-17); P(23.75, ('sparkle', 0), align='peak', gain_db=-18)
+for i, t in enumerate([22.75, 22.97, 23.19]): P(t, ('ui_pop', 0), align='peak', gain_db=-19, seed=90 + i)
 # services: diagonal, Land Cruiser, list
 P(26.6, ('car_passby', 0), align='peak', gain_db=-12)
 for i in range(4): P(27.2 + i * 0.3, ('ui_pop', 2 if i == 0 else 0), align='peak', gain_db=-19, seed=100 + i)
