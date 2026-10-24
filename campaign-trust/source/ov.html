@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=IBM+Plex+Sans+Arabic:wght@500;600;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{background:transparent}
+.f{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:"IBM Plex Sans Arabic",sans-serif;color:#fff}
+.foil{background:linear-gradient(180deg,#fff1c6,#f0cf82 32%,#c99a45 64%,#f3d68f);-webkit-background-clip:text;background-clip:text;color:transparent}
+.t{position:absolute;left:70px;right:70px;text-align:center;font-family:"Amiri",serif;font-weight:700;line-height:1.3;filter:drop-shadow(0 6px 22px rgba(0,0,0,.95)) drop-shadow(0 2px 6px rgba(0,0,0,.9))}
+.chip{display:inline-block;font-family:"IBM Plex Sans Arabic",sans-serif;font-size:30px;font-weight:600;color:#f6dc9c;border:1.5px solid rgba(217,180,107,.75);background:rgba(8,7,6,.6);padding:8px 26px;border-radius:999px;filter:none}
+.end{background:radial-gradient(900px 900px at 50% 40%,#1d160b,#070605 70%)}
+.end .in{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;padding-bottom:120px}
+.end img{width:360px}
+.end .wm{font-family:Montserrat,sans-serif;font-weight:700;font-size:92px;letter-spacing:.06em;margin-top:14px;direction:ltr}
+.end .tg{font-family:Montserrat,sans-serif;font-weight:500;font-size:20px;letter-spacing:.32em;color:#d8c7a2;margin-top:16px;direction:ltr}
+.end .ln{width:160px;height:2px;margin:52px 0 44px;background:linear-gradient(90deg,transparent,#d9b46b,transparent)}
+.end .cta{font-size:56px;font-weight:700}
+.end .row{display:flex;align-items:center;gap:20px;margin-top:36px;direction:ltr;font-family:Montserrat,sans-serif;font-weight:600;font-size:54px;color:#f6dc9c}
+.end .row svg{width:60px;height:60px}
+.end .web{font-family:Montserrat,sans-serif;font-weight:500;font-size:40px;letter-spacing:.06em;color:#e9dcc0;margin-top:20px;direction:ltr}
+</style>
+</head>
+<body>
+<script>
+const WA='<svg viewBox="0 0 32 32"><path fill="#d9b46b" d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2a13 13 0 0 0 6.6 1.8C23.2 28.8 29 23 29 15.8S23.2 3 16 3zm0 23.4c-2.1 0-4.1-.6-5.9-1.7l-.4-.3-3.8 1.2 1.2-3.7-.3-.4A10.4 10.4 0 0 1 5.6 15.8C5.6 10.1 10.3 5.5 16 5.5s10.4 4.6 10.4 10.3S21.7 26.4 16 26.4zm5.7-7.7c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.5-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6.3-.5c.1-.2 0-.4 0-.5l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5 2.5 1 3 .8 3.6.8.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.4z"/></svg>';
+/* [id, top-text html, chip] ; text sits above the framed photo */
+const T=[
+ ['a1','كل مشروع<br><span class="foil">يبدأ بخط</span>','المخطط'],
+ ['a2','يصير <span class="foil">تصوّر</span><br>تشوفه قبل ما ينبني','التصميم ثلاثي الأبعاد'],
+ ['a3','ويتنفّذ<br><span class="foil">بإشرافنا</span>','في الموقع'],
+ ['a4','وهذا <span class="foil">التصميم</span>…','مكتب بروجر · التصميم'],
+ ['a5','وهذا <span class="foil">الواقع</span>','مكتب بروجر · بعد التسليم'],
+ ['a6','من المعاصر<br><span class="foil">للتراثي</span>','مسكن SIH'],
+ ['b1','مودرن هادئ؟',''],['b2','كلاسيك فرنسي؟',''],['b3','ولا <span class="foil">فخامة داكنة</span>؟',''],
+ ['b4','اكتشف <span class="foil">ستايلك</span><br>في دقيقتين','maxdesign.sa/style']
+];
+let h='';
+for(const [id,t,c] of T){const top=id[0]==='a'?250:1180;
+ h+=`<section class="f" id="${id}"><div class="t" style="top:${top}px">${c&&id[0]==='a'?`<div class="chip" style="margin-bottom:24px">${c}</div><br>`:''}<div style="font-size:${id[0]==='a'?104:110}px">${t}</div>${c&&id[0]==='b'?`<div class="chip" style="margin-top:26px;font-family:Montserrat,sans-serif;direction:ltr">${c}</div>`:''}</div></section>`}
+const end=(id,line,web='maxdesign.sa')=>`<section class="f end" id="${id}"><div class="in"><img src="../poster/logo.png" alt=""><div class="wm foil">MAX DESIGN</div><div class="tg">ARCHITECTURE, INTERIOR &amp; PROJECT MANAGEMENT</div><div class="ln"></div><div class="cta">${line}</div><div class="row">${WA}0579277975</div><div class="web">${web}</div></div></section>`;
+h+=end('aend','من الفكرة لين التسليم')+end('bend','جرّب الاختبار على موقعنا','maxdesign.sa/style');
+document.body.innerHTML=h;
+</script>
+</body>
+</html>
