@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#080706;--panel:#12100c;--line:rgba(217,180,107,.28);--fg:#f3ede2;--mute:#b3a78f;--gold:#d9b46b;--gold-l:#f6dc9c;--gold-d:#8a6a30;
+ --foil:linear-gradient(180deg,#fff1c6 0%,#f0cf82 32%,#c99a45 64%,#f3d68f 100%);
+ --ar:"IBM Plex Sans Arabic",sans-serif;--disp:"Amiri",serif;--en:"Montserrat",sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#222;font-family:var(--ar);color:var(--fg)}
+.s{position:relative;width:1080px;height:1350px;overflow:hidden;background:radial-gradient(900px 600px at 85% -10%,#21180b,transparent 60%),var(--bg)}
+.s::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+ background-image:linear-gradient(rgba(217,180,107,.045) 1px,transparent 1px),linear-gradient(90deg,rgba(217,180,107,.045) 1px,transparent 1px);background-size:54px 54px}
+.foil{background:var(--foil);-webkit-background-clip:text;background-clip:text;color:transparent}
+.bg{position:absolute;inset:0;background-size:cover;background-position:center}
+.sh{position:absolute;inset:0}
+/* chrome */
+.bar{position:absolute;z-index:6;top:52px;left:64px;right:64px;display:flex;justify-content:space-between;align-items:center}
+.bar .b{display:flex;align-items:center;gap:14px;direction:ltr}
+.bar img{width:56px}
+.bar .b span{font-family:var(--en);font-weight:600;font-size:18px;letter-spacing:.32em;color:var(--gold-l)}
+.bar .n{font-family:var(--en);font-weight:600;font-size:18px;letter-spacing:.12em;color:var(--mute);direction:ltr}
+.swipe{position:absolute;z-index:6;bottom:52px;left:64px;display:flex;align-items:center;gap:12px;font-size:22px;font-weight:600;color:var(--gold-l)}
+.swipe i{font-style:normal;width:46px;height:46px;border-radius:50%;border:1.5px solid var(--gold-d);display:grid;place-items:center;font-size:22px}
+.handle{position:absolute;z-index:6;bottom:58px;right:64px;font-family:var(--en);font-size:18px;letter-spacing:.14em;color:var(--mute);direction:ltr}
+.in{position:absolute;z-index:5;left:64px;right:64px}
+.k{font-size:24px;font-weight:600;color:var(--gold);letter-spacing:.02em}
+.h{font-family:var(--disp);font-weight:700;line-height:1.28;text-wrap:balance}
+.p{font-size:31px;line-height:1.75;color:#e6ddcd}
+.p b{color:var(--gold-l);font-weight:600}
+.rule{width:120px;height:3px;background:linear-gradient(270deg,var(--gold),transparent);margin:30px 0}
+.frame{position:relative;border:1.5px solid var(--line);border-radius:18px;overflow:hidden;background:#0d0c0a}
+.frame img{display:block;width:100%;height:100%;object-fit:cover}
+.cap{position:absolute;z-index:2;bottom:16px;right:16px;padding:8px 18px;border-radius:999px;background:rgba(8,7,6,.78);border:1px solid var(--gold-d);font-size:21px;font-weight:600;color:var(--gold-l)}
+.cap.l{right:auto;left:16px}
+.big-n{font-family:var(--en);font-weight:700;font-size:210px;line-height:.8;color:transparent;-webkit-text-stroke:2px var(--gold);opacity:.9}
+.fix{margin-top:28px;padding:24px 28px;border-radius:16px;border:1px solid var(--gold-d);background:rgba(217,180,107,.07);font-size:28px;line-height:1.6}
+.fix b{color:var(--gold-l)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.tile{position:relative;height:300px;border-radius:16px;overflow:hidden;border:1.5px solid var(--line)}
+.tile img{width:100%;height:100%;object-fit:cover}
+.tile::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(8,7,6,.94))}
+.tile span{position:absolute;z-index:1;bottom:16px;right:16px;left:16px;font-size:25px;font-weight:600}
+.steps{display:grid;gap:22px}
+.step{display:grid;grid-template-columns:92px 1fr;gap:24px;align-items:center;padding:24px 26px;border:1px solid var(--line);border-radius:18px;background:rgba(18,16,12,.75)}
+.step .c{width:92px;height:92px;border-radius:50%;display:grid;place-items:center;font-family:var(--en);font-weight:700;font-size:40px;color:#1a1206;background:radial-gradient(circle at 35% 30%,#fff3c8,#e3b95e 45%,#9c7228 100%)}
+.step b{display:block;font-size:34px;font-weight:700}
+.step small{display:block;font-size:24px;color:var(--mute);margin-top:2px}
+/* CTA */
+.cta .card{border:1.5px solid var(--gold-d);border-radius:22px;padding:40px 44px;background:linear-gradient(180deg,rgba(20,17,12,.9),rgba(8,7,6,.95))}
+.row{display:flex;align-items:center;gap:20px;font-family:var(--en);font-weight:600;font-size:40px;direction:ltr;justify-content:flex-end;color:var(--fg)}
+.row+.row{margin-top:22px}
+.row svg{width:46px;height:46px;flex:none}
+.btn{display:inline-flex;align-items:center;gap:14px;margin-top:34px;padding:20px 46px;border-radius:999px;font-size:34px;font-weight:700;color:#1a1206;background:linear-gradient(180deg,#f7dd9d,#d4a650 60%,#b9893a);box-shadow:0 14px 34px rgba(217,180,107,.3)}
+.save{display:inline-flex;align-items:center;gap:12px;padding:12px 24px;border-radius:999px;border:1.5px solid var(--gold-d);font-size:24px;color:var(--gold-l);background:rgba(8,7,6,.6)}
+.vs{display:grid;grid-template-rows:1fr 1fr;gap:18px}
+.sw{display:flex;gap:12px}.sw span{width:70px;height:70px;border-radius:14px;border:1px solid var(--line)}
+</style>
+</head>
+<body>
+<script>
+const LOGO='a/logo.png';
+const WA='<svg viewBox="0 0 32 32"><path fill="#d9b46b" d="M16 3C8.8 3 3 8.7 3 15.8c0 2.5.7 4.9 2 7L3 29l6.4-2a13 13 0 0 0 6.6 1.8C23.2 28.8 29 23 29 15.8S23.2 3 16 3zm0 23.4c-2.1 0-4.1-.6-5.9-1.7l-.4-.3-3.8 1.2 1.2-3.7-.3-.4A10.4 10.4 0 0 1 5.6 15.8C5.6 10.1 10.3 5.5 16 5.5s10.4 4.6 10.4 10.3S21.7 26.4 16 26.4zm5.7-7.7c-.3-.2-1.8-.9-2.1-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1-.3-.2-1.3-.5-2.5-1.5-.9-.8-1.5-1.8-1.7-2.1-.2-.3 0-.5.1-.6l.5-.6.3-.5c.1-.2 0-.4 0-.5l-1-2.3c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.2 5.1 4.5 2.5 1 3 .8 3.6.8.6-.1 1.8-.7 2-1.4.3-.7.3-1.3.2-1.4-.1-.2-.3-.3-.6-.4z"/></svg>';
+const WEB='<svg viewBox="0 0 24 24" fill="none" stroke="#d9b46b" stroke-width="1.8"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg>';
+const PIN='<svg viewBox="0 0 24 24" fill="none" stroke="#d9b46b" stroke-width="1.8"><path d="M12 21s-7-6.5-7-12a7 7 0 0 1 14 0c0 5.5-7 12-7 12z"/><circle cx="12" cy="9" r="2.5"/></svg>';
+let out=[];
+function slide(set,i,n,body,{swipe=true,bg=''}={}){
+ out.push(`<section class="s" data-set="${set}" data-i="${i}">${bg}<div class="bar"><div class="b"><span>MAX DESIGN</span><img src="${LOGO}" alt=""></div><div class="n">${String(i).padStart(2,'0')} / ${String(n).padStart(2,'0')}</div></div>${body}
+ ${swipe?'<div class="swipe"><i>←</i>اسحب</div>':''}<div class="handle">@maxdesign.sa</div></section>`)}
+function cta(set,i,n,title,sub){
+ slide(set,i,n,`<div class="in cta" style="top:230px">
+  <div class="k">${sub}</div><div class="h" style="font-size:96px;margin:10px 0 40px">${title}</div>
+  <div class="card"><div class="row">+966 57 927 7975 ${WA}</div><div class="row">maxdesign.sa ${WEB}</div>
+  <div class="row" style="font-family:var(--ar);font-size:32px;font-weight:500">شارع وادي الصخيرة، القادسية، الرياض ${PIN}</div>
+  <div style="text-align:center"><span class="btn">تواصل معنا واتساب</span></div></div>
+  <div style="margin-top:34px;text-align:center"><span class="save">احفظ البوست وشاركه مع اللي يبني بيته</span></div></div>`,{swipe:false})}
+function cover(set,n,img,kick,title,sub,pos='center'){
+ slide(set,1,n,`<div class="in" style="bottom:170px"><div class="k" style="font-size:28px">${kick}</div><div class="h" style="font-size:118px;margin-top:8px">${title}</div>${sub?`<div class="rule" style="margin-right:0"></div><div class="p" style="font-size:34px">${sub}</div>`:''}</div>`,
+ {bg:`<div class="bg" style="background-image:url(a/${img});background-position:${pos}"></div><div class="sh" style="background:linear-gradient(180deg,rgba(8,7,6,.82) 0%,rgba(8,7,6,.25) 22%,rgba(8,7,6,.35) 45%,rgba(8,7,6,.94) 78%,#080706 100%)"></div>`})}
+
+/* ---------- 1. من نحن ---------- */
+{const S='1-about',N=6;
+ cover(S,N,'012-046.webp','تعرّف علينا','من الفكرة…<br><span class="foil">لين تسليم المفتاح</span>','ماكس ديزاين · تصميم معماري وداخلي وإدارة مشاريع · الرياض');
+ slide(S,2,N,`<div class="in" style="top:190px"><div class="k">مين احنا؟</div><div class="h" style="font-size:84px;margin:6px 0 24px">شركة تصميم <span class="foil">وتنفيذ</span><br>من الرياض</div>
+  <p class="p">نصمّم ونبني المساحات من <b>أول خط في المخطط</b> لين <b>آخر تفصيلة في التسليم</b>: قصور، فلل، شقق، مكاتب ومحلات. جهة وحدة مسؤولة عن مشروعك كامل.</p>
+  <div class="frame" style="height:470px;margin-top:40px"><img src="a/003-003.webp" alt=""><span class="cap">من مشاريعنا · مبنى مكاتب</span></div></div>`);
+ slide(S,3,N,`<div class="in" style="top:190px"><div class="k">إيش نصمم؟</div><div class="h" style="font-size:84px;margin:6px 0 40px">كل نوع <span class="foil">مساحة</span></div>
+  <div class="grid3">${[['s-palace','القصور'],['s-villa','الفلل'],['s-apartment','الشقق'],['s-office','المكاتب والشركات'],['s-retail','المحلات والمعارض'],['s-design','إدارة المشاريع']].map(t=>`<div class="tile"><img src="a/${t[0]}.webp" alt=""><span>${t[1]}</span></div>`).join('')}</div></div>`);
+ slide(S,4,N,`<div class="in" style="top:190px"><div class="k">كيف نشتغل؟</div><div class="h" style="font-size:84px;margin:6px 0 40px">4 خطوات <span class="foil">واضحة</span></div>
+  <div class="steps">${[['التصميم','مخططات وتصوّر ثلاثي الأبعاد قبل أي تنفيذ'],['الخامات','نختارها معك وتشوف العينات بعينك'],['التنفيذ','فريقنا وإشرافنا الهندسي في الموقع بكل مرحلة'],['التسليم','مفتاحك جاهز بنفس اللي شفته في التصميم']].map((s,i)=>`<div class="step"><span class="c">${i+1}</span><div><b>${s[0]}</b><small>${s[1]}</small></div></div>`).join('')}</div></div>`);
+ slide(S,5,N,`<div class="in" style="top:190px"><div class="k">مين يشرف على مشروعك؟</div><div class="h" style="font-size:80px;margin:6px 0 34px">فريق بقيادة <span class="foil">مهندس معماري</span></div>
+  <div style="display:grid;grid-template-columns:400px 1fr;gap:40px;align-items:end"><div class="frame" style="height:540px"><img src="a/talha.webp" alt="" style="object-position:top"></div>
+  <div><div class="h" style="font-size:66px">طلحة نياز</div><div style="font-family:var(--en);font-size:24px;letter-spacing:.24em;color:var(--gold);direction:ltr;text-align:right;margin:4px 0 22px">LEAD ARCHITECT</div>
+  <p class="p" style="font-size:28px">المهندس المسؤول عن التصميم والإشراف. كل مشروع يمر عليه من أول فكرة لين الاستلام.</p></div></div></div>`);
+ cta(S,6,N,'خلّنا نبدأ <span class="foil">مشروعك</span>','جاهزين نسمع فكرتك');}
+
+/* ---------- 2. من الرسم للواقع: بروجر ---------- */
+{const S='2-proger',N=6;
+ slide(S,1,N,`<div class="in" style="top:180px"><div class="k" style="font-size:28px">مشروع حقيقي من شغلنا</div><div class="h" style="font-size:118px;margin-top:4px">من الرسم…<br><span class="foil">للواقع</span></div></div>
+  <div class="in vs" style="top:610px;height:560px"><div class="frame"><img src="a/019-084.webp" alt=""><span class="cap">التصميم</span></div><div class="frame"><img src="a/024-107.webp" alt=""><span class="cap">بعد التنفيذ</span></div></div>`);
+ slide(S,2,N,`<div class="in" style="top:190px"><div class="k">الخطوة 1</div><div class="h" style="font-size:88px;margin:6px 0 18px">التصميم <span class="foil">ثلاثي الأبعاد</span></div>
+  <p class="p">قبل أي تنفيذ، نصمّم كل مساحة في المكتب بالتفصيل: الاستقبال، مكتب المدير، قاعة الاجتماعات. والعميل يشوف مكتبه قبل ما ينبني.</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:40px"><div class="frame" style="height:330px"><img src="a/021-087.webp" alt=""><span class="cap">مكتب المدير</span></div><div class="frame" style="height:330px"><img src="a/021-088.webp" alt=""><span class="cap">قاعة الاجتماعات</span></div></div></div>`);
+ slide(S,3,N,`<div class="in" style="top:190px"><div class="k">الخطوة 2</div><div class="h" style="font-size:88px;margin:6px 0 18px">التنفيذ <span class="foil">في الموقع</span></div>
+  <p class="p">فريقنا موجود بكل مرحلة: تكييف، كهرباء، أسقف، جبس وزجاج. كل مرحلة نستلمها قبل اللي بعدها.</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:36px">${[['023-097','التكييف'],['023-099','الكهرباء'],['023-102','الأسقف'],['023-101','الزجاج']].map(x=>`<div class="frame" style="height:230px"><img src="a/${x[0]}.webp" alt=""><span class="cap">${x[1]}</span></div>`).join('')}</div></div>`);
+ slide(S,4,N,`<div class="in" style="top:190px"><div class="k">الخطوة 3</div><div class="h" style="font-size:88px;margin:6px 0 18px">التسليم <span class="foil">كما صُمّم</span></div>
+  <p class="p">نفس التصميم اللي اعتمده العميل… صار مكتب حقيقي يشتغل فيه فريقه كل يوم.</p>
+  <div class="frame" style="height:440px;margin-top:36px"><img src="a/024-107.webp" alt=""><span class="cap">الاستقبال بعد التسليم</span></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px"><div class="frame" style="height:200px"><img src="a/024-106.webp" alt=""></div><div class="frame" style="height:200px"><img src="a/024-104.webp" alt=""></div></div></div>`);
+ slide(S,5,N,`<div class="in" style="top:190px"><div class="k">قارن بنفسك</div><div class="h" style="font-size:88px;margin:6px 0 30px">التصميم <span class="foil">= الواقع</span></div>
+  <div class="vs" style="height:860px"><div class="frame"><img src="a/019-084.webp" alt=""><span class="cap">التصميم</span></div><div class="frame"><img src="a/024-107.webp" alt=""><span class="cap">الواقع</span></div></div></div>`);
+ cta(S,6,N,'مكتبك الجاي… <span class="foil">نسلّمه لك كذا</span>','تجهيز مكاتب ومقرات شركات');}
+
+/* ---------- 3. 5 أخطاء في التشطيب ---------- */
+{const S='3-mistakes',N=7;
+ cover(S,N,'living-d.webp','احفظه قبل ما تبدأ','5 أخطاء في التشطيب<br><span class="foil">تكلفك كثير</span>','');
+ const M=[['تبدأ بدون مخطط كامل','أي تعديل بعد التنفيذ يعني هدم وصرف مضاعف ووقت ضايع.','مخططات معمارية وكهرباء وتكييف وتصوّر 3D قبل أول طوبة.','d005-008'],
+  ['تختار الخامات من صورة','اللون في الجوال غير الواقع، والخامة الرخيصة تبان بعد سنة.','شوف العينات بعينك وتحت إضاءة المكان نفسه.','mat-m'],
+  ['تأجّل الإضاءة لآخر شي','الإضاءة تتخطط مع الجبس، مو بعده.','خطة إضاءة كاملة: مخفية، سبوت، ثريات، ومفاتيح بمكانها الصح.','living-m'],
+  ['تشطّب بدون إشراف هندسي','الغلط الصغير تحت الجبس يصير مشكلة كبيرة بعدين.','مهندس يتابع ويستلم كل مرحلة قبل اللي بعدها.','023-099'],
+  ['تقسّم الشغل على كم مقاول','كل واحد يرمي الغلط على الثاني، وإنت اللي تدفع.','جهة وحدة مسؤولة من التصميم لين التسليم.','s-design']];
+ M.forEach((m,i)=>slide(S,i+2,N,`<div class="in" style="top:180px"><div style="display:flex;align-items:flex-end;gap:26px"><div class="big-n">${i+1}</div><div class="k" style="padding-bottom:20px">الخطأ رقم ${i+1}</div></div>
+  <div class="h" style="font-size:80px;margin:18px 0 16px">${m[0]}</div><p class="p">${m[1]}</p>
+  <div class="frame" style="height:470px;margin-top:34px"><img src="a/${m[3]}.webp" alt=""></div>
+  <div class="fix"><b>الحل:</b> ${m[2]}</div></div>`));
+ cta(S,7,N,'نتولى مشروعك <span class="foil">من الألف للياء</span>','تبي تتجنب الأخطاء هذي؟');}
+
+/* ---------- 4. كل فيلا بدأت بمخطط ---------- */
+{const S='4-villa',N=6;
+ slide(S,1,N,`<div class="in" style="top:180px"><div class="k" style="font-size:28px">فيلا سكنية من مشاريعنا · 500 م²</div><div class="h" style="font-size:112px;margin-top:4px">كل فيلا حلوة…<br><span class="foil">بدأت بمخطط</span></div></div>
+  <div class="in" style="top:640px"><div class="frame" style="height:540px;background:#f1ece2"><img src="a/d015-057.webp" alt="" style="object-fit:contain;padding:20px"><span class="cap">الواجهة الأمامية</span></div></div>`);
+ slide(S,2,N,`<div class="in" style="top:190px"><div class="k">1 · المساقط</div><div class="h" style="font-size:84px;margin:6px 0 18px">نرتّب <span class="foil">حياتك</span> على الورق</div>
+  <p class="p">كل غرفة بمكانها ومساحتها: المجالس، النوم، المطبخ، والحركة بينهم. هنا يتحدد راحة البيت قبل شكله.</p>
+  <div class="frame" style="height:640px;margin-top:30px;background:#f1ece2"><img src="a/d014-053.webp" alt="" style="object-fit:contain;padding:18px"><span class="cap">مسقط الدور الأرضي</span></div></div>`);
+ slide(S,3,N,`<div class="in" style="top:190px"><div class="k">2 · التصوّر</div><div class="h" style="font-size:84px;margin:6px 0 18px">تشوف بيتك <span class="foil">قبل ما ينبني</span></div>
+  <p class="p">حجر وخشب وإضاءة بتناغم كامل. أي تعديل تبيه يصير هنا، مو بعد التنفيذ.</p>
+  <div class="frame" style="height:620px;margin-top:30px"><img src="a/013-049.webp" alt=""><span class="cap">التصوّر ثلاثي الأبعاد</span></div></div>`);
+ slide(S,4,N,`<div class="in" style="top:190px"><div class="k">3 · التنفيذ</div><div class="h" style="font-size:84px;margin:6px 0 18px">حجر طبيعي <span class="foil">بإشرافنا</span></div>
+  <p class="p">تكسيات الواجهة بالحجر الطبيعي، والرخام، والأرضيات الخارجية، كلها تحت إشراف فريقنا في الموقع.</p>
+  <div class="frame" style="height:620px;margin-top:30px"><img src="a/017-072.webp" alt=""><span class="cap">الواجهة أثناء التنفيذ</span></div></div>`);
+ slide(S,5,N,`<div class="in" style="top:190px"><div class="k">4 · الداخلي</div><div class="h" style="font-size:84px;margin:6px 0 18px">دفا <span class="foil">من جوّا</span></div>
+  <p class="p">التصميم الداخلي يكمّل الواجهة: ألوان وخامات وإضاءة مختارة لكل غرفة.</p>
+  <div class="frame" style="height:620px;margin-top:30px"><img src="a/018-077.webp" alt=""><span class="cap">الصالة</span></div></div>`);
+ cta(S,6,N,'فيلتك تبدأ <span class="foil">من هنا</span>','عندك أرض أو فيلا على العضم؟');}
+
+/* ---------- 5. تراث بطوب يدوي ---------- */
+{const S='5-heritage',N=6;
+ cover(S,N,'025-108.webp','مسكن SIH · من مشاريعنا','عمارة تراثية<br><span class="foil">بطوب يدوي</span>','أقواس وقباب تنبني بإيد حرفيين، بنفس طريقة الأجداد.');
+ slide(S,2,N,`<div class="in" style="top:190px"><div class="k">القبة من البداية</div><div class="h" style="font-size:84px;margin:6px 0 18px">طوبة <span class="foil">ورا طوبة</span></div>
+  <p class="p">القباب هنا ما تنصب جاهزة. تنبني يدوي بالطوب، وكل صف محسوب عشان تقفل القبة على نفسها.</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:34px"><div class="frame" style="height:560px"><img src="a/029-114.webp" alt=""><span class="cap">بناء القبة</span></div><div class="frame" style="height:560px"><img src="a/029-115.webp" alt=""><span class="cap">قبو الطوب</span></div></div></div>`);
+ slide(S,3,N,`<div class="in" style="top:190px"><div class="k">الأقواس</div><div class="h" style="font-size:84px;margin:6px 0 18px">هندسة <span class="foil">ما تنكسر</span></div>
+  <p class="p">الأقواس توزّع الحمل وتعطي المكان هيبة وظل وبرودة طبيعية.</p>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:34px"><div class="frame" style="height:600px"><img src="a/029-117.webp" alt=""><span class="cap">الأقواس</span></div><div class="frame" style="height:600px"><img src="a/029-118.webp" alt=""><span class="cap">القبة من الداخل</span></div></div></div>`);
+ slide(S,4,N,`<div class="in" style="top:190px"><div class="k">بعد التنفيذ</div><div class="h" style="font-size:84px;margin:6px 0 18px">النتيجة <span class="foil">تحكي</span></div>
+  <div class="frame" style="height:500px;margin-top:20px"><img src="a/030-121.webp" alt=""><span class="cap">الصالة</span></div>
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:18px"><div class="frame" style="height:300px"><img src="a/030-122.webp" alt=""><span class="cap">الفناء</span></div><div class="frame" style="height:300px"><img src="a/030-120.webp" alt=""><span class="cap">الباب المحفور</span></div></div></div>`);
+ slide(S,5,N,`<div class="in" style="top:240px"><div class="k">ليش هذا المشروع يهمك؟</div><div class="h" style="font-size:84px;margin:6px 0 40px">لأن <span class="foil">التفاصيل</span><br>هي الفرق</div>
+  <div class="steps">${[['حرفية','نشتغل مع حرفيين للطوب والحفر والتفاصيل اليدوية'],['أصالة','نحترم الطراز ونطوّعه لحياة اليوم'],['دقة','كل قوس وقبة محسوبة إنشائياً قبل التنفيذ']].map((s,i)=>`<div class="step"><span class="c">${i+1}</span><div><b>${s[0]}</b><small>${s[1]}</small></div></div>`).join('')}</div></div>`);
+ cta(S,6,N,'تبي بيت <span class="foil">بروح</span>؟','من التراثي للمعاصر');}
+
+/* ---------- 6. اكتشف ستايلك ---------- */
+{const S='6-style',N=5;
+ slide(S,1,N,`<div class="in" style="top:180px"><div class="k" style="font-size:28px">أنت أي واحد؟</div><div class="h" style="font-size:118px;margin-top:4px">3 ستايلات…<br><span class="foil">أيها يشبهك؟</span></div></div>
+  <div class="in" style="top:660px;display:grid;grid-template-columns:repeat(3,1fr);gap:16px">${['m','c','d'].map((k,i)=>`<div class="frame" style="height:500px"><img src="a/living-${k}.webp" alt=""><span class="cap" style="right:12px;font-size:20px">${['مودرن هادئ','كلاسيك فرنسي','فخامة داكنة'][i]}</span></div>`).join('')}</div>`);
+ [['m','مودرن هادئ','CALM MODERN','خطوط نظيفة، ألوان ترابية فاتحة، خشب وترافرتين، وإضاءة مخفية دافية. لمن يحب الهدوء والبساطة اللي تعيش سنين.',['#efe6d8','#d8c3a5','#b08d68','#7a5c43','#3e2f24']],
+  ['c','كلاسيك فرنسي','FRENCH CLASSIC','بانوهات وزخارف، أثاث منحوت، كريستال وذهب، وألوان عاجية. لمن يحب الهيبة والفخامة اللي ما تروح موضتها.',['#f3ead8','#e2d2b5','#c9a96e','#8a6a42','#5b6b80']],
+  ['d','فخامة داكنة','DARK LUXURY','رخام أسود بعروق ذهبي، نحاس، مخمل غامق، وإضاءة درامية. لمن يبي مساحة تبهر من أول نظرة.',['#0e0c0a','#2a2420','#5a4632','#b08840','#e8c879']]].forEach((s,i)=>
+  slide(S,i+2,N,`<div class="in" style="top:180px"><div class="frame" style="height:640px"><img src="a/living-${s[0]}.webp" alt=""></div>
+  <div style="display:flex;justify-content:space-between;align-items:flex-end;margin-top:30px"><div><div class="h foil" style="font-size:96px">${s[1]}</div><div style="font-family:var(--en);font-size:22px;letter-spacing:.3em;color:var(--gold);direction:ltr;text-align:right">${s[2]}</div></div>
+  <div class="sw">${s[4].map(c=>`<span style="background:${c}"></span>`).join('')}</div></div>
+  <p class="p" style="margin-top:18px">${s[3]}</p></div>`));
+ slide(S,5,N,`<div class="in" style="top:250px;text-align:center"><div class="k">مو متأكد؟</div><div class="h" style="font-size:104px;margin:10px 0 24px">اكتشف <span class="foil">ستايلك</span><br>في دقيقتين</div>
+  <p class="p">اختبار بالصور على موقعنا: اختار نوع مشروعك، وجاوب على أسئلة بسيطة، ويطلع لك ستايلك وملخص مشروعك.</p>
+  <div class="btn" style="margin-top:50px;font-family:var(--en);direction:ltr">maxdesign.sa/style</div>
+  <div style="margin-top:30px"><span class="save">الرابط في البايو</span></div></div>`,{swipe:false});}
+
+document.body.innerHTML=out.join('');
+</script>
+</body>
+</html>
