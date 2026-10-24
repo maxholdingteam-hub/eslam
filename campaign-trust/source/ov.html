@@ -37,8 +37,8 @@ const T=[
  ['b4','اكتشف <span class="foil">ستايلك</span><br>في دقيقتين','maxdesign.sa/style']
 ];
 let h='';
-for(const [id,t,c] of T){const top=id[0]==='a'?250:1180;
- h+=`<section class="f" id="${id}"><div class="t" style="top:${top}px">${c&&id[0]==='a'?`<div class="chip" style="margin-bottom:24px">${c}</div><br>`:''}<div style="font-size:${id[0]==='a'?104:110}px">${t}</div>${c&&id[0]==='b'?`<div class="chip" style="margin-top:26px;font-family:Montserrat,sans-serif;direction:ltr">${c}</div>`:''}</div></section>`}
+for(const [id,t,c] of T){const top=id[0]==='a'?250:1330;
+ h+=`<section class="f" id="${id}">${id[0]==='b'?'<div style="position:absolute;left:0;right:0;bottom:0;height:900px;background:linear-gradient(180deg,rgba(8,7,6,0),rgba(8,7,6,.78) 40%,rgba(8,7,6,.88))"></div>':''}<div class="t" style="top:${top}px">${c&&id[0]==='a'?`<div class="chip" style="margin-bottom:24px">${c}</div><br>`:''}<div style="font-size:${id[0]==='a'?104:110}px">${t}</div>${c&&id[0]==='b'?`<div class="chip" style="margin-top:26px;font-family:Montserrat,sans-serif;direction:ltr">${c}</div>`:''}</div></section>`}
 const end=(id,line,web='maxdesign.sa')=>`<section class="f end" id="${id}"><div class="in"><img src="../poster/logo.png" alt=""><div class="wm foil">MAX DESIGN</div><div class="tg">ARCHITECTURE, INTERIOR &amp; PROJECT MANAGEMENT</div><div class="ln"></div><div class="cta">${line}</div><div class="row">${WA}0579277975</div><div class="web">${web}</div></div></section>`;
 h+=end('aend','من الفكرة لين التسليم')+end('bend','جرّب الاختبار على موقعنا','maxdesign.sa/style');
 document.body.innerHTML=h;
