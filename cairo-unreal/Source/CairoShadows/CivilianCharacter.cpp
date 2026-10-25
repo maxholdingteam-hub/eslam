@@ -21,7 +21,7 @@ void ACivilianCharacter::FleeFrom(const FVector& Danger)
 	GetCharacterMovement()->MaxWalkSpeed = 450.f;
 	OnScream();
 	AAIController* C = Cast<AAIController>(GetController());
-	UNavigationSystemV1* Nav = UNavigationSystemV1::GetCurrent<UNavigationSystemV1>(GetWorld());
+	UNavigationSystemV1* Nav = Cast<UNavigationSystemV1>(GetWorld()->GetNavigationSystem());
 	if (!C || !Nav) return;
 	const FVector Away = (GetActorLocation() - Danger).GetSafeNormal2D();
 	FNavLocation Out;
@@ -46,7 +46,7 @@ void ACivilianAIController::Tick(float DeltaSeconds)
 		WaitTime = 3.f;
 	}
 	if (WaitTime > 0.f) { WaitTime -= DeltaSeconds; return; }
-	UNavigationSystemV1* Nav = UNavigationSystemV1::GetCurrent<UNavigationSystemV1>(GetWorld());
+	UNavigationSystemV1* Nav = Cast<UNavigationSystemV1>(GetWorld()->GetNavigationSystem());
 	FNavLocation Out;
 	if (Nav && Nav->GetRandomReachablePointInRadius(C->GetActorLocation(), C->WanderRadius, Out)) MoveToLocation(Out.Location, 80.f);
 	WaitTime = 2.f + FMath::FRand() * 5.f;
