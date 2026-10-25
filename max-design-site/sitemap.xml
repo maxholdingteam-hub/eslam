@@ -3,4 +3,5 @@
   <url><loc>https://maxdesign.sa/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
   <url><loc>https://maxdesign.sa/contact/</loc><changefreq>monthly</changefreq><priority>0.5</priority></url>
   <url><loc>https://maxdesign.sa/style/</loc><changefreq>monthly</changefreq><priority>0.6</priority></url>
+  <url><loc>https://maxdesign.sa/tour/</loc></url>
 </urlset>
