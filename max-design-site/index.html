@@ -167,6 +167,44 @@ html[dir=rtl] .svc-row:hover .t{transform:translateX(-18px)}
 .build-steps > span{font-size:13px;padding:6px 14px;border:1px solid var(--hair);color:var(--ash);transition:all .3s}
 .build-steps > span.on{border-color:var(--gold);color:var(--void);background:var(--gold)}
 
+/* scroll camera journey (replaces the 3D building) */
+.build.jr{height:720vh}
+.jr .build-pin{display:block;background:var(--void)}
+.jr-vig{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at center,transparent 55%,rgba(0,0,0,.45)),linear-gradient(180deg,rgba(7,7,6,.55),transparent 24%,transparent 60%,rgba(7,7,6,.7))}
+.jr-p{position:absolute;z-index:2;opacity:0;pointer-events:none;text-shadow:0 4px 30px rgba(0,0,0,.6)}
+.jr-p.on{pointer-events:auto}
+.jr-p h2{margin:8px 0 0;font-size:clamp(36px,5.2vw,80px);line-height:1.1}
+.jr-p p{max-width:34ch;margin:14px 0 0;color:var(--bone)}
+.jr-c{inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.jr-s{bottom:11vh;right:max(20px,env(safe-area-inset-right,0px),6vw);max-width:min(620px,88vw)}
+.jr-s.jr-alt{right:auto;left:max(20px,env(safe-area-inset-left,0px),6vw)}
+html[dir=ltr] .jr-s{right:auto;left:max(20px,env(safe-area-inset-left,0px),6vw)}
+html[dir=ltr] .jr-s.jr-alt{left:auto;right:max(20px,env(safe-area-inset-right,0px),6vw)}
+.jr-e{inset:auto 0 8vh;display:flex;justify-content:center;padding-inline:20px;text-shadow:none}
+.jr-box{background:rgba(242,236,224,.9);color:var(--void);backdrop-filter:blur(10px);padding:clamp(22px,3vw,36px) clamp(22px,4vw,56px);text-align:center}
+.jr-box .mono{color:var(--gold-deep)}
+.jr-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+.jr-btns a{padding:13px 26px;text-decoration:none;font-weight:600;background:var(--void);color:var(--gold-hot)}
+.jr-btns a.o{background:none;color:var(--void);border:1px solid var(--void)}
+.jr-hs{position:absolute;inset:0;z-index:3;pointer-events:none}
+.jr-dot{position:absolute;left:0;top:0;width:28px;height:28px;margin:-14px 0 0 -14px;border-radius:50%;border:0;padding:0;background:var(--gold-hot);cursor:pointer;pointer-events:auto;opacity:0;transition:opacity .4s;animation:jpl 2s infinite}
+.jr-dot::after{content:"";position:absolute;inset:9px;border-radius:50%;background:var(--void)}
+.jr-dot.on{opacity:1}.jr-dot:not(.on){pointer-events:none}
+.jr-dot:focus-visible{outline:2px solid var(--gold-hot);outline-offset:4px}
+@keyframes jpl{0%{box-shadow:0 0 0 0 rgba(246,220,156,.6)}70%{box-shadow:0 0 0 16px rgba(246,220,156,0)}100%{box-shadow:0 0 0 0 rgba(246,220,156,0)}}
+.jr-card{position:absolute;z-index:4;bottom:24px;left:max(20px,env(safe-area-inset-left,0px));width:min(360px,calc(100% - 40px));background:var(--paper);color:var(--void);padding:20px 22px;transform:translateY(130%);transition:transform .45s cubic-bezier(.2,.8,.2,1);box-shadow:0 30px 80px rgba(0,0,0,.45)}
+.jr-card.on{transform:none}
+.jr-card small{color:var(--gold-deep);font-size:11px}
+.jr-card h3{margin:4px 0 6px;font-size:28px}
+.jr-card p{margin:0;font-size:15px;line-height:1.7;color:#4a4134}
+.jr-card .jr-btns{justify-content:flex-start;margin-top:14px}
+.jr-card button.o{font:inherit;cursor:pointer;background:none;color:var(--void);border:1px solid var(--void);padding:12px 22px}
+@media (prefers-reduced-motion:reduce){.jr-dot{animation:none}}
+.jr-load{position:absolute;left:50%;bottom:24px;width:140px;height:1px;transform:translateX(-50%);background:var(--hair);z-index:3;transition:opacity .5s}
+.jr-load i{display:block;height:100%;width:0;background:var(--gold)}
+.jr-load.done{opacity:0}
+@media (max-width:700px){.jr-s,.jr-s.jr-alt,html[dir=ltr] .jr-s,html[dir=ltr] .jr-s.jr-alt{left:20px;right:20px;bottom:9vh}}
+
 /* projects horizontal */
 .work{margin-top:12vh}
 .work-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
@@ -486,17 +524,40 @@ html[lang=en] .next .nt{font-family:var(--d-en);text-transform:uppercase}
     <ul class="svc-list" id="svcs"></ul>
   </section>
 
-  <div class="build bleed" id="build">
+  <div class="build bleed jr" id="build">
     <div class="build-pin">
-      <canvas id="bgl" aria-label="3D model of the HITC office building"></canvas>
-      <div class="labels" id="labels"></div>
-      <div class="build-ui">
-        <div>
-          <div class="mono gold"><span data-l="ar" style="letter-spacing:0;font-family:var(--b-ar);font-size:15px">المشروع 01 · مبنى HITC</span><span data-l="en">Project 01 · HITC</span></div>
-          <h2 class="disp"><span data-l="ar">من المخطط للمبنى</span><span data-l="en">From drawing to building</span></h2>
-        </div>
-        <div class="build-steps" id="bsteps"></div>
+      <canvas id="jcv" aria-label="Camera journey from the clouds over Riyadh into a Max Design villa"></canvas>
+      <div class="jr-vig"></div>
+      <div class="jr-p jr-c" data-in="0" data-out=".09">
+        <div class="mono gold"><span data-l="ar" style="letter-spacing:0;font-family:var(--b-ar);font-size:15px">رحلة مشروع</span><span data-l="en">A project journey</span></div>
+        <h2 class="disp"><span data-l="ar">من السحاب<br><span class="gold">لين التسليم</span></span><span data-l="en">From the sky<br><span class="gold">to handover</span></span></h2>
       </div>
+      <div class="jr-p jr-s" data-in=".19" data-out=".29">
+        <div class="mono gold">01 · <span data-l="ar" style="letter-spacing:0;font-family:var(--b-ar);font-size:15px">العمارة</span><span data-l="en">Architecture</span></div>
+        <h2 class="disp"><span data-l="ar">نخطط <span class="gold">كل متر</span><br>قبل ما يبدأ البناء</span><span data-l="en">Every metre planned<br><span class="gold">before ground breaks</span></span></h2>
+        <p><span data-l="ar">تصميم معماري يحترم الأرض والمناخ وطريقة عيشك.</span><span data-l="en">Architecture shaped around the site, the climate and how you live.</span></p>
+      </div>
+      <div class="jr-p jr-s jr-alt" data-in=".42" data-out=".52">
+        <div class="mono gold">02 · <span data-l="ar" style="letter-spacing:0;font-family:var(--b-ar);font-size:15px">الواجهة</span><span data-l="en">Facade</span></div>
+        <h2 class="disp"><span data-l="ar">واجهة <span class="gold">تعبّر عنك</span></span><span data-l="en">A facade that<br><span class="gold">speaks for you</span></span></h2>
+        <p><span data-l="ar">حجر طبيعي، زجاج، وضوء. أول انطباع يبقى.</span><span data-l="en">Natural stone, glass and light. First impressions last.</span></p>
+      </div>
+      <div class="jr-p jr-s" data-in=".68" data-out=".78">
+        <div class="mono gold">03 · <span data-l="ar" style="letter-spacing:0;font-family:var(--b-ar);font-size:15px">التصميم الداخلي</span><span data-l="en">Interior</span></div>
+        <h2 class="disp"><span data-l="ar">مساحات <span class="gold">تعيشها</span><br>مو بس تشوفها</span><span data-l="en">Spaces you<br><span class="gold">live in</span></span></h2>
+        <p><span data-l="ar">خامات تُلمس، إضاءة دافئة، وتفاصيل في كل زاوية.</span><span data-l="en">Tactile materials, warm light, considered detail.</span></p>
+      </div>
+      <div class="jr-p jr-e" data-in=".92" data-out="2">
+        <div class="jr-box">
+          <div class="mono">04 · <span data-l="ar" style="letter-spacing:0;font-family:var(--b-ar);font-size:15px">إدارة المشاريع</span><span data-l="en">Project management</span></div>
+          <h2 class="disp"><span data-l="ar">من المخطط إلى التسليم</span><span data-l="en">From plan to handover</span></h2>
+          <div class="jr-btns"><a href="https://wa.me/966579277975" target="_blank" rel="noopener"><span data-l="ar">ابدأ مشروعك</span><span data-l="en">Start your project</span></a><a class="o" href="/tour/"><span data-l="ar">ادخل الفيلا 360°</span><span data-l="en">Enter the villa 360°</span></a></div>
+        </div>
+      </div>
+      <div class="jr-hs" id="jhs"></div>
+      <div class="jr-card" id="jcard" role="dialog" aria-live="polite"><small class="mono" id="jcen"></small><h3 class="disp" id="jct"></h3><p id="jcd"></p>
+        <div class="jr-btns"><a id="jcwa" href="https://wa.me/966579277975" target="_blank" rel="noopener"><span data-l="ar">أبي زيّها</span><span data-l="en">I want this</span></a><button type="button" class="o" id="jcx"><span data-l="ar">إغلاق</span><span data-l="en">Close</span></button></div></div>
+      <div class="jr-load" id="jload"><i></i></div>
     </div>
   </div>
 
@@ -720,8 +781,6 @@ $('#track').innerHTML = P.map(p => `<article class="card" tabindex="0" role="but
 const words = [['PALACES',1],['قصور',2],['VILLAS',0],['فلل',2],['OFFICES',1],['مكاتب',2],['RETAIL',0],['محلات',2],['INTERIORS',1],['تصميم داخلي',2]];
 const mqHtml = words.map(w => `<span class="${w[1]===1?'f':w[1]===2?'ar':''}">${w[0]}</span>`).join('');
 $('#mq').innerHTML = mqHtml + mqHtml;
-const BSTEPS = [['المخطط','Plan'],['الهيكل','Structure'],['الخامات','Materials'],['الغروب','Golden hour'],['الإضاءة','Lights on'],['التفكيك','Exploded']];
-$('#bsteps').innerHTML = BSTEPS.map(s => `<span>${T(s[0],s[1])}</span>`).join('');
 
 /* hero title letters */
 $('#htitle').innerHTML = 'MAX DESIGN'.split('').map(c => c === ' ' ? '<span class="ch">&nbsp;</span>' : `<span class="ch">${c}</span>`).join('');
@@ -1145,258 +1204,56 @@ if (window.THREE){
   hero.U = U;
 }
 
-/* ---------- 3D building: cinematic, scroll-directed ---------- */
+/* ---------- camera journey: video frames scrubbed by scroll (10 frames per sprite sheet) ---------- */
 let build = null;
-if (window.THREE){
-  const canvas = $('#bgl');
-  const small = innerWidth < 800;
-  const r = new THREE.WebGLRenderer({canvas, antialias:true, powerPreference:'high-performance'});
-  r.setPixelRatio(Math.min(devicePixelRatio, small ? 1.25 : 1.6));
-  r.outputEncoding = THREE.sRGBEncoding;
-  r.toneMapping = THREE.ACESFilmicToneMapping; r.toneMappingExposure = 1.1;
-  r.shadowMap.enabled = !small; r.shadowMap.type = THREE.PCFSoftShadowMap;
-  r.setClearColor(0x070706, 1);
-  const scene = new THREE.Scene();
-  scene.fog = new THREE.FogExp2(0x0b0a08, .0055);
-
-  // sky: night -> golden hour
-  const skyU = {uMix:{value:0}, uDusk:{value:0}, uLin:{value:0}};
-  scene.add(new THREE.Mesh(new THREE.SphereGeometry(420, 32, 16), new THREE.ShaderMaterial({side:THREE.BackSide, depthWrite:false, fog:false, uniforms:skyU,
-    vertexShader:`varying vec3 vP; void main(){ vP = normalize(position); gl_Position = projectionMatrix * modelViewMatrix * vec4(position,1.); }`,
-    fragmentShader:`uniform float uMix, uDusk, uLin; varying vec3 vP;
-      void main(){
-        float h = vP.y;
-        vec3 hor = mix(vec3(.98,.66,.36), vec3(.85,.42,.22), uDusk);
-        vec3 top = mix(vec3(.30,.42,.62), vec3(.07,.08,.16), uDusk);
-        vec3 c = mix(hor, top, smoothstep(-.02, .5, h));
-        float sun = pow(max(dot(normalize(vP), normalize(vec3(-.75,.12,.55))), 0.), 220.);
-        c += vec3(1.,.75,.45) * sun * 2.;
-        vec2 q = vP.xz / max(vP.y + .12, .05) * .35;
-        float cl = 0.; float a = .5; for (int i=0;i<5;i++){ cl += a * (sin(q.x*1.7 + float(i)*1.3) * cos(q.y*1.9 - float(i)*.7) * .5 + .5); q *= 2.03; a *= .5; }
-        cl = smoothstep(.55, .85, cl) * smoothstep(.0, .25, h) * (1. - smoothstep(.45, .9, h));
-        c = mix(c, mix(vec3(1.,.78,.6), vec3(.55,.35,.3), uDusk), cl * .55);
-        c = mix(c, vec3(.05,.045,.035), smoothstep(.0, -.25, h));
-        vec3 o = mix(vec3(.028,.027,.024), c, uMix);
-        gl_FragColor = vec4(mix(o, pow(o, vec3(2.2)), uLin), 1.);
-      }`})));
-
-  const pmrem = new THREE.PMREMGenerator(r);
-  const envTex = THREE.RoomEnvironment ? pmrem.fromScene(new THREE.RoomEnvironment(), .04).texture : null;
-
-  // board-formed concrete, drawn procedurally (panel joints + tie holes, like the HITC render)
-  function concrete(){
-    const c = document.createElement('canvas'); c.width = c.height = 512; const g = c.getContext('2d');
-    g.fillStyle = '#bdb6aa'; g.fillRect(0,0,512,512);
-    const id = g.getImageData(0,0,512,512);
-    for (let i=0;i<id.data.length;i+=4){ const n = (Math.random()-.5)*26; id.data[i]+=n; id.data[i+1]+=n; id.data[i+2]+=n; }
-    g.putImageData(id,0,0);
-    g.strokeStyle = 'rgba(70,64,56,.35)'; g.lineWidth = 2;
-    for (let x=0;x<=512;x+=128){ g.beginPath(); g.moveTo(x,0); g.lineTo(x,512); g.stroke(); }
-    for (let y=0;y<=512;y+=256){ g.beginPath(); g.moveTo(0,y); g.lineTo(512,y); g.stroke(); }
-    g.fillStyle = 'rgba(55,50,44,.55)';
-    for (let x=32;x<512;x+=64) for (let y=32;y<512;y+=64){ g.beginPath(); g.arc(x,y,3,0,7); g.fill(); }
-    const t = new THREE.CanvasTexture(c); t.wrapS = t.wrapT = THREE.RepeatWrapping; t.encoding = THREE.sRGBEncoding; t.anisotropy = 4; return t;
-  }
-  const cTex = concrete();
-  const M = {
-    conc: new THREE.MeshStandardMaterial({map:cTex, color:0xffffff, roughness:.92, metalness:0, envMapIntensity:.35, transparent:true, opacity:0}),
-    glass: new THREE.MeshStandardMaterial({color:0x1d2a33, roughness:.06, metalness:.95, envMapIntensity:1.1, transparent:true, opacity:0, depthWrite:false}),
-    glow: new THREE.MeshBasicMaterial({color:0xffb066, side:THREE.BackSide, transparent:true, opacity:0, depthWrite:false}),
-    ground: new THREE.MeshStandardMaterial({color:0x1a1813, roughness:.96, metalness:0, envMapIntensity:.2}),
-    pave: new THREE.MeshStandardMaterial({color:0x8d877c, roughness:.85, envMapIntensity:.2, transparent:true, opacity:0}),
-    pool: new THREE.MeshStandardMaterial({color:0x04070a, roughness:.03, metalness:1, envMapIntensity:.9, transparent:true, opacity:0}),
-    leaf: new THREE.MeshStandardMaterial({color:0x161d10, roughness:1, envMapIntensity:.05, flatShading:true, transparent:true, opacity:0}),
-    bark: new THREE.MeshStandardMaterial({color:0x4a3a2a, roughness:1, transparent:true, opacity:0}),
-    gold: new THREE.LineBasicMaterial({color:0xd9b46b, transparent:true, opacity:1}),
-    dim: new THREE.LineBasicMaterial({color:0x8a6a2f, transparent:true, opacity:.9}),
-    beam: new THREE.MeshBasicMaterial({color:0xffe2a8, transparent:true, opacity:0, side:THREE.DoubleSide, depthWrite:false, blending:THREE.AdditiveBlending})
-  };
-  if (envTex){ M.glass.envMap = M.pool.envMap = envTex; M.glass.envMapIntensity = .8; }
-  const W = 16.5, D = 15.6, H = 3.6, OX = -1.5;
-  const model = new THREE.Group(); scene.add(model);
-  const lines = [];
-  function solid(geo, mat, par, x=0, y=0, z=0, edges=M.gold){
-    const m = new THREE.Mesh(geo, mat); m.position.set(x,y,z); m.castShadow = m.receiveShadow = true; par.add(m);
-    if (edges){ const l = new THREE.LineSegments(new THREE.EdgesGeometry(geo, 25), edges); l.position.copy(m.position); par.add(l); lines.push(l); }
-    return m;
-  }
-  function slabWithHole(w, d, t, hole){
-    const s = new THREE.Shape(); s.moveTo(-w/2,-d/2); s.lineTo(w/2,-d/2); s.lineTo(w/2,d/2); s.lineTo(-w/2,d/2);
-    s.holes.push(hole);
-    const g = new THREE.ExtrudeGeometry(s, {depth:t, bevelEnabled:false, curveSegments:48}); g.rotateX(-Math.PI/2); return g;
-  }
-  // ground + plan drawing
-  const ground = new THREE.Mesh(new THREE.PlaneGeometry(400,400).rotateX(-Math.PI/2), M.ground); ground.position.y = -.02; ground.receiveShadow = true; scene.add(ground);
-  const grid = new THREE.GridHelper(120, 80, 0x3a3020, 0x1d1910); grid.position.y = 0; scene.add(grid);
-  const xs = [-W/2+1.2, -W/2+5.97, -W/2+10.74, W/2-1.2], zs = [-D/2+.4, -D/2+5.47, -D/2+10.69, D/2-.4];
-  const planPts = [];
-  xs.forEach(x => planPts.push(new THREE.Vector3(x,.03,-D/2-3), new THREE.Vector3(x,.03,D/2+3)));
-  zs.forEach(z => planPts.push(new THREE.Vector3(-W/2-3,.03,z), new THREE.Vector3(W/2+3,.03,z)));
-  const plan = new THREE.LineSegments(new THREE.BufferGeometry().setFromPoints(planPts), new THREE.LineBasicMaterial({color:0xd9b46b, transparent:true, opacity:.9}));
-  scene.add(plan);
-
-  const L0 = new THREE.Group(), L1 = new THREE.Group(), RF = new THREE.Group(); model.add(L0, L1, RF);
-  solid(new THREE.BoxGeometry(W+.6,.4,D+.6), M.conc, L0, 0, .2, 0);
-  const atrium = new THREE.Path(); atrium.moveTo(OX-2.6,-2.6); atrium.lineTo(OX-2.6,2.6); atrium.lineTo(OX+2.6,2.6); atrium.lineTo(OX+2.6,-2.6);
-  solid(slabWithHole(W+.6, D+.6, .4, atrium), M.conc, L1, 0, 0, 0);
-  const ocu = new THREE.Path(); ocu.absarc(OX, 0, 2.2, 0, Math.PI*2, true);
-  solid(slabWithHole(W+2.8, D+2.8, .55, ocu), M.conc, RF, 0, 0, 0);
-  // east concrete wall (the solid side of the frame)
-  const wallA = new THREE.Group(), wallB = new THREE.Group(); L0.add(wallA); L1.add(wallB);
-  solid(new THREE.BoxGeometry(.6, H, D+.6), M.conc, wallA, W/2+.3, H/2+.4, 0);
-  solid(new THREE.BoxGeometry(.6, H, D+.6), M.conc, wallB, W/2+.3, H/2+.4, 0);
-  // columns
-  const colsA = new THREE.Group(), colsB = new THREE.Group(); L0.add(colsA); L1.add(colsB);
-  const cg = new THREE.BoxGeometry(.45, H, .45);
-  xs.forEach(x => zs.forEach(z => { solid(cg, M.conc, colsA, x, H/2+.4, z, M.dim); solid(cg, M.conc, colsB, x, H/2+.4, z, M.dim); }));
-  // glazing + mullions + warm interiors
-  const glows = [], lamps = [];
-  function skin(par){
-    [[0, D/2-.05, W-.6, 0],[0, -D/2+.05, W-.6, 0],[-W/2+.05, 0, D-.6, Math.PI/2]].forEach(([x,z,len,rot]) => {
-      const p = new THREE.Mesh(new THREE.PlaneGeometry(len, H-.1), M.glass); p.position.set(x, H/2+.4, z); p.rotation.y = rot; par.add(p);
-      const pts = [], n = Math.round(len/2.2);
-      for (let i=0;i<=n;i++){ const t = -len/2 + i*len/n; pts.push(new THREE.Vector3(t,-H/2,0), new THREE.Vector3(t,H/2,0)); }
-      pts.push(new THREE.Vector3(-len/2, H*.12, 0), new THREE.Vector3(len/2, H*.12, 0));
-      const m = new THREE.LineSegments(new THREE.BufferGeometry().setFromPoints(pts), M.dim); m.position.copy(p.position); m.rotation.y = rot; par.add(m);
-    });
-    const g = new THREE.Mesh(new THREE.BoxGeometry(W-1.2, H-.3, D-1.2), M.glow); g.position.y = H/2+.4; par.add(g); glows.push(g);
-    const l = new THREE.PointLight(0xffa860, 0, 22, 2); l.position.set(OX, H*.8, 0); par.add(l); lamps.push(l);
-  }
-  skin(colsA); skin(colsB);
-  // stair
-  for (let i=0;i<12;i++) solid(new THREE.BoxGeometry(1.4,.3,.3), M.conc, colsA, W/2-2.2, .55+i*.3, -1.6+i*.3, M.dim);
-  // oculus light shaft
-  const beam = new THREE.Mesh(new THREE.CylinderGeometry(2.2, 2.6, H*2+.6, 48, 1, true), M.beam); beam.position.set(OX, H+.6, 0); model.add(beam);
-  // landscape: pool, paving, olive trees
-  const site = new THREE.Group(); scene.add(site); const leafAll = [];
-  const pool = new THREE.Mesh(new THREE.PlaneGeometry(26, 5).rotateX(-Math.PI/2), M.pool); pool.position.set(-2, .03, D/2+6.5); site.add(pool);
-  let mirror = null;
-  if (THREE.Reflector && !small){
-    mirror = new THREE.Reflector(new THREE.PlaneGeometry(25.6, 4.6), {clipBias:.003, textureWidth:1024, textureHeight:1024, color:0x6f7378});
-    mirror.rotation.x = -Math.PI/2; mirror.position.set(-2, .05, D/2+6.5); mirror.visible = false; site.add(mirror);
-  }
-  for (let i=0;i<9;i++){ const s = new THREE.Mesh(new THREE.BoxGeometry(2.4,.08,.9), M.pave); s.position.set(5 + (i%2)*.2, .04, D/2+1.2+i*1.3); s.receiveShadow = true; site.add(s); }
-  const leafMats = [0x1b2414, 0x243019, 0x2e3b20, 0x1f2a17].map(c => { const m = M.leaf.clone(); m.color.setHex(c); m.flatShading = false; leafAll.push(m); return m; });
-  const leafGeo = new THREE.IcosahedronGeometry(1, 2);
-  let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
-  function tree(x, z, k=1){
-    const t = new THREE.Group(); t.position.set(x,0,z); t.scale.setScalar(k); t.rotation.y = rnd()*6;
-    const tr = new THREE.Mesh(new THREE.CylinderGeometry(.1,.24,2.4,7), M.bark); tr.position.y = 1.2; tr.rotation.z = (rnd()-.5)*.2; tr.castShadow = true; t.add(tr);
-    for (let i=0;i<16;i++){
-      const m = new THREE.Mesh(leafGeo, leafMats[i%4]); const a = rnd()*6.28, r = rnd()*1.5;
-      m.position.set(Math.cos(a)*r, 2.6 + rnd()*1.3 - r*.25, Math.sin(a)*r); m.scale.set(.55+rnd()*.5, .4+rnd()*.35, .55+rnd()*.5);
-      m.castShadow = true; t.add(m);
+(() => {
+  const sec = $('#build'), cv = $('#jcv'); if (!sec || !cv) return;
+  const cx = cv.getContext('2d'), N = 313, PER = 10, S = Math.ceil(N/PER);
+  const dir = innerWidth < 820 ? 'sfm' : 'sf', sheets = new Array(S), panels = [...sec.querySelectorAll('.jr-p')], bar = $('#jload i'), ld = $('#jload');
+  let cur = -1, shown = 0, loaded = 0, started = false;
+  const fit = () => { const d = Math.min(devicePixelRatio || 1, 2); cv.width = cv.clientWidth * d; cv.height = cv.clientHeight * d; cur = -1; };
+  addEventListener('resize', fit); fit();
+  const pick = i => { const s = Math.floor(i/PER); if (sheets[s]) return [sheets[s], i % PER];
+    for (let k = 1; k < S; k++){ if (sheets[s-k]) return [sheets[s-k], PER-1]; if (sheets[s+k]) return [sheets[s+k], 0]; } return null; };
+  const draw = i => { const n = pick(i); if (!n) return; const [im, row] = n, fw = im.naturalWidth, fh = im.naturalHeight / PER;
+    const W = cv.width, H = cv.height, r = Math.max(W/fw, H/fh), w = fw*r, h = fh*r; cx.drawImage(im, 0, row*fh, fw, fh, (W-w)/2, (H-h)/2, w, h); };
+  const load = k => new Promise(res => { const im = new Image(); im.onload = async () => { try { await im.decode(); } catch(e){}
+    sheets[k] = im; loaded++; bar.style.width = (loaded/S*100) + '%'; if (loaded === S) ld.classList.add('done'); cur = -1; res(); };
+    im.onerror = res; im.src = `img/journey/${dir}/${String(k).padStart(2,'0')}.webp`; });
+  const start = async () => { if (started) return; started = true;
+    await Promise.all([0,1,2].map(load)); for (let k = 3; k < S; k += 3) await Promise.all([k,k+1,k+2].filter(x => x < S).map(load)); };
+  // start downloading when the section gets close, not on first paint
+  new IntersectionObserver((es, o) => { if (es[0].isIntersecting){ start(); o.disconnect(); } }, {rootMargin:'150% 0px'}).observe(sec);
+  (function tick(){
+    const r = sec.getBoundingClientRect(), p = Math.min(1, Math.max(0, -r.top / (sec.offsetHeight - innerHeight)));
+    if (r.bottom > 0 && r.top < innerHeight){
+      const t = p * (N-1); shown += (t - shown) * (RM ? 1 : .18); if (Math.abs(t - shown) < .05) shown = t;
+      const f = Math.round(shown); if (f !== cur){ cur = f; draw(f); }
+      panels.forEach(el => { const a = +el.dataset.in, b = +el.dataset.out, fd = .035;
+        let o = p >= a && p <= b ? Math.min(1, (p-a)/fd, (b-p)/fd) : 0; if (a === 0) o = Math.min(1, (b-p)/fd);
+        el.style.opacity = o; el.style.transform = `translateY(${(1-o)*24}px)`; el.classList.toggle('on', o > .5); });
+      build && build.dots && build.dots(p);
     }
-    site.add(t);
-  }
-  // lawn with procedural grass texture
-  { const c = document.createElement('canvas'); c.width = c.height = 256; const g = c.getContext('2d'); g.fillStyle = '#26321b'; g.fillRect(0,0,256,256);
-    for (let i=0;i<9000;i++){ const v = 30 + Math.random()*40; g.fillStyle = `rgba(${v*.7|0},${v|0},${v*.45|0},.5)`; g.fillRect(Math.random()*256, Math.random()*256, 1, 2+Math.random()*2); }
-    const gt = new THREE.CanvasTexture(c); gt.wrapS = gt.wrapT = THREE.RepeatWrapping; gt.repeat.set(10,10); gt.encoding = THREE.sRGBEncoding;
-    M.lawn = new THREE.MeshStandardMaterial({map:gt, roughness:1, envMapIntensity:.1, transparent:true, opacity:0});
-    const lawn = new THREE.Mesh(new THREE.PlaneGeometry(64, 46).rotateX(-Math.PI/2), M.lawn); lawn.position.set(0,.015,2); lawn.receiveShadow = true; site.add(lawn);
-    for (let i=0;i<22;i++){ const sh = new THREE.Mesh(leafGeo, leafMats[(i+1)%4]); const side = i < 11; sh.position.set(side ? -W/2-1.4 : -W/2 + (i-11)*1.5, .5, side ? -D/2 + i*1.45 : D/2+1.6); sh.scale.set(.75,.55,.75); sh.castShadow = true; site.add(sh); }
-  }
-  tree(-14, 9, 1.2); tree(-12, -6, 1); tree(15.5, 10, 1.1); tree(13, -9, .9); tree(-6, 13, .8); tree(9, 14, 1);
-
-  // lights
-  const hemi = new THREE.HemisphereLight(0xa9bbd8, 0x2a2016, .05); scene.add(hemi);
-  const sun = new THREE.DirectionalLight(0xffa86b, 0); sun.position.set(-38, 16, 30); sun.castShadow = true;
-  sun.shadow.mapSize.set(1024,1024); Object.assign(sun.shadow.camera, {left:-30, right:30, top:30, bottom:-30, near:1, far:120}); sun.shadow.bias = -.0005;
-  scene.add(sun);
-
-  // post: bloom + gamma
-  let composer = null, bloom = null;
-  if (THREE.EffectComposer && THREE.UnrealBloomPass && !small){
-    composer = new THREE.EffectComposer(r);
-    composer.addPass(new THREE.RenderPass(scene, null));
-    bloom = new THREE.UnrealBloomPass(new THREE.Vector2(256,256), .0, .4, .9); composer.addPass(bloom);
-    // r128 already encodes to sRGB inside the render target, so no extra gamma pass here
-  }
-
-  const cam = new THREE.PerspectiveCamera(34, 1, .1, 900);
-  if (composer) composer.passes[0].camera = cam;
-  const labels = $('#labels');
-  const LB = [[L0,['الدور الأرضي','Ground floor'],'173 m²'],[L1,['الدور الأول','First floor'],'273 m²'],[RF,['السطح + الفتحة الدائرية','Roof + oculus'],'Ø 4.4 m']];
-  labels.innerHTML = LB.map(l => `<div class="lbl"><i></i><span>${T(l[1][0],l[1][1])}</span><b>${l[2]}</b></div>`).join('');
-  const lblEls = [...labels.children];
-
-  // camera path: [progress, position, look-at]
-  const V = (x,y,z) => new THREE.Vector3(x,y,z);
-  const K = [
-    [0,   V(2,72,8),     V(0,0,0)],
-    [.14, V(14,52,34),   V(0,0,0)],
-    [.28, V(36,22,40),   V(0,3,0)],
-    [.44, V(30,4.5,36),  V(0,4,0)],
-    [.58, V(13,2.4,24),  V(-1,3.6,0)],
-    [.67, V(-22,5,30), V(0,4,0)],
-    [.74, V(-30,9,20), V(0,5,0)],
-    [.84, V(32,16,40),   V(0,7,0)],
-    [1,   V(40,24,48),   V(0,10,0)]
-  ];
-  const ease = t => t*t*(3-2*t);
-  const camPos = V(0,0,0), camTgt = V(0,0,0);
-  function along(p){
-    let i = 0; while (i < K.length-2 && p > K[i+1][0]) i++;
-    const a = K[i], b = K[i+1], t = ease(Math.min(1, Math.max(0, (p-a[0])/(b[0]-a[0]))));
-    camPos.lerpVectors(a[1], b[1], t); camTgt.lerpVectors(a[2], b[2], t);
-  }
-  let p = 0, sp = 0;
-  function size(){
-    const w = canvas.clientWidth, h = canvas.clientHeight;
-    r.setSize(w, h, false); composer && composer.setSize(w, h);
-    cam.aspect = w/h; cam.fov = w < 700 ? 52 : 36; cam.updateProjectionMatrix();
-  }
-  addEventListener('resize', size); size();
-  const seg = (t,a,b) => Math.min(1, Math.max(0, (t-a)/(b-a)));
-  let vis = false; new IntersectionObserver(e => vis = e[0].isIntersecting).observe(canvas);
-  const v = new THREE.Vector3(), steps = () => $$('#bsteps > span');
-  let lastStep = -1;
-  (function loop(){
-    requestAnimationFrame(loop); if (!vis) return;
-    sp += (p - sp) * .12;
-    const sCol = seg(sp,.08,.26), sSolid = seg(sp,.28,.42), sSun = seg(sp,.3,.46), sDusk = seg(sp,.46,.6);
-    const ex = seg(sp,.8,.95), insideV = 0;
-    colsA.scale.y = colsB.scale.y = wallA.scale.y = wallB.scale.y = Math.max(.001, sCol);
-    colsA.position.y = colsB.position.y = wallA.position.y = wallB.position.y = 0;
-    L1.visible = sCol > .02; RF.visible = sCol > .45;
-    L1.position.y = H * sCol + ex * 6; RF.position.y = (H*2+.4) * sCol + ex * 13;
-    beam.position.y = H + .6 + ex * 6; beam.scale.y = Math.max(.001, sCol);
-    // materials
-    M.conc.opacity = sSolid; M.conc.transparent = sSolid < .99; M.conc.depthWrite = sSolid > .5;
-    M.glass.opacity = .55 * sSolid; M.pave.opacity = M.pool.opacity = M.leaf.opacity = M.bark.opacity = M.lawn.opacity = sSolid; leafAll.forEach(m => m.opacity = sSolid); if (mirror) mirror.visible = sSolid > .7;
-    M.gold.opacity = 1 - sSolid * .9; M.dim.opacity = .9 - sSolid * .55;
-    M.dim.color.setHex(0x8a6a2f).lerp(new THREE.Color(0x151515), sSolid * .8);
-    plan.material.opacity = .9 * (1 - sSolid);
-    skyU.uMix.value = sSun; skyU.uDusk.value = sDusk;
-    sun.intensity = 2.3 * sSun * (1 - sDusk * .55); hemi.intensity = .06 + .32 * sSun * (1 - sDusk*.5);
-    sun.color.setHex(0xffb27a).lerp(new THREE.Color(0xff7a3c), sDusk);
-    M.glow.opacity = .85 * sDusk * (1 - insideV * .9); lamps.forEach(l => l.intensity = 2.6 * sDusk);
-    M.beam.opacity = .1 * sSolid * (1 - ex*.7) * (1 - insideV) + .06 * insideV;
-    r.toneMappingExposure = .95 - sDusk * .2;
-    if (bloom) bloom.strength = (.05 + .75 * sDusk) * (1 - insideV * .75);
-    scene.fog.color.setHex(0x0b0a08).lerp(new THREE.Color(0x3a2a1c), sSun * (1 - sDusk*.6));
-    // camera
-    along(sp);
-    const inside = 0;
-    const par = RM ? 0 : (1 - inside*.7);
-    cam.position.set(camPos.x + mouse.nx*2.2*par, camPos.y + mouse.ny*1.2*par, camPos.z);
-    cam.lookAt(camTgt.x + mouse.nx*(inside?1.5:0), camTgt.y, camTgt.z);
-    const w = canvas.clientWidth;
-    cam.setViewOffset(w, canvas.clientHeight, w > 900 ? (root.dir==='rtl'?1:-1) * w * .12 * (1-inside) : 0, 0, w, canvas.clientHeight);
-    composer ? composer.render() : r.render(scene, cam);
-    // labels
-    LB.forEach((l,i) => {
-      v.set(W/2 + 1, .3, D/2); l[0].localToWorld(v); v.project(cam);
-      lblEls[i].style.transform = `translate(${(v.x*.5+.5)*w}px,${(-v.y*.5+.5)*canvas.clientHeight}px)`;
-      lblEls[i].classList.toggle('on', ex > .3);
-    });
-    const st = sp < .1 ? 0 : sp < .28 ? 1 : sp < .44 ? 2 : sp < .6 ? 3 : sp < .78 ? 4 : 5;
-    if (st !== lastStep){ steps().forEach((s,i) => s.classList.toggle('on', i === st)); if (lastStep >= 0) SND.blip(520 + st*90, .18, .05); lastStep = st; }
+    requestAnimationFrame(tick);
   })();
-  build = { set(v){ p = v } };
-  if (RM || !window.gsap) build.set(.5);
-}
+  // tappable pieces while the camera rests in the majlis
+  const HS = [
+    {u:.48, v:.16, ar:['الثريا الكريستال','ثريا خطية بقطرات كريستال، تملأ الارتفاع المزدوج من غير ما تثقّل المكان.'], en:['Crystal chandelier','A linear crystal chandelier that fills the double height without weighing it down.']},
+    {u:.48, v:.53, ar:['النيش المقوّس','حجر جيري طبيعي بإضاءة مخفية، أول نقطة تشد العين لما تدخل.'], en:['Arched niche','Natural limestone with hidden light: the first thing you notice on entering.']},
+    {u:.48, v:.75, ar:['طاولة الترافرتين','قطعة وحدة من الترافرتين الروماني، تفصيل حسب المساحة.'], en:['Travertine table','A single block of Roman travertine, cut to the room.']},
+    {u:.73, v:.69, ar:['كنب البوكليه','جلسة منخفضة على امتداد الجدار، قماش بوكليه مقاوم للبقع.'], en:['Bouclé seating','Low built-in seating along the wall in stain-resistant bouclé.']}
+  ];
+  const hsBox = $('#jhs'), card = $('#jcard'), FW = 16, FH = 9;
+  const dots = HS.map(h => { const b = document.createElement('button'); b.type = 'button'; b.className = 'jr-dot';
+    b.onclick = () => { const L = root.lang === 'en' ? h.en : h.ar; $('#jcen').textContent = h.en[0].toUpperCase(); $('#jct').textContent = L[0]; $('#jcd').textContent = L[1];
+      $('#jcwa').href = 'https://wa.me/966579277975?text=' + encodeURIComponent('مرحبا ماكس ديزاين، عجبني ' + h.ar[0] + ' في فيلا الموقع'); card.classList.add('on'); };
+    hsBox.appendChild(b); return b; });
+  $('#jcx').onclick = () => card.classList.remove('on');
+  const placeDots = p => { const on = p > .715 && p < .79, W = cv.clientWidth, H = cv.clientHeight, r = Math.max(W/FW, H/FH), w = FW*r, h = FH*r;
+    dots.forEach((d,i) => { d.classList.toggle('on', on); d.style.transform = `translate(${(W-w)/2 + HS[i].u*w}px,${(H-h)/2 + HS[i].v*h}px)`; });
+    if (!on) card.classList.remove('on'); };
+  build = { set(){} , dots:placeDots };
+})();
 
 
 /* ---------- image tunnel (3D fly-through) ---------- */
