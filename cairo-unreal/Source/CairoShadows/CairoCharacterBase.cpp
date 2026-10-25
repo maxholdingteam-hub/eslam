@@ -5,6 +5,7 @@
 #include "GameFramework/CharacterMovementComponent.h"
 #include "Animation/AnimInstance.h"
 #include "Animation/AnimMontage.h"
+#include "Engine/SkeletalMesh.h"
 
 ACairoCharacterBase::ACairoCharacterBase()
 {
@@ -12,10 +13,57 @@ ACairoCharacterBase::ACairoCharacterBase()
 	GetCharacterMovement()->bOrientRotationToMovement = true;
 	GetCharacterMovement()->RotationRate = FRotator(0.f, 600.f, 0.f);
 	bUseControllerRotationYaw = false;
+	GetMesh()->SetRelativeLocationAndRotation(FVector(0.f, 0.f, -90.f), FRotator(0.f, -90.f, 0.f));
+}
+
+void ACairoCharacterBase::OnConstruction(const FTransform& Transform)
+{
+	Super::OnConstruction(Transform);
+	ApplyDefaultBody();
+}
+
+void ACairoCharacterBase::ApplyDefaultBody()
+{
+	USkeletalMeshComponent* MeshComp = GetMesh();
+	if (!MeshComp) return;
+	if (!MeshComp->GetSkeletalMeshAsset())
+	{
+		static const TCHAR* MeshPaths[] = {
+			TEXT("/Game/Characters/Mannequins/Meshes/SKM_Manny.SKM_Manny"),
+			TEXT("/Game/Characters/Mannequins/Meshes/SKM_Manny_Simple.SKM_Manny_Simple"),
+			TEXT("/Game/Characters/Mannequins/Meshes/SKM_Quinn.SKM_Quinn"),
+		};
+		for (const TCHAR* Path : MeshPaths)
+		{
+			if (USkeletalMesh* Body = LoadObject<USkeletalMesh>(nullptr, Path, nullptr, LOAD_NoWarn | LOAD_Quiet))
+			{
+				MeshComp->SetSkeletalMeshAsset(Body);
+				break;
+			}
+		}
+	}
+	if (!MeshComp->GetAnimClass())
+	{
+		static const TCHAR* AnimPaths[] = {
+			TEXT("/Game/Characters/Mannequins/Anims/Unarmed/ABP_Unarmed.ABP_Unarmed_C"),
+			TEXT("/Game/Characters/Mannequins/Animations/ABP_Manny.ABP_Manny_C"),
+			TEXT("/Game/Characters/Mannequins/Anims/ABP_Manny.ABP_Manny_C"),
+		};
+		for (const TCHAR* Path : AnimPaths)
+		{
+			if (UClass* AnimClass = LoadClass<UAnimInstance>(nullptr, Path, nullptr, LOAD_NoWarn | LOAD_Quiet))
+			{
+				MeshComp->SetAnimationMode(EAnimationMode::AnimationBlueprint);
+				MeshComp->SetAnimInstanceClass(AnimClass);
+				break;
+			}
+		}
+	}
 }
 
 void ACairoCharacterBase::BeginPlay()
 {
+	ApplyDefaultBody();
 	Super::BeginPlay();
 	Health = MaxHealth;
 	MeshRelativeTransform = GetMesh()->GetRelativeTransform();

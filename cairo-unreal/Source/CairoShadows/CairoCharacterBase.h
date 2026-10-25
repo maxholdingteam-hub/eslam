@@ -71,6 +71,10 @@ public:
 
 protected:
 	virtual void BeginPlay() override;
+	virtual void OnConstruction(const FTransform& Transform) override;
+
+	// لو مفيش جسم متحدد، بنستخدم المانيكان بتاع قالب Third Person لحد ما شخصياتنا تجهز
+	void ApplyDefaultBody();
 
 	bool bDead = false;
 	FTransform MeshRelativeTransform;
