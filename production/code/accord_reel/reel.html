@@ -58,8 +58,8 @@
     <div class="bleed" id="s2c"><img src="img/x7.jpg" alt="" data-fx=".52" data-pan="150"></div>
     <div class="bleed" id="s2d"><img src="img/x6.jpg" alt="" data-fx=".56" data-pan="-120"></div>
     <div class="shade"></div>
-    <div class="a ctr cap" id="s2t1" style="top:1440px">تصميم <span class="gold">جديد كليًا</span></div>
-    <div class="a ctr" id="s2t2" style="top:1600px;font:700 50px Tajawal;color:#E6DCCB">حضور يخطف الأنظار</div>
+    <div class="a ctr cap" id="s2t1" style="top:1440px">هوندا <span class="gold">أكورد 2025</span></div>
+    <div class="a ctr" id="s2t2" style="top:1600px;font:700 50px Tajawal;color:#E6DCCB">تصميم جديد كليًا · حضور يخطف الأنظار</div>
   </div>
   <!-- S3: interior -->
   <div class="sc" id="s3">
@@ -159,7 +159,7 @@ window.renderAt = t => {
 
   // S2: four exterior cuts on the beat
   { const u = t - T.ext; ['s2a', 's2b', 's2c', 's2d'].forEach((id, i) => { const on = u >= i * 0.8 && (u < (i + 1) * 0.8 || i === 3); $(id).style.visibility = on ? 'visible' : 'hidden'; if (on) bleed($(id), u - i * 0.8, 0.8); });
-    rise('s2t1', u, 0.15, 60); rise('s2t2', u, 1.7, 40); }
+    rise('s2t1', u, 0.0, 60, 0.35); rise('s2t2', u, 0.9, 40); }
 
   // S3: dashboard pan, then three panels slide in from alternating sides
   { const u = t - T.int; const st = u >= 1.6; $('s3a').style.visibility = st ? 'hidden' : 'visible'; $('s3stack').style.visibility = st ? 'visible' : 'hidden';
