@@ -1,0 +1,180 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>جولة الفيلا 360° | Max Design</title>
+<meta name="description" content="تجول داخل فيلا من تصميم ماكس ديزاين بزاوية 360°: المجلس، الصالة، السفرة وغرفة النوم.">
+<link rel="icon" href="/img/logo.png">
+<link rel="canonical" href="https://maxdesign.sa/tour/">
+<meta property="og:title" content="جولة الفيلا 360° | Max Design"><meta property="og:image" content="https://maxdesign.sa/img/og.jpg">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: one full-bleed 360 room; gold pulse hotspots on furniture; a cream card slides up with the piece's materials */
+:root{color-scheme:dark;--void:#070706;--bone:#efe8da;--gold:#d9b46b;--gold-hot:#f6dc9c;--paper:#f2ece0;--ink:#14110d;--deep:#7d5f2a;
+--d-ar:"Amiri",serif;--b-ar:"IBM Plex Sans Arabic",Tahoma,sans-serif;--en:"Montserrat",system-ui,sans-serif}
+html,body{height:100%}
+body{background:var(--void);color:var(--bone);font-family:var(--b-ar);overflow:hidden;touch-action:none}
+#wrap{position:fixed;inset:0;direction:rtl}
+#gl{position:absolute;inset:0;width:100%;height:100%;cursor:grab;display:block}
+#gl.drag{cursor:grabbing}
+.top{position:absolute;top:0;left:0;right:0;display:flex;justify-content:space-between;align-items:center;gap:12px;
+ padding:calc(16px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) 16px max(16px,env(safe-area-inset-left,0px));
+ background:linear-gradient(180deg,rgba(7,7,6,.7),transparent);pointer-events:none;z-index:5}
+.top .t{display:flex;flex-direction:column}
+.top small{font-family:var(--en);font-size:11px;letter-spacing:.3em;color:var(--gold-hot);direction:ltr;text-align:right}
+.top b{font-family:var(--d-ar);font-size:clamp(24px,3vw,34px);font-weight:700;line-height:1.2}
+.rooms{display:flex;gap:8px;pointer-events:auto;flex-wrap:wrap;justify-content:flex-start}
+.rooms button{font:inherit;font-size:14px;color:var(--bone);background:rgba(7,7,6,.55);border:1px solid rgba(217,180,107,.45);padding:7px 16px;cursor:pointer;backdrop-filter:blur(6px)}
+.rooms button[aria-pressed=true]{background:var(--gold);color:var(--ink);border-color:var(--gold)}
+.rooms button:focus-visible,.hs:focus-visible,.card button:focus-visible{outline:2px solid var(--gold-hot);outline-offset:3px}
+.hs{position:absolute;left:0;top:0;width:30px;height:30px;margin:-15px 0 0 -15px;border-radius:50%;border:0;padding:0;cursor:pointer;background:rgba(246,220,156,.95);box-shadow:0 0 0 0 rgba(246,220,156,.6);animation:pl 2s infinite;z-index:4}
+.hs::after{content:"";position:absolute;inset:10px;border-radius:50%;background:var(--ink)}
+.hs .lb{position:absolute;top:50%;right:40px;transform:translateY(-50%);white-space:nowrap;font-size:14px;background:rgba(7,7,6,.72);padding:5px 12px;opacity:0;transition:opacity .25s;pointer-events:none;color:var(--bone)}
+.hs:hover .lb,.hs:focus-visible .lb{opacity:1}
+.hs.go{background:transparent;border:1.5px solid var(--gold-hot);animation:none;width:54px;height:54px;margin:-27px 0 0 -27px}
+.hs.go::after{inset:auto;left:50%;top:50%;width:14px;height:14px;background:none;border-top:2px solid var(--gold-hot);border-right:2px solid var(--gold-hot);transform:translate(-30%,-50%) rotate(45deg);border-radius:0}
+.hs.go .lb{opacity:1;right:auto;left:50%;top:auto;bottom:-34px;transform:translateX(-50%)}
+@keyframes pl{0%{box-shadow:0 0 0 0 rgba(246,220,156,.6)}70%{box-shadow:0 0 0 16px rgba(246,220,156,0)}100%{box-shadow:0 0 0 0 rgba(246,220,156,0)}}
+.card{position:absolute;z-index:6;bottom:calc(20px + env(safe-area-inset-bottom,0px));right:max(16px,env(safe-area-inset-right,0px));width:min(380px,calc(100% - 32px));
+ background:var(--paper);color:var(--ink);padding:22px 24px;box-shadow:0 30px 80px rgba(0,0,0,.45);transform:translateY(130%);transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+.card.on{transform:none}
+.card small{font-family:var(--en);font-size:11px;letter-spacing:.28em;color:var(--deep);direction:ltr;display:block;text-align:right}
+.card h3{font-family:var(--d-ar);font-size:30px;margin:4px 0 8px;line-height:1.2}
+.card p{font-size:15px;line-height:1.8;color:#4a4134;margin:0}
+.card ul{list-style:none;padding:0;margin:14px 0 0;display:grid;gap:6px}
+.card li{display:flex;justify-content:space-between;gap:12px;font-size:14px;border-top:1px solid rgba(20,17,13,.12);padding-top:6px}
+.card li span:last-child{color:var(--deep);font-weight:600}
+.card .row{display:flex;gap:10px;margin-top:16px;align-items:center}
+.card a{flex:1;text-align:center;background:var(--ink);color:var(--gold-hot);text-decoration:none;padding:11px 14px;font-weight:600;font-size:15px}
+.card button{font:inherit;background:none;border:1px solid var(--ink);color:var(--ink);padding:10px 14px;cursor:pointer}
+.hint{position:absolute;left:50%;bottom:calc(26px + env(safe-area-inset-bottom,0px));transform:translateX(-50%);z-index:3;font-size:14px;background:rgba(7,7,6,.6);padding:8px 18px;transition:opacity .6s;pointer-events:none;white-space:nowrap}
+.fade{position:absolute;inset:0;background:var(--void);opacity:0;pointer-events:none;transition:opacity .5s;z-index:3}
+.fade.on{opacity:1}
+@media (prefers-reduced-motion:reduce){.hs{animation:none}.card{transition:none}}
+</style>
+</head>
+<body>
+<div id="wrap">
+  <canvas id="gl" aria-label="360 degree view of the room. Drag to look around."></canvas>
+  <div id="hss"></div>
+  <div class="fade" id="fade"></div>
+  <div class="top">
+    <div class="t"><a href="/" style="pointer-events:auto;text-decoration:none;color:inherit"><small>← Max Design · 360° Tour</small></a><b id="rname"></b></div>
+    <div class="rooms" id="rooms"></div>
+  </div>
+  <div class="hint" id="hint">اسحب للفّ حول المكان · اضغط على النقاط الذهبية</div>
+  <div class="card" id="card" role="dialog" aria-live="polite">
+    <small id="cen"></small><h3 id="ct"></h3><p id="cd"></p><ul id="cl"></ul>
+    <div class="row"><a id="cwa" href="https://wa.me/966579277975" target="_blank" rel="noopener">أبي زيّها في بيتي</a><button type="button" id="cx">إغلاق</button></div>
+  </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script>
+// u = 0..1 across the panorama (left to right), v = 0..1 top to bottom
+const SMALL = innerWidth < 820;
+const im = n => SMALL ? `img/${n}-m.jpg` : `img/${n}.jpg`;
+const M = (t,en,d,m) => ({t,en,d,m});
+const ROOMS = [
+ {id:'majlis', ar:'المجلس', img:im('majlis'), start:.5, hs:[
+  {u:.5, v:.17, ...M('الثريا الكريستال','CRYSTAL CHANDELIER','ثريا خطية بقطرات كريستال متدرّجة، تملأ الارتفاع المزدوج من غير ما تثقّل المكان.',[['الخامة','كريستال + نحاس مطفي'],['الارتفاع','مزدوج ٨ م'],['الإضاءة','٢٧٠٠ كلفن دافئة']])},
+  {u:.497, v:.47, ...M('النيش المقوّس','ARCHED NICHE','نيش من الحجر الجيري بإضاءة مخفية، نقطة التركيز الأولى لما تدخل المجلس.',[['الخامة','حجر جيري طبيعي'],['الإضاءة','LED مخفي'],['التشطيب','مصقول ناعم']])},
+  {u:.494, v:.73, ...M('طاولة الترافرتين','TRAVERTINE TABLE','طاولة قطعة وحدة من الترافرتين، حوافها ناعمة وسطحها مطفي يقاوم البصمات.',[['الخامة','ترافرتين روماني'],['المقاس','١٨٠ × ١٢٠ سم'],['التصنيع','تفصيل حسب المساحة']])},
+  {u:.74, v:.67, ...M('كنب البوكليه','BOUCLÉ SEATING','جلسة أرضية منخفضة على امتداد الجدار، قماش بوكليه مقاوم للبقع ومريح للجلسات الطويلة.',[['القماش','بوكليه عاجي'],['الحشوة','إسفنج عالي الكثافة'],['التصنيع','تفصيل حسب المقاس']])},
+  {u:.81, v:.33, ...M('نوافذ بإطار برونزي','BRONZE GLAZING','زجاج من الأرض للسقف بإطارات برونزية رفيعة، يدخل ضوء الغروب ويعزل حرارة الصيف.',[['الإطار','ألمنيوم برونزي'],['الزجاج','مزدوج عازل'],['الارتفاع','٦ م']])},
+  {u:.447, v:.62, ...M('الكراسي الجانبية','LOUNGE CHAIRS','كرسيين بخطوط منحنية يكسرون استقامة الكنب ويقرّبون الجلسة.',[['القماش','بوكليه'],['القاعدة','خشب جوز'],['اللون','عاجي دافئ']])}
+ ], links:[{u:.2, v:.82, t:'الصالة', to:'living'}, {u:.85, v:.82, t:'السفرة', to:'dining'}]},
+ {id:'living', ar:'الصالة', img:im('living'), start:.5, hs:[
+  {u:.5, v:.54, ...M('جدار الترافرتين والمدفأة','FIREPLACE WALL','جدار ترافرتين بمدفأة خطية ومكان مخفي للشاشة، يجمع الدفا والترفيه في قطعة وحدة.',[['الخامة','ترافرتين'],['المدفأة','بايو إيثانول خطية'],['العرض','٣٫٢ م']])},
+  {u:.36, v:.38, ...M('رفوف الجوز المضاءة','WALNUT SHELVING','رفوف جوز بإضاءة مخفية لعرض القطع والكتب بدون فوضى.',[['الخامة','قشرة جوز طبيعي'],['الإضاءة','LED دافئ'],['التشطيب','زيت مطفي']])},
+  {u:.28, v:.75, ...M('كنبة L','SECTIONAL SOFA','كنبة عميقة على شكل L بلون رملي، مصممة للجلسات العائلية الطويلة.',[['القماش','لينن مخلوط'],['العمق','١١٠ سم'],['التصنيع','تفصيل حسب المقاس']])},
+  {u:.5, v:.72, ...M('طاولة الجوز الدائرية','ROUND COFFEE TABLE','طاولة دائرية من خشب الجوز الصلب، حوافها ناعمة وآمنة للأطفال.',[['الخامة','جوز صلب'],['القطر','١٢٠ سم'],['التشطيب','زيت طبيعي']])},
+  {u:.72, v:.42, ...M('الدرج الدائري','CURVED STAIRCASE','درج منحني بدرابزين نحاسي، قطعة نحتية بحد ذاتها.',[['الدرجات','حجر جيري'],['الدرابزين','نحاس مصقول'],['الإضاءة','مخفية في الدرجات']])},
+  {u:.84, v:.6, ...M('جزيرة المطبخ','KITCHEN ISLAND','جزيرة ترافرتين مع كراسي بار، المطبخ مفتوح على الصالة بدون ما يفقد خصوصيته.',[['السطح','ترافرتين معالج'],['الخزائن','جوز مضلّع'],['الطول','٣٫٦ م']])},
+  {u:.12, v:.45, ...M('أبواب التراس','TERRACE DOORS','أبواب سحب من الأرض للسقف، تفتح الصالة كاملة على التراس وأشجار الزيتون.',[['الإطار','ألمنيوم برونزي نحيف'],['الزجاج','عازل حراري'],['الفتح','سحب كامل']])}
+ ], links:[{u:.72, v:.62, t:'غرفة النوم (الدور العلوي)', to:'bedroom'}, {u:.95, v:.82, t:'السفرة', to:'dining'}, {u:.04, v:.82, t:'المجلس', to:'majlis'}]},
+ {id:'dining', ar:'السفرة', img:im('dining'), start:.5, hs:[
+  {u:.49, v:.68, ...M('طاولة الطعام','DINING TABLE','طاولة ترافرتين لعشرة أشخاص على قاعدة وحدة، تخلي الأرجل حرة للجميع.',[['الخامة','ترافرتين'],['المقاس','٣٢٠ × ١٢٠ سم'],['السعة','١٠ أشخاص']])},
+  {u:.49, v:.15, ...M('النجفة النحاسية','SCULPTURAL PENDANT','نجفة نحتية من أوراق نحاسية، نجمة الغرفة وحجمها على قد الطاولة.',[['الخامة','نحاس مطروق'],['العرض','١٫٦ م'],['الإضاءة','دافئة قابلة للتعتيم']])},
+  {u:.36, v:.72, ...M('الكراسي المنحنية','CURVED CHAIRS','كراسي بظهر منحني تحضن الجالس، وتكسر حدة خطوط الطاولة.',[['القماش','بوكليه عاجي'],['القاعدة','نحاس'],['العدد','١٠']])},
+  {u:.79, v:.57, ...M('البوفيه','SIDEBOARD','بوفيه من البلوط المدخّن بخطوط ذهبية، تخزين للأواني وسطح للضيافة.',[['الخامة','بلوط مدخّن'],['التفاصيل','تطعيم نحاسي'],['الطول','٢٫٨ م']])},
+  {u:.79, v:.34, ...M('اللوحة الفنية','ART PIECE','لوحة تجريدية بألوان الحجر والخشب، مختارة لتكمل لوحة ألوان المكان.',[['النوع','أكريليك على كانفس'],['المقاس','١٥٠ × ١٢٠ سم'],['الإضاءة','سبوت مخفي']])},
+  {u:.32, v:.35, ...M('خزانة العرض','DISPLAY CABINET','خزانة مدمجة بإضاءة لعرض السيراميك والقطع الخاصة.',[['الخامة','جوز'],['الرفوف','زجاج'],['الإضاءة','LED دافئ']])}
+ ], links:[{u:.62, v:.84, t:'المجلس', to:'majlis'}, {u:.14, v:.84, t:'الصالة', to:'living'}]},
+ {id:'bedroom', ar:'غرفة النوم', img:im('bedroom'), start:.5, hs:[
+  {u:.5, v:.6, ...M('السرير وجدار الرأس','BED & HEADBOARD WALL','جدار رأس منجّد بلون التوب مع إضاءة مدمجة، يحوّل السرير لقطعة مركزية هادئة.',[['التنجيد','قماش مخملي مطفي'],['المقاس','كينج ٢٠٠ × ٢٠٠'],['الإضاءة','مخفية دافئة']])},
+  {u:.372, v:.5, ...M('الكومودينو والأباجورة','NIGHTSTAND & LAMP','كومودينو جوز بأدراج هادئة، وأباجورة سيراميك منحوتة بضوء ناعم للقراءة.',[['الخامة','جوز'],['الأباجورة','سيراميك + كتان'],['الأدراج','إغلاق هادئ']])},
+  {u:.5, v:.76, ...M('بنش نهاية السرير','BED BENCH','بنش بوكليه منخفض عند نهاية السرير، للجلسة أو لترتيب الملابس.',[['القماش','بوكليه'],['القاعدة','خشب داكن'],['الطول','١٨٠ سم']])},
+  {u:.89, v:.66, ...M('كرسي القراءة','READING CHAIR','كرسي بوكليه دائري جنب النافذة مع طاولة ترافرتين صغيرة، ركن القهوة الصباحية.',[['القماش','بوكليه'],['الطاولة','ترافرتين'],['المكان','جنب النافذة']])},
+  {u:.06, v:.42, ...M('التسريحة','VANITY','تسريحة حجر مع مرآة دائرية مضاءة وبنش، إضاءة مثالية للمكياج.',[['السطح','حجر جيري'],['المرآة','دائرية بإضاءة خلفية'],['القطر','٩٠ سم']])},
+  {u:.23, v:.4, ...M('الدولاب المضلّع','FLUTED WARDROBE','دولاب جوز مضلّع من الأرض للسقف بإضاءة داخلية، تخزين كبير بشكل هادئ.',[['الخامة','جوز مضلّع'],['الارتفاع','حتى السقف'],['الإضاءة','داخلية بحساس']])}
+ ], links:[{u:.32, v:.62, t:'الصالة (الدور الأرضي)', to:'living'}]}
+];
+const $ = s => document.querySelector(s);
+const cv = $('#gl'), r = new THREE.WebGLRenderer({canvas:cv, antialias:true});
+r.setPixelRatio(Math.min(devicePixelRatio, 2)); r.outputEncoding = THREE.sRGBEncoding;
+const scene = new THREE.Scene(), cam = new THREE.PerspectiveCamera(75, 1, .1, 100);
+// panoramas are cylindrical (about 360 x 150 degrees), so map them on an open cylinder
+const R = 50; let H = 2*Math.PI*R*(1648/3840);
+const geo = new THREE.CylinderGeometry(R, R, H, 120, 1, true); geo.scale(-1, 1, 1);
+const mat = new THREE.MeshBasicMaterial(); const sph = new THREE.Mesh(geo, mat); scene.add(sph);
+const loader = new THREE.TextureLoader(), tex = {};
+let yaw = .5, tyaw = .5, tilt = 0, ttilt = 0, room = null, auto = true;
+function size(){ const w = innerWidth, h = innerHeight; r.setSize(w, h, false); cam.aspect = w/h; cam.fov = w < h ? 84 : 80; cam.updateProjectionMatrix(); }
+addEventListener('resize', size); size();
+// u,v on the panorama -> point on the cylinder wall
+const dir = (u, v) => { const a = u*2*Math.PI; return new THREE.Vector3(-R*Math.sin(a)*.9, (.5 - v)*H*.9, R*Math.cos(a)*.9); };
+const maxTilt = () => Math.max(0, Math.atan((H/2)/R)*180/Math.PI - cam.fov/2 - 1);
+function getTex(src){ return tex[src] || (tex[src] = new Promise(res => loader.load(src, t => { t.encoding = THREE.sRGBEncoding; t.anisotropy = 8; res(t); }))); }
+async function go(id){
+  const R = ROOMS.find(x => x.id === id); $('#fade').classList.add('on'); closeCard();
+  const t = await getTex(R.img); await new Promise(s => setTimeout(s, room ? 350 : 0));
+  t.wrapS = THREE.RepeatWrapping; mat.map = t; mat.needsUpdate = true; room = R; tyaw = yaw = R.start ?? .5; ttilt = tilt = 0;
+  $('#rname').textContent = R.ar; buildHs(); $$('#rooms button').forEach(b => b.setAttribute('aria-pressed', b.dataset.id === id));
+  $('#fade').classList.remove('on');
+  ROOMS.forEach(x => x.id !== id && getTex(x.img));
+}
+const $$ = s => [...document.querySelectorAll(s)];
+$('#rooms').innerHTML = ROOMS.map(x => `<button type="button" data-id="${x.id}">${x.ar}</button>`).join('');
+$$('#rooms button').forEach(b => b.onclick = () => go(b.dataset.id));
+let hsEls = [];
+function buildHs(){
+  const box = $('#hss'); box.innerHTML = '';
+  hsEls = [...room.hs.map(h => ({h, go:false})), ...(room.links||[]).map(h => ({h, go:true}))].map(o => {
+    const b = document.createElement('button'); b.type = 'button'; b.className = 'hs' + (o.go ? ' go' : '');
+    b.innerHTML = `<span class="lb">${o.h.t}</span>`; b.setAttribute('aria-label', o.h.t);
+    b.onclick = e => { e.stopPropagation(); o.go ? go(o.h.to) : openCard(o.h); };
+    box.appendChild(b); return {el:b, p:dir(o.h.u, o.h.v)};
+  });
+}
+function openCard(h){ $('#cen').textContent = h.en; $('#ct').textContent = h.t; $('#cd').textContent = h.d;
+  $('#cl').innerHTML = h.m.map(m => `<li><span>${m[0]}</span><span>${m[1]}</span></li>`).join('');
+  $('#cwa').href = 'https://wa.me/966579277975?text=' + encodeURIComponent('مرحبا ماكس ديزاين، عجبني ' + h.t + ' في جولة الفيلا وأبي زيّه في بيتي');
+  $('#card').classList.add('on'); }
+function closeCard(){ $('#card').classList.remove('on'); }
+$('#cx').onclick = closeCard;
+// drag to look
+let down = null;
+cv.addEventListener('pointerdown', e => { down = {x:e.clientX, y:e.clientY, yaw:tyaw, tilt:ttilt}; auto = false; cv.classList.add('drag'); cv.setPointerCapture(e.pointerId); $('#hint').style.opacity = 0; });
+cv.addEventListener('pointermove', e => { if (!down) return; const k = cam.fov / innerHeight;
+  tyaw = down.yaw - (e.clientX - down.x) * k / 360; const m = maxTilt(); ttilt = Math.max(-m, Math.min(m, down.tilt + (e.clientY - down.y) * k)); });
+cv.addEventListener('pointerup', () => { down = null; cv.classList.remove('drag'); });
+cv.addEventListener('click', closeCard);
+addEventListener('keydown', e => { if (e.key === 'ArrowLeft') tyaw -= .03; if (e.key === 'ArrowRight') tyaw += .03; if (e.key === 'Escape') closeCard(); });
+const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const v = new THREE.Vector3();
+(function loop(){
+  if (auto && !RM) tyaw += .00008;
+  yaw += (tyaw - yaw) * .12; tilt += (ttilt - tilt) * .12;
+  const a = yaw*2*Math.PI, tl = THREE.MathUtils.degToRad(tilt);
+  cam.lookAt(-Math.sin(a)*Math.cos(tl)*10, Math.sin(tl)*10, Math.cos(a)*Math.cos(tl)*10);
+  r.render(scene, cam);
+  const w = innerWidth, h = innerHeight;
+  hsEls.forEach(o => { v.copy(o.p).project(cam); const vis = v.z < 1 && Math.abs(v.x) < 1.1 && Math.abs(v.y) < 1.1;
+    o.el.style.display = vis ? '' : 'none'; if (vis) o.el.style.transform = `translate(${(v.x*.5+.5)*w}px,${(-v.y*.5+.5)*h}px)`; });
+  requestAnimationFrame(loop);
+})();
+go(ROOMS[0].id);
+</script>
+</body>
+</html>
