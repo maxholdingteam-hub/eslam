@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>Max Motors social posts</title>
+<style>
+  @font-face{font-family:Cairo;font-weight:900;src:url(../fonts/Cairo-Black.ttf)}
+  @font-face{font-family:Cairo;font-weight:700;src:url(../fonts/Cairo-Bold.ttf)}
+  @font-face{font-family:Tajawal;font-weight:700;src:url(../fonts/Tajawal-Bold.ttf)}
+  @font-face{font-family:Tajawal;font-weight:500;src:url(../fonts/Tajawal-Medium.ttf)}
+  @font-face{font-family:Oswald;font-weight:600;src:url(../fonts/Oswald-SemiBold.ttf)}
+  @font-face{font-family:Anton;src:url(../fonts/Anton.woff2)}
+  @font-face{font-family:Michroma;src:url(../fonts/Michroma.woff2)}
+  @font-face{font-family:Playfair;font-style:italic;src:url(../fonts/PlayfairItalic.woff2)}
+  :root{--gold:#D4AF6A;--gold2:#F3D9A0;--gold3:#A9813F;--ink:#0B0B0C;--taupe:#8A7F70}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#111}
+  #c{position:relative;width:1080px;overflow:hidden}
+  .a{position:absolute}
+  .ctr{left:0;right:0;text-align:center}
+  .lat{direction:ltr;font-family:Michroma}
+  .gold{background:linear-gradient(180deg,var(--gold2),var(--gold) 55%,var(--gold3));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .gsh{position:absolute;border-radius:50%;background:radial-gradient(ellipse at center,rgba(0,0,0,.5),rgba(0,0,0,0) 70%)}
+  .ph{position:absolute;overflow:hidden}
+  .ph img{width:100%;height:100%;object-fit:cover;display:block}
+  .specs{position:absolute;left:50px;right:50px;display:flex;justify-content:center}
+  .specs > div{flex:1;text-align:center;padding:0 10px}
+  .specs > div + div{border-right:1.5px solid currentColor}
+  .specs .v{font:600 66px/1.05 Oswald;direction:ltr}
+  .specs .l{font:700 23px/1.35 Tajawal;opacity:.8}
+  .foot{position:absolute;left:0;right:0;display:flex;justify-content:center;align-items:center;gap:44px;direction:ltr;font:600 34px Oswald;letter-spacing:1px}
+  .foot span{display:flex;align-items:center;gap:12px}
+</style>
+</head>
+<body>
+<div id="c"></div>
+<script>
+const P = new URLSearchParams(location.search), D = P.get('d') || 'lc', S = P.get('f') === 'story', H = S ? 1920 : 1350;
+const c = document.getElementById('c'); c.style.height = H + 'px';
+const v = (feed, story) => S ? story : feed;   // pick a feed or story value
+const phone = col => `<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="${col}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg>`;
+const globe = col => `<svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="${col}" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"/></svg>`;
+const foot = (col, ic) => `<div class="foot" style="color:${col};top:${H - 74}px"><span>${phone(ic)}920018915</span><img src="../fx/mm_logo.png" alt="Max Motors" style="width:64px"><span>${globe(ic)}maxmotors.sa</span></div>`;
+const car = (n, x, y, w, op = 1) => `<div class="gsh" style="left:${x + w * .08}px;top:${y + w * .46}px;width:${w * .84}px;height:${w * .1}px;opacity:${op}"></div><img class="a" src="real/${n}.png" alt="" style="left:${x}px;top:${y}px;width:${w}px">`;
+const ph = (n, x, y, w, h, extra = '') => `<div class="ph" style="left:${x}px;top:${y}px;width:${w}px;height:${h}px;${extra}"><img src="real/${n}" alt=""></div>`;
+const specs = (y, col, items) => `<div class="specs" style="top:${y}px;color:${col}">${items.map(([vv, l]) => `<div><div class="v">${vv}</div><div class="l">${l}</div></div>`).join('')}</div>`;
+const hdr = (col, model) => `<img class="a" src="../fx/mm_logo.png" alt="Max Motors" style="right:50px;top:${v(40, 90)}px;width:${v(110, 130)}px"><div class="a lat" style="left:50px;top:${v(58, 112)}px;font-size:15px;letter-spacing:6px;color:${col}">${model}</div>`;
+
+const B = {
+  // Cadillac Escalade / G-Wagon: light grey, giant condensed name fading down, car over it, name, 4 specs, copy
+  lc: () => `
+    <div class="a" style="inset:0;background:radial-gradient(ellipse 90% 70% at 50% 38%,#F4F4F5,#D3D3D6)"></div>
+    ${hdr('#333', 'TOYOTA · 2026')}
+    <div class="a ctr" style="top:${v(110, 230)}px;font:${v(330, 400)}px/1 Anton;letter-spacing:4px;direction:ltr;background:linear-gradient(180deg,#0B0B0C 30%,rgba(11,11,12,.05) 92%);-webkit-background-clip:text;background-clip:text;color:transparent">LC300</div>
+    ${car('lc_white', 60, v(330, 520), 960, .9)}
+    <div class="a ctr" style="top:${v(860, 1100)}px;font:900 76px/1.1 Cairo;color:#0B0B0C">لاند كروزر <span class="gold">300</span></div>
+    <div class="a ctr lat" style="top:${v(955, 1210)}px;font-size:15px;letter-spacing:12px;color:#555">BUILT FOR EVERY ROAD</div>
+    ${specs(v(1010, 1300), '#0B0B0C', [['3.5L', 'V6 تيربو مزدوج'], ['409', 'حصان'], ['457', 'حصان · نسخة الهايبرد'], ['20"', 'جنوط ألمنيوم']])}
+    <div class="a ctr" style="top:${v(1160, 1490)}px;padding:0 120px;font:500 ${v(26, 32)}px/1.6 Tajawal;color:#333">القوة والفخامة على كل الطرق. لاند كروزر 300 بانتظارك في ماكس موتورز.</div>
+    ${foot('#0B0B0C', '#A9813F')}`,
+
+  // Toyota C-HR: white, spaced brand, 2x2 detail collage, car breaking out of it, name, specs
+  camry: () => { const g = v(250, 360), ph1 = v(240, 330);
+    return `
+    <div class="a" style="inset:0;background:linear-gradient(180deg,#FAFAFA,#ECECEE)"></div>
+    ${hdr('#333', 'TOYOTA')}
+    <div class="a ctr lat" style="top:${v(120, 210)}px;font-size:${v(60, 72)}px;letter-spacing:18px;color:#0B0B0C">CAMRY</div>
+    ${ph('cm_camry-2026_technology-01_desktop-view_856x481.webp', 60, g, 470, ph1, 'border-radius:18px')}${ph('cm_camry-2026_technology-02_desktop-view_856x481.webp', 550, g, 470, ph1, 'border-radius:18px')}
+    ${ph('cm_camry-2026_technology-03_desktop-view_856x481.webp', 60, g + ph1 + 20, 470, ph1, 'border-radius:18px')}${ph('cm_camry-2026_performance-01_desktop-view_856x481.webp', 550, g + ph1 + 20, 470, ph1, 'border-radius:18px;background:#fff')}
+    <div class="a" style="left:0;right:0;top:${g + ph1 * 2 - 60}px;height:${v(300, 380)}px;background:linear-gradient(180deg,rgba(236,236,238,0),#ECECEE 45%)"></div>
+    ${car('camry_red', 90, g + ph1 * 2 - v(150, 170), 900, .7)}
+    <div class="a ctr" style="top:${v(1025, 1390)}px;font:900 ${v(70, 84)}px/1.1 Cairo;color:#0B0B0C">كامري <span class="gold">هايبرد</span> 2026</div>
+    ${specs(v(1120, 1520), '#0B0B0C', [['2.5L', 'هايبرد الجيل الخامس'], ['226', 'حصان · حسب الفئة'], ['27.7', 'كم/لتر · حتى']])}
+    ${S ? `<div class="a ctr" style="top:1690px;padding:0 120px;font:500 32px/1.6 Tajawal;color:#333">تقنية وراحة وكفاءة في كل مشوار. كامري هايبرد بانتظارك في ماكس موتورز.</div>` : ''}
+    ${foot('#0B0B0C', '#A9813F')}`; },
+
+  // Zeekr / Volvo: the real desert photo carries the post, white headline over the sky, dark spec panel
+  prado: () => { const ph_h = v(860, 1240);
+    return `
+    <div class="a" style="inset:0;background:#0B0B0C"></div>
+    ${ph('h_prado.jpg', 0, 0, 1080, ph_h, 'object-position:70% 50%')}
+    <div class="a" style="left:0;right:0;top:0;height:${ph_h}px;background:linear-gradient(180deg,rgba(0,0,0,.45),rgba(0,0,0,0) 30%,rgba(0,0,0,0) 65%,#0B0B0C)"></div>
+    <img class="a" src="../fx/mm_logo.png" alt="Max Motors" style="right:50px;top:${v(40, 90)}px;width:${v(110, 130)}px">
+    <div class="a" style="left:60px;top:${v(70, 140)}px;text-align:left;color:#fff;direction:rtl">
+      <div style="font:900 ${v(110, 130)}px/1.05 Cairo;text-shadow:0 6px 30px rgba(0,0,0,.4)">برادو</div>
+      <div class="lat" style="font-size:18px;letter-spacing:10px;margin-top:10px">LAND CRUISER PRADO</div></div>
+    <div class="a ctr" style="top:${ph_h - 110}px;font:900 ${v(64, 76)}px/1.1 Cairo;color:#fff">جاهز <span class="gold">لكل طريق</span></div>
+    ${specs(ph_h + v(10, 40), '#EDE6DA', [['2.4L', 'تيربو بنزين'], ['267', 'حصان'], ['430', 'نيوتن متر'], ['8', 'سرعات أوتوماتيك']])}
+    <div class="a ctr" style="top:${ph_h + v(180, 240)}px;font:500 ${v(26, 32)}px/1.6 Tajawal;color:#CFC6B8;padding:0 120px">متوفر أيضًا بمحرك ديزل 2.8 لتر بقوة 201 حصان.</div>
+    ${foot('#EDE6DA', '#D4AF6A')}`; },
+
+  // Lexus GX550: white, huge outline letters behind the front of the car, name, specs
+  hl: () => `
+    <div class="a" style="inset:0;background:linear-gradient(180deg,#FFFFFF,#E9E9EB)"></div>
+    ${hdr('#333', 'TOYOTA · HYBRID')}
+    <div class="a ctr" style="top:${v(120, 220)}px;font:${v(300, 360)}px/.9 Anton;letter-spacing:6px;direction:ltr;color:transparent;-webkit-text-stroke:3px #B9B9BE">HIGH<br>LANDER</div>
+    ${car('hl_white', 80, v(380, 640), 920, .8)}
+    <div class="a ctr" style="top:${v(880, 1200)}px;font:900 76px/1.1 Cairo;color:#0B0B0C">هايلاندر <span class="gold">هايبرد</span></div>
+    <div class="a ctr lat" style="top:${v(975, 1310)}px;font-size:15px;letter-spacing:12px;color:#555">SPACE · POWER · EFFICIENCY</div>
+    ${specs(v(1040, 1400), '#0B0B0C', [['240', 'حصان · مشترك'], ['AWD', 'دفع رباعي E-Four'], ['20.7', 'كم/لتر · حتى']])}
+    ${S ? `<div class="a ctr" style="top:1590px;padding:0 120px;font:500 32px/1.6 Tajawal;color:#333">مساحة لكل العيلة وكفاءة الهايبرد. هايلاندر بانتظارك في ماكس موتورز.</div>` : ''}
+    ${foot('#0B0B0C', '#A9813F')}`,
+
+  // "Make room for a better you": warm stage, gold curtains opening on the car, italic headline
+  rav: () => { const curtain = side => `<div class="a" style="top:0;${side}:-40px;width:${v(330, 360)}px;height:${H}px;background:repeating-linear-gradient(90deg,#6E4A1C 0px,#B48A45 18px,#E2C27F 30px,#B48A45 42px,#6E4A1C 60px);box-shadow:inset ${side === 'left' ? '-' : ''}40px 0 60px rgba(0,0,0,.45);border-${side === 'left' ? 'right' : 'left'}:0;transform:skewY(${side === 'left' ? 3 : -3}deg);border-radius:0 0 ${side === 'left' ? '0 120px' : '120px 0'}"></div>`;
+    return `
+    <div class="a" style="inset:0;background:radial-gradient(ellipse 70% 60% at 50% 55%,#5A3A1A,#1A0F07 75%)"></div>
+    ${curtain('left')}${curtain('right')}
+    <div class="a" style="left:0;right:0;top:${v(860, 1230)}px;height:${v(490, 690)}px;background:linear-gradient(180deg,#2A1A0C,#0E0805)"></div>
+    <img class="a" src="../fx/mm_logo.png" alt="Max Motors" style="left:470px;top:${v(40, 90)}px;width:140px">
+    <div class="a ctr" style="top:${v(220, 330)}px;font:900 ${v(96, 112)}px/1.12 Cairo;color:#fff">جاهز <span class="gold">لمغامرتك</span><br>الجاية</div>
+    ${car('rav_red', 170, v(540, 830), 740, .9)}
+    <div class="a ctr" style="top:${v(970, 1360)}px;font:900 60px/1.1 Cairo;color:#fff">راف فور <span class="gold">2026</span></div>
+    ${specs(v(1060, 1470), '#F3E6CC', [['239', 'حصان · هايبرد حتى'], ['26.6', 'كم/لتر · حتى'], ['AWD', 'دفع رباعي دائم']])}
+    ${foot('#F3E6CC', '#D4AF6A')}`; },
+
+  // engagement poll: question, three cars with numbers, vertical gold bar, comment prompt
+  poll: () => { const y0 = v(330, 470), gap = v(280, 400);
+    const rows = [['prado_gold', 'برادو'], ['lc_white', 'لاند كروزر 300'], ['rav_red', 'راف فور']];
+    return `
+    <div class="a" style="inset:0;background:radial-gradient(ellipse 90% 70% at 50% 40%,#F6F3EE,#E2DCD2)"></div>
+    <img class="a" src="../fx/mm_logo.png" alt="Max Motors" style="left:470px;top:${v(36, 90)}px;width:140px">
+    <div class="a ctr" style="top:${v(170, 250)}px;font:900 ${v(64, 76)}px/1.2 Cairo;color:#0B0B0C;padding:0 60px">أنهي واحدة <span class="gold">تختار</span><br>لرحلة نهاية الأسبوع؟</div>
+    <div class="a" style="left:70px;top:${y0 + 20}px;width:26px;height:${gap * 3 - 60}px;border-radius:13px;background:#D9D2C6"></div>
+    <div class="a" style="left:70px;top:${y0 + 20}px;width:26px;height:${(gap * 3 - 60) * .62}px;border-radius:13px;background:linear-gradient(180deg,var(--gold2),var(--gold3))"></div>
+    <div class="a" style="left:58px;top:${y0 + 20 + (gap * 3 - 60) * .62 - 25}px;width:50px;height:50px;border-radius:50%;background:#fff;box-shadow:0 4px 14px rgba(0,0,0,.25)"></div>
+    ${rows.map(([n, name], i) => `
+      <img class="a" src="real/${n}.png" alt="" style="left:${v(140, 110)}px;top:${y0 + i * gap}px;width:${v(400, 430)}px;filter:drop-shadow(0 18px 18px rgba(0,0,0,.25))">
+      <div class="a" style="right:60px;top:${y0 + i * gap + v(70, 100)}px;display:flex;align-items:center;gap:22px;direction:rtl">
+        <span style="width:${v(86, 100)}px;height:${v(86, 100)}px;border-radius:50%;background:#0B0B0C;color:var(--gold);display:flex;align-items:center;justify-content:center;font:600 ${v(50, 58)}px Oswald">${i + 1}</span>
+        <span style="font:900 ${v(44, 50)}px Cairo;color:#0B0B0C">${name}</span></div>`).join('')}
+    <div class="a ctr" style="top:${y0 + gap * 3 + v(-25, 0)}px;font:700 ${v(34, 40)}px Tajawal;color:#0B0B0C">اكتب رقم اختيارك في الكومنت</div>
+    ${foot('#0B0B0C', '#A9813F')}`; },
+};
+c.innerHTML = B[D]();
+document.fonts.ready.then(() => Promise.all([...document.images].map(i => i.decode().catch(() => {})))).then(() => document.body.dataset.ready = 1);
+</script>
+</body>
+</html>
