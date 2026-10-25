@@ -79,11 +79,12 @@
     <div class="a" style="inset:0;background:linear-gradient(180deg,rgba(11,11,12,.92) 0,rgba(11,11,12,.55) 42%,rgba(11,11,12,.92) 100%)"></div>
     <div class="a ctr lat" id="s4k" style="top:200px;font-size:24px;letter-spacing:16px;color:var(--gold)">PERFORMANCE</div>
     <div class="a ctr cap" id="s4t" style="top:250px">قوة <span class="gold">وكفاءة</span></div>
-    <div class="a" id="s4rows" style="left:90px;right:90px;top:560px">
+    <div class="a" id="s4rows" style="left:90px;right:90px;top:480px">
       <div class="row"><div class="v">1.5L</div><div class="l">محرك تيربو 4 سلندر</div></div>
       <div class="row"><div class="v" id="hp">192</div><div class="l">حصان تقريبًا</div></div>
       <div class="row"><div class="v" id="nm">260</div><div class="l">نيوتن متر عزم</div></div>
-      <div class="row" style="border:0"><div class="v">CVT</div><div class="l">ناقل حركة أوتوماتيك</div></div>
+      <div class="row"><div class="v">CVT</div><div class="l">ناقل حركة أوتوماتيك</div></div>
+      <div class="row" style="border:0"><div class="v gold" style="color:transparent">EXL</div><div class="l" style="font:900 64px Cairo;color:#fff">فل <span class="gold">كامل</span></div></div>
     </div>
   </div>
   <!-- S5: safety -->
@@ -173,7 +174,7 @@ window.renderAt = t => {
   // S4: figures count up row by row
   { const u = t - T.perf; bleed($('s4a'), u, 3.2);
     rise('s4k', u, 0.05); rise('s4t', u, 0.15, 50);
-    document.querySelectorAll('#s4rows .row').forEach((el, i) => { const k = at(u, 0.4 + i * 0.4, 0.8 + i * 0.4, 'back'); css(el, { opacity: clamp(k), transform: `translateX(${(1 - k) * 160}px)` }); });
+    document.querySelectorAll('#s4rows .row').forEach((el, i) => { const k = at(u, 0.4 + i * 0.36, 0.8 + i * 0.36, 'back'); css(el, { opacity: clamp(k), transform: `translateX(${(1 - k) * 160}px)` }); });
     $('hp').textContent = Math.round(192 * at(u, 0.8, 1.5)); $('nm').textContent = Math.round(260 * at(u, 1.2, 1.9)); }
 
   // S5: safety card zooms, text pops (riser into the drop)
