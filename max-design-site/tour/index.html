@@ -73,7 +73,7 @@ body{background:var(--void);color:var(--bone);font-family:var(--b-ar);overflow:h
 <script>
 // u = 0..1 across the panorama (left to right), v = 0..1 top to bottom
 const SMALL = innerWidth < 820;
-const im = n => SMALL ? `img/${n}-m.jpg` : `img/${n}.jpg`;
+const im = n => `img/${n}.jpg`;
 const M = (t,en,d,m) => ({t,en,d,m});
 const ROOMS = [
  {id:'majlis', ar:'المجلس', img:im('majlis'), start:.5, hs:[
@@ -120,16 +120,16 @@ const geo = new THREE.CylinderGeometry(R, R, H, 120, 1, true); geo.scale(-1, 1, 
 const mat = new THREE.MeshBasicMaterial(); const sph = new THREE.Mesh(geo, mat); scene.add(sph);
 const loader = new THREE.TextureLoader(), tex = {};
 let yaw = .5, tyaw = .5, tilt = 0, ttilt = 0, room = null, auto = true;
-function size(){ const w = innerWidth, h = innerHeight; r.setSize(w, h, false); cam.aspect = w/h; cam.fov = w < h ? 84 : 80; cam.updateProjectionMatrix(); }
+function size(){ const w = innerWidth, h = innerHeight; r.setSize(w, h, false); cam.aspect = w/h; cam.fov = w < h ? 96 : 82; cam.updateProjectionMatrix(); }
 addEventListener('resize', size); size();
 // u,v on the panorama -> point on the cylinder wall
 const dir = (u, v) => { const a = u*2*Math.PI; return new THREE.Vector3(-R*Math.sin(a)*.9, (.5 - v)*H*.9, R*Math.cos(a)*.9); };
 const maxTilt = () => Math.max(0, Math.atan((H/2)/R)*180/Math.PI - cam.fov/2 - 1);
-function getTex(src){ return tex[src] || (tex[src] = new Promise(res => loader.load(src, t => { t.encoding = THREE.sRGBEncoding; t.anisotropy = 8; res(t); }))); }
+function getTex(src){ return tex[src] || (tex[src] = new Promise(res => loader.load(src, t => { t.encoding = THREE.sRGBEncoding; t.generateMipmaps = false; t.minFilter = THREE.LinearFilter; res(t); }))); }
 async function go(id){
   const R = ROOMS.find(x => x.id === id); $('#fade').classList.add('on'); closeCard();
   const t = await getTex(R.img); await new Promise(s => setTimeout(s, room ? 350 : 0));
-  t.wrapS = THREE.RepeatWrapping; mat.map = t; mat.needsUpdate = true; room = R; tyaw = yaw = R.start ?? .5; ttilt = tilt = 0;
+  mat.map = t; mat.needsUpdate = true; room = R; tyaw = yaw = R.start ?? .5; ttilt = tilt = 0;
   $('#rname').textContent = R.ar; buildHs(); $$('#rooms button').forEach(b => b.setAttribute('aria-pressed', b.dataset.id === id));
   $('#fade').classList.remove('on');
   ROOMS.forEach(x => x.id !== id && getTex(x.img));
