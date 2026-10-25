@@ -1,6 +1,6 @@
 # Composite an official Accord cutout in front of the Max Holding showroom photo, matched to the scene's light.
 #   python3 comp.py <bg> <car.png> <out> <cx> <bottom_y> <width> [night|day]
-import sys, numpy as np
+import sys, os, numpy as np
 from PIL import Image, ImageFilter
 bg_p, car_p, out_p = sys.argv[1:4]; cx, by, w = map(float, sys.argv[4:7]); mode = sys.argv[7] if len(sys.argv) > 7 else 'night'
 bg = np.asarray(Image.open(bg_p).convert('RGB')).astype(np.float32) / 255
@@ -33,6 +33,14 @@ low = np.zeros((H, W), np.float32); base = a[int(ch * 0.9):, :, 0]
 ly = slice(y0 + int(ch * 0.9), y0 + ch); low[ly, xs] = base[: ly.stop - ly.start, : xs.stop - xs.start]
 low = np.asarray(Image.fromarray((low * 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(w * 0.008))).astype(np.float32) / 255
 k = 0.82 if mode == 'night' else 0.5
+# --- under-body shadow: the ground between the tyres sits in the car's own shade (UNDER = depth as a fraction of car height)
+UNDER = float(os.environ.get('UNDER', 0))
+if UNDER:
+    ub = np.zeros((H, W), np.float32); cols = np.where(a[..., 0].max(0) > 0.5)[0]
+    ux0, ux1 = x0 + cols[0] + int(cw * 0.04), x0 + cols[-1] - int(cw * 0.04)
+    ub[int(by - ch * UNDER):int(by + ch * 0.02), max(0, ux0):min(W, ux1)] = 1
+    ub = np.asarray(Image.fromarray((ub * 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(ch * 0.035))).astype(np.float32) / 255
+    sh = np.maximum(sh, ub)
 out = bg * (1 - k * np.clip(sh * 0.85 + low, 0, 1))[..., None]
 # --- soften the cutout to the photo's sharpness, add matching grain, comp
 rgb_img = Image.fromarray((rgb * 255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(0.55))
