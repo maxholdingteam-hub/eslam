@@ -1,0 +1,1405 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel="icon" href="/img/logo.png">
+<link rel="apple-touch-icon" href="/img/logo.png">
+<title>Max Design | ماكس ديزاين</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="ماكس ديزاين: تصميم داخلي وتنفيذ مشاريع في الرياض — قصور، فلل، شقق، محلات تجارية ومقرات شركات. Max Design: interior design and project delivery in Riyadh.">
+<meta name="theme-color" content="#070706">
+<link rel="canonical" href="https://maxdesign.sa/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Max Design">
+<meta property="og:title" content="ماكس ديزاين | نصمم أسلوب حياة">
+<meta property="og:description" content="تصميم داخلي وتنفيذ مشاريع في الرياض: قصور، فلل، شقق، محلات ومقرات شركات.">
+<meta property="og:url" content="https://maxdesign.sa/">
+<meta property="og:image" content="https://maxdesign.sa/img/og.jpg">
+<meta property="og:image:width" content="1200"><meta property="og:image:height" content="630">
+<meta property="og:locale" content="ar_SA"><meta property="og:locale:alternate" content="en_US">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">{"@context": "https://schema.org", "@type": "InteriorDesigner", "name": "Max Design | ماكس ديزاين", "url": "https://maxdesign.sa/", "logo": "https://maxdesign.sa/img/logo.png", "image": "https://maxdesign.sa/img/og.jpg", "telephone": "+966579277975", "email": "info@maxdesign.sa", "address": {"@type": "PostalAddress", "streetAddress": "Wadi Al-Sukhayrah St., Al-Qadisiyah", "addressLocality": "Riyadh", "addressCountry": "SA"}, "geo": {"@type": "GeoCoordinates", "latitude": 24.82749, "longitude": 46.8250283}, "hasMap": "https://www.google.com/maps/search/?api=1&query=24.82749,46.8250283", "areaServed": "Saudi Arabia", "sameAs": ["https://www.instagram.com/maxdesign.sa/", "https://www.tiktok.com/@maxdesign.sa"], "description": "تصميم داخلي وتنفيذ مشاريع: قصور، فلل، شقق، محلات تجارية ومقرات شركات في الرياض."}</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600&family=Cormorant+Garamond:wght@500;600;700&family=Manrope:wght@300;400;600&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* Layout: "the drafting table at night" — black void, gold linework; particles become the logo, the building comes apart, projects slide past like sheets on a light table */
+:root{
+  --void:#070706; --void-2:#100f0c; --hair:#2a2418;
+  --gold:#d9b46b; --gold-hot:#f6dc9c; --gold-deep:#7d5f2a;
+  --bone:#efe8da; --ash:#8f8676; --paper:#f2ece0;
+  --d-en:"Cormorant Garamond","Cormorant",Georgia,"Times New Roman",serif;
+  --d-ar:"Amiri","Traditional Arabic","IBM Plex Sans Arabic",serif;
+  --b-en:"Manrope",system-ui,"Segoe UI",sans-serif;
+  --b-ar:"IBM Plex Sans Arabic","Alexandria",Tahoma,"Segoe UI",sans-serif;
+  --mark:"Montserrat",system-ui,sans-serif;
+  color-scheme:dark;
+}
+*{box-sizing:border-box}
+[hidden]{display:none!important}
+html{background:var(--void)}
+html.lenis,html.lenis body{height:auto}
+.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{margin:0;background:var(--void);color:var(--bone);font-family:var(--b-ar);font-size:17px;line-height:1.7;overflow-x:hidden;
+  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:90;background:var(--void)}
+html[lang=en] body{font-family:var(--b-en)}
+html[lang=ar] [data-l=en],html[lang=en] [data-l=ar]{display:none!important}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.bleed{margin-inline:calc(-1*max(16px,env(safe-area-inset-left,0px)))}
+.in{max-width:1320px;margin-inline:auto}
+.disp{font-family:var(--d-ar);font-weight:700;line-height:1.2;letter-spacing:-.01em}
+.disp,.num b,.card .n,.ps .k,.mq-row span,.case-head .n,.pct,.svc-row .t,.card h3,.ps h3,.manifesto p,.hero-claim,.menu .mt,.next .nn,.next .nt{font-stretch:125%}
+html[lang=en] .disp{font-family:var(--d-en);font-weight:800;letter-spacing:-.02em;text-transform:uppercase}
+.mono{font-family:var(--b-en);font-size:12px;letter-spacing:.32em;text-transform:uppercase;color:var(--ash)}
+.gold{color:var(--gold)}
+/* grain */
+.grain{position:fixed;inset:-50%;z-index:80;pointer-events:none;opacity:.07;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation:grain 1.2s steps(6) infinite}
+@keyframes grain{0%{transform:translate(0,0)}20%{transform:translate(-3%,2%)}40%{transform:translate(2%,-3%)}60%{transform:translate(-2%,3%)}80%{transform:translate(3%,1%)}}
+
+/* loader */
+.loader{position:fixed;inset:0;z-index:100;background:var(--void);display:grid;place-items:center;transition:clip-path 1.1s cubic-bezier(.77,0,.18,1)}
+.loader.done{clip-path:inset(0 0 100% 0)}
+.loader .box{display:grid;justify-items:center;gap:22px}
+.loader svg{width:120px;height:90px}
+.loader path{fill:none;stroke:var(--gold);stroke-width:1.4;stroke-dasharray:420;stroke-dashoffset:420;animation:draw 1.6s ease forwards}
+@keyframes draw{to{stroke-dashoffset:0}}
+.loader .pct{font-family:var(--d-en);font-size:56px;font-weight:800;color:var(--gold);font-variant-numeric:tabular-nums;line-height:1}
+
+/* nav */
+.nav{position:fixed;z-index:88;top:env(safe-area-inset-top,0px);left:0;right:0;display:flex;justify-content:space-between;align-items:center;
+  padding:18px max(20px,env(safe-area-inset-right,0px)) 18px max(20px,env(safe-area-inset-left,0px));mix-blend-mode:difference}
+.brand{display:flex;gap:10px;align-items:center;text-decoration:none}
+.brand img{height:30px;width:auto}
+.brand b{font-family:var(--mark);font-weight:600;letter-spacing:.34em;font-size:13px;color:#fff}
+.nav-r{display:flex;gap:22px;align-items:center}
+.nav-r a,.nav-r button{font:inherit;font-size:14px;color:#fff;text-decoration:none;background:none;border:0;cursor:pointer;padding:6px 0;position:relative}
+.nav-r a::after{content:"";position:absolute;left:0;right:0;bottom:0;height:1px;background:#fff;transform:scaleX(0);transition:transform .35s;transform-origin:right}
+.nav-r a:hover::after{transform:scaleX(1);transform-origin:left}
+.nav-r .lang{border:1px solid #fff;padding:6px 14px;font-family:var(--b-en);font-size:12px;letter-spacing:.15em}
+@media(max-width:760px){.nav-r a{display:none}}
+
+/* cursor */
+.c-ring,.c-dot{position:fixed;left:0;top:0;z-index:95;pointer-events:none;border-radius:50%}
+.c-ring{width:44px;height:44px;margin:-22px 0 0 -22px;border:1px solid var(--gold);transition:width .3s,height .3s,margin .3s,background .3s,border-color .3s}
+.c-ring.big{width:96px;height:96px;margin:-48px 0 0 -48px;background:var(--gold);border-color:var(--gold)}
+.c-ring span{position:absolute;inset:0;display:grid;place-items:center;font-family:var(--b-en);font-size:11px;font-weight:600;letter-spacing:.18em;color:var(--void);opacity:0;transition:opacity .2s}
+html[lang=ar] .c-ring span{font-family:var(--b-ar);font-size:14px;letter-spacing:0}
+.c-ring.big span{opacity:1}
+.c-dot{width:6px;height:6px;margin:-3px 0 0 -3px;background:var(--gold)}
+@media (hover:none){.c-ring,.c-dot{display:none}}
+
+/* hero */
+.hero{position:relative;height:100svh;min-height:640px;overflow:hidden}
+#gl{position:fixed;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.hero-txt{position:absolute;inset:0;z-index:2;display:grid;grid-template-rows:1fr auto;padding:110px max(20px,env(safe-area-inset-right,0px)) 34px max(20px,env(safe-area-inset-left,0px));pointer-events:none}
+.hero h1{margin:0;align-self:end;font-family:var(--mark);font-weight:600;font-size:clamp(54px,13.5vw,230px);letter-spacing:.02em;line-height:.85;color:transparent;-webkit-text-stroke:1px rgba(217,180,107,.55);white-space:nowrap;direction:ltr;text-align:center}
+.hero h1 .ch{display:inline-block}
+.hero-foot{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-top:28px}
+.hero-claim{font-size:clamp(22px,2.6vw,34px);line-height:1.3;max-width:20ch;margin:0}
+html[lang=ar] .hero-claim{font-family:var(--d-ar)}
+html[lang=en] .hero-claim{font-family:var(--d-en);font-weight:500}
+.hero-claim em{font-style:normal;color:var(--gold)}
+.scroll-cue{display:flex;align-items:center;gap:12px}
+.scroll-cue i{width:1px;height:54px;background:linear-gradient(var(--gold),transparent);animation:cue 1.8s ease-in-out infinite;transform-origin:top}
+@keyframes cue{0%{transform:scaleY(0)}50%{transform:scaleY(1)}100%{transform:scaleY(1);opacity:0}}
+
+section,.sec{position:relative;z-index:2}
+
+/* manifesto */
+.manifesto{padding-block:22vh 16vh}
+.manifesto p{margin:0;font-size:clamp(30px,5vw,76px);line-height:1.18;max-width:18ch}
+html[lang=ar] .manifesto p{font-family:var(--d-ar);font-weight:600}
+html[lang=en] .manifesto p{font-family:var(--d-en);font-weight:700;letter-spacing:-.02em}
+.manifesto .w{opacity:.24;transition:opacity .2s;display:inline-block}
+.manifesto .w.hl{color:var(--gold)}
+.manifesto .sub{display:flex;gap:30px;flex-wrap:wrap;margin-top:60px;max-width:900px}
+.manifesto .sub p{font-family:inherit!important;font-weight:300!important;font-size:18px;line-height:1.8;color:var(--ash);max-width:46ch;letter-spacing:0}
+
+/* numbers */
+.nums{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));border-top:1px solid var(--hair);border-bottom:1px solid var(--hair);margin-block:0 18vh}
+.num{padding:34px 24px;border-inline-end:1px solid var(--hair)}
+.num:last-child{border:0}
+.num b{display:block;white-space:nowrap;font-family:var(--d-en);font-weight:800;font-size:clamp(46px,6vw,92px);line-height:1;color:var(--gold);font-variant-numeric:tabular-nums;direction:ltr;text-align:start}
+html[lang=ar] .num b{text-align:right}
+.num span{display:block;margin-top:12px;color:var(--ash);font-size:15px}
+@media(max-width:820px){.nums{grid-template-columns:1fr 1fr}.num:nth-child(2){border-inline-end:0}.num:nth-child(-n+2){border-bottom:1px solid var(--hair)}}
+
+/* services list with floating image */
+.svc-h{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:34px}
+.h2{margin:10px 0 0;font-size:clamp(40px,7vw,110px)}
+.svc-list{list-style:none;margin:0;padding:0;border-top:1px solid var(--hair)}
+.svc-row{display:grid;grid-template-columns:70px 1fr auto;gap:20px;align-items:center;padding:26px 6px;border-bottom:1px solid var(--hair);cursor:none;position:relative;overflow:hidden}
+.svc-row::before{content:"";position:absolute;inset:0;background:var(--gold);transform:scaleY(0);transform-origin:bottom;transition:transform .5s cubic-bezier(.7,0,.2,1);z-index:-1}
+.svc-row:hover::before{transform:scaleY(1)}
+.svc-row:hover{color:var(--void)}
+.svc-row:hover .mono,.svc-row:hover p{color:var(--void)}
+.svc-row .t{font-size:clamp(24px,3.4vw,48px);line-height:1.1;transition:transform .5s cubic-bezier(.7,0,.2,1)}
+html[lang=ar] .svc-row .t{font-family:var(--d-ar);font-weight:600}
+html[lang=en] .svc-row .t{font-family:var(--d-en);font-weight:700;text-transform:uppercase;letter-spacing:-.01em}
+.svc-row:hover .t{transform:translateX(18px)}
+html[dir=rtl] .svc-row:hover .t{transform:translateX(-18px)}
+.svc-row p{margin:0;max-width:34ch;font-size:15px;color:var(--ash);transition:color .3s}
+@media(max-width:820px){.svc-row{grid-template-columns:44px 1fr}.svc-row p{grid-column:2}}
+.float{position:fixed;left:0;top:0;width:340px;aspect-ratio:4/5;z-index:60;pointer-events:none;opacity:0;transition:opacity .35s}
+.float canvas{position:absolute;inset:0;width:100%;height:100%}
+.float.on{opacity:1}
+.float img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+@media (hover:none){.float{display:none}}
+
+/* 3D build section */
+.build{height:380vh;margin-top:14vh}
+.build-pin{position:sticky;top:0;height:100svh;overflow:hidden;display:grid}
+.build-pin canvas{position:absolute;inset:0;width:100%;height:100%}
+.build-ui{position:relative;z-index:2;padding:110px max(20px,env(safe-area-inset-left,0px)) 40px;pointer-events:none;display:flex;flex-direction:column;justify-content:space-between}
+.build-ui h2{margin:8px 0 0;font-size:clamp(36px,5.5vw,88px);max-width:12ch}
+.labels{position:absolute;inset:0;z-index:3;pointer-events:none}
+.lbl{position:absolute;left:0;top:0;display:flex;align-items:center;gap:10px;font-size:14px;white-space:nowrap;opacity:0;transition:opacity .4s}
+.lbl.on{opacity:1}
+.lbl i{width:46px;height:1px;background:var(--gold)}
+.lbl b{font-family:var(--b-en);color:var(--gold);font-weight:600;direction:ltr;unicode-bidi:isolate}
+.build-steps{display:flex;gap:10px;flex-wrap:wrap}
+.build-steps > span{font-size:13px;padding:6px 14px;border:1px solid var(--hair);color:var(--ash);transition:all .3s}
+.build-steps > span.on{border-color:var(--gold);color:var(--void);background:var(--gold)}
+
+/* scroll camera journey (replaces the 3D building) */
+.build.jr{height:720vh}
+.jr .build-pin{display:block;background:var(--void)}
+.jr-vig{position:absolute;inset:0;pointer-events:none;background:radial-gradient(ellipse at center,transparent 55%,rgba(0,0,0,.45)),linear-gradient(180deg,rgba(7,7,6,.55),transparent 24%,transparent 60%,rgba(7,7,6,.7))}
+.jr-p{position:absolute;z-index:2;opacity:0;pointer-events:none;text-shadow:0 4px 30px rgba(0,0,0,.6)}
+.jr-p.on{pointer-events:auto}
+.jr-p h2{margin:8px 0 0;font-size:clamp(36px,5.2vw,80px);line-height:1.1}
+.jr-p p{max-width:34ch;margin:14px 0 0;color:var(--bone)}
+.jr-c{inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.jr-s{bottom:11vh;right:max(20px,env(safe-area-inset-right,0px),6vw);max-width:min(620px,88vw)}
+.jr-s.jr-alt{right:auto;left:max(20px,env(safe-area-inset-left,0px),6vw)}
+html[dir=ltr] .jr-s{right:auto;left:max(20px,env(safe-area-inset-left,0px),6vw)}
+html[dir=ltr] .jr-s.jr-alt{left:auto;right:max(20px,env(safe-area-inset-right,0px),6vw)}
+.jr-e{inset:auto 0 8vh;display:flex;justify-content:center;padding-inline:20px;text-shadow:none}
+.jr-box{background:rgba(242,236,224,.9);color:var(--void);backdrop-filter:blur(10px);padding:clamp(22px,3vw,36px) clamp(22px,4vw,56px);text-align:center}
+.jr-box .mono{color:var(--gold-deep)}
+.jr-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:20px}
+.jr-btns a{padding:13px 26px;text-decoration:none;font-weight:600;background:var(--void);color:var(--gold-hot)}
+.jr-btns a.o{background:none;color:var(--void);border:1px solid var(--void)}
+.jr-hs{position:absolute;inset:0;z-index:3;pointer-events:none}
+.jr-dot{position:absolute;left:0;top:0;width:28px;height:28px;margin:-14px 0 0 -14px;border-radius:50%;border:0;padding:0;background:var(--gold-hot);cursor:pointer;pointer-events:auto;opacity:0;transition:opacity .4s;animation:jpl 2s infinite}
+.jr-dot::after{content:"";position:absolute;inset:9px;border-radius:50%;background:var(--void)}
+.jr-dot.on{opacity:1}.jr-dot:not(.on){pointer-events:none}
+.jr-dot:focus-visible{outline:2px solid var(--gold-hot);outline-offset:4px}
+@keyframes jpl{0%{box-shadow:0 0 0 0 rgba(246,220,156,.6)}70%{box-shadow:0 0 0 16px rgba(246,220,156,0)}100%{box-shadow:0 0 0 0 rgba(246,220,156,0)}}
+.jr-card{position:absolute;z-index:4;bottom:24px;left:max(20px,env(safe-area-inset-left,0px));width:min(360px,calc(100% - 40px));background:var(--paper);color:var(--void);padding:20px 22px;transform:translateY(130%);transition:transform .45s cubic-bezier(.2,.8,.2,1);box-shadow:0 30px 80px rgba(0,0,0,.45)}
+.jr-card.on{transform:none}
+.jr-card small{color:var(--gold-deep);font-size:11px}
+.jr-card h3{margin:4px 0 6px;font-size:28px}
+.jr-card p{margin:0;font-size:15px;line-height:1.7;color:#4a4134}
+.jr-card .jr-btns{justify-content:flex-start;margin-top:14px}
+.jr-card button.o{font:inherit;cursor:pointer;background:none;color:var(--void);border:1px solid var(--void);padding:12px 22px}
+@media (prefers-reduced-motion:reduce){.jr-dot{animation:none}}
+.jr-load{position:absolute;left:50%;bottom:24px;width:140px;height:1px;transform:translateX(-50%);background:var(--hair);z-index:3;transition:opacity .5s}
+.jr-load i{display:block;height:100%;width:0;background:var(--gold)}
+.jr-load.done{opacity:0}
+@media (max-width:700px){.jr-s,.jr-s.jr-alt,html[dir=ltr] .jr-s,html[dir=ltr] .jr-s.jr-alt{left:20px;right:20px;bottom:9vh}}
+
+/* projects horizontal */
+.work{margin-top:12vh}
+.work-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
+.hz{position:relative;margin-top:40px;overflow:hidden;direction:ltr}
+.hz-track{display:flex;gap:3vw;direction:ltr;width:max-content;padding-inline:max(20px,env(safe-area-inset-left,0px)) 8vw;will-change:transform}
+.card{position:relative;width:min(72vw,980px);height:min(70svh,620px);flex:none;overflow:hidden;cursor:none;border:1px solid var(--hair);background:#000;direction:rtl;text-align:right}
+html[lang=en] .card{direction:ltr;text-align:left}
+.card img{position:absolute;inset:0;width:118%;max-width:none;height:100%;object-fit:cover;left:-9%;will-change:transform;transition:filter .6s,transform 1.2s cubic-bezier(.2,.8,.2,1)}
+.card:hover img{filter:saturate(1.15) brightness(1.06)}
+.fxc{position:absolute;inset:0;width:100%;height:100%;z-index:0;pointer-events:none}
+.card::after{content:"";position:absolute;inset:0;z-index:1;background:linear-gradient(0deg,rgba(7,7,6,.92) 0%,rgba(7,7,6,.1) 55%)}
+.card .meta{position:absolute;z-index:2;inset-inline:clamp(18px,3vw,40px);bottom:clamp(18px,3vw,36px);display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap}
+.card .n{font-family:var(--d-en);font-weight:800;font-size:clamp(70px,10vw,170px);line-height:.78;color:transparent;-webkit-text-stroke:1px var(--gold)}
+.card h3{margin:10px 0 4px;font-size:clamp(26px,3.2vw,48px);line-height:1.05}
+html[lang=ar] .card h3{font-family:var(--d-ar);font-weight:700}
+html[lang=en] .card h3{font-family:var(--d-en);font-weight:700;text-transform:uppercase}
+.card .tags{display:flex;gap:8px;flex-wrap:wrap}
+.card .tags span{font-size:13px;padding:4px 12px;border:1px solid rgba(217,180,107,.5);color:var(--gold-hot);background:rgba(7,7,6,.5)}
+.card .open{font-family:var(--b-en);font-size:12px;letter-spacing:.3em;color:var(--gold)}
+@media(max-width:820px){
+  .hz-track{flex-direction:column;width:auto;padding:0;gap:16px;direction:inherit}
+  .card{width:100%;height:auto;aspect-ratio:4/5}
+}
+
+/* process */
+.proc{margin-block:18vh}
+.proc-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:44px;border-top:1px solid var(--hair)}
+.ps{padding:30px 22px 10px;border-inline-end:1px solid var(--hair);position:relative;min-width:0}
+.ps:last-child{border:0}
+.ps .k{font-family:var(--d-en);font-weight:800;font-size:64px;line-height:1;color:transparent;-webkit-text-stroke:1px var(--gold-deep);transition:color .4s,-webkit-text-stroke-color .4s}
+.ps:hover .k{color:var(--gold);-webkit-text-stroke-color:var(--gold)}
+.ps h3{margin:16px 0 8px;font-size:24px}
+html[lang=ar] .ps h3{font-family:var(--d-ar)}
+html[lang=en] .ps h3{font-family:var(--d-en);text-transform:uppercase}
+.ps p{margin:0;color:var(--ash);font-size:15px}
+@media(max-width:820px){.proc-grid{grid-template-columns:1fr 1fr}.ps:nth-child(2){border-inline-end:0}}
+
+/* marquee */
+.mq{direction:ltr;overflow:hidden;border-block:1px solid var(--hair);padding-block:22px}
+.mq-row{display:flex;gap:56px;width:max-content;will-change:transform}
+.mq-row span{font-family:var(--d-en);font-weight:800;font-size:clamp(40px,7vw,110px);line-height:1;white-space:nowrap;text-transform:uppercase;color:transparent;-webkit-text-stroke:1px var(--gold-deep)}
+.mq-row span.f{color:var(--gold);-webkit-text-stroke:0}
+.mq-row span.ar{font-family:var(--d-ar);text-transform:none;color:var(--bone);-webkit-text-stroke:0;opacity:.85}
+
+/* contact */
+.contact{padding-block:16vh 6vh;text-align:center}
+.contact .big{font-size:clamp(52px,11vw,190px);margin:16px 0 0;line-height:.95}
+.mag{display:inline-grid;place-items:center;width:clamp(150px,16vw,210px);aspect-ratio:1;border-radius:50%;background:var(--gold);color:var(--void);text-decoration:none;font-weight:700;font-size:18px;margin-top:46px;transition:background .3s;will-change:transform}
+.mag:hover{background:var(--gold-hot)}
+.c-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));margin-top:80px;border-top:1px solid var(--hair);text-align:start}
+.cg{padding:26px 20px;border-inline-end:1px solid var(--hair);min-width:0}
+.cg:last-child{border:0}
+.cg small{display:block}
+.cg b{display:block;margin-top:10px;font-family:var(--b-en);font-weight:600;font-size:18px;direction:ltr;overflow-wrap:anywhere}
+html[lang=ar] .cg b{text-align:right}
+.cg button{font:inherit;font-size:13px;margin-top:10px;background:none;border:1px solid var(--hair);color:var(--ash);padding:4px 12px;cursor:pointer}
+.cg button:hover{border-color:var(--gold);color:var(--gold)}
+.maplink{display:inline-block;font-size:13px;margin-top:10px;border:1px solid var(--gold-deep);color:var(--gold);padding:4px 12px;text-decoration:none;transition:all .3s}
+.maplink:hover{border-color:var(--gold);background:rgba(217,180,107,.08)}
+.map{position:relative;display:block;height:340px;margin-top:40px;border:1px solid var(--hair);overflow:hidden;background:#0d0c0a}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0;pointer-events:none;filter:grayscale(1) invert(.92) contrast(.9) brightness(.85) sepia(.35) hue-rotate(-10deg);opacity:.85;transition:opacity .4s}
+.map:hover iframe{opacity:1}
+.map::after{content:"";position:absolute;inset:0;box-shadow:inset 0 0 80px rgba(0,0,0,.6);pointer-events:none}
+.map-pin{position:absolute;z-index:2;inset-inline-start:20px;bottom:20px;display:flex;gap:14px;align-items:center;background:rgba(10,9,8,.88);border:1px solid var(--gold-deep);color:var(--gold);padding:12px 18px;font-size:15px;backdrop-filter:blur(6px)}
+.map-pin i{font-style:normal}
+.map-dot{position:absolute;z-index:2;left:50%;top:50%;width:18px;height:18px;margin:-9px 0 0 -9px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 6px rgba(217,180,107,.25),0 0 24px rgba(217,180,107,.8)}
+.map-dot::after{content:"";position:absolute;inset:-6px;border-radius:50%;border:1px solid var(--gold);animation:mapPulse 2.2s ease-out infinite}
+@keyframes mapPulse{from{transform:scale(1);opacity:1}to{transform:scale(3.2);opacity:0}}
+@media(max-width:820px){.map{height:260px}}
+@media(max-width:820px){.c-grid{grid-template-columns:1fr 1fr}.cg:nth-child(2){border-inline-end:0}.cg:nth-child(-n+2){border-bottom:1px solid var(--hair)}}
+footer{display:flex;justify-content:space-between;flex-wrap:wrap;gap:12px;padding-block:26px 34px;border-top:1px solid var(--hair);color:var(--ash);font-size:13px}
+
+/* case study overlay */
+.case{position:fixed;inset:0;z-index:85;background:var(--void);overflow-y:auto;overscroll-behavior:contain;
+  padding:calc(76px + env(safe-area-inset-top,0px)) max(20px,env(safe-area-inset-right,0px)) 60px max(20px,env(safe-area-inset-left,0px));}
+.case-top{position:sticky;top:-56px;z-index:3;display:flex;justify-content:space-between;align-items:center;padding-block:10px;background:linear-gradient(var(--void) 70%,transparent)}
+.x{font:inherit;background:none;border:1px solid var(--gold);color:var(--gold);padding:8px 18px;cursor:pointer}
+.x:hover{background:var(--gold);color:var(--void)}
+.case-hero{position:relative;height:min(68svh,640px);overflow:hidden;margin-top:10px}
+.case-hero img{width:100%;height:100%;object-fit:cover}
+.case-hero::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,var(--void),transparent 60%)}
+.case-head{position:relative;z-index:2;margin-top:-140px;padding-inline:clamp(0px,2vw,30px)}
+.case-head .n{font-family:var(--d-en);font-weight:800;font-size:clamp(70px,10vw,150px);color:var(--gold);line-height:.8}
+.case-head h2{margin:10px 0 6px;font-size:clamp(34px,5vw,74px)}
+.case-head p{color:var(--ash);max-width:60ch;margin:0}
+.facts{display:flex;flex-wrap:wrap;margin-top:28px;border-top:1px solid var(--hair)}
+.fact{padding:18px 30px 0 0;margin-inline-end:30px;border-inline-end:1px solid var(--hair)}
+html[lang=ar] .fact{padding:18px 0 0 30px}
+.fact:last-child{border:0}
+.fact b{display:block;font-family:var(--b-en);font-weight:600;font-size:22px;color:#fff}
+html[lang=ar] .fact b{font-family:var(--b-ar)}
+.fact span{font-size:13px;color:var(--ash)}
+.ba{position:relative;aspect-ratio:16/9;max-width:100%;overflow:hidden;margin-top:44px;touch-action:pan-y;user-select:none}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ba .top{clip-path:inset(0 0 0 var(--x,50%))}
+.ba .bar{position:absolute;top:0;bottom:0;left:var(--x,50%);width:2px;background:var(--gold)}
+.ba .knob{position:absolute;top:50%;left:var(--x,50%);width:58px;height:58px;margin:-29px 0 0 -29px;border-radius:50%;background:var(--gold);color:var(--void);display:grid;place-items:center;font-weight:700}
+.ba .bl{position:absolute;top:14px;padding:4px 12px;background:rgba(7,7,6,.8);color:var(--gold-hot);font-size:13px}
+.ba .bl.l{left:14px}.ba .bl.r{right:14px}
+.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;margin:0;cursor:ew-resize}
+.tabs{display:flex;gap:8px;flex-wrap:wrap;margin:44px 0 18px}
+.tab{font:inherit;font-size:14px;background:none;border:1px solid var(--hair);color:var(--ash);padding:9px 18px;cursor:pointer}
+.tab[aria-selected=true]{background:var(--gold);border-color:var(--gold);color:var(--void)}
+.gal{columns:3 280px;column-gap:14px}
+.gal button{all:unset;display:block;break-inside:avoid;margin-bottom:14px;cursor:zoom-in;position:relative;overflow:hidden;width:100%;background:#000}
+.gal.paper button{background:var(--paper);padding:12px}
+.gal img{width:100%;height:auto;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.gal button:hover img{transform:scale(1.04)}
+.gal .cap{position:absolute;inset-inline:0;bottom:0;padding:8px 12px;font-size:13px;background:linear-gradient(0deg,rgba(0,0,0,.85),transparent)}
+.gal.paper .cap{position:static;background:none;color:var(--void);padding:8px 0 0}
+.gal button{animation:rise .7s cubic-bezier(.2,.8,.2,1) both}
+@keyframes rise{from{clip-path:inset(100% 0 0 0);transform:translateY(40px)}to{clip-path:inset(0 0 0 0);transform:none}}
+
+/* lightbox */
+.lbx{position:fixed;inset:0;z-index:99;background:rgba(5,5,4,.97);display:grid;grid-template-rows:auto 1fr auto;gap:12px;
+  padding:calc(14px + env(safe-area-inset-top,0px)) max(16px,env(safe-area-inset-right,0px)) calc(14px + env(safe-area-inset-bottom,0px)) max(16px,env(safe-area-inset-left,0px))}
+.lbx-top{display:flex;justify-content:space-between;align-items:center;color:var(--gold-hot);font-size:14px;gap:10px}
+.lbx-stage{display:grid;place-items:center;min-height:0}
+.lbx-stage img{max-width:100%;max-height:100%;object-fit:contain}
+.lbx-stage img.paper{background:var(--paper);padding:14px}
+.lbx-nav{display:flex;justify-content:center;gap:12px;align-items:center}
+
+
+/* brief form */
+.brief{margin:70px auto 0;max-width:980px;text-align:start;border:1px solid var(--hair);padding:clamp(20px,3vw,40px);background:linear-gradient(160deg,#14110c,#0b0a08)}
+.brief-h{font-family:var(--d-ar);font-weight:600;font-size:clamp(22px,2.4vw,32px);margin-bottom:24px}
+html[lang=en] .brief-h{font-family:var(--d-en);font-stretch:125%;text-transform:uppercase}
+.brief-grid{display:grid;grid-template-columns:1fr 1fr;gap:18px 22px}
+.fld{display:grid;gap:8px;min-width:0}
+.fld.wide{grid-column:1/-1}
+.fld > span{font-size:13px;color:var(--ash)}
+.fld input,.fld textarea{font:inherit;color:var(--bone);background:transparent;border:0;border-bottom:1px solid var(--hair);padding:10px 2px;outline:none;transition:border-color .3s;width:100%}
+.fld input:focus,.fld textarea:focus{border-color:var(--gold)}
+.fld input[aria-invalid=true]{border-color:#d9776b}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chips button{font:inherit;font-size:14px;background:none;border:1px solid var(--hair);color:var(--ash);padding:8px 16px;cursor:pointer;transition:all .25s}
+.chips button[aria-checked=true]{background:var(--gold);border-color:var(--gold);color:var(--void)}
+.brief-act{display:flex;flex-wrap:wrap;gap:14px;align-items:center;margin-top:28px}
+.btn-gold{font:inherit;font-weight:600;background:var(--gold);color:var(--void);border:0;padding:14px 28px;cursor:pointer;transition:background .3s}
+.btn-gold:hover{background:var(--gold-hot)}
+.btn-line{color:var(--gold);text-decoration:none;border:1px solid var(--gold-deep);padding:13px 24px;transition:all .3s}
+.btn-line:hover{border-color:var(--gold);background:rgba(217,180,107,.08)}
+.f-status{font-size:14px;color:var(--gold-hot)}
+@media(max-width:640px){.brief-grid{grid-template-columns:1fr}}
+/* clients */
+.clients{display:flex;flex-wrap:wrap;gap:12px 40px;justify-content:center;align-items:center;margin-top:60px;color:var(--ash)}
+.clients b{font-family:var(--d-en);font-stretch:125%;font-weight:700;font-size:22px;letter-spacing:.08em;color:var(--bone);opacity:.8}
+.clients small{display:block;font-size:12px;font-weight:400;letter-spacing:0;color:var(--ash);font-stretch:100%}
+
+
+/* display faces: Amiri (AR) + Cormorant Garamond (EN) */
+.num b,.card .n,.ps .k,.case-head .n,.next .nn,.pct,.mq-row span,.clients b,html[lang=en] .disp,html[lang=en] .svc-row .t,html[lang=en] .card h3,html[lang=en] .ps h3,html[lang=en] .manifesto p,html[lang=en] .hero-claim,html[lang=en] #menulist .mt,html[lang=en] .next .nt,html[lang=en] .brief-h{font-weight:600!important;font-stretch:100%!important}
+html[lang=en] .disp{letter-spacing:.01em;text-transform:none}
+html[lang=ar] .disp,html[lang=ar] .manifesto p,html[lang=ar] .svc-row .t,html[lang=ar] #menulist .mt,html[lang=ar] .card h3,html[lang=ar] .hero-claim,html[lang=ar] .next .nt,.kin-row.ar span{font-weight:700;line-height:1.5}
+html[lang=ar] .disp{line-height:1.45}
+.kin-row.ar span{line-height:1.6}
+
+/* hero image trail */
+.trail{position:absolute;inset:0;z-index:1;pointer-events:none;overflow:hidden}
+.trail img{position:absolute;left:0;top:0;width:clamp(150px,14vw,240px);aspect-ratio:4/5;object-fit:cover;opacity:0;border:1px solid rgba(217,180,107,.35);will-change:transform,opacity}
+
+/* image tunnel */
+.tunnel{height:330vh;position:relative;z-index:2}
+.tn-pin{position:sticky;top:0;height:100svh;overflow:hidden;perspective:1000px;display:grid;place-items:center;background:radial-gradient(circle at 50% 50%,#17130c,var(--void) 70%)}
+.tn-stage{position:absolute;inset:0;transform-style:preserve-3d;will-change:transform}
+.tn-stage figure{position:absolute;left:50%;top:50%;margin:0;width:clamp(220px,26vw,440px);aspect-ratio:4/3;will-change:transform,opacity;opacity:0}
+.tn-stage figure.tall{aspect-ratio:3/4;width:clamp(170px,18vw,320px)}
+.tn-stage img{width:100%;height:100%;object-fit:cover;display:block;box-shadow:0 30px 80px rgba(0,0,0,.6)}
+.tn-txt{position:relative;z-index:2;text-align:center;pointer-events:none;padding-inline:20px}
+.tn-txt h2{margin:10px 0 0;font-size:clamp(40px,7.5vw,128px);text-shadow:0 10px 50px rgba(0,0,0,.9)}
+.tn-txt p{margin:16px auto 0;color:var(--ash);max-width:40ch}
+.tn-count{font-family:var(--d-en);color:var(--gold);font-size:clamp(18px,1.6vw,24px);letter-spacing:.2em}
+
+/* kinetic type */
+.kin{direction:ltr;overflow:hidden;padding-block:12vh;position:relative;z-index:2;border-block:1px solid var(--hair)}
+.kin-row{display:flex;gap:4vw;width:max-content;white-space:nowrap;font-size:clamp(56px,11vw,190px);line-height:1.15;will-change:transform}
+.kin-row span{display:inline-block}
+.kin-row .o{color:transparent;-webkit-text-stroke:1px var(--gold-deep)}
+.kin-row .g{color:var(--gold)}
+.kin-row .w{color:var(--bone)}
+.kin-row.ar span{font-family:var(--d-ar);font-weight:700}
+.kin-row.en span{font-family:var(--d-en);text-transform:uppercase;letter-spacing:.04em}
+
+
+/* lead architect */
+.arch{display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.15fr);gap:clamp(30px,6vw,90px);align-items:center;margin-block:16vh}
+.arch-photo{position:relative;aspect-ratio:4/5;max-width:100%;border:1px solid rgba(217,180,107,.35);background:radial-gradient(circle at 50% 35%,#1d170e,#0b0a08 70%);display:grid;place-items:center;overflow:hidden}
+.arch-photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.arch-photo .mono-tn{font-family:var(--d-en);font-weight:600;font-size:clamp(90px,12vw,170px);color:transparent;-webkit-text-stroke:1px var(--gold);letter-spacing:.04em;direction:ltr}
+.arch-photo::after{content:"";position:absolute;inset:14px;border:1px solid rgba(217,180,107,.18);pointer-events:none}
+.arch-name{margin:10px 0 0;font-size:clamp(40px,5.6vw,84px)}
+.arch-role{color:var(--gold);font-size:18px;margin-top:6px}
+.arch-quote{margin:28px 0 0;font-size:clamp(19px,1.7vw,24px);line-height:1.8;color:#d8d0c2;border-inline-start:2px solid var(--gold);padding-inline-start:22px;max-width:56ch}
+html[lang=ar] .arch-quote{font-family:var(--d-ar);font-size:clamp(21px,1.9vw,26px)}
+html[lang=en] .arch-quote{font-family:var(--d-en);font-style:italic}
+.arch-facts{display:flex;flex-wrap:wrap;gap:0;margin-top:34px;border-top:1px solid var(--hair)}
+.arch-facts div{padding:18px 28px 0 0;margin-inline-end:28px;border-inline-end:1px solid var(--hair)}
+html[lang=ar] .arch-facts div{padding:18px 0 0 28px}
+.arch-facts div:last-child{border:0}
+.arch-facts b{display:block;font-family:var(--d-en);font-size:34px;font-weight:600;color:var(--gold);line-height:1}
+.arch-facts span{font-size:14px;color:var(--ash)}
+@media(max-width:820px){.arch{grid-template-columns:1fr}.arch-photo{max-width:420px}}
+
+/* v3 additions */
+html[lang=ar] .disp{line-height:1.3}
+.snd{display:flex!important;align-items:flex-end;gap:2px;height:30px}
+.snd i{display:block;width:2px;height:6px;background:#fff;transition:height .2s}
+.snd span{margin-inline-start:8px;font-size:13px}
+.snd[aria-pressed=true] i{animation:eq .9s ease-in-out infinite}
+.snd[aria-pressed=true] i:nth-child(2){animation-delay:-.3s}.snd[aria-pressed=true] i:nth-child(3){animation-delay:-.6s}.snd[aria-pressed=true] i:nth-child(4){animation-delay:-.15s}
+@keyframes eq{0%,100%{height:4px}50%{height:16px}}
+.menu-btn{display:flex!important;align-items:center;gap:10px}
+.menu-btn span{display:block;width:26px;height:1px;background:#fff;transition:transform .4s}
+.menu-btn span+span{position:absolute;margin-top:7px}
+.menu-btn span:first-child{margin-top:-7px;position:absolute}
+.menu-btn b{font-weight:500;margin-inline-start:36px}
+.menu-btn.x span:first-child{transform:translateY(7px) rotate(45deg)}
+.menu-btn.x span+span{transform:translateY(-7px) rotate(-45deg)}
+@media(max-width:760px){.snd span,.menu-btn b{display:none!important}}
+.menu{position:fixed;inset:0;z-index:87;background:var(--void);overflow:hidden}
+.menu-bg{position:absolute;inset:0;background-size:cover;background-position:center;opacity:.28;filter:grayscale(.3) brightness(.8)}
+.menu-bg.pop{animation:mbg 1.2s cubic-bezier(.2,.8,.2,1)}
+@keyframes mbg{from{transform:scale(1.15);opacity:0}to{transform:scale(1);opacity:.28}}
+.menu-in{position:relative;height:100%;display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;padding:110px max(24px,env(safe-area-inset-right,0px)) 40px max(24px,env(safe-area-inset-left,0px));overflow-y:auto}
+#menulist{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+#menulist li{overflow:hidden}
+#menulist a{display:flex;align-items:baseline;gap:20px;text-decoration:none;padding:4px 0}
+#menulist .mn{font-family:var(--b-en);font-size:13px;color:var(--gold);min-width:28px}
+#menulist .mt{font-family:var(--d-ar);font-weight:600;font-size:clamp(28px,4.6vw,64px);line-height:1.15;transition:color .3s,transform .5s cubic-bezier(.2,.8,.2,1)}
+html[lang=en] #menulist .mt{font-family:var(--d-en);font-weight:700;text-transform:uppercase}
+#menulist a:hover .mt{color:var(--gold);transform:translateX(16px)}
+html[dir=rtl] #menulist a:hover .mt{transform:translateX(-16px)}
+.menu-side{display:grid;gap:8px;max-width:300px;color:var(--ash)}
+.menu-side b{font-family:var(--b-en);color:var(--bone);font-weight:500;direction:ltr;text-align:start}
+html[lang=ar] .menu-side b{text-align:right}
+@media(max-width:760px){.menu-in{grid-template-columns:1fr;align-content:center}.menu-side{display:none}}
+.curtain{position:fixed;inset:0;z-index:98;background:var(--gold);display:grid;place-items:center}
+.curtain img{width:120px;filter:brightness(0) saturate(100%)}
+.case{transition:none}
+.next{all:unset;cursor:none;display:grid;position:relative;margin-top:90px;height:clamp(240px,40vw,420px);overflow:hidden;align-content:end;padding:clamp(18px,3vw,40px);box-sizing:border-box;width:100%}
+.next img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.45);transition:transform 1.2s cubic-bezier(.2,.8,.2,1),filter .6s}
+.next:hover img{transform:scale(1.06);filter:brightness(.7)}
+.next span{position:relative}
+.next .nn{font-family:var(--d-en);font-weight:800;font-size:clamp(60px,9vw,140px);line-height:.85;color:var(--gold)}
+.next .nt{font-family:var(--d-ar);font-weight:700;font-size:clamp(26px,3.6vw,52px)}
+html[lang=en] .next .nt{font-family:var(--d-en);text-transform:uppercase}
+@media (hover:none){.next{cursor:pointer}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.manifesto .w{opacity:1}}
+</style>
+</head>
+<body>
+
+<div class="loader" id="loader" aria-hidden="true">
+  <div class="box">
+    <svg viewBox="0 0 120 90"><path d="M8 10 L40 22 L60 52 L80 22 L112 10 L98 52 L72 84 L84 44 L60 70 L36 44 L48 84 L22 52 Z"/></svg>
+    <div class="pct" id="pct">0</div>
+    <div class="mono">MAX DESIGN</div>
+  </div>
+</div>
+<div class="grain" aria-hidden="true"></div>
+<canvas id="gl" aria-hidden="true"></canvas>
+<div class="c-ring" id="ring"><span id="ringt"></span></div><div class="c-dot" id="dot"></div>
+<div class="float" id="float"><canvas id="floatcv"></canvas><img id="floatimg" alt=""></div>
+
+<nav class="nav" aria-label="Main">
+  <a class="brand" href="#top"><img src="img/logo.png" alt="Max Design"><b>MAX DESIGN</b></a>
+  <div class="nav-r">
+    <a href="#services"><span data-l="ar">خدماتنا</span><span data-l="en">Services</span></a>
+    <a href="#work"><span data-l="ar">أعمالنا</span><span data-l="en">Work</span></a>
+    <a href="/contact/"><span data-l="ar">تواصل</span><span data-l="en">Contact</span></a>
+    <button class="snd" id="snd" type="button" aria-pressed="false" aria-label="Sound"><i></i><i></i><i></i><i></i><span data-l="ar">الصوت</span><span data-l="en">Sound</span></button>
+    <button class="lang" id="lang" type="button">EN</button>
+    <button class="menu-btn" id="menuBtn" type="button" aria-expanded="false" aria-controls="menu"><span></span><span></span><b data-l="ar">القائمة</b><b data-l="en">Menu</b></button>
+  </div>
+</nav>
+
+<header class="hero bleed" id="top">
+  <div class="hero-txt">
+    <h1 id="htitle" aria-label="MAX DESIGN">MAX DESIGN</h1>
+    <div class="hero-foot">
+      <p class="hero-claim"><span data-l="ar">ما نصمم مساحات…<br><em>نصمم أسلوب حياة.</em></span><span data-l="en">We don't design spaces.<br><em>We design a lifestyle.</em></span></p>
+      <div class="scroll-cue mono"><i></i><span data-l="ar" style="letter-spacing:0;font-family:var(--b-ar);font-size:14px">حرّك المؤشر · مرّر للأسفل</span><span data-l="en">Move · Scroll</span></div>
+    </div>
+  </div>
+</header>
+
+<main>
+  <section class="manifesto in" id="about">
+    <div class="mono gold"><span data-l="ar" style="letter-spacing:0;font-family:var(--b-ar);font-size:15px">من نحن</span><span data-l="en">About</span></div>
+    <p id="mf-ar" data-l="ar">من الفلل الفخمة للقصور الفاخرة، للمحلات اللي تحتاج هوية، ومقرات الشركات اللي تعكس احترافيتها: ماكس ديزاين تحوّل رؤيتك لواقع.</p>
+    <p id="mf-en" data-l="en">From grand villas and palaces to stores that need an identity and headquarters that mean business: Max Design turns your vision into reality.</p>
+    <div class="sub">
+      <p data-l="ar">متخصصين في التصميم الداخلي وتنفيذ المشاريع. فريقنا يغطي كل المراحل: التصميم، اختيار الخامات، الإشراف على التنفيذ، لين التسليم النهائي، عشان تضمن تجربة سلسة من البداية للنهاية.</p>
+      <p data-l="en">We specialise in interior design and project delivery. Our team covers every stage, from design and material selection to site supervision and final handover, so the journey stays seamless from start to finish.</p>
+    </div>
+  </section>
+
+  <div class="nums in" id="nums">
+    <div class="num"><b data-to="5">0</b><span><span data-l="ar">مشاريع مختارة في المعرض</span><span data-l="en">Featured projects</span></span></div>
+    <div class="num"><b data-to="6">0</b><span><span data-l="ar">خدمات تحت سقف واحد</span><span data-l="en">Services under one roof</span></span></div>
+    <div class="num"><b data-to="500" data-suf=" m²">0</b><span><span data-l="ar">مساحة فيلا المشروع 03</span><span data-l="en">Villa area, project 03</span></span></div>
+    <div class="num"><b data-to="4">0</b><span><span data-l="ar">مراحل من الفكرة للمفتاح</span><span data-l="en">Stages from concept to keys</span></span></div>
+  </div>
+
+  <div class="clients in" aria-label="Clients">
+    <span class="mono"><span data-l="ar" style="letter-spacing:0;font-family:var(--b-ar);font-size:14px">من عملائنا</span><span data-l="en">Clients</span></span>
+    <b>HITC<small>Home International Trading Co.</small></b>
+    <b>PROGER<small>DQ Office</small></b>
+  </div>
+
+  <section class="in" id="services">
+    <div class="svc-h">
+      <div><div class="mono gold"><span data-l="ar" style="letter-spacing:0;font-family:var(--b-ar);font-size:15px">ماذا نقدم</span><span data-l="en">What we do</span></div>
+      <h2 class="disp h2"><span data-l="ar">خدماتنا</span><span data-l="en">Services</span></h2></div>
+      <p class="mono" style="max-width:30ch;letter-spacing:.2em"><span data-l="ar" style="letter-spacing:0;font-family:var(--b-ar);font-size:15px">مرّر المؤشر على أي خدمة</span><span data-l="en">Hover a service</span></p>
+    </div>
+    <ul class="svc-list" id="svcs"></ul>
+  </section>
+
+  <div class="build bleed jr" id="build">
+    <div class="build-pin">
+      <canvas id="jcv" aria-label="Camera journey from the clouds over Riyadh into a Max Design villa"></canvas>
+      <div class="jr-vig"></div>
+      <div class="jr-p jr-c" data-in="0" data-out=".09">
+        <div class="mono gold"><span data-l="ar" style="letter-spacing:0;font-family:var(--b-ar);font-size:15px">رحلة مشروع</span><span data-l="en">A project journey</span></div>
+        <h2 class="disp"><span data-l="ar">من السحاب<br><span class="gold">لين التسليم</span></span><span data-l="en">From the sky<br><span class="gold">to handover</span></span></h2>
+      </div>
+      <div class="jr-p jr-s" data-in=".19" data-out=".29">
+        <div class="mono gold">01 · <span data-l="ar" style="letter-spacing:0;font-family:var(--b-ar);font-size:15px">العمارة</span><span data-l="en">Architecture</span></div>
+        <h2 class="disp"><span data-l="ar">نخطط <span class="gold">كل متر</span><br>قبل ما يبدأ البناء</span><span data-l="en">Every metre planned<br><span class="gold">before ground breaks</span></span></h2>
+        <p><span data-l="ar">تصميم معماري يحترم الأرض والمناخ وطريقة عيشك.</span><span data-l="en">Architecture shaped around the site, the climate and how you live.</span></p>
+      </div>
+      <div class="jr-p jr-s jr-alt" data-in=".42" data-out=".52">
+        <div class="mono gold">02 · <span data-l="ar" style="letter-spacing:0;font-family:var(--b-ar);font-size:15px">الواجهة</span><span data-l="en">Facade</span></div>
+        <h2 class="disp"><span data-l="ar">واجهة <span class="gold">تعبّر عنك</span></span><span data-l="en">A facade that<br><span class="gold">speaks for you</span></span></h2>
+        <p><span data-l="ar">حجر طبيعي، زجاج، وضوء. أول انطباع يبقى.</span><span data-l="en">Natural stone, glass and light. First impressions last.</span></p>
+      </div>
+      <div class="jr-p jr-s" data-in=".68" data-out=".78">
+        <div class="mono gold">03 · <span data-l="ar" style="letter-spacing:0;font-family:var(--b-ar);font-size:15px">التصميم الداخلي</span><span data-l="en">Interior</span></div>
+        <h2 class="disp"><span data-l="ar">مساحات <span class="gold">تعيشها</span><br>مو بس تشوفها</span><span data-l="en">Spaces you<br><span class="gold">live in</span></span></h2>
+        <p><span data-l="ar">خامات تُلمس، إضاءة دافئة، وتفاصيل في كل زاوية.</span><span data-l="en">Tactile materials, warm light, considered detail.</span></p>
+      </div>
+      <div class="jr-p jr-e" data-in=".92" data-out="2">
+        <div class="jr-box">
+          <div class="mono">04 · <span data-l="ar" style="letter-spacing:0;font-family:var(--b-ar);font-size:15px">إدارة المشاريع</span><span data-l="en">Project management</span></div>
+          <h2 class="disp"><span data-l="ar">من المخطط إلى التسليم</span><span data-l="en">From plan to handover</span></h2>
+          <div class="jr-btns"><a href="https://wa.me/966579277975" target="_blank" rel="noopener"><span data-l="ar">ابدأ مشروعك</span><span data-l="en">Start your project</span></a><a class="o" href="/tour/"><span data-l="ar">ادخل الفيلا 360°</span><span data-l="en">Enter the villa 360°</span></a></div>
+        </div>
+      </div>
+      <div class="jr-hs" id="jhs"></div>
+      <div class="jr-card" id="jcard" role="dialog" aria-live="polite"><small class="mono" id="jcen"></small><h3 class="disp" id="jct"></h3><p id="jcd"></p>
+        <div class="jr-btns"><a id="jcwa" href="https://wa.me/966579277975" target="_blank" rel="noopener"><span data-l="ar">أبي زيّها</span><span data-l="en">I want this</span></a><button type="button" class="o" id="jcx"><span data-l="ar">إغلاق</span><span data-l="en">Close</span></button></div></div>
+      <div class="jr-load" id="jload"><i></i></div>
+    </div>
+  </div>
+
+  <div class="mq bleed" aria-hidden="true"><div class="mq-row" id="mq"></div></div>
+
+  <section class="tunnel bleed" id="tunnel" aria-label="Project images">
+    <div class="tn-pin">
+      <div class="tn-stage" id="tnStage"></div>
+      <div class="tn-txt">
+        <div class="tn-count" id="tnCount"></div>
+        <h2 class="disp"><span data-l="ar">كل مساحة<br><span class="gold">حكاية.</span></span><span data-l="en">Every space<br><span class="gold">tells a story.</span></span></h2>
+        <p><span data-l="ar">مرّر للأسفل وتجوّل بين أعمالنا: تصاميم ومخططات وصور من مواقع التنفيذ.</span><span data-l="en">Scroll through our work: renders, drawings and photos from site.</span></p>
+      </div>
+    </div>
+  </section>
+
+  <section class="work" id="work">
+    <div class="in work-head">
+      <div><div class="mono gold"><span data-l="ar" style="letter-spacing:0;font-family:var(--b-ar);font-size:15px">معرض الأعمال</span><span data-l="en">Selected work</span></div>
+      <h2 class="disp h2"><span data-l="ar">أعمالنا</span><span data-l="en">Our work</span></h2></div>
+      <p class="mono" style="letter-spacing:.2em"><span data-l="ar" style="letter-spacing:0;font-family:var(--b-ar);font-size:15px">اضغط على أي مشروع لعرض تفاصيله</span><span data-l="en">Open a project</span></p>
+    </div>
+    <div class="hz bleed" id="hz"><div class="hz-track" id="track"></div></div>
+  </section>
+
+  <section class="arch in" id="architect">
+    <div class="arch-photo"><img src="img/talha.webp" alt="Talha Niaz, Architect" width="1000" height="1250" loading="lazy"></div>
+    <div>
+      <div class="mono gold"><span data-l="ar" style="letter-spacing:0;font-family:var(--b-ar);font-size:15px">المهندس المسؤول</span><span data-l="en">Lead architect</span></div>
+      <h2 class="disp arch-name"><span data-l="ar">طلحة نياز</span><span data-l="en">Talha Niaz</span></h2>
+      <div class="arch-role"><span data-l="ar">مهندس معماري</span><span data-l="en">Architect</span></div>
+      <p class="arch-quote"><span data-l="ar">«أؤمن أن العمارة لا تكتفي بأن تكون جميلة وعملية، بل يجب أن تستجيب بذكاء لمناخها وسياقها: إضاءة طبيعية، وتحكّم في أشعة الشمس، وتهوية طبيعية، وخامات موفّرة للطاقة، لمبانٍ مريحة تدوم طويلاً.»</span><span data-l="en">“Architecture should not only be beautiful and functional; it should respond intelligently to its climate and context through daylight, solar control, natural ventilation and energy-conscious materials, creating buildings that are comfortable and enduring.”</span></p>
+      <div class="arch-facts">
+        <div><b>+10</b><span><span data-l="ar">سنوات خبرة في العمارة والتنفيذ</span><span data-l="en">years in architecture &amp; construction</span></span></div>
+        <div><b>05</b><span><span data-l="ar">مشاريع في معرض الأعمال</span><span data-l="en">projects in the portfolio</span></span></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="kin bleed" aria-hidden="true">
+    <div class="kin-row ar" data-d="1"><span class="w">نصمّم</span><span class="g">·</span><span class="o">نشرف</span><span class="g">·</span><span class="w">ننفّذ</span><span class="g">·</span><span class="o">نسلّم</span><span class="g">·</span><span class="w">نصمّم</span><span class="g">·</span><span class="o">نشرف</span><span class="g">·</span><span class="w">ننفّذ</span><span class="g">·</span><span class="o">نسلّم</span></div>
+    <div class="kin-row en" data-d="-1"><span class="o">Palaces</span><span class="g">◆</span><span class="w">Villas</span><span class="g">◆</span><span class="o">Apartments</span><span class="g">◆</span><span class="w">Retail</span><span class="g">◆</span><span class="o">Offices</span><span class="g">◆</span><span class="w">Interiors</span><span class="g">◆</span><span class="o">Palaces</span><span class="g">◆</span><span class="w">Villas</span></div>
+    <div class="kin-row ar" data-d="1"><span class="g">قصور</span><span class="o">فلل</span><span class="w">شقق</span><span class="g">محلات</span><span class="o">مكاتب</span><span class="w">قصور</span><span class="g">فلل</span><span class="o">شقق</span><span class="w">محلات</span><span class="g">مكاتب</span></div>
+  </section>
+
+  <section class="proc in">
+    <div class="mono gold"><span data-l="ar" style="letter-spacing:0;font-family:var(--b-ar);font-size:15px">منهجيتنا</span><span data-l="en">How we work</span></div>
+    <h2 class="disp h2"><span data-l="ar">تصميم · تخطيط · تنفيذ</span><span data-l="en">Design · Plan · Build</span></h2>
+    <div class="proc-grid" id="proc"></div>
+  </section>
+
+  <section class="contact in" id="contact">
+    <div class="mono gold"><span data-l="ar" style="letter-spacing:0;font-family:var(--b-ar);font-size:15px">تواصل معنا</span><span data-l="en">Contact</span></div>
+    <h2 class="disp big"><span data-l="ar">خلّنا نصمّم<br><span class="gold">مساحتك.</span></span><span data-l="en">Let's build<br><span class="gold">your vision.</span></span></h2>
+    <a class="mag" id="mag" href="https://wa.me/966579277975" target="_blank" rel="noopener"><span data-l="ar">واتساب</span><span data-l="en">WhatsApp</span></a>
+    <form class="brief" id="brief" novalidate>
+      <div class="brief-h"><span data-l="ar">حدّثنا عن مشروعك</span><span data-l="en">Tell us about your project</span></div>
+      <div class="brief-grid">
+        <label class="fld"><span>{{T('الاسم','Name')}}</span><input id="f-name" name="name" autocomplete="name" required></label>
+        <label class="fld"><span>{{T('رقم الجوال','Mobile')}}</span><input id="f-phone" name="phone" type="tel" inputmode="tel" autocomplete="tel" required dir="ltr"></label>
+        <div class="fld wide"><span>{{T('نوع المشروع','Project type')}}</span><div class="chips" id="f-type" role="radiogroup"></div></div>
+        <label class="fld"><span>{{T('المساحة التقريبية (م²)','Approx. area (m²)')}}</span><input id="f-area" name="area" inputmode="numeric" dir="ltr"></label>
+        <label class="fld"><span>{{T('المدينة / الحي','City / district')}}</span><input id="f-city" name="city"></label>
+        <label class="fld wide"><span>{{T('تفاصيل إضافية','Details')}}</span><textarea id="f-msg" name="message" rows="3"></textarea></label>
+      </div>
+      <div class="brief-act">
+        <button class="btn-gold" type="submit" id="f-send">{{T('أرسل الطلب عبر واتساب','Send via WhatsApp')}}</button>
+        <a id="f-wa" href="https://wa.me/966579277975" target="_blank" rel="noopener" hidden>WhatsApp</a>
+        <a class="btn-line" href="tel:+966579277975">{{T('أو اتصل: 0579277975','Or call +966 57 927 7975')}}</a>
+        <a class="btn-line" href="/contact/">{{T('كل وسائل التواصل','All contact options')}}</a>
+        <a class="btn-line" href="/style/">{{T('اكتشف ستايلك','Find your style')}}</a>
+        <span class="f-status" id="f-status" role="status"></span>
+      </div>
+    </form>
+    <div class="c-grid">
+      <div class="cg"><small class="mono">Phone</small><b>+966 57 927 7975</b><button type="button" data-copy="+966579277975"><span data-l="ar">نسخ</span><span data-l="en">Copy</span></button></div>
+      <div class="cg"><small class="mono">Email</small><b>info@maxdesign.sa</b><button type="button" data-copy="info@maxdesign.sa"><span data-l="ar">نسخ</span><span data-l="en">Copy</span></button></div>
+      <div class="cg"><small class="mono">Instagram · TikTok</small><b><a href="https://www.instagram.com/maxdesign.sa/" target="_blank" rel="noopener">@maxdesign.sa</a></b></div>
+      <div class="cg"><small class="mono">Studio</small><b style="direction:inherit;font-family:inherit;font-weight:500;font-size:16px"><span data-l="ar">شارع وادي الصخيرة، القادسية، الرياض</span><span data-l="en">Wadi Al-Sukhayrah St., Al-Qadisiyah, Riyadh</span></b><a class="maplink" href="https://www.google.com/maps/search/?api=1&amp;query=24.82749,46.8250283" target="_blank" rel="noopener"><span data-l="ar">افتح في الخرائط</span><span data-l="en">Open in Maps</span></a></div>
+    </div>
+    <a class="map" href="https://www.google.com/maps/search/?api=1&amp;query=24.82749,46.8250283" target="_blank" rel="noopener" aria-label="Google Maps">
+      <iframe src="https://maps.google.com/maps?q=24.82749,46.8250283&amp;z=16&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Max Design location" tabindex="-1"></iframe>
+      <span class="map-dot"></span>
+      <span class="map-pin"><span data-l="ar">الاستوديو · القادسية، الرياض</span><span data-l="en">Studio · Al-Qadisiyah, Riyadh</span><i>↗</i></span>
+    </a>
+  </section>
+  <footer class="in"><span>© Max Design · ماكس ديزاين</span><span class="mono">Design / Plan / Build</span></footer>
+</main>
+
+<div class="menu" id="menu" hidden>
+  <div class="menu-bg" id="menubg"></div>
+  <div class="menu-in">
+    <ol id="menulist"></ol>
+    <div class="menu-side">
+      <div class="mono">Contact</div>
+      <b>+966 57 927 7975</b><b>info@maxdesign.sa</b><b>@maxdesign.sa</b>
+      <p><a href="https://www.google.com/maps/search/?api=1&amp;query=24.82749,46.8250283" target="_blank" rel="noopener" style="color:inherit"><span data-l="ar">شارع وادي الصخيرة، القادسية، الرياض ↗</span><span data-l="en">Wadi Al-Sukhayrah St., Al-Qadisiyah, Riyadh ↗</span></a></p>
+    </div>
+  </div>
+</div>
+<div class="curtain" id="curtain" hidden aria-hidden="true"><img src="img/logo.png" alt=""></div>
+<div class="case" id="case" role="dialog" aria-modal="true" aria-label="Project" hidden>
+  <div class="case-top"><span class="mono" id="case-k"></span><button class="x" type="button" id="case-x"><span data-l="ar">رجوع ✕</span><span data-l="en">Close ✕</span></button></div>
+  <div id="case-body"></div>
+</div>
+<div class="lbx" id="lbx" role="dialog" aria-modal="true" aria-label="Image" hidden>
+  <div class="lbx-top"><span id="lbx-cap"></span><button class="x" type="button" id="lbx-x">✕</button></div>
+  <div class="lbx-stage"><img id="lbx-img" alt=""></div>
+  <div class="lbx-nav"><button class="x" type="button" id="lbx-p">‹</button><span id="lbx-n" class="mono"></span><button class="x" type="button" id="lbx-nx">›</button></div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/environments/RoomEnvironment.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/objects/Reflector.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/CopyShader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/LuminosityHighPassShader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/shaders/GammaCorrectionShader.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/EffectComposer.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/RenderPass.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/ShaderPass.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/postprocessing/UnrealBloomPass.js"></script>
+<script>
+(() => {
+const RM = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const HOVER = matchMedia('(hover:hover)').matches;
+const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
+const T = (ar, en) => `<span data-l="ar">${ar}</span><span data-l="en">${en}</span>`;
+const root = document.documentElement;
+const mouse = {x: innerWidth/2, y: innerHeight/2, nx: 0, ny: 0, vx: 0, vy: 0};
+addEventListener('pointermove', e => {
+  mouse.vx = e.clientX - mouse.x; mouse.vy = e.clientY - mouse.y;
+  mouse.x = e.clientX; mouse.y = e.clientY;
+  mouse.nx = e.clientX / innerWidth * 2 - 1; mouse.ny = -(e.clientY / innerHeight * 2 - 1);
+});
+
+/* ---------- language ---------- */
+function setLang(l){
+  root.lang = l; root.dir = l === 'ar' ? 'rtl' : 'ltr';
+  $('#lang').textContent = l === 'ar' ? 'EN' : 'عربي';
+  try{ localStorage.setItem('md-lang', l) }catch(e){}
+  buildManifesto();
+  if (window.ScrollTrigger) requestAnimationFrame(() => ScrollTrigger.refresh());
+}
+
+/* ---------- data ---------- */
+const SVC = [
+  ['تصميم وتنفيذ القصور','Palaces','تصاميم فاخرة بتفاصيل دقيقة وخامات تعكس الفخامة في كل ركن.','Refined detail and premium materials in every corner.','s-palace.webp'],
+  ['تصميم وتنفيذ الفلل','Villas','تصميم شامل لكل أدوار الفيلا مع إشراف كامل لين التسليم.','Every floor designed, supervised through handover.','s-villa.webp'],
+  ['تصميم الشقق السكنية','Apartments','داخلي عصري وعملي، من توزيع المساحات للألوان والخامات.','Modern, practical interiors from layout to finishes.','s-apartment.webp'],
+  ['إدارة وتنفيذ المشاريع','Project management','نتابع التنفيذ خطوة بخطوة، من الخامات والمقاولين للتسليم.','Materials, contractors and delivery, step by step.','s-design.webp'],
+  ['تصميم المحلات التجارية','Retail stores','هوية بصرية تجذب العميل من أول نظرة.','An identity that draws customers in at first sight.','s-retail.webp'],
+  ['المكاتب ومقرات الشركات','Offices & HQs','بيئة عمل احترافية تعكس هوية شركتك.','Workplaces that reflect your brand.','s-office.webp']
+];
+const STEPS = [
+  ['التصميم','Design','الفكرة وتوزيع المساحات والتصور ثلاثي الأبعاد.','Concept, space planning and 3D visualisation.'],
+  ['الخامات','Materials','التشطيبات ولوحات الألوان والمود بورد لكل مساحة.','Finishes, palettes and mood boards for every room.'],
+  ['التنفيذ','Build','مخططات هندسية وإشراف ميداني في كل مرحلة.','Engineering drawings and on-site supervision.'],
+  ['التسليم','Handover','تجربة سلسة لين تسليم المفتاح.','A seamless journey to the final key.']
+];
+const P = [
+ { id:'hitc', n:'01', ar:'مبنى مكاتب HITC', en:'HITC Office Building', hero:'003-003.webp',
+   dAr:'شركة هوم الدولية للتجارة. مشروع مميّز يجمع بين الوظيفة والجمال.', dEn:'Home International Trading Company. A landmark serving both purpose and aesthetics.',
+   tags:[['مكاتب','Office'],['446 م²','446 m²'],['تصميم + تنفيذ','Design + Build']],
+   facts:[['مكاتب','Office','النوع','Type'],['173 م²','173 m²','الدور الأرضي','Ground floor'],['273 م²','273 m²','الدور الأول','First floor']],
+   ba:['003-003.webp','008-022.webp'],
+   tabs:[
+    ['الفكرة','Concept',[['004-004.webp','لوحة الفكرة والتوجه التصميمي','Concept & design intent board']],1],
+    ['المخططات','Drawings',[['d005-008.webp','مسقط الدور الأرضي','Ground floor plan'],['d005-010.webp','مسقط الدور الأول','First floor plan'],['d006-016.webp','الشبكة الإنشائية','Grid plan'],['d006-014.webp','قطاع أ-أ','Section A-A'],['d007-018.webp','الواجهة الشمالية','North elevation'],['d007-020.webp','الواجهة الشرقية','East elevation']],1],
+    ['التنفيذ','On site',[['008-022.webp','المبنى بعد التنفيذ','Completed building'],['008-024.webp','المدخل','Entrance'],['008-023.webp','الهيكل الخرساني','Concrete frame'],['008-021.webp','الفتحة الدائرية','Roof oculus']]]
+   ]},
+ { id:'forest', n:'02', ar:'مجمع فوريست فيلاز', en:'Forest Villas – Green Acres', hero:'012-046.webp',
+   dAr:'مشروع يجسّد الكمال الجمالي، وفكرته قائمة على التباين والترابط.', dEn:'Perfection, aesthetically. The whole idea is contrast and connection.',
+   tags:[['سكني','Residential'],['B + G + 5','B + G + 5'],['نادي · جيم · مسبح','Club · Gym · Pool']],
+   facts:[['سكني','Residential','النوع','Type'],['B + G + 5','B + G + 5','الأدوار','Levels'],['نادي · جيم · مسبح','Club · Gym · Pool','المرافق','Amenities']],
+   tabs:[
+    ['التصورات','Renders',[['012-046.webp','الواجهة ليلاً','Facade at night'],['012-048.webp','البلوكات السكنية','Residential blocks'],['012-047.webp','الفناء الداخلي','Courtyard'],['012-045.webp','المدخل الرئيسي','Main approach']]],
+    ['المخططات','Drawings',[['d009-026.webp','القبو','Basement'],['d009-030.webp','الأرضي','Ground floor'],['d010-032.webp','الأول','First floor'],['d010-034.webp','الثاني','Second floor'],['d010-036.webp','الثالث','Third floor'],['d011-042.webp','الرابع','Fourth floor'],['d011-044.webp','الخامس','Fifth floor']],1]
+   ]},
+ { id:'villa', n:'03', ar:'فيلا سكنية', en:'Residential Villa', hero:'013-049.webp',
+   dAr:'فيلا عائلية معاصرة، حجر وخشب وإضاءة في تناغم كامل.', dEn:'A contemporary family villa where stone, timber and light work in harmony.',
+   tags:[['فيلا','Villa'],['500 م²','500 m²'],['داخلي + تنفيذ','Interior + Build']],
+   facts:[['فيلا','Villa','النوع','Type'],['500 م²','500 m²','المساحة','Area'],['تصميم + داخلي + تنفيذ','Design + Interior + Build','النطاق','Scope']],
+   tabs:[
+    ['الداخلي','Interiors',[['018-077.webp','الصالة','Lounge'],['018-078.webp','غرفة النوم الرئيسية','Master bedroom'],['018-079.webp','غرفة نوم','Bedroom'],['018-081.webp','غرفة نوم','Bedroom'],['018-080.webp','تفصيلة جدارية','Wall detail'],['018-083.webp','جدار هندسي','Geometric wall']]],
+    ['لوحات الألوان','Palettes',[0,1,2,3,4,5,6,7].map(i=>[`016-0${64+i}.webp`,'لوحة ألوان','Colour palette'])],
+    ['المخططات','Drawings',[['d014-051.webp','القبو','Basement'],['d014-053.webp','الأرضي','Ground floor'],['d014-055.webp','الأول','First floor'],['d015-057.webp','الواجهة الأمامية','Front elevation'],['d015-059.webp','قطاع أ-أ','Section A-A'],['d015-061.webp','الواجهة الجانبية','Side elevation'],['d015-063.webp','قطاع ب-ب','Section B-B']],1],
+    ['التنفيذ','On site',[['017-072.webp','الواجهة أثناء التنفيذ','Facade during works'],['017-073.webp','تكسيات حجرية','Stone cladding'],['017-075.webp','حجر طبيعي','Natural stone'],['017-076.webp','رخام','Marble'],['017-074.webp','أرضيات خارجية','External paving']]]
+   ]},
+ { id:'proger', n:'04', ar:'مكتب بروجر DQ', en:'PROGER DQ Office', hero:'021-088.webp',
+   dAr:'بيئة عمل عصرية ومرنة، من التصميم للتنفيذ والتسليم.', dEn:'A flexible, modern workplace, from design through build and handover.',
+   tags:[['تجهيز مكاتب','Fit-out'],['229.8 م²','229.8 m²'],['2026','2026']],
+   facts:[['تجهيز مكاتب','Office fit-out','النوع','Type'],['229.8 م²','229.8 m²','المساحة','Area'],['يناير 2026','Jan 2026','التسليم','Completed']],
+   ba:['019-084.webp','024-107.webp'],
+   tabs:[
+    ['التصورات','Renders',[['019-084.webp','الاستقبال','Reception'],['021-087.webp','مكتب المدير','Manager office'],['021-088.webp','قاعة الاجتماعات','Boardroom'],['021-089.webp','الاستراحة','Pantry & lounge'],['021-090.webp','الانتظار','Waiting'],['022-091.webp','مساحة عمل','Workspace'],['022-092.webp','مساحة عمل','Workspace'],['022-093.webp','مساحة مرنة','Flexible space'],['022-094.webp','الاستقبال','Lounge']]],
+    ['المخطط','Layout',[['d020-plan.webp','مخطط التوزيع · 229.76 م²','Layout · 229.76 m²']],1],
+    ['التنفيذ','On site',[['023-096.webp','البلوك','Blockwork'],['023-097.webp','التكييف','HVAC'],['023-102.webp','الأسقف','Ceilings'],['023-099.webp','الكهرباء','Electrical'],['023-100.webp','الجبس','Gypsum'],['023-101.webp','الزجاج','Glass']]],
+    ['التسليم','Completion',[['024-107.webp','الاستقبال','Reception'],['024-104.webp','المدخل','Entrance'],['024-103.webp','مكتب المدير','Manager office'],['024-105.webp','الممر','Corridor'],['024-106.webp','غرفة اجتماعات','Meeting room']]]
+   ]},
+ { id:'sih', n:'05', ar:'مسكن SIH', en:'SIH Residence', hero:'025-108.webp',
+   dAr:'سكن مستوحى من العمارة التراثية: أقواس وقباب وطوب يدوي.', dEn:'Heritage-inspired: arches, domes and hand-laid brick.',
+   tags:[['سكن','Residence'],['تراثي','Heritage'],['قباب طوب','Brick domes']],
+   facts:[['سكن','Residence','النوع','Type'],['تراثي','Heritage','الطراز','Style']],
+   tabs:[
+    ['بعد التنفيذ','Completion',[['030-121.webp','الصالة','Main hall'],['030-122.webp','الفناء','Courtyard'],['030-120.webp','الباب المحفور','Carved door']]],
+    ['المخططات','Drawings',[['d026-109.webp','الأرضي','Ground floor'],['d026-110.webp','الأول','First floor'],['d027-111.webp','الواجهات','Elevations'],['d028-112.webp','السطح','Roof plan'],['d028-113.webp','قطاع أ-أ','Section A-A']],1],
+    ['التنفيذ','Site progress',[['029-114.webp','القبة','Dome'],['029-115.webp','قبو الطوب','Brick vault'],['029-116.webp','باطن القبة','Dome soffit'],['029-117.webp','الأقواس','Arches'],['029-118.webp','القبة من الداخل','Dome interior'],['029-119.webp','القاعة','Hall']]]
+   ]}
+];
+
+/* ---------- render static parts ---------- */
+$('#svcs').innerHTML = SVC.map((s,i) => `<li class="svc-row" data-img="${s[4]}"><span class="mono">0${i+1}</span><span class="t">${T(s[0],s[1])}</span><p>${T(s[2],s[3])}</p></li>`).join('');
+$('#proc').innerHTML = STEPS.map((s,i) => `<div class="ps"><div class="k">0${i+1}</div><h3>${T(s[0],s[1])}</h3><p>${T(s[2],s[3])}</p></div>`).join('');
+$('#track').innerHTML = P.map(p => `<article class="card" tabindex="0" role="button" data-id="${p.id}" aria-label="${p.en}">
+  <img src="img/${p.hero}" alt="" loading="lazy">
+  <div class="meta"><div><div class="n">${p.n}</div><h3>${T(p.ar,p.en)}</h3><div class="tags">${p.tags.map(t=>`<span>${T(t[0],t[1])}</span>`).join('')}</div></div>
+  <span class="open">${T('<span style="font-family:var(--b-ar);letter-spacing:0;font-size:15px">افتح المشروع ←</span>','Open case →')}</span></div></article>`).join('');
+const words = [['PALACES',1],['قصور',2],['VILLAS',0],['فلل',2],['OFFICES',1],['مكاتب',2],['RETAIL',0],['محلات',2],['INTERIORS',1],['تصميم داخلي',2]];
+const mqHtml = words.map(w => `<span class="${w[1]===1?'f':w[1]===2?'ar':''}">${w[0]}</span>`).join('');
+$('#mq').innerHTML = mqHtml + mqHtml;
+
+/* hero title letters */
+$('#htitle').innerHTML = 'MAX DESIGN'.split('').map(c => c === ' ' ? '<span class="ch">&nbsp;</span>' : `<span class="ch">${c}</span>`).join('');
+
+/* manifesto: words light up with scroll */
+function buildManifesto(){
+  ['#mf-ar','#mf-en'].forEach(id => {
+    const el = $(id); if (el.dataset.done) return;
+    const hl = id === '#mf-ar' ? ['ماكس','ديزاين','رؤيتك','لواقع.'] : ['Max','Design','vision','reality.'];
+    el.innerHTML = el.textContent.trim().split(/\s+/).map(w => `<span class="w${hl.includes(w)?' hl':''}">${w}</span>`).join(' ');
+    el.dataset.done = 1;
+  });
+}
+let saved = 'ar'; try{ saved = localStorage.getItem('md-lang') || 'ar' }catch(e){}
+setLang(saved);
+$('#lang').onclick = () => setLang(root.lang === 'ar' ? 'en' : 'ar');
+
+/* ---------- sound toggle ---------- */
+$('#snd').onclick = () => { const on = SND.toggle(); $('#snd').setAttribute('aria-pressed', on); if (on) SND.blip(880,.2,.05); };
+document.addEventListener('pointerover', e => { if (e.target.closest('.nav-r a,.nav-r button,.tab,.x')) SND.blip(1200,.05,.02); });
+
+/* ---------- loader ---------- */
+const imgs = [...new Set(['logo.png','hero.webp',...P.map(p=>p.hero),...SVC.map(s=>s[4])])];
+let loaded = 0, shown = 0;
+const pct = $('#pct');
+imgs.forEach(src => { const i = new Image(); i.onload = i.onerror = () => loaded++; i.src = 'img/' + src; });
+const t0 = performance.now();
+(function tick(){
+  const target = Math.min(100, Math.round(loaded / imgs.length * 100), Math.round((performance.now()-t0)/14));
+  shown += (target - shown) * .2; pct.textContent = Math.round(shown);
+  if (shown > 99.4 || performance.now() - t0 > 6000){ pct.textContent = '100'; setTimeout(start, 250); return; }
+  requestAnimationFrame(tick);
+})();
+let started = false;
+function start(){
+  if (started) return; started = true;
+  $('#loader').classList.add('done');
+  setTimeout(() => $('#loader').hidden = true, 1200);
+  if (window.gsap && !RM) gsap.from('#htitle .ch', {yPercent:110, rotate:8, opacity:0, stagger:.05, duration:1.2, ease:'expo.out', delay:.35});
+  hero && hero.intro();
+}
+
+/* ---------- cursor ---------- */
+const ring = $('#ring'), dot = $('#dot'), ringt = $('#ringt');
+if (HOVER && !RM){
+  let rx = mouse.x, ry = mouse.y;
+  (function cl(){ rx += (mouse.x-rx)*.16; ry += (mouse.y-ry)*.16; ring.style.transform = `translate(${rx}px,${ry}px)`; dot.style.transform = `translate(${mouse.x}px,${mouse.y}px)`; requestAnimationFrame(cl); })();
+  document.addEventListener('pointerover', e => {
+    const c = e.target.closest('.card,.gal button,.svc-row,.ba,#mag,.next');
+    const lbl = !c ? '' : (c.classList.contains('card') || c.classList.contains('next')) ? ['افتح','OPEN'] : c.classList.contains('ba') ? ['اسحب','DRAG'] : c.id === 'mag' ? ['',''] : c.classList.contains('svc-row') ? ['',''] : ['كبّر','VIEW'];
+    ring.classList.toggle('big', !!c && !c.classList.contains('svc-row'));
+    ringt.textContent = lbl ? lbl[root.lang==='ar'?0:1] : '';
+  });
+} else { ring.hidden = dot.hidden = true; }
+
+/* ---------- sound: synthesised ambience + UI cues (no files) ---------- */
+const SND = (() => {
+  let ctx = null, master = null, bus = null, on = false;
+  function init(){
+    ctx = new (window.AudioContext || window.webkitAudioContext)();
+    master = ctx.createGain(); master.gain.value = 0; master.connect(ctx.destination);
+    bus = ctx.createGain(); bus.connect(master);
+    const delay = ctx.createDelay(1), fb = ctx.createGain(), dl = ctx.createBiquadFilter();
+    delay.delayTime.value = .34; fb.gain.value = .38; dl.type = 'lowpass'; dl.frequency.value = 1600;
+    bus.connect(delay); delay.connect(dl); dl.connect(fb); fb.connect(delay); dl.connect(master);
+    const pf = ctx.createBiquadFilter(), pg = ctx.createGain(); pf.type = 'lowpass'; pf.frequency.value = 650; pf.Q.value = .6; pg.gain.value = .045;
+    pf.connect(pg); pg.connect(bus);
+    const lfo = ctx.createOscillator(), lg = ctx.createGain(); lfo.frequency.value = .06; lg.gain.value = 320; lfo.connect(lg); lg.connect(pf.frequency); lfo.start();
+    [73.42, 146.83, 220, 277.18, 329.63, 440].forEach((f,i) => [-7, 7].forEach(dt => {
+      const o = ctx.createOscillator(), g = ctx.createGain();
+      o.type = i < 2 ? 'sine' : 'triangle'; o.frequency.value = f; o.detune.value = dt; g.gain.value = i < 2 ? .5 : .2;
+      o.connect(g); g.connect(pf); o.start();
+    }));
+  }
+  function toggle(){
+    if (!ctx) init();
+    on = !on; if (ctx.state === 'suspended') ctx.resume();
+    master.gain.cancelScheduledValues(ctx.currentTime); master.gain.setTargetAtTime(on ? .9 : 0, ctx.currentTime, .5);
+    return on;
+  }
+  function blip(freq = 880, dur = .12, vol = .06){
+    if (!on) return; const t = ctx.currentTime, o = ctx.createOscillator(), g = ctx.createGain();
+    o.type = 'sine'; o.frequency.setValueAtTime(freq, t); o.frequency.exponentialRampToValueAtTime(freq * 1.5, t + dur);
+    g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(vol, t + .006); g.gain.exponentialRampToValueAtTime(.0001, t + dur);
+    o.connect(g); g.connect(bus); o.start(t); o.stop(t + dur + .05);
+  }
+  function whoosh(dur = 1.1){
+    if (!on) return; const t = ctx.currentTime, n = ctx.createBufferSource(), b = ctx.createBuffer(1, ctx.sampleRate * dur, ctx.sampleRate), d = b.getChannelData(0);
+    for (let i=0;i<d.length;i++) d[i] = Math.random()*2-1;
+    n.buffer = b; const f = ctx.createBiquadFilter(), g = ctx.createGain();
+    f.type = 'bandpass'; f.Q.value = 1.4; f.frequency.setValueAtTime(250, t); f.frequency.exponentialRampToValueAtTime(2800, t + dur*.5); f.frequency.exponentialRampToValueAtTime(350, t + dur);
+    g.gain.setValueAtTime(0, t); g.gain.linearRampToValueAtTime(.16, t + dur*.4); g.gain.linearRampToValueAtTime(0, t + dur);
+    n.connect(f); f.connect(g); g.connect(bus); n.start(t);
+  }
+  return { toggle, blip, whoosh, get on(){ return on } };
+})();
+
+/* ---------- FX: one shared WebGL renderer that paints image effects into 2D canvases ---------- */
+const FX = (() => {
+  if (!window.THREE) return null;
+  let r;
+  try { r = new THREE.WebGLRenderer({antialias:false, alpha:true, preserveDrawingBuffer:true}); } catch(e){ return null; }
+  r.setPixelRatio(1);
+  const scene = new THREE.Scene(), cam = new THREE.Camera();
+  const U = {uTex:{value:null}, uImg:{value:new THREE.Vector2(1,1)}, uSize:{value:new THREE.Vector2(1,1)}, uHover:{value:0}, uMouse:{value:new THREE.Vector2(.5,.5)}, uVel:{value:0}, uTime:{value:0}, uBend:{value:0}, uScale:{value:1}, uReveal:{value:1}};
+  const mat = new THREE.ShaderMaterial({uniforms:U, transparent:true,
+    vertexShader:`uniform float uBend, uScale; varying vec2 vUv;
+      void main(){ vUv = uv; vec3 p = position * uScale; p.y += sin(uv.x * 3.14159) * uBend * .04; p.x += sin(uv.y * 3.14159) * uBend * .03; gl_Position = vec4(p.xy * 2., 0., 1.); }`,
+    fragmentShader:`uniform sampler2D uTex; uniform vec2 uImg, uSize, uMouse; uniform float uHover, uVel, uTime, uReveal; varying vec2 vUv;
+      float h(vec2 p){ return fract(sin(dot(p, vec2(12.9898,78.233))) * 43758.5453); }
+      float n(vec2 p){ vec2 i = floor(p), f = fract(p); f = f*f*(3.-2.*f); return mix(mix(h(i),h(i+vec2(1,0)),f.x), mix(h(i+vec2(0,1)),h(i+vec2(1,1)),f.x), f.y); }
+      void main(){
+        vec2 s = uSize / uImg; float m = max(s.x, s.y);
+        vec2 uv = (vUv - .5) * s / m * (1. - .08 * uHover) + .5;
+        vec2 dm = vUv - uMouse; float d = length(dm * vec2(uSize.x / uSize.y, 1.));
+        uv += normalize(dm + 1e-4) * sin(d * 22. - uTime * 4.) * .006 * uHover * smoothstep(.5, 0., d);
+        uv.x += sin(uv.y * 9. + uTime * 1.3) * .002 * abs(uVel);
+        float sp = .0012 * uHover + .005 * abs(uVel);
+        vec3 c = vec3(texture2D(uTex, uv + vec2(sp, 0.)).r, texture2D(uTex, uv).g, texture2D(uTex, uv - vec2(sp, 0.)).b);
+        c *= 1. + .1 * uHover;
+        float nz = n(vUv * 7. + uTime * .2);
+        float th = nz * .85 + (1. - vUv.y) * .15;
+        float vis = step(th, uReveal);
+        float e = smoothstep(uReveal - .07, uReveal, th) * vis * step(uReveal, .999);
+        c = mix(c, vec3(.95,.78,.45), e);
+        gl_FragColor = vec4(c, uReveal >= 1. ? 1. : vis);
+      }`});
+  scene.add(new THREE.Mesh(new THREE.PlaneGeometry(1, 1, 32, 32), mat));
+  const cache = {}, loader = new THREE.TextureLoader();
+  function tex(src, cb){
+    if (cache[src]) { cache[src].ready ? cb(cache[src].t) : cache[src].q.push(cb); return; }
+    const o = cache[src] = {q:[cb], ready:false};
+    o.t = loader.load(src, t => { t.minFilter = THREE.LinearFilter; t.generateMipmaps = false; o.ready = true; o.q.forEach(f => f(t)); });
+  }
+  let lw = 0, lh = 0;
+  function draw(cv, st){
+    if (!st.t) return;
+    const w = cv.width, h = cv.height; if (!w || !h) return;
+    if (w !== lw || h !== lh){ r.setSize(w, h, false); lw = w; lh = h; }
+    U.uTex.value = st.t; U.uImg.value.set(st.t.image.width, st.t.image.height); U.uSize.value.set(w, h);
+    U.uHover.value = st.hover; U.uMouse.value.set(st.mx, st.my); U.uVel.value = st.vel || 0; U.uBend.value = st.bend || 0;
+    U.uScale.value = st.scale || 1; U.uReveal.value = st.reveal == null ? 1 : st.reveal; U.uTime.value = performance.now() / 1000;
+    r.render(scene, cam);
+    const g = st.g || (st.g = cv.getContext('2d'));
+    g.clearRect(0, 0, w, h); g.drawImage(r.domElement, 0, 0);
+  }
+  return { tex, draw };
+})();
+
+/* ---------- floating service image: WebGL plane that bends with mouse speed ---------- */
+const flt = $('#float'), fcv = $('#floatcv'), fimg = $('#floatimg');
+if (HOVER){
+  const st = {hover:1, mx:.5, my:.5, t:null, bend:0, scale:.9, vel:0};
+  const dpr = Math.min(devicePixelRatio, 1.5); fcv.width = 340*dpr; fcv.height = 425*dpr;
+  let fx = mouse.x, fy = mouse.y, on = false, rot = 0;
+  if (FX) fimg.hidden = true; else fcv.hidden = true;
+  $$('.svc-row').forEach(r => {
+    r.addEventListener('pointerenter', () => { on = true; flt.classList.add('on'); SND.blip(620, .1, .035);
+      if (FX) FX.tex('img/' + r.dataset.img, t => st.t = t); else fimg.src = 'img/' + r.dataset.img; });
+    r.addEventListener('pointerleave', () => { on = false; flt.classList.remove('on'); });
+  });
+  (function fl(){
+    requestAnimationFrame(fl);
+    const dx = mouse.x - fx; fx += dx * .12; fy += (mouse.y - fy) * .12;
+    st.bend += (Math.max(-1.2, Math.min(1.2, dx / 90)) - st.bend) * .18; st.vel = st.bend * .35;
+    rot += (Math.max(-8, Math.min(8, dx * .06)) - rot) * .1;
+    flt.style.transform = `translate(${fx}px,${fy}px) translate(-50%,-50%) rotate(${rot}deg) scale(${on ? 1 : .6})`;
+    if (on && FX) FX.draw(fcv, st);
+  })();
+}
+
+/* ---------- scroll velocity (drives image bend + chroma) ---------- */
+let scrollVel = 0;
+{ let ly = scrollY; (function sv(){ requestAnimationFrame(sv); scrollVel += ((scrollY - ly) * 60 - scrollVel) * .2; ly = scrollY; })(); }
+
+/* ---------- project cards: WebGL ripple on hover, bend on scroll, gold noise reveal ---------- */
+const cardSt = [];
+if (FX){
+  const dpr = Math.min(devicePixelRatio, 1.5);
+  $$('.card').forEach(card => {
+    const img = card.querySelector('img'), cv = document.createElement('canvas'); cv.className = 'fxc'; img.after(cv);
+    const st = {hover:0, th:0, mx:.5, my:.5, t:null, vel:0, reveal: RM ? 1 : 0, card, cv, vis:false, dirty:true};
+    FX.tex(img.getAttribute('src'), t => { st.t = t; st.dirty = true; img.style.opacity = 0; });
+    card.addEventListener('pointermove', e => { const r = card.getBoundingClientRect(); st.mx = (e.clientX - r.left) / r.width; st.my = 1 - (e.clientY - r.top) / r.height; });
+    card.addEventListener('pointerenter', () => { st.th = 1; SND.blip(740, .12, .04); });
+    card.addEventListener('pointerleave', () => st.th = 0);
+    new IntersectionObserver(e => {
+      st.vis = e[0].isIntersecting;
+      if (st.vis && st.reveal === 0 && window.gsap) gsap.to(st, {reveal:1, duration:1.8, ease:'power2.inOut', onComplete:() => st.dirty = true});
+    }, {rootMargin:'0px 300px'}).observe(card);
+    cardSt.push(st);
+  });
+  const sizeCards = () => cardSt.forEach(s => { s.cv.width = Math.round(s.card.clientWidth * dpr); s.cv.height = Math.round(s.card.clientHeight * dpr); s.dirty = true; });
+  addEventListener('resize', sizeCards); sizeCards();
+  (function cl(){
+    requestAnimationFrame(cl);
+    const v = RM ? 0 : Math.max(-1, Math.min(1, scrollVel / 2600));
+    cardSt.forEach(s => {
+      if (!s.vis || !s.t) return;
+      s.hover += (s.th - s.hover) * .08; s.vel += (v - s.vel) * .12;
+      if (s.hover > .002 || Math.abs(s.vel) > .003 || s.reveal < 1 || s.dirty){ FX.draw(s.cv, s); s.dirty = false; }
+    });
+  })();
+}
+
+/* ---------- curtain transition ---------- */
+const curtainEl = $('#curtain');
+function curtain(mid){
+  return new Promise(res => {
+    SND.whoosh(1.2);
+    if (!window.gsap || RM){ mid(); res(); return; }
+    curtainEl.hidden = false;
+    gsap.timeline({onComplete:() => { curtainEl.hidden = true; res(); }})
+      .fromTo(curtainEl, {clipPath:'inset(100% 0% 0% 0%)'}, {clipPath:'inset(0% 0% 0% 0%)', duration:.7, ease:'expo.inOut'})
+      .fromTo('#curtain img', {scale:.6, opacity:0, rotate:-8}, {scale:1, opacity:1, rotate:0, duration:.5, ease:'expo.out'}, '-=.2')
+      .add(mid)
+      .to(curtainEl, {clipPath:'inset(0% 0% 100% 0%)', duration:.8, ease:'expo.inOut', delay:.15});
+  });
+}
+
+/* ---------- full-screen menu ---------- */
+const menu = $('#menu'), mbtn = $('#menuBtn'), mbg = $('#menubg');
+const MENU = [
+  ...P.map(p => ({k:'p', id:p.id, n:p.n, ar:p.ar, en:p.en, img:p.hero})),
+  {k:'s', id:'about', n:'—', ar:'من نحن', en:'About', img:'hero.webp'},
+  {k:'s', id:'services', n:'—', ar:'خدماتنا', en:'Services', img:'030-121.webp'},
+  {k:'s', id:'architect', n:'—', ar:'المهندس المسؤول', en:'Lead architect', img:'003-003.webp'},
+  {k:'u', id:'style', url:'/style/', n:'—', ar:'اكتشف ستايلك', en:'Find your style', img:'hero.webp'},
+  {k:'u', id:'contact', url:'/contact/', n:'—', ar:'تواصل معنا', en:'Contact', img:'012-046.webp'}
+];
+$('#menulist').innerHTML = MENU.map(m => `<li><a href="${m.url || '#' + m.id}" data-k="${m.k}" data-id="${m.id}" data-img="${m.img}"><span class="mn">${m.n}</span><span class="mt">${T(m.ar, m.en)}</span></a></li>`).join('');
+let menuOpen = false;
+function setMenu(o){
+  menuOpen = o; mbtn.setAttribute('aria-expanded', o); mbtn.classList.toggle('x', o);
+  SND.whoosh(.8);
+  if (o){
+    menu.hidden = false; lenis && lenis.stop();
+    if (window.gsap && !RM){
+      const r = mbtn.getBoundingClientRect(), cx = r.left + r.width/2, cy = r.top + r.height/2;
+      gsap.fromTo(menu, {clipPath:`circle(0px at ${cx}px ${cy}px)`}, {clipPath:`circle(${Math.hypot(innerWidth, innerHeight)}px at ${cx}px ${cy}px)`, duration:1, ease:'expo.inOut'});
+      gsap.fromTo('#menulist li', {yPercent:120, opacity:0}, {yPercent:0, opacity:1, stagger:.05, duration:.9, ease:'expo.out', delay:.3});
+    }
+  } else {
+    lenis && !caseEl.classList.contains('open') && lenis.start();
+    if (window.gsap && !RM){
+      const r = mbtn.getBoundingClientRect(), cx = r.left + r.width/2, cy = r.top + r.height/2;
+      gsap.to(menu, {clipPath:`circle(0px at ${cx}px ${cy}px)`, duration:.8, ease:'expo.inOut', onComplete:() => menu.hidden = true});
+    } else menu.hidden = true;
+  }
+}
+mbtn.onclick = () => setMenu(!menuOpen);
+$('#menulist').addEventListener('pointerover', e => {
+  const a = e.target.closest('a'); if (!a || a.dataset.cur) return;
+  $$('#menulist a').forEach(x => delete x.dataset.cur); a.dataset.cur = 1;
+  mbg.style.backgroundImage = `url(img/${a.dataset.img})`; mbg.classList.remove('pop'); void mbg.offsetWidth; mbg.classList.add('pop');
+  SND.blip(560 + Math.random()*300, .1, .035);
+});
+$('#menulist').addEventListener('click', e => {
+  const a = e.target.closest('a'); if (!a) return;
+  if (a.dataset.k === 'u') return;
+  e.preventDefault();
+  const id = a.dataset.id;
+  if (a.dataset.k === 'p'){ setMenu(false); go(id); }
+  else { setMenu(false); if (caseEl.classList.contains('open')) closeCase(true); const el = document.getElementById(id); setTimeout(() => lenis ? lenis.scrollTo(el, {offset:-40}) : el.scrollIntoView({behavior:'smooth'}), 500); }
+});
+
+/* ---------- case study pages (each project has its own #link) ---------- */
+const caseEl = $('#case'), caseBody = $('#case-body');
+let curP = null;
+function renderCase(p){
+  curP = p;
+  const nx = P[(P.indexOf(p) + 1) % P.length];
+  $('#case-k').textContent = `${p.n} / 0${P.length}`;
+  caseBody.innerHTML = `
+    <div class="case-hero"><img src="img/${p.hero}" alt="${p.en}" id="case-img"></div>
+    <div class="case-head"><div class="n">${p.n}</div><h2 class="disp">${T(p.ar,p.en)}</h2><p>${T(p.dAr,p.dEn)}</p>
+      <div class="facts">${p.facts.map(f=>`<div class="fact"><b>${T(f[0],f[1])}</b><span>${T(f[2],f[3])}</span></div>`).join('')}</div></div>
+    ${p.ba ? `<div class="ba" id="ba"><img src="img/${p.ba[1]}" alt=""><img class="top" src="img/${p.ba[0]}" alt=""><div class="bar"></div><div class="knob">⇆</div>
+      <span class="bl l">${T('بعد التنفيذ','Built')}</span><span class="bl r">${T('التصميم','Design')}</span>
+      <input type="range" min="0" max="100" value="50" id="ba-r" aria-label="Compare design and built"></div>` : ''}
+    <div class="tabs" role="tablist">${p.tabs.map((t,i)=>`<button class="tab" role="tab" type="button" id="ctab-${i}" aria-selected="${i===0}" data-i="${i}">${T(t[0],t[1])}</button>`).join('')}</div>
+    <div class="gal" id="cgal"></div>
+    <button class="next" type="button" data-id="${nx.id}"><img src="img/${nx.hero}" alt=""><span class="nl mono">${T('<span style="font-family:var(--b-ar);letter-spacing:0;font-size:15px">المشروع التالي</span>','Next project')}</span><span class="nn">${nx.n}</span><span class="nt">${T(nx.ar,nx.en)}</span></button>`;
+  renderGal(0);
+  const ba = $('#ba-r'); if (ba) ba.oninput = () => $('#ba').style.setProperty('--x', ba.value + '%');
+  caseEl.scrollTop = 0;
+}
+function showCase(p){
+  renderCase(p);
+  caseEl.hidden = false; caseEl.classList.add('open');
+  lenis && lenis.stop(); document.body.style.overflow = 'hidden';
+  if (window.gsap && !RM){
+    gsap.fromTo('#case-img', {scale:1.3, filter:'brightness(.4)'}, {scale:1, filter:'brightness(1)', duration:1.8, ease:'expo.out', delay:.6});
+    gsap.fromTo('.case-head > *', {y:60, opacity:0}, {y:0, opacity:1, stagger:.08, duration:1.2, ease:'expo.out', delay:.75});
+  }
+  $('#case-x').focus({preventScroll:true});
+}
+function hideCase(){
+  caseEl.classList.remove('open'); caseEl.hidden = true; curP = null;
+  lenis && lenis.start(); document.body.style.overflow = '';
+}
+function go(id){
+  const p = P.find(x => x.id === id); if (!p) return;
+  if (curP === p) return;
+  curtain(() => showCase(p));
+  try { history.pushState(null, '', '#' + id); } catch(e){}
+}
+function closeCase(silent){
+  const done = () => { hideCase(); try { history.pushState(null, '', location.pathname + location.search); } catch(e){} };
+  silent ? done() : curtain(done);
+}
+function renderGal(i){
+  const t = curP.tabs[i], g = $('#cgal');
+  g.className = 'gal' + (t[3] ? ' paper' : '');
+  g.innerHTML = t[2].map((it,k) => `<button type="button" data-k="${k}" data-i="${i}" style="animation-delay:${k*50}ms"><img src="img/${it[0]}" alt="${it[2]}" loading="lazy"><span class="cap">${T(it[1],it[2])}</span></button>`).join('');
+}
+$('#case-x').onclick = () => closeCase();
+$('#track').addEventListener('click', e => { const c = e.target.closest('.card'); if (c) go(c.dataset.id); });
+$('#track').addEventListener('keydown', e => { const c = e.target.closest('.card'); if (c && (e.key === 'Enter' || e.key === ' ')){ e.preventDefault(); go(c.dataset.id); } });
+caseEl.addEventListener('click', e => {
+  const tab = e.target.closest('.tab');
+  if (tab){ $$('#case .tab').forEach(b => b.setAttribute('aria-selected', b === tab)); renderGal(+tab.dataset.i); SND.blip(500,.08,.04); return; }
+  const nx = e.target.closest('.next'); if (nx){ const id = nx.dataset.id; curtain(() => showCase(P.find(x => x.id === id))); try { history.replaceState(null, '', '#' + id); } catch(e){} return; }
+  const g = e.target.closest('.gal button'); if (g) openLbx(+g.dataset.i, +g.dataset.k);
+});
+addEventListener('popstate', () => {
+  const id = location.hash.slice(1), p = P.find(x => x.id === id);
+  if (p && curP !== p) curtain(() => showCase(p));
+  else if (!p && curP) curtain(hideCase);
+});
+const deep = P.find(x => x.id === location.hash.slice(1));
+if (deep) setTimeout(() => showCase(deep), 1800);
+
+/* ---------- HERO WebGL: logo particles over a liquid image ---------- */
+let hero = null;
+if (window.THREE){
+  const canvas = $('#gl');
+  const renderer = new THREE.WebGLRenderer({canvas, antialias:false, alpha:true});
+  renderer.setPixelRatio(Math.min(devicePixelRatio, 1.75));
+  const scene = new THREE.Scene();
+  const cam = new THREE.OrthographicCamera(-1,1,1,-1,0,10); cam.position.z = 5;
+  const U = {uTime:{value:0}, uMouse:{value:new THREE.Vector2(9,9)}, uRes:{value:new THREE.Vector2(1,1)}, uScatter:{value:1}, uScroll:{value:0}, uTex:{value:null}, uImgRes:{value:new THREE.Vector2(1,1)}, uVel:{value:0}, uAspect:{value:1}, uScale:{value:1}};
+  // background: liquid-distorted hero render
+  const bgMat = new THREE.ShaderMaterial({uniforms:U, transparent:true, depthWrite:false,
+    vertexShader:`varying vec2 vUv; void main(){ vUv = uv; gl_Position = vec4(position.xy,0.,1.); }`,
+    fragmentShader:`
+      uniform sampler2D uTex; uniform vec2 uRes, uImgRes, uMouse; uniform float uTime, uScroll, uVel;
+      varying vec2 vUv;
+      void main(){
+        vec2 s = uRes / uImgRes; float m = max(s.x, s.y);
+        vec2 uv = (vUv - .5) * s / m + .5;
+        vec2 p = vUv * 2. - 1.; p.x *= uRes.x / uRes.y;
+        vec2 mm = uMouse; mm.x *= uRes.x / uRes.y;
+        float d = distance(p, mm);
+        float ripple = sin(d * 18. - uTime * 3.) * exp(-d * 3.2) * (.012 + uVel * .04);
+        uv += normalize(p - mm + 1e-4) * ripple;
+        uv += vec2(sin(uv.y * 8. + uTime * .6), cos(uv.x * 6. + uTime * .5)) * .0025;
+        float split = .0006 + uVel * .004;
+        vec3 col = vec3(texture2D(uTex, uv + vec2(split,0.)).r, texture2D(uTex, uv).g, texture2D(uTex, uv - vec2(split,0.)).b);
+        float lum = dot(col, vec3(.299,.587,.114));
+        vec3 gold = mix(vec3(.03,.025,.02), vec3(.85,.66,.36), lum);
+        col = mix(gold, col, .35);
+        float vig = smoothstep(1.35, .2, length(vUv - vec2(.5,.45)) * 1.6);
+        float a = (.55 * vig) * (1. - uScroll);
+        gl_FragColor = vec4(col * vig, a);
+      }`});
+  scene.add(new THREE.Mesh(new THREE.PlaneGeometry(2,2), bgMat));
+  new THREE.TextureLoader().load('img/s-villa.webp', t => { t.minFilter = THREE.LinearFilter; U.uTex.value = t; U.uImgRes.value.set(t.image.width, t.image.height); });
+
+  // particles sampled from the logo
+  const pts = new THREE.Points(new THREE.BufferGeometry(), new THREE.ShaderMaterial({uniforms:U, transparent:true, depthWrite:false, blending:THREE.AdditiveBlending,
+    vertexShader:`
+      attribute vec3 aRand; uniform float uTime, uScatter, uScroll, uAspect, uScale; uniform vec2 uMouse;
+      varying float vA;
+      void main(){
+        vec3 p = position * uScale;
+        vec3 far = (aRand - .5) * vec3(6., 4., 2.);
+        p = mix(p, far, uScatter);
+        p.xy += vec2(sin(uTime*.7 + aRand.x*20.), cos(uTime*.6 + aRand.y*20.)) * .006;
+        vec2 m = vec2(uMouse.x / uAspect, uMouse.y);
+        vec2 dir = p.xy - m; float d = length(dir);
+        p.xy += normalize(dir + 1e-4) * smoothstep(.22, 0., d) * .12;
+        p.y += uScroll * (aRand.z - .3) * 2.2; p.x += uScroll * (aRand.x - .5) * 1.4;
+        vec4 mv = vec4(p.x * uAspect, p.y, 0., 1.);
+        gl_Position = mv;
+        gl_PointSize = (1.6 + aRand.y * 2.4) * ${Math.min(devicePixelRatio,1.75).toFixed(2)};
+        vA = (.55 + .45 * sin(uTime * 2. + aRand.z * 30.)) * (1. - uScroll * .8);
+      }`,
+    fragmentShader:`varying float vA; void main(){ float d = length(gl_PointCoord - .5); if(d>.5) discard; gl_FragColor = vec4(.96,.80,.48, vA * smoothstep(.5,.0,d)); }`}));
+  scene.add(pts);
+  const li = new Image(); li.onload = () => {
+    const c = document.createElement('canvas'), W = 180, H = Math.round(W * li.height / li.width);
+    c.width = W; c.height = H; const g = c.getContext('2d'); g.drawImage(li, 0, 0, W, H);
+    const data = g.getImageData(0,0,W,H).data, pos = [], rnd = [];
+    const step = innerWidth < 700 ? 2 : 1;
+    for (let y=0; y<H; y+=step) for (let x=0; x<W; x+=step){
+      const i = (y*W+x)*4; if (data[i+3] > 120 && data[i] + data[i+1] > 160){
+        pos.push((x/W - .5) * 1.25, -(y/H - .5) * 1.25 * H / W + .18, 0);
+        rnd.push(Math.random(), Math.random(), Math.random());
+      }
+    }
+    pts.geometry.setAttribute('position', new THREE.Float32BufferAttribute(pos, 3));
+    pts.geometry.setAttribute('aRand', new THREE.Float32BufferAttribute(rnd, 3));
+  };
+  li.src = 'img/logo.png';
+
+  function size(){ renderer.setSize(innerWidth, innerHeight, false); U.uRes.value.set(innerWidth, innerHeight); U.uAspect.value = innerHeight / innerWidth; U.uScale.value = Math.min(.92, innerWidth / innerHeight * .8); }
+  addEventListener('resize', size); size();
+  const sm = new THREE.Vector2(0,0); let vel = 0, done1 = false;
+  const clock = new THREE.Clock();
+  hero = { intro(){ if (window.gsap && !RM) gsap.to(U.uScatter, {value:0, duration:2.6, ease:'expo.out', delay:.2}); else U.uScatter.value = 0; } };
+  (function loop(){
+    requestAnimationFrame(loop);
+    const s = U.uScroll.value; if (s >= .999 && done1) return; done1 = s >= .999;
+    U.uTime.value = clock.getElapsedTime();
+    sm.x += (mouse.nx - sm.x) * .08; sm.y += (mouse.ny - sm.y) * .08;
+    U.uMouse.value.copy(sm);
+    vel += (Math.min(1, Math.hypot(mouse.vx, mouse.vy) / 60) - vel) * .06; U.uVel.value = vel;
+    renderer.render(scene, cam);
+  })();
+  hero.U = U;
+}
+
+/* ---------- camera journey: video frames scrubbed by scroll (10 frames per sprite sheet) ---------- */
+let build = null;
+(() => {
+  const sec = $('#build'), cv = $('#jcv'); if (!sec || !cv) return;
+  const cx = cv.getContext('2d'), N = 313, PER = 10, S = Math.ceil(N/PER);
+  const dir = innerWidth < 820 ? 'sfm' : 'sf', sheets = new Array(S), panels = [...sec.querySelectorAll('.jr-p')], bar = $('#jload i'), ld = $('#jload');
+  let cur = -1, shown = 0, loaded = 0, started = false;
+  const fit = () => { const d = Math.min(devicePixelRatio || 1, 2); cv.width = cv.clientWidth * d; cv.height = cv.clientHeight * d; cur = -1; };
+  addEventListener('resize', fit); fit();
+  const pick = i => { const s = Math.floor(i/PER); if (sheets[s]) return [sheets[s], i % PER];
+    for (let k = 1; k < S; k++){ if (sheets[s-k]) return [sheets[s-k], PER-1]; if (sheets[s+k]) return [sheets[s+k], 0]; } return null; };
+  const draw = i => { const n = pick(i); if (!n) return; const [im, row] = n, fw = im.naturalWidth, fh = im.naturalHeight / PER;
+    const W = cv.width, H = cv.height, r = Math.max(W/fw, H/fh), w = fw*r, h = fh*r; cx.drawImage(im, 0, row*fh, fw, fh, (W-w)/2, (H-h)/2, w, h); };
+  const load = k => new Promise(res => { const im = new Image(); im.onload = async () => { try { await im.decode(); } catch(e){}
+    sheets[k] = im; loaded++; bar.style.width = (loaded/S*100) + '%'; if (loaded === S) ld.classList.add('done'); cur = -1; res(); };
+    im.onerror = res; im.src = `img/journey/${dir}/${String(k).padStart(2,'0')}.webp`; });
+  const start = async () => { if (started) return; started = true;
+    await Promise.all([0,1,2].map(load)); for (let k = 3; k < S; k += 3) await Promise.all([k,k+1,k+2].filter(x => x < S).map(load)); };
+  // start downloading when the section gets close, not on first paint
+  new IntersectionObserver((es, o) => { if (es[0].isIntersecting){ start(); o.disconnect(); } }, {rootMargin:'150% 0px'}).observe(sec);
+  (function tick(){
+    const r = sec.getBoundingClientRect(), p = Math.min(1, Math.max(0, -r.top / (sec.offsetHeight - innerHeight)));
+    if (r.bottom > 0 && r.top < innerHeight){
+      const t = p * (N-1); shown += (t - shown) * (RM ? 1 : .18); if (Math.abs(t - shown) < .05) shown = t;
+      const f = Math.round(shown); if (f !== cur){ cur = f; draw(f); }
+      panels.forEach(el => { const a = +el.dataset.in, b = +el.dataset.out, fd = .035;
+        let o = p >= a && p <= b ? Math.min(1, (p-a)/fd, (b-p)/fd) : 0; if (a === 0) o = Math.min(1, (b-p)/fd);
+        el.style.opacity = o; el.style.transform = `translateY(${(1-o)*24}px)`; el.classList.toggle('on', o > .5); });
+      build && build.dots && build.dots(p);
+    }
+    requestAnimationFrame(tick);
+  })();
+  // tappable pieces while the camera rests in the majlis
+  const HS = [
+    {u:.48, v:.16, ar:['الثريا الكريستال','ثريا خطية بقطرات كريستال، تملأ الارتفاع المزدوج من غير ما تثقّل المكان.'], en:['Crystal chandelier','A linear crystal chandelier that fills the double height without weighing it down.']},
+    {u:.48, v:.53, ar:['النيش المقوّس','حجر جيري طبيعي بإضاءة مخفية، أول نقطة تشد العين لما تدخل.'], en:['Arched niche','Natural limestone with hidden light: the first thing you notice on entering.']},
+    {u:.48, v:.75, ar:['طاولة الترافرتين','قطعة وحدة من الترافرتين الروماني، تفصيل حسب المساحة.'], en:['Travertine table','A single block of Roman travertine, cut to the room.']},
+    {u:.73, v:.69, ar:['كنب البوكليه','جلسة منخفضة على امتداد الجدار، قماش بوكليه مقاوم للبقع.'], en:['Bouclé seating','Low built-in seating along the wall in stain-resistant bouclé.']}
+  ];
+  const hsBox = $('#jhs'), card = $('#jcard'), FW = 16, FH = 9;
+  const dots = HS.map(h => { const b = document.createElement('button'); b.type = 'button'; b.className = 'jr-dot';
+    b.onclick = () => { const L = root.lang === 'en' ? h.en : h.ar; $('#jcen').textContent = h.en[0].toUpperCase(); $('#jct').textContent = L[0]; $('#jcd').textContent = L[1];
+      $('#jcwa').href = 'https://wa.me/966579277975?text=' + encodeURIComponent('مرحبا ماكس ديزاين، عجبني ' + h.ar[0] + ' في فيلا الموقع'); card.classList.add('on'); };
+    hsBox.appendChild(b); return b; });
+  $('#jcx').onclick = () => card.classList.remove('on');
+  const placeDots = p => { const on = p > .715 && p < .79, W = cv.clientWidth, H = cv.clientHeight, r = Math.max(W/FW, H/FH), w = FW*r, h = FH*r;
+    dots.forEach((d,i) => { d.classList.toggle('on', on); d.style.transform = `translate(${(W-w)/2 + HS[i].u*w}px,${(H-h)/2 + HS[i].v*h}px)`; });
+    if (!on) card.classList.remove('on'); };
+  build = { set(){} , dots:placeDots };
+})();
+
+
+/* ---------- image tunnel (3D fly-through) ---------- */
+{
+  const stage = $('#tnStage');
+  const all = [...new Set([...P.flatMap(p => p.tabs.flatMap(t => t[3] ? [] : t[2].map(it => it[0]))), 's-palace.webp','s-villa.webp','s-apartment.webp','s-design.webp','s-retail.webp','s-office.webp'])];
+  $('#tnCount').innerHTML = T(`${P.length} مشاريع · ${all.length} صورة`, `${P.length} projects · ${all.length} images`);
+  const pick = all.filter((_,i) => i % (innerWidth < 700 ? 3 : 2) === 0).slice(0, innerWidth < 700 ? 14 : 26);
+  let seed = 3; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+  const items = pick.map((src, i) => {
+    const f = document.createElement('figure'); if (i % 4 === 1) f.className = 'tall';
+    f.innerHTML = `<img src="img/${src}" alt="" loading="lazy">`; stage.appendChild(f);
+    const side = i % 2 ? 1 : -1, ang = rnd() * Math.PI;
+    return { f, x: side * (.22 + rnd() * .3), y: Math.cos(ang) * .32, z0: -i * 520 - 300 };
+  });
+  const span = items.length * 520 + 900;
+  let tp = 0, tsp = 0, tvis = false;
+  new IntersectionObserver(e => tvis = e[0].isIntersecting).observe($('#tunnel'));
+  window.tunnelSet = v => tp = v;
+  (function tl(){
+    requestAnimationFrame(tl); if (!tvis) return;
+    tsp += (tp - tsp) * .1;
+    const W = innerWidth, H = innerHeight;
+    stage.style.transform = RM ? '' : `rotateY(${mouse.nx * 5}deg) rotateX(${-mouse.ny * 4}deg)`;
+    items.forEach(it => {
+      const z = it.z0 + tsp * span;
+      const o = Math.min(1, Math.max(0, (z + 9000) / 3000)) * (1 - Math.min(1, Math.max(0, (z - 250) / 450)));
+      it.f.style.opacity = o.toFixed(3);
+      it.f.style.transform = `translate(-50%,-50%) translate3d(${it.x * W}px,${it.y * H}px,${z}px)`;
+    });
+  })();
+}
+
+/* ---------- smooth scroll + scroll motion ---------- */
+let lenis = null;
+if (window.gsap && window.ScrollTrigger){
+  gsap.registerPlugin(ScrollTrigger);
+  if (window.Lenis && !RM){
+    lenis = new Lenis({lerp:.09, wheelMultiplier:1}); window.mdLenis = lenis;
+    lenis.on('scroll', ScrollTrigger.update);
+    gsap.ticker.add(t => lenis.raf(t * 1000)); gsap.ticker.lagSmoothing(0);
+  }
+  // hero dissolves as you scroll
+  ScrollTrigger.create({trigger:'.hero', start:'top top', end:'bottom top', scrub:true, onUpdate:s => { if (hero) hero.U.uScroll.value = s.progress; }});
+  if (!RM) gsap.to('#htitle', {yPercent:-40, scale:.92, ease:'none', scrollTrigger:{trigger:'.hero', start:'top top', end:'bottom top', scrub:true}});
+  // manifesto words
+  ScrollTrigger.create({trigger:'.manifesto', start:'top 75%', end:'bottom 55%', scrub:true, onUpdate:s => {
+    const ws = $$(`html[lang=${root.lang}] #mf-${root.lang} .w`);
+    const k = s.progress * ws.length * 1.15;
+    ws.forEach((w,i) => w.style.opacity = i < k ? 1 : .24);
+  }});
+  // counters
+  $$('.num b').forEach(b => ScrollTrigger.create({trigger:b, start:'top 88%', once:true, onEnter:() => {
+    const o = {v:0}, to = +b.dataset.to, suf = b.dataset.suf || '';
+    gsap.to(o, {v:to, duration:RM?0:1.8, ease:'power3.out', onUpdate:() => b.innerHTML = Math.round(o.v) + (suf ? `<small style="font-size:.4em">${suf}</small>` : '')});
+  }}));
+  // 3D build
+  ScrollTrigger.create({trigger:'#build', start:'top top', end:'bottom bottom', scrub:true, onUpdate:s => build && build.set(s.progress)});
+  // horizontal work
+  const mmq = gsap.matchMedia();
+  mmq.add('(min-width: 821px)', () => {
+    const track = $('#track');
+    const dist = () => track.scrollWidth - innerWidth;
+    const tw = gsap.to(track, {x:() => -dist(), ease:'none', scrollTrigger:{trigger:'#hz', start:'center center', end:() => '+=' + dist(), pin:true, scrub:1, invalidateOnRefresh:true, anticipatePin:1}});
+    $$('.card img').forEach(img => gsap.fromTo(img, {xPercent:6}, {xPercent:-6, ease:'none', scrollTrigger:{trigger:img.parentNode, containerAnimation:tw, start:'left right', end:'right left', scrub:true}}));
+  });
+  ScrollTrigger.create({trigger:'#tunnel', start:'top top', end:'bottom bottom', scrub:true, onUpdate:s => window.tunnelSet && tunnelSet(s.progress)});
+  $$('.kin-row').forEach(r => { const d = +r.dataset.d; gsap.fromTo(r, {xPercent: d > 0 ? -38 : 0}, {xPercent: d > 0 ? 0 : -38, ease:'none', scrollTrigger:{trigger:'.kin', start:'top bottom', end:'bottom top', scrub:.6}}); });
+  if (!RM) $$('.disp').forEach(el => gsap.from(el, {clipPath:'inset(0 0 100% 0)', y:40, duration:1.2, ease:'expo.out', scrollTrigger:{trigger:el, start:'top 90%'}}));
+  // marquee reacts to scroll velocity
+  const mq = $('#mq'); let mx = 0, mv = 0;
+  ScrollTrigger.create({trigger:'.mq', start:'top bottom', end:'bottom top', onUpdate:s => mv = s.getVelocity() / 300});
+  gsap.ticker.add(() => {
+    if (RM) return;
+    mx -= .6 + Math.abs(mv); mv *= .92;
+    const half = mq.scrollWidth / 2; if (-mx > half) mx += half;
+    mq.style.transform = `translate3d(${mx}px,0,0) skewX(${Math.max(-12,Math.min(12,-mv*2))}deg)`;
+  });
+  // section headings rise
+  if (!RM) $$('.h2, .proc-grid .ps, .svc-row').forEach(el => gsap.from(el, {y:50, duration:1.1, ease:'expo.out', scrollTrigger:{trigger:el, start:'top 92%'}}));
+}
+
+/* ---------- magnetic button ---------- */
+const mag = $('#mag');
+if (HOVER && !RM) {
+  mag.addEventListener('pointermove', e => { const r = mag.getBoundingClientRect(); mag.style.transform = `translate(${(e.clientX - r.left - r.width/2)*.35}px,${(e.clientY - r.top - r.height/2)*.35}px)`; });
+  mag.addEventListener('pointerleave', () => mag.style.transform = '');
+}
+
+/* ---------- lightbox ---------- */
+let lb = null;
+function showLbx(){ const t = curP.tabs[lb.i], it = t[2][lb.k], im = $('#lbx-img'); im.src = 'img/' + it[0]; im.alt = it[2]; im.className = t[3] ? 'paper' : ''; $('#lbx-cap').innerHTML = `${curP.n} · ${T(it[1],it[2])}`; $('#lbx-n').textContent = `${lb.k+1} / ${t[2].length}`; }
+function openLbx(i,k){ lb = {i,k}; showLbx(); $('#lbx').hidden = false; $('#lbx-x').focus(); }
+function stepLbx(d){ const n = curP.tabs[lb.i][2].length; lb.k = (lb.k + d + n) % n; showLbx(); }
+$('#lbx-x').onclick = () => $('#lbx').hidden = true;
+$('#lbx-p').onclick = () => stepLbx(root.dir === 'rtl' ? 1 : -1);
+$('#lbx-nx').onclick = () => stepLbx(root.dir === 'rtl' ? -1 : 1);
+$('#lbx').addEventListener('click', e => { if (e.target.classList.contains('lbx-stage')) $('#lbx').hidden = true; });
+let tsx = null;
+$('#lbx').addEventListener('touchstart', e => tsx = e.touches[0].clientX, {passive:true});
+$('#lbx').addEventListener('touchend', e => { if (tsx === null) return; const dx = e.changedTouches[0].clientX - tsx; if (Math.abs(dx) > 50) stepLbx(dx < 0 ? 1 : -1); tsx = null; });
+addEventListener('keydown', e => {
+  if (!$('#lbx').hidden){ if (e.key === 'Escape') $('#lbx').hidden = true; if (e.key === 'ArrowRight') stepLbx(1); if (e.key === 'ArrowLeft') stepLbx(-1); return; }
+  if (!caseEl.hidden && e.key === 'Escape') closeCase();
+});
+
+
+/* ---------- project brief form ---------- */
+{
+  const f = $('#brief');
+  f.innerHTML = f.innerHTML.replace(/\{\{T\('([^']*)','([^']*)'\)\}\}/g, (m,a,b) => T(a,b));
+  const TYPES = [['فيلا','Villa'],['قصر','Palace'],['شقة','Apartment'],['محل تجاري','Retail'],['مكتب / مقر شركة','Office'],['إدارة تنفيذ','Project management']];
+  let type = 0;
+  $('#f-type').innerHTML = TYPES.map((t,i) => `<button type="button" role="radio" aria-checked="${i===0}" data-i="${i}">${T(t[0],t[1])}</button>`).join('');
+  $('#f-type').addEventListener('click', e => { const b = e.target.closest('button'); if (!b) return; type = +b.dataset.i; $$('#f-type button').forEach(x => x.setAttribute('aria-checked', x === b)); SND.blip(700,.08,.04); upd(); });
+  const val = id => $(id).value.trim();
+  function msg(){
+    const ar = root.lang === 'ar';
+    const L = ar ? ['السلام عليكم، حاب أطلب استشارة من ماكس ديزاين','الاسم','الجوال','نوع المشروع','المساحة','المدينة','التفاصيل'] : ['Hello Max Design, I would like a consultation','Name','Mobile','Project type','Area','City','Details'];
+    const rows = [[L[1],val('#f-name')],[L[2],val('#f-phone')],[L[3],TYPES[type][ar?0:1]],[L[4],val('#f-area') && val('#f-area')+' m²'],[L[5],val('#f-city')],[L[6],val('#f-msg')]].filter(r => r[1]);
+    return L[0] + '\n' + rows.map(r => `${r[0]}: ${r[1]}`).join('\n');
+  }
+  function upd(){ $('#f-wa').href = 'https://wa.me/966579277975?text=' + encodeURIComponent(msg()); }
+  f.addEventListener('input', upd); upd(); $('#lang').addEventListener('click', upd);
+  f.addEventListener('submit', e => {
+    e.preventDefault();
+    const bad = ['#f-name','#f-phone'].filter(id => !val(id));
+    $$('#f-name,#f-phone').forEach(i => i.setAttribute('aria-invalid', bad.includes('#'+i.id)));
+    const st = $('#f-status');
+    if (bad.length){ st.innerHTML = T('فضلاً أدخل الاسم ورقم الجوال لنتواصل معك.','Add your name and mobile so we can reply.'); return; }
+    upd(); SND.blip(990,.2,.05);
+    const w = window.open($('#f-wa').href, '_blank');
+    if (w) w.opener = null; else location.href = $('#f-wa').href;
+    st.innerHTML = T('فتحنا لك واتساب والرسالة جاهزة، اضغط «إرسال» هناك.','WhatsApp is open with your message ready. Tap Send there.');
+  });
+}
+
+/* ---------- copy ---------- */
+document.addEventListener('click', e => {
+  const b = e.target.closest('[data-copy]'); if (!b) return;
+  const o = b.innerHTML;
+  navigator.clipboard?.writeText(b.dataset.copy).then(() => { b.innerHTML = T('تم النسخ ✓','Copied ✓'); setTimeout(() => b.innerHTML = o, 1500); }).catch(() => {
+    const r = document.createRange(); r.selectNodeContents(b.previousElementSibling); const s = getSelection(); s.removeAllRanges(); s.addRange(r);
+  });
+});
+})();
+</script>
+</body>
+</html>
