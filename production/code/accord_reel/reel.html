@@ -1,0 +1,197 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>Accord reel</title>
+<style>
+  @font-face{font-family:Cairo;font-weight:900;src:url(../fonts/Cairo-Black.ttf)}
+  @font-face{font-family:Cairo;font-weight:700;src:url(../fonts/Cairo-Bold.ttf)}
+  @font-face{font-family:Tajawal;font-weight:700;src:url(../fonts/Tajawal-Bold.ttf)}
+  @font-face{font-family:Oswald;font-weight:600;src:url(../fonts/Oswald-SemiBold.ttf)}
+  @font-face{font-family:Michroma;src:url(../fonts/Michroma.woff2)}
+  :root{--gold:#D4AF6A;--gold2:#F3D9A0;--gold3:#A9813F;--ink:#0B0B0C}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#000;overflow:hidden}
+  #root{position:relative;width:1080px;height:1920px;overflow:hidden;background:var(--ink)}
+  .sc{position:absolute;inset:0;overflow:hidden;display:none}
+  .a{position:absolute}
+  .ctr{left:0;right:0;text-align:center}
+  .lat{direction:ltr;font-family:Michroma}
+  .gold{background:linear-gradient(180deg,var(--gold2),var(--gold) 55%,var(--gold3));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .full{position:absolute;left:0;top:0;width:1080px;height:1920px;transform-origin:50% 45%}
+  .bleed{position:absolute;inset:0;overflow:hidden}
+  .bleed img{position:absolute;top:0;height:1920px;width:auto;transform-origin:50% 50%}
+  .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,12,.0) 45%,rgba(11,11,12,.88) 82%,#0B0B0C)}
+  .shadeT{position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,11,12,.85),rgba(11,11,12,0) 30%)}
+  .cap{font:900 104px/1.15 Cairo;color:#fff;text-shadow:0 6px 30px rgba(0,0,0,.6)}
+  .chip{display:inline-block;margin:0 10px;padding:10px 34px;border:2px solid rgba(212,175,106,.7);border-radius:60px;font:600 44px Oswald;letter-spacing:4px;color:var(--gold2);direction:ltr;background:rgba(11,11,12,.35)}
+  .panel{position:absolute;left:0;width:1080px;height:560px;overflow:hidden;border-top:3px solid var(--gold);border-bottom:3px solid var(--gold)}
+  .panel img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .row{display:flex;align-items:baseline;gap:30px;direction:rtl;padding:26px 0;border-bottom:1.5px solid rgba(212,175,106,.35)}
+  .row .v{font:600 150px/1 Oswald;color:#fff;direction:ltr;min-width:330px;text-align:center}
+  .row .l{font:700 50px Tajawal;color:#E6DCCB}
+  .wm{position:absolute;left:44px;bottom:44px;width:110px;opacity:.42;z-index:20}
+  #flash{position:absolute;inset:0;background:#FFF8EA;z-index:25;opacity:0;pointer-events:none}
+</style>
+</head>
+<body>
+<div id="root">
+  <!-- S0: the empty showroom at night, lights pulse with the build -->
+  <div class="sc" id="s0">
+    <img class="full" id="s0bg" src="img/plate.jpg" alt="">
+    <div class="a" id="s0glow" style="inset:0;background:radial-gradient(ellipse 70% 30% at 50% 40%,rgba(243,217,160,.55),rgba(243,217,160,0) 70%);mix-blend-mode:screen;opacity:0"></div>
+    <div class="a" id="s0dim" style="inset:0;background:#000;opacity:0"></div>
+    <div class="a ctr lat" id="s0k" style="top:190px;font-size:24px;letter-spacing:14px;color:var(--gold)">MAX MOTORS · NEW ARRIVAL</div>
+    <div class="a ctr cap" id="s0t" style="top:250px">وصلت <span class="gold">معرضنا</span></div>
+  </div>
+  <!-- S1: reveal on the hit -->
+  <div class="sc" id="s1">
+    <img class="full" id="s1bg" src="img/hero.jpg" alt="">
+    <div class="shadeT"></div>
+    <div class="a ctr" id="s1t" style="top:150px;font:900 150px/1.1 Cairo;color:#fff;text-shadow:0 8px 40px rgba(0,0,0,.7)">هوندا <span class="gold">أكورد</span></div>
+    <div class="a ctr" id="s1y" style="top:335px;font:600 92px/1 Oswald;letter-spacing:22px;color:#fff;direction:ltr">2025</div>
+  </div>
+  <!-- S2: exterior beat cuts -->
+  <div class="sc" id="s2">
+    <div class="bleed" id="s2a"><img src="img/x5.jpg" alt="" data-fx=".46" data-pan="140"></div>
+    <div class="bleed" id="s2b"><img src="img/x4.jpg" alt="" data-fx=".40" data-pan="-160"></div>
+    <div class="bleed" id="s2c"><img src="img/x7.jpg" alt="" data-fx=".52" data-pan="150"></div>
+    <div class="bleed" id="s2d"><img src="img/x6.jpg" alt="" data-fx=".56" data-pan="-120"></div>
+    <div class="shade"></div>
+    <div class="a ctr cap" id="s2t1" style="top:1440px">تصميم <span class="gold">جديد كليًا</span></div>
+    <div class="a ctr" id="s2t2" style="top:1600px;font:700 50px Tajawal;color:#E6DCCB">حضور يخطف الأنظار</div>
+  </div>
+  <!-- S3: interior -->
+  <div class="sc" id="s3">
+    <div class="bleed" id="s3a"><img src="img/i20.jpg" alt="" data-fx=".42" data-pan="160"></div>
+    <div class="a" id="s3stack" style="inset:0;background:var(--ink)">
+      <div class="panel" id="s3p1" style="top:170px"><img src="img/i16.jpg" alt=""></div>
+      <div class="panel" id="s3p2" style="top:760px"><img src="img/i18.jpg" alt=""></div>
+      <div class="panel" id="s3p3" style="top:1350px"><img src="img/i20.jpg" alt="" style="object-position:30% 50%"></div>
+    </div>
+    <div class="shade" id="s3sh"></div>
+    <div class="a ctr cap" id="s3t" style="top:1470px">مقصورة <span class="gold">فاخرة</span></div>
+    <div class="a ctr" id="s3s" style="top:1630px;font:700 50px Tajawal;color:#E6DCCB">راحة · تقنية · فخامة</div>
+  </div>
+  <!-- S4: performance (figures from maxmotors.sa listing) -->
+  <div class="sc" id="s4">
+    <div class="bleed" id="s4a"><img src="img/s28.jpg" alt="" data-fx=".22" data-pan="-110" style="filter:blur(2px)"></div>
+    <div class="a" style="inset:0;background:linear-gradient(180deg,rgba(11,11,12,.92) 0,rgba(11,11,12,.55) 42%,rgba(11,11,12,.92) 100%)"></div>
+    <div class="a ctr lat" id="s4k" style="top:200px;font-size:24px;letter-spacing:16px;color:var(--gold)">PERFORMANCE</div>
+    <div class="a ctr cap" id="s4t" style="top:250px">قوة <span class="gold">وكفاءة</span></div>
+    <div class="a" id="s4rows" style="left:90px;right:90px;top:560px">
+      <div class="row"><div class="v">1.5L</div><div class="l">محرك تيربو 4 سلندر</div></div>
+      <div class="row"><div class="v" id="hp">192</div><div class="l">حصان تقريبًا</div></div>
+      <div class="row"><div class="v" id="nm">260</div><div class="l">نيوتن متر عزم</div></div>
+      <div class="row" style="border:0"><div class="v">CVT</div><div class="l">ناقل حركة أوتوماتيك</div></div>
+    </div>
+  </div>
+  <!-- S5: safety -->
+  <div class="sc" id="s5">
+    <div class="a" style="inset:0;background:radial-gradient(ellipse 80% 55% at 50% 45%,#1E1B16,#0B0B0C 72%)"></div>
+    <div class="a" id="s5card" style="left:60px;top:560px;width:960px;height:561px;border-radius:30px;overflow:hidden;border:2px solid rgba(212,175,106,.6)"><img src="img/s29.jpg" alt="" style="width:100%;height:100%;object-fit:cover"></div>
+    <div class="a ctr lat" id="s5t" style="top:280px;font-size:64px;letter-spacing:6px;color:#fff">Honda <span class="gold">SENSING</span></div>
+    <div class="a ctr" id="s5s" style="top:1220px;font:900 76px/1.2 Cairo;color:#fff">6 وسائد <span class="gold">هوائية</span></div>
+    <div class="a ctr" id="s5s2" style="top:1340px;font:700 46px Tajawal;color:#E6DCCB">أمانك وأمان عائلتك أولًا</div>
+  </div>
+  <!-- S6: the drop, back in front of our showroom -->
+  <div class="sc" id="s6">
+    <img class="full" id="s6bg" src="img/hero.jpg" alt="">
+    <div class="shadeT"></div>
+    <div class="a ctr" id="s6t1" style="top:140px;font:900 128px/1.1 Cairo;color:#fff;text-shadow:0 8px 40px rgba(0,0,0,.7)">متوفرة <span class="gold">الآن</span></div>
+    <div class="a ctr" id="s6t2" style="top:300px;font:700 58px Tajawal;color:#fff;text-shadow:0 4px 20px rgba(0,0,0,.8)">في معرض ماكس موتورز</div>
+    <div class="a ctr" id="s6c" style="top:1720px;direction:ltr"><span class="chip">LX</span><span class="chip">EX</span><span class="chip">EXL</span></div>
+  </div>
+  <!-- S7: end card -->
+  <div class="sc" id="s7">
+    <div class="a" style="inset:0;background:radial-gradient(ellipse 80% 55% at 50% 42%,#1B1A17,#050506 75%)"></div>
+    <img class="a" id="s7lg" src="../fx/mm_logo.png" alt="Max Motors" style="left:340px;top:470px;width:400px">
+    <div class="a" id="s7sw" style="left:340px;top:470px;width:400px;height:325px;mix-blend-mode:screen;-webkit-mask:url(../fx/mm_logo.png) center/contain no-repeat"></div>
+    <div class="a ctr" id="s7e1" style="top:900px;font:900 80px/1.2 Cairo;color:#fff">هوندا <span class="gold">أكورد 2025</span></div>
+    <div class="a ctr" id="s7e2" style="top:1020px;font:700 40px Tajawal;color:#CFC6B8">تواصل معنا اليوم</div>
+    <div class="a ctr" id="s7e3" style="top:1090px;font:600 150px/1.1 Oswald;letter-spacing:3px;color:#fff;direction:ltr">920018915</div>
+    <div class="a ctr" id="s7e4" style="top:1280px;font:600 52px Oswald;letter-spacing:4px;color:var(--gold);direction:ltr">maxmotors.sa</div>
+    <div class="a ctr" id="s7e5" style="top:1390px;font:700 24px Tajawal;color:#8F877B">*تطبّق الشروط والأحكام</div>
+  </div>
+  <img class="wm" id="wm" src="../fx/mm_logo.png" alt="">
+  <div id="flash"></div>
+</div>
+<script>
+// beat grid: music ot_13971 from 104.83 s -> hit 4.40, downbeats every 1.6 s, drop 19.79
+const T = { rev: 4.40, ext: 8.59, int: 11.79, perf: 14.99, safe: 18.19, drop: 19.79, end: 22.99 };
+const DUR = 27.5; window.DUR = DUR;
+const $ = id => document.getElementById(id);
+const clamp = x => Math.max(0, Math.min(1, x));
+const prog = (t, a, b) => clamp((t - a) / (b - a));
+const E = { out: x => 1 - Math.pow(1 - x, 3), back: x => 1 + 2.2 * Math.pow(x - 1, 3) + 1.2 * Math.pow(x - 1, 2), lin: x => x };
+const at = (t, a, b, e = 'out') => E[e](prog(t, a, b));
+const css = (el, o) => Object.assign(el.style, o);
+const S = [[0, T.rev], [T.rev, T.ext], [T.ext, T.int], [T.int, T.perf], [T.perf, T.safe], [T.safe, T.drop], [T.drop, T.end], [T.end, 99]];
+const CUTS = [T.rev, T.ext, T.ext + 0.8, T.ext + 1.6, T.ext + 2.4, T.int, T.int + 1.6, T.perf, T.safe, T.drop, T.end];
+const rise = (id, t, a, d = 40, dur = 0.5) => { const k = at(t, a, a + dur); css($(id), { opacity: k, transform: `translateY(${(1 - k) * d}px)` }); };
+// full-bleed image: focal point fx (0..1 of width) centred, panned by `pan` px over its window, slight push
+const bleed = (box, u, len) => { const im = box.querySelector('img'); const w = 1920 * im.naturalWidth / im.naturalHeight;
+  const fx = +im.dataset.fx, pan = +im.dataset.pan, k = prog(u, 0, len);
+  let x = 540 - fx * w + pan * (k - 0.5); x = Math.min(0, Math.max(1080 - w, x));
+  css(im, { left: x + 'px', transform: `scale(${1.06 + 0.05 * k})` }); };
+
+window.renderAt = t => {
+  S.forEach(([a, b], i) => $('s' + i).style.display = t >= a && t < b ? 'block' : 'none');
+  // white flash on every cut, bigger on the hit, the drop and the logo
+  const c = CUTS.filter(x => t >= x && t < x + 0.35).pop();
+  const big = [T.rev, T.drop].includes(c);
+  $('flash').style.opacity = c === undefined ? 0 : (big ? 0.95 : 0.35) * Math.pow(1 - prog(t, c, c + (big ? 0.45 : 0.22)), 2);
+  $('wm').style.opacity = t >= T.rev && t < T.end ? 0.42 : 0;
+
+  // S0: push into the empty showroom; facade glow pulses on the hits, dims right before the reveal
+  { css($('s0bg'), { transform: `scale(${1.0 + 0.07 * at(t, 0, T.rev, 'lin')})` });
+    const pulse = [0.62, 0.80, 1.99, 2.79, 3.20, 3.81].reduce((m, h) => Math.max(m, t >= h ? Math.exp(-(t - h) * 5) : 0), 0);
+    $('s0glow').style.opacity = 0.7 * pulse;
+    $('s0dim').style.opacity = 0.75 * prog(t, 3.9, 4.38) + 0.25 * (1 - prog(t, 0, 0.8));
+    rise('s0k', t, 0.5); rise('s0t', t, 1.0, 60, 0.6);
+    $('s0t').style.opacity *= 1 - prog(t, 3.7, 4.0); $('s0k').style.opacity *= 1 - prog(t, 3.7, 4.0); }
+
+  // S1: the Accord appears in front of the showroom, punch-in then slow push
+  { const u = t - T.rev; const p = 1 - at(u, 0, 0.5);
+    css($('s1bg'), { transform: `scale(${1.07 + 0.06 * p + 0.05 * prog(u, 0, 4.2)})` });
+    const k = at(u, 0.25, 0.85, 'back'); css($('s1t'), { opacity: clamp(k * 1.4), transform: `scale(${1.25 - 0.25 * k})` });
+    rise('s1y', u, 0.7, 30); $('s1y').style.letterSpacing = (60 - 38 * at(u, 0.7, 1.6)) + 'px'; }
+
+  // S2: four exterior cuts on the beat
+  { const u = t - T.ext; ['s2a', 's2b', 's2c', 's2d'].forEach((id, i) => { const on = u >= i * 0.8 && (u < (i + 1) * 0.8 || i === 3); $(id).style.visibility = on ? 'visible' : 'hidden'; if (on) bleed($(id), u - i * 0.8, 0.8); });
+    rise('s2t1', u, 0.15, 60); rise('s2t2', u, 1.7, 40); }
+
+  // S3: dashboard pan, then three panels slide in from alternating sides
+  { const u = t - T.int; const st = u >= 1.6; $('s3a').style.visibility = st ? 'hidden' : 'visible'; $('s3stack').style.visibility = st ? 'visible' : 'hidden';
+    if (!st) bleed($('s3a'), u, 1.6);
+    ['s3p1', 's3p2', 's3p3'].forEach((id, i) => { const k = at(u, 1.6 + i * 0.2, 2.1 + i * 0.2); css($(id), { transform: `translateX(${(1 - k) * (i % 2 ? -1100 : 1100)}px)` });
+      $(id).querySelector('img').style.transform = `scale(${1.08 - 0.06 * prog(u, 1.6, 3.2)})`; });
+    $('s3sh').style.opacity = st ? 0.0 : 1;
+    rise('s3t', u, 0.2, 60); rise('s3s', u, 0.5, 40);
+    const tk = st ? 1 - prog(u, 1.6, 1.8) : 1; $('s3t').style.opacity *= tk; $('s3s').style.opacity *= tk; }
+
+  // S4: figures count up row by row
+  { const u = t - T.perf; bleed($('s4a'), u, 3.2);
+    rise('s4k', u, 0.05); rise('s4t', u, 0.15, 50);
+    document.querySelectorAll('#s4rows .row').forEach((el, i) => { const k = at(u, 0.4 + i * 0.4, 0.8 + i * 0.4, 'back'); css(el, { opacity: clamp(k), transform: `translateX(${(1 - k) * 160}px)` }); });
+    $('hp').textContent = Math.round(192 * at(u, 0.8, 1.5)); $('nm').textContent = Math.round(260 * at(u, 1.2, 1.9)); }
+
+  // S5: safety card zooms, text pops (riser into the drop)
+  { const u = t - T.safe; const k = at(u, 0, 0.5); css($('s5card'), { opacity: k, transform: `scale(${0.9 + 0.1 * k + 0.05 * prog(u, 0.5, 1.6)})` });
+    rise('s5t', u, 0.1, 40, 0.4); rise('s5s', u, 0.4, 40, 0.4); rise('s5s2', u, 0.6, 30, 0.4); }
+
+  // S6: the drop: back in front of Max Holding, small shake, titles slam
+  { const u = t - T.drop; const sh = Math.exp(-u * 6) * 10;
+    css($('s6bg'), { transform: `translate(${Math.sin(u * 60) * sh}px,${Math.cos(u * 47) * sh}px) scale(${1.16 - 0.10 * at(u, 0, 3.2)})` });
+    const k = at(u, 0.05, 0.45, 'back'); css($('s6t1'), { opacity: clamp(k * 1.4), transform: `scale(${1.3 - 0.3 * k})` });
+    rise('s6t2', u, 0.4); document.querySelectorAll('#s6c .chip').forEach((el, i) => { const q = at(u, 0.8 + i * 0.2, 1.2 + i * 0.2, 'back'); css(el, { opacity: clamp(q), transform: `translateY(${(1 - q) * 40}px)` }); }); }
+
+  // S7: end card, logo impact on the downbeat
+  { const u = t - T.end; const lk = at(u, 0, 0.6); css($('s7lg'), { opacity: lk, transform: `scale(${1.25 - 0.25 * lk})`, filter: `blur(${(1 - lk) * 8}px)` });
+    const s = prog(u, 0.7, 1.4); $('s7sw').style.background = s > 0 && s < 1 ? `linear-gradient(105deg,rgba(255,255,255,0) ${-20 + 140 * s - 15}%,rgba(255,250,235,.95) ${-20 + 140 * s}%,rgba(255,255,255,0) ${-20 + 140 * s + 15}%)` : 'none';
+    [['s7e1', 0.5], ['s7e2', 0.65], ['s7e3', 0.8], ['s7e4', 0.95], ['s7e5', 1.1]].forEach(([id, a]) => rise(id, u, a, 24, 0.45)); }
+};
+window.ready = document.fonts.ready.then(() => Promise.all([...document.images].map(i => i.decode().catch(() => {})))).then(() => { renderAt(0); return true; });
+</script>
+</body>
+</html>

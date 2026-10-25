@@ -13,9 +13,10 @@ x0, y0 = int(cx - cw / 2), int(by - ch)
 yy = np.linspace(0, 1, ch)[:, None, None]
 if mode == 'night':
     lum = rgb.mean(2, keepdims=True)
-    rgb = rgb * np.array([1.0, 0.90, 0.74]) * 0.98 * (1.0 - 0.20 * yy)               # warm white balance, a touch darker low down
+    import os; EXP = float(os.environ.get('EXP', 0.98)); FALL = float(os.environ.get('FALL', 0.20))   # bright paint (white) wants EXP~0.8, FALL~0.4
+    rgb = rgb * np.array([1.0, 0.90, 0.74]) * EXP * (1.0 - FALL * yy)               # warm white balance, a touch darker low down
     rgb = (rgb - 0.45) * 1.12 + 0.45                                                  # keep the studio contrast
-    rgb = rgb + np.clip(lum - 0.55, 0, 1) * np.array([0.50, 0.38, 0.12])              # speculars pick up the gold façade light
+    SPEC = float(os.environ.get('SPEC', 1.0)); rgb = rgb + SPEC * np.clip(lum - 0.55, 0, 1) * np.array([0.50, 0.38, 0.12])              # speculars pick up the gold façade light
     top = np.clip(1 - yy * 2.4, 0, 1); rgb = rgb + top * np.array([0.09, 0.065, 0.02])
 else:
     rgb = rgb * np.array([1.0, 0.97, 0.9]) * (1.0 - 0.12 * yy)
