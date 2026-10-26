@@ -175,3 +175,15 @@ body{font-family:Montserrat,Cairo,sans-serif;color:var(--txt);-webkit-print-colo
 .ty-c b{font-size:27px;font-weight:500;color:#fff;letter-spacing:.04em}
 .addr{margin-top:46px;font-size:18px;letter-spacing:.12em;color:var(--mute)}
 .addr .ar{font-size:20px;letter-spacing:0}
+
+/* clickable links (annotated in the PDF) */
+.index.six{grid-template-columns:repeat(6,1fr);gap:18px;height:650px}
+.index.six .ix h3{font-size:18px}.index.six .ix h3.ar{font-size:21px}.index.six .ix .n{font-size:64px}
+.ix .go{position:absolute;z-index:3;top:16px;right:16px;width:44px;height:44px;border-radius:50%;border:1px solid var(--gold);color:var(--gold-l);display:flex;align-items:center;justify-content:center;font-size:22px;background:rgba(0,0,0,.45)}
+.ix-note{margin-top:22px;text-align:center;font-size:18px;letter-spacing:.12em;color:#bfb6a5}
+.ix-note .ar{letter-spacing:0;font-size:20px}
+.online{display:inline-flex;align-items:center;gap:16px;margin-top:40px;padding:16px 30px;border:1.5px solid var(--gold);color:#f6dc9c;font-size:17px;letter-spacing:.22em;text-decoration:none;background:rgba(0,0,0,.35)}
+.online .ar{letter-spacing:0;font-size:21px;color:#fff}
+.online b{font-size:22px}
+.ty .online{margin-top:46px}
+.divider .online{position:absolute;right:90px;bottom:130px;white-space:nowrap;z-index:4;margin:0;background:rgba(10,8,6,.72);backdrop-filter:blur(4px)}

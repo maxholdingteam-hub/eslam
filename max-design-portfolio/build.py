@@ -43,7 +43,7 @@ def sheet(src, cap_en="", cap_ar="", cls=""):
     return f'<figure class="sheet {cls}"><div class="paper"><img src="a/{src}"></div>{cap}</figure>'
 
 
-def divider(no, en, ar, img_src, sub_en, sub_ar, facts):
+def divider(no, en, ar, img_src, sub_en, sub_ar, facts, link=""):
     f = "".join(f'<div class="fact"><b>{v}</b><span>{k_en}</span><span class="ar">{k_ar}</span></div>'
                 for k_en, k_ar, v in facts)
     S(f"""<div class="bleed" style="background-image:url(a/{img_src})"></div><div class="shade"></div>
@@ -54,7 +54,8 @@ def divider(no, en, ar, img_src, sub_en, sub_ar, facts):
       <div class="gl"></div>
       <p>{sub_en}</p><p class="ar">{sub_ar}</p>
       <div class="facts">{f}</div>
-    </div>""", "divider")
+    </div>
+    {f'<a class="online" data-href="https://maxdesign.sa/#{link}">VIEW FULL PROJECT ONLINE <span class="ar">شاهد المشروع كامل على موقعنا</span> <b>↗</b></a>' if link else ''}""", "divider")
 
 
 def grid(en, ar, kicker, kicker_ar, items, layout):
@@ -131,16 +132,18 @@ projects = [
     ("03", "Residential Villa", "فيلا سكنية", "013-049.jpg"),
     ("04", "PROGER DQ Office", "مكتب بروجر DQ", "019-084.jpg"),
     ("05", "SIH Residence", "مسكن SIH", "025-108.jpg"),
+    ("06", "Sheikh Hassan Villa", "فيلا الشيخ حسن", "r-39.jpg"),
 ]
-ix = "".join(f"""<div class="ix"><div class="im" style="background-image:url(a/{s})"></div><div class="n">{n}</div><h3>{e}</h3><h3 class="ar">{a}</h3></div>"""
-             for n, e, a, s in projects)
-S(f'{head("Selected Projects", "مختارات من أعمالنا", "PORTFOLIO", "معرض الأعمال")}<div class="index">{ix}</div>')
+IDS = ["hitc", "forest", "villa", "proger", "sih", "residence"]
+ix = "".join(f"""<div class="ix" data-href="https://maxdesign.sa/#{IDS[i]}"><div class="im" style="background-image:url(a/{s})"></div><div class="n">{n}</div><h3>{e}</h3><h3 class="ar">{a}</h3><span class="go">↗</span></div>"""
+             for i, (n, e, a, s) in enumerate(projects))
+S(f'{head("Selected Projects", "مختارات من أعمالنا", "PORTFOLIO", "معرض الأعمال")}<div class="index six">{ix}</div><div class="ix-note">Tap any project to open it on our website <span class="ar">· اضغط على أي مشروع لفتحه على موقعنا</span></div>')
 
 # ---------------------------------------------------------------- P1 HITC
 divider("01", "HITC Office Building", "مبنى مكاتب HITC", "003-003.jpg",
         "Home International Trading Company — a landmark project serving both purpose and aesthetics.",
         "شركة هوم الدولية للتجارة — مشروع مميّز يجمع بين الوظيفة والجمال.",
-        [("Type", "النوع", "Office"), ("Ground Floor", "الدور الأرضي", "173 m²"), ("First Floor", "الدور الأول", "273 m²"), ("Status", "الحالة", "Built")])
+        [("Type", "النوع", "Office"), ("Ground Floor", "الدور الأرضي", "173 m²"), ("First Floor", "الدور الأول", "273 m²"), ("Status", "الحالة", "Built")], link="hitc")
 S(f"""{head("Concept & Design Intent", "الفكرة والتوجه التصميمي", "PROJECT 01", "المشروع 01")}
 <div class="board"><img src="a/004-004.jpg"></div>""", "boardslide")
 S(f"""{head("Floor Plans", "المساقط الأفقية", "PROJECT 01", "المشروع 01")}
@@ -152,11 +155,18 @@ grid("Elevations", "الواجهات", "PROJECT 01", "المشروع 01",
 grid("On-Site Construction", "مراحل التنفيذ في الموقع", "PROJECT 01", "المشروع 01",
      [img("008-021.jpg"), img("008-024.jpg"), img("008-022.jpg"), img("008-023.jpg")], "g-onsite1")
 
+grid("The Completed Building", "المبنى بعد التسليم", "PROJECT 01", "المشروع 01",
+     [img("h-02.jpg"), img("h-03.jpg"), img("h-01.jpg"), img("h-07.jpg"), img("h-04.jpg"), img("h-11.jpg")], "g-6")
+grid("Completed Interiors", "المكاتب من الداخل", "PROJECT 01", "المشروع 01",
+     [img("h-09.jpg"), img("h-10.jpg"), img("h-06.jpg"), img("h-05.jpg")], "g-4")
+grid("Construction Progress", "مراحل البناء", "PROJECT 01", "المشروع 01",
+     [img("h-00.jpg"), img("h-12.jpg"), img("h-13.jpg"), img("h-14.jpg"), img("h-16.jpg"), img("h-15.jpg")], "g-6")
+
 # ---------------------------------------------------------------- P2 Forest Villas
 divider("02", "Forest Villas – Green Acres", "مجمع فوريست فيلاز – جرين إيكرز", "012-045.jpg",
         "A project that defines perfection aesthetically — the whole idea is contrast and connection.",
         "مشروع يجسّد الكمال الجمالي — فكرته كلها قائمة على التباين والترابط.",
-        [("Type", "النوع", "Residential"), ("Levels", "الأدوار", "B + G + 5"), ("Amenities", "المرافق", "Club · Gym · Pool")])
+        [("Type", "النوع", "Residential"), ("Levels", "الأدوار", "B + G + 5"), ("Amenities", "المرافق", "Club · Gym · Pool")], link="forest")
 grid("Basement & Ground Floor", "القبو والدور الأرضي", "PROJECT 02", "المشروع 02",
      [sheet("d009-026.jpg", "Basement Plan", "مسقط القبو"), sheet("d009-030.jpg", "Ground Floor Plan", "مسقط الدور الأرضي")], "g-2t")
 grid("Typical Floors", "الأدوار المتكررة", "PROJECT 02", "المشروع 02",
@@ -170,7 +180,7 @@ grid("Exterior Renders", "التصورات الخارجية", "PROJECT 02", "ا�
 divider("03", "Residential Villa", "فيلا سكنية", "013-049.jpg",
         "Contemporary family villa — stone, timber and light working in harmony.",
         "فيلا عائلية معاصرة — حجر وخشب وإضاءة في تناغم كامل.",
-        [("Type", "النوع", "Villa"), ("Area", "المساحة", "500 m²"), ("Scope", "النطاق", "Design + Interior + Build")])
+        [("Type", "النوع", "Villa"), ("Area", "المساحة", "500 m²"), ("Scope", "النطاق", "Design + Interior + Build")], link="villa")
 grid("Measurement Plans", "المساقط الأفقية", "PROJECT 03", "المشروع 03",
      [sheet("d014-051.jpg", "Basement · 2785 sft", "القبو"), sheet("d014-053.jpg", "Ground Floor · 2785 sft", "الدور الأرضي"), sheet("d014-055.jpg", "First Floor · 2195 sft", "الدور الأول")], "g-3t")
 grid("Elevations & Sections", "الواجهات والقطاعات", "PROJECT 03", "المشروع 03",
@@ -187,7 +197,7 @@ grid("Completed Interiors", "التشطيبات الداخلية المنفذة"
 divider("04", "PROGER DQ Office", "مكتب بروجر DQ", "019-084.jpg",
         "A flexible, modern workplace — designed, built and delivered in Riyadh.",
         "بيئة عمل عصرية ومرنة — تصميم وتنفيذ وتسليم في الرياض.",
-        [("Type", "النوع", "Office Fit-out"), ("Area", "المساحة", "229.8 m²"), ("Completed", "التسليم", "Jan 2026")])
+        [("Type", "النوع", "Office Fit-out"), ("Area", "المساحة", "229.8 m²"), ("Completed", "التسليم", "Jan 2026")], link="proger")
 S(f"""{head("Office Layout Plan", "مخطط توزيع المكتب", "PROJECT 04", "المشروع 04")}
 <div class="grid g-1">{sheet("d020-plan.jpg", "Gross Internal Area 229.76 m² · Scale 1:50", "إجمالي المساحة الداخلية ٢٢٩٫٧٦ م²")}</div>""")
 grid("Interior Renders", "التصورات الداخلية", "PROJECT 04", "المشروع 04",
@@ -203,7 +213,7 @@ grid("Project Completion", "تسليم المشروع", "PROJECT 04", "المش�
 divider("05", "SIH Residence", "مسكن SIH", "025-108.jpg",
         "A heritage-inspired residence — arches, domes and hand-crafted brick masonry.",
         "سكن مستوحى من العمارة التراثية — أقواس وقباب وأعمال طوب يدوية.",
-        [("Type", "النوع", "Residence"), ("Style", "الطراز", "Heritage"), ("Status", "الحالة", "Built")])
+        [("Type", "النوع", "Residence"), ("Style", "الطراز", "Heritage"), ("Status", "الحالة", "Built")], link="sih")
 grid("Floor Plans", "المساقط الأفقية", "PROJECT 05", "المشروع 05",
      [sheet("d026-109.jpg", "Ground Floor Plan", "مسقط الدور الأرضي"), sheet("d026-110.jpg", "First Floor Plan", "مسقط الدور الأول")], "g-2w")
 grid("Elevations", "الواجهات", "PROJECT 05", "المشروع 05",
@@ -215,6 +225,20 @@ grid("Site Progress", "مراحل التنفيذ", "PROJECT 05", "المشروع
 grid("Completion", "المشروع بعد التنفيذ", "PROJECT 05", "المشروع 05",
      [img("030-120.jpg"), img("030-121.jpg"), img("030-122.jpg")], "g-done5")
 
+# ---------------------------------------------------------------- P6 Sheikh Hassan Villa
+divider("06", "Sheikh Hassan Villa", "فيلا الشيخ حسن", "r-39.jpg",
+        "Complete interior design and fit-out of a family villa — every room with its own wall, ceiling and lighting details.",
+        "تصميم داخلي وتنفيذ متكامل لفيلا عائلية — كل غرفة بتفاصيل جدارية وأسقف وإضاءة خاصة فيها.",
+        [("Type", "النوع", "Residential"), ("Scope", "النطاق", "Interior + Build"), ("Year", "السنة", "2026")], link="residence")
+grid("Lounges & Majlis", "المجالس والصالات", "PROJECT 06", "المشروع 06",
+     [img("r-39.jpg"), img("r-33.jpg"), img("r-51.jpg"), img("r-34.jpg"), img("r-31.jpg"), img("r-57.jpg")], "g-6")
+grid("Bedrooms", "غرف النوم", "PROJECT 06", "المشروع 06",
+     [img("r-20.jpg"), img("r-67.jpg"), img("r-32.jpg"), img("r-22.jpg"), img("r-28.jpg"), img("r-55.jpg")], "g-6")
+grid("Kids Rooms", "غرف الأطفال", "PROJECT 06", "المشروع 06",
+     [img("r-40.jpg"), img("r-74.jpg"), img("r-48.jpg"), img("r-59.jpg"), img("r-69.jpg"), img("r-35.jpg")], "g-6")
+grid("Bathrooms & Details", "الحمامات والتفاصيل", "PROJECT 06", "المشروع 06",
+     [img("r-30.jpg"), img("r-36.jpg"), img("r-68.jpg"), img("r-29.jpg"), img("r-37.jpg"), img("r-63.jpg")], "g-6")
+
 # ---------------------------------------------------------------- thank you
 S(f"""<div class="bleed" style="background-image:url(a/012-048.jpg)"></div><div class="shade full"></div>
 <div class="ty">
@@ -223,11 +247,12 @@ S(f"""<div class="bleed" style="background-image:url(a/012-048.jpg)"></div><div 
   <div class="gl c"></div>
   <p>Let's turn your vision into reality.</p><p class="ar">خلّنا نحوّل رؤيتك لواقع.</p>
   <div class="ty-c">
-    <div><small>PHONE · واتساب</small><b dir="ltr">{PHONE}</b></div>
+    <div data-href="https://wa.me/966579277975"><small>PHONE · واتساب</small><b dir="ltr">{PHONE}</b></div>
     <div><small>EMAIL · البريد</small><b>{EMAIL}</b></div>
-    <div><small>WEB · الموقع</small><b>{WEB}</b></div>
-    <div><small>INSTAGRAM · TIKTOK</small><b>@maxdesign.sa</b></div>
+    <div data-href="https://maxdesign.sa/"><small>WEB · الموقع</small><b>{WEB} ↗</b></div>
+    <div data-href="https://www.instagram.com/maxdesign.sa/"><small>INSTAGRAM · TIKTOK</small><b>@maxdesign.sa</b></div>
   </div>
+  <a class="online tour" data-href="https://maxdesign.sa/tour/">TAKE THE 360° VILLA TOUR <span class="ar">جولة الفيلا ٣٦٠°</span> <b>↗</b></a>
   <div class="addr">{ADDR_EN} <span class="ar">· {ADDR_AR}</span></div>
 </div>""", "thanks", footer=False)
 
