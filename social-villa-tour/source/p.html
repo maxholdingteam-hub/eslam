@@ -1,0 +1,120 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Montserrat:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}html,body{background:#222}
+:root{--v:#0b0907;--cr:#f2ece0;--g:#d9b46b;--g2:#f6dc9c;--deep:#7d5f2a;--ink:#14110d}
+.f{position:relative;width:1080px;overflow:hidden;font-family:"IBM Plex Sans Arabic",sans-serif;background:var(--v);color:var(--cr);margin-bottom:20px}
+.p45{height:1350px}.p916{height:1920px}
+.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.en{font-family:Montserrat,sans-serif;direction:ltr;letter-spacing:.3em;text-transform:uppercase}
+.am{font-family:Amiri,serif;font-weight:700}
+.foil{background:linear-gradient(180deg,#fff1c6,#f0cf82 35%,#c99a45 68%,#f3d68f);-webkit-background-clip:text;background-clip:text;color:transparent}
+.ft{position:absolute;left:60px;right:60px;bottom:48px;display:flex;justify-content:space-between;align-items:center;z-index:5}
+.ft img{height:44px}.ft .en{font-size:17px;letter-spacing:.22em}
+.sh{position:absolute;inset:0}
+.pill{display:inline-flex;align-items:center;gap:12px;background:rgba(11,9,7,.6);border:1.5px solid rgba(217,180,107,.7);color:var(--g2);padding:10px 26px;border-radius:999px;font-size:26px;font-weight:600;backdrop-filter:blur(6px)}
+.dot{position:absolute;width:44px;height:44px;margin:-22px 0 0 -22px;border-radius:50%;background:var(--g2);box-shadow:0 0 0 14px rgba(246,220,156,.28),0 0 0 30px rgba(246,220,156,.12)}
+.dot::after{content:"";position:absolute;inset:14px;border-radius:50%;background:var(--ink)}
+/* 1 sky to majlis */
+.c1 .top,.c1 .bot{position:absolute;left:0;right:0;overflow:hidden}
+.c1 .top{top:0;height:50%}.c1 .bot{bottom:0;height:50%}
+.c1 .top img,.c1 .bot img{width:100%;height:100%;object-fit:cover}
+.c1 .bot::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,9,7,.1),rgba(11,9,7,.35) 35%,rgba(11,9,7,.9))}
+.c1 .top::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(11,9,7,.45),rgba(11,9,7,0) 45%)}
+.c1 .seam{position:absolute;left:0;right:0;top:50%;height:2px;background:linear-gradient(90deg,transparent,var(--g),transparent);z-index:3}
+.c1 .mid{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);z-index:4;width:120px;height:120px;border-radius:50%;background:var(--v);border:2px solid var(--g);display:flex;align-items:center;justify-content:center}
+.c1 .mid svg{width:46px}
+.c1 .t1{position:absolute;top:70px;left:0;right:0;text-align:center;z-index:4;text-shadow:0 4px 30px rgba(0,0,0,.5)}
+.c1 .t1 h2{font-size:108px;line-height:1.1}
+.c1 .t2{position:absolute;bottom:150px;left:0;right:0;text-align:center;z-index:4;text-shadow:0 4px 30px rgba(0,0,0,.7)}
+.c1 .t2 h2{font-size:108px;line-height:1.1}
+.c1 .t2 p{font-size:30px;margin-top:16px}
+.c1 .t2 .pill{margin-top:22px}
+/* 2 tour ui */
+.c2 .sh{background:linear-gradient(180deg,rgba(11,9,7,.92),rgba(11,9,7,.55) 24%,rgba(11,9,7,0) 42%,rgba(11,9,7,0) 55%,rgba(11,9,7,.6))}
+.c2 .hd{position:absolute;top:70px;right:64px;left:64px;z-index:4}
+.c2 .hd h2{font-size:96px;line-height:1.12;margin-top:14px}
+.c2 .card{position:absolute;z-index:4;background:var(--cr);color:var(--ink);padding:28px 32px;width:540px;box-shadow:0 30px 80px rgba(0,0,0,.45)}
+.c2 .card small{font-family:Montserrat;font-size:15px;letter-spacing:.26em;color:var(--deep);display:block;direction:ltr;text-align:right}
+.c2 .card h3{font-family:Amiri;font-size:46px;margin:4px 0 6px}
+.c2 .card p{font-size:23px;line-height:1.7;color:#4a4134}
+.c2 .card li{list-style:none;display:flex;justify-content:space-between;font-size:22px;border-top:1px solid rgba(20,17,13,.14);padding-top:8px;margin-top:8px}
+.c2 .card li b{color:var(--deep);font-weight:600}
+.c2 .card .btn{margin-top:18px;background:var(--ink);color:var(--g2);text-align:center;padding:16px;font-weight:600;font-size:24px}
+.c2 .tag{position:absolute;z-index:4;background:rgba(11,9,7,.72);padding:8px 18px;font-size:24px}
+/* 3 rooms grid */
+.c3{background:var(--cr);color:var(--ink)}
+.c3 .hd{position:absolute;top:66px;right:64px;left:64px;display:flex;justify-content:space-between;align-items:flex-end}
+.c3 .hd h2{font-size:92px;line-height:1.05}
+.c3 .hd .en{font-size:16px;color:var(--deep)}
+.c3 .grid{position:absolute;left:64px;right:64px;display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.c3 .cell{position:relative;overflow:hidden}
+.c3 .cell img{width:100%;height:100%;object-fit:cover;display:block}
+.c3 .cell span{position:absolute;bottom:16px;right:16px;background:var(--cr);color:var(--ink);padding:8px 20px;font-size:28px;font-weight:600}
+.c3 .cell i{position:absolute;top:16px;left:16px;font-style:normal;font-family:Montserrat;font-size:16px;letter-spacing:.2em;color:#fff;background:rgba(11,9,7,.55);padding:6px 12px}
+.c3 .ft .en{color:var(--deep)}
+/* 4 plan */
+.c4{background:#f4efe6;color:var(--ink)}
+.c4 .plan{position:absolute;left:30px;right:30px;overflow:hidden}
+.c4 .plan img{width:100%;height:100%;object-fit:cover}
+.c4 .hd{position:absolute;top:66px;right:64px;left:64px}
+.c4 .hd h2{font-size:100px;line-height:1.05}
+.c4 .hd p{font-size:28px;color:#5a5044;margin-top:12px}
+.c4 .lab{position:absolute;z-index:3;display:flex;align-items:center;gap:10px;background:var(--ink);color:var(--g2);padding:8px 16px 8px 12px;font-size:24px;font-weight:600}
+.c4 .lab b{font-family:Montserrat;background:var(--g);color:var(--ink);width:34px;height:34px;display:inline-flex;align-items:center;justify-content:center;border-radius:50%;font-size:17px}
+.c4 .ft .en{color:var(--deep)}
+/* 5 facade */
+.c5 .sh{background:linear-gradient(180deg,rgba(11,9,7,.15),rgba(11,9,7,0) 30%,rgba(11,9,7,.15) 55%,rgba(11,9,7,.85))}
+.c5 .hd{position:absolute;left:64px;right:64px;bottom:150px;z-index:4;text-align:center}
+.c5 .hd h2{font-size:110px;line-height:1.1;text-shadow:0 4px 30px rgba(0,0,0,.5)}
+.c5 .hd p{font-size:30px;margin-top:14px;font-weight:300}
+.c5 .fr{position:absolute;inset:36px;border:1.5px solid rgba(242,236,224,.55);z-index:3;pointer-events:none}
+/* 6 whatsapp */
+.c6 .ph{position:absolute;left:0;right:0;top:0;overflow:hidden}.c6 .ph img{width:100%;height:100%;object-fit:cover}
+.c6 .sh{background:linear-gradient(180deg,rgba(11,9,7,0) 40%,rgba(11,9,7,.95) 75%)}
+.c6 .bd{position:absolute;left:64px;right:64px;bottom:140px;z-index:4}
+.c6 h2{font-size:96px;line-height:1.12}
+.c6 .chat{margin-top:26px;display:flex;flex-direction:column;gap:12px}
+.c6 .bub{max-width:760px;padding:18px 24px;font-size:27px;line-height:1.55;border-radius:22px}
+.c6 .me{align-self:flex-start;background:#d9fdd3;color:#111;border-top-right-radius:6px}
+.c6 .them{align-self:flex-end;background:#fff;color:#111;border-top-left-radius:6px}
+.c6 .bub small{display:block;text-align:left;font-size:16px;color:#667;margin-top:4px;direction:ltr}
+</style></head><body>
+<script>
+const FT=(c='')=>`<div class="ft ${c}"><div class="en">maxdesign.sa</div><img src="logo.png"><div class="en">@maxdesign.sa</div></div>`;
+const ARROW='<svg viewBox="0 0 24 24" fill="none" stroke="#f6dc9c" stroke-width="1.6"><path d="M12 4v16M5 13l7 7 7-7"/></svg>';
+const P={
+c1:s=>`<div class="top"><img src="img/k0.jpg" style="object-position:50% 40%"></div><div class="bot"><img src="img/k3.jpg" style="object-position:50% 55%"></div><div class="seam"></div><div class="mid">${ARROW}</div>
+<div class="t1"><div class="en" style="font-size:18px;color:#fff3d6">Scroll · Experience</div><h2 class="am">من السحاب…</h2></div>
+<div class="t2"><h2 class="am">لين <span class="foil">المجلس</span></h2><p>رحلة سينمائية داخل فيلا من تصميمنا، تتحرك معك وانت تنزل</p><div class="pill">جرّبها الحين على maxdesign.sa</div></div>${FT()}`,
+c2:s=>`<img class="bg" src="img/majlis.jpg" style="object-position:${s?'49%':'50%'} 50%"><div class="sh"></div>
+<div class="hd"><div class="pill">جولة 360° · جديد</div><h2 class="am">اضغط على أي قطعة…<br><span class="foil">وتعرّف عليها</span></h2></div>
+<div class="dot" style="left:${s?52:50}%;top:${s?20:22}%"></div><div class="dot" style="left:${s?52:50}%;top:${s?47:52}%"></div><div class="dot" style="left:${s?78:84}%;top:${s?62:66}%"></div>
+<div class="card" style="left:64px;bottom:${s?190:150}px"><small>TRAVERTINE TABLE</small><h3>طاولة الترافرتين</h3><p>قطعة وحدة من الترافرتين الروماني، تفصيل حسب المساحة.</p>
+<ul><li><span>الخامة</span><b>ترافرتين روماني</b></li><li><span>المقاس</span><b>١٨٠ × ١٢٠ سم</b></li></ul><div class="btn">أبي زيّها في بيتي</div></div>${FT()}`,
+c3:s=>{const H=s?1380:880,top=s?300:270;return `<div class="hd"><div><div class="en">Villa Tour · 360°</div><h2 class="am">ادخل الفيلا</h2></div><div class="en" style="text-align:left">4 rooms<br>one villa</div></div>
+<div class="grid" style="top:${top}px;height:${H}px;grid-template-rows:1fr 1fr">
+<div class="cell"><img src="img/majlis.jpg" style="object-position:50% 50%"><i>01</i><span>المجلس</span></div>
+<div class="cell"><img src="img/living.jpg" style="object-position:52% 50%"><i>02</i><span>الصالة</span></div>
+<div class="cell"><img src="img/dining.jpg" style="object-position:49% 50%"><i>03</i><span>السفرة</span></div>
+<div class="cell"><img src="img/bedroom.jpg" style="object-position:50% 50%"><i>04</i><span>غرفة النوم</span></div></div>
+<div style="position:absolute;left:64px;right:64px;top:${top+H+28}px;font-size:30px;text-align:center">لف ٣٦٠° في كل غرفة · <b style="color:var(--deep)">maxdesign.sa/tour</b></div>${FT()}`},
+c4:s=>{const t=s?420:330,h=s?1180:780;return `<div class="hd"><div class="en" style="font-size:16px;color:var(--deep)">Floor Plan · Ground</div><h2 class="am">كل متر مدروس</h2><p>قبل أي حجر، نرسم طريقة عيشك على الورق.</p></div>
+<div class="plan" style="top:${t}px;height:${h}px"><img src="img/k4.jpg" style="object-position:50% 50%"></div>
+<div class="lab" style="top:${t+h*.16}px;left:${s?120:150}px"><b>1</b>المجلس</div>
+<div class="lab" style="top:${t+h*.16}px;right:${s?110:150}px"><b>2</b>السفرة</div>
+<div class="lab" style="top:${t+h*.52}px;left:${s?120:150}px"><b>3</b>غرف النوم</div>
+<div class="lab" style="top:${t+h*.42}px;right:${s?110:150}px"><b>4</b>المطبخ</div>
+<div class="lab" style="top:${t+h*.40}px;left:50%;transform:translateX(-50%)"><b>5</b>الفناء</div>${FT()}`},
+c5:s=>`<img class="bg" src="img/k2.jpg" style="object-position:50% 50%"><div class="sh"></div><div class="fr"></div>
+<div style="position:absolute;top:80px;left:80px;right:80px;display:flex;justify-content:space-between;z-index:4" class="en"><span style="font-size:16px">Architecture</span><span style="font-size:16px">Riyadh</span></div>
+<div class="hd"><h2 class="am">الانطباع الأول<br><span class="foil">يبدأ من هنا</span></h2><p>تصميم معماري · داخلي · إدارة مشاريع</p></div>${FT()}`,
+c6:s=>`<div class="ph" style="height:${s?62:66}%"><img src="img/bedroom.jpg" style="object-position:50% 50%"></div><div class="sh"></div>
+<div class="dot" style="left:50%;top:${s?36:40}%"></div>
+<div class="bd"><h2 class="am">شفت قطعة <span class="foil">عجبتك؟</span></h2>
+<div class="chat"><div class="bub me">مرحبا ماكس ديزاين، عجبني السرير وجدار الرأس في جولة الفيلا وأبي زيّه في بيتي 🤍<small>9:41 ✓✓</small></div>
+<div class="bub them">أهلًا وسهلًا! نرتب لك زيارة ونصمم لك غرفتك بنفس الروح ✨<small>9:42</small></div></div></div>${FT()}`
+};
+let h='';for(const fmt of ['p45','p916'])for(const k in P)h+=`<section class="f ${fmt} ${k}" id="${k}_${fmt}">${P[k](fmt==='p916')}</section>`;
+document.body.innerHTML=h;
+</script></body></html>
