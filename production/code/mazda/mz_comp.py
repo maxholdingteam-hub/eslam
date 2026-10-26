@@ -46,11 +46,27 @@ for x in range(max(valid[0], fx - pad), min(valid[-1], rx + pad) + 1):
 core = cv2.GaussianBlur(core, (0, 0), w * 0.007)
 amb = cv2.GaussianBlur(amb, (0, 0), w * 0.035)
 out = bg * (1 - np.clip(E('SH', 0.78) * core + E('AMB', 0.35) * amb, 0, 0.88))[..., None]
+# environment reflection: the lit facade behind the car, mirrored and blurred, screened onto the paint;
+# strongest on the upper body and glass, fading towards the sills
+yv, xv = slice(max(0, y0), min(H, y0 + ch)), slice(max(0, x0), min(W, x0 + cw))
+env_src = bg[max(0, y0 - ch):max(1, y0), :]
+env_src = cv2.resize(env_src[::-1], (W, ch), interpolation=cv2.INTER_AREA)[:, max(0, x0):min(W, x0 + cw)]
+env = cv2.GaussianBlur(env_src, (0, 0), w * 0.012)
+ef = np.zeros((ch, cw, 1), np.float32); ef[yv.start - y0:yv.stop - y0, xv.start - x0:xv.stop - x0] = 1
+env_full = np.zeros((ch, cw, 3), np.float32); env_full[yv.start - y0:yv.stop - y0, xv.start - x0:xv.stop - x0] = env
+grad = np.clip(1.2 - yy[..., 0] * 1.3, 0.15, 1)[..., None]
+dark = (rgb.mean(2, keepdims=True) < 0.25).astype(np.float32)           # glass / black trim takes reflections strongly
+refl = E("REFL", 0.16) * grad * (1 + E("GLASS", 0.3) * dark) * ef
+rgb = 1 - (1 - rgb) * (1 - np.clip(env_full * refl, 0, 1))
 # match the phone photo: a touch of softness and sensor noise
 rgb = cv2.GaussianBlur(rgb, (0, 0), E('BLUR', 0.6)); a = cv2.GaussianBlur(a[..., 0], (0, 0), 0.8)[..., None]
-rgb = np.clip(rgb + np.random.default_rng(3).normal(0, E('NOISE', 0.012), rgb.shape), 0, 1)
-yv, xv = slice(max(0, y0), min(H, y0 + ch)), slice(max(0, x0), min(W, x0 + cw))
+# light wrap: background colour bleeds over the cutout edge
+bgc = out[yv, xv]; edge = np.clip(1 - cv2.GaussianBlur(a[..., 0], (0, 0), 3)[yv.start - y0:yv.stop - y0, xv.start - x0:xv.stop - x0], 0, 1)[..., None]
 sa = a[yv.start - y0: yv.stop - y0, xv.start - x0: xv.stop - x0]; sr = rgb[yv.start - y0: yv.stop - y0, xv.start - x0: xv.stop - x0]
+sr = sr * (1 - 0.5 * edge * sa) + cv2.GaussianBlur(bgc, (0, 0), 6) * 0.5 * edge * sa
 out[yv, xv] = out[yv, xv] * (1 - sa) + sr * sa
+# one finish over the whole frame so car and photo share the same processing
+out = cv2.addWeighted(out, 1 + E('SHARP', 0.25), cv2.GaussianBlur(out, (0, 0), 1.2), -E('SHARP', 0.25), 0)
+out = out + np.random.default_rng(7).normal(0, E('NOISE', 0.010), out.shape).astype(np.float32)
 Image.fromarray((np.clip(out, 0, 1) * 255).astype(np.uint8)).save(out_p, quality=95)
 print('ok', out_p, cw, ch)
