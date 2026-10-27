@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>Max Motors bold posters</title>
+<style>
+  @font-face{font-family:Cairo;font-weight:900;src:url(../fonts/Cairo-Black.ttf)}
+  @font-face{font-family:Cairo;font-weight:700;src:url(../fonts/Cairo-Bold.ttf)}
+  @font-face{font-family:Tajawal;font-weight:700;src:url(../fonts/Tajawal-Bold.ttf)}
+  @font-face{font-family:Tajawal;font-weight:500;src:url(../fonts/Tajawal-Medium.ttf)}
+  @font-face{font-family:Oswald;font-weight:600;src:url(../fonts/Oswald-SemiBold.ttf)}
+  @font-face{font-family:Anton;src:url(../fonts/Anton.woff2)}
+  @font-face{font-family:Michroma;src:url(../fonts/Michroma.woff2)}
+  @font-face{font-family:Playfair;font-style:italic;src:url(../fonts/PlayfairItalic.woff2)}
+  :root{--gold:#D4AF6A;--gold2:#F3D9A0;--gold3:#A9813F}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#000}
+  #root{position:relative;width:1080px;height:1350px;overflow:hidden}
+  .a{position:absolute}
+  .lat{direction:ltr;font-family:Michroma}
+  .gold{background:linear-gradient(180deg,var(--gold2),var(--gold) 55%,var(--gold3));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .ph{position:absolute;overflow:hidden}
+  .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .row{display:flex;direction:rtl}
+  .spec{flex:1;text-align:center}
+  .spec b{display:block;font:600 64px/1 Oswald;direction:ltr}
+  .spec i{display:block;font:500 24px Tajawal;font-style:normal;margin-top:6px}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+// four bold Instagram posters (1080x1350), each in its own style; figures from maxmotors.sa listings / manufacturer
+const D = new URLSearchParams(location.search).get('d') || 'urus';
+const root = document.getElementById('root');
+const logo = (x, y, w) => `<img class="a" src="../fx/mm_logo.png" alt="Max Motors" style="left:${x}px;top:${y}px;width:${w}px">`;
+const contact = (y, ink, line) => `<div class="a" style="left:60px;right:60px;top:${y}px;display:flex;align-items:center;justify-content:space-between;border-top:1.5px solid ${line};padding-top:18px">
+  <div style="font:700 30px Tajawal;color:${ink}">متوفرة الآن في <span class="gold">ماكس موتورز</span></div>
+  <div style="direction:ltr;text-align:left;line-height:1.05"><div style="font:600 42px Oswald;letter-spacing:2px;color:${ink}">920018915</div><div style="font:600 20px Oswald;letter-spacing:3px;color:var(--gold)">maxmotors.sa</div></div></div>`;
+const specs = (y, arr, ink, sub, line) => `<div class="a row" style="left:50px;right:50px;top:${y}px">${arr.map((s, i) => (i ? `<div style="width:1.5px;background:${line}"></div>` : '') + `<div class="spec"><b style="color:${ink}">${s[0]}</b><i style="color:${sub}">${s[1]}</i></div>`).join('')}</div>`;
+const P = {
+  // URUS SE: the official orange studio shot full-bleed, giant title at the foot, orange accents
+  urus: () => `<div class="ph" style="inset:0"><img src="img/urus_hero.jpg" alt="Lamborghini Urus SE" style="object-position:52% 50%;transform:scale(1.08)"></div>
+    <div class="a" style="inset:0;background:linear-gradient(180deg,rgba(0,0,0,.75) 0,rgba(0,0,0,0) 22%,rgba(0,0,0,0) 52%,rgba(0,0,0,.92) 74%,#000 100%)"></div>
+    ${logo(56, 40, 120)}
+    <div class="a lat" style="right:56px;top:54px;font-size:20px;letter-spacing:10px;color:#fff">LAMBORGHINI</div>
+    <div class="a" style="right:56px;top:90px;width:260px;height:4px;background:#FF6A13"></div>
+    <div class="a" style="left:40px;top:745px;direction:ltr;font:210px/0.9 Anton;letter-spacing:2px;color:#fff">URUS <span style="color:#FF6A13">SE</span></div>
+    <div class="a" style="right:60px;top:940px;text-align:right"><div style="font:900 54px/1.15 Cairo;color:#fff">وحش <span style="color:#FF6A13">هايبرد</span> · <span style="font-weight:700;font-size:30px;color:#D8D8D8">أول أوروس بقوة هجينة</span></div></div>
+    ${specs(1055, [['800', 'حصان'], ['3.4', 'ثانية 0-100'], ['312', 'كم/س أقصى سرعة']], '#fff', '#BDBDBD', 'rgba(255,106,19,.6)')}
+    ${contact(1212, '#fff', 'rgba(255,255,255,.2)')}`,
+  // Range Rover: cream magazine cover, serif masthead, framed photo and three detail tiles
+  rr: () => `<div class="a" style="inset:0;background:#F3EEE6"></div>
+    <div class="a" style="left:60px;right:60px;top:46px;display:flex;justify-content:space-between;align-items:center;direction:ltr">
+      <div class="lat" style="font-size:20px;letter-spacing:10px;color:#2A2622">RANGE ROVER</div><img src="../fx/mm_logo.png" alt="Max Motors" style="width:104px"></div>
+    <div class="a" style="left:60px;right:60px;top:120px;height:1.5px;background:#2A2622"></div>
+    <div class="a" style="left:56px;top:140px;direction:ltr;font:112px/1.05 Playfair;font-style:italic;color:#1E1B18">The Original<br>Luxury.</div>
+    <div class="a" style="right:60px;top:170px;text-align:right"><div style="font:900 56px/1.25 Cairo;color:#1E1B18">الفخامة<br><span class="gold">الأصلية</span></div></div>
+    <div class="ph" style="left:60px;top:400px;width:960px;height:540px;outline:1.5px solid #A9813F;outline-offset:10px"><img src="img/rr_hero.jpg" alt="Range Rover" style="object-position:45% 60%"></div>
+    ${['rr_int', 'rr_grille', 'rr_wheel'].map((n, i) => `<div class="ph" style="left:${60 + i * 330}px;top:975px;width:300px;height:170px"><img src="img/${n}.jpg" alt=""></div>`).join('')}
+    <div class="a lat" style="left:60px;top:1162px;font-size:16px;letter-spacing:8px;color:#6E6556">AUTOBIOGRAPHY · HSE · 2026</div>
+    <div class="a" style="right:60px;top:1152px;font:700 28px Tajawal;color:#2A2622">رانج روفر فوج</div>
+    ${contact(1212, '#1E1B18', 'rgba(0,0,0,.15)')}`,
+  // Prado: the tall desert photo full-bleed, giant outlined PRADO across the sky
+  prado: () => `<div class="ph" style="inset:0"><img src="img/prado_hero.jpg" alt="Toyota Prado 2026" style="object-position:50% 62%"></div>
+    <div class="a" style="inset:0;background:linear-gradient(180deg,rgba(0,0,0,.35),rgba(0,0,0,0) 30%,rgba(0,0,0,0) 58%,rgba(20,12,4,.85) 80%,#140C04)"></div>
+    ${logo(56, 40, 120)}
+    <div class="a lat" style="right:56px;top:56px;font-size:18px;letter-spacing:8px;color:#fff">LAND CRUISER · 2026</div>
+    <div class="a" style="left:0;right:0;top:110px;text-align:center;direction:ltr;font:300px/1 Anton;letter-spacing:6px;color:transparent;-webkit-text-stroke:4px #fff">PRADO</div>
+    <div class="a" style="right:60px;top:880px;text-align:right"><div style="font:900 74px/1.15 Cairo;color:#fff">سيّد <span class="gold">الرمال</span></div><div style="font:500 30px Tajawal;color:#EADBC3">برادو 2026 · جاهز لكل طريق</div></div>
+    ${specs(1060, [['2.8L', 'ديزل تيربو'], ['8', 'سرعات أوتوماتيك'], ['4x4', 'دبل + دفلوك']], '#fff', '#EADBC3', 'rgba(255,255,255,.3)')}
+    ${contact(1212, '#fff', 'rgba(255,255,255,.25)')}`,
+  // Patrol: warm sand gradient, giant gold PATROL with the car standing in front of it
+  patrol: () => `<div class="a" style="inset:0;background:radial-gradient(ellipse 90% 55% at 50% 42%,#5A4024,#20160C 62%,#0E0A06)"></div>
+    ${logo(56, 40, 120)}
+    <div class="a lat" style="right:56px;top:56px;font-size:18px;letter-spacing:8px;color:var(--gold2)">PLATINUM · 2026</div>
+    <div class="a gold" style="left:0;right:0;top:120px;text-align:center;direction:ltr;font:250px/1 Anton;letter-spacing:10px">PATROL</div>
+    <div class="a" style="left:110px;top:810px;width:860px;height:70px;border-radius:50%;background:radial-gradient(ellipse,rgba(0,0,0,.8),rgba(0,0,0,0) 70%)"></div>
+    <img class="a" src="img/patrol_car.png" alt="Nissan Patrol Platinum" style="left:90px;top:380px;width:900px">
+    <div class="a" style="right:60px;top:860px;text-align:right"><div style="font:900 66px/1.15 Cairo;color:#fff">هيبة <span class="gold">ما تحتاج تعريف</span></div><div style="font:500 30px Tajawal;color:#E3D3B8">نيسان باترول بلاتينيوم 2026</div></div>
+    ${specs(1050, [['3.5L', 'V6 توين تيربو'], ['425', 'حصان'], ['9', 'سرعات أوتوماتيك']], '#fff', '#D8C6A6', 'rgba(212,175,106,.45)')}
+    ${contact(1212, '#fff', 'rgba(212,175,106,.35)')}`
+};
+root.innerHTML = P[D]();
+Promise.all([document.fonts.ready, ...[...document.images].map(i => i.decode().catch(() => {}))]).then(() => document.body.dataset.ready = 1);
+</script>
+</body>
+</html>
