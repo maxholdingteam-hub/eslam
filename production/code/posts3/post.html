@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>Mazda at Max Motors</title>
+<style>
+  @font-face{font-family:Cairo;font-weight:900;src:url(../fonts/Cairo-Black.ttf)}
+  @font-face{font-family:Cairo;font-weight:700;src:url(../fonts/Cairo-Bold.ttf)}
+  @font-face{font-family:Tajawal;font-weight:700;src:url(../fonts/Tajawal-Bold.ttf)}
+  @font-face{font-family:Tajawal;font-weight:500;src:url(../fonts/Tajawal-Medium.ttf)}
+  @font-face{font-family:Oswald;font-weight:600;src:url(../fonts/Oswald-SemiBold.ttf)}
+  @font-face{font-family:Anton;src:url(../fonts/Anton.woff2)}
+  @font-face{font-family:Michroma;src:url(../fonts/Michroma.woff2)}
+  :root{--gold:#D4AF6A;--gold2:#F3D9A0;--gold3:#A9813F;--ink:#0D0D0E}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#000}
+  #root{position:relative;width:1080px;height:1350px;overflow:hidden;background:var(--ink)}
+  .a{position:absolute}
+  .lat{direction:ltr;font-family:Michroma}
+  .gold{background:linear-gradient(180deg,var(--gold2),var(--gold) 55%,var(--gold3));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .ph{position:absolute;overflow:hidden}
+  .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .chip{display:inline-block;padding:8px 30px;margin-left:14px;border-radius:40px;font:700 30px Cairo;color:#0D0D0E;background:linear-gradient(180deg,var(--gold2),var(--gold))}
+  .chip.o{background:none;color:var(--gold2);border:2px solid var(--gold)}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+// one 4:5 Instagram poster per design: cover (all three) or one Mazda; trims from the client's stock list
+const D = new URLSearchParams(location.search).get('d') || 'cover';
+const root = document.getElementById('root');
+const logo = (x, y, w) => `<img class="a" src="../fx/mm_logo.png" alt="Max Motors" style="left:${x}px;top:${y}px;width:${w}px">`;
+const contact = y => `<div class="a" style="left:60px;right:60px;top:${y}px;display:flex;align-items:center;justify-content:space-between;border-top:1.5px solid rgba(212,175,106,.35);padding-top:20px">
+  <div style="font:700 32px Tajawal;color:#fff">متوفرة الآن في <span class="gold">ماكس موتورز</span></div>
+  <div style="direction:ltr;text-align:left;line-height:1.05"><div style="font:600 44px Oswald;letter-spacing:2px;color:#fff">920018915</div><div style="font:600 21px Oswald;letter-spacing:3px;color:var(--gold)">maxmotors.sa</div></div></div>`;
+const CARS = {
+  cx90: { name: 'CX-90', ar: 'مازدا CX-90', line: 'الفخامة العائلية بثلاثة صفوف', trims: ['فل كامل', 'نص فل'] },
+  cx60: { name: 'CX-60', ar: 'مازدا CX-60', line: 'أناقة يابانية بروح رياضية', trims: ['استاندر', 'نص فل'] },
+  cx30: { name: 'CX-30', ar: 'مازدا CX-30', line: 'عملية وأنيقة لكل يوم', trims: ['نص فل'] }
+};
+const car = k => { const c = CARS[k];
+  return `<div class="ph" style="left:0;top:0;width:1080px;height:760px"><img src="img/${k}_photo.jpg" alt="Mazda ${c.name} at Max Motors"></div>
+  <div class="a" style="left:0;right:0;top:0;height:220px;background:linear-gradient(180deg,rgba(13,13,14,.85),rgba(13,13,14,0))"></div>
+  <div class="a" style="left:0;right:0;top:560px;height:200px;background:linear-gradient(180deg,rgba(13,13,14,0),#0D0D0E)"></div>
+  ${logo(56, 36, 120)}
+  <div class="a" style="right:56px;top:46px;text-align:right"><div class="lat" style="font-size:18px;letter-spacing:8px;color:var(--gold2)">NEW ARRIVAL</div><div style="font:900 44px/1.2 Cairo;color:#fff;margin-top:6px">وصلت <span class="gold">مازدا</span></div></div>
+  <div class="a" style="left:56px;top:690px;direction:ltr;font:150px/1 Anton;letter-spacing:4px;color:#fff">MAZDA <span class="gold">${c.name}</span></div>
+  <div class="a" style="right:60px;top:860px;text-align:right"><div style="font:900 58px/1.2 Cairo;color:#fff">${c.ar}</div><div style="font:500 32px Tajawal;color:#CFC6B8;margin-top:4px">${c.line}</div>
+    <div style="margin-top:22px">${c.trims.map((t, i) => `<span class="chip ${i ? 'o' : ''}">${t}</span>`).join('')}</div></div>
+  ${[1, 2, 3].map(i => `<div class="ph" style="left:${56 + (i - 1) * 132}px;top:${870}px;width:118px;height:250px;border-radius:16px;border:1.5px solid rgba(212,175,106,.55)"><img src="img/${k}_i${i}.jpg" alt=""></div>`).join('')}
+  <div class="a lat" style="left:56px;top:1130px;font-size:14px;letter-spacing:5px;color:#8F877B">INTERIOR</div>
+  ${contact(1210)}`; };
+const P = {
+  cover: () => `<div class="a" style="inset:0;background:radial-gradient(ellipse 90% 60% at 50% 30%,#1E1B16,#0D0D0E 75%)"></div>
+    ${['cx90', 'cx60', 'cx30'].map((k, i) => `<div class="ph" style="left:${-170 + i * 380}px;top:-30px;width:520px;height:900px;transform:skewX(-10deg);background:#0D0D0E;border-left:8px solid #0D0D0E;border-right:8px solid #0D0D0E"><img src="img/${k}_wide.jpg" alt="" style="transform:skewX(10deg) scale(1.15);object-fit:cover;object-position:${[16, 20, 18][i]}% 72%"></div>`).join('')}
+    <div class="a" style="left:0;right:0;top:600px;height:300px;background:linear-gradient(180deg,rgba(13,13,14,0),#0D0D0E)"></div>
+    ${logo(480, 36, 120)}
+    <div class="a" style="left:0;right:0;top:880px;text-align:center"><div class="lat" style="font-size:20px;letter-spacing:12px;color:var(--gold2)">NOW AT MAX MOTORS</div>
+      <div style="font:900 104px/1.15 Cairo;color:#fff;margin-top:10px">وصلت <span class="gold">مازدا</span></div>
+      <div style="direction:ltr;font:600 46px Oswald;letter-spacing:6px;color:#fff;margin-top:4px">CX-90 <span style="color:var(--gold)">·</span> CX-60 <span style="color:var(--gold)">·</span> CX-30</div></div>
+    ${contact(1210)}`,
+  cx90: () => car('cx90'), cx60: () => car('cx60'), cx30: () => car('cx30')
+};
+root.innerHTML = P[D]();
+Promise.all([document.fonts.ready, ...[...document.images].map(i => i.decode().catch(() => {}))]).then(() => document.body.dataset.ready = 1);
+</script>
+</body>
+</html>
