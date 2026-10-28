@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="6 0 88 96" role="img" aria-label="Max Marketing">
+<defs>
+<linearGradient id="mm-a" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#8fdc4f"/><stop offset="1" stop-color="#d9ff9a"/></linearGradient>
+<linearGradient id="mm-b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2e6b2c"/><stop offset="1" stop-color="#123d24"/></linearGradient>
+<linearGradient id="mm-c" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#3cc29c"/><stop offset="1" stop-color="#8ff0cf"/></linearGradient>
+<linearGradient id="mm-d" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#0f5a4b"/><stop offset="1" stop-color="#22a084"/></linearGradient>
+</defs>
+<polygon points="10,92 27,92 27,22 10,22" fill="url(#mm-a)"/>
+<polygon points="10,22 27,22 50,52 50,76" fill="url(#mm-b)"/>
+<polygon points="50,52 50,76 90,22 73,22" fill="url(#mm-c)"/>
+<polygon points="73,92 90,92 90,4 73,20" fill="url(#mm-d)"/>
+</svg>
