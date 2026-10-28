@@ -1,8 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="-14 -14 128 128" role="img" aria-label="Max Marketing">
 <rect x="-14" y="-14" width="128" height="128" fill="#f6f4ef"/><defs>
-<linearGradient id="mm-a" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#2a1fe0"/><stop offset="1" stop-color="#6a62ff"/></linearGradient>
-<linearGradient id="mm-b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1c1590"/><stop offset="1" stop-color="#0f0b55"/></linearGradient>
-<linearGradient id="mm-c" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#f26b3a"/><stop offset="1" stop-color="#f7b37f"/></linearGradient>
+<linearGradient id="mm-a" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#000000"/><stop offset="1" stop-color="#3a3836"/></linearGradient>
+<linearGradient id="mm-b" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#5a5752"/><stop offset="1" stop-color="#2b2b2b"/></linearGradient>
+<linearGradient id="mm-c" x1="0" y1="1" x2="1" y2="0"><stop offset="0" stop-color="#9a968e"/><stop offset="1" stop-color="#d9d6cf"/></linearGradient>
 <linearGradient id="mm-d" x1="0" y1="1" x2="0" y2="0"><stop offset="0" stop-color="#111111"/><stop offset="1" stop-color="#3a3836"/></linearGradient>
 </defs>
 <polygon points="10,92 27,92 27,22 10,22" fill="url(#mm-a)"/>
