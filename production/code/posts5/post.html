@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>Sequoia Capstone carousel</title>
+<style>
+  @font-face{font-family:Cairo;font-weight:900;src:url(../fonts/Cairo-Black.ttf)}
+  @font-face{font-family:Cairo;font-weight:700;src:url(../fonts/Cairo-Bold.ttf)}
+  @font-face{font-family:Tajawal;font-weight:700;src:url(../fonts/Tajawal-Bold.ttf)}
+  @font-face{font-family:Tajawal;font-weight:500;src:url(../fonts/Tajawal-Medium.ttf)}
+  @font-face{font-family:Oswald;font-weight:600;src:url(../fonts/Oswald-SemiBold.ttf)}
+  @font-face{font-family:Oswald;font-weight:300;src:url(../fonts/Oswald-Light.ttf)}
+  @font-face{font-family:Syncopate;font-weight:700;src:url(../fonts/Syncopate-Bold.woff2)}
+  @font-face{font-family:Michroma;src:url(../fonts/Michroma.woff2)}
+  :root{--gold:#D4AF6A;--gold2:#F3D9A0;--gold3:#A9813F;--tan:#B8763F}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#000}
+  #root{position:relative;width:1080px;height:1350px;overflow:hidden;background:#0C0B0A}
+  .a{position:absolute}
+  .lat{direction:ltr;font-family:Michroma}
+  .gold{background:linear-gradient(180deg,var(--gold2),var(--gold) 55%,var(--gold3));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .ph{position:absolute;overflow:hidden}
+  .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .num{display:flex;align-items:baseline;gap:22px;direction:rtl;padding:18px 0;border-bottom:1.5px solid rgba(212,175,106,.3)}
+  .num b{font:300 150px/0.9 Oswald;color:#fff;direction:ltr;min-width:330px;text-align:left}
+  .num i{font:700 38px Tajawal;font-style:normal;color:#E8DCC8}
+  .feat{font:700 34px/1.5 Tajawal;color:#fff}
+  .feat span{color:var(--gold)}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+// 3-slide Instagram carousel for the Toyota Sequoia Capstone 2026; figures from the maxmotors.sa listing
+const D = new URLSearchParams(location.search).get('d') || '1';
+const root = document.getElementById('root');
+const logo = (x, y, w) => `<img class="a" src="../fx/mm_logo.png" alt="Max Motors" style="left:${x}px;top:${y}px;width:${w}px">`;
+const contact = (y) => `<div class="a" style="left:60px;right:60px;top:${y}px;display:flex;align-items:center;justify-content:space-between;border-top:1.5px solid rgba(212,175,106,.35);padding-top:18px">
+  <div style="font:700 30px Tajawal;color:#fff">متوفرة الآن في <span class="gold">ماكس موتورز</span></div>
+  <div style="direction:ltr;text-align:left;line-height:1.05"><div style="font:600 42px Oswald;letter-spacing:2px;color:#fff">920018915</div><div style="font:600 20px Oswald;letter-spacing:3px;color:var(--gold)">maxmotors.sa</div></div></div>`;
+const dots = n => `<div class="a" style="left:0;right:0;top:1310px;display:flex;gap:12px;justify-content:center;direction:ltr">${[1, 2, 3].map(i => `<span style="width:${i == n ? 34 : 10}px;height:10px;border-radius:6px;background:${i == n ? 'var(--gold)' : 'rgba(255,255,255,.35)'}"></span>`).join('')}</div>`;
+const P = {
+  // 1: desert road, huge CAPSTONE wordmark, hook line
+  1: () => `<div class="ph" style="inset:0"><img src="img/road.jpg" alt="Toyota Sequoia Capstone" style="object-position:40% 60%"></div>
+    <div class="a" style="inset:0;background:linear-gradient(180deg,rgba(12,11,10,.82) 0,rgba(12,11,10,.15) 32%,rgba(12,11,10,0) 55%,rgba(12,11,10,.9) 80%,#0C0B0A)"></div>
+    ${logo(56, 40, 120)}
+    <div class="a lat" style="right:56px;top:58px;font-size:20px;letter-spacing:12px;color:#fff">TOYOTA SEQUOIA</div>
+    <div class="a" style="left:0;right:0;top:150px;text-align:center;direction:ltr;font:700 118px/1 Syncopate;letter-spacing:6px;color:#fff">CAPSTONE</div>
+    <div class="a" style="left:0;right:0;top:290px;text-align:center;font:600 34px Oswald;letter-spacing:20px;color:var(--gold2);direction:ltr">2026</div>
+    <div class="a" style="right:60px;top:1010px;text-align:right"><div style="font:900 78px/1.15 Cairo;color:#fff">قمة <span class="gold">الفخامة</span></div><div style="font:500 32px Tajawal;color:#E8DCC8">في عائلة تويوتا الكبيرة</div></div>
+    <div class="a" style="left:60px;top:1060px;font:700 28px Tajawal;color:#fff;direction:rtl">اسحب ←</div>
+    ${dots(1)}`,
+  // 2: the numbers, cutout car on dark
+  2: () => `<div class="a" style="inset:0;background:radial-gradient(ellipse 85% 45% at 50% 30%,#2A231C,#0C0B0A 72%)"></div>
+    ${logo(56, 40, 110)}
+    <div class="a lat" style="right:56px;top:56px;font-size:18px;letter-spacing:8px;color:var(--gold2)">i-FORCE MAX HYBRID</div>
+    <div class="a" style="left:120px;top:470px;width:840px;height:60px;border-radius:50%;background:radial-gradient(ellipse,rgba(0,0,0,.85),rgba(0,0,0,0) 70%)"></div>
+    <img class="a" src="img/car.png" alt="Sequoia Capstone" style="left:70px;top:130px;width:940px">
+    <div class="a" style="left:70px;right:70px;top:560px">
+      <div class="num"><b>437</b><i>حصان تقريبًا</i></div>
+      <div class="num"><b>790</b><i>نيوتن متر عزم</i></div>
+      <div class="num" style="border:0"><b>3.4L</b><i>V6 توين تيربو هايبرد</i></div>
+    </div>
+    <div class="a" style="right:70px;top:1140px;text-align:right"><div style="font:900 46px Cairo;color:#fff">قوة <span class="gold">بلا حدود</span></div><div style="font:500 28px Tajawal;color:#E8DCC8">10 سرعات · دفع رباعي 4x4 مع قير تخفيض</div></div>
+    ${dots(2)}`,
+  // 3: interior mosaic + features + contact
+  3: () => `<div class="ph" style="left:0;top:0;width:1080px;height:520px"><img src="img/dash.jpg" alt="Sequoia Capstone cabin"></div>
+    <div class="ph" style="left:0;top:530px;width:535px;height:330px"><img src="img/seats.jpg" alt="" style="object-position:50% 55%"></div>
+    <div class="ph" style="left:545px;top:530px;width:535px;height:330px"><img src="img/roof.jpg" alt=""></div>
+    <div class="a" style="left:0;right:0;top:0;height:200px;background:linear-gradient(180deg,rgba(12,11,10,.8),rgba(12,11,10,0))"></div>
+    ${logo(56, 36, 110)}
+    <div class="a lat" style="right:56px;top:52px;font-size:18px;letter-spacing:8px;color:#fff">CAPSTONE INTERIOR</div>
+    <div class="a" style="right:60px;top:885px;text-align:right">
+      <div style="font:900 56px/1.2 Cairo;color:#fff;margin-bottom:8px">صالون <span class="gold">متحرك</span></div>
+      <div class="feat"><span>●</span> 7 مقاعد مع كراسي كابتن في الصف الثاني</div>
+      <div class="feat"><span>●</span> جلد شبه أنيلين · تطعيمات خشب فاخرة</div>
+      <div class="feat"><span>●</span> شاشة 14 إنش · نظام JBL بـ 14 سماعة</div>
+    </div>
+    ${contact(1195)}
+    ${dots(3)}`
+};
+root.innerHTML = P[D]();
+Promise.all([document.fonts.ready, ...[...document.images].map(i => i.decode().catch(() => {}))]).then(() => document.body.dataset.ready = 1);
+</script>
+</body>
+</html>
