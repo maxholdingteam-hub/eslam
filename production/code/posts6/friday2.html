@@ -1,0 +1,59 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>Friday posts</title>
+<style>
+  @font-face{font-family:Ruqaa;font-weight:700;src:url(../fonts/ArefRuqaa.ttf)}
+  @font-face{font-family:Kufi;font-weight:700;src:url(../fonts/ReemKufi.ttf)}
+  @font-face{font-family:Cairo;font-weight:900;src:url(../fonts/Cairo-Black.ttf)}
+  @font-face{font-family:Tajawal;font-weight:700;src:url(../fonts/Tajawal-Bold.ttf)}
+  @font-face{font-family:Tajawal;font-weight:500;src:url(../fonts/Tajawal-Medium.ttf)}
+  @font-face{font-family:Oswald;font-weight:600;src:url(../fonts/Oswald-SemiBold.ttf)}
+  :root{--gold:#D4AF6A;--gold2:#F3D9A0;--gold3:#A9813F}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#000}
+  #root{position:relative;width:1080px;height:1350px;overflow:hidden}
+  .a{position:absolute}
+  .gold{background:linear-gradient(180deg,#FBE7B5,var(--gold) 55%,var(--gold3));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .foot{position:absolute;left:0;right:0;display:flex;align-items:center;justify-content:center;gap:26px;direction:ltr}
+  .foot .s{width:1.5px;height:44px;background:rgba(212,175,106,.6)}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+// two Friday options: (a) Jumuah greeting on an Islamic geometric pattern, (b) "Friday drive" engagement post
+const D = new URLSearchParams(location.search).get('d') || 'a';
+const foot = (y, ink) => `<div class="foot" style="top:${y}px"><img src="../fx/mm_logo.png" alt="Max Motors" style="width:76px"><div class="s"></div><div style="font:600 30px Oswald;letter-spacing:2px;color:${ink}">920018915</div><div class="s"></div><div style="font:600 26px Oswald;letter-spacing:3px;color:var(--gold)">maxmotors.sa</div></div>`;
+// eight-point star tile (khatam) drawn as an SVG pattern
+const pattern = `<svg class="a" style="inset:0" width="1080" height="1350" aria-hidden="true"><defs>
+  <pattern id="k" width="120" height="120" patternUnits="userSpaceOnUse"><g fill="none" stroke="#D4AF6A" stroke-width="1.4" opacity=".22">
+  <rect x="25" y="25" width="70" height="70"/><rect x="25" y="25" width="70" height="70" transform="rotate(45 60 60)"/><circle cx="60" cy="60" r="16"/>
+  <path d="M0 60H25M95 60H120M60 0V25M60 95V120"/></g></pattern>
+  <radialGradient id="fade" cx=".5" cy=".46" r=".6"><stop offset="0" stop-color="#0E1A2B" stop-opacity="1"/><stop offset=".55" stop-color="#0E1A2B" stop-opacity=".2"/><stop offset="1" stop-color="#0E1A2B" stop-opacity="0"/></radialGradient></defs>
+  <rect width="1080" height="1350" fill="url(#k)"/><rect width="1080" height="1350" fill="url(#fade)"/></svg>`;
+const P = {
+  a: () => `<div class="a" style="inset:0;background:radial-gradient(ellipse 80% 60% at 50% 45%,#13243A,#081220 75%)"></div>${pattern}
+    <div class="a" style="left:240px;top:300px;width:600px;height:600px;border-radius:50%;border:2px solid rgba(212,175,106,.5)"></div>
+    <div class="a" style="left:270px;top:330px;width:540px;height:540px;border-radius:50%;border:1px solid rgba(212,175,106,.3)"></div>
+    <div class="a" style="left:0;right:0;top:470px;text-align:center"><div class="gold" style="font:700 168px/1.1 Ruqaa">جمعة مباركة</div></div>
+    <div class="a" style="left:0;right:0;top:960px;text-align:center;font:500 40px/1.6 Tajawal;color:#E9E2D2">اللهم صلِّ وسلم على نبينا محمد<br><span style="color:var(--gold2)">تقبّل الله منّا ومنكم</span></div>
+    ${foot(1240, '#fff')}`,
+  b: () => `<div class="a" style="inset:0;background:linear-gradient(180deg,#E9D2AE,#D8B98A)"></div>
+    <div class="a" style="left:0;top:0;width:1080px;height:760px;overflow:hidden"><img src="img/lc_desert.jpg" alt="Toyota Land Cruiser in the desert" style="width:100%;height:100%;object-fit:cover;object-position:45% 60%"></div>
+    <div class="a" style="left:0;right:0;top:600px;height:170px;background:linear-gradient(180deg,rgba(233,210,174,0),#E9D2AE)"></div>
+    <div class="a" style="left:0;right:0;top:770px;text-align:center"><div style="font:700 44px Kufi;color:#6B4A22;letter-spacing:2px">مشوار الجمعة</div>
+      <div style="font:900 96px/1.2 Cairo;color:#2B1C0C;margin-top:6px">وين <span style="color:#A0621E">مشوارك</span> اليوم؟</div></div>
+    <div class="a" style="left:0;right:0;top:1035px;display:flex;justify-content:center;gap:34px">
+      <div style="font:900 52px Cairo;color:#fff;background:#2B1C0C;padding:12px 56px;border-radius:60px">البر 🏜️</div>
+      <div style="font:900 52px Cairo;color:#2B1C0C;border:4px solid #2B1C0C;padding:8px 56px;border-radius:60px">البحر 🌊</div></div>
+    <div class="a" style="left:0;right:0;top:1165px;text-align:center;font:700 30px Tajawal;color:#5A3E1C">قولنا في الكومنت 👇</div>
+    <div class="a" style="left:0;right:0;top:1222px;bottom:0;background:#2B1C0C"></div>
+    ${foot(1253, '#fff')}`
+};
+document.getElementById('root').innerHTML = P[D]();
+Promise.all([document.fonts.ready, ...[...document.images].map(i => i.decode().catch(() => {}))]).then(() => document.body.dataset.ready = 1);
+</script>
+</body>
+</html>
