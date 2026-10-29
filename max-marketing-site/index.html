@@ -582,7 +582,7 @@ html[lang=en] .morph-caps{font-family:var(--en);font-weight:700;letter-spacing:-
 <script>
 /* ===== Edit company contact details here ===== */
 const CONFIG = {
-  whatsapp: "966500000000",          // TODO: real WhatsApp number, digits only with country code
+  whatsapp: "966502016220",          // WhatsApp, digits only with country code (050 201 6220)
   email: "hello@maxmarketing.sa",    // TODO: confirm email
   instagram: "maxmarketing.sa",      // TODO: confirm handle
   tiktok: "maxmarketing.sa"          // TODO: confirm handle
@@ -641,7 +641,7 @@ const mqRow = MQ.map(x=>`<span>${both(x)}</span>`).join("");
 $("mq").innerHTML = mqRow + mqRow;
 $("yr").textContent = new Date().getFullYear();
 $("direct").innerHTML = [
-  [`https://wa.me/${CONFIG.whatsapp}`, T("واتساب","WhatsApp"), "+" + CONFIG.whatsapp],
+  [`https://wa.me/${CONFIG.whatsapp}`, T("واتساب","WhatsApp"), "+966 50 201 6220"],
   [`mailto:${CONFIG.email}`, T("البريد","Email"), CONFIG.email],
   [`https://www.instagram.com/${CONFIG.instagram}/`, T("إنستقرام","Instagram"), "@" + CONFIG.instagram],
   [`https://www.tiktok.com/@${CONFIG.tiktok}`, T("تيك توك","TikTok"), "@" + CONFIG.tiktok]
