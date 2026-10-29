@@ -1,0 +1,282 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{background:#222}
+:root{--sand:#efe6d7;--sand2:#e5d9c5;--olive:#2f3527;--terra:#b0613a;--ink:#1d1a15;--mut:#6f6656;--stone:#cfc4b2}
+section{position:relative;width:1080px;height:1350px;overflow:hidden;font-family:"IBM Plex Sans Arabic";color:var(--ink);background:var(--sand)}
+.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.en{font-family:Montserrat;direction:ltr;letter-spacing:.28em;text-transform:uppercase}
+.al{font-family:Alexandria}
+.top{position:absolute;top:62px;right:72px;left:72px;display:flex;justify-content:space-between;align-items:center;z-index:5}
+.tag{display:flex;align-items:center;gap:14px;font-family:Alexandria;font-weight:500;font-size:24px}
+.tag i{width:46px;height:2px;background:var(--terra)}
+.top .en{font-size:15px;font-weight:600}
+.light .top{color:#f3ece0}
+.ft{position:absolute;left:72px;right:72px;bottom:54px;display:flex;justify-content:space-between;align-items:center;z-index:5}
+.ft .l{display:flex;align-items:center;gap:14px}.ft img{height:44px}
+.ft .w{font-family:Alexandria;font-weight:500;font-size:22px}
+.ft .d{font-size:12px;font-weight:600;letter-spacing:.22em}
+.ft .r{font-family:Alexandria;font-size:20px;font-weight:400}
+.ft .r b{direction:ltr;display:inline-block;font-weight:600}
+.light .ft{color:#f3ece0}
+.dk{position:absolute;inset:0}
+h1,h2{font-family:Alexandria;font-weight:800;line-height:1.22;letter-spacing:-.01em}
+em{font-style:normal;color:var(--terra)}
+.swipe{display:inline-flex;align-items:center;gap:12px;font-family:Alexandria;font-weight:500;font-size:24px;border:1.5px solid currentColor;border-radius:40px;padding:10px 26px}
+.pill{display:inline-block;font-family:Alexandria;font-weight:600;font-size:24px;padding:6px 22px;border-radius:30px;background:var(--terra);color:#fff}
+/* P1 this-or-that */
+.tt .half{position:absolute;left:0;right:0;height:560px;overflow:hidden}
+.tt .h1{top:0}.tt .h2{bottom:0}
+.tt .half img{width:100%;height:100%;object-fit:cover}
+.tt .h2::after{content:"";position:absolute;left:0;right:0;bottom:0;height:170px;background:linear-gradient(180deg,rgba(18,15,10,0),rgba(18,15,10,.75))}
+.tt .num{position:absolute;top:30px;left:40px;width:110px;height:110px;border-radius:50%;background:var(--sand);color:var(--olive);font-family:Alexandria;font-weight:800;font-size:64px;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.tt .h2 .num{top:30px}
+.tt .lab{position:absolute;right:40px;bottom:28px;font-family:Alexandria;font-weight:500;font-size:24px;color:#fff;background:rgba(20,17,12,.55);padding:8px 20px;border-radius:24px}
+.tt .h2 .lab{bottom:auto;top:28px}
+.tt .mid{position:absolute;top:560px;left:0;right:0;height:230px;background:var(--olive);color:var(--sand);display:flex;flex-direction:column;justify-content:center;padding:0 72px}
+.tt .mid h1{font-size:76px}.tt .mid p{font-size:27px;opacity:.9;margin-top:6px}
+.tt .ft{bottom:22px}.tt .ft .w,.tt .ft .r{text-shadow:0 2px 8px rgba(0,0,0,.6)}
+/* mistakes carousel */
+.mc1 .dk{background:linear-gradient(180deg,rgba(18,15,10,.35),rgba(18,15,10,.15) 35%,rgba(18,15,10,.86) 78%)}
+.mc1 h1{position:absolute;right:72px;left:72px;bottom:270px;font-size:92px;color:#f6efe3}
+.mc1 .sub{position:absolute;right:72px;bottom:205px;font-family:Alexandria;font-weight:300;font-size:30px;color:#e9dfcf}
+.mc1 .swipe{position:absolute;left:72px;bottom:205px;color:#f6efe3}
+.ms .big{position:absolute;top:150px;right:62px;font-family:Montserrat;font-weight:700;font-size:250px;line-height:1;color:var(--terra);opacity:.95;direction:ltr}
+.ms .of{position:absolute;top:190px;left:72px;font-size:18px;color:var(--mut)}
+.ms .body{position:absolute;top:440px;right:72px;left:72px;display:flex;flex-direction:column;gap:44px}
+.ms h2{font-size:70px;color:var(--olive)}
+.ms .why{font-size:35px;line-height:1.75;color:#3d382f}
+.ms .why b{font-family:Alexandria;font-weight:600;color:var(--ink)}
+.ms .fix{background:var(--olive);color:var(--sand);border-radius:22px;padding:36px 42px;font-size:33px;line-height:1.7}
+.ms .fix b{display:block;font-family:Alexandria;font-weight:600;color:#e9a77f;font-size:26px;margin-bottom:6px}
+.ms .bar{position:absolute;top:0;right:0;height:10px;background:var(--terra)}
+.mcta{background:var(--olive)!important;color:var(--sand)}
+.mcta .top,.mcta .ft{color:var(--sand)}
+.mcta h1{position:absolute;top:300px;right:72px;left:72px;font-size:86px}
+.mcta p{position:absolute;top:640px;right:72px;left:72px;font-size:33px;line-height:1.75;font-family:Alexandria;font-weight:300}
+.mcta .wa{position:absolute;top:860px;right:72px;display:flex;align-items:center;gap:20px;background:var(--sand);color:var(--olive);border-radius:20px;padding:26px 36px;font-family:Alexandria;font-size:30px;font-weight:500}
+.mcta .wa b{direction:ltr;font-family:Montserrat;font-weight:700;font-size:40px;letter-spacing:.04em}
+/* P3 myth */
+.my .dk{background:linear-gradient(180deg,rgba(18,15,10,.05),rgba(18,15,10,0) 40%,rgba(18,15,10,.9) 76%)}
+.my .q{position:absolute;right:72px;left:72px;bottom:330px;color:#f6efe3}
+.my .q h1{font-size:82px;margin-top:18px}
+.my .q h1 s{text-decoration-color:var(--terra);text-decoration-thickness:7px}
+.my .a{position:absolute;right:72px;left:72px;bottom:150px;color:#efe4d2;font-family:Alexandria;font-weight:300;font-size:31px;line-height:1.6}
+.my .a b{font-weight:600;color:#f0a77c}
+.pin{position:absolute;z-index:4;display:flex;align-items:center;gap:12px;transform:translate(50%,-50%)}
+.pin .dot{width:54px;height:54px;border-radius:50%;background:var(--terra);color:#fff;font-family:Montserrat;font-weight:700;font-size:26px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 10px rgba(176,97,58,.28)}
+.pin .t{background:rgba(247,241,231,.95);color:var(--ink);font-family:Alexandria;font-weight:500;font-size:23px;padding:10px 18px;border-radius:14px;white-space:nowrap;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+/* P4 materials */
+.mt h1{position:absolute;top:140px;right:72px;left:72px;font-size:74px;color:var(--olive)}
+.mt .im{position:absolute;top:340px;width:450px;height:330px;border-radius:24px;overflow:hidden}
+.mt .im img{width:100%;height:100%;object-fit:cover}
+.mt .im span{position:absolute;bottom:16px;right:16px;background:rgba(20,17,12,.7);color:#fff;font-family:Alexandria;font-weight:600;font-size:26px;padding:6px 18px;border-radius:14px}
+.mt .a{right:72px}.mt .b{left:72px}
+.mt .vs{position:absolute;top:470px;left:50%;transform:translateX(-50%);width:76px;height:76px;border-radius:50%;background:var(--terra);color:#fff;font-family:Montserrat;font-weight:700;font-size:24px;display:flex;align-items:center;justify-content:center;z-index:3;border:6px solid var(--sand)}
+.mt table{position:absolute;top:700px;right:72px;left:72px;width:936px;border-collapse:collapse;font-size:24px;line-height:1.45}
+.mt td{padding:15px 10px;border-bottom:1.5px solid #d6c9b3;vertical-align:top}
+.mt td.k{font-family:Alexandria;font-weight:600;color:var(--terra);width:20%;font-size:22px}
+.mt td.x{width:40%}
+.mt tr.last td{border:0;font-family:Alexandria;font-weight:500;color:var(--olive)}
+/* P5 palette */
+.pl .ph{position:absolute;top:0;left:0;right:0;height:760px}
+.pl .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 60%}
+.pl .dk{height:760px;background:linear-gradient(180deg,rgba(18,15,10,.45),rgba(18,15,10,0) 30%)}
+.pl h1{position:absolute;top:800px;right:72px;font-size:64px;color:var(--olive)}
+.pl .sub{position:absolute;top:888px;right:72px;font-size:26px;color:var(--mut);font-family:Alexandria;font-weight:300}
+.pl .sw{position:absolute;top:975px;right:72px;left:72px;display:flex;justify-content:space-between}
+.pl .sw div{width:168px;text-align:center}
+.pl .sw i{display:block;width:150px;height:150px;border-radius:50%;margin:0 auto 14px;box-shadow:inset 0 0 0 2px rgba(0,0,0,.06)}
+.pl .sw b{display:block;font-family:Alexandria;font-weight:600;font-size:25px}
+.pl .sw span{font-family:Montserrat;font-size:15px;color:var(--mut);letter-spacing:.08em}
+/* P6 lighting */
+.lt .dk{background:linear-gradient(180deg,rgba(18,15,10,.25),rgba(18,15,10,0) 22%,rgba(18,15,10,0) 50%,rgba(18,15,10,.92) 74%)}
+.lt h1{position:absolute;right:72px;left:72px;top:880px;font-size:68px;color:#f6efe3}
+.lt .lg{position:absolute;right:72px;left:72px;top:985px;display:flex;flex-direction:column;gap:12px;color:#ece2d1;font-size:25px}
+.lt .lg div{display:flex;gap:14px;align-items:baseline}
+.lt .lg b{font-family:Montserrat;color:#f0a77c;font-size:22px;min-width:26px}
+.lt .lg strong{font-family:Alexandria;font-weight:600;color:#fff}
+/* process */
+.pc1 .dk{background:linear-gradient(180deg,rgba(239,230,215,.92) 0%,rgba(239,230,215,.75) 30%,rgba(239,230,215,0) 55%)}
+.pc1 h1{position:absolute;top:150px;right:72px;left:72px;font-size:90px;color:var(--olive)}
+.pc1 .sub{position:absolute;top:420px;right:72px;font-family:Alexandria;font-weight:400;font-size:31px}
+.pc1 .swipe{position:absolute;left:72px;bottom:150px;color:var(--olive);background:var(--sand)}
+.ps .ph{position:absolute;top:0;left:0;right:0;height:720px}
+.ps .ph img{width:100%;height:100%;object-fit:cover}
+.ps .ph .dk{background:linear-gradient(180deg,rgba(18,15,10,.45),rgba(18,15,10,0) 28%)}
+.ps .st{position:absolute;top:640px;right:72px;width:160px;height:160px;border-radius:50%;background:var(--terra);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;border:10px solid var(--sand)}
+.ps .st small{font-family:Alexandria;font-size:20px}.ps .st b{font-family:Montserrat;font-size:52px;line-height:1}
+.ps h2{position:absolute;top:830px;right:72px;left:72px;font-size:60px;color:var(--olive)}
+.ps p{position:absolute;top:935px;right:72px;left:72px;font-size:34px;line-height:1.75;color:#3d382f}
+.ps .dots{position:absolute;top:705px;left:72px;display:flex;gap:10px}
+.ps .dots i{width:16px;height:16px;border-radius:50%;background:var(--stone)}.ps .dots i.on{background:var(--terra);width:40px;border-radius:10px}
+.ps .real{position:absolute;top:660px;left:72px;background:var(--olive);color:var(--sand);font-family:Alexandria;font-size:20px;padding:6px 16px;border-radius:12px}
+/* Q&A */
+.qa{background:var(--olive)!important;color:var(--sand)}
+.qa .top,.qa .ft{color:var(--sand)}
+.qa .q{position:absolute;top:150px;right:72px;left:72px}
+.qa .q small{font-family:Alexandria;font-size:28px;color:#e9a77f}
+.qa .q h1{font-size:96px;margin-top:6px}
+.qa .ans{position:absolute;top:470px;right:72px;left:72px;font-family:Alexandria;font-weight:300;font-size:32px}
+.qa ol{position:absolute;top:550px;right:72px;left:72px;list-style:none;display:flex;flex-direction:column;gap:16px}
+.qa li{display:flex;gap:20px;align-items:center;background:rgba(239,230,215,.08);border:1.5px solid rgba(239,230,215,.18);border-radius:18px;padding:16px 24px;font-size:28px}
+.qa li b{font-family:Montserrat;color:#e9a77f;font-size:26px}
+.qa li strong{font-family:Alexandria;font-weight:600}
+.qa .cta{position:absolute;top:1090px;right:72px;left:72px;font-family:Alexandria;font-size:28px;line-height:1.6}
+.qa .cta b{direction:ltr;display:inline-block;color:#e9a77f;font-family:Montserrat;font-weight:700}
+</style></head><body>
+
+<!-- ================= P1 this or that ================= -->
+<section id="01-this-or-that" class="tt light">
+<div class="half h1"><img src="img/kdark.jpg" style="object-position:50% 58%"><div class="num">1</div><div class="lab">خشب داكن + رخام أخضر</div></div>
+<div class="mid"><h1>مطبخك… <em>1</em> ولا <em>2</em>؟</h1><p>اكتب رقمك في التعليقات، ونشوف وش يختار أغلب الناس.</p></div>
+<div class="half h2"><img src="img/klight.jpg" style="object-position:50% 62%"><div class="num">2</div><div class="lab">أبيض دافئ + رخام كلكتا</div></div>
+<div class="top" style="top:40px"><div class="tag" style="color:#f3ece0;text-shadow:0 2px 8px rgba(0,0,0,.5)"><i></i>هذا ولا هذا؟</div></div>
+<div class="ft"><div class="l"><img src="logo.png"><div><div class="w">ماكس ديزاين</div><div class="d en">maxdesign.sa</div></div></div><div class="r">واتساب <b>0579277975</b></div></div>
+</section>
+
+<!-- ================= P2 mistakes carousel ================= -->
+<section id="02-mistakes-1" class="mc1 light"><img class="bg" src="img/site.jpg"><div class="dk"></div>
+<div class="top"><div class="tag"><i></i>قبل ما تشطّب</div><div class="en">Max Design</div></div>
+<h1><em style="color:#f0a77c">5</em> أخطاء تكلّفك<br>آلاف في تشطيب<br>فيلتك</h1>
+<div class="sub">وكيف تتجنبها من البداية</div><div class="swipe">اسحب ←</div>
+<div class="ft"><div class="l"><img src="logo.png"><div><div class="w">ماكس ديزاين</div><div class="d en">maxdesign.sa</div></div></div><div class="r">احفظ البوست</div></div>
+</section>
+<section id="02-mistakes-2" class="ms"><div class="bar" style="width:20%"></div>
+<div class="top"><div class="tag"><i></i>الخطأ 1 من 5</div><div class="en" style="color:var(--mut)">Max Design</div></div>
+<div class="big">01</div>
+<div class="body"><h2>تبدأ التنفيذ قبل ما يكتمل التصميم</h2><div class="why">كل قرار يتأجل للموقع يتحول لتعديل، وكل تعديل يعني <b>هدم وإعادة</b> وتأخير في التسليم.</div><div class="fix"><b>الحل</b>اعتمد المخططات التنفيذية كاملة (معماري، كهرباء، أسقف، أرضيات) قبل أول طوبة.</div></div>
+<div class="ft"><div class="l"><img src="logo.png"><div><div class="w">ماكس ديزاين</div><div class="d en">maxdesign.sa</div></div></div><div class="r">اسحب ←</div></div></section>
+<section id="02-mistakes-3" class="ms"><div class="bar" style="width:40%"></div>
+<div class="top"><div class="tag"><i></i>الخطأ 2 من 5</div><div class="en" style="color:var(--mut)">Max Design</div></div>
+<div class="big">02</div>
+<div class="body"><h2>تختار الإضاءة في آخر مرحلة</h2><div class="why">الإضاءة تتحدد مع الأسقف. لو تأخرت، بتضطر <b>تكسر الجبس</b> عشان تمدد سلك أو تضيف سبوت.</div><div class="fix"><b>الحل</b>صمّم مخطط الإضاءة مع تصميم الأسقف: إضاءة عامة، ووظيفية، وتجميلية.</div></div>
+<div class="ft"><div class="l"><img src="logo.png"><div><div class="w">ماكس ديزاين</div><div class="d en">maxdesign.sa</div></div></div><div class="r">اسحب ←</div></div></section>
+<section id="02-mistakes-4" class="ms"><div class="bar" style="width:60%"></div>
+<div class="top"><div class="tag"><i></i>الخطأ 3 من 5</div><div class="en" style="color:var(--mut)">Max Design</div></div>
+<div class="big">03</div>
+<div class="body"><h2>توزّع الأفياش والمفاتيح بدون مخطط أثاث</h2><div class="why">تتفاجأ بفيش خلف الكنبة، ومفتاح خلف الباب، وتلفزيون ما له مكان واضح.</div><div class="fix"><b>الحل</b>ارسم مخطط الأثاث أول، وبعدها حدد مكان كل فيش ومفتاح عليه.</div></div>
+<div class="ft"><div class="l"><img src="logo.png"><div><div class="w">ماكس ديزاين</div><div class="d en">maxdesign.sa</div></div></div><div class="r">اسحب ←</div></div></section>
+<section id="02-mistakes-5" class="ms"><div class="bar" style="width:80%"></div>
+<div class="top"><div class="tag"><i></i>الخطأ 4 من 5</div><div class="en" style="color:var(--mut)">Max Design</div></div>
+<div class="big">04</div>
+<div class="body"><h2>تختار الخامة من صورة في الجوال</h2><div class="why">اللون في الصورة غير اللون تحت إضاءة بيتك. والنتيجة <b>خامة ما تشبه اللي تخيلته</b>.</div><div class="fix"><b>الحل</b>اطلب عينة حقيقية وشوفها في نفس المكان، في النهار وفي الليل.</div></div>
+<div class="ft"><div class="l"><img src="logo.png"><div><div class="w">ماكس ديزاين</div><div class="d en">maxdesign.sa</div></div></div><div class="r">اسحب ←</div></div></section>
+<section id="02-mistakes-6" class="ms"><div class="bar" style="width:100%"></div>
+<div class="top"><div class="tag"><i></i>الخطأ 5 من 5</div><div class="en" style="color:var(--mut)">Max Design</div></div>
+<div class="big">05</div>
+<div class="body"><h2>تهمل العزل والتكييف قبل الأسقف</h2><div class="why">تسريب أو صوت مزعج أو فتحة تكييف في مكان غلط… والإصلاح بعد التشطيب <b>أغلى بكثير</b>.</div><div class="fix"><b>الحل</b>ثبّت العزل المائي والحراري ومسارات التكييف قبل إغلاق الأسقف والجدران.</div></div>
+<div class="ft"><div class="l"><img src="logo.png"><div><div class="w">ماكس ديزاين</div><div class="d en">maxdesign.sa</div></div></div><div class="r">اسحب ←</div></div></section>
+<section id="02-mistakes-7" class="mcta"><div class="top"><div class="tag"><i></i>قبل ما تبدأ</div><div class="en">Max Design</div></div>
+<h1>تبني الحين؟<br><em style="color:#e9a77f">خلّنا نراجع</em><br>مخططك معك.</h1>
+<p>نرتّب معك التصميم والمخططات التنفيذية قبل التنفيذ، عشان تصرف مرة وحدة وصح.</p>
+<div class="wa">أرسل مخططك على واتساب <b>0579277975</b></div>
+<div class="ft"><div class="l"><img src="logo.png"><div><div class="w">ماكس ديزاين</div><div class="d en">maxdesign.sa</div></div></div><div class="r">احفظ البوست وارسله لأحد يبني</div></div></section>
+<!-- ================= P3 myth ================= -->
+<section id="03-myth" class="my light"><img class="bg" src="img/living.jpg"><div class="dk"></div>
+<div class="top"><div class="tag" style="text-shadow:0 2px 8px rgba(0,0,0,.5)"><i></i>خرافة ولا حقيقة؟</div><div class="en">Max Design</div></div>
+<div class="pin" style="right:78%;top:30%;flex-direction:row-reverse"><div class="dot">1</div><div class="t">ستارة من السقف للأرض</div></div>
+<div class="pin" style="right:46%;top:20%"><div class="dot">2</div><div class="t">قطعة إضاءة وحدة لافتة</div></div>
+<div class="pin" style="right:12%;top:41%"><div class="dot">3</div><div class="t">إضاءة مخفية في السقف</div></div>
+<div class="q"><span class="pill">خرافة</span><h1><s>الفخامة لازم<br>تكون غالية</s></h1></div>
+<div class="a"><b>الحقيقة:</b> 3 لمسات ذكية تعطيك إحساس الفخامة أكثر من سعر الأثاث.</div>
+<div class="ft"><div class="l"><img src="logo.png"><div><div class="w">ماكس ديزاين</div><div class="d en">maxdesign.sa</div></div></div><div class="r">احفظ الفكرة</div></div>
+</section>
+
+<!-- ================= P4 materials ================= -->
+<section id="04-marble-vs-porcelain" class="mt">
+<div class="top"><div class="tag"><i></i>دليل الخامات</div><div class="en" style="color:var(--mut)">Max Design</div></div>
+<h1>رخام طبيعي <em>ولا</em> بورسلان؟</h1>
+<div class="im a"><img src="img/marble.jpg"><span>رخام طبيعي</span></div>
+<div class="im b"><img src="img/porc.jpg"><span>بورسلان</span></div>
+<div class="vs">VS</div>
+<table>
+<tr><td class="k">الشكل</td><td class="x">كل لوح فريد، وعروق طبيعية ما تتكرر</td><td class="x">متجانس، والنقشة تتكرر بين القطع</td></tr>
+<tr><td class="k">البقع</td><td class="x">مسامي، يحتاج عزل وتلميع دوري</td><td class="x">شبه غير مسامي، وتنظيفه سهل</td></tr>
+<tr><td class="k">الخدش</td><td class="x">أنعم، ويتأثر بالأحماض والخدش</td><td class="x">أقسى، ويتحمل الاستخدام اليومي</td></tr>
+<tr><td class="k">التكلفة</td><td class="x">أعلى غالبًا</td><td class="x">أقل غالبًا</td></tr>
+<tr class="last"><td class="k">الأنسب</td><td class="x">المداخل والمجالس والقطع المميزة</td><td class="x">المطابخ والحمامات والممرات</td></tr>
+</table>
+<div class="ft"><div class="l"><img src="logo.png"><div><div class="w">ماكس ديزاين</div><div class="d en">maxdesign.sa</div></div></div><div class="r">وأنت وش تختار؟</div></div>
+</section>
+
+<!-- ================= P5 palette ================= -->
+<section id="05-palette" class="pl">
+<div class="ph"><img src="img/palette.jpg"></div><div class="dk"></div>
+<div class="top"><div class="tag" style="color:#f3ece0"><i></i>لوحة ألوان</div><div class="en" style="color:#f3ece0">Max Design</div></div>
+<h1>لوحة «<em>رمل نجد</em>»</h1>
+<div class="sub">ألوان دافئة من أرضنا، تناسب المجالس وغرف المعيشة</div>
+<div class="sw">
+<div><i style="background:#d8c3a0"></i><b>رمل</b><span>#D8C3A0</span></div>
+<div><i style="background:#cfc4b2"></i><b>حجر</b><span>#CFC4B2</span></div>
+<div><i style="background:#b0613a"></i><b>طين</b><span>#B0613A</span></div>
+<div><i style="background:#3f4a33"></i><b>زيتوني</b><span>#3F4A33</span></div>
+<div><i style="background:#5a4433"></i><b>قهوة</b><span>#5A4433</span></div>
+</div>
+<div class="ft"><div class="l"><img src="logo.png"><div><div class="w">ماكس ديزاين</div><div class="d en">maxdesign.sa</div></div></div><div class="r">احفظها لبيتك</div></div>
+</section>
+
+<!-- ================= P6 lighting ================= -->
+<section id="06-lighting-layers" class="lt light"><img class="bg" src="img/light.jpg"><div class="dk"></div>
+<div class="top"><div class="tag" style="text-shadow:0 2px 8px rgba(0,0,0,.5)"><i></i>دليل الإضاءة</div><div class="en">Max Design</div></div>
+<div class="pin" style="right:30%;top:13%"><div class="dot">1</div><div class="t">إضاءة عامة</div></div>
+<div class="pin" style="right:62%;top:31%"><div class="dot">3</div><div class="t">إضاءة تجميلية</div></div>
+<div class="pin" style="right:14%;top:45%"><div class="dot">2</div><div class="t">إضاءة وظيفية</div></div>
+<h1>قاعدة الطبقات <em style="color:#f0a77c">الثلاث</em></h1>
+<div class="lg">
+<div><b>01</b><span><strong>العامة:</strong> إضاءة مخفية في السقف تملأ المكان بهدوء.</span></div>
+<div><b>02</b><span><strong>الوظيفية:</strong> أباجورة أو سبوت فوق مكان القراءة والعمل.</span></div>
+<div><b>03</b><span><strong>التجميلية:</strong> سبوتات تبرز الجدار والقطع الفنية.</span></div>
+</div>
+<div class="ft"><div class="l"><img src="logo.png"><div><div class="w">ماكس ديزاين</div><div class="d en">maxdesign.sa</div></div></div><div class="r">لون إضاءة دافئ 2700K</div></div>
+</section>
+
+<!-- ================= P7 process carousel ================= -->
+<section id="07-process-1" class="pc1"><img class="bg" src="img/desk.jpg" style="object-position:50% 70%"><div class="dk"></div>
+<div class="top"><div class="tag"><i></i>كيف نشتغل</div><div class="en" style="color:var(--olive)">Max Design</div></div>
+<h1>من الفكرة…<br><em>للمفتاح</em></h1>
+<div class="sub">رحلتك مع ماكس ديزاين في 5 خطوات</div>
+<div class="swipe">اسحب ←</div>
+<div class="ft"><div class="l"><img src="logo.png"><div><div class="w" style="color:#fff;text-shadow:0 2px 8px rgba(0,0,0,.6)">ماكس ديزاين</div></div></div></div>
+</section>
+<section id="07-process-2" class="ps"><div class="ph"><img src="img/desk.jpg" style="object-position:50% 25%"><div class="dk"></div></div>
+<div class="top"><div class="tag" style="color:#f3ece0"><i></i>رحلتك معنا</div><div class="en" style="color:#f3ece0">Max Design</div></div>
+<div class="st"><small>خطوة</small><b>01</b></div><div class="dots"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i><i class=""></i></div>
+<h2>نسمعك أول</h2><p>جلسة نفهم فيها طريقة عيشتك، وعدد أفراد عائلتك، وميزانيتك، والذوق اللي تحبه.</p>
+<div class="ft"><div class="l"><img src="logo.png"><div><div class="w">ماكس ديزاين</div><div class="d en">maxdesign.sa</div></div></div><div class="r">اسحب ←</div></div></section>
+<section id="07-process-3" class="ps"><div class="ph"><img src="img/marble.jpg" style="object-position:50% 50%"><div class="dk"></div></div>
+<div class="top"><div class="tag" style="color:#f3ece0"><i></i>رحلتك معنا</div><div class="en" style="color:#f3ece0">Max Design</div></div>
+<div class="st"><small>خطوة</small><b>02</b></div><div class="dots"><i class=""></i><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></div>
+<h2>المفهوم ولوحة المواد</h2><p>نجمع الألوان والخامات والإضاءة في لوحة وحدة، وتشوف العينات بعينك قبل أي قرار.</p>
+<div class="ft"><div class="l"><img src="logo.png"><div><div class="w">ماكس ديزاين</div><div class="d en">maxdesign.sa</div></div></div><div class="r">اسحب ←</div></div></section>
+<section id="07-process-4" class="ps"><div class="ph"><img src="img/palette.jpg" style="object-position:50% 55%"><div class="dk"></div></div>
+<div class="top"><div class="tag" style="color:#f3ece0"><i></i>رحلتك معنا</div><div class="en" style="color:#f3ece0">Max Design</div></div>
+<div class="st"><small>خطوة</small><b>03</b></div><div class="dots"><i class=""></i><i class=""></i><i class="on"></i><i class=""></i><i class=""></i></div>
+<h2>التصميم ثلاثي الأبعاد</h2><p>تشوف بيتك كأنه جاهز، وتعدّل براحتك. بعدها نجهز المخططات التنفيذية كاملة.</p>
+<div class="ft"><div class="l"><img src="logo.png"><div><div class="w">ماكس ديزاين</div><div class="d en">maxdesign.sa</div></div></div><div class="r">اسحب ←</div></div></section>
+<section id="07-process-5" class="ps"><div class="ph"><img src="img/site.jpg" style="object-position:50% 50%"><div class="dk"></div></div>
+<div class="top"><div class="tag" style="color:#f3ece0"><i></i>رحلتك معنا</div><div class="en" style="color:#f3ece0">Max Design</div></div>
+<div class="st"><small>خطوة</small><b>04</b></div><div class="dots"><i class=""></i><i class=""></i><i class=""></i><i class="on"></i><i class=""></i></div>
+<h2>التنفيذ والإشراف</h2><p>فريقنا ينفّذ ويتابع في الموقع خطوة بخطوة، عشان يطلع التنفيذ مطابق للتصميم.</p>
+<div class="ft"><div class="l"><img src="logo.png"><div><div class="w">ماكس ديزاين</div><div class="d en">maxdesign.sa</div></div></div><div class="r">اسحب ←</div></div></section>
+<section id="07-process-6" class="ps"><div class="ph"><img src="img/real_bed.jpg" style="object-position:50% 60%"><div class="dk"></div></div>
+<div class="top"><div class="tag" style="color:#f3ece0"><i></i>رحلتك معنا</div><div class="en" style="color:#f3ece0">Max Design</div></div>
+<div class="st"><small>خطوة</small><b>05</b></div><div class="real">من مشاريعنا</div>
+<h2>التسليم بالتفاصيل</h2><p>نسلّمك المكان جاهز للسكن، وكل تفصيلة في مكانها.<br>ابدأ رحلتك: واتساب <b dir="ltr">0579277975</b></p>
+<div class="ft"><div class="l"><img src="logo.png"><div><div class="w">ماكس ديزاين</div><div class="d en">maxdesign.sa</div></div></div><div class="r">maxdesign.sa</div></div></section>
+
+<!-- ================= P8 Q&A ================= -->
+<section id="08-cost-question" class="qa"><div class="top"><div class="tag"><i></i>سؤال من عميل</div><div class="en">Max Design</div></div>
+<div class="q"><small>سؤال يوصلنا كل يوم</small><h1>كم يكلّف تصميم<br>فيلتي؟</h1></div>
+<div class="ans">الجواب الصادق: يعتمد على 5 أشياء</div>
+<ol>
+<li><b>01</b><span><strong>المساحة</strong> وعدد الأدوار والغرف</span></li>
+<li><b>02</b><span><strong>نطاق العمل:</strong> تصميم فقط، أو تصميم وتنفيذ</span></li>
+<li><b>03</b><span><strong>مستوى الخامات</strong> اللي تختارها</span></li>
+<li><b>04</b><span><strong>التفاصيل الخاصة:</strong> أسقف، جدران، نجارة مفصلة</span></li>
+<li><b>05</b><span><strong>المدة</strong> المطلوبة للتسليم</span></li>
+</ol>
+<div class="cta">أرسل مخطط بيتك على واتساب <b>0579277975</b><br>ونرسل لك عرض واضح بدون التزام.</div>
+<div class="ft"><div class="l"><img src="logo.png"><div><div class="w">ماكس ديزاين</div><div class="d en">maxdesign.sa</div></div></div><div class="r">تصميم · معماري · تنفيذ</div></div>
+</section>
+</body></html>
