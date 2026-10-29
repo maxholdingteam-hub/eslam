@@ -234,6 +234,8 @@ details p{margin:0 0 18px;color:var(--mute)}
 .chips span{display:inline-block;padding:8px 14px;border-radius:999px;border:1px solid var(--line);font-size:14px;color:var(--text);cursor:pointer;transition:.2s}
 .chips input:checked+span{background:var(--gold-grad);color:var(--ink);border-color:var(--lime)}
 .chips input:focus-visible+span{outline:2px solid var(--lime);outline-offset:2px}
+.wa-fb{display:block;text-align:center;font-size:14px;color:var(--lime);text-decoration:underline;text-underline-offset:4px}
+[hidden]{display:none!important}
 .form .btn{justify-content:center;border:0;cursor:pointer;font:inherit;font-weight:600}
 .direct{display:grid;gap:10px;margin-top:28px}
 .direct a{display:flex;align-items:center;gap:12px;padding:14px 18px;border-radius:16px;border:1px solid var(--line);background:var(--card);transition:border-color .25s}
@@ -517,6 +519,7 @@ html[lang=en] .hprog i{transform-origin:left}
         <label><span data-l="ar">حدثنا عن هدفك</span><span data-l="en">Tell us your goal</span>
           <textarea name="msg"></textarea></label>
         <button class="btn p" type="submit"><span data-l="ar">أرسل على واتساب</span><span data-l="en">Send via WhatsApp</span></button>
+        <a id="waFallback" class="wa-fb" href="#" target="_blank" rel="noopener" hidden><span data-l="ar">ما انفتح واتساب؟ اضغط هنا وكمّل الرسالة</span><span data-l="en">WhatsApp didn't open? Tap here to finish the message</span></a>
       </form>
     </div>
   </section>
@@ -651,7 +654,11 @@ $("leadForm").addEventListener("submit", e => {
   const lines = ar
     ? [`مرحبا ماكس ماركتنج 👋`, `الاسم: ${f.name.value}`, f.biz.value && `النشاط: ${f.biz.value}`, needs && `الاحتياج: ${needs}`, `الميزانية: ${BUDGETS[f.budget.value].ar}`, f.msg.value && `الهدف: ${f.msg.value}`]
     : [`Hi Max Marketing 👋`, `Name: ${f.name.value}`, f.biz.value && `Business: ${f.biz.value}`, needs && `Needs: ${needs}`, `Budget: ${BUDGETS[f.budget.value].en}`, f.msg.value && `Goal: ${f.msg.value}`];
-  window.open(`https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(lines.filter(Boolean).join("\n"))}`, "_blank", "noopener");
+  const url = `https://wa.me/${CONFIG.whatsapp}?text=${encodeURIComponent(lines.filter(Boolean).join("\n"))}`;
+  const w = window.open(url, "_blank");
+  if (w) w.opener = null;
+  /* popup blockers and embedded views can refuse window.open, so always leave a real link */
+  const fb = $("waFallback"); fb.href = url; fb.hidden = false;
 });
 
 /* deliverables calendar: a believable month of reels / posts / stories */
