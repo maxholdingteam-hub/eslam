@@ -184,8 +184,12 @@ html[lang=en] .fc h4{font-family:var(--en)}
 .crew{display:grid;grid-template-columns:repeat(4,1fr);gap:20px}
 @media (max-width:960px){.crew{grid-template-columns:repeat(2,1fr)}}
 .mate{text-align:center}
-.shape{position:relative;aspect-ratio:4/5;background:var(--bg);display:grid;place-items:end center;overflow:hidden;transition:transform .5s cubic-bezier(.2,.7,.2,1)}
-.mate:hover .shape{transform:translateY(-6px) rotate(-1.5deg)}
+.shape{position:relative;aspect-ratio:4/5;background:var(--bg);display:grid;place-items:end center;overflow:hidden;transition:transform .5s cubic-bezier(.2,.7,.2,1),filter .6s ease}
+.mate{cursor:pointer;-webkit-tap-highlight-color:transparent}
+.mate:focus-visible{outline:2px solid var(--lime);outline-offset:6px;border-radius:12px}
+/* hover (mouse) or tap (touch) turns the portrait black and white, like the reference */
+.mate.bw .shape{filter:grayscale(1) contrast(1.05)}
+@media (hover:hover){.mate:hover .shape{transform:translateY(-6px) rotate(-1.5deg);filter:grayscale(1) contrast(1.05)}}
 .shape img{width:100%;height:100%;object-fit:cover}
 .shape svg{width:72%;height:auto;color:var(--fg,rgba(7,7,6,.35));transform:translateY(8%)}
 .mate h3{margin:18px 0 4px;font-family:var(--d-ar);font-size:20px}
@@ -715,8 +719,13 @@ const TEAM = [
   {shape:"sh-wave", bg:"#1c1a15", fg:"rgba(217,180,107,.4)", role:T("خبير الإعلانات","Ads Specialist"),      sub:T("استهداف وتحسين يومي","Targeting and daily tuning"), photo:""}
 ];
 const SILHOUETTE = '<svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><circle cx="12" cy="8" r="4.2"/><path d="M3.5 22c0-4.7 3.8-8 8.5-8s8.5 3.3 8.5 8z"/></svg>';
-$("crew").innerHTML = TEAM.map(m => `<article class="mate rv"><div class="shape" style="clip-path:url(#${m.shape});--bg:${m.bg}${m.fg ? `;--fg:${m.fg}` : ""}">${m.photo ? `<img src="${m.photo}" alt="" loading="lazy">` : SILHOUETTE}</div><h3>${both(m.role)}</h3><p>${both(m.sub)}</p></article>`).join("");
+$("crew").innerHTML = TEAM.map(m => `<article class="mate rv" tabindex="0"><div class="shape" style="clip-path:url(#${m.shape});--bg:${m.bg}${m.fg ? `;--fg:${m.fg}` : ""}">${m.photo ? `<img src="${m.photo}" alt="" loading="lazy">` : SILHOUETTE}</div><h3>${both(m.role)}</h3><p>${both(m.sub)}</p></article>`).join("");
 document.querySelectorAll("#crew .rv").forEach(el => io.observe(el));
+document.querySelectorAll("#crew .mate").forEach(el => {
+  const flip = () => el.classList.toggle("bw");
+  el.addEventListener("click", flip);
+  el.addEventListener("keydown", e => { if (e.key === "Enter" || e.key === " "){ e.preventDefault(); flip(); } });
+});
 
 /* ===== Marquee along an SVG path: drifts, slows on hover, drags, speeds up with scroll ===== */
 (() => {
