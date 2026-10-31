@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>Max Marketing Launch</title>
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@500;700;800;900&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
+<style>
+/* Max Marketing launch, "we make your brand move": the site's own language in stills.
+   Kinetic type rows, the molten-gold blob and gold particles on night black; Max group tokens. */
+:root{
+  --ink:#070706; --card:#100f0c; --gold:#d9b46b; --hot:#f6dc9c; --deep:#7d5f2a; --bone:#efe8da; --ash:#8f8676;
+  --gold-grad:linear-gradient(135deg,#f6dc9c,#d9b46b 50%,#a88a4f);
+  --ar:"Alexandria","IBM Plex Sans Arabic",Tahoma,sans-serif; --body:"IBM Plex Sans Arabic",Tahoma,sans-serif; --en:"Space Grotesk",Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#222;display:flex;flex-direction:column;gap:40px;align-items:flex-start;padding:40px;font-family:var(--body);color:var(--bone)}
+section{position:relative;overflow:hidden;background:var(--ink);flex:none}
+.post{width:1080px;height:1350px}
+.pano{width:3240px;height:1350px}
+.story{width:1080px;height:1920px}
+img{display:block}
+canvas{display:block}
+section::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.08;mix-blend-mode:overlay;z-index:20;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+.ar{font-family:var(--ar);font-weight:800;line-height:1.18;letter-spacing:-.01em;color:var(--bone)}
+.gold{background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.eyebrow{font-family:var(--en);font-weight:700;font-size:22px;letter-spacing:.36em;color:var(--gold);text-transform:uppercase;direction:ltr}
+.num{font-family:var(--en);font-weight:700;line-height:.8;letter-spacing:-.06em;direction:ltr}
+.outline{color:transparent;-webkit-text-stroke:2px rgba(217,180,107,.75)}
+.pill{display:inline-block;padding:20px 44px;border-radius:999px;background:var(--gold-grad);color:var(--ink);font-family:var(--body);font-weight:600;font-size:36px;box-shadow:0 20px 50px rgba(217,180,107,.25)}
+.chip{display:inline-block;padding:10px 22px;border-radius:999px;border:1px solid rgba(217,180,107,.4);background:rgba(239,232,218,.05);font-family:var(--en);font-size:20px;letter-spacing:.14em;color:var(--ash)}
+.foot{position:absolute;left:84px;right:84px;bottom:76px;display:flex;justify-content:space-between;align-items:center;z-index:10;direction:ltr}
+.brand{display:flex;align-items:center;gap:14px;font-family:var(--en);font-weight:700;letter-spacing:.06em;font-size:24px;color:var(--bone)}
+.brand img{width:58px;height:auto}
+.wa{font-family:var(--en);font-weight:500;font-size:22px;letter-spacing:.06em;color:var(--ash)}
+.wa b{color:var(--gold);font-weight:700}
+.gl{position:absolute;inset:0;width:100%;height:100%}
+/* kinetic rows, tipped in perspective like the site's giant type */
+.kin{position:absolute;left:-200px;right:-200px;perspective:1100px}
+.kin .row{white-space:nowrap;font-family:var(--en);font-weight:700;letter-spacing:-.04em;line-height:1;direction:ltr}
+.kin .row.f{background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.kin .row.o{color:transparent;-webkit-text-stroke:2px rgba(217,180,107,.5)}
+.kin .row.d{color:transparent;-webkit-text-stroke:1.5px rgba(239,232,218,.14)}
+.kin .st{font-size:.42em;vertical-align:middle;margin:0 .3em;-webkit-text-stroke:0;color:var(--gold)}
+
+/* P1 · teaser 03 */
+#p1 .kin{top:190px;transform:rotate(-8deg)}
+#p1 .kin .row{font-size:205px}
+#p1 .kin .rows{transform:rotateX(28deg)}
+#p1 .n{position:absolute;top:96px;left:84px;font-size:200px}
+#p1 .eyebrow{position:absolute;top:120px;right:84px}
+#p1 .copy{position:absolute;right:84px;left:84px;bottom:180px;padding-top:60px;background:linear-gradient(180deg,transparent,var(--ink) 35%)}
+#p1 h1{font-size:104px}
+#p1 p{font-size:34px;color:var(--ash);margin-top:20px}
+
+/* P2 · teaser 02: one gold post glowing in a grey feed */
+#p2 .phone{position:absolute;left:50%;top:110px;width:430px;height:860px;transform:translateX(-50%) rotate(-6deg);border-radius:58px;border:10px solid #1b1a16;background:#0d0c0a;box-shadow:0 60px 120px rgba(0,0,0,.7),0 0 0 2px rgba(217,180,107,.25);overflow:hidden}
+#p2 .feed{position:absolute;inset:56px 18px 0;display:grid;gap:18px}
+#p2 .it{height:190px;border-radius:20px;background:linear-gradient(135deg,#24221d,#171612)}
+#p2 .it.g{background:radial-gradient(90% 90% at 30% 20%,#f6dc9c,#d9b46b 40%,#7d5f2a 80%);box-shadow:0 0 0 3px #f6dc9c,0 0 80px rgba(246,220,156,.7);transform:scale(1.12);position:relative;z-index:2}
+#p2 .it.g::after{content:"";position:absolute;left:24px;bottom:24px;width:55%;height:14px;border-radius:7px;background:rgba(7,7,6,.55);box-shadow:0 -26px 0 rgba(7,7,6,.35)}
+#p2 .notch{position:absolute;top:16px;left:50%;width:120px;height:28px;border-radius:14px;background:#000;transform:translateX(-50%)}
+#p2 .halo{position:absolute;left:50%;top:520px;width:900px;height:600px;transform:translate(-50%,-50%);background:radial-gradient(closest-side,rgba(217,180,107,.25),transparent)}
+#p2 .n{position:absolute;top:96px;left:84px;font-size:200px}
+#p2 .eyebrow{position:absolute;top:120px;right:84px}
+#p2 .copy{position:absolute;right:84px;left:84px;bottom:200px}
+#p2 h1{font-size:96px}
+
+/* P3 · teaser 01: the particle galaxy */
+#p3 .n{position:absolute;top:96px;left:84px;font-size:200px;z-index:5}
+#p3 .eyebrow{position:absolute;top:120px;right:84px;z-index:5}
+#p3 .copy{position:absolute;right:84px;left:84px;bottom:200px;z-index:5}
+#p3 h1{font-size:104px}
+#p3 p{font-size:34px;color:var(--ash);margin-top:20px}
+#p3 .fade{position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(7,7,6,.9) 78%);z-index:2}
+
+/* P4-6 · reveal panorama */
+#pano .glow{position:absolute;inset:0;background:radial-gradient(22% 45% at 50% 42%,rgba(217,180,107,.22),transparent 72%)}
+#pano .kin{left:0;right:auto;width:1080px;top:70px;transform:rotate(-8deg);overflow:visible}
+#pano .kin .row{font-size:200px}
+#pano .lwrap{position:absolute;left:0;top:0;width:1080px;height:100%;overflow:hidden}
+#pano .lwrap .kin{left:-260px;width:1600px}
+#pano .lwrap::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,transparent 55%,var(--ink))}
+#pano .blobc{position:absolute;right:0;top:-90px;width:1300px;height:1350px}
+#pano .logo{position:absolute;left:50%;top:210px;width:520px;transform:translateX(-50%);filter:drop-shadow(0 30px 80px rgba(217,180,107,.35))}
+#pano .word{position:absolute;left:1080px;width:1080px;top:640px;text-align:center}
+#pano .word .en{font-family:var(--en);font-weight:700;font-size:64px;letter-spacing:.04em;color:var(--bone);direction:ltr}
+#pano .word .arw{font-family:var(--ar);font-weight:800;font-size:72px;margin-top:6px}
+#pano .now{position:absolute;left:1080px;width:1080px;top:120px;text-align:center}
+#pano .rule{position:absolute;left:84px;right:84px;top:1010px;height:1px;background:linear-gradient(90deg,transparent,var(--gold) 8%,var(--gold) 92%,transparent)}
+#pano .lab{position:absolute;top:1046px;width:1080px;text-align:center;font-family:var(--ar);font-weight:800;font-size:54px;color:var(--bone)}
+#pano .lab.c{left:1080px;font-size:66px}
+#pano .lab.rt{left:2160px} #pano .lab.lt{left:0}
+#pano .dot{color:var(--gold);padding:0 .3em}
+#pano .tags{position:absolute;left:1080px;width:1080px;top:1170px;display:flex;justify-content:center;gap:12px}
+
+/* P7 · services as the site's gold tiles */
+#p7 .head{position:absolute;top:110px;right:84px;left:84px}
+#p7 h1{font-size:76px;margin-top:18px}
+#p7 .grid{position:absolute;top:500px;left:84px;right:84px;display:grid;grid-template-columns:repeat(3,1fr);gap:26px}
+#p7 .t{height:290px;border-radius:28px;padding:30px;display:flex;flex-direction:column;justify-content:space-between;background:var(--bg);color:var(--fg);box-shadow:0 20px 50px rgba(0,0,0,.5)}
+#p7 .t svg{width:70px;height:70px}
+#p7 .t b{font-family:var(--ar);font-weight:800;font-size:40px;line-height:1.2}
+#p7 .t small{display:block;font-family:var(--body);font-size:22px;opacity:.75;margin-top:6px;font-weight:500}
+
+/* P8 · process */
+#p8 .head{position:absolute;top:110px;right:84px;left:84px}
+#p8 h1{font-size:92px;margin-top:18px}
+#p8 .steps{position:absolute;top:420px;left:84px;right:84px;display:grid;grid-template-columns:1fr 1fr;gap:24px}
+#p8 .s{position:relative;height:330px;border-radius:30px;padding:34px;background:var(--card);border:1px solid rgba(217,180,107,.22);overflow:hidden;display:flex;flex-direction:column;justify-content:flex-end}
+#p8 .s .big{position:absolute;top:-10px;left:22px;font-size:190px;opacity:.6}
+#p8 .s .gl2{position:absolute;width:260px;height:260px;border-radius:50%;filter:blur(50px);opacity:.4;top:-60px;right:-60px;background:var(--c)}
+#p8 .s b{font-family:var(--ar);font-weight:800;font-size:46px;position:relative}
+#p8 .s span{font-size:24px;color:var(--ash);margin-top:8px;position:relative}
+
+/* P9 · booking */
+#p9 .blobc{position:absolute;left:0;right:0;top:-80px;height:900px}
+#p9 .fade{position:absolute;inset:0;background:linear-gradient(180deg,transparent 40%,rgba(7,7,6,.92) 62%,var(--ink))}
+#p9 .eyebrow{position:absolute;top:120px;right:84px;z-index:5}
+#p9 .copy{position:absolute;right:84px;left:84px;bottom:190px;z-index:5}
+#p9 h1{font-size:112px}
+#p9 .pill{margin-top:40px}
+#p9 .info{margin-top:36px;font-size:34px;display:flex;gap:16px;align-items:center}
+#p9 .info span{direction:ltr;unicode-bidi:isolate;font-family:var(--en);font-weight:700;color:var(--bone)}
+#p9 .info i{font-style:normal;color:var(--gold)}
+
+/* stories */
+.story .foot{bottom:150px}
+#s1 .kin{top:520px;transform:rotate(-10deg)}
+#s1 .kin .row{font-size:300px}
+#s1 .kin .rows{transform:rotateX(30deg)}
+#s1 .top{position:absolute;top:240px;left:0;right:0;text-align:center}
+#s1 .n{font-size:360px;margin-top:40px}
+#s1 .copy{position:absolute;bottom:340px;left:0;right:0;text-align:center;padding:70px 90px 40px;background:linear-gradient(180deg,transparent,rgba(7,7,6,.92) 30%)}
+#s1 h1{font-size:92px}
+#s1 p{font-size:36px;color:var(--ash);margin-top:14px}
+#s2 .gl{z-index:1}
+#s2 .top{position:absolute;top:220px;left:0;right:0;text-align:center;z-index:5}
+#s2 .copy{position:absolute;bottom:340px;left:60px;right:60px;text-align:center;z-index:5}
+#s2 .copy .en{font-family:var(--en);font-weight:700;font-size:64px;direction:ltr}
+#s2 h1{font-size:130px;margin-top:6px}
+#s2 p{font-size:46px;color:var(--hot);font-family:var(--ar);font-weight:700;margin-top:12px}
+#s3 .blobc{position:absolute;left:0;right:0;top:80px;height:1100px}
+#s3 .copy{position:absolute;top:1150px;left:80px;right:80px;text-align:center;z-index:5}
+#s3 h1{font-size:104px}
+#s3 .pill{margin-top:36px}
+#s3 .info{margin-top:34px;font-family:var(--en);font-weight:700;font-size:44px;direction:ltr}
+</style>
+</head>
+<body>
+
+<!-- P1 · teaser 03 -->
+<section class="post" id="p1">
+  <div class="kin"><div class="rows">
+    <div class="row d">SCROLL<span class="st">✦</span>SCROLL<span class="st">✦</span>SCROLL</div>
+    <div class="row f">STOP<span class="st">✦</span>STOP<span class="st">✦</span>STOP<span class="st">✦</span>STOP</div>
+    <div class="row o">SCROLL<span class="st">✦</span>SCROLL<span class="st">✦</span>SCROLL</div>
+  </div></div>
+  <div class="num gold n">03</div>
+  <div class="eyebrow">Coming soon</div>
+  <div class="copy"><h1 class="ar">إعلانك <span class="gold">يوقف السكرول؟</span></h1><p>لو جوابك «لا»… انتظرنا بعد ٣ أيام</p></div>
+  <div class="foot"><div class="brand"><img src="a/logo.webp" alt="">MAX MARKETING</div><div class="wa">SOON</div></div>
+</section>
+
+<!-- P2 · teaser 02 -->
+<section class="post" id="p2">
+  <div class="halo"></div>
+  <div class="phone"><div class="notch"></div><div class="feed"><div class="it"></div><div class="it g"></div><div class="it"></div><div class="it"></div></div></div>
+  <div class="num gold n">02</div>
+  <div class="eyebrow">Stand out</div>
+  <div class="copy"><h1 class="ar">وسط ألف بوست… <span class="gold">مين يشوفك؟</span></h1></div>
+  <div class="foot"><div class="brand"><img src="a/logo.webp" alt="">MAX MARKETING</div><div class="wa">SOON</div></div>
+</section>
+
+<!-- P3 · teaser 01 -->
+<section class="post" id="p3">
+  <canvas class="gl" data-kind="particles" data-gather="0.3" width="1080" height="1350"></canvas>
+  <div class="fade"></div>
+  <div class="num gold n">01</div>
+  <div class="eyebrow">Tomorrow</div>
+  <div class="copy"><h1 class="ar">بكرة نخلي اسمك <span class="gold">يتحرّك</span></h1><p>فكرة متناثرة اليوم… علامة واضحة بكرة</p></div>
+  <div class="foot"><div class="brand"><img src="a/logo.webp" alt="">MAX MARKETING</div><div class="wa">SOON</div></div>
+</section>
+
+<!-- P4-6 · reveal panorama -->
+<section class="pano" id="pano">
+  <div class="glow"></div>
+  <div class="lwrap"><div class="kin"><div class="rows" style="transform:rotateX(26deg)">
+    <div class="row o">SOCIAL<span class="st">✦</span>REELS<span class="st">✦</span>ADS</div>
+    <div class="row f">BRANDING<span class="st">✦</span>WEB</div>
+    <div class="row o">CONTENT<span class="st">✦</span>MOTION</div>
+    <div class="row d">SOCIAL<span class="st">✦</span>REELS<span class="st">✦</span>ADS</div>
+  </div></div></div>
+  <canvas class="blobc" data-kind="blob" data-x="0.08" width="1300" height="1350"></canvas>
+  <div class="now"><div class="eyebrow">Now live</div></div>
+  <img class="logo" src="a/logo.webp" alt="">
+  <div class="word"><div class="en">MAX MARKETING</div><div class="arw gold">ماكس ماركتنج</div></div>
+  <div class="rule"></div>
+  <div class="lab rt">سوشيال<span class="dot">·</span>ريلز<span class="dot">·</span>إعلانات</div>
+  <div class="lab c gold">نخلي اسمك يتحرّك</div>
+  <div class="lab lt">هوية<span class="dot">·</span>مواقع<span class="dot">·</span>مؤثرين</div>
+  <div class="tags"><span class="chip">PART OF MAX GROUP</span></div>
+</section>
+
+<!-- P7 · services -->
+<section class="post" id="p7">
+  <div class="head"><div class="eyebrow">Services</div><h1 class="ar">كل اللي تحتاجه علامتك <span class="gold">تحت سقف واحد</span></h1></div>
+  <div class="grid" id="tiles"></div>
+  <div class="foot"><div class="brand"><img src="a/logo.webp" alt="">MAX MARKETING</div><div class="wa">WhatsApp <b>050 201 6220</b></div></div>
+</section>
+
+<!-- P8 · process -->
+<section class="post" id="p8">
+  <div class="head"><div class="eyebrow">Process</div><h1 class="ar">من أول مكالمة <span class="gold">لأول نتيجة</span></h1></div>
+  <div class="steps">
+    <div class="s" style="--c:#d9b46b"><span class="gl2"></span><span class="num outline big">01</span><b>نفهمك</b><span>نشاطك، جمهورك ومنافسينك</span></div>
+    <div class="s" style="--c:#f6dc9c"><span class="gl2"></span><span class="num outline big">02</span><b>نخطط</b><span>أهداف، قنوات، رسائل وميزانية</span></div>
+    <div class="s" style="--c:#7d5f2a"><span class="gl2"></span><span class="num outline big">03</span><b>ننفّذ</b><span>محتوى وتصاميم وحملات بجدول واضح</span></div>
+    <div class="s" style="--c:#a88a4f"><span class="gl2"></span><span class="num outline big">04</span><b>نقيس ونطوّر</b><span>تقرير بالأرقام كل شهر</span></div>
+  </div>
+  <div class="foot"><div class="brand"><img src="a/logo.webp" alt="">MAX MARKETING</div><div class="wa">WhatsApp <b>050 201 6220</b></div></div>
+</section>
+
+<!-- P9 · booking -->
+<section class="post" id="p9">
+  <canvas class="blobc" data-kind="blob" data-x="0" width="1080" height="900"></canvas>
+  <div class="fade"></div>
+  <div class="eyebrow">Let's talk</div>
+  <div class="copy">
+    <h1 class="ar">خلّنا نحرّك <span class="gold">اسمك</span></h1>
+    <div class="pill">احجز استشارة مجانية</div>
+    <div class="info"><i>واتساب</i><span>050 201 6220</span></div>
+  </div>
+  <div class="foot"><div class="brand"><img src="a/logo.webp" alt="">MAX MARKETING</div><div class="wa">MAX GROUP</div></div>
+</section>
+
+<!-- S1 · story countdown -->
+<section class="story" id="s1">
+  <div class="kin"><div class="rows">
+    <div class="row d">SCROLL<span class="st">✦</span>SCROLL<span class="st">✦</span>SCROLL</div>
+    <div class="row f">STOP<span class="st">✦</span>STOP<span class="st">✦</span>STOP</div>
+    <div class="row o">SCROLL<span class="st">✦</span>SCROLL<span class="st">✦</span>SCROLL</div>
+  </div></div>
+  <div class="top"><div class="eyebrow">Coming soon</div><div class="num gold n">03</div></div>
+  <div class="copy"><h1 class="ar">شي جديد <span class="gold">بيتحرّك</span></h1><p>فعّلوا التنبيه عشان تكونون أول من يشوف</p></div>
+  <div class="foot"><div class="brand"><img src="a/logo.webp" alt="">MAX MARKETING</div><div class="wa">SOON</div></div>
+</section>
+
+<!-- S2 · story reveal: particles become the logo -->
+<section class="story" id="s2">
+  <canvas class="gl" data-kind="particles" data-gather="1" width="1080" height="1920"></canvas>
+  <div class="top"><div class="eyebrow">Now live</div></div>
+  <div class="copy"><div class="en">MAX MARKETING</div><h1 class="ar gold">ماكس ماركتنج</h1><p>رسميًا… نخلي اسمك يتحرّك</p></div>
+  <div class="foot"><div class="brand"><img src="a/logo.webp" alt="">MAX MARKETING</div><div class="wa">MAX GROUP</div></div>
+</section>
+
+<!-- S3 · story booking (room below for Instagram's link sticker) -->
+<section class="story" id="s3">
+  <canvas class="blobc" data-kind="blob" data-x="0" width="1080" height="1100"></canvas>
+  <div class="copy"><h1 class="ar">خلّنا نحرّك <span class="gold">اسمك</span></h1><div class="pill">احجز استشارة مجانية</div><div class="info">050 201 6220</div></div>
+  <div class="foot"><div class="brand"><img src="a/logo.webp" alt="">MAX MARKETING</div><div class="wa">MAX GROUP</div></div>
+</section>
+
+<script>
+/* service tiles reuse the site's icons and gold tile colours */
+const I = {
+  social:'<path d="M4 6h16v10H8l-4 4z"/>',
+  video:'<rect x="3" y="6" width="13" height="12" rx="2"/><path d="M16 10l5-3v10l-5-3"/>',
+  ads:'<path d="M3 11v2a1 1 0 0 0 1 1h3l6 4V6L7 10H4a1 1 0 0 0-1 1z"/><path d="M17 9a4 4 0 0 1 0 6"/>',
+  pen:'<path d="M12 19l7-7 3 3-7 7z"/><path d="M18 13l-1.5-7.5L2 2l3.5 14.5L13 18z"/><circle cx="11" cy="11" r="2"/>',
+  web:'<rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 9h18"/>',
+  star:'<path d="M12 3l2.7 5.6 6.1.9-4.4 4.3 1 6.1L12 17l-5.4 2.9 1-6.1L3.2 9.5l6.1-.9z"/>'
+};
+const T = [["social","إدارة السوشيال","خطة ونشر وتفاعل","#d9b46b","#070706"],["video","ريلز ومحتوى","تصوير ومونتاج داخلي","#100f0c","#d9b46b"],["ads","إعلانات ممولة","ميتا · تيك توك · سناب · جوجل","#efe8da","#070706"],
+           ["pen","هوية بصرية","شعار وألوان ونبرة","#7d5f2a","#f6dc9c"],["web","مواقع","وصفحات هبوط","#f6dc9c","#070706"],["star","مؤثرين","بريف ومتابعة بالأرقام","#1c1a15","#efe8da"]];
+document.getElementById("tiles").innerHTML = T.map(([i,h,s,bg,fg]) => `<div class="t" style="--bg:${bg};--fg:${fg};${bg==='#100f0c'||bg==='#1c1a15'?'border:1px solid rgba(217,180,107,.3)':''}"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round">${I[i]}</svg><div><b>${h}</b><small>${s}</small></div></div>`).join("");
+</script>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.min.js"}}</script>
+<script type="module">
+/* stills of the site's two 3D pieces: the molten-gold blob and the particles that land on the logo */
+import * as THREE from "three";
+import { noise } from "./a/noise.js";
+import { blobVS, blobFS } from "./a/blob.js";
+const jobs = [];
+
+function blob(canvas){
+  const r = new THREE.WebGLRenderer({canvas, antialias:true, alpha:true, preserveDrawingBuffer:true});
+  r.setSize(canvas.width, canvas.height, false);
+  const scene = new THREE.Scene(), cam = new THREE.PerspectiveCamera(35, canvas.width / canvas.height, .1, 100); cam.position.z = 10;
+  const uni = {uT:{value:6.2}, uAmp:{value:.36}, uHover:{value:.6}};
+  const g = new THREE.Group(); scene.add(g);
+  const m = new THREE.Mesh(new THREE.IcosahedronGeometry(1.35, 64), new THREE.ShaderMaterial({uniforms:uni, vertexShader:noise + blobVS, fragmentShader:blobFS}));
+  m.rotation.set(.5, .8, 0); g.add(m);
+  const ringMat = new THREE.MeshBasicMaterial({color:0xd9b46b, transparent:true, opacity:.5});
+  [2.1, 2.55].forEach((rad, i) => { const t = new THREE.Mesh(new THREE.TorusGeometry(rad, .009, 8, 240), ringMat); t.rotation.set(1.2 + i * .25, i * .5, i * .7); g.add(t); });
+  [[2.1, .9, 0xf6dc9c, .15], [2.55, 2.6, 0xd9b46b, .11], [2.1, 4.1, 0xefe8da, .1], [2.55, 5.4, 0x7d5f2a, .16]].forEach(([rad, a, c, s]) => {
+    const o = new THREE.Mesh(new THREE.IcosahedronGeometry(s, 2), new THREE.MeshBasicMaterial({color:c})); o.position.set(Math.cos(a) * rad, Math.sin(a * 1.3) * .6, Math.sin(a) * rad); g.add(o); });
+  const P = 600, pos = new Float32Array(P * 3);
+  for (let i = 0; i < P; i++){ const rr = 3 + Math.random() * 5, a = Math.random() * 6.283, b = Math.acos(2 * Math.random() - 1); pos.set([rr * Math.sin(b) * Math.cos(a), rr * Math.sin(b) * Math.sin(a), rr * Math.cos(b)], i * 3); }
+  const dg = new THREE.BufferGeometry(); dg.setAttribute("position", new THREE.BufferAttribute(pos, 3));
+  scene.add(new THREE.Points(dg, new THREE.PointsMaterial({color:0xefe8da, size:.025, transparent:true, opacity:.5})));
+  const vw = 2 * Math.tan(cam.fov * Math.PI / 360) * cam.position.z * cam.aspect;
+  g.position.x = (+canvas.dataset.x || 0) * vw;
+  g.scale.setScalar(Math.min(1, cam.aspect * 1.15));
+  r.render(scene, cam);
+}
+
+function particles(canvas, img){
+  const r = new THREE.WebGLRenderer({canvas, antialias:true, alpha:true, preserveDrawingBuffer:true});
+  r.setSize(canvas.width, canvas.height, false);
+  const scene = new THREE.Scene(), cam = new THREE.PerspectiveCamera(35, canvas.width / canvas.height, .1, 100); cam.position.z = 13;
+  const LW = 7.2, LH = LW * img.naturalHeight / img.naturalWidth;
+  const cv = document.createElement("canvas"), sw = 240, sh = Math.round(sw * img.naturalHeight / img.naturalWidth);
+  cv.width = sw; cv.height = sh; const cx = cv.getContext("2d"); cx.drawImage(img, 0, 0, sw, sh);
+  const px = cx.getImageData(0, 0, sw, sh).data, spots = [];
+  for (let k = 0; k < px.length; k += 4) if (px[k + 3] > 150) spots.push(k);
+  const gather = +canvas.dataset.gather, N = 14000;
+  const pos = new Float32Array(N * 3), col = new Float32Array(N * 3), size = new Float32Array(N);
+  let seed = 7; const rnd = () => (seed = (seed * 16807) % 2147483647) / 2147483647;
+  for (let i = 0; i < N; i++){
+    const k = spots[(rnd() * spots.length) | 0], x = (k / 4) % sw, y = ((k / 4) / sw) | 0, lum = (px[k] + px[k + 1] + px[k + 2]) / 765;
+    const ex = (x / sw - .5) * LW, ey = (.5 - y / sh) * LH, ez = (lum - .5) * .9;
+    const rr = 1.5 + Math.pow(rnd(), .7) * 7.5, ang = rr * .55 + (i % 3) * 2.094 + (rnd() - .5) * .7;
+    const sx = Math.cos(ang) * rr, sy = (rnd() - .5) * .9 * (1 + rr * .08), sz = Math.sin(ang) * rr;
+    const d = rnd() * .45, t0 = Math.min(1, Math.max(0, (gather - d) / .55)), t = t0 * t0 * (3 - 2 * t0);
+    pos.set([sx + (ex - sx) * t, sy + (ey - sy) * t, sz + (ez - sz) * t], i * 3);
+    const gc = [.85, .71, .42], pc = [px[k] / 255 * 1.15, px[k + 1] / 255 * 1.15, px[k + 2] / 255 * 1.15];
+    col.set(gc.map((c, j) => c + (pc[j] - c) * t), i * 3); size[i] = 1 + rnd() * 1.8;
+  }
+  const g = new THREE.BufferGeometry();
+  g.setAttribute("position", new THREE.BufferAttribute(pos, 3)); g.setAttribute("aCol", new THREE.BufferAttribute(col, 3)); g.setAttribute("aS", new THREE.BufferAttribute(size, 1));
+  const pts = new THREE.Points(g, new THREE.ShaderMaterial({transparent:true, depthWrite:false, blending:THREE.AdditiveBlending,
+    uniforms:{uK:{value: gather > .9 ? 26 : 34}}, vertexShader:`attribute vec3 aCol; uniform float uK; attribute float aS; varying vec3 vC; void main(){ vec4 mv = modelViewMatrix * vec4(position,1.); gl_PointSize = aS * uK / -mv.z; gl_Position = projectionMatrix * mv; vC = aCol; }`,
+    fragmentShader:`varying vec3 vC; void main(){ float d = length(gl_PointCoord - .5); if (d > .5) discard; gl_FragColor = vec4(vC * 1.2, smoothstep(.5, 0., d)); }`}));
+  pts.rotation.y = (1 - gather) * 1.4; pts.rotation.x = (1 - gather) * .55;
+  pts.position.y = gather > .9 ? 1.5 : .9;
+  pts.scale.setScalar(gather > .9 ? .44 : 1.15);
+  scene.add(pts); r.render(scene, cam);
+}
+
+const img = new Image(); img.src = "a/logo.webp";
+await img.decode();
+document.querySelectorAll("canvas[data-kind]").forEach(c => c.dataset.kind === "blob" ? blob(c) : particles(c, img));
+window.__ready = true;
+</script>
+</body>
+</html>
