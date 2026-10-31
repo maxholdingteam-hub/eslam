@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>Max Motors model posters</title>
+<style>
+  @font-face{font-family:Cairo;font-weight:900;src:url(../fonts/Cairo-Black.ttf)}
+  @font-face{font-family:Cairo;font-weight:700;src:url(../fonts/Cairo-Bold.ttf)}
+  @font-face{font-family:Tajawal;font-weight:700;src:url(../fonts/Tajawal-Bold.ttf)}
+  @font-face{font-family:Tajawal;font-weight:500;src:url(../fonts/Tajawal-Medium.ttf)}
+  @font-face{font-family:Oswald;font-weight:600;src:url(../fonts/Oswald-SemiBold.ttf)}
+  @font-face{font-family:Oswald;font-weight:300;src:url(../fonts/Oswald-Light.ttf)}
+  @font-face{font-family:Anton;src:url(../fonts/Anton.woff2)}
+  @font-face{font-family:Michroma;src:url(../fonts/Michroma.woff2)}
+  :root{--gold:#D4AF6A;--gold2:#F3D9A0;--gold3:#A9813F}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#000}
+  #root{position:relative;width:1080px;overflow:hidden}
+  .a{position:absolute}
+  .lat{direction:ltr;font-family:Michroma}
+  .gold{background:linear-gradient(180deg,var(--gold2),var(--gold) 55%,var(--gold3));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .ph{position:absolute;overflow:hidden}
+  .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .car{position:absolute;display:block}
+  .sh{position:absolute;border-radius:50%}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+// one poster per design (d) and format (f: feed 1080x1350, story 1080x1920); specs come from the maxmotors.sa listings
+const q = new URLSearchParams(location.search), D = q.get('d') || 'lx', F = q.get('f') || 'feed';
+const H = F === 'story' ? 1920 : 1350, S = F === 'story';
+const root = document.getElementById('root'); root.style.height = H + 'px';
+const logo = (x, y, w, op = 1) => `<img class="a" src="../fx/mm_logo.png" alt="Max Motors" style="left:${x}px;top:${y}px;width:${w}px;opacity:${op}">`;
+// contact strip shared by every poster (no WhatsApp)
+const contact = (y, ink, sub) => `<div class="a" style="left:60px;right:60px;top:${y}px;display:flex;align-items:center;justify-content:space-between;direction:rtl;border-top:1.5px solid ${sub};padding-top:22px">
+  <div style="font:700 34px Tajawal;color:${ink}">متوفرة الآن في <span class="gold" style="font-weight:700">ماكس موتورز</span></div>
+  <div style="direction:ltr;text-align:left;line-height:1.05"><div style="font:600 46px Oswald;letter-spacing:2px;color:${ink}">920018915</div><div style="font:600 22px Oswald;letter-spacing:3px;color:var(--gold)">maxmotors.sa</div></div></div>`;
+const spec = (v, l, ink, sub) => `<div style="text-align:center;flex:1"><div style="font:600 ${S ? 62 : 54}px/1 Oswald;color:${ink};direction:ltr">${v}</div><div style="font:500 ${S ? 25 : 22}px Tajawal;color:${sub};margin-top:6px">${l}</div></div>`;
+const specs = (y, arr, ink, sub, line) => `<div class="a" style="left:50px;right:50px;top:${y}px;display:flex;direction:rtl">${arr.map((s, i) => (i ? `<div style="width:1.5px;background:${line}"></div>` : '') + spec(s[0], s[1], ink, sub)).join('')}</div>`;
+
+const P = {
+  // LX 700h: light cream, giant "LX" behind, three rounded detail tiles on the left (ref 2)
+  lx() {
+    const cy = S ? 1010 : 600, cw = S ? 980 : 820;
+    return `<div class="a" style="inset:0;background:radial-gradient(ellipse 90% 60% at 50% 40%,#FBF8F2,#E9E3D8 75%)"></div>
+    <div class="a lat" style="left:60px;top:${S ? 120 : 70}px;font-size:22px;letter-spacing:5px;color:#1A1A1A">LEXUS LX 700h / HYBRID</div>
+    ${logo(880, S ? 96 : 50, 140)}
+    <div class="a" style="left:40px;top:${S ? 210 : 120}px;direction:ltr;font:${S ? 640 : 520}px/0.86 Anton;letter-spacing:-6px;color:#DCD3C3">LX</div>
+    <div class="a lat" style="left:${S ? 330 : 280}px;top:${S ? 470 : 330}px;font-size:${S ? 54 : 46}px;color:#B9AE9B">700h</div>
+    ${['lx_d1', 'lx_d2', 'lx_d3'].map((n, i) => `<div class="ph" style="right:50px;top:${(S ? 220 : 130) + i * (S ? 240 : 182)}px;width:${S ? 230 : 190}px;height:${S ? 210 : 160}px;border-radius:28px;box-shadow:0 14px 34px rgba(0,0,0,.18)"><img src="img/${n}.jpg" alt=""></div>`).join('')}
+    <div class="sh" style="left:${540 - cw * 0.44}px;top:${cy + cw * 0.40}px;width:${cw * 0.88}px;height:${cw * 0.07}px;background:radial-gradient(ellipse at center,rgba(0,0,0,.45),rgba(0,0,0,0) 70%)"></div>
+    <img class="car" src="img/lx_car.png" alt="Lexus LX 700h" style="left:${540 - cw / 2}px;top:${cy}px;width:${cw}px">
+    <img class="car" src="img/lx_car.png" alt="" style="left:${540 - cw / 2}px;top:${cy + cw * 0.89}px;width:${cw}px;transform:scaleY(-1);opacity:.12;-webkit-mask:linear-gradient(0deg,#000,transparent 40%)">
+    <div class="a" style="left:60px;right:60px;top:${S ? 1490 : 1050}px;display:flex;align-items:baseline;justify-content:space-between;direction:ltr">
+      <div style="font:${S ? 92 : 78}px/1 Anton;letter-spacing:1px;color:#111">LEXUS LX 700h</div>
+      <div style="font:900 ${S ? 50 : 42}px Cairo;color:#111;direction:rtl">لكزس <span class="gold">هايبرد</span></div></div>
+    ${specs(S ? 1610 : 1150, [['457', 'حصان'], ['790', 'نيوتن متر'], ['V6', 'توين تيربو هايبرد'], ['22"', 'جنوط']], '#111', '#6E6556', 'rgba(0,0,0,.18)')}
+    ${S ? contact(1760, '#111', 'rgba(0,0,0,.15)') : contact(1222, '#111', 'rgba(0,0,0,.15)')}`;
+  },
+  // Land Cruiser: dark studio, giant "LC" behind, stacked inset frames on the right (ref 3)
+  lc() {
+    const cy = S ? 900 : 610, cw = S ? 860 : 760;
+    return `<div class="a" style="inset:0;background:radial-gradient(ellipse 70% 50% at 35% 45%,#3A3A3C,#141415 75%)"></div>
+    <div class="a" style="left:-80px;top:${S ? 300 : 180}px;width:900px;height:900px;background:radial-gradient(circle,rgba(255,255,255,.16),rgba(255,255,255,0) 60%)"></div>
+    <div class="a lat" style="left:60px;top:${S ? 110 : 60}px;font-size:22px;letter-spacing:4px;color:#CFCFCF">LC300</div>
+    <div class="a" style="left:60px;top:${S ? 150 : 98}px;width:300px;height:1.5px;background:rgba(255,255,255,.35)"></div>
+    <div class="a lat" style="left:60px;top:${S ? 166 : 112}px;font-size:18px;letter-spacing:8px;color:#9A9A9A">GXR · 2026</div>
+    ${logo(390, S ? 92 : 42, 120)}
+    <div class="a" style="left:60px;top:${S ? 260 : 150}px;direction:ltr;font:${S ? 600 : 480}px/0.86 Anton;color:rgba(255,255,255,.10)">LC</div>
+    ${['lc_d1', 'lc_d2', 'lc_d3'].map((n, i) => `<div class="ph" style="right:40px;top:${(S ? 120 : 60) + i * (S ? 280 : 200)}px;width:${S ? 400 : 330}px;height:${S ? 260 : 185}px;border-radius:18px;border:1.5px solid rgba(255,255,255,.35)"><img src="img/${n}.jpg" alt=""></div>`).join('')}
+    <div class="sh" style="left:${430 - cw * 0.45}px;top:${cy + cw * 0.46}px;width:${cw * 0.9}px;height:${cw * 0.08}px;background:radial-gradient(ellipse at center,rgba(0,0,0,.75),rgba(0,0,0,0) 70%)"></div>
+    <img class="car" src="img/lc_car.png" alt="Toyota Land Cruiser" style="left:${430 - cw / 2}px;top:${cy}px;width:${cw}px">
+    <div class="a" style="left:60px;top:${S ? 1400 : 1000}px;direction:ltr;font:${S ? 104 : 86}px/1 Anton;letter-spacing:2px;color:#F2F2F2">LAND CRUISER</div>
+    <div class="a" style="right:60px;top:${S ? 1420 : 1015}px;font:900 ${S ? 48 : 40}px Cairo;color:#fff">لاندكروزر <span class="gold">GXR</span></div>
+    ${specs(S ? 1560 : 1120, [['3.5L', 'V6 توين تيربو'], ['10', 'سرعات أوتوماتيك'], ['4x4', 'دبل + دفلوك'], ['20"', 'جنوط']], '#fff', '#A9A9A9', 'rgba(255,255,255,.2)')}
+    ${S ? contact(1760, '#fff', 'rgba(255,255,255,.2)') : contact(1222, '#fff', 'rgba(255,255,255,.2)')}`;
+  },
+  // GV80: light grey, three diagonal strips of detail shots on top, car below, heavy title (ref 4)
+  gv() {
+    const cy = S ? 880 : 560, cw = S ? 1000 : 900, sh = S ? 760 : 560;
+    const strip = (n, x) => `<div class="ph" style="left:${x}px;top:-40px;width:430px;height:${sh}px;transform:skewX(-14deg);border-left:10px solid #ECEBE8;border-right:10px solid #ECEBE8"><img src="img/${n}.jpg" alt="" style="transform:skewX(14deg) scale(1.35)"></div>`;
+    return `<div class="a" style="inset:0;background:linear-gradient(180deg,#F1F0ED,#DCDAD5)"></div>
+    ${strip('gv_d3', -120)}${strip('gv_d1', 290)}${strip('gv_d2', 700)}
+    <div class="a" style="left:0;right:0;top:${sh - 260}px;height:300px;background:linear-gradient(180deg,rgba(236,235,232,0),#ECEBE8)"></div>
+    ${logo(480, sh - (S ? 150 : 135), 120)}
+    <div class="sh" style="left:${540 - cw * 0.45}px;top:${cy + cw * 0.40}px;width:${cw * 0.9}px;height:${cw * 0.07}px;background:radial-gradient(ellipse at center,rgba(0,0,0,.55),rgba(0,0,0,0) 70%)"></div>
+    <img class="car" src="img/gv_car.png" alt="Genesis GV80" style="left:${540 - cw / 2}px;top:${cy}px;width:${cw}px">
+    <div class="a" style="left:0;right:0;top:${S ? 1360 : 990}px;text-align:center;direction:ltr;font:${S ? 170 : 130}px/1 Anton;letter-spacing:4px;color:#111">GENESIS</div>
+    <div class="a" style="left:0;right:0;top:${S ? 1540 : 1125}px;display:flex;align-items:center;gap:26px;justify-content:center">
+      <div style="height:3px;width:170px;background:#111"></div><div class="lat" style="font-size:${S ? 46 : 38}px;letter-spacing:6px;color:#111">GV80 ROYAL</div><div style="height:3px;width:170px;background:#111"></div></div>
+    ${S ? specs(1620, [['375', 'حصان'], ['530', 'نيوتن متر'], ['AWD', 'دفع رباعي'], ['22"', 'جنوط']], '#111', '#5B5A57', 'rgba(0,0,0,.18)') : ''}
+    ${S ? contact(1760, '#111', 'rgba(0,0,0,.15)') : `<div class="a" style="left:0;right:0;top:1180px;text-align:center;font:500 28px Tajawal;color:#3A3936">V6 توين تيربو · 375 حصان · دفع رباعي AWD · جنوط 22 إنش</div>` + contact(1222, '#111', 'rgba(0,0,0,.15)')}`;
+  },
+  // Defender OCTA: off-white, three black panels with shots, the black OCTA in front, spec box (ref 5)
+  oc() {
+    const cy = S ? 820 : 560, cw = S ? 980 : 860, pt = S ? 230 : 140, ph = S ? 560 : 420;
+    const panel = (n, x, w, t, h) => `<div class="a" style="left:${x}px;top:${t}px;width:${w}px;height:${h}px;background:#0E0E0E"></div><div class="ph" style="left:${x + 12}px;top:${t + 12}px;width:${w - 24}px;height:${h - 24}px"><img src="img/${n}.jpg" alt=""></div>`;
+    return `<div class="a" style="inset:0;background:#EEEBE5"></div>
+    <div class="a" style="left:0;right:0;top:${S ? 70 : 40}px;display:flex;justify-content:space-between;padding:0 70px;direction:ltr;font:44px Anton;letter-spacing:2px;color:#222"><span>DEFENDER</span><span>OCTA</span></div>${logo(480, S ? 52 : 26, 120)}
+    ${panel('oc_d1', 70, 300, pt + 40, ph)}${panel('oc_d2', 390, 300, pt, ph + 40)}${panel('oc_d3', 710, 300, pt + 40, ph)}
+    <div class="sh" style="left:${540 - cw * 0.42}px;top:${cy + cw * 0.56}px;width:${cw * 0.84}px;height:${cw * 0.07}px;background:radial-gradient(ellipse at center,rgba(0,0,0,.6),rgba(0,0,0,0) 70%)"></div>
+    <img class="car" src="img/oc_car.png" alt="Defender OCTA" style="left:${540 - cw / 2}px;top:${cy}px;width:${cw}px">
+    <div class="a" style="left:60px;top:${S ? 1470 : 1065}px;direction:ltr;font:${S ? 96 : 78}px/1 Anton;transform:skewX(-8deg);color:#111">DEFENDER <span style="color:#B08A3C">OCTA</span></div>
+    <div class="a" style="left:60px;top:${S ? 1580 : 1155}px;font:700 ${S ? 30 : 26}px Tajawal;color:#3A3A3A;width:${S ? 560 : 560}px">أقوى ديفندر على الإطلاق · Edition One</div>
+    <div class="a" style="right:60px;top:${S ? 1450 : 1050}px;width:${S ? 330 : 300}px;border:2.5px dashed #555;border-radius:14px;padding:16px 22px;direction:ltr">
+      <div style="font:500 20px Tajawal;color:#555;direction:rtl">القوة</div><div style="font:600 ${S ? 40 : 34}px Oswald;color:#111">635 HP · V8</div>
+      <div style="font:500 20px Tajawal;color:#555;direction:rtl;margin-top:4px">0 - 100 كم/س</div><div style="font:600 ${S ? 40 : 34}px Oswald;color:#111">4.0 SEC</div></div>
+    ${S ? contact(1760, '#111', 'rgba(0,0,0,.18)') : contact(1222, '#111', 'rgba(0,0,0,.18)')}`;
+  }
+};
+root.innerHTML = P[D]();
+Promise.all([document.fonts.ready, ...[...document.images].map(i => i.decode().catch(() => {}))]).then(() => document.body.dataset.ready = 1);
+</script>
+</body>
+</html>

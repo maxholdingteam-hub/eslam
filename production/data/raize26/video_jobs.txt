@@ -1,0 +1,24 @@
+1 2f47c2fb-2f2c-4fde-a437-20dd4fcfca95
+2 f14f24ab-6705-4e22-95c2-a4d41400490e
+3 c6676662-d0cd-4be6-ab5b-f46e0e577753
+4 667bc2cb-dbc4-4d28-b6a1-02ad5611ee85
+5 18edb0c5-5062-4763-b989-2e8fafb95c9b
+6 4ec215cc-5368-497a-a3e1-4c815d55a43d
+7 2e7f86fa-4d7f-430b-8703-2ec95f2542ef
+8 89d0a65c-e2ea-4cd4-aee9-6ed8c995ef3a
+9 f5dfb7d6-adce-4901-a4a3-64b1670b9892
+# Veo flagged 1,2,3,4,6,7,9 (false positive) -> Seedance 2.5 retries:
+1 9d13f3fa-cfdd-4824-99cb-d0fe0b2f955b
+2 b65b2628-6758-4529-9541-dcacc79823eb
+3 17c29926-f228-45df-b064-fc500c9a4157
+4 681a84b5-44c5-4e0b-bd0b-4b91051c2230
+6 355c7da5-3720-4e22-abeb-f637e18dbf5b
+7 46760aba-c5d2-44bd-b464-b3a04045244c
+9 37cf5e45-e46e-4445-9383-2a29cc480138
+# v2 no-face replacements, Veo 3.1:
+n1 dfede257-2e4d-462b-b2fb-98e47ca39c57
+n2 3a4bcf2c-da88-432a-9a11-91903dc11a39
+n3 cc5e288a-15f6-4696-85f9-fd5b278c9ab8
+n5 8d19d856-de0d-4592-a987-cdbe3b5a7059 front close-up, tripod zoom (replaces rz5: parked car slid sideways)
+n6 bc4815ee-055e-4e62-b7b6-b3f4d4434187 rose-farm car on tripod (replaces n3: orbit made the parked car look like it slid sideways; first 2.4 s used)
+n7 a47a276b-2d6b-4209-840f-195d868ff7b4 Seedance follow shot on a straight road (replaces n2, car slid sideways on a curve; Veo try b9bf5a31 flagged nsfw)

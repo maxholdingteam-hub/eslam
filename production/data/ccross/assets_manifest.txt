@@ -1,0 +1,525 @@
+ASSETS MANIFEST - Toyota Corolla Cross, Saudi Arabia (KSA) - for Max Motors video ad
+==========================================================================================
+Source pages (official KSA distributor Abdul Latif Jameel Motors / Toyota):
+  EN overview : https://www.toyota.com.sa/en/vehicles/corollacross
+  AR overview : https://www.toyota.com.sa/ar/vehicles/corollacross
+  EN specs    : https://www.toyota.com.sa/en/vehicles/corollacross/corolla-cross-specs
+  AR specs    : https://www.toyota.com.sa/ar/vehicles/corollacross/corolla-cross-specs
+  EN/AR grade compare table: https://www.toyota.com.sa/{en,ar}/vehicles/corollacross/full-specs (same data as the overview's compare table)
+Model year shown by the site: "Corolla CROSS 2025" (page title, H1, specs). The EN CMS field MobileTitle says
+  "Corolla CROSS 2026" (AR MobileTitle says 2025); every visible title, file name and the spec text say 2025. No 2026/2027 Corolla Cross
+  page exists on the site (slugs tried: corollacross-2026, corolla-cross-2026, corollacross-2027 -> 404).
+Download date: 2026-10-19
+Method: every file fetched from the Sitecore CDN (edge.sitecorecloud.io) WITHOUT ?w=/?h= resize parameters, i.e. at its
+  native stored size. No file was upscaled, re-encoded or edited; files here are byte-identical copies of the CDN files.
+  Largest asset on the page is the 1870x850 desktop hero; most others are 856x481 or smaller.
+
+COPYRIGHT: All images, renders, logos and text (c) Abdul Latif Jameel Motors / Toyota Motor Corporation - all rights
+  reserved. Toyota and Corolla Cross names/logos are trademarks of Toyota. Using any of these in a paid advertisement
+  (e.g. a Max Motors dealer ad) requires written permission from ALJ / Toyota. Apple CarPlay UI and app icons in some
+  interior shots are Apple trademarks. Collected here for internal reference/pre-production only.
+
+Legend: alpha "YES - true cutout" = transparent background usable over any backdrop.
+        "effectively opaque" = WebP has an alpha channel only for anti-aliased rounded corners; treat as a normal photo.
+        DONOTUSE = older model-year design, other market, or not Corolla-Cross material.
+Grade facts used in the notes (from the site spec): all 4 KSA grades (LE HEV, XLE HEV, Limited HEV, Limited Plus HEV)
+  are 1.8L hybrid, CVT, FWD, 17in alloys. LED headlamps/rear lamps, leather, 10in screen, 12.3in meter, BSM/RCTA,
+  power back door and 7 airbags = Limited & Limited Plus only. Moonroof/roof rails/LED fogs = XLE and up.
+Colour swatches: the site draws swatches as CSS colours (hex values listed per colour below), not as image files, so
+  there are no swatch image files to download.
+Skipped page media: UI icons (info, SAR currency symbol, YouTube icon, quick-link icons) and
+  .../vehicles/kiosk/crown/backgroundimage.png (a Crown kiosk background reused by the CMS, not Corolla Cross).
+
+Files: 98  (folders: pro/, pro/mobile/, gallery/, gallery/mobile/, colors/, colors/mobile/)
+------------------------------------------------------------------------------------------
+
+FILE   : pro/ksa_card_silver-front34-whitebg_306x122.webp
+SIZE   : 306x122 native | FORMAT: WEBP (RGB) | ALPHA: no | BYTES: 12,020
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/home-page/explore-vehicle/suv_mpv/corolla-cross-306x122.webp
+NOTE   : Home-page 'Explore vehicles' card. Silver car, front 3/4 left, on solid WHITE background (not transparent), front plate holder reads 'COROLLA CROSS' (placeholder plate, no real number). Tiny (306x122), thumbnail use only.
+
+FILE   : pro/ksa_ext_17in-alloy-wheel-studio_856x481.webp
+SIZE   : 856x481 native | FORMAT: WEBP (RGBA) | ALPHA: channel present but effectively opaque (only rounded-corner anti-aliasing) - NOT a cutout | BYTES: 66,148
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/feature-list/exterior/desktop-view/corolla-c-2025_exterior-02_desktop-view_856x481.webp
+NOTE   : Exterior tab #3 '17inch Alloy Wheel'. Single 17in silver multi-spoke alloy wheel with tyre, studio grey gradient, Toyota centre cap. No text. 17in wheel is on all 4 grades.
+
+FILE   : pro/ksa_ext_moonroof-topdown-white_856x481.webp
+SIZE   : 856x481 native | FORMAT: WEBP (RGBA) | ALPHA: channel present but effectively opaque (only rounded-corner anti-aliasing) - NOT a cutout | BYTES: 83,332
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/feature-list/exterior/desktop-view/corolla-c-2025_exterior-03_desktop-view_856x481.webp
+NOTE   : Exterior tab #4 'Moon Roof'. Top-down view of roof with tinted moonroof glass panel, white/silver body, roof rails. No text. Moonroof = XLE, Limited, Limited Plus HEV.
+
+FILE   : pro/ksa_ext_side-mirror-black-cap-hev-badge-closeup_856x481.webp
+SIZE   : 856x481 native | FORMAT: WEBP (RGBA) | ALPHA: channel present but effectively opaque (only rounded-corner anti-aliasing) - NOT a cutout | BYTES: 68,116
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/feature-list/exterior/desktop-view/corolla-c-2025_exterior-04_desktop-view_856x481.webp
+NOTE   : Exterior tab #5 'Side View Mirrors - Powered and Auto Retractable with TSL'. Close-up of gloss-black mirror cap with turn-signal lamp on a silver/grey car (black-mirror = two-tone black-roof version), 'HEV' fender badge visible. Studio/neutral light.
+
+FILE   : pro/ksa_ext_silver-rear34-powerbackdoor-open-studio_856x481.webp
+SIZE   : 856x481 native | FORMAT: WEBP (RGB) | ALPHA: no | BYTES: 74,448
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/feature-list/exterior/desktop-view/corolla-c-2025_exterior-06_desktop-view_856x481.webp
+NOTE   : Exterior tab #6 'Power back door'. Silver car, rear 3/4 left, tailgate fully open showing cargo area, light-grey studio cyclorama, tail lamps lit. 17in alloys. Power back door = Limited / Limited Plus HEV. Same photo as gallery 'loading trunk'.
+
+FILE   : pro/ksa_ext_silver-rear34-taillights-on-closeup_856x481.webp
+SIZE   : 856x481 native | FORMAT: WEBP (RGB) | ALPHA: no | BYTES: 100,346
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/feature-list/exterior/desktop-view/corolla-c-2025_exterior-05_desktop-view_856x481.webp
+NOTE   : Exterior tab #2 'LED Rear Lamps'. Silver/white car, rear 3/4 left close-up of LED tail lamp (lit/ON), city background blurred. 'HEV' badge and 'CROSS' tailgate badge visible, rear plate reads 'COROLLA CROSS'. LED rear lamps = Limited / Limited Plus HEV.
+
+FILE   : pro/ksa_ext_white-front-driving-city-flyover-lightson_856x481.webp
+SIZE   : 856x481 native | FORMAT: WEBP (RGBA) | ALPHA: channel present but effectively opaque (only rounded-corner anti-aliasing) - NOT a cutout | BYTES: 159,872
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/feature-list/exterior/desktop-view/corolla-c-2025_exterior-01_desktop-view_856x481.webp
+NOTE   : Exterior tab #1 'Modern front design with LED Front Fog Lamp, LED Head Lamps & LED DRL'. White car, near head-on front view, driving on a curved city flyover, daylight, glass towers. LED headlamps/DRL lit. Blue hybrid emblem, front plate holder reads 'COROLLA CROSS' (placeholder plate, no real number). No overlay text. LED headlamps = Limited / Limited Plus HEV. Alpha channel only anti-aliases the rounded corners.
+
+FILE   : pro/ksa_gradeselector_silver-side-profile-cutout_418x167.webp
+SIZE   : 418x167 native | FORMAT: WEBP (RGBA) | ALPHA: YES - true cutout (30% fully transparent, 15% semi) | BYTES: 26,404
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/grades/grade-selector/desktop-view/x.webp
+NOTE   : Grade-selector image. Silver car, pure left side profile, transparent cutout with soft ground shadow, roof rails, 17in alloys, lights off. No text. Small.
+
+FILE   : pro/ksa_hero_white-front34-driving-city-dusk-lightson_1870x850.webp
+SIZE   : 1870x850 native | FORMAT: WEBP (RGB) | ALPHA: no | BYTES: 186,150
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/hero-banner/corolla-cross-2025.webp
+NOTE   : MAIN HERO (desktop). White (Super White / Platinum White Pearl look) Corolla Cross, front 3/4 left, driving toward camera on a city highway at dusk, motion-blurred towers. LED headlamps + LED fog lamps ON. Blue-ringed Toyota emblem (hybrid), roof rails, body-colour mirrors, 17in alloys. front plate holder reads 'COROLLA CROSS' (placeholder plate, no real number). No overlay text, no ALJ logo. Facelift (honeycomb grille) design = current KSA model. LED headlamps/fogs + roof rails = consistent with Limited / Limited Plus HEV. Slightly soft/compressed at 100%.
+
+FILE   : pro/ksa_int_10in-touchscreen-apple-carplay-closeup_856x481.webp
+SIZE   : 856x481 native | FORMAT: WEBP (RGBA) | ALPHA: channel present but effectively opaque (only rounded-corner anti-aliasing) - NOT a cutout | BYTES: 84,372
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/feature-list/interior/desktop-view/corolla-c-2025_exterior-02_desktop-view_856x481.webp
+NOTE   : Interior tab #2 '10-inch Display Audio Multimedia Touchscreen with Apple CarPlay'. Straight-on close-up of 10in screen showing Apple CarPlay home (Phone, Music, Maps, Messages, Now Playing, TOYOTA, Podcasts, Audiobooks), clock '10:23 4G'. Baked-in UI text + Apple trademarks. Limited / Limited Plus HEV.
+
+FILE   : pro/ksa_int_12-3in-digital-meter-closeup_856x481.webp
+SIZE   : 856x481 native | FORMAT: WEBP (RGBA) | ALPHA: channel present but effectively opaque (only rounded-corner anti-aliasing) - NOT a cutout | BYTES: 92,836
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/feature-list/interior/desktop-view/corolla-c-2025_exterior-03_desktop-view_856x481.webp
+NOTE   : Interior tab #3 '12.3-inch Full Graphic Display Meter'. Close-up of digital instrument cluster (two dials, '0 km/h', 'P', 23C, 13:00, 1234 km odometer). Baked-in UI numerals. Limited / Limited Plus HEV.
+
+FILE   : pro/ksa_int_cargo-area-luggage-tailgate-open_856x481.webp
+SIZE   : 856x481 native | FORMAT: WEBP (RGBA) | ALPHA: channel present but effectively opaque (only rounded-corner anti-aliasing) - NOT a cutout | BYTES: 124,422
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/feature-list/interior/desktop-view/corolla-c-2025_exterior-05_desktop-view_856x481.webp
+NOTE   : Interior tab #6 'TOP-CLASS LUGGAGE CAPACITY'. Rear view into open boot with blue duffel bags and grey suitcases, Terra Rossa seat backs, silver body and LED tail lamp edge. No text.
+
+FILE   : pro/ksa_int_dashboard-driver-view-10in-screen-terra-rossa_856x481.webp
+SIZE   : 856x481 native | FORMAT: WEBP (RGBA) | ALPHA: channel present but effectively opaque (only rounded-corner anti-aliasing) - NOT a cutout | BYTES: 124,974
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/feature-list/interior/desktop-view/corolla-c-2025_exterior-01_desktop-view_856x481.webp
+NOTE   : Interior tab #1 'HIGH SENSORY QUALITY'. Driver's view of LHD dashboard: leather steering wheel with controls, 12.3in digital meter, 10in floating touchscreen (Apple CarPlay icons), Terra Rossa (red-brown) leather accents, dusk city outside. Apple app icons visible (3rd-party marks). 10in screen + 12.3in meter = Limited / Limited Plus HEV.
+
+FILE   : pro/ksa_int_power-start-button-closeup_856x481.webp
+SIZE   : 856x481 native | FORMAT: WEBP (RGB) | ALPHA: no | BYTES: 115,050
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/feature-list/interior/desktop-view/corolla-c-2025_exterior-07_desktop-view_856x481.webp
+NOTE   : Interior tab #7 'Push Start button'. Macro of chrome-ringed 'POWER' start button on dark grained trim. Button legend is part of product. All grades.
+
+FILE   : pro/ksa_int_rear-ac-vent-closeup_856x481.webp
+SIZE   : 856x481 native | FORMAT: WEBP (RGB) | ALPHA: no | BYTES: 74,326
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/feature-list/interior/desktop-view/corolla-c-2025_exterior-08_desktop-view_856x481.webp
+NOTE   : Interior tab #8 'Rear Cooling Vent'. Close-up of rear-seat A/C vent on console back, Terra Rossa leather either side. No text. Rear A/C duct = all grades.
+
+FILE   : pro/ksa_int_terra-rossa-leather-seats-side-view_856x481.webp
+SIZE   : 856x481 native | FORMAT: WEBP (RGBA) | ALPHA: channel present but effectively opaque (only rounded-corner anti-aliasing) - NOT a cutout | BYTES: 112,016
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/feature-list/interior/desktop-view/corolla-c-2025_exterior-04_desktop-view_856x481.webp
+NOTE   : Interior tab #4 'interior'. Side view through open doors of front + rear Terra Rossa (red-brown) leather seats, LHD dashboard with 10in screen, dusk city outside window. No text. Leather = Limited / Limited Plus HEV.
+
+FILE   : pro/ksa_int_topdown-cutaway-cabin-terra-rossa-white_856x481.webp
+SIZE   : 856x481 native | FORMAT: WEBP (RGBA) | ALPHA: channel present but effectively opaque (only rounded-corner anti-aliasing) - NOT a cutout | BYTES: 173,414
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/feature-list/interior/desktop-view/corolla-c-2025_exterior-06_desktop-view_856x481.webp
+NOTE   : Interior tab #5 'SPACIOUS SPACE INTERIOR WITH MODERN COLOR - TERRA ROSSA'. Top-down roofless cutaway of a white car showing 5 Terra Rossa seats and luggage in boot, on grey asphalt-texture ground. No text. Leather seats = Limited grades (site says Terra Rossa also in fabric on LE/XLE).
+
+FILE   : pro/ksa_logo_corolla-cross-wordmark_98x18.svg
+SIZE   : vector (viewBox 98.3x18) native | FORMAT: SVG (vector) | ALPHA: yes (vector, no background) | BYTES: 4,516
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/corolla-cross-logo.svg
+NOTE   : 'COROLLA CROSS' model wordmark, vector SVG (Adobe Illustrator export), single dark fill #231F20, transparent background, viewBox 98.3x18. Toyota trademark: needs permission.
+
+FILE   : pro/ksa_offer_hev-10yr-peace-of-mind-banner-AR_1440x576.webp
+SIZE   : 1440x576 native | FORMAT: WEBP (RGB) | ALPHA: no | BYTES: 178,454
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/offers/hewvew/offer-banner-arab-eng/offer-banner-1440x576-arab-eng/offer-banner-1440x576-arab.webp
+NOTE   : DONOTUSE as footage - Arabic version of the same featured-offer banner ('مزيد من راحة البال تصل إلى 10 سنوات*'), baked-in Arabic text, T&C, ALJ / 80-years / HEV logos. Multi-model, not Corolla-Cross specific.
+
+FILE   : pro/ksa_offer_hev-10yr-peace-of-mind-banner-EN_1440x576.webp
+SIZE   : 1440x576 native | FORMAT: WEBP (RGB) | ALPHA: no | BYTES: 185,818
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/offers/hewvew/offer-banner-arab-eng/offer-banner-1440x576-arab-eng/offer-banner-1440x576-eng.webp
+NOTE   : DONOTUSE as footage - featured-offer banner on the page (EN). Generic Toyota KSA hybrid after-sales campaign 'Enjoy up to 10 years of peace of mind*' (Extended Hybrid Battery Care Program / Roadside Assistance), lineup of several Toyota models on a highway with a giant '10' sculpture and Riyadh-style skyline. Heavy baked-in text, T&C fine print, #ReliabilityForTomorrow, '10 years' + HEV logos, Abdul Latif Jameel Motors + '80 years' logos. Not Corolla-Cross specific.
+
+FILE   : pro/ksa_offer_hev-10yr-peace-of-mind-card-AR_647x485.webp
+SIZE   : 647x485 native | FORMAT: WEBP (RGB) | ALPHA: no | BYTES: 110,274
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/offers/hewvew/offer-card-arab-eng/offer-card-647x485-arab-eng/offer-card-647x485-arab.webp
+NOTE   : DONOTUSE as footage - offer card (AR): same scene with Arabic logos/text baked in.
+
+FILE   : pro/ksa_offer_hev-10yr-peace-of-mind-card-EN_647x485.webp
+SIZE   : 647x485 native | FORMAT: WEBP (RGB) | ALPHA: no | BYTES: 110,764
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/offers/hewvew/offer-card-arab-eng/offer-card-647x485-arab-eng/offer-card-647x485-eng.webp
+NOTE   : DONOTUSE as footage - offer card (EN): same multi-model '10' scene, Toyota wordmark, 'Peace of Mind up to 10 years' + HEV logos, Abdul Latif Jameel Motors + 80-years logos baked in.
+
+FILE   : pro/ksa_og_gray-front34-cutout-PREFACELIFT-DONOTUSE_520x220.png
+SIZE   : 520x220 native | FORMAT: PNG (P) | ALPHA: YES - true cutout (48% fully transparent, 7% semi) | BYTES: 24,390
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/ccross-thumb.png
+NOTE   : DONOTUSE - OpenGraph/share image showing the PRE-FACELIFT Corolla Cross (large black trapezoid grille), dark grey, front 3/4 left, transparent PNG cutout. Older model-year design, does not match the current KSA car.
+
+FILE   : pro/ksa_perf_2zr-fxe-hybrid-engine-studio_856x481.webp
+SIZE   : 856x481 native | FORMAT: WEBP (RGBA) | ALPHA: channel present but effectively opaque (only rounded-corner anti-aliasing) - NOT a cutout | BYTES: 153,528
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/feature-list/performance/desktop-view/corolla-c-2025_performance-02_desktop-view_856x481.webp
+NOTE   : Performance tab #1 '2ZR-FXE Engine'. Isolated 1.8L hybrid engine/transaxle, Toyota logo on engine cover, white textured background. No text.
+
+FILE   : pro/ksa_perf_chassis-suspension-hybrid-battery-studio_856x481.webp
+SIZE   : 856x481 native | FORMAT: WEBP (RGBA) | ALPHA: channel present but effectively opaque (only rounded-corner anti-aliasing) - NOT a cutout | BYTES: 90,598
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/feature-list/performance/desktop-view/corolla-c-2025_performance-04_desktop-view_856x481.webp
+NOTE   : Performance tab #4 'Suspension' (MacPherson front / torsion-beam rear). Phantom chassis: hybrid powertrain, battery, front struts, rear beam, 4 wheels with 17in alloys, white background. No text.
+
+FILE   : pro/ksa_perf_cvt-shifter-console-closeup_856x481.webp
+SIZE   : 856x481 native | FORMAT: WEBP (RGB) | ALPHA: no | BYTES: 64,320
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/feature-list/performance/desktop-view/corolla-c-2025_performance-01_desktop-view_856x481.webp
+NOTE   : Performance tab #6 'ACCELERATION - CVT'. Gear selector (P R N D B) with drive-mode/EV switches, dark cabin, Terra Rossa leather seat edge. Shift-gate letters only.
+
+FILE   : pro/ksa_perf_drive-mode-ev-mode-buttons-closeup_856x481.webp
+SIZE   : 856x481 native | FORMAT: WEBP (RGB) | ALPHA: no | BYTES: 49,846
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/feature-list/performance/desktop-view/corolla-c-2025_performance-06_desktop-view_856x481.webp
+NOTE   : Performance tab #3 'Drive Mode Select' (Eco/Normal/Power + separate EV mode). Close-up of console switches 'DRIVE MODE', VSC-OFF and 'EV MODE', dark cabin, Terra Rossa trim edge. Button legends only.
+
+FILE   : pro/ksa_perf_epb-brake-hold-buttons-closeup_856x481.webp
+SIZE   : 856x481 native | FORMAT: WEBP (RGB) | ALPHA: no | BYTES: 94,710
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/feature-list/performance/desktop-view/corolla-c-2025_performance-05_desktop-view_856x481.webp
+NOTE   : Performance tab #5 'Electric Parking Brake (EPB) + Brake Hold Function'. Macro of (P) EPB switch and 'HOLD' button. Button legends only. EPB on all grades.
+
+FILE   : pro/ksa_perf_hybrid-system-xray-cutaway-white-car-driving_856x481.webp
+SIZE   : 856x481 native | FORMAT: WEBP (RGBA) | ALPHA: channel present but effectively opaque (only rounded-corner anti-aliasing) - NOT a cutout | BYTES: 107,992
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/feature-list/performance/desktop-view/corolla-c-2025_performance-03_desktop-view_856x481.webp
+NOTE   : Performance tab #2 'Hybrid system'. White car front 3/4 left driving on waterfront road with skyline, x-ray/phantom overlay of engine, motor, battery and blue-highlighted underbody. DRL lit. front plate holder reads 'COROLLA CROSS' (placeholder plate, no real number). Technical CGI overlay, no text.
+
+FILE   : pro/ksa_safety_7-airbags-deployed-cabin-cutaway_856x481.webp
+SIZE   : 856x481 native | FORMAT: WEBP (RGB) | ALPHA: no | BYTES: 97,522
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/feature-list/safety/desktop-view/corolla-c-2025_safety-01_desktop-view_856x481.webp
+NOTE   : Safety tab #1 '7 SRS Airbags including Driver's knee airbag'. Cabin cutaway with front, side, curtain and knee airbags deployed, red/Terra Rossa leather seats. No text. NOTE: site spec gives 7 airbags only on Limited / Limited Plus; LE & XLE = driver + front passenger only.
+
+FILE   : pro/ksa_safety_abs-warning-icon-black_856x481.webp
+SIZE   : 856x481 native | FORMAT: WEBP (RGBA) | ALPHA: channel present but effectively opaque (only rounded-corner anti-aliasing) - NOT a cutout | BYTES: 20,730
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/feature-list/safety/desktop-view/corolla-c-2025_safety-04_desktop-view_856x481.webp
+NOTE   : Safety tab #4 'Anti-Lock Break System (ABS)'. Glowing amber '(ABS)' warning-lamp icon on black. Icon text 'ABS' only. All grades.
+
+FILE   : pro/ksa_safety_bsm-blind-spot-graphic-topdown_856x481.webp
+SIZE   : 856x481 native | FORMAT: WEBP (RGBA) | ALPHA: channel present but effectively opaque (only rounded-corner anti-aliasing) - NOT a cutout | BYTES: 39,350
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/feature-list/safety/desktop-view/corolla-c-2025_safety-02_desktop-view_856x481.webp
+NOTE   : Safety tab #2 'Blind Spot Monitor (BSM)'. Flat top-down infographic: white/silver car with cyan radar arcs, second car in blind spot highlighted red, grey road. No text. BSM = Limited / Limited Plus only.
+
+FILE   : pro/ksa_safety_rcta-rear-cross-traffic-graphic-topdown_856x481.webp
+SIZE   : 856x481 native | FORMAT: WEBP (RGBA) | ALPHA: channel present but effectively opaque (only rounded-corner anti-aliasing) - NOT a cutout | BYTES: 47,256
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/feature-list/safety/desktop-view/corolla-c-2025_safety-03_desktop-view_856x481.webp
+NOTE   : Safety tab #3 'Rear Cross Traffic Alert (RCTA)'. Top-down infographic: car reversing out of parking bay with cyan detection fans, approaching car. No text. RCTA = Limited / Limited Plus only.
+
+FILE   : pro/ksa_thumb_silver-front34-cutout-shadow_513x289.png
+SIZE   : 513x289 native | FORMAT: PNG (RGBA) | ALPHA: YES - true cutout (42% fully transparent, 6% semi) | BYTES: 140,135
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/thumbnail/corolla-cross-513x289.png
+NOTE   : Vehicle thumbnail (listing/menu). Silver car, front 3/4 left, transparent PNG cutout with soft drop shadow, lights off, current facelift grille, front plate holder reads 'COROLLA CROSS' (placeholder plate, no real number). Small (513 px) - fine for picture-in-picture, too small for full-frame.
+
+FILE   : pro/mobile/ksa_ext_17in-alloy-wheel-studio_343x457.webp
+SIZE   : 343x457 native | FORMAT: WEBP (RGBA) | ALPHA: channel present but effectively opaque (only rounded-corner anti-aliasing) - NOT a cutout | BYTES: 42,268
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/feature-list/exterior/mobile-view/corolla-c-2025_exterior-02_mobile-view_343x457.webp
+NOTE   : Mobile portrait re-crop of the 17in alloy wheel studio shot. Different file from desktop (own crop), low-res 343x457.
+
+FILE   : pro/mobile/ksa_ext_moonroof-topdown-white_343x457.webp
+SIZE   : 343x457 native | FORMAT: WEBP (RGBA) | ALPHA: channel present but effectively opaque (only rounded-corner anti-aliasing) - NOT a cutout | BYTES: 32,272
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/feature-list/exterior/mobile-view/corolla-c-2025_exterior-03_mobile-view_343x457.webp
+NOTE   : Mobile portrait re-crop of the moonroof top-down shot. Different file from desktop (own crop), low-res 343x457.
+
+FILE   : pro/mobile/ksa_ext_side-mirror-black-cap-hev-badge-closeup_343x457.webp
+SIZE   : 343x457 native | FORMAT: WEBP (RGBA) | ALPHA: channel present but effectively opaque (only rounded-corner anti-aliasing) - NOT a cutout | BYTES: 33,120
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/feature-list/exterior/mobile-view/corolla-c-2025_exterior-04_mobile-view_343x457.webp
+NOTE   : Mobile portrait re-crop of the black mirror / HEV badge close-up. Different file from desktop (own crop), low-res 343x457.
+
+FILE   : pro/mobile/ksa_ext_silver-rear34-powerbackdoor-open-studio_343x457.webp
+SIZE   : 343x457 native | FORMAT: WEBP (RGBA) | ALPHA: channel present but effectively opaque (only rounded-corner anti-aliasing) - NOT a cutout | BYTES: 40,878
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/feature-list/exterior/mobile-view/corolla-c-2025_exterior-06_mobile-view_343x457.webp
+NOTE   : Mobile portrait re-crop of the power-back-door studio shot. Different file from desktop (own crop), low-res 343x457.
+
+FILE   : pro/mobile/ksa_ext_silver-rear34-taillights-on-closeup_343x457.webp
+SIZE   : 343x457 native | FORMAT: WEBP (RGBA) | ALPHA: channel present but effectively opaque (only rounded-corner anti-aliasing) - NOT a cutout | BYTES: 47,182
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/feature-list/exterior/mobile-view/corolla-c-2025_exterior-05_mobile-view_343x457.webp
+NOTE   : Mobile portrait re-crop of exterior 'LED Rear Lamps' (tail lamp lit, HEV/CROSS badges, rear plate 'COROLLA CROSS'). Different file from desktop (own crop), low-res 343x457.
+
+FILE   : pro/mobile/ksa_ext_white-front-driving-city-flyover-lightson_343x457.webp
+SIZE   : 343x457 native | FORMAT: WEBP (RGBA) | ALPHA: channel present but effectively opaque (only rounded-corner anti-aliasing) - NOT a cutout | BYTES: 74,614
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/feature-list/exterior/mobile-view/corolla-c-2025_exterior-01_mobile-view_343x457.webp
+NOTE   : Mobile portrait re-crop of exterior #1 (white car, front, city flyover, lights on, plate 'COROLLA CROSS'). Different file from desktop (own crop), low-res 343x457.
+
+FILE   : pro/mobile/ksa_gradeselector_silver-side-profile-cutout_274x110.webp
+SIZE   : 274x110 native | FORMAT: WEBP (RGBA) | ALPHA: YES - true cutout (29% fully transparent, 14% semi) | BYTES: 14,830
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/grades/grade-selector/mobile-view/x.webp
+NOTE   : Mobile grade-selector: smaller rendition of the same silver side-profile cutout.
+
+FILE   : pro/mobile/ksa_hero_white-front34-driving-city-portrait-lightson_375x666.webp
+SIZE   : 375x666 native | FORMAT: WEBP (RGB) | ALPHA: no | BYTES: 52,610
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/hero-banner/hero-banner_corolla-cross-2025_mobile-view-375x666cc.webp
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/hero-banner/hero-banner_corolla-cross-2025_mobile-view-375x666.webp
+NOTE   : MOBILE HERO. Portrait re-crop of the same hero scene (white car, front 3/4, city highway, lights on). front plate holder reads 'COROLLA CROSS' (placeholder plate, no real number). No overlay text. EN URL (…375x666cc.webp) and AR URL (…375x666.webp) are byte-identical (same md5), so only one file kept. Low resolution (375 px wide).
+
+FILE   : pro/mobile/ksa_int_10in-touchscreen-apple-carplay-closeup_343x457.webp
+SIZE   : 343x457 native | FORMAT: WEBP (RGB) | ALPHA: no | BYTES: 28,446
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/feature-list/interior/mobile-view/corolla-c-2025_exterior-02_mobile-view_343x457.webp
+NOTE   : Mobile portrait re-crop of the CarPlay screen (screen cut off at left; Apple UI text). Different file from desktop (own crop), low-res 343x457.
+
+FILE   : pro/mobile/ksa_int_12-3in-digital-meter-closeup_343x457.webp
+SIZE   : 343x457 native | FORMAT: WEBP (RGBA) | ALPHA: channel present but effectively opaque (only rounded-corner anti-aliasing) - NOT a cutout | BYTES: 37,592
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/feature-list/interior/mobile-view/corolla-c-2025_exterior-03_mobile-view_343x457.webp
+NOTE   : Mobile portrait re-crop of the 12.3in digital meter. Different file from desktop (own crop), low-res 343x457.
+
+FILE   : pro/mobile/ksa_int_cargo-area-luggage-tailgate-open_343x457.webp
+SIZE   : 343x457 native | FORMAT: WEBP (RGBA) | ALPHA: channel present but effectively opaque (only rounded-corner anti-aliasing) - NOT a cutout | BYTES: 54,564
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/feature-list/interior/mobile-view/corolla-c-2025_exterior-05_mobile-view_343x457.webp
+NOTE   : Mobile portrait re-crop of the luggage/cargo shot. Different file from desktop (own crop), low-res 343x457.
+
+FILE   : pro/mobile/ksa_int_dashboard-driver-view-10in-screen-terra-rossa_343x457.webp
+SIZE   : 343x457 native | FORMAT: WEBP (RGBA) | ALPHA: channel present but effectively opaque (only rounded-corner anti-aliasing) - NOT a cutout | BYTES: 62,250
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/feature-list/interior/mobile-view/corolla-c-2025_exterior-01_mobile-view_343x457.webp
+NOTE   : Mobile portrait re-crop of the driver's-view dashboard (10in screen, CarPlay icons). Different file from desktop (own crop), low-res 343x457.
+
+FILE   : pro/mobile/ksa_int_power-start-button-closeup_343x457.webp
+SIZE   : 343x457 native | FORMAT: WEBP (RGBA) | ALPHA: channel present but effectively opaque (only rounded-corner anti-aliasing) - NOT a cutout | BYTES: 65,510
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/feature-list/interior/mobile-view/corolla-c-2025_exterior-07_mobile-view_343x457.webp
+NOTE   : Mobile portrait re-crop of the POWER button macro. Different file from desktop (own crop), low-res 343x457.
+
+FILE   : pro/mobile/ksa_int_rear-ac-vent-closeup_343x457.webp
+SIZE   : 343x457 native | FORMAT: WEBP (RGBA) | ALPHA: channel present but effectively opaque (only rounded-corner anti-aliasing) - NOT a cutout | BYTES: 45,596
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/feature-list/interior/mobile-view/corolla-c-2025_exterior-08_mobile-view_343x457.webp
+NOTE   : Mobile portrait re-crop of the rear A/C vent. Different file from desktop (own crop), low-res 343x457.
+
+FILE   : pro/mobile/ksa_int_terra-rossa-leather-seats-side-view_343x457.webp
+SIZE   : 343x457 native | FORMAT: WEBP (RGBA) | ALPHA: channel present but effectively opaque (only rounded-corner anti-aliasing) - NOT a cutout | BYTES: 47,178
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/feature-list/interior/mobile-view/corolla-c-2025_exterior-04_mobile-view_343x457.webp
+NOTE   : Mobile portrait re-crop of the Terra Rossa seats side view. Different file from desktop (own crop), low-res 343x457.
+
+FILE   : pro/mobile/ksa_int_topdown-cutaway-cabin-terra-rossa-white_343x457.webp
+SIZE   : 343x457 native | FORMAT: WEBP (RGB) | ALPHA: no | BYTES: 84,998
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/feature-list/interior/mobile-view/corolla-c-2025_exterior-06_mobile-view_343x457.webp
+NOTE   : Mobile portrait re-crop of the top-down cabin cutaway. Different file from desktop (own crop), low-res 343x457.
+
+FILE   : pro/mobile/ksa_offer_hev-10yr-peace-of-mind-banner-AR_375x500.webp
+SIZE   : 375x500 native | FORMAT: WEBP (RGB) | ALPHA: no | BYTES: 79,078
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/offers/hewvew/offer-banner-arab-eng/offer-banner-375x500-arab-eng/offer-banner-375x500-arab.webp
+NOTE   : DONOTUSE as footage - mobile offer banner (AR), portrait, Arabic headline + T&C + logos baked in. Multi-model.
+
+FILE   : pro/mobile/ksa_offer_hev-10yr-peace-of-mind-banner-EN_375x500.webp
+SIZE   : 375x500 native | FORMAT: WEBP (RGB) | ALPHA: no | BYTES: 80,864
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/offers/hewvew/offer-banner-arab-eng/offer-banner-375x500-arab-eng/offer-banner-375x500-eng.webp
+NOTE   : DONOTUSE as footage - mobile offer banner (EN), portrait, headline + T&C text + ALJ/HEV logos baked in. Multi-model.
+
+FILE   : pro/mobile/ksa_offer_hev-10yr-peace-of-mind-card-AR_343x457.webp
+SIZE   : 343x457 native | FORMAT: WEBP (RGB) | ALPHA: no | BYTES: 50,890
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/offers/hewvew/offer-card-arab-eng/offer-card-343x457-arab-eng/offer-card-343x457-arab.webp
+NOTE   : DONOTUSE as footage - mobile offer card (AR), portrait, Arabic logos baked in. Multi-model.
+
+FILE   : pro/mobile/ksa_offer_hev-10yr-peace-of-mind-card-EN_343x457.webp
+SIZE   : 343x457 native | FORMAT: WEBP (RGB) | ALPHA: no | BYTES: 51,110
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/offers/hewvew/offer-card-arab-eng/offer-card-343x457-arab-eng/offer-card-343x457-eng.webp
+NOTE   : DONOTUSE as footage - mobile offer card (EN), portrait, Toyota/HEV/ALJ/80-years logos baked in. Multi-model.
+
+FILE   : pro/mobile/ksa_perf_2zr-fxe-hybrid-engine-studio_343x457.webp
+SIZE   : 343x457 native | FORMAT: WEBP (RGB) | ALPHA: no | BYTES: 63,702
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/feature-list/performance/mobile-view/corolla-c-2025_performance-02_mobile-view_343x457.webp
+NOTE   : Mobile portrait re-crop of the 2ZR-FXE engine. Different file from desktop (own crop), low-res 343x457.
+
+FILE   : pro/mobile/ksa_perf_chassis-suspension-hybrid-battery-studio_343x457.webp
+SIZE   : 343x457 native | FORMAT: WEBP (RGB) | ALPHA: no | BYTES: 18,706
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/feature-list/performance/mobile-view/corolla-c-2025_performance-04_mobile-view_343x457.webp
+NOTE   : Mobile portrait re-crop of the phantom chassis on white. Different file from desktop (own crop), low-res 343x457.
+
+FILE   : pro/mobile/ksa_perf_cvt-shifter-console-closeup_343x457.webp
+SIZE   : 343x457 native | FORMAT: WEBP (RGBA) | ALPHA: channel present but effectively opaque (only rounded-corner anti-aliasing) - NOT a cutout | BYTES: 32,210
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/feature-list/performance/mobile-view/corolla-c-2025_performance-01_mobile-view_343x457.webp
+NOTE   : Mobile portrait re-crop of the CVT shifter. Different file from desktop (own crop), low-res 343x457.
+
+FILE   : pro/mobile/ksa_perf_drive-mode-ev-mode-buttons-closeup_343x457.webp
+SIZE   : 343x457 native | FORMAT: WEBP (RGBA) | ALPHA: channel present but effectively opaque (only rounded-corner anti-aliasing) - NOT a cutout | BYTES: 19,950
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/feature-list/performance/mobile-view/corolla-c-2025_performance-06_mobile-view_343x457.webp
+NOTE   : Mobile portrait re-crop of the DRIVE MODE / EV MODE switches. Different file from desktop (own crop), low-res 343x457.
+
+FILE   : pro/mobile/ksa_perf_epb-brake-hold-buttons-closeup_343x457.webp
+SIZE   : 343x457 native | FORMAT: WEBP (RGBA) | ALPHA: channel present but effectively opaque (only rounded-corner anti-aliasing) - NOT a cutout | BYTES: 36,366
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/feature-list/performance/mobile-view/corolla-c-2025_performance-05_mobile-view_343x457.webp
+NOTE   : Mobile portrait re-crop of the EPB / HOLD buttons. Different file from desktop (own crop), low-res 343x457.
+
+FILE   : pro/mobile/ksa_perf_hybrid-system-xray-cutaway-white-car-driving_343x457.webp
+SIZE   : 343x457 native | FORMAT: WEBP (RGB) | ALPHA: no | BYTES: 43,660
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/feature-list/performance/mobile-view/corolla-c-2025_performance-03_mobile-view_343x457.webp
+NOTE   : Mobile portrait re-crop of the hybrid x-ray cutaway car. Different file from desktop (own crop), low-res 343x457.
+
+FILE   : pro/mobile/ksa_safety_7-airbags-deployed-cabin-cutaway_343x457.webp
+SIZE   : 343x457 native | FORMAT: WEBP (RGBA) | ALPHA: channel present but effectively opaque (only rounded-corner anti-aliasing) - NOT a cutout | BYTES: 32,322
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/feature-list/safety/mobile-view/corolla-c-2025_safety-01_mobile-view_343x457.webp
+NOTE   : Mobile portrait re-crop of the 7-airbag cutaway (Limited grades only). Different file from desktop (own crop), low-res 343x457.
+
+FILE   : pro/mobile/ksa_safety_abs-warning-icon-black_343x457.webp
+SIZE   : 343x457 native | FORMAT: WEBP (RGB) | ALPHA: no | BYTES: 18,952
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/feature-list/safety/mobile-view/corolla-c-2025_safety-04_mobile-view_343x457.webp
+NOTE   : Mobile portrait re-crop of the ABS icon. Different file from desktop (own crop), low-res 343x457.
+
+FILE   : pro/mobile/ksa_safety_bsm-blind-spot-graphic-topdown_343x457.webp
+SIZE   : 343x457 native | FORMAT: WEBP (RGBA) | ALPHA: channel present but effectively opaque (only rounded-corner anti-aliasing) - NOT a cutout | BYTES: 21,010
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/feature-list/safety/mobile-view/corolla-c-2025_safety-02_mobile-view_343x457.webp
+NOTE   : Mobile portrait re-crop of the BSM infographic. Different file from desktop (own crop), low-res 343x457.
+
+FILE   : pro/mobile/ksa_safety_rcta-rear-cross-traffic-graphic-topdown_343x457.webp
+SIZE   : 343x457 native | FORMAT: WEBP (RGB) | ALPHA: no | BYTES: 15,950
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/feature-list/safety/mobile-view/corolla-c-2025_safety-03_mobile-view_343x457.webp
+NOTE   : Mobile portrait re-crop of the RCTA infographic. Different file from desktop (own crop), low-res 343x457.
+
+FILE   : gallery/ksa_gallery_17in-alloy-wheel-arch-closeup_636x352.webp
+SIZE   : 636x352 native | FORMAT: WEBP (RGB) | ALPHA: no | BYTES: 12,742
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/gallery/desktop-view/corrolla-cross-desktop-view_0004_wheel_4174.webp
+NOTE   : Gallery 4 ('wheel'). Close-up of front 17in silver multi-spoke alloy in black wheel-arch cladding, silver body, grey studio. No text.
+
+FILE   : gallery/ksa_gallery_dash-switches-parking-sensor-odo-closeup_636x352.webp
+SIZE   : 636x352 native | FORMAT: WEBP (RGB) | ALPHA: no | BYTES: 17,410
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/gallery/desktop-view/corrolla-cross-desktop-view_0000_buttons_2187.webp
+NOTE   : Gallery 5 ('buttons'). Lower-dash switch bank: headlamp-levelling wheel, parking-sensor 'P' switch, 'ODO TRIP' button, power-back-door switch below. Legends are product labels.
+
+FILE   : gallery/ksa_gallery_dashboard-wide-8in-screen-burgundy-trim_636x352.webp
+SIZE   : 636x352 native | FORMAT: WEBP (RGB) | ALPHA: no | BYTES: 17,604
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/gallery/desktop-view/corrolla-cross-desktop-view_0005_wide_dashboard_5367-3.webp
+NOTE   : Gallery 6 ('wide_dashboard'). Straight-on full dashboard, LHD, 8in touchscreen, analogue dials with small MID, burgundy/Terra Rossa dash trim and seats, grey studio windows. 8in screen + analogue meter matches LE / XLE HEV spec (not the 10in/12.3in Limited cabin); could also be an earlier-MY photo - uncertain.
+
+FILE   : gallery/ksa_gallery_silver-blackroof-front34-studio_636x352.webp
+SIZE   : 636x352 native | FORMAT: WEBP (RGB) | ALPHA: no | BYTES: 16,394
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/gallery/desktop-view/corrolla-cross-desktop-view_0001_front_bumper_1967.webp
+NOTE   : Gallery 1 ('front_bumper'). Silver car with dark roof (appears black-roof two-tone), front 3/4 left, light-grey studio cyclorama, lights off/DRL faint, facelift honeycomb grille, blue hybrid emblem, front plate holder reads 'COROLLA CROSS' (placeholder plate, no real number), 17in alloys. No overlay text. Small (636 px).
+
+FILE   : gallery/ksa_gallery_silver-rear34-tailgate-open-studio_636x352.webp
+SIZE   : 636x352 native | FORMAT: WEBP (RGB) | ALPHA: no | BYTES: 13,388
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/gallery/desktop-view/corrolla-cross-desktop-view_0002_loading_trunk_4164.webp
+NOTE   : Gallery 3 ('loading_trunk'). Silver car rear 3/4 left with power tailgate open, grey studio (same shoot as exterior tab power-back-door image).
+
+FILE   : gallery/ksa_gallery_silver-rear34-taillights-on-hev-badge_636x352.webp
+SIZE   : 636x352 native | FORMAT: WEBP (RGB) | ALPHA: no | BYTES: 16,660
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/gallery/desktop-view/corrolla-cross-desktop-view_0003_tail_lights_2034.webp
+NOTE   : Gallery 2 ('tail_lights'). Silver car rear 3/4 close-up, LED tail lamp lit, blue hybrid emblem, 'HEV' + 'CROSS' badges, rear plate reads 'COROLLA CROSS', grey studio. LED rear lamps = Limited grades.
+
+FILE   : gallery/mobile/ksa_gallery_17in-alloy-wheel-arch-closeup_343x193.webp
+SIZE   : 343x193 native | FORMAT: WEBP (RGB) | ALPHA: no | BYTES: 6,162
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/gallery/mobile-view/corrolla-cross-mobile-view_0004_wheel_4174jpg-copy.webp
+NOTE   : Mobile rendition (downscaled) of gallery 4.
+
+FILE   : gallery/mobile/ksa_gallery_dash-switches-parking-sensor-odo-closeup_343x193.webp
+SIZE   : 343x193 native | FORMAT: WEBP (RGB) | ALPHA: no | BYTES: 6,696
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/gallery/mobile-view/corrolla-cross-mobile-view_0000_buttons_2187jpg-copy.webp
+NOTE   : Mobile rendition (downscaled) of gallery 5.
+
+FILE   : gallery/mobile/ksa_gallery_dashboard-wide-8in-screen-burgundy-trim_343x193.webp
+SIZE   : 343x193 native | FORMAT: WEBP (RGB) | ALPHA: no | BYTES: 8,138
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/gallery/mobile-view/corrolla-cross-mobile-view_0005_wide_dashboard_5367-3jpg-copy.webp
+NOTE   : Mobile rendition (downscaled) of gallery 6.
+
+FILE   : gallery/mobile/ksa_gallery_silver-blackroof-front34-studio_343x193.webp
+SIZE   : 343x193 native | FORMAT: WEBP (RGB) | ALPHA: no | BYTES: 7,460
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/gallery/mobile-view/corrolla-cross-mobile-view_0001_front_bumper_1967jpg-copy.webp
+NOTE   : Mobile rendition (downscaled) of gallery 1.
+
+FILE   : gallery/mobile/ksa_gallery_silver-rear34-tailgate-open-studio_343x193.webp
+SIZE   : 343x193 native | FORMAT: WEBP (RGB) | ALPHA: no | BYTES: 6,326
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/gallery/mobile-view/corrolla-cross-mobile-view_0002_loading_trunk_4164jpg-copy.webp
+NOTE   : Mobile rendition (downscaled) of gallery 3.
+
+FILE   : gallery/mobile/ksa_gallery_silver-rear34-taillights-on-hev-badge_343x193.webp
+SIZE   : 343x193 native | FORMAT: WEBP (RGB) | ALPHA: no | BYTES: 7,746
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/gallery/mobile-view/corrolla-cross-mobile-view_0003_tail_lights_2034jpg-copy.webp
+NOTE   : Mobile rendition (downscaled) of gallery 2.
+
+FILE   : colors/ksa_color_01-super-white_front34-cutout_731x411.webp
+SIZE   : 731x411 native | FORMAT: WEBP (RGBA) | ALPHA: YES - true cutout (40% fully transparent, 12% semi) | BYTES: 87,392
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/grades/limited-hev/exterior/desktop/super-white-731x411.webp
+NOTE   : Colour #1 'Super White' / 'أبيض سوبر' (site swatch hex #fdfcfc). Studio render cut out on TRANSPARENT background (windows semi-transparent, soft ground shadow in alpha), front 3/4 left, lights off (LED DRL graphic visible), body-colour roof and mirrors, dark roof rails, 17in alloys, blue hybrid emblem, 'HEV' door badge, front plate holder reads 'COROLLA CROSS' (placeholder plate, no real number). Shown on the site under grade 'Limited Plus HEV' (CDN folder is 'limited-hev'); other grades have no colour images. Car nearly touches the left/right frame edges.
+
+FILE   : colors/ksa_color_02-platinum-white-pearl_front34-cutout_731x411.webp
+SIZE   : 731x411 native | FORMAT: WEBP (RGBA) | ALPHA: YES - true cutout (40% fully transparent, 12% semi) | BYTES: 87,166
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/grades/limited-hev/exterior/desktop/platinum-white-pearl-731x411.webp
+NOTE   : Colour #2 'Platinum White Pearl' / 'أبيض لؤلؤيِ بلاتينم' (site swatch hex #f2f2f2). Studio render cut out on TRANSPARENT background (windows semi-transparent, soft ground shadow in alpha), front 3/4 left, lights off (LED DRL graphic visible), body-colour roof and mirrors, dark roof rails, 17in alloys, blue hybrid emblem, 'HEV' door badge, front plate holder reads 'COROLLA CROSS' (placeholder plate, no real number). Shown on the site under grade 'Limited Plus HEV' (CDN folder is 'limited-hev'); other grades have no colour images. Car nearly touches the left/right frame edges.
+
+FILE   : colors/ksa_color_03-silver-metallic_front34-cutout_731x411.webp
+SIZE   : 731x411 native | FORMAT: WEBP (RGBA) | ALPHA: YES - true cutout (40% fully transparent, 12% semi) | BYTES: 90,292
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/grades/limited-hev/exterior/desktop/silver-metallic-731x411.webp
+NOTE   : Colour #3 'Silver Metallic' / 'فضي معدني' (site swatch hex #a3a4a5). Studio render cut out on TRANSPARENT background (windows semi-transparent, soft ground shadow in alpha), front 3/4 left, lights off (LED DRL graphic visible), body-colour roof and mirrors, dark roof rails, 17in alloys, blue hybrid emblem, 'HEV' door badge, front plate holder reads 'COROLLA CROSS' (placeholder plate, no real number). Shown on the site under grade 'Limited Plus HEV' (CDN folder is 'limited-hev'); other grades have no colour images. Car nearly touches the left/right frame edges.
+
+FILE   : colors/ksa_color_04-gray-metallic_front34-cutout_731x411.webp
+SIZE   : 731x411 native | FORMAT: WEBP (RGBA) | ALPHA: YES - true cutout (40% fully transparent, 12% semi) | BYTES: 91,306
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/grades/limited-hev/exterior/desktop/gray-metallic-731x411.webp
+NOTE   : Colour #4 'Gray Metallic' / 'رمادي معدني' (site swatch hex #434445). Studio render cut out on TRANSPARENT background (windows semi-transparent, soft ground shadow in alpha), front 3/4 left, lights off (LED DRL graphic visible), body-colour roof and mirrors, dark roof rails, 17in alloys, blue hybrid emblem, 'HEV' door badge, front plate holder reads 'COROLLA CROSS' (placeholder plate, no real number). Shown on the site under grade 'Limited Plus HEV' (CDN folder is 'limited-hev'); other grades have no colour images. Car nearly touches the left/right frame edges.
+
+FILE   : colors/ksa_color_05-celestite-gray-metallic_front34-cutout_731x411.webp
+SIZE   : 731x411 native | FORMAT: WEBP (RGBA) | ALPHA: YES - true cutout (40% fully transparent, 12% semi) | BYTES: 94,790
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/grades/limited-hev/exterior/desktop/celestite-gray-metallic-731x411.webp
+NOTE   : Colour #5 'Celestite Gray Metallic' / 'رمادي سيليستي معدني' (site swatch hex #4c5967). Studio render cut out on TRANSPARENT background (windows semi-transparent, soft ground shadow in alpha), front 3/4 left, lights off (LED DRL graphic visible), body-colour roof and mirrors, dark roof rails, 17in alloys, blue hybrid emblem, 'HEV' door badge, front plate holder reads 'COROLLA CROSS' (placeholder plate, no real number). Shown on the site under grade 'Limited Plus HEV' (CDN folder is 'limited-hev'); other grades have no colour images. Car nearly touches the left/right frame edges.
+
+FILE   : colors/ksa_color_06-black-mica_front34-cutout_731x411.webp
+SIZE   : 731x411 native | FORMAT: WEBP (RGBA) | ALPHA: YES - true cutout (40% fully transparent, 12% semi) | BYTES: 84,894
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/grades/limited-hev/exterior/desktop/black-mica-731x411.webp
+NOTE   : Colour #6 'Black Mica' / 'أسود مايكا' (site swatch hex #0c0d0e). Studio render cut out on TRANSPARENT background (windows semi-transparent, soft ground shadow in alpha), front 3/4 left, lights off (LED DRL graphic visible), body-colour roof and mirrors, dark roof rails, 17in alloys, blue hybrid emblem, 'HEV' door badge, front plate holder reads 'COROLLA CROSS' (placeholder plate, no real number). Shown on the site under grade 'Limited Plus HEV' (CDN folder is 'limited-hev'); other grades have no colour images. Car nearly touches the left/right frame edges.
+
+FILE   : colors/ksa_color_07-red-mica-metallic_front34-cutout_731x411.webp
+SIZE   : 731x411 native | FORMAT: WEBP (RGBA) | ALPHA: YES - true cutout (40% fully transparent, 12% semi) | BYTES: 97,886
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/grades/limited-hev/exterior/desktop/red-mica-metallic-731x411.webp
+NOTE   : Colour #7 'Red Mica Metallic' / 'أحمر مايكا معدني' (site swatch hex #bd2926). Studio render cut out on TRANSPARENT background (windows semi-transparent, soft ground shadow in alpha), front 3/4 left, lights off (LED DRL graphic visible), body-colour roof and mirrors, dark roof rails, 17in alloys, blue hybrid emblem, 'HEV' door badge, front plate holder reads 'COROLLA CROSS' (placeholder plate, no real number). Shown on the site under grade 'Limited Plus HEV' (CDN folder is 'limited-hev'); other grades have no colour images. Car nearly touches the left/right frame edges.
+
+FILE   : colors/ksa_color_08-white-with-black-roof_front34-cutout_731x411.webp
+SIZE   : 731x411 native | FORMAT: WEBP (RGBA) | ALPHA: YES - true cutout (40% fully transparent, 12% semi) | BYTES: 86,690
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/grades/limited-hev/exterior/desktop/super-white-2----black-mica-731x411.webp
+NOTE   : Colour #8 'White With Black Roof' / 'أبيض بسقف أسود' (site swatch hex #fdfcfc). Studio render cut out on TRANSPARENT background (windows semi-transparent, soft ground shadow in alpha), front 3/4 left, lights off (LED DRL graphic visible), black roof, black A-pillars and black mirror caps (two-tone), 17in alloys, blue hybrid emblem, 'HEV' door badge, front plate holder reads 'COROLLA CROSS' (placeholder plate, no real number). Shown on the site under grade 'Limited Plus HEV' (CDN folder is 'limited-hev'); other grades have no colour images. Car nearly touches the left/right frame edges.
+
+FILE   : colors/ksa_color_09-silver-with-black-roof_front34-cutout_731x411.webp
+SIZE   : 731x411 native | FORMAT: WEBP (RGBA) | ALPHA: YES - true cutout (40% fully transparent, 12% semi) | BYTES: 90,370
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/grades/limited-hev/exterior/desktop/silver-metallic----black-mica-731x411.webp
+NOTE   : Colour #9 'Silver With Black Roof' / 'فضي بسقف أسود' (site swatch hex #a3a4a5). Studio render cut out on TRANSPARENT background (windows semi-transparent, soft ground shadow in alpha), front 3/4 left, lights off (LED DRL graphic visible), black roof, black A-pillars and black mirror caps (two-tone), 17in alloys, blue hybrid emblem, 'HEV' door badge, front plate holder reads 'COROLLA CROSS' (placeholder plate, no real number). Shown on the site under grade 'Limited Plus HEV' (CDN folder is 'limited-hev'); other grades have no colour images. Car nearly touches the left/right frame edges.
+
+FILE   : colors/ksa_color_10-gray-with-black-roof_front34-cutout_731x411.webp
+SIZE   : 731x411 native | FORMAT: WEBP (RGBA) | ALPHA: YES - true cutout (40% fully transparent, 12% semi) | BYTES: 89,928
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/grades/limited-hev/exterior/desktop/gray-metallic-black-mica-731x411.webp
+NOTE   : Colour #10 'Gray With Black Roof' / 'رصاصي غامق بسقف أسود' (site swatch hex #434445). Studio render cut out on TRANSPARENT background (windows semi-transparent, soft ground shadow in alpha), front 3/4 left, lights off (LED DRL graphic visible), black roof, black A-pillars and black mirror caps (two-tone), 17in alloys, blue hybrid emblem, 'HEV' door badge, front plate holder reads 'COROLLA CROSS' (placeholder plate, no real number). Shown on the site under grade 'Limited Plus HEV' (CDN folder is 'limited-hev'); other grades have no colour images. Car nearly touches the left/right frame edges.
+
+FILE   : colors/ksa_color_11-red-with-black-roof_front34-cutout_731x411.webp
+SIZE   : 731x411 native | FORMAT: WEBP (RGBA) | ALPHA: YES - true cutout (39% fully transparent, 12% semi) | BYTES: 96,662
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/grades/limited-hev/exterior/desktop/red-mica-metallic-black-mica-731x411.webp
+NOTE   : Colour #11 'Red With Black Roof' / 'أحمر بسقف أسود' (site swatch hex #bd2926). Studio render cut out on TRANSPARENT background (windows semi-transparent, soft ground shadow in alpha), front 3/4 left, lights off (LED DRL graphic visible), black roof, black A-pillars and black mirror caps (two-tone), 17in alloys, blue hybrid emblem, 'HEV' door badge, front plate holder reads 'COROLLA CROSS' (placeholder plate, no real number). Shown on the site under grade 'Limited Plus HEV' (CDN folder is 'limited-hev'); other grades have no colour images. Car nearly touches the left/right frame edges.
+
+FILE   : colors/mobile/ksa_color_01-super-white_front34-cutout_329x185.webp
+SIZE   : 329x185 native | FORMAT: WEBP (RGBA) | ALPHA: YES - true cutout (40% fully transparent, 12% semi) | BYTES: 23,850
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/grades/limited-hev/exterior/mobile/super-white-329x185.webp
+NOTE   : Mobile rendition (downscaled) of colour #1 'Super White' cutout, transparent background.
+
+FILE   : colors/mobile/ksa_color_02-platinum-white-pearl_front34-cutout_329x185.webp
+SIZE   : 329x185 native | FORMAT: WEBP (RGBA) | ALPHA: YES - true cutout (40% fully transparent, 13% semi) | BYTES: 23,504
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/grades/limited-hev/exterior/mobile/platinum-white-pearl-329x185.webp
+NOTE   : Mobile rendition (downscaled) of colour #2 'Platinum White Pearl' cutout, transparent background.
+
+FILE   : colors/mobile/ksa_color_03-silver-metallic_front34-cutout_329x185.webp
+SIZE   : 329x185 native | FORMAT: WEBP (RGBA) | ALPHA: YES - true cutout (40% fully transparent, 12% semi) | BYTES: 23,992
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/grades/limited-hev/exterior/mobile/silver-metallic-329x185.webp
+NOTE   : Mobile rendition (downscaled) of colour #3 'Silver Metallic' cutout, transparent background.
+
+FILE   : colors/mobile/ksa_color_04-gray-metallic_front34-cutout_329x185.webp
+SIZE   : 329x185 native | FORMAT: WEBP (RGBA) | ALPHA: YES - true cutout (40% fully transparent, 13% semi) | BYTES: 23,938
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/grades/limited-hev/exterior/mobile/gray-metallic-329x185.webp
+NOTE   : Mobile rendition (downscaled) of colour #4 'Gray Metallic' cutout, transparent background.
+
+FILE   : colors/mobile/ksa_color_05-celestite-gray-metallic_front34-cutout_329x185.webp
+SIZE   : 329x185 native | FORMAT: WEBP (RGBA) | ALPHA: YES - true cutout (40% fully transparent, 12% semi) | BYTES: 25,328
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/grades/limited-hev/exterior/mobile/celestite-gray-metallic-329x185.webp
+NOTE   : Mobile rendition (downscaled) of colour #5 'Celestite Gray Metallic' cutout, transparent background.
+
+FILE   : colors/mobile/ksa_color_06-black-mica_front34-cutout_329x185.webp
+SIZE   : 329x185 native | FORMAT: WEBP (RGBA) | ALPHA: YES - true cutout (40% fully transparent, 12% semi) | BYTES: 23,018
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/grades/limited-hev/exterior/mobile/black-mica-329x185.webp
+NOTE   : Mobile rendition (downscaled) of colour #6 'Black Mica' cutout, transparent background.
+
+FILE   : colors/mobile/ksa_color_07-red-mica-metallic_front34-cutout_329x185.webp
+SIZE   : 329x185 native | FORMAT: WEBP (RGBA) | ALPHA: YES - true cutout (40% fully transparent, 12% semi) | BYTES: 26,884
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/grades/limited-hev/exterior/mobile/red-mica-metallic-329x185.webp
+NOTE   : Mobile rendition (downscaled) of colour #7 'Red Mica Metallic' cutout, transparent background.
+
+FILE   : colors/mobile/ksa_color_08-white-with-black-roof_front34-cutout_329x185.webp
+SIZE   : 329x185 native | FORMAT: WEBP (RGBA) | ALPHA: YES - true cutout (40% fully transparent, 12% semi) | BYTES: 23,292
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/grades/limited-hev/exterior/mobile/super-white-2----black-mica-329x185.webp
+NOTE   : Mobile rendition (downscaled) of colour #8 'White With Black Roof' cutout, transparent background.
+
+FILE   : colors/mobile/ksa_color_09-silver-with-black-roof_front34-cutout_329x185.webp
+SIZE   : 329x185 native | FORMAT: WEBP (RGBA) | ALPHA: YES - true cutout (40% fully transparent, 12% semi) | BYTES: 23,840
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/grades/limited-hev/exterior/mobile/silver-metallic----black-mica-329x185.webp
+NOTE   : Mobile rendition (downscaled) of colour #9 'Silver With Black Roof' cutout, transparent background.
+
+FILE   : colors/mobile/ksa_color_10-gray-with-black-roof_front34-cutout_329x185.webp
+SIZE   : 329x185 native | FORMAT: WEBP (RGBA) | ALPHA: YES - true cutout (40% fully transparent, 13% semi) | BYTES: 23,642
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/grades/limited-hev/exterior/mobile/gray-metallic-black-mica-329x185.webp
+NOTE   : Mobile rendition (downscaled) of colour #10 'Gray With Black Roof' cutout, transparent background.
+
+FILE   : colors/mobile/ksa_color_11-red-with-black-roof_front34-cutout_329x185.webp
+SIZE   : 329x185 native | FORMAT: WEBP (RGBA) | ALPHA: YES - true cutout (40% fully transparent, 13% semi) | BYTES: 26,464
+SOURCE : https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/suv/corollacross/grades/limited-hev/exterior/mobile/red-mica-metallic-black-mica-329x185.webp
+NOTE   : Mobile rendition (downscaled) of colour #11 'Red With Black Roof' cutout, transparent background.
