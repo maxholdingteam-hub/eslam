@@ -1,0 +1,168 @@
+<!doctype html><html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@300;400;500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Montserrat:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}body{background:#222}
+:root{--sand:#efe6d7;--sand2:#e5d9c5;--olive:#2f3527;--terra:#b0613a;--ink:#1d1a15;--mut:#6f6656;--stone:#cfc4b2}
+section{position:relative;width:1080px;height:1350px;overflow:hidden;font-family:"IBM Plex Sans Arabic";color:var(--ink);background:var(--sand)}
+.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.en{font-family:Montserrat;direction:ltr;letter-spacing:.28em;text-transform:uppercase}
+.al{font-family:Alexandria}
+.top{position:absolute;top:62px;right:72px;left:72px;display:flex;justify-content:space-between;align-items:center;z-index:5}
+.tag{display:flex;align-items:center;gap:14px;font-family:Alexandria;font-weight:500;font-size:24px}
+.tag i{width:46px;height:2px;background:var(--terra)}
+.top .en{font-size:15px;font-weight:600}
+.light .top{color:#f3ece0}
+.ft{position:absolute;left:72px;right:72px;bottom:54px;display:flex;justify-content:space-between;align-items:center;z-index:5}
+.ft .l{display:flex;align-items:center;gap:14px}.ft img{height:44px}
+.ft .w{font-family:Alexandria;font-weight:500;font-size:22px}
+.ft .d{font-size:12px;font-weight:600;letter-spacing:.22em}
+.ft .r{font-family:Alexandria;font-size:20px;font-weight:400}
+.ft .r b{direction:ltr;display:inline-block;font-weight:600}
+.light .ft{color:#f3ece0}
+.dk{position:absolute;inset:0}
+h1,h2{font-family:Alexandria;font-weight:800;line-height:1.22;letter-spacing:-.01em}
+em{font-style:normal;color:var(--terra)}
+.swipe{display:inline-flex;align-items:center;gap:12px;font-family:Alexandria;font-weight:500;font-size:24px;border:1.5px solid currentColor;border-radius:40px;padding:10px 26px}
+.pill{display:inline-block;font-family:Alexandria;font-weight:600;font-size:24px;padding:6px 22px;border-radius:30px;background:var(--terra);color:#fff}
+/* P1 this-or-that */
+.tt .half{position:absolute;left:0;right:0;height:560px;overflow:hidden}
+.tt .h1{top:0}.tt .h2{bottom:0}
+.tt .half img{width:100%;height:100%;object-fit:cover}
+.tt .h2::after{content:"";position:absolute;left:0;right:0;bottom:0;height:170px;background:linear-gradient(180deg,rgba(18,15,10,0),rgba(18,15,10,.75))}
+.tt .num{position:absolute;top:30px;left:40px;width:110px;height:110px;border-radius:50%;background:var(--sand);color:var(--olive);font-family:Alexandria;font-weight:800;font-size:64px;display:flex;align-items:center;justify-content:center;box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.tt .h2 .num{top:30px}
+.tt .lab{position:absolute;right:40px;bottom:28px;font-family:Alexandria;font-weight:500;font-size:24px;color:#fff;background:rgba(20,17,12,.55);padding:8px 20px;border-radius:24px}
+.tt .h2 .lab{bottom:auto;top:28px}
+.tt .mid{position:absolute;top:560px;left:0;right:0;height:230px;background:var(--olive);color:var(--sand);display:flex;flex-direction:column;justify-content:center;padding:0 72px}
+.tt .mid h1{font-size:76px}.tt .mid p{font-size:27px;opacity:.9;margin-top:6px}
+.tt .ft{bottom:22px}.tt .ft .w,.tt .ft .r{text-shadow:0 2px 8px rgba(0,0,0,.6)}
+/* mistakes carousel */
+.mc1 .dk{background:linear-gradient(180deg,rgba(18,15,10,.35),rgba(18,15,10,.15) 35%,rgba(18,15,10,.86) 78%)}
+.mc1 h1{position:absolute;right:72px;left:72px;bottom:270px;font-size:92px;color:#f6efe3}
+.mc1 .sub{position:absolute;right:72px;bottom:205px;font-family:Alexandria;font-weight:300;font-size:30px;color:#e9dfcf}
+.mc1 .swipe{position:absolute;left:72px;bottom:205px;color:#f6efe3}
+.ms .big{position:absolute;top:150px;right:62px;font-family:Montserrat;font-weight:700;font-size:250px;line-height:1;color:var(--terra);opacity:.95;direction:ltr}
+.ms .of{position:absolute;top:190px;left:72px;font-size:18px;color:var(--mut)}
+.ms .body{position:absolute;top:440px;right:72px;left:72px;display:flex;flex-direction:column;gap:44px}
+.ms h2{font-size:70px;color:var(--olive)}
+.ms .why{font-size:35px;line-height:1.75;color:#3d382f}
+.ms .why b{font-family:Alexandria;font-weight:600;color:var(--ink)}
+.ms .fix{background:var(--olive);color:var(--sand);border-radius:22px;padding:36px 42px;font-size:33px;line-height:1.7}
+.ms .fix b{display:block;font-family:Alexandria;font-weight:600;color:#e9a77f;font-size:26px;margin-bottom:6px}
+.ms .bar{position:absolute;top:0;right:0;height:10px;background:var(--terra)}
+.mcta{background:var(--olive)!important;color:var(--sand)}
+.mcta .top,.mcta .ft{color:var(--sand)}
+.mcta h1{position:absolute;top:300px;right:72px;left:72px;font-size:86px}
+.mcta p{position:absolute;top:640px;right:72px;left:72px;font-size:33px;line-height:1.75;font-family:Alexandria;font-weight:300}
+.mcta .wa{position:absolute;top:860px;right:72px;display:flex;align-items:center;gap:20px;background:var(--sand);color:var(--olive);border-radius:20px;padding:26px 36px;font-family:Alexandria;font-size:30px;font-weight:500}
+.mcta .wa b{direction:ltr;font-family:Montserrat;font-weight:700;font-size:40px;letter-spacing:.04em}
+/* P3 myth */
+.my .dk{background:linear-gradient(180deg,rgba(18,15,10,.05),rgba(18,15,10,0) 40%,rgba(18,15,10,.9) 76%)}
+.my .q{position:absolute;right:72px;left:72px;bottom:330px;color:#f6efe3}
+.my .q h1{font-size:82px;margin-top:18px}
+.my .q h1 s{text-decoration-color:var(--terra);text-decoration-thickness:7px}
+.my .a{position:absolute;right:72px;left:72px;bottom:150px;color:#efe4d2;font-family:Alexandria;font-weight:300;font-size:31px;line-height:1.6}
+.my .a b{font-weight:600;color:#f0a77c}
+.pin{position:absolute;z-index:4;display:flex;align-items:center;gap:12px;transform:translate(50%,-50%)}
+.pin .dot{width:54px;height:54px;border-radius:50%;background:var(--terra);color:#fff;font-family:Montserrat;font-weight:700;font-size:26px;display:flex;align-items:center;justify-content:center;box-shadow:0 0 0 10px rgba(176,97,58,.28)}
+.pin .t{background:rgba(247,241,231,.95);color:var(--ink);font-family:Alexandria;font-weight:500;font-size:23px;padding:10px 18px;border-radius:14px;white-space:nowrap;box-shadow:0 8px 24px rgba(0,0,0,.25)}
+/* P4 materials */
+.mt h1{position:absolute;top:140px;right:72px;left:72px;font-size:74px;color:var(--olive)}
+.mt .im{position:absolute;top:340px;width:450px;height:330px;border-radius:24px;overflow:hidden}
+.mt .im img{width:100%;height:100%;object-fit:cover}
+.mt .im span{position:absolute;bottom:16px;right:16px;background:rgba(20,17,12,.7);color:#fff;font-family:Alexandria;font-weight:600;font-size:26px;padding:6px 18px;border-radius:14px}
+.mt .a{right:72px}.mt .b{left:72px}
+.mt .vs{position:absolute;top:470px;left:50%;transform:translateX(-50%);width:76px;height:76px;border-radius:50%;background:var(--terra);color:#fff;font-family:Montserrat;font-weight:700;font-size:24px;display:flex;align-items:center;justify-content:center;z-index:3;border:6px solid var(--sand)}
+.mt table{position:absolute;top:700px;right:72px;left:72px;width:936px;border-collapse:collapse;font-size:24px;line-height:1.45}
+.mt td{padding:15px 10px;border-bottom:1.5px solid #d6c9b3;vertical-align:top}
+.mt td.k{font-family:Alexandria;font-weight:600;color:var(--terra);width:20%;font-size:22px}
+.mt td.x{width:40%}
+.mt tr.last td{border:0;font-family:Alexandria;font-weight:500;color:var(--olive)}
+/* P5 palette */
+.pl .ph{position:absolute;top:0;left:0;right:0;height:760px}
+.pl .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 60%}
+.pl .dk{height:760px;background:linear-gradient(180deg,rgba(18,15,10,.45),rgba(18,15,10,0) 30%)}
+.pl h1{position:absolute;top:800px;right:72px;font-size:64px;color:var(--olive)}
+.pl .sub{position:absolute;top:888px;right:72px;font-size:26px;color:var(--mut);font-family:Alexandria;font-weight:300}
+.pl .sw{position:absolute;top:975px;right:72px;left:72px;display:flex;justify-content:space-between}
+.pl .sw div{width:168px;text-align:center}
+.pl .sw i{display:block;width:150px;height:150px;border-radius:50%;margin:0 auto 14px;box-shadow:inset 0 0 0 2px rgba(0,0,0,.06)}
+.pl .sw b{display:block;font-family:Alexandria;font-weight:600;font-size:25px}
+.pl .sw span{font-family:Montserrat;font-size:15px;color:var(--mut);letter-spacing:.08em}
+/* P6 lighting */
+.lt .dk{background:linear-gradient(180deg,rgba(18,15,10,.25),rgba(18,15,10,0) 22%,rgba(18,15,10,0) 50%,rgba(18,15,10,.92) 74%)}
+.lt h1{position:absolute;right:72px;left:72px;top:880px;font-size:68px;color:#f6efe3}
+.lt .lg{position:absolute;right:72px;left:72px;top:985px;display:flex;flex-direction:column;gap:12px;color:#ece2d1;font-size:25px}
+.lt .lg div{display:flex;gap:14px;align-items:baseline}
+.lt .lg b{font-family:Montserrat;color:#f0a77c;font-size:22px;min-width:26px}
+.lt .lg strong{font-family:Alexandria;font-weight:600;color:#fff}
+/* process */
+.pc1 .dk{background:linear-gradient(180deg,rgba(239,230,215,.92) 0%,rgba(239,230,215,.75) 30%,rgba(239,230,215,0) 55%)}
+.pc1 h1{position:absolute;top:150px;right:72px;left:72px;font-size:90px;color:var(--olive)}
+.pc1 .sub{position:absolute;top:420px;right:72px;font-family:Alexandria;font-weight:400;font-size:31px}
+.pc1 .swipe{position:absolute;left:72px;bottom:150px;color:var(--olive);background:var(--sand)}
+.ps .ph{position:absolute;top:0;left:0;right:0;height:720px}
+.ps .ph img{width:100%;height:100%;object-fit:cover}
+.ps .ph .dk{background:linear-gradient(180deg,rgba(18,15,10,.45),rgba(18,15,10,0) 28%)}
+.ps .st{position:absolute;top:640px;right:72px;width:160px;height:160px;border-radius:50%;background:var(--terra);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;border:10px solid var(--sand)}
+.ps .st small{font-family:Alexandria;font-size:20px}.ps .st b{font-family:Montserrat;font-size:52px;line-height:1}
+.ps h2{position:absolute;top:830px;right:72px;left:72px;font-size:60px;color:var(--olive)}
+.ps p{position:absolute;top:935px;right:72px;left:72px;font-size:34px;line-height:1.75;color:#3d382f}
+.ps .dots{position:absolute;top:705px;left:72px;display:flex;gap:10px}
+.ps .dots i{width:16px;height:16px;border-radius:50%;background:var(--stone)}.ps .dots i.on{background:var(--terra);width:40px;border-radius:10px}
+.ps .real{position:absolute;top:660px;left:72px;background:var(--olive);color:var(--sand);font-family:Alexandria;font-size:20px;padding:6px 16px;border-radius:12px}
+/* Q&A */
+.qa{background:var(--olive)!important;color:var(--sand)}
+.qa .top,.qa .ft{color:var(--sand)}
+.qa .q{position:absolute;top:150px;right:72px;left:72px}
+.qa .q small{font-family:Alexandria;font-size:28px;color:#e9a77f}
+.qa .q h1{font-size:96px;margin-top:6px}
+.qa .ans{position:absolute;top:470px;right:72px;left:72px;font-family:Alexandria;font-weight:300;font-size:32px}
+.qa ol{position:absolute;top:550px;right:72px;left:72px;list-style:none;display:flex;flex-direction:column;gap:16px}
+.qa li{display:flex;gap:20px;align-items:center;background:rgba(239,230,215,.08);border:1.5px solid rgba(239,230,215,.18);border-radius:18px;padding:16px 24px;font-size:28px}
+.qa li b{font-family:Montserrat;color:#e9a77f;font-size:26px}
+.qa li strong{font-family:Alexandria;font-weight:600}
+.qa .cta{position:absolute;top:1090px;right:72px;left:72px;font-family:Alexandria;font-size:28px;line-height:1.6}
+.qa .cta b{direction:ltr;display:inline-block;color:#e9a77f;font-family:Montserrat;font-weight:700}
+
+.cv .dk{background:linear-gradient(180deg,rgba(18,15,10,.35),rgba(18,15,10,0) 28%,rgba(18,15,10,0) 45%,rgba(18,15,10,.9) 80%)}
+.cv h1{position:absolute;right:72px;left:72px;bottom:290px;font-size:96px;color:#f6efe3}
+.cv .sub{position:absolute;right:72px;bottom:215px;font-family:Alexandria;font-weight:300;font-size:30px;color:#e9dfcf}
+.cv .swipe{position:absolute;left:72px;bottom:208px;color:#f6efe3}
+.id .ph{position:absolute;top:0;left:0;right:0;height:800px}
+.id .ph img{width:100%;height:100%;object-fit:cover}
+.id .ph .dk{background:linear-gradient(180deg,rgba(18,15,10,.5),rgba(18,15,10,0) 26%)}
+.id .st{position:absolute;top:720px;right:72px;width:160px;height:160px;border-radius:50%;background:var(--terra);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;border:10px solid var(--sand)}
+.id .st small{font-family:Alexandria;font-size:20px}.id .st b{font-family:Montserrat;font-size:52px;line-height:1}
+.id .dots{position:absolute;top:785px;left:72px;display:flex;gap:10px}
+.id .dots i{width:16px;height:16px;border-radius:50%;background:var(--stone)}.id .dots i.on{background:var(--terra);width:40px;border-radius:10px}
+.id h2{position:absolute;top:905px;right:72px;left:72px;font-size:62px;color:var(--olive)}
+.id p{position:absolute;top:1000px;right:72px;left:72px;font-size:33px;line-height:1.7;color:#3d382f}
+.id p b{font-family:Alexandria;font-weight:600;color:var(--terra)}
+</style></head><body>
+<section id="09-majlis-1" class="cv light"><img class="bg" src="img/mj0.jpg"><div class="dk"></div>
+<div class="top"><div class="tag" style="text-shadow:0 2px 8px rgba(0,0,0,.5)"><i></i>أفكار مجالس</div><div class="en">Max Design</div></div>
+<h1><em style="color:#f0a77c">4</em> أفكار تخلّي<br>مجلسك يبهر<br>ضيوفك</h1>
+<div class="sub">احفظها قبل ما تبدأ تصميم مجلسك</div><div class="swipe">اسحب ←</div>
+<div class="ft"><div class="l"><img src="logo.png"><div><div class="w">ماكس ديزاين</div><div class="d en">maxdesign.sa</div></div></div><div class="r">احفظ البوست</div></div></section>
+<section id="09-majlis-2" class="id"><div class="ph"><img src="img/mj1.jpg" style="object-position:50% 50%"><div class="dk"></div></div>
+<div class="top"><div class="tag" style="color:#f3ece0"><i></i>أفكار مجالس</div><div class="en" style="color:#f3ece0">Max Design</div></div>
+<div class="st"><small>فكرة</small><b>01</b></div><div class="dots"><i class="on"></i><i class=""></i><i class=""></i><i class=""></i></div>
+<h2>جدار رئيسي بخامة طبيعية</h2><p>حجر أو خشب مضلّع، مع إضاءة من الأرض تبرز الملمس. هذا <b>أول شيء</b> تقع عليه عين الضيف.</p>
+<div class="ft"><div class="l"><img src="logo.png"><div><div class="w">ماكس ديزاين</div><div class="d en">maxdesign.sa</div></div></div><div class="r">اسحب ←</div></div></section>
+<section id="09-majlis-3" class="id"><div class="ph"><img src="img/mj2.jpg" style="object-position:50% 55%"><div class="dk"></div></div>
+<div class="top"><div class="tag" style="color:#f3ece0"><i></i>أفكار مجالس</div><div class="en" style="color:#f3ece0">Max Design</div></div>
+<div class="st"><small>فكرة</small><b>02</b></div><div class="dots"><i class=""></i><i class="on"></i><i class=""></i><i class=""></i></div>
+<h2>جلسة على شكل U</h2><p>الجلسات المتقابلة تفتح السوالف وتخلّي الكل يشوف بعض، وتترك <b>ممر واضح</b> للضيافة.</p>
+<div class="ft"><div class="l"><img src="logo.png"><div><div class="w">ماكس ديزاين</div><div class="d en">maxdesign.sa</div></div></div><div class="r">اسحب ←</div></div></section>
+<section id="09-majlis-4" class="id"><div class="ph"><img src="img/mj3.jpg" style="object-position:50% 50%"><div class="dk"></div></div>
+<div class="top"><div class="tag" style="color:#f3ece0"><i></i>أفكار مجالس</div><div class="en" style="color:#f3ece0">Max Design</div></div>
+<div class="st"><small>فكرة</small><b>03</b></div><div class="dots"><i class=""></i><i class=""></i><i class="on"></i><i class=""></i></div>
+<h2>ركن ضيافة مدمج</h2><p>مكان ثابت للدلال والفناجيل والمبخرة بإضاءة خفيفة، عشان الضيافة تكون <b>جزء من التصميم</b>.</p>
+<div class="ft"><div class="l"><img src="logo.png"><div><div class="w">ماكس ديزاين</div><div class="d en">maxdesign.sa</div></div></div><div class="r">اسحب ←</div></div></section>
+<section id="09-majlis-5" class="id"><div class="ph"><img src="img/mj4.jpg" style="object-position:50% 40%"><div class="dk"></div></div>
+<div class="top"><div class="tag" style="color:#f3ece0"><i></i>أفكار مجالس</div><div class="en" style="color:#f3ece0">Max Design</div></div>
+<div class="st"><small>فكرة</small><b>04</b></div><div class="dots"><i class=""></i><i class=""></i><i class=""></i><i class="on"></i></div>
+<h2>سقف بإضاءة متدرجة</h2><p>إضاءة مخفية وخطوط هادية بدل ثريا وحدة قوية، وخلّها <b>قابلة للتعتيم</b> عشان تتحكم بالجو.</p>
+<div class="ft"><div class="l"><img src="logo.png"><div><div class="w">ماكس ديزاين</div><div class="d en">maxdesign.sa</div></div></div><div class="r">تبي مجلس بهالمستوى؟ واتساب <b>0579277975</b></div></div></section>
+</body></html>
