@@ -1,0 +1,306 @@
+{
+ "src": "/home/user/eslam/montage/clips",
+ "shot": 3.0,
+ "clips": [
+  {
+   "dur": 6.003333,
+   "w": 1080,
+   "h": 1920,
+   "fps": 29.983,
+   "audio": true,
+   "i": 1,
+   "file": "/home/user/eslam/montage/clips/92e331fe-IMG_0121.MOV",
+   "name": "92e331fe-IMG_0121.MOV",
+   "win": [
+    {
+     "a": 0.3,
+     "b": 3.3,
+     "score": 0.7659,
+     "mot": 15.51
+    },
+    {
+     "a": 0.8,
+     "b": 3.8,
+     "score": 0.8267,
+     "mot": 14.24
+    },
+    {
+     "a": 1.3,
+     "b": 4.3,
+     "score": 0.8179,
+     "mot": 13.54
+    },
+    {
+     "a": 1.8,
+     "b": 4.8,
+     "score": 0.78,
+     "mot": 12.31
+    },
+    {
+     "a": 2.3,
+     "b": 5.3,
+     "score": 0.7738,
+     "mot": 11.56
+    }
+   ],
+   "skip": false,
+   "pick": [
+    0.8,
+    3.8
+   ],
+   "score": 0.8267,
+   "mot": 14.24,
+   "lum": 95.9,
+   "blur": 4.55
+  },
+  {
+   "dur": 10.806667,
+   "w": 1080,
+   "h": 1920,
+   "fps": 29.981,
+   "audio": true,
+   "i": 2,
+   "file": "/home/user/eslam/montage/clips/b834d882-IMG_0123.MOV",
+   "name": "b834d882-IMG_0123.MOV",
+   "win": [
+    {
+     "a": 0.3,
+     "b": 3.3,
+     "score": 0.5464,
+     "mot": 14.79
+    },
+    {
+     "a": 0.8,
+     "b": 3.8,
+     "score": 0.5591,
+     "mot": 14.86
+    },
+    {
+     "a": 1.3,
+     "b": 4.3,
+     "score": 0.5196,
+     "mot": 15.62
+    },
+    {
+     "a": 1.8,
+     "b": 4.8,
+     "score": 0.4851,
+     "mot": 16.09
+    },
+    {
+     "a": 2.3,
+     "b": 5.3,
+     "score": 0.4453,
+     "mot": 15.41
+    },
+    {
+     "a": 2.8,
+     "b": 5.8,
+     "score": 0.4942,
+     "mot": 15.94
+    },
+    {
+     "a": 3.3,
+     "b": 6.3,
+     "score": 0.4768,
+     "mot": 15.17
+    },
+    {
+     "a": 3.8,
+     "b": 6.8,
+     "score": 0.4259,
+     "mot": 14.79
+    },
+    {
+     "a": 4.3,
+     "b": 7.3,
+     "score": 0.4911,
+     "mot": 14.94
+    },
+    {
+     "a": 4.8,
+     "b": 7.8,
+     "score": 0.5036,
+     "mot": 13.88
+    },
+    {
+     "a": 5.3,
+     "b": 8.3,
+     "score": 0.4863,
+     "mot": 14.05
+    },
+    {
+     "a": 5.8,
+     "b": 8.8,
+     "score": 0.499,
+     "mot": 14.18
+    },
+    {
+     "a": 6.3,
+     "b": 9.3,
+     "score": 0.491,
+     "mot": 13.57
+    },
+    {
+     "a": 6.8,
+     "b": 9.8,
+     "score": 0.5026,
+     "mot": 14.09
+    },
+    {
+     "a": 7.3,
+     "b": 10.3,
+     "score": 0.4952,
+     "mot": 13.11
+    }
+   ],
+   "skip": false,
+   "pick": [
+    0.8,
+    3.8
+   ],
+   "score": 0.5591,
+   "mot": 14.86,
+   "lum": 88.4,
+   "blur": 5.05
+  },
+  {
+   "dur": 3.268333,
+   "w": 1080,
+   "h": 1920,
+   "fps": 29.985,
+   "audio": true,
+   "i": 3,
+   "file": "/home/user/eslam/montage/clips/cb469a1b-IMG_0116.MOV",
+   "name": "cb469a1b-IMG_0116.MOV",
+   "win": [
+    {
+     "a": 0.3,
+     "b": 2.968,
+     "score": 0.1649,
+     "mot": 33.49
+    }
+   ],
+   "skip": false,
+   "pick": [
+    0.3,
+    2.968
+   ],
+   "score": 0.1649,
+   "mot": 33.49,
+   "lum": 102.9,
+   "blur": 6.02
+  },
+  {
+   "dur": 7.371667,
+   "w": 1080,
+   "h": 1920,
+   "fps": 29.98,
+   "audio": true,
+   "i": 4,
+   "file": "/home/user/eslam/montage/clips/f0b432a7-IMG_0122.MOV",
+   "name": "f0b432a7-IMG_0122.MOV",
+   "win": [
+    {
+     "a": 0.3,
+     "b": 3.3,
+     "score": 0.7479,
+     "mot": 12.81
+    },
+    {
+     "a": 0.8,
+     "b": 3.8,
+     "score": 0.698,
+     "mot": 12.78
+    },
+    {
+     "a": 1.3,
+     "b": 4.3,
+     "score": 0.6563,
+     "mot": 12.38
+    },
+    {
+     "a": 1.8,
+     "b": 4.8,
+     "score": 0.5535,
+     "mot": 13.34
+    },
+    {
+     "a": 2.3,
+     "b": 5.3,
+     "score": 0.5465,
+     "mot": 13.25
+    },
+    {
+     "a": 2.8,
+     "b": 5.8,
+     "score": 0.5576,
+     "mot": 13.39
+    },
+    {
+     "a": 3.3,
+     "b": 6.3,
+     "score": 0.5707,
+     "mot": 13.7
+    },
+    {
+     "a": 3.8,
+     "b": 6.8,
+     "score": 0.4984,
+     "mot": 13.07
+    }
+   ],
+   "skip": false,
+   "pick": [
+    0.3,
+    3.3
+   ],
+   "score": 0.7479,
+   "mot": 12.81,
+   "lum": 96.1,
+   "blur": 4.62
+  }
+ ],
+ "plan": [
+  {
+   "i": 1,
+   "file": "/home/user/eslam/montage/clips/92e331fe-IMG_0121.MOV",
+   "name": "92e331fe-IMG_0121.MOV",
+   "in": 0.8,
+   "dur": 3.0,
+   "audio": true,
+   "w": 1080,
+   "h": 1920
+  },
+  {
+   "i": 2,
+   "file": "/home/user/eslam/montage/clips/b834d882-IMG_0123.MOV",
+   "name": "b834d882-IMG_0123.MOV",
+   "in": 1.07,
+   "dur": 2.46,
+   "audio": true,
+   "w": 1080,
+   "h": 1920
+  },
+  {
+   "i": 3,
+   "file": "/home/user/eslam/montage/clips/cb469a1b-IMG_0116.MOV",
+   "name": "cb469a1b-IMG_0116.MOV",
+   "in": 0.1,
+   "dur": 3.068,
+   "audio": true,
+   "w": 1080,
+   "h": 1920
+  },
+  {
+   "i": 4,
+   "file": "/home/user/eslam/montage/clips/f0b432a7-IMG_0122.MOV",
+   "name": "f0b432a7-IMG_0122.MOV",
+   "in": 0.39,
+   "dur": 2.82,
+   "audio": true,
+   "w": 1080,
+   "h": 1920
+  }
+ ]
+}
