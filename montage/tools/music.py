@@ -7,8 +7,11 @@ L = np.zeros(N); R = np.zeros(N)
 rng = np.random.default_rng(7)
 BPM = 100; B = 60 / BPM
 
+CUT = [None]
 def add(sig, t, g=1.0, pan=0.0):
+    if CUT[0] is not None and t >= CUT[0] - 1e-6: return
     i = int(t * SR); n = min(len(sig), N - i)
+    if CUT[0] is not None: n = min(n, int((CUT[0]-t)*SR))
     if n <= 0: return
     L[i:i+n] += sig[:n] * g * (1 - max(pan, 0)); R[i:i+n] += sig[:n] * g * (1 + min(pan, 0))
 
@@ -57,7 +60,7 @@ prog = [(57, [57, 60, 64]), (53, [53, 57, 60]), (48, [55, 60, 64]), (55, [55, 59
 
 add(boom(), 0.0, 0.9)                        # logo impact
 add(riser(INTRO), 0.0, 0.5)
-t = INTRO; bar = 0
+t = INTRO; bar = 0; CUT[0] = END
 while t < END:
     root, chord = prog[bar % 4]
     for m in chord: add(note(hz(m), 4*B+0.6), t, 1.0, 0.0)
@@ -69,6 +72,7 @@ while t < END:
     for h in range(8): add(hat(0.05 if h % 2 else 0.025), t + h*B/2, 1.0, 0.3)
     if bar % 2: [add(hat(), t + 3*B + j*B/6, 0.7, -0.3) for j in range(6)]
     t += 4*B; bar += 1
+CUT[0] = None
 add(riser(0.8), END-0.8, 0.6)
 add(boom(), END, 1.0)
 for m in prog[0][1]: add(note(hz(m), 3.2), END, 1.3)
