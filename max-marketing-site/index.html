@@ -49,7 +49,7 @@ section{position:relative;padding-block:clamp(72px,11vw,140px)}
 #field{position:fixed;inset:0;width:100%;height:100%;z-index:0;display:block}
 .veil{position:fixed;inset:0;z-index:1;pointer-events:none;
   background:radial-gradient(120% 80% at 50% 0%,transparent 35%,rgba(7,7,6,.6) 80%),linear-gradient(180deg,transparent 55%,var(--ink) 100%)}
-main,footer{position:relative;z-index:2}
+main,footer{position:relative;z-index:2;overflow-x:clip}   /* clip (not hidden) keeps sticky/pinned sections working */
 .solid{background:var(--ink)}
 
 /* liquid glass navbar */
@@ -95,6 +95,7 @@ html[lang=en] .scroll-hint{transform:translateX(-50%)}
 .mq-t{display:flex;gap:44px;width:max-content;animation:mq 38s linear infinite;font-family:var(--d-ar);font-size:clamp(20px,2.4vw,30px);font-weight:700;white-space:nowrap}
 html[lang=en] .mq-t{font-family:var(--en)}
 .mq-t span::after{content:"✦";color:var(--ink);margin-inline-start:44px;font-size:.7em;vertical-align:middle}
+.mq-k{will-change:transform}   /* skews inside .mq, which clips it, so the tilt never widens the page */
 @keyframes mq{to{transform:translateX(50%)}}
 html[lang=en] .mq-t{animation-name:mq-en}
 @keyframes mq-en{to{transform:translateX(-50%)}}
@@ -394,7 +395,7 @@ html[lang=en] .morph-caps{font-family:var(--en);font-weight:700;letter-spacing:-
   </section>
 
   <div class="mq" aria-hidden="true">
-    <div class="mq-t" id="mq"></div>
+    <div class="mq-k"><div class="mq-t" id="mq"></div></div>
   </div>
 
   <div class="solid">
@@ -881,7 +882,7 @@ document.querySelectorAll("#crew .mate").forEach(el => {
   window.stmtTween();
 
   /* marquee: skew with scroll velocity; path marquee speeds up too */
-  const skew = gsap.quickTo(".mq", "skewX", {duration:.5, ease:"power3"});
+  const skew = gsap.quickTo(".mq-k", "skewX", {duration:.5, ease:"power3"});
   ScrollTrigger.create({onUpdate: s => { const v = s.getVelocity(); skew(gsap.utils.clamp(-12, 12, v / -250)); window.pmKick && window.pmKick(v / 6000); }});
 
   /* work gallery rises in */
