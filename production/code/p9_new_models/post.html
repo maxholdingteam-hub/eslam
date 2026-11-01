@@ -1,0 +1,86 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>New models posters</title>
+<style>
+  @font-face{font-family:Cairo;font-weight:900;src:url(../fonts/Cairo-Black.ttf)}
+  @font-face{font-family:Tajawal;font-weight:700;src:url(../fonts/Tajawal-Bold.ttf)}
+  @font-face{font-family:Tajawal;font-weight:500;src:url(../fonts/Tajawal-Medium.ttf)}
+  @font-face{font-family:Oswald;font-weight:600;src:url(../fonts/Oswald-SemiBold.ttf)}
+  @font-face{font-family:Anton;src:url(../fonts/Anton.woff2)}
+  @font-face{font-family:Michroma;src:url(../fonts/Michroma.woff2)}
+  @font-face{font-family:Playfair;font-style:italic;src:url(../fonts/PlayfairItalic.woff2)}
+  :root{--gold:#D4AF6A;--gold2:#F3D9A0;--gold3:#A9813F}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#000}
+  #root{position:relative;width:1080px;height:1350px;overflow:hidden}
+  .a{position:absolute}
+  .lat{direction:ltr;font-family:Michroma}
+  .gold{background:linear-gradient(180deg,var(--gold2),var(--gold) 55%,var(--gold3));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .ph{position:absolute;overflow:hidden}
+  .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .grid{display:flex;direction:rtl}
+  .grid div{flex:1;text-align:center}
+  .grid b{display:block;font:600 52px/1 Oswald;direction:ltr}
+  .grid i{display:block;font:500 22px Tajawal;font-style:normal;margin-top:6px}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+// four posters for models not used before (photo-led layouts); figures from the maxmotors.sa listings
+const D = new URLSearchParams(location.search).get('d') || 'es';
+const root = document.getElementById('root');
+const logo = (x, y, w) => `<img class="a" src="../fx/mm_logo.png" alt="Max Motors" style="left:${x}px;top:${y}px;width:${w}px">`;
+const strip = (y, ink, line) => `<div class="a" style="left:60px;right:60px;top:${y}px;display:flex;align-items:center;justify-content:space-between;border-top:1.5px solid ${line};padding-top:16px">
+  <div style="font:700 28px Tajawal;color:${ink}">متوفرة الآن في <span class="gold">ماكس موتورز</span></div>
+  <div style="direction:ltr;text-align:left;line-height:1.05"><div style="font:600 40px Oswald;letter-spacing:2px;color:${ink}">920018915</div><div style="font:600 19px Oswald;letter-spacing:3px;color:var(--gold)">maxmotors.sa</div></div></div>`;
+const grid = (y, arr, ink, sub, line) => `<div class="a grid" style="left:50px;right:50px;top:${y}px">${arr.map((s, i) => `<div style="${i ? 'border-right:1.5px solid ' + line : ''}"><b style="color:${ink}">${s[0]}</b><i style="color:${sub}">${s[1]}</i></div>`).join('')}</div>`;
+const P = {
+  // Lexus ES: sunset road full-bleed, elegant serif headline, glass spec card
+  es: () => `<div class="a" style="inset:0;background:#0A0806"></div><div class="ph" style="left:0;top:0;width:1080px;height:900px"><img src="img/es.jpg" alt="Lexus ES" style="object-position:52% 50%"></div>
+    <div class="a" style="inset:0;background:linear-gradient(180deg,rgba(10,8,6,.7),rgba(10,8,6,0) 30%,rgba(10,8,6,0) 50%,rgba(10,8,6,.88) 76%,#0A0806)"></div>
+    ${logo(56, 40, 110)}
+    <div class="a lat" style="right:56px;top:60px;font-size:20px;letter-spacing:10px;color:#fff">LEXUS · ES 350</div>
+    <div class="a" style="left:56px;top:130px;direction:ltr;font:120px/1 Playfair;font-style:italic;color:#fff">Effortless.</div>
+    <div class="a" style="right:60px;top:900px;text-align:right"><div style="font:900 70px/1.15 Cairo;color:#fff">الأناقة <span class="gold">بهدوء</span></div><div style="font:500 30px Tajawal;color:#E4DACB">لكزس ES 350 · سيدان الفخامة اليومية</div></div>
+    <div class="a" style="left:50px;right:50px;top:1060px;padding:20px 0;border-radius:22px;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.18)">${grid(0, [['302', 'حصان'], ['356', 'نيوتن متر'], ['6.6', 'ثانية 0-100'], ['V6', '3.5 لتر']], '#fff', '#CFC6B8', 'rgba(255,255,255,.2)').replace('class="a grid"', 'class="grid"')}</div>
+    ${strip(1220, '#fff', 'rgba(255,255,255,.2)')}`,
+  // Genesis G90: dark split, photo top, interior inset, giant 90
+  g90: () => `<div class="a" style="inset:0;background:#0C0C0D"></div>
+    <div class="ph" style="left:0;top:0;width:1080px;height:760px"><img src="img/g90.jpg" alt="Genesis G90" style="object-position:50% 55%;transform:scale(1.15)"></div>
+    <div class="a" style="left:0;right:0;top:560px;height:210px;background:linear-gradient(180deg,rgba(12,12,13,0),#0C0C0D)"></div>
+    ${logo(56, 40, 110)}
+    <div class="a lat" style="right:56px;top:60px;font-size:20px;letter-spacing:10px;color:#fff">GENESIS</div>
+    <div class="a" style="left:40px;top:650px;direction:ltr;font:380px/0.8 Anton;color:transparent;-webkit-text-stroke:2px rgba(212,175,106,.7)">G90</div>
+    <div class="ph" style="right:60px;top:780px;width:420px;height:260px;border-radius:18px;border:1.5px solid rgba(212,175,106,.5)"><img src="img/g90b.jpg" alt="G90 rear cabin"></div>
+    <div class="a" style="left:60px;top:990px;width:560px;text-align:right;right:auto"></div>
+    <div class="a" style="right:60px;top:1060px;width:420px;text-align:right"><div style="font:900 50px/1.2 Cairo;color:#fff">رحلة <span class="gold">VIP</span></div><div style="font:500 26px Tajawal;color:#BDB4A6">جينيسيس G90 بريستيج 2026</div></div>
+    <div class="a" style="left:60px;top:1050px;width:500px">${grid(0, [['380', 'حصان'], ['530', 'نيوتن متر'], ['AWD', 'دفع رباعي']], '#fff', '#BDB4A6', 'rgba(212,175,106,.35)').replace('class="a grid"', 'class="grid"')}</div>
+    ${strip(1220, '#fff', 'rgba(212,175,106,.3)')}`,
+  // GMC Yukon: rugged, black condensed type over the desert photo, red accent
+  yk: () => `<div class="ph" style="inset:0"><img src="img/yk.jpg" alt="GMC Yukon" style="object-position:48% 55%"></div>
+    <div class="a" style="inset:0;background:linear-gradient(180deg,rgba(0,0,0,.55),rgba(0,0,0,.05) 35%,rgba(0,0,0,0) 52%,rgba(0,0,0,.9) 76%,#000)"></div>
+    ${logo(56, 40, 110)}
+    <div class="a" style="right:56px;top:52px;padding:8px 22px;background:#C8102E;font:600 26px Oswald;letter-spacing:6px;color:#fff;direction:ltr">ELEVATION</div>
+    <div class="a" style="left:0;right:0;top:120px;text-align:center;direction:ltr;font:300px/0.9 Anton;letter-spacing:10px;color:#fff;text-shadow:0 10px 40px rgba(0,0,0,.5)">YUKON</div>
+    <div class="a" style="right:60px;top:920px;text-align:right"><div style="font:900 74px/1.15 Cairo;color:#fff">حجم <span style="color:#E8334F">يفرض</span> احترامه</div><div style="font:500 30px Tajawal;color:#DADADA">جي إم سي يوكن إليفيشن 2026</div></div>
+    ${grid(1080, [['V8', '5.3 لتر'], ['10', 'سرعات أوتوماتيك'], ['20"', 'جنوط']], '#fff', '#C9C9C9', 'rgba(232,51,79,.6)')}
+    ${strip(1220, '#fff', 'rgba(255,255,255,.2)')}`,
+  // Nissan X-Trail: bright family beach, white card with rounded photo
+  xt: () => `<div class="a" style="inset:0;background:#F2EEE7"></div>
+    <div class="ph" style="left:40px;top:150px;width:1000px;height:660px;border-radius:40px"><img src="img/xt.jpg" alt="Nissan X-Trail" style="object-position:50% 60%"></div>
+    ${logo(56, 34, 100)}
+    <div class="a lat" style="right:56px;top:62px;font-size:20px;letter-spacing:10px;color:#1F2A33">NISSAN · X-TRAIL</div>
+    <div class="ph" style="right:80px;top:700px;width:300px;height:200px;border-radius:24px;border:6px solid #F2EEE7"><img src="img/xt2.jpg" alt="X-Trail cabin"></div>
+    <div class="a" style="right:60px;top:925px;text-align:right"><div style="font:900 72px/1.15 Cairo;color:#1F2A33">مغامرة <span style="color:#C1622D">العائلة</span></div><div style="font:500 30px Tajawal;color:#5A6168">إكس-تريل 2026 · 7 مقاعد · دفع رباعي</div></div>
+    <div class="a" style="left:60px;top:840px;direction:ltr;font:150px/1 Anton;color:#1F2A33">X-TRAIL</div>
+    ${grid(1090, [['181', 'حصان'], ['244', 'نيوتن متر'], ['AWD', 'دفع رباعي'], ['7', 'مقاعد']], '#1F2A33', '#5A6168', 'rgba(0,0,0,.15)')}
+    ${strip(1220, '#1F2A33', 'rgba(0,0,0,.15)')}`
+};
+root.innerHTML = P[D]();
+Promise.all([document.fonts.ready, ...[...document.images].map(i => i.decode().catch(() => {}))]).then(() => document.body.dataset.ready = 1);
+</script>
+</body>
+</html>
