@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>Pinterest-style posters</title>
+<style>
+  @font-face{font-family:Cairo;font-weight:900;src:url(../fonts/Cairo-Black.ttf)}
+  @font-face{font-family:Cairo;font-weight:700;src:url(../fonts/Cairo-Bold.ttf)}
+  @font-face{font-family:Tajawal;font-weight:700;src:url(../fonts/Tajawal-Bold.ttf)}
+  @font-face{font-family:Tajawal;font-weight:500;src:url(../fonts/Tajawal-Medium.ttf)}
+  @font-face{font-family:Oswald;font-weight:600;src:url(../fonts/Oswald-SemiBold.ttf)}
+  @font-face{font-family:Oswald;font-weight:300;src:url(../fonts/Oswald-Light.ttf)}
+  @font-face{font-family:Anton;src:url(../fonts/Anton.woff2)}
+  @font-face{font-family:Michroma;src:url(../fonts/Michroma.woff2)}
+  :root{--gold:#D4AF6A;--gold2:#F3D9A0;--gold3:#A9813F}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#000}
+  #root{position:relative;width:1080px;height:1350px;overflow:hidden}
+  .a{position:absolute}
+  .lat{direction:ltr;font-family:Michroma}
+  .gold{background:linear-gradient(180deg,var(--gold2),var(--gold) 55%,var(--gold3));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .sh{position:absolute;border-radius:50%}
+  .grid{display:flex;direction:rtl}
+  .grid div{flex:1;text-align:center}
+  .grid b{display:block;font:600 52px/1 Oswald;direction:ltr}
+  .grid i{display:block;font:500 22px Tajawal;font-style:normal;margin-top:6px}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+// four posters after Pinterest references; figures from the maxmotors.sa listings / manufacturers
+const D = new URLSearchParams(location.search).get('d') || 'gv';
+const root = document.getElementById('root');
+const logo = (x, y, w) => `<img class="a" src="../fx/mm_logo.png" alt="Max Motors" style="left:${x}px;top:${y}px;width:${w}px">`;
+const strip = (y, ink, sub) => `<div class="a" style="left:60px;right:60px;top:${y}px;display:flex;align-items:center;justify-content:space-between;border-top:1.5px solid ${sub};padding-top:16px">
+  <div style="font:700 28px Tajawal;color:${ink}">متوفرة الآن في <span class="gold">ماكس موتورز</span></div>
+  <div style="direction:ltr;text-align:left;line-height:1.05"><div style="font:600 40px Oswald;letter-spacing:2px;color:${ink}">920018915</div><div style="font:600 19px Oswald;letter-spacing:3px;color:var(--gold)">maxmotors.sa</div></div></div>`;
+const grid = (y, arr, ink, sub, line) => `<div class="a grid" style="left:50px;right:50px;top:${y}px">${arr.map((s, i) => `<div style="${i ? 'border-right:1.5px solid ' + line : ''}"><b style="color:${ink}">${s[0]}</b><i style="color:${sub}">${s[1]}</i></div>`).join('')}</div>`;
+const shadow = (x, y, w, o = .6) => `<div class="sh" style="left:${x}px;top:${y}px;width:${w}px;height:${w * 0.08}px;background:radial-gradient(ellipse,rgba(0,0,0,${o}),rgba(0,0,0,0) 70%)"></div>`;
+const P = {
+  // diagonal colour band (McLaren / Audi refs): copper band through a dark poster, vertical brand name
+  gv: () => `<div class="a" style="inset:0;background:#121212"></div>
+    <div class="a" style="left:-200px;top:430px;width:1500px;height:430px;background:linear-gradient(90deg,#7A4A26,#C7854B 50%,#E7B07A);transform:rotate(-18deg)"></div>
+    <div class="a" style="left:-200px;top:430px;width:1500px;height:430px;transform:rotate(-18deg);border-top:6px solid #121212;border-bottom:6px solid #121212;background:repeating-linear-gradient(90deg,rgba(255,255,255,0) 0 60px,rgba(255,255,255,.04) 60px 62px)"></div>
+    <div class="a lat" style="right:-410px;top:640px;transform:rotate(90deg);font-size:96px;letter-spacing:30px;color:rgba(255,255,255,.08);white-space:nowrap">GENESIS</div>
+    ${logo(56, 44, 110)}
+    <div class="a lat" style="left:190px;top:66px;font-size:18px;letter-spacing:8px;color:#C7854B">GV80 · ROYAL · 2026</div>
+    ${shadow(120, 880, 840, .8)}
+    <img class="a" src="img/gv.png" alt="Genesis GV80" style="left:90px;top:520px;width:900px">
+    <div class="a" style="left:56px;top:1000px;direction:ltr;font:150px/0.9 Anton;letter-spacing:2px;color:#fff">GV<span style="color:#C7854B">80</span></div>
+    <div class="a" style="right:60px;top:1010px;text-align:right;width:520px"><div style="font:900 50px/1.2 Cairo;color:#fff">جينيسيس <span style="color:#E7B07A">رويال</span></div><div style="font:500 25px/1.5 Tajawal;color:#B9B2A8">سيطر على الطريق بفخامة كورية، V6 توين تيربو بقوة 375 حصان ودفع رباعي AWD</div></div>
+    ${strip(1222, '#fff', 'rgba(255,255,255,.18)')}`,
+  // racing livery stripes (Ferrari / Porsche refs): white poster, two vertical stripes, car crossing, icon specs
+  lx: () => `<div class="a" style="inset:0;background:#F4F3F1"></div>
+    <div class="a" style="left:390px;top:370px;width:150px;height:560px;background:#14161A"></div>
+    <div class="a" style="left:560px;top:370px;width:60px;height:560px;background:var(--gold)"></div>
+    <div class="a" style="left:0;right:0;top:120px;text-align:center;direction:ltr;font:150px/1 Anton;letter-spacing:22px;color:#14161A;mix-blend-mode:normal">LEXUS</div>
+    <div class="a" style="left:0;right:0;top:290px;text-align:center;font:600 34px Oswald;letter-spacing:16px;color:#6B6862;direction:ltr">LX 700h · HYBRID</div>
+    ${logo(56, 40, 104)}
+    ${shadow(110, 880, 860, .45)}
+    <img class="a" src="img/lx.png" alt="Lexus LX 700h" style="left:60px;top:470px;width:960px">
+    <div class="a" style="left:0;right:0;top:960px;text-align:center"><div style="font:900 58px/1.2 Cairo;color:#14161A">الفخامة <span class="gold">بأسلوب هجين</span></div></div>
+    ${grid(1060, [['457', 'حصان'], ['790', 'نيوتن متر'], ['10', 'سرعات'], ['22"', 'جنوط']], '#14161A', '#6B6862', 'rgba(0,0,0,.15)')}
+    ${strip(1222, '#14161A', 'rgba(0,0,0,.15)')}`,
+  // giant number (Lexus LFA "V10" ref): cream poster, huge 437 over the car, spec grid
+  seq: () => `<div class="a" style="inset:0;background:#EFE9DF"></div>
+    ${logo(56, 40, 104)}
+    <div class="a lat" style="right:56px;top:58px;font-size:18px;letter-spacing:8px;color:#5B2A1A">TOYOTA · SEQUOIA</div>
+    <div class="a" style="left:0;right:40px;top:110px;text-align:center;direction:ltr;font:500px/0.82 Anton;letter-spacing:-6px;color:#7A2E1C">437</div>
+    <div class="a" style="right:58px;top:470px;direction:ltr;font:600 58px Oswald;color:#7A2E1C">HP</div>
+    ${shadow(100, 900, 880, .5)}
+    <img class="a" src="img/seq.png" alt="Toyota Sequoia Capstone" style="left:50px;top:560px;width:980px">
+    <div class="a" style="left:0;right:0;top:985px;text-align:center"><div style="direction:ltr;font:86px/1 Anton;letter-spacing:4px;color:#1D1B18">CAPSTONE</div><div style="font:500 28px Tajawal;color:#5E5548;margin-top:4px">تويوتا سيكويا كابستون 2026 · هايبرد i-FORCE MAX</div></div>
+    ${grid(1105, [['3.4L', 'V6 توين تيربو'], ['790', 'نيوتن متر'], ['7', 'مقاعد كابتن'], ['22"', 'جنوط']], '#1D1B18', '#5E5548', 'rgba(0,0,0,.15)')}
+    ${strip(1225, '#1D1B18', 'rgba(0,0,0,.15)')}`,
+  // outlined trim name (Lexus GX550 ref): light grey, huge outline GXR behind the car
+  lc: () => `<div class="a" style="inset:0;background:linear-gradient(180deg,#E9EAEC,#D3D5D8)"></div>
+    ${logo(56, 40, 104)}
+    <div class="a lat" style="right:56px;top:58px;font-size:18px;letter-spacing:8px;color:#2B2F35">LAND CRUISER · 300</div>
+    <div class="a" style="left:0;right:0;top:150px;text-align:center;direction:ltr;font:500px/0.85 Anton;letter-spacing:10px;color:transparent;-webkit-text-stroke:3px #2B2F35">GXR</div>
+    ${shadow(110, 900, 860, .5)}
+    <img class="a" src="img/lc.png" alt="Toyota Land Cruiser GXR" style="left:90px;top:500px;width:900px">
+    <div class="a" style="left:0;right:0;top:985px;text-align:center"><div style="font:900 66px/1.15 Cairo;color:#1C1F24">لاندكروزر <span class="gold">GXR</span> 2026</div><div style="font:500 28px Tajawal;color:#4A4F57">الأسطورة… بكامل قوتها</div></div>
+    ${grid(1105, [['3.5L', 'V6 توين تيربو'], ['10', 'سرعات'], ['4x4', 'دبل + دفلوك'], ['20"', 'جنوط']], '#1C1F24', '#4A4F57', 'rgba(0,0,0,.18)')}
+    ${strip(1225, '#1C1F24', 'rgba(0,0,0,.18)')}`
+};
+root.innerHTML = P[D]();
+Promise.all([document.fonts.ready, ...[...document.images].map(i => i.decode().catch(() => {}))]).then(() => document.body.dataset.ready = 1);
+</script>
+</body>
+</html>
