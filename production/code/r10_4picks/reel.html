@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>Four picks reel</title>
+<style>
+  @font-face{font-family:Cairo;font-weight:900;src:url(../fonts/Cairo-Black.ttf)}
+  @font-face{font-family:Tajawal;font-weight:700;src:url(../fonts/Tajawal-Bold.ttf)}
+  @font-face{font-family:Oswald;font-weight:600;src:url(../fonts/Oswald-SemiBold.ttf)}
+  @font-face{font-family:Anton;src:url(../fonts/Anton.woff2)}
+  @font-face{font-family:Michroma;src:url(../fonts/Michroma.woff2)}
+  :root{--gold:#D4AF6A;--gold2:#F3D9A0;--gold3:#A9813F}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#000;overflow:hidden}
+  #root{position:relative;width:1080px;height:1920px;overflow:hidden;background:#0B0B0C}
+  .sc{position:absolute;inset:0;overflow:hidden;display:none}
+  .a{position:absolute}
+  .ctr{left:0;right:0;text-align:center}
+  .lat{direction:ltr;font-family:Michroma}
+  .gold{background:linear-gradient(180deg,var(--gold2),var(--gold) 55%,var(--gold3));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .bleed{position:absolute;inset:0;overflow:hidden}
+  .bleed img{position:absolute;top:0;height:1920px;width:auto}
+  #cars .bleed{bottom:auto;height:1380px}
+  #cars .bleed img{height:1380px}
+  .shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.55) 0,rgba(0,0,0,0) 18%,rgba(0,0,0,0) 52%,rgba(0,0,0,.9) 71%,#000 74%)}
+  .num{position:absolute;left:50px;top:1250px;direction:ltr;font:300px/0.8 Anton;color:transparent;-webkit-text-stroke:3px var(--gold)}
+  .chip{display:inline-block;padding:10px 30px;border-radius:40px;background:rgba(0,0,0,.45);border:2px solid rgba(212,175,106,.7);font:600 40px Oswald;color:#fff;direction:ltr;margin-top:18px}
+  .wm{position:absolute;left:40px;top:40px;width:100px;opacity:.55;z-index:20}
+  #flash{position:absolute;inset:0;background:#FFF8EA;z-index:25;opacity:0}
+</style>
+</head>
+<body>
+<div id="root">
+  <div class="sc" id="sH">
+    <div class="bleed" id="hImgs"><img src="img/es.jpg" alt="" data-fx=".55"><img src="img/g90.jpg" alt="" data-fx=".5"><img src="img/yk.jpg" alt="" data-fx=".5"><img src="img/xt.jpg" alt="" data-fx=".72"></div>
+    <div class="a" style="inset:0;background:rgba(0,0,0,.45)"></div>
+    <div class="a ctr" id="hT" style="top:700px;font:900 150px/1.15 Cairo;color:#fff;text-shadow:0 8px 40px rgba(0,0,0,.8)">4 عربيات<br><span class="gold">لكل ذوق</span></div>
+    <div class="a ctr" id="hS" style="top:1080px;font:700 56px Tajawal;color:#fff">أنت أي واحد؟ 👇</div>
+  </div>
+  <div id="cars"></div>
+  <div class="sc" id="sQ">
+    <div class="a" style="inset:0;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:8px;background:#0B0B0C" id="qGrid"></div>
+    <div class="a" style="inset:0;background:radial-gradient(ellipse 70% 30% at 50% 50%,rgba(0,0,0,.85),rgba(0,0,0,.25))"></div>
+    <div class="a ctr" id="qT" style="top:780px;font:900 120px/1.2 Cairo;color:#fff">اختار <span class="gold">رقمك</span></div>
+    <div class="a ctr" id="qS" style="top:960px;font:700 54px Tajawal;color:#fff">واكتبه في الكومنت 👇</div>
+  </div>
+  <div class="sc" id="sE">
+    <div class="a" style="inset:0;background:radial-gradient(ellipse 80% 55% at 50% 42%,#1B1A17,#050506 75%)"></div>
+    <img class="a" id="eLg" src="../fx/mm_logo.png" alt="Max Motors" style="left:340px;top:470px;width:400px">
+    <div class="a" id="eSw" style="left:340px;top:470px;width:400px;height:325px;mix-blend-mode:screen;-webkit-mask:url(../fx/mm_logo.png) center/contain no-repeat"></div>
+    <div class="a ctr" id="e1" style="top:900px;font:900 72px/1.25 Cairo;color:#fff">كلها متوفرة في<br><span class="gold">ماكس موتورز</span></div>
+    <div class="a ctr" id="e2" style="top:1110px;font:600 150px/1.1 Oswald;letter-spacing:3px;color:#fff;direction:ltr">920018915</div>
+    <div class="a ctr" id="e3" style="top:1300px;font:600 52px Oswald;letter-spacing:4px;color:var(--gold);direction:ltr">maxmotors.sa</div>
+  </div>
+  <img class="wm" id="wm" src="../fx/mm_logo.png" alt="">
+  <div id="flash"></div>
+</div>
+<script>
+// music: Mixkit 1150 "No Warning" from 63.26 s -> drop on 4.37; bars at 4.37 / 6.55 / 8.47 / 10.65 / 12.83 / 15.0
+const B = [-0.54, 0, 0.55, 1.09, 1.64, 2.18, 2.73, 3.28, 3.82];
+const C = [4.37, 6.55, 8.47, 10.65], Q = 12.83, END = 15.0, DUR = 19.0; window.DUR = DUR;
+const CARS = [
+  { img: 'es', fx: .6, img2: 'es2', fx2: .5, en: 'LEXUS ES 350', ar: 'لكزس ES 350', line: 'الأناقة بهدوء', chip: '302 HP' },
+  { img: 'g90', fx: .5, img2: 'g90b', fx2: .5, en: 'GENESIS G90', ar: 'جينيسيس G90', line: 'رحلة VIP', chip: '380 HP · AWD' },
+  { img: 'yk', fx: .5, img2: 'yk2', fx2: .42, en: 'GMC YUKON', ar: 'يوكن إليفيشن', line: 'حجم يفرض احترامه', chip: 'V8 5.3L' },
+  { img: 'xt', fx: .72, img2: 'xt2', fx2: .5, en: 'NISSAN X-TRAIL', ar: 'نيسان إكس-تريل', line: 'مغامرة العائلة', chip: '7 SEATS · AWD' }];
+const $ = id => document.getElementById(id);
+const clamp = x => Math.max(0, Math.min(1, x)), prog = (t, a, b) => clamp((t - a) / (b - a));
+const E = { out: x => 1 - Math.pow(1 - x, 3), back: x => 1 + 2.2 * Math.pow(x - 1, 3) + 1.2 * Math.pow(x - 1, 2) };
+const at = (t, a, b, e = 'out') => E[e](prog(t, a, b));
+const css = (el, o) => Object.assign(el.style, o);
+const rise = (el, t, a, d = 40, dur = .4) => { const k = at(t, a, a + dur); css(el, { opacity: k, transform: `translateY(${(1 - k) * d}px)` }); };
+$('cars').innerHTML = CARS.map((c, i) => `<div class="sc" id="c${i}">
+  <div class="bleed"><img src="img/${c.img}.jpg" alt="${c.en}" data-fx="${c.fx}"></div><div class="bleed"><img src="img/${c.img2}.jpg" alt="" data-fx="${c.fx2}"></div>
+  <div class="shade"></div><div class="num">0${i + 1}</div>
+  <div class="a txt" style="right:60px;top:1420px;text-align:right"><div class="lat" style="font-size:24px;letter-spacing:8px;color:var(--gold2)">${c.en}</div>
+  <div style="font:900 100px/1.15 Cairo;color:#fff">${c.ar}</div><div style="font:700 46px Tajawal;color:#EDE3D0">${c.line}</div><div class="chip">${c.chip}</div></div><div class="a" style="left:60px;right:60px;top:1800px;display:flex;justify-content:space-between;align-items:center;border-top:1.5px solid rgba(212,175,106,.35);padding-top:16px"><div style="font:700 30px Tajawal;color:#fff">متوفرة في <span class="gold">ماكس موتورز</span></div><div style="font:600 40px Oswald;color:#fff;direction:ltr">920018915</div></div></div>`).join('');
+$('qGrid').innerHTML = CARS.map(c => `<div style="position:relative;overflow:hidden"><img src="img/${c.img}.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:${c.fx * 100}% 55%"></div>`).join('');
+const bleed = (im, k, pan = 120) => { const h = parseFloat(getComputedStyle(im).height), w = h * im.naturalWidth / im.naturalHeight; let x = 540 - (+im.dataset.fx) * w + pan * (k - .5); x = Math.min(0, Math.max(1080 - w, x)); css(im, { left: x + 'px', transform: `scale(${1.02 + .04 * k})` }); };
+const CUTS = [...B.slice(1), ...C, ...C.map(c => c + 1.09), Q, END];
+window.renderAt = t => {
+  const vis = [['sH', 0, C[0]], ['c0', C[0], C[1]], ['c1', C[1], C[2]], ['c2', C[2], C[3]], ['c3', C[3], Q], ['sQ', Q, END], ['sE', END, 99]];
+  vis.forEach(([id, a, b]) => $(id).style.display = t >= a && t < b ? 'block' : 'none');
+  const c = CUTS.filter(x => t >= x && t < x + .3).pop(), big = c === C[0] || c === END;
+  $('flash').style.opacity = c === undefined ? 0 : (big ? .9 : .25) * Math.pow(1 - prog(t, c, c + (big ? .4 : .18)), 2);
+  $('wm').style.opacity = t >= C[0] && t < END ? .55 : 0;
+  { const imgs = [...$('hImgs').querySelectorAll('img')]; const b = Math.max(0, B.filter(x => t >= x).length - 1);
+    imgs.forEach((im, i) => { im.style.display = i === b % 4 ? 'block' : 'none'; bleed(im, (t % .545) / .545, 60); });
+    const k = at(t, 1.64, 2.0, 'back'); css($('hT'), { opacity: clamp(k * 1.4), transform: `scale(${1.3 - .3 * k})` }); rise($('hS'), t, 2.73); }
+  CARS.forEach((car, i) => { const u = t - C[i], len = (i < 3 ? C[i + 1] : Q) - C[i], el = $('c' + i), [b1, b2] = el.querySelectorAll('.bleed'), half = u >= 1.09;
+    b1.style.display = half ? 'none' : 'block'; b2.style.display = half ? 'block' : 'none';
+    bleed(b1.querySelector('img'), prog(u, 0, 1.09)); bleed(b2.querySelector('img'), prog(u, 1.09, len));
+    const n = el.querySelector('.num'), k = at(u, 0, .35, 'back'); css(n, { opacity: clamp(k * 1.5), transform: `scale(${1.4 - .4 * k})` });
+    rise(el.querySelector('.txt'), u, .15, 60, .35); });
+  { const u = t - Q; const k = at(u, .1, .45, 'back'); css($('qT'), { opacity: clamp(k * 1.4), transform: `scale(${1.3 - .3 * k})` }); rise($('qS'), u, .5); }
+  { const u = t - END; const lk = at(u, 0, .6); css($('eLg'), { opacity: lk, transform: `scale(${1.25 - .25 * lk})`, filter: `blur(${(1 - lk) * 8}px)` });
+    const s = prog(u, .7, 1.4); $('eSw').style.background = s > 0 && s < 1 ? `linear-gradient(105deg,rgba(255,255,255,0) ${-20 + 140 * s - 15}%,rgba(255,250,235,.95) ${-20 + 140 * s}%,rgba(255,255,255,0) ${-20 + 140 * s + 15}%)` : 'none';
+    [['e1', .5], ['e2', .7], ['e3', .9]].forEach(([id, a]) => rise($(id), u, a, 24, .45)); }
+};
+window.ready = document.fonts.ready.then(() => Promise.all([...document.images].map(i => i.decode().catch(() => {})))).then(() => { renderAt(0); return true; });
+</script>
+</body>
+</html>
