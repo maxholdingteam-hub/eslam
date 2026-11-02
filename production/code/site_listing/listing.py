@@ -6,9 +6,10 @@ S = new_session('isnet-general-use')
 src, dst = sys.argv[1], sys.argv[2]
 W, H = 2246, 1588
 bg = Image.open('' + __import__('os').path.join(__import__('os').path.dirname(__file__), 'backdrop.png') + '').convert('RGB').resize((W, H), Image.LANCZOS)
-car = Image.open(src).convert('RGB')
-cut = remove(car, session=S, post_process_mask=True)
-a = np.asarray(cut)[..., 3]; ys, xs = np.where(a > 20)
+car = Image.open(src).convert('RGBA')
+# official cutouts already carry alpha; real photos go through rembg
+cut = car if np.asarray(car)[..., 3].min() < 10 else remove(car.convert('RGB'), session=S, post_process_mask=True)
+a = np.asarray(cut)[..., 3]; ys, xs = np.where(a > 110)
 cut = cut.crop((xs.min(), ys.min(), xs.max() + 1, ys.max() + 1))
 cw = int(W * float(sys.argv[3]) if len(sys.argv) > 3 else W * 0.70)
 ch = int(cut.height * cw / cut.width)
