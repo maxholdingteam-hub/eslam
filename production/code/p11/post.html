@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>Posters set 11</title>
+<style>
+  @font-face{font-family:Cairo;font-weight:900;src:url(../fonts/Cairo-Black.ttf)}
+  @font-face{font-family:Tajawal;font-weight:700;src:url(../fonts/Tajawal-Bold.ttf)}
+  @font-face{font-family:Tajawal;font-weight:500;src:url(../fonts/Tajawal-Medium.ttf)}
+  @font-face{font-family:Oswald;font-weight:600;src:url(../fonts/Oswald-SemiBold.ttf)}
+  @font-face{font-family:Anton;src:url(../fonts/Anton.woff2)}
+  @font-face{font-family:Michroma;src:url(../fonts/Michroma.woff2)}
+  @font-face{font-family:Kufi;font-weight:700;src:url(../fonts/ReemKufi.ttf)}
+  :root{--gold:#D4AF6A;--gold2:#F3D9A0;--gold3:#A9813F}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#000}
+  #root{position:relative;width:1080px;height:1350px;overflow:hidden}
+  .a{position:absolute}
+  .lat{direction:ltr;font-family:Michroma}
+  .gold{background:linear-gradient(180deg,var(--gold2),var(--gold) 55%,var(--gold3));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .ph{position:absolute;overflow:hidden}
+  .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .grid{display:flex;direction:rtl}
+  .grid div{flex:1;text-align:center}
+  .grid b{display:block;font:600 52px/1 Oswald;direction:ltr}
+  .grid i{display:block;font:500 22px Tajawal;font-style:normal;margin-top:6px}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+// four posters (RX, GV70, IS, Hilux); figures from the maxmotors.sa listings
+const D = new URLSearchParams(location.search).get('d') || 'rx';
+const root = document.getElementById('root');
+const logo = (x, y, w) => `<img class="a" src="../fx/mm_logo.png" alt="Max Motors" style="left:${x}px;top:${y}px;width:${w}px">`;
+const strip = (y, ink, line) => `<div class="a" style="left:60px;right:60px;top:${y}px;display:flex;align-items:center;justify-content:space-between;border-top:1.5px solid ${line};padding-top:16px">
+  <div style="font:700 28px Tajawal;color:${ink}">متوفرة الآن في <span class="gold">ماكس موتورز</span></div>
+  <div style="direction:ltr;text-align:left;line-height:1.05"><div style="font:600 40px Oswald;letter-spacing:2px;color:${ink}">920018915</div><div style="font:600 19px Oswald;letter-spacing:3px;color:var(--gold)">maxmotors.sa</div></div></div>`;
+const grid = (y, arr, ink, sub, line, l = 50, r = 50) => `<div class="a grid" style="left:${l}px;right:${r}px;top:${y}px">${arr.map((s, i) => `<div style="${i ? 'border-right:1.5px solid ' + line : ''}"><b style="color:${ink}">${s[0]}</b><i style="color:${sub}">${s[1]}</i></div>`).join('')}</div>`;
+const P = {
+  // Lexus RX: tall Saudi-landscape photo, translucent giant RX, Kufi headline
+  rx: () => `<div class="ph" style="inset:0"><img src="img/rx.jpg" alt="Lexus RX" style="object-position:50% 62%"></div>
+    <div class="a" style="inset:0;background:linear-gradient(180deg,rgba(0,0,0,.5),rgba(0,0,0,0) 26%,rgba(0,0,0,0) 56%,rgba(20,10,4,.88) 78%,#140A04)"></div>
+    <div class="a" style="left:0;right:0;top:90px;text-align:center;direction:ltr;font:340px/0.85 Anton;letter-spacing:20px;color:rgba(255,255,255,.22)">RX</div>
+    ${logo(56, 40, 110)}<div class="a lat" style="right:56px;top:60px;font-size:20px;letter-spacing:10px;color:#fff">LEXUS · RX 350</div>
+    <div class="a" style="right:60px;top:900px;text-align:right"><div style="font:700 78px/1.2 Kufi;color:#fff">فخامة <span class="gold">تليق بأرضنا</span></div><div style="font:500 30px Tajawal;color:#EFD9C2">لكزس RX 350 · 2026</div></div>
+    ${grid(1070, [['275', 'حصان'], ['430', 'نيوتن متر'], ['2.4T', 'تيربو'], ['14.1', 'كم/لتر']], '#fff', '#E3CDB6', 'rgba(255,255,255,.25)')}
+    ${strip(1222, '#fff', 'rgba(255,255,255,.22)')}`,
+  // Genesis GV70: magazine sidebar - dark panel with vertical name and spec list, photo on the right
+  gv70: () => `<div class="a" style="inset:0;background:#101012"></div>
+    <div class="ph" style="left:380px;top:0;width:700px;height:1350px"><img src="img/gv70.jpg" alt="Genesis GV70" style="object-position:62% 50%"></div>
+    <div class="a" style="left:380px;top:0;width:220px;height:1350px;background:linear-gradient(90deg,#101012,rgba(16,16,18,0))"></div><div class="a" style="left:380px;right:0;top:0;height:320px;background:linear-gradient(180deg,rgba(16,16,18,.9),rgba(16,16,18,0))"></div>
+    <div class="ph" style="left:440px;top:930px;width:580px;height:250px;border:2px solid rgba(212,175,106,.6)"><img src="img/gv70i.jpg" alt="GV70 cabin"></div>
+    ${logo(56, 40, 104)}
+    <div class="a" style="left:60px;top:190px;writing-mode:vertical-rl;transform:rotate(180deg);direction:ltr;font:250px/1 Anton;letter-spacing:12px;color:#fff;white-space:nowrap">GV<span style="color:var(--gold)">70</span></div>
+    <div class="a" style="left:300px;top:190px;width:40px;text-align:center;font:600 22px Oswald;letter-spacing:6px;color:var(--gold2);direction:ltr;writing-mode:vertical-rl">GENESIS · PRESTIGE PLUS</div>
+    <div class="a" style="right:60px;top:60px;width:560px;text-align:right"><div style="font:900 64px/1.15 Cairo;color:#fff;text-shadow:0 4px 20px rgba(0,0,0,.6)">جرأة <span class="gold">بتفاصيل فاخرة</span></div></div>
+    <div class="a" style="left:40px;top:1000px;width:360px">${[['300', 'حصان'], ['422', 'نيوتن متر'], ['AWD', 'دفع رباعي']].map(s => `<div style="display:flex;align-items:baseline;gap:14px;margin-bottom:14px;direction:rtl"><b style="font:600 54px/1 Oswald;color:#fff;direction:ltr;min-width:140px;text-align:left">${s[0]}</b><i style="font:500 24px Tajawal;font-style:normal;color:#B9B2A8">${s[1]}</i></div>`).join('')}</div>
+    ${strip(1222, '#fff', 'rgba(212,175,106,.3)')}`,
+  // Lexus IS: city night photo, slanted sport typography, red accent
+  is: () => `<div class="ph" style="inset:0"><img src="img/is.jpg" alt="Lexus IS" style="object-position:50% 52%"></div>
+    <div class="a" style="inset:0;background:linear-gradient(180deg,rgba(0,0,0,.45),rgba(0,0,0,0) 30%,rgba(0,0,0,0) 55%,rgba(0,0,0,.9) 78%,#000)"></div>
+    ${logo(56, 40, 110)}<div class="a lat" style="right:56px;top:60px;font-size:20px;letter-spacing:10px;color:#fff">LEXUS · IS 300</div>
+    <div class="a" style="left:40px;top:130px;direction:ltr;font:180px/0.9 Anton;color:#fff;transform:skewX(-12deg)">SPORT<br><span style="color:#E3262E">SEDAN</span></div>
+    <div class="a" style="left:0;top:1000px;width:14px;height:110px;background:#E3262E"></div>
+    <div class="a" style="right:60px;top:910px;text-align:right"><div style="font:900 74px/1.15 Cairo;color:#fff">روح <span style="color:#FF4B52">رياضية</span></div><div style="font:500 30px Tajawal;color:#D6D6D6">لكزس IS 300 · دفع خلفي RWD</div></div>
+    ${grid(1080, [['241', 'حصان'], ['350', 'نيوتن متر'], ['8', 'سرعات'], ['RWD', 'دفع خلفي']], '#fff', '#C9C9C9', 'rgba(227,38,46,.6)')}
+    ${strip(1222, '#fff', 'rgba(255,255,255,.2)')}`,
+  // Toyota Hilux: bold sand-orange workhorse poster, cutout + big Arabic slogan
+  hilux: () => `<div class="a" style="inset:0;background:linear-gradient(180deg,#E9A04B,#C66F22)"></div>
+    <div class="a" style="left:0;right:0;top:120px;text-align:center;direction:ltr;font:290px/0.9 Anton;letter-spacing:6px;color:rgba(255,255,255,.18)">HILUX</div>
+    ${logo(56, 40, 110)}<div class="a lat" style="right:56px;top:60px;font-size:20px;letter-spacing:10px;color:#2A1606">TOYOTA · 2026</div>
+    <div class="a" style="left:110px;top:780px;width:860px;height:70px;border-radius:50%;background:radial-gradient(ellipse,rgba(60,25,0,.6),rgba(0,0,0,0) 70%)"></div>
+    <img class="a" src="img/hilux.png" alt="Toyota Hilux" style="left:60px;top:380px;width:960px">
+    <div class="a" style="left:0;right:0;top:880px;text-align:center"><div style="font:900 96px/1.15 Cairo;color:#fff;text-shadow:0 6px 24px rgba(80,30,0,.35)">شغّال… <span style="color:#2A1606">ما يوقف</span></div><div style="font:700 32px Tajawal;color:#3A1E08">هايلوكس GLX.S · دفع رباعي 4×4</div></div>
+    ${grid(1080, [['2.7L', 'بنزين'], ['4WD', 'دبل خفيف وثقيل'], ['80L', 'خزان الوقود'], ['6', 'سرعات']], '#2A1606', '#4A2A10', 'rgba(42,22,6,.3)')}
+    <div class="a" style="left:0;right:0;top:1205px;bottom:0;background:#2A1606"></div>
+    ${strip(1214, '#fff', 'rgba(255,255,255,0)')}`
+};
+root.innerHTML = P[D]();
+Promise.all([document.fonts.ready, ...[...document.images].map(i => i.decode().catch(() => {}))]).then(() => document.body.dataset.ready = 1);
+</script>
+</body>
+</html>
