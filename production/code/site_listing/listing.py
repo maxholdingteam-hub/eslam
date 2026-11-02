@@ -1,5 +1,6 @@
 # maxmotors.sa listing image: car photo -> cutout -> black/gold studio backdrop with glossy reflection (2246x1588)
-import sys, numpy as np
+import sys, os, numpy as np
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from PIL import Image, ImageFilter
 from rembg import remove, new_session
 S = new_session('isnet-general-use')
@@ -15,6 +16,9 @@ cw = int(W * float(sys.argv[3]) if len(sys.argv) > 3 else W * 0.70)
 ch = int(cut.height * cw / cut.width)
 if ch > H * 0.56: ch = int(H * 0.56); cw = int(cut.width * ch / cut.height)
 cut = cut.resize((cw, ch), Image.LANCZOS)
+import plate_swap, os as _o
+if _o.environ.get('PLATE', '1') == '1' and not _o.environ.get('PLBOX'):
+    cut, found = plate_swap.swap(cut); print('plate', found)
 x0 = (W - cw) // 2; bottom = int(H * 0.775); y0 = bottom - ch
 out = bg.copy().convert('RGBA')
 # reflection
@@ -29,5 +33,7 @@ sh = sh.filter(ImageFilter.GaussianBlur(ch * 0.03))
 out = Image.composite(Image.new('RGBA', (W, H), (0, 0, 0, 255)), out, sh.point(lambda v: int(v * 0.85)))
 # car + faint warm rim from the backdrop glow
 out.alpha_composite(cut, (x0, y0))
-out.convert('RGB').save(dst, quality=94)
+out = out.convert('RGB')
+if _o.environ.get('PLBOX'): out = plate_swap.paste_box(out, [float(v) for v in _o.environ['PLBOX'].split(',')])
+out.save(dst, quality=94)
 print(dst, cw, ch)
