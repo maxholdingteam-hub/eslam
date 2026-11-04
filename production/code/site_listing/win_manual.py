@@ -7,7 +7,7 @@ from scipy import ndimage as nd
 from transformers import SamModel, SamProcessor
 HERE = os.path.dirname(os.path.abspath(__file__))
 ap = argparse.ArgumentParser(); ap.add_argument('inp'); ap.add_argument('out'); ap.add_argument('groups')
-ap.add_argument('--neg', default=''); ap.add_argument('--poly', default=''); ap.add_argument('--cut', default=''); ap.add_argument('--keep', default=''); ap.add_argument('--preview'); ap.add_argument('--grow', type=int, default=2)
+ap.add_argument('--neg', default=''); ap.add_argument('--poly', default=''); ap.add_argument('--cut', default=''); ap.add_argument('--keep', default=''); ap.add_argument('--preview'); ap.add_argument('--grow', type=int, default=2); ap.add_argument('--blend', type=float, default=0.06)
 a = ap.parse_args()
 im = Image.open(a.inp).convert('RGB'); W, H = im.size; sx, sy = W / 1123, H / 794
 P = lambda s: [[float(x) * sx, float(y) * sy] for x, y in (p.split(',') for p in s.split())]
@@ -50,7 +50,7 @@ off = int(np.clip(0.615 * 2 * H - tgt, 0, H))
 bg = big.crop((0, off, W, off + H))
 al = Image.fromarray((mask * 255).astype(np.uint8)).resize((W, H), Image.BILINEAR).filter(ImageFilter.GaussianBlur(2.5))
 # keep a faint trace of the original glass so it reads as glass, not a cut-out
-bgm = Image.blend(bg, im, 0.06)
+bgm = Image.blend(bg, im, a.blend)
 Image.composite(bgm, im, al).save(a.out, quality=93)
 if a.preview:
     pv = np.asarray(work).copy(); pv[mask] = (pv[mask] * 0.35 + np.array([255, 0, 255]) * 0.65).astype(np.uint8)
