@@ -217,6 +217,26 @@ html[lang="ar"] .contact .lets{font-family:var(--display);font-size:clamp(36px,5
 footer{border-top:1px solid var(--line);padding:28px 0;font-size:13px;color:var(--dim)}
 footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 
+
+/* tiktok */
+.tt{display:grid;grid-template-columns:1.2fr 1fr;gap:clamp(30px,6vw,90px);align-items:center}
+.tt-card{display:flex;align-items:center;gap:18px;margin-top:30px;padding:18px 22px;border:1px solid var(--line);border-radius:18px;max-width:440px;transition:border-color .25s,transform .25s}
+.tt-card:hover{border-color:var(--hot);transform:translateY(-3px)}
+.tt-card .ic{width:54px;height:54px;border-radius:14px;background:#000;display:grid;place-items:center;flex-shrink:0;border:1px solid #222}
+.tt-card b{display:block;font-size:18px;direction:ltr;text-align:start}
+.tt-card small{color:var(--muted)}
+.tt-card .go{margin-inline-start:auto;color:var(--hot);font-size:22px}
+.tt-phone{justify-self:center;width:min(340px,100%);border:8px solid #1d1d1d;border-radius:44px;background:#0e0e0e;padding:44px 20px 20px;display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;box-shadow:0 40px 90px -30px rgba(255,77,31,.35);transform:rotate(-3deg);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
+.tt-phone:hover{transform:rotate(0) translateY(-6px)}
+.tt-phone .notch{position:absolute;top:12px;width:90px;height:22px;border-radius:12px;background:#1d1d1d}
+.tt-phone .av{width:96px;height:96px;border-radius:50%;object-fit:cover;border:3px solid var(--hot)}
+.tt-phone b{font-size:19px;margin-top:14px}
+.tt-phone small{color:var(--muted);font-size:12px;margin-top:2px}
+.tt-phone .follow{margin:16px 0 18px;background:#fe2c55;color:#fff;font-weight:700;font-size:14px;padding:10px 46px;border-radius:6px}
+.tt-phone .thumbs{display:grid;grid-template-columns:repeat(3,1fr);gap:3px;width:100%}
+.tt-phone .thumbs img{width:100%;aspect-ratio:3/4;object-fit:cover}
+@media (max-width:1000px){.tt{grid-template-columns:1fr}}
+
 /* reveal */
 .rv{opacity:0;transform:translateY(40px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
 .rv.in{opacity:1;transform:none}
@@ -354,6 +374,25 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
   </div>
 </section>
 
+<!-- TIKTOK -->
+<section id="tiktok" style="padding-top:0">
+  <div class="wrap tt">
+    <div class="rv">
+      <div class="kick" data-i="k7">On TikTok</div>
+      <h2 data-h="h7" style="font-size:clamp(48px,7vw,110px)">Watch it <span class="s">move</span></h2>
+      <p style="color:var(--muted);margin-top:24px;max-width:460px" data-i="ttp">Behind-the-scenes, live moments and edits — straight from the crowd and the stage.</p>
+      <a class="tt-card" href="https://www.tiktok.com/@esl2mb__" target="_blank" rel="noopener"><span class="ic"><svg width="26" height="26" viewBox="0 0 24 24"><path fill="#25F4EE" d="M9.5 9.6v-1A6.5 6.5 0 109 21.4a6.5 6.5 0 01.5-11.8z"/><path fill="#FE2C55" d="M17 6.2A4.5 4.5 0 0115 3h-3.3v13a2.7 2.7 0 11-1.9-2.6V9.9A6 6 0 1015 16V9.4a7.7 7.7 0 004.5 1.4V7.5a4.4 4.4 0 01-2.5-1.3z"/><path fill="#fff" d="M16.2 5.8A4.4 4.4 0 0114.5 3h-2.4v13a2.7 2.7 0 01-4.9 1.6A2.7 2.7 0 019.6 13v-2.6a6 6 0 00-3.3 10.4A6 6 0 0014.5 16V9.1a7.7 7.7 0 004.5 1.4V8.2a4.4 4.4 0 01-2.8-2.4z"/></svg></span><span><b>@esl2mb__</b><small data-i="ttf">Follow on TikTok</small></span><span class="go">↗</span></a>
+    </div>
+    <a class="tt-phone rv d1" href="https://www.tiktok.com/@esl2mb__" target="_blank" rel="noopener" aria-label="Open @esl2mb__ on TikTok">
+      <span class="notch"></span>
+      <img class="av" src="img/avatar.webp" alt="@esl2mb__" width="120" height="120" loading="lazy">
+      <b class="ltr">@esl2mb__</b><small>Esl2mb_ · Photographer / Videographer</small>
+      <span class="follow" data-i="ttf2">Follow</span>
+      <span class="thumbs"><img src="img/pablo-1.webp" alt="" loading="lazy"><img src="img/amrdiab-4.webp" alt="" loading="lazy"><img src="img/cairokee-cap.webp" alt="" loading="lazy"><img src="img/afroto-3.webp" alt="" loading="lazy"><img src="img/tamer-4.webp" alt="" loading="lazy"><img src="img/anyma-2.webp" alt="" loading="lazy"></span>
+    </a>
+  </div>
+</section>
+
 <!-- CONTACT -->
 <section id="contact" class="contact">
   <div class="bg" aria-hidden="true"><img src="img/diesel.webp" alt="" loading="lazy"></div>
@@ -364,7 +403,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
       <a class="big-btn hot" href="https://wa.me/966568918713" target="_blank" rel="noopener"><svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.3-.4.3-.4.7-1.3a.5.5 0 000-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.8 11.9 11.9 0 004.6 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 001.8-1.2 2.2 2.2 0 00.1-1.3c0-.1-.2-.2-.5-.3z"/></svg><span data-i="wa">WhatsApp me</span></a>
       <a class="big-btn ghost" href="mailto:eslambalygh88@icloud.com" data-i="em">Send an email</a>
     </div>
-    <div class="c-meta rv d3"><a class="ltr" href="tel:+966568918713">+966 56 891 8713</a><a class="ltr" href="mailto:eslambalygh88@icloud.com">eslambalygh88@icloud.com</a></div>
+    <div class="c-meta rv d3"><a class="ltr" href="tel:+966568918713">+966 56 891 8713</a><a class="ltr" href="mailto:eslambalygh88@icloud.com">eslambalygh88@icloud.com</a><a class="ltr" href="https://www.tiktok.com/@esl2mb__" target="_blank" rel="noopener">TikTok @esl2mb__</a></div>
   </div>
 </section>
 </main>
@@ -409,7 +448,7 @@ const T={
           ["03","Backstage & Artist Ops","Music industry",["Assistant manager for Marwan Pablo","Lighting technician with Circle Light","Assistant sound engineer with Emad Nabil's company"]]],
   skills:["Concert photography","Videography","Event planning & management","Budgeting & cost control","Team leadership","Vendor & client relations","On-ground operations","Creative concepts","Brand activation","Stage, sound & lighting","Crowd control & safety","Logistics & scheduling","Negotiation"],
   k6:"Worked with",h6:'Brands &amp; <span class="s">promoters</span>',edu:"Bachelor of Commerce",edu2:"Assiut University · Class of 2024",
-  lets:"let's work",tog:"Together",wa:"WhatsApp me",em:"Send an email",ft:"Photographer · Videographer · Event Manager",shot:"Shot by Eslam Balygh"},
+  k7:"On TikTok",h7:'Watch it <span class="s">move</span>',ttp:"Behind-the-scenes, live moments and edits — straight from the crowd and the stage.",ttf:"Follow on TikTok",ttf2:"Follow",lets:"let's work",tog:"Together",wa:"WhatsApp me",em:"Send an email",ft:"Photographer · Videographer · Event Manager",shot:"Shot by Eslam Balygh"},
  ar:{n1:"الأعمال",n2:"الإيفنتات",n3:"عني",n4:"الخبرات",n5:"تواصل",cta:"احجز إسلام",loc:"القاهرة، مصر · متاح في أي مكان",since:"من 2021",scroll:"انزل",
   roles:"<b>مصوّر</b> حفلات و<b>صانع فيديو</b> و<b>مدير إيفنتات</b>، بيوثّق أكبر ليالي المزيكا العربي.",
   k1:"مختارات من شغلي",h1:'من <span class="s">قلب الحفلة</span>',all:"الكل",
@@ -430,7 +469,7 @@ const T={
           ["03","الكواليس وإدارة الفنانين","صناعة المزيكا",["مساعد مدير أعمال مروان بابلو","فني إضاءة مع Circle Light","مساعد مهندس صوت مع شركة عماد نبيل"]]],
   skills:["تصوير الحفلات","الفيديو","تخطيط وإدارة الإيفنتات","الميزانيات والتكاليف","قيادة الفرق","العلاقات مع الموردين والعملاء","العمليات على الأرض","الأفكار الإبداعية","تفعيل البراندات","المسرح والصوت والإضاءة","تنظيم الجمهور والسلامة","اللوجستيات والجداول","التفاوض"],
   k6:"اشتغلت مع",h6:'براندات <span class="s">وشركات</span>',edu:"بكالوريوس تجارة",edu2:"جامعة أسيوط · دفعة 2024",
-  lets:"يلا نشتغل",tog:"سوا",wa:"كلّمني واتساب",em:"ابعت إيميل",ft:"مصوّر · فيديو · مدير إيفنتات",shot:"تصوير إسلام بليغ"}
+  k7:"على تيك توك",h7:'شوفها <span class="s">بتتحرك</span>',ttp:"كواليس ولحظات لايف وإيديتس، من وسط الجمهور ومن على المسرح.",ttf:"تابعني على تيك توك",ttf2:"متابعة",lets:"يلا نشتغل",tog:"سوا",wa:"كلّمني واتساب",em:"ابعت إيميل",ft:"مصوّر · فيديو · مدير إيفنتات",shot:"تصوير إسلام بليغ"}
 };
 const ARTISTS=["Cairokee","Marwan Pablo","Amr Diab","Tamer Ashour","Massar Egbari","Ramy Sabry","Marwan Moussa","Afroto","Legacy","Shehab El-Sayed","Ziad Zaza","Aresink","Anyma"];
 const PARTNERS=[["Red Bull","Soundclash"],["Tazkarti","Ticketing"],["Tickets Marche","Ticketing"],["Buzzx","Marketing agency"],["Urchin","Experiences"],["Next Level","Events"],["AUC Concerts","Concerts"],["Kord Agency","Agency"],["Edge Solutions","Egypt"],["Diesel","Brand event"],["Circle Light","Lighting"],["SNL","Events"]];
