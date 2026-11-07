@@ -1,0 +1,101 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@500;700&family=Montserrat:wght@600;800;900&display=block" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:#000}
+:root{--gold:#d9b46a;--gold2:#f6e2a8;--ink:#0b0b0c}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;background:#000;font-family:'IBM Plex Sans Arabic',sans-serif;color:#fff}
+.abs{position:absolute}
+#bg{inset:0;background:url(../../max-design-site/img/s-villa.webp) center/cover;transform-origin:50% 60%}
+#shade{inset:0;background:linear-gradient(180deg,rgba(0,0,0,.85) 0%,rgba(0,0,0,.35) 32%,rgba(0,0,0,.25) 60%,rgba(0,0,0,.9) 100%)}
+#logoTop{top:90px;right:70px;width:120px;display:flex;align-items:center;gap:14px}
+#logoTop img{width:90px}
+#bfIntro{inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;background:#000}
+#bfIntro .w{font-family:Montserrat;font-weight:900;font-size:150px;letter-spacing:6px;line-height:1;direction:ltr;
+ background:linear-gradient(180deg,var(--gold2),var(--gold) 55%,#8a6a2c);-webkit-background-clip:text;color:transparent}
+#head{top:250px;left:0;right:0;text-align:center}
+#head .l{display:block;font-weight:700;font-size:92px;line-height:1.25;text-shadow:0 6px 30px rgba(0,0,0,.6)}
+#head .l span{display:inline-block}
+#big{top:520px;left:0;right:0;text-align:center;direction:ltr}
+#big .pct{font-family:Montserrat;font-weight:900;font-size:260px;line-height:1;
+ background:linear-gradient(180deg,#fff7d6,var(--gold) 60%,#9b7631);-webkit-background-clip:text;color:transparent;
+ filter:drop-shadow(0 10px 40px rgba(217,180,106,.45))}
+#big .off{font-family:'IBM Plex Sans Arabic';font-weight:700;font-size:70px;color:#fff;margin-top:-10px;direction:rtl}
+#card{left:50%;top:880px;width:600px;height:740px;margin-left:-300px;border-radius:44px;overflow:hidden;
+ border:3px solid rgba(255,255,255,.55);box-shadow:0 30px 80px rgba(0,0,0,.6),inset 0 0 0 1px rgba(255,255,255,.2);
+ background:rgba(255,255,255,.12);backdrop-filter:blur(14px)}
+.slide{position:absolute;inset:0;background-size:cover;background-position:center}
+.slide::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 45%,rgba(0,0,0,.7))}
+.slide b{position:absolute;bottom:50px;left:0;right:0;text-align:center;font-weight:700;font-size:96px;z-index:2;text-shadow:0 4px 20px rgba(0,0,0,.7)}
+#sub{top:1650px;left:0;right:0;text-align:center;font-weight:500;font-size:46px;color:var(--gold2)}
+#end{inset:0;background:radial-gradient(circle at 50% 40%,#1c1810,#000 70%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px}
+#end img{width:330px}
+#end .n{font-family:Montserrat;font-weight:800;font-size:64px;letter-spacing:10px;color:var(--gold2);direction:ltr}
+#end .t{font-weight:700;font-size:60px}
+#end .btn{background:linear-gradient(180deg,var(--gold2),var(--gold));color:var(--ink);font-weight:700;font-size:50px;padding:22px 70px;border-radius:999px}
+#end .s{font-size:36px;color:#bbb}
+#flash{inset:0;background:#fff;pointer-events:none}
+</style></head><body>
+<div id="stage">
+ <div id="bg" class="abs"></div><div id="shade" class="abs"></div>
+ <div id="logoTop" class="abs"><img src="../../max-design-site/img/logo-hd.webp"></div>
+ <div id="head" class="abs"><span class="l" id="l1"></span><span class="l" id="l2"></span></div>
+ <div id="big" class="abs"><div class="pct" id="pct">0%</div><div class="off" id="off">خصم على كل التصاميم</div></div>
+ <div id="card" class="abs"></div>
+ <div id="sub" class="abs">العرض لفترة محدودة</div>
+ <div id="end" class="abs">
+  <img src="../../max-design-site/img/logo-hd.webp"><div class="n">MAX DESIGN</div>
+  <div class="t">بلاك فرايدي — خصم <span dir="ltr">25%</span></div><div class="btn">احجز استشارتك الآن</div><div class="s">العرض لفترة محدودة</div>
+ </div>
+ <div id="bfIntro" class="abs"><div class="w" id="w1">BLACK</div><div class="w" id="w2">FRIDAY</div></div>
+ <div id="flash" class="abs"></div>
+</div>
+<script>
+const IMG='../../max-design-site/img/';
+const SLIDES=[['s-villa','فلل'],['s-palace','قصور'],['s-apartment','شقق'],['r-39','مجالس'],['s-office','مكاتب'],['r-32','غرف نوم'],['s-retail','محلات']];
+const card=document.getElementById('card');
+SLIDES.forEach(([f,n])=>{const d=document.createElement('div');d.className='slide';d.style.backgroundImage=`url(${IMG}${f}.webp)`;d.innerHTML=`<b>${n}</b>`;card.appendChild(d)});
+const L1='البلاك فرايدي'.split(' '),L2='في ماكس ديزاين'.split(' ');
+const mk=(el,ws)=>{el.innerHTML=ws.map(w=>`<span>${w}</span>`).join(' ');return [...el.children]};
+const w1=mk(l1,L1),w2=mk(l2,L2);
+const $=id=>document.getElementById(id);
+const cl=(x,a=0,b=1)=>Math.min(b,Math.max(a,x));
+const p=(t,s,d)=>cl((t-s)/d);                       // progress 0..1
+const eo=x=>1-Math.pow(1-x,3);                      // easeOutCubic
+const eb=x=>{const c=1.70158;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)}; // easeOutBack
+const SL0=4.2,SLD=0.9;                              // slides start + per-slide duration
+window.DUR=13.0;
+window.seek=function(t){
+ // intro: BLACK / FRIDAY slam, then wipe away
+ const a1=p(t,0.15,.35),a2=p(t,0.55,.35),out=p(t,1.55,.35);
+ $('w1').style.transform=`scale(${1.6-0.6*eo(a1)})`;$('w1').style.opacity=a1>0?1:0;
+ $('w2').style.transform=`scale(${1.6-0.6*eo(a2)})`;$('w2').style.opacity=a2>0?1:0;
+ $('bfIntro').style.clipPath=`inset(0 0 ${eo(out)*100}% 0)`;
+ // background slow push
+ $('bg').style.transform=`scale(${1.18-0.12*p(t,1.5,11)})`;
+ // headline word by word
+ [...w1,...w2].forEach((w,i)=>{const q=eb(p(t,1.9+i*0.16,.35));w.style.opacity=cl(q*3);w.style.transform=`translateY(${(1-q)*60}px) scale(${0.7+0.3*q})`});
+ // 25% count-up
+ const c=p(t,2.7,.8);$('pct').textContent=Math.round(25*eo(c))+'%';
+ const pc=eb(p(t,2.7,.45));$('big').style.opacity=cl(pc*3);$('big').style.transform=`scale(${0.5+0.5*pc})`;
+ const pop=p(t,3.5,.25);$('pct').style.transform=`scale(${1+0.12*Math.sin(pop*Math.PI)})`;
+ $('off').style.opacity=p(t,3.6,.3);
+ // card in
+ const ci=eb(p(t,3.9,.5));$('card').style.opacity=cl(ci*2);$('card').style.transform=`translateY(${(1-ci)*500}px) rotate(${(1-ci)*-8}deg)`;
+ // slides: each enters from bottom-scale, like stacked cards
+ [...card.children].forEach((s,i)=>{const st=SL0+i*SLD;const q=eo(p(t,st,.32));
+   s.style.zIndex=i;s.style.opacity=i==0?1:q;
+   s.style.transform=i==0?'none':`translateY(${(1-q)*110}%) scale(${1.15-0.15*q})`;
+   s.style.backgroundPosition=`center ${50+10*p(t,st,SLD+0.5)}%`});
+ $('sub').style.opacity=p(t,4.4,.4)*(1-p(t,10.6,.3));
+ // card out + flash + end card
+ const co=p(t,10.6,.35);
+ $('card').style.transform+=` scale(${1+co*1.5})`;$('card').style.opacity=cl(ci*2)*(1-co);
+ $('flash').style.opacity=Math.sin(p(t,10.8,.35)*Math.PI)*0.9;
+ $('end').style.opacity=t>=10.97?1:0;
+ const e=[...$('end').children];e.forEach((el,i)=>{const q=eb(p(t,11.0+i*0.14,.4));el.style.opacity=cl(q*2);el.style.transform=`translateY(${(1-q)*50}px) scale(${0.85+0.15*q})`});
+ $('end').children[3].style.transform+=` scale(${1+0.04*Math.sin(Math.max(0,t-12)*8)})`;
+};
+window.seek(0);
+</script></body></html>
