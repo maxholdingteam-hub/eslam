@@ -1,0 +1,579 @@
+<!doctype html>
+<html lang="en" dir="ltr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ahmed Zahran — Marketing Manager</title>
+<meta name="description" content="Ahmed Zahran — Marketing Manager & Growth Marketing Strategist based in Riyadh. 8+ years across Healthcare, Automotive, ERP, Retail and FMCG.">
+<meta property="og:title" content="Ahmed Zahran — Marketing Manager">
+<meta property="og:description" content="Growth Marketing Strategist · Riyadh, Saudi Arabia">
+<meta name="theme-color" content="#07122b">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Manrope:wght@300;400;500;600;700;800&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Reem+Kufi:wght@500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06102a; --bg-2:#0a1838; --panel:#0e1f47; --line:rgba(214,175,92,.18); --line-soft:rgba(255,255,255,.08);
+  --ink:#eef1f8; --muted:#9aa6c4; --dim:#64708f;
+  --gold:#d6af5c; --gold-2:#f1d48e; --gold-deep:#a9822f;
+  --sans:"Manrope",system-ui,sans-serif; --serif:"Instrument Serif",Georgia,serif; --display:"Manrope",system-ui,sans-serif;
+  --r:22px; --max:1200px; --gutter:clamp(16px,4vw,40px);
+}
+html[lang="ar"]{ --sans:"IBM Plex Sans Arabic",system-ui,sans-serif; --serif:"Reem Kufi","IBM Plex Sans Arabic",serif; --display:"IBM Plex Sans Arabic",system-ui,sans-serif; }
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--bg);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.65;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit;text-decoration:none}
+::selection{background:var(--gold);color:var(--bg)}
+.wrap{max-width:var(--max);margin-inline:auto;padding-inline:var(--gutter)}
+
+/* background atmosphere */
+.atmo{position:fixed;inset:0;z-index:-1;pointer-events:none;
+  background:
+   radial-gradient(900px 600px at 85% -10%, rgba(214,175,92,.13), transparent 60%),
+   radial-gradient(800px 700px at -10% 30%, rgba(40,80,170,.28), transparent 60%),
+   linear-gradient(180deg,#06102a 0%,#071330 60%,#050d22 100%)}
+.atmo::after{content:"";position:absolute;inset:0;opacity:.35;
+  background-image:linear-gradient(var(--line-soft) 1px,transparent 1px),linear-gradient(90deg,var(--line-soft) 1px,transparent 1px);
+  background-size:72px 72px;mask-image:radial-gradient(ellipse at 50% 0%,#000 10%,transparent 70%)}
+.glow{position:fixed;width:520px;height:520px;border-radius:50%;pointer-events:none;z-index:-1;
+  background:radial-gradient(circle,rgba(214,175,92,.10),transparent 65%);transform:translate(-50%,-50%);transition:opacity .3s}
+
+/* nav */
+nav{position:fixed;top:0;inset-inline:0;z-index:50;transition:background .3s,border-color .3s;border-bottom:1px solid transparent}
+nav.scrolled{background:rgba(6,16,42,.78);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-color:var(--line-soft)}
+.nav-in{display:flex;align-items:center;justify-content:space-between;height:72px;gap:16px}
+.logo{display:flex;align-items:center;gap:10px;font-weight:800;letter-spacing:.04em}
+.logo b{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;border:1px solid var(--gold);color:var(--gold);font-family:var(--serif);font-size:20px;font-weight:400;font-style:italic}
+.links{display:flex;gap:28px;font-size:14px;color:var(--muted)}
+.links a{position:relative;transition:color .2s}
+.links a:hover{color:var(--ink)}
+.links a::after{content:"";position:absolute;inset-inline-start:0;bottom:-6px;height:1px;width:0;background:var(--gold);transition:width .3s}
+.links a:hover::after{width:100%}
+.nav-r{display:flex;gap:10px;align-items:center}
+.lang{border:1px solid var(--line);background:transparent;color:var(--gold-2);border-radius:999px;padding:8px 14px;font:600 13px var(--sans);cursor:pointer;transition:background .2s}
+.lang:hover{background:rgba(214,175,92,.1)}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:13px 22px;border-radius:999px;font-weight:700;font-size:14px;transition:transform .25s,box-shadow .25s,background .25s;cursor:pointer;border:0;font-family:var(--sans)}
+.btn-gold{background:linear-gradient(135deg,var(--gold-2),var(--gold) 55%,var(--gold-deep));color:#1a1405;box-shadow:0 10px 30px -10px rgba(214,175,92,.6)}
+.btn-gold:hover{transform:translateY(-2px);box-shadow:0 18px 40px -12px rgba(214,175,92,.75)}
+.btn-ghost{border:1px solid var(--line);color:var(--ink);background:rgba(255,255,255,.02)}
+.btn-ghost:hover{border-color:var(--gold);transform:translateY(-2px)}
+.nav-cta{padding:10px 18px}
+.burger{display:none;background:none;border:1px solid var(--line);border-radius:12px;width:42px;height:42px;color:var(--ink);cursor:pointer}
+
+/* hero */
+.hero{min-height:100svh;display:flex;align-items:center;padding-top:110px;padding-bottom:60px;position:relative}
+.hero-grid{display:grid;grid-template-columns:1.25fr .9fr;gap:clamp(30px,5vw,70px);align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:10px;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);font-weight:700}
+html[lang="ar"] .eyebrow{letter-spacing:.04em;font-size:14px}
+.eyebrow i{width:8px;height:8px;border-radius:50%;background:#3ddc84;box-shadow:0 0 0 4px rgba(61,220,132,.15);animation:pulse 2s infinite}
+@keyframes pulse{50%{box-shadow:0 0 0 9px rgba(61,220,132,0)}}
+h1{font-family:var(--display);font-weight:800;font-size:clamp(48px,9vw,118px);line-height:.92;letter-spacing:-.035em;margin:22px 0 18px}
+html[lang="ar"] h1{letter-spacing:0;line-height:1.15}
+h1 .gold{font-family:var(--serif);font-weight:400;font-style:italic;letter-spacing:-.01em;background:linear-gradient(120deg,var(--gold-2),var(--gold) 50%,var(--gold-deep));-webkit-background-clip:text;background-clip:text;color:transparent;padding-inline-end:.05em}
+html[lang="ar"] h1 .gold{font-style:normal;font-weight:700}
+.role{font-size:clamp(18px,2.2vw,24px);color:var(--ink);font-weight:500;max-width:620px}
+.role em{font-family:var(--serif);color:var(--gold-2);font-size:1.15em}
+html[lang="ar"] .role em{font-style:normal}
+.hero p.lead{color:var(--muted);max-width:560px;margin-top:16px}
+.hero-cta{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
+.meta{display:flex;gap:22px;flex-wrap:wrap;margin-top:34px;color:var(--muted);font-size:14px}
+.meta span{display:flex;align-items:center;gap:8px}
+.meta svg{color:var(--gold)}
+
+.portrait{position:relative;justify-self:center;width:min(420px,100%);aspect-ratio:1}
+.portrait .ring{position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,var(--gold-2),transparent 30%,var(--gold) 55%,transparent 80%,var(--gold-2));animation:spin 14s linear infinite;padding:2px;-webkit-mask:radial-gradient(farthest-side,transparent calc(100% - 2px),#000 calc(100% - 1px));mask:radial-gradient(farthest-side,transparent calc(100% - 2px),#000 calc(100% - 1px))}
+@keyframes spin{to{transform:rotate(360deg)}}
+.portrait .photo{position:absolute;inset:14px;border-radius:50%;overflow:hidden;box-shadow:0 40px 80px -30px rgba(0,0,0,.7),inset 0 0 0 1px rgba(255,255,255,.1)}
+.portrait .photo.mono{background:radial-gradient(circle at 30% 25%,#16295a,#0a1838 60%,#060f28);display:flex;align-items:center;justify-content:center;font-family:"Instrument Serif",Georgia,serif;font-style:italic;font-size:clamp(110px,15vw,190px);line-height:1;letter-spacing:-.06em;direction:ltr;box-shadow:0 40px 80px -30px rgba(0,0,0,.7),inset 0 0 0 1px rgba(214,175,92,.25),inset 0 0 80px rgba(214,175,92,.08)}
+.portrait .photo.mono span:first-child{color:var(--ink)}
+.portrait .photo.mono span:last-child{background:linear-gradient(140deg,var(--gold-2),var(--gold) 50%,var(--gold-deep));-webkit-background-clip:text;background-clip:text;color:transparent;margin-inline-start:-.08em;padding-inline-end:.06em}
+.chip{position:absolute;background:rgba(10,24,56,.82);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:16px;padding:12px 16px;display:flex;align-items:center;gap:12px;box-shadow:0 20px 40px -20px rgba(0,0,0,.8);animation:float 6s ease-in-out infinite}
+.chip strong{display:block;font-size:22px;line-height:1;color:var(--gold-2);font-weight:800}
+.chip small{color:var(--muted);font-size:12px;line-height:1.3;display:block}
+.chip.c1{top:8%;inset-inline-start:-8%}
+.chip.c2{bottom:10%;inset-inline-end:-6%;animation-delay:-3s}
+@keyframes float{50%{transform:translateY(-10px)}}
+.scroll-hint{position:absolute;bottom:24px;left:50%;transform:translateX(-50%);font-size:11px;letter-spacing:.3em;color:var(--dim);text-transform:uppercase;display:flex;flex-direction:column;align-items:center;gap:10px}
+.scroll-hint::after{content:"";width:1px;height:40px;background:linear-gradient(var(--gold),transparent);animation:drop 2s infinite}
+@keyframes drop{0%{transform:scaleY(0);transform-origin:top}50%{transform:scaleY(1);transform-origin:top}51%{transform-origin:bottom}100%{transform:scaleY(0);transform-origin:bottom}}
+
+/* stats */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:var(--r);background:linear-gradient(180deg,rgba(14,31,71,.6),rgba(10,24,56,.3));overflow:hidden}
+.stat{padding:30px 26px;border-inline-end:1px solid var(--line-soft)}
+.stat:last-child{border:0}
+.stat .n{font-family:var(--display);font-weight:800;font-size:clamp(40px,5vw,60px);line-height:1;letter-spacing:-.03em}
+.stat .n sup{color:var(--gold);font-size:.5em;vertical-align:top;margin-inline-start:2px}
+.stat p{color:var(--muted);font-size:14px;margin-top:10px}
+
+/* sections */
+section{padding:clamp(80px,11vw,140px) 0}
+.sec-head{display:grid;grid-template-columns:auto 1fr;gap:20px 40px;align-items:end;margin-bottom:56px}
+.sec-num{font-family:var(--serif);font-style:italic;color:var(--gold);font-size:22px}
+h2{font-family:var(--display);font-weight:800;font-size:clamp(34px,5.4vw,66px);line-height:1;letter-spacing:-.03em}
+html[lang="ar"] h2{letter-spacing:0;line-height:1.25}
+h2 em{font-family:var(--serif);font-weight:400;color:var(--gold-2)}
+html[lang="ar"] h2 em{font-style:normal;font-weight:600}
+.sec-head p{grid-column:2;color:var(--muted);max-width:560px}
+
+/* about */
+.about-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(30px,6vw,80px)}
+.about-big{font-size:clamp(22px,2.6vw,32px);line-height:1.4;font-weight:500;letter-spacing:-.01em}
+html[lang="ar"] .about-big{letter-spacing:0;line-height:1.7}
+.about-big b{color:var(--gold-2);font-weight:600}
+.about-txt p{color:var(--muted);margin-bottom:18px}
+.about-txt p b{color:var(--ink);font-weight:600}
+.sectors{display:flex;flex-wrap:wrap;gap:10px;margin-top:26px}
+.sectors span{border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:13px;color:var(--gold-2);background:rgba(214,175,92,.05)}
+
+/* services / expertise */
+.svc{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{position:relative;padding:32px 28px;border-radius:var(--r);border:1px solid var(--line-soft);background:linear-gradient(180deg,rgba(14,31,71,.7),rgba(10,24,56,.35));overflow:hidden;transition:transform .35s,border-color .35s}
+.card::before{content:"";position:absolute;inset:0;background:radial-gradient(400px circle at var(--mx,50%) var(--my,0%),rgba(214,175,92,.14),transparent 45%);opacity:0;transition:opacity .35s}
+.card:hover{transform:translateY(-6px);border-color:var(--line)}
+.card:hover::before{opacity:1}
+.card .ic{width:52px;height:52px;border-radius:14px;display:grid;place-items:center;background:rgba(214,175,92,.1);border:1px solid var(--line);color:var(--gold-2);margin-bottom:24px}
+.card h3{font-size:20px;font-weight:700;margin-bottom:10px;letter-spacing:-.01em}
+.card p{color:var(--muted);font-size:15px}
+.card .idx{position:absolute;top:24px;inset-inline-end:26px;font-family:var(--serif);font-style:italic;color:var(--dim);font-size:18px}
+
+/* experience timeline */
+.tl{position:relative}
+.job{display:grid;grid-template-columns:240px 1fr;gap:40px;padding:38px 0;border-top:1px solid var(--line-soft);position:relative}
+.job:last-child{border-bottom:1px solid var(--line-soft)}
+.job .when{color:var(--gold);font-weight:700;font-size:14px;letter-spacing:.04em}
+.job .where{color:var(--dim);font-size:13px;margin-top:6px}
+.job .badge{display:inline-block;margin-top:12px;font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:5px 10px;border-radius:999px;background:rgba(61,220,132,.1);color:#5fe39b;border:1px solid rgba(61,220,132,.25)}
+.job h3{font-size:clamp(22px,2.4vw,30px);font-weight:700;letter-spacing:-.02em;line-height:1.2}
+.job h4{font-family:var(--serif);font-style:italic;font-weight:400;font-size:22px;color:var(--gold-2);margin:4px 0 16px}
+html[lang="ar"] .job h4{font-style:normal;font-size:19px}
+.job ul{list-style:none;display:grid;gap:9px}
+.job li{color:var(--muted);padding-inline-start:22px;position:relative}
+.job li::before{content:"";position:absolute;inset-inline-start:0;top:.75em;width:10px;height:1px;background:var(--gold)}
+.clients{margin-top:20px;display:flex;flex-wrap:wrap;gap:8px}
+.clients span{font-size:13px;padding:7px 13px;border-radius:10px;background:rgba(255,255,255,.04);border:1px solid var(--line-soft)}
+
+/* marquee */
+.marquee{padding:34px 0;border-block:1px solid var(--line);overflow:hidden;background:rgba(10,24,56,.4)}
+.mq-track{display:flex;gap:56px;width:max-content;animation:mq 40s linear infinite}
+.mq-track span{font-family:var(--display);font-weight:800;font-size:clamp(26px,3.5vw,44px);white-space:nowrap;color:transparent;-webkit-text-stroke:1px rgba(238,241,248,.35);display:flex;align-items:center;gap:56px}
+.mq-track span::after{content:"✦";-webkit-text-stroke:0;color:var(--gold);font-size:.55em}
+.mq-track span:nth-child(odd){color:var(--ink);-webkit-text-stroke:0}
+@keyframes mq{to{transform:translateX(-50%)}}
+html[dir="rtl"] .mq-track{animation-name:mq-rtl}
+@keyframes mq-rtl{to{transform:translateX(50%)}}
+.marquee:hover .mq-track{animation-play-state:paused}
+
+/* achievements */
+.ach{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}
+.ach .a{padding:26px 22px;border-radius:var(--r);border:1px solid var(--line-soft);background:rgba(14,31,71,.45);display:flex;flex-direction:column;gap:16px;transition:border-color .3s,transform .3s}
+.ach .a:hover{border-color:var(--gold);transform:translateY(-4px)}
+.ach .a b{font-family:var(--serif);font-style:italic;font-weight:400;color:var(--gold);font-size:34px;line-height:1}
+.ach .a p{font-size:15px;color:var(--ink)}
+
+/* skills + tools */
+.two{display:grid;grid-template-columns:1fr 1fr;gap:clamp(30px,5vw,70px)}
+.bar{margin-bottom:22px}
+.bar .top{display:flex;justify-content:space-between;font-size:15px;margin-bottom:10px;font-weight:600}
+.bar .top span:last-child{color:var(--gold);font-variant-numeric:tabular-nums}
+.bar .track{height:6px;border-radius:99px;background:rgba(255,255,255,.07);overflow:hidden}
+.bar .fill{height:100%;width:0;border-radius:99px;background:linear-gradient(90deg,var(--gold-deep),var(--gold-2));transition:width 1.6s cubic-bezier(.2,.8,.2,1)}
+html[dir="rtl"] .bar .fill{background:linear-gradient(270deg,var(--gold-deep),var(--gold-2))}
+.tools{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.tool{display:flex;align-items:center;gap:14px;padding:16px 18px;border-radius:16px;border:1px solid var(--line-soft);background:rgba(14,31,71,.45);font-weight:600;font-size:15px;transition:border-color .3s,background .3s}
+.tool:hover{border-color:var(--gold);background:rgba(214,175,92,.06)}
+.tool i{width:40px;height:40px;border-radius:11px;display:grid;place-items:center;background:#fff;flex-shrink:0;font-style:normal}
+.sub{font-size:13px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:24px}
+html[lang="ar"] .sub{letter-spacing:0;font-size:15px}
+
+/* edu & certs */
+.edu{display:grid;grid-template-columns:1fr 1.4fr;gap:18px}
+.edu .card h3{font-size:24px}
+.certs{display:grid;grid-template-columns:1fr 1fr;gap:10px 24px;margin-top:6px}
+.certs li{list-style:none;color:var(--muted);font-size:15px;padding:12px 0;border-bottom:1px dashed var(--line-soft);display:flex;gap:10px}
+.certs li::before{content:"◆";color:var(--gold);font-size:10px;margin-top:6px}
+.certs li b{color:var(--ink);font-weight:600}
+.lang-row{margin-top:22px;display:grid;gap:14px}
+.lang-row div{display:flex;justify-content:space-between;align-items:center;font-size:15px}
+.dots{display:flex;gap:5px}
+.dots i{width:22px;height:5px;border-radius:9px;background:rgba(255,255,255,.1)}
+.dots i.on{background:var(--gold)}
+
+/* contact */
+.contact{text-align:center;position:relative}
+.contact h2{font-size:clamp(44px,8.5vw,120px);line-height:.95}
+html[lang="ar"] .contact h2{line-height:1.2}
+.contact p.lead{color:var(--muted);max-width:560px;margin:24px auto 40px}
+.c-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:56px;text-align:start}
+.c-card{display:flex;align-items:center;gap:16px;padding:22px;border-radius:var(--r);border:1px solid var(--line-soft);background:rgba(14,31,71,.5);transition:border-color .3s,transform .3s}
+.c-card:hover{border-color:var(--gold);transform:translateY(-4px)}
+.c-card .ic{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:rgba(214,175,92,.12);color:var(--gold-2);flex-shrink:0}
+.c-card small{display:block;color:var(--dim);font-size:12px;letter-spacing:.12em;text-transform:uppercase}
+html[lang="ar"] .c-card small{letter-spacing:0}
+.c-card span{font-weight:600;word-break:break-word}
+.ltr{direction:ltr;unicode-bidi:isolate;display:inline-block}
+footer{padding:36px 0;border-top:1px solid var(--line-soft);color:var(--dim);font-size:13px}
+footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(34px);transition:opacity 1s cubic-bezier(.2,.7,.2,1),transform 1s cubic-bezier(.2,.7,.2,1)}
+.rv.in{opacity:1;transform:none}
+.rv.d1{transition-delay:.1s}.rv.d2{transition-delay:.2s}.rv.d3{transition-delay:.3s}.rv.d4{transition-delay:.4s}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}}
+
+/* mobile menu */
+.mmenu{position:fixed;inset:0;z-index:60;background:rgba(6,16,42,.97);display:flex;flex-direction:column;justify-content:center;align-items:center;gap:26px;font-size:28px;font-weight:700;opacity:0;pointer-events:none;transition:opacity .3s}
+.mmenu.open{opacity:1;pointer-events:auto}
+.mmenu .x{position:absolute;top:18px;inset-inline-end:18px}
+
+@media (max-width:1000px){
+  .links,.nav-cta{display:none}
+  .burger{display:grid;place-items:center}
+  .hero-grid{grid-template-columns:1fr}
+  .portrait{order:-1;width:min(300px,78vw)}
+  .chip.c1{inset-inline-start:-14%}
+  .chip.c2{inset-inline-end:-12%}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .stat:nth-child(2){border-inline-end:0}
+  .stat:nth-child(-n+2){border-bottom:1px solid var(--line-soft)}
+  .about-grid,.two,.edu{grid-template-columns:1fr}
+  .svc{grid-template-columns:1fr 1fr}
+  .ach{grid-template-columns:1fr 1fr}
+  .job{grid-template-columns:1fr;gap:14px}
+  .c-cards{grid-template-columns:1fr}
+}
+@media (max-width:640px){
+  .svc,.ach,.certs,.tools{grid-template-columns:1fr}
+  .sec-head{grid-template-columns:1fr}
+  .sec-head p{grid-column:1}
+  .stat{padding:22px 18px}
+  .chip{padding:9px 12px}
+  .chip strong{font-size:18px}
+  .chip.c1{inset-inline-start:-6%}
+  .chip.c2{inset-inline-end:-6%}
+  .scroll-hint{display:none}
+  .hero{padding-top:96px}
+}
+</style>
+</head>
+<body>
+<div class="atmo"></div>
+<div class="glow" id="glow"></div>
+
+<nav id="nav">
+  <div class="wrap nav-in">
+    <a href="#top" class="logo"><b>AZ</b><span data-i18n="brand">Ahmed Zahran</span></a>
+    <div class="links">
+      <a href="#about" data-i18n="nav.about">About</a>
+      <a href="#expertise" data-i18n="nav.expertise">Expertise</a>
+      <a href="#experience" data-i18n="nav.experience">Experience</a>
+      <a href="#skills" data-i18n="nav.skills">Skills</a>
+      <a href="#contact" data-i18n="nav.contact">Contact</a>
+    </div>
+    <div class="nav-r">
+      <button class="lang" id="langBtn" aria-label="Switch language">العربية</button>
+      <a href="#contact" class="btn btn-gold nav-cta" data-i18n="nav.hire">Let's talk</a>
+      <button class="burger" id="burger" aria-label="Menu"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 6h14M3 14h14"/></svg></button>
+    </div>
+  </div>
+</nav>
+<div class="mmenu" id="mmenu">
+  <button class="burger x" id="mclose" aria-label="Close"><svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4l12 12M16 4L4 16"/></svg></button>
+  <a href="#about" data-i18n="nav.about">About</a>
+  <a href="#expertise" data-i18n="nav.expertise">Expertise</a>
+  <a href="#experience" data-i18n="nav.experience">Experience</a>
+  <a href="#skills" data-i18n="nav.skills">Skills</a>
+  <a href="#contact" data-i18n="nav.contact">Contact</a>
+</div>
+
+<main id="top">
+<!-- HERO -->
+<header class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <div class="eyebrow rv"><i></i><span data-i18n="hero.eyebrow">Marketing Manager · Riyadh</span></div>
+      <h1 class="rv d1"><span data-i18n="hero.first">Ahmed</span><br><span class="gold" data-i18n="hero.last">Zahran</span></h1>
+      <p class="role rv d2" data-i18n-html="hero.role">Growth Marketing Strategist who turns <em>ad spend</em> into measurable growth.</p>
+      <p class="lead rv d2" data-i18n="hero.lead">8+ years building marketing departments and running high-performance campaigns across Healthcare, Automotive, ERP, Retail and FMCG in Saudi Arabia, the UAE and Egypt.</p>
+      <div class="hero-cta rv d3">
+        <a href="#contact" class="btn btn-gold"><span data-i18n="hero.cta1">Start a conversation</span>
+          <svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="2" class="arr"><path d="M3 8h10M9 4l4 4-4 4"/></svg></a>
+        <a href="#experience" class="btn btn-ghost" data-i18n="hero.cta2">View experience</a>
+      </div>
+      <div class="meta rv d4">
+        <span><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M8 15s5-4.5 5-8.5a5 5 0 10-10 0C3 10.5 8 15 8 15z"/><circle cx="8" cy="6.5" r="1.8"/></svg><span data-i18n="hero.loc">Riyadh, Saudi Arabia</span></span>
+        <span><svg width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="3" width="12" height="11" rx="2"/><path d="M2 7h12M5 1.5v3M11 1.5v3"/></svg><span data-i18n="hero.now">Currently at Max Motors</span></span>
+      </div>
+    </div>
+    <div class="portrait rv d2">
+      <div class="ring"></div>
+      <div class="photo mono" aria-hidden="true"><span>A</span><span>Z</span></div>
+      <div class="chip c1"><div><strong>8+</strong><small data-i18n="chip1">Years in<br>marketing</small></div></div>
+      <div class="chip c2"><div><strong>4</strong><small data-i18n="chip2">Ad platforms<br>mastered</small></div></div>
+    </div>
+  </div>
+  <div class="scroll-hint" data-i18n="scroll">Scroll</div>
+</header>
+
+<!-- STATS -->
+<div class="wrap">
+  <div class="stats rv">
+    <div class="stat"><div class="n"><span data-count="8">0</span><sup>+</sup></div><p data-i18n="s1">Years of digital marketing experience</p></div>
+    <div class="stat"><div class="n"><span data-count="5">0</span><sup>+</sup></div><p data-i18n="s2">Industries: Healthcare, Automotive, ERP, Retail, FMCG</p></div>
+    <div class="stat"><div class="n"><span data-count="3">0</span></div><p data-i18n="s3">Markets: Saudi Arabia, UAE &amp; Egypt</p></div>
+    <div class="stat"><div class="n"><span data-count="7">0</span><sup>+</sup></div><p data-i18n="s4">Brands served as a freelance strategist &amp; designer</p></div>
+  </div>
+</div>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="sec-num">01</span><h2 data-i18n-html="about.h">The <em>profile</em></h2></div>
+    <div class="about-grid">
+      <p class="about-big rv" data-i18n-html="about.big">Results-driven marketer who builds <b>departments from scratch</b>, leads cross-functional teams, and aligns every campaign with <b>real business objectives</b>.</p>
+      <div class="about-txt rv d1">
+        <p data-i18n-html="about.p1">Proven expertise in developing integrated marketing strategies and managing high-performance advertising across <b>Google Ads, Meta Ads, Snapchat Ads and TikTok Ads</b>.</p>
+        <p data-i18n-html="about.p2">Drives growth through <b>data-driven decision-making</b>: customer acquisition, lead generation, branding, CRM optimization, marketing automation and conversion rate optimization.</p>
+        <p data-i18n="about.p3">Manages budgets, analyses KPIs and leads creative teams to deliver measurable results and sustainable brand growth.</p>
+        <div class="sectors" id="sectors"></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERTISE -->
+<section id="expertise" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="sec-num">02</span><h2 data-i18n-html="exp.h">Core <em>expertise</em></h2><p data-i18n="exp.p">The full growth stack, from strategy to the last pixel of the landing page.</p></div>
+    <div class="svc" id="svc"></div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee" aria-hidden="true"><div class="mq-track" id="mq"></div></div>
+
+<!-- EXPERIENCE -->
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="sec-num">03</span><h2 data-i18n-html="job.h">Professional <em>journey</em></h2><p data-i18n="job.p">From procurement and TV production to leading marketing for brands across the region.</p></div>
+    <div class="tl" id="jobs"></div>
+  </div>
+</section>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="sec-num">04</span><h2 data-i18n-html="ach.h">Key <em>achievements</em></h2></div>
+    <div class="ach" id="ach"></div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="sec-num">05</span><h2 data-i18n-html="sk.h">Skills &amp; <em>toolkit</em></h2></div>
+    <div class="two">
+      <div class="rv"><div class="sub" data-i18n="sk.s1">Skills highlights</div><div id="bars"></div></div>
+      <div class="rv d1"><div class="sub" data-i18n="sk.s2">Tools &amp; platforms</div><div class="tools" id="tools"></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- EDUCATION -->
+<section id="education" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head rv"><span class="sec-num">06</span><h2 data-i18n-html="ed.h">Education &amp; <em>training</em></h2></div>
+    <div class="edu">
+      <div class="card rv">
+        <div class="ic"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7"><path d="M2 9l10-5 10 5-10 5L2 9z"/><path d="M6 11v5c0 1.5 3 3 6 3s6-1.5 6-3v-5"/></svg></div>
+        <h3 data-i18n="ed.deg">Bachelor of Arts — Sociology</h3>
+        <p data-i18n="ed.uni">Ain Shams University · Class of 2013</p>
+        <div class="sub" style="margin:30px 0 0" data-i18n="ed.lang">Languages</div>
+        <div class="lang-row">
+          <div><span data-i18n="ed.ar">Arabic — Native</span><span class="dots"><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i><i class="on"></i></span></div>
+          <div><span data-i18n="ed.en">English — Basic</span><span class="dots"><i class="on"></i><i class="on"></i><i></i><i></i><i></i></span></div>
+        </div>
+      </div>
+      <div class="card rv d1">
+        <div class="ic"><svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="1.7"><circle cx="12" cy="9" r="6"/><path d="M8.5 14l-2 8 5.5-3 5.5 3-2-8"/></svg></div>
+        <h3 data-i18n="ed.ct">Certifications &amp; training</h3>
+        <p data-i18n="ed.cp">Digital Marketing &amp; Graphic Design courses with Ahmed Morshed, Mind Shift and Egulf Hacking.</p>
+        <ul class="certs" id="certs"></ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="wrap">
+    <div class="eyebrow rv" style="justify-content:center"><i></i><span data-i18n="ct.eb">Open to new opportunities</span></div>
+    <h2 class="rv d1" style="margin-top:20px" data-i18n-html="ct.h">Let's grow<br>your <em>brand</em>.</h2>
+    <p class="lead rv d2" data-i18n="ct.p">Looking for a marketing leader who can build the team, own the budget and deliver the numbers? Let's talk.</p>
+    <div class="rv d3" style="display:flex;gap:12px;justify-content:center;flex-wrap:wrap">
+      <a class="btn btn-gold" href="https://wa.me/966501644612" target="_blank" rel="noopener"><svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.3-.4.3-.4.7-1.3a.5.5 0 000-.5l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.8 11.9 11.9 0 004.6 4c1.7.7 2.3.8 3.2.6a2.7 2.7 0 001.8-1.2 2.2 2.2 0 00.1-1.3c0-.1-.2-.2-.5-.3z"/></svg><span data-i18n="ct.wa">Message on WhatsApp</span></a>
+      <a class="btn btn-ghost" href="mailto:ahmedzahran.mp@gmail.com" data-i18n="ct.mail">Send an email</a>
+    </div>
+    <div class="c-cards">
+      <a class="c-card rv" href="tel:+966501644612"><div class="ic"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M20 15.5v3a2 2 0 01-2.2 2A19.8 19.8 0 011.5 4.2 2 2 0 013.5 2h3a2 2 0 012 1.7c.1.9.4 1.8.7 2.7a2 2 0 01-.5 2.1L7.5 9.7a16 16 0 006.8 6.8l1.2-1.2a2 2 0 012.1-.5c.9.3 1.8.6 2.7.7a2 2 0 011.7 2z"/></svg></div><div><small data-i18n="ct.phone">Phone</small><span class="ltr">+966 50 164 4612</span></div></a>
+      <a class="c-card rv d1" href="mailto:ahmedzahran.mp@gmail.com"><div class="ic"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="4" width="18" height="15" rx="2"/><path d="M2 6l9 7 9-7"/></svg></div><div><small data-i18n="ct.email">Email</small><span class="ltr">ahmedzahran.mp@gmail.com</span></div></a>
+      <div class="c-card rv d2"><div class="ic"><svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M11 21s7-6.2 7-11.7a7 7 0 10-14 0C4 14.8 11 21 11 21z"/><circle cx="11" cy="9.3" r="2.5"/></svg></div><div><small data-i18n="ct.loc">Location</small><span data-i18n="ct.addr">Riyadh, Al-Shumaisi District</span></div></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer><div class="wrap"><span>© <span id="yr"></span> <span data-i18n="brand">Ahmed Zahran</span></span><span data-i18n="ft">Marketing Manager · Growth Marketing Strategist</span></div></footer>
+
+<script>
+const I = {
+ en:{
+  brand:"Ahmed Zahran","nav.about":"About","nav.expertise":"Expertise","nav.experience":"Experience","nav.skills":"Skills","nav.contact":"Contact","nav.hire":"Let's talk",
+  "hero.eyebrow":"Marketing Manager · Riyadh","hero.first":"Ahmed","hero.last":"Zahran",
+  "hero.role":"Growth Marketing Strategist who turns <em>ad spend</em> into measurable growth.",
+  "hero.lead":"8+ years building marketing departments and running high-performance campaigns across Healthcare, Automotive, ERP, Retail and FMCG in Saudi Arabia, the UAE and Egypt.",
+  "hero.cta1":"Start a conversation","hero.cta2":"View experience","hero.loc":"Riyadh, Saudi Arabia","hero.now":"Currently at Max Motors",
+  chip1:"Years in<br>marketing",chip2:"Ad platforms<br>mastered",scroll:"Scroll",
+  s1:"Years of digital marketing experience",s2:"Industries: Healthcare, Automotive, ERP, Retail, FMCG",s3:"Markets: Saudi Arabia, UAE & Egypt",s4:"Brands served as a freelance strategist & designer",
+  "about.h":"The <em>profile</em>",
+  "about.big":"Results-driven marketer who builds <b>departments from scratch</b>, leads cross-functional teams, and aligns every campaign with <b>real business objectives</b>.",
+  "about.p1":"Proven expertise in developing integrated marketing strategies and managing high-performance advertising across <b>Google Ads, Meta Ads, Snapchat Ads and TikTok Ads</b>.",
+  "about.p2":"Drives growth through <b>data-driven decision-making</b>: customer acquisition, lead generation, branding, CRM optimization, marketing automation and conversion rate optimization.",
+  "about.p3":"Manages budgets, analyses KPIs and leads creative teams to deliver measurable results and sustainable brand growth.",
+  sectors:["Healthcare","Automotive","ERP","Retail","FMCG","Pharma","Beauty"],
+  "exp.h":"Core <em>expertise</em>","exp.p":"The full growth stack, from strategy to the last pixel of the landing page.",
+  svc:[["Marketing Strategy","Annual plans across online & offline channels, tied to business goals and budgets."],
+       ["Performance Marketing","Google, Meta, Snapchat & TikTok campaigns built and optimized for ROI."],
+       ["Lead Generation & CRM","Funnels, call-center alignment and CRM integration that turn clicks into bookings."],
+       ["Brand Management","Brand identity, positioning, packaging and consistent creative across every channel."],
+       ["Analytics & Reporting","KPI dashboards, GA & GTM tracking and monthly insights for data-driven decisions."],
+       ["Team & Creative Leadership","Leading designers, media producers, agencies and in-house teams to deliver."]],
+  mq:["Google Ads","Meta Ads","Snapchat Ads","TikTok Ads","Lead Generation","CRO","Brand Strategy","Analytics"],
+  "job.h":"Professional <em>journey</em>","job.p":"From procurement and TV production to leading marketing for brands across the region.",
+  now:"Current",keyClients:"Key clients",
+  jobs:[
+   {t:"Marketing Manager",c:"Max Motors",d:"Oct 2025 — Present",l:"Riyadh, Saudi Arabia",now:1,b:["Develop and execute the company's annual marketing strategy across online and offline channels.","Manage multi-platform advertising campaigns (Google Ads, Meta Ads, Snapchat Ads, TikTok Ads).","Oversee marketing budget, performance and ROI to drive lead generation and sales growth.","Lead creative production (photo, video, design) and manage external agencies and the internal team.","Create marketing dashboards and KPI reports for data-driven decision making."]},
+   {t:"Marketing Manager",c:"Mila Najd Medical Complex",d:"Sep 2025 — Mar 2026",l:"Riyadh, Saudi Arabia",b:["Developed and implemented marketing strategies to increase brand awareness and patient bookings.","Managed advertising campaigns across Google, Meta and Snapchat.","Worked closely with Call Center and sales teams to improve conversion rates and patient flow.","Led content creation, designers and media production for all marketing channels.","Monitored performance, analyzed data and delivered monthly marketing reports and insights."]},
+   {t:"Freelance Digital Marketer & Graphic Designer",c:"Self-employed",d:"2019 — Present",l:"Egypt · KSA · UAE",b:["Digital marketing and branding services for companies in healthcare, pharmaceuticals, beauty and FMCG.","Develop marketing strategies, run performance campaigns and optimize for maximum ROI.","Design branding materials, packaging, landing pages and digital creatives."],clients:["International Center for Obesity & Slimming","Obesity Company","Herbal Bank","Al-Zahid Pharmaceuticals & Medical Equipment (Adol Agency — UAE)","Dr. Hesham Abdel Sattar","Nutrition Pharma","ONZ Media Advertising"]},
+   {t:"Production Supervisor",c:"Al Shams TV",d:"2013 — 2018",l:"Egypt",b:["Supervised production and graphics for two TV programs: Top Trend and The Seventh World with TV presenter Heba El-Zayyad."]},
+   {t:"Procurement Officer",c:"Zahran Market",d:"2011 — 2013",l:"Egypt",b:["Managed procurement and supply chain processes, ensuring operational efficiency.","Handled supplier relationships, purchasing and inventory management."]}
+  ],
+  "ach.h":"Key <em>achievements</em>",
+  ach:["Built and managed marketing departments from scratch for multiple companies.","Increased qualified leads and appointment bookings through data-driven campaigns.","Managed multi-channel advertising budgets and achieved high ROI.","Developed and executed successful brand strategies across multiple industries.","Improved conversion rates through funnel optimization and CRM integration."],
+  "sk.h":"Skills &amp; <em>toolkit</em>","sk.s1":"Skills highlights","sk.s2":"Tools & platforms",
+  bars:[["Strategic Marketing",95],["Performance Marketing",92],["Campaign Management",92],["Data Analysis & Reporting",85],["Branding & Design",88],["Team Leadership",90],["CRM & Automation",84],["Budget Management",88]],
+  "ed.h":"Education &amp; <em>training</em>","ed.deg":"Bachelor of Arts — Sociology","ed.uni":"Ain Shams University · Class of 2013","ed.lang":"Languages","ed.ar":"Arabic — Native","ed.en":"English — Basic",
+  "ed.ct":"Certifications & training","ed.cp":"Digital Marketing & Graphic Design courses with Ahmed Morshed, Mind Shift and Egulf Hacking.",
+  certs:[["Paid Advertising","Meta Ads, TikTok Ads, Snapchat Ads"],["Graphic Design","Digital & print media, GIFs, interactive ads"],["Brand Identity","Logo creation, packaging, visual branding"],["Marketing Optimization","Data analysis & performance tracking"],["Analytics Tools","Google Analytics (Intermediate), GTM (Beginner)"],["Web Development","Landing pages & online stores (YouCan, Easy Order)"]],
+  "ct.eb":"Open to new opportunities","ct.h":"Let's grow<br>your <em>brand</em>.","ct.p":"Looking for a marketing leader who can build the team, own the budget and deliver the numbers? Let's talk.",
+  "ct.wa":"Message on WhatsApp","ct.mail":"Send an email","ct.phone":"Phone","ct.email":"Email","ct.loc":"Location","ct.addr":"Riyadh, Al-Shumaisi District",
+  ft:"Marketing Manager · Growth Marketing Strategist"
+ },
+ ar:{
+  brand:"أحمد زهران","nav.about":"نبذة","nav.expertise":"الخبرات","nav.experience":"المسيرة","nav.skills":"المهارات","nav.contact":"تواصل","nav.hire":"لنتحدث",
+  "hero.eyebrow":"مدير تسويق · الرياض","hero.first":"أحمد","hero.last":"زهران",
+  "hero.role":"خبير تسويق نمو يحوّل <em>ميزانية الإعلانات</em> إلى نمو حقيقي قابل للقياس.",
+  "hero.lead":"أكثر من 8 سنوات في بناء أقسام التسويق وإدارة حملات إعلانية عالية الأداء في قطاعات الرعاية الصحية والسيارات وأنظمة ERP والتجزئة والسلع الاستهلاكية في السعودية والإمارات ومصر.",
+  "hero.cta1":"ابدأ المحادثة","hero.cta2":"استعرض المسيرة","hero.loc":"الرياض، المملكة العربية السعودية","hero.now":"حالياً في ماكس موتورز",
+  chip1:"سنوات خبرة<br>في التسويق",chip2:"منصات إعلانية<br>باحترافية",scroll:"مرّر",
+  s1:"سنوات من الخبرة في التسويق الرقمي",s2:"قطاعات: صحة، سيارات، ERP، تجزئة، سلع استهلاكية",s3:"أسواق: السعودية والإمارات ومصر",s4:"علامات تجارية خدمها كمستشار ومصمم مستقل",
+  "about.h":"<em>نبذة</em> عني",
+  "about.big":"مسوّق يركّز على النتائج، يبني <b>أقسام التسويق من الصفر</b>، ويقود فرقاً متعددة التخصصات، ويربط كل حملة <b>بأهداف العمل الفعلية</b>.",
+  "about.p1":"خبرة مثبتة في بناء استراتيجيات تسويق متكاملة وإدارة حملات إعلانية عالية الأداء على <b>Google Ads وMeta Ads وSnapchat Ads وTikTok Ads</b>.",
+  "about.p2":"يقود النمو عبر <b>قرارات مبنية على البيانات</b>: استقطاب العملاء، توليد العملاء المحتملين، بناء العلامة، تحسين CRM، أتمتة التسويق وتحسين معدلات التحويل.",
+  "about.p3":"يدير الميزانيات ويحلل مؤشرات الأداء ويقود الفرق الإبداعية لتحقيق نتائج ملموسة ونمو مستدام للعلامة التجارية.",
+  sectors:["الرعاية الصحية","السيارات","ERP","التجزئة","السلع الاستهلاكية","الأدوية","التجميل"],
+  "exp.h":"مجالات <em>الخبرة</em>","exp.p":"منظومة النمو الكاملة، من الاستراتيجية حتى آخر تفصيلة في صفحة الهبوط.",
+  svc:[["استراتيجية التسويق","خطط سنوية للقنوات الرقمية والتقليدية مرتبطة بأهداف العمل والميزانية."],
+       ["التسويق بالأداء","حملات Google وMeta وSnapchat وTikTok مبنية ومحسّنة لأعلى عائد."],
+       ["توليد العملاء و CRM","مسارات تحويل وتنسيق مع الكول سنتر وربط CRM لتحويل النقرات إلى حجوزات."],
+       ["إدارة العلامة التجارية","هوية بصرية وتموضع وتغليف ومحتوى متناسق على كل القنوات."],
+       ["التحليلات والتقارير","لوحات مؤشرات أداء وتتبع GA وGTM وتقارير شهرية لقرارات مبنية على البيانات."],
+       ["قيادة الفرق الإبداعية","قيادة المصممين وفرق الإنتاج والوكالات والفرق الداخلية لتسليم النتائج."]],
+  mq:["Google Ads","Meta Ads","Snapchat Ads","TikTok Ads","توليد العملاء","تحسين التحويل","استراتيجية العلامة","التحليلات"],
+  "job.h":"المسيرة <em>المهنية</em>","job.p":"من المشتريات والإنتاج التلفزيوني إلى قيادة التسويق لعلامات تجارية في المنطقة.",
+  now:"حالياً",keyClients:"أبرز العملاء",
+  jobs:[
+   {t:"مدير التسويق",c:"ماكس موتورز",d:"أكتوبر 2025 — حتى الآن",l:"الرياض، السعودية",now:1,b:["وضع وتنفيذ الخطة التسويقية السنوية للشركة عبر القنوات الرقمية والتقليدية.","إدارة الحملات الإعلانية على عدة منصات (Google وMeta وSnapchat وTikTok).","الإشراف على الميزانية التسويقية والأداء والعائد لزيادة العملاء المحتملين والمبيعات.","قيادة الإنتاج الإبداعي (تصوير، فيديو، تصميم) وإدارة الوكالات الخارجية والفريق الداخلي.","إعداد لوحات تسويقية وتقارير مؤشرات أداء لدعم القرارات المبنية على البيانات."]},
+   {t:"مدير التسويق",c:"مجمع ميلا نجد الطبي",d:"سبتمبر 2025 — مارس 2026",l:"الرياض، السعودية",b:["وضع وتنفيذ استراتيجيات تسويقية لرفع الوعي بالعلامة وزيادة حجوزات المرضى.","إدارة الحملات الإعلانية على Google وMeta وSnapchat.","العمل مع فريقي الكول سنتر والمبيعات لتحسين معدلات التحويل وتدفق المرضى.","قيادة صناعة المحتوى والمصممين والإنتاج المرئي لجميع القنوات.","متابعة الأداء وتحليل البيانات وتقديم تقارير ورؤى تسويقية شهرية."]},
+   {t:"مسوّق رقمي ومصمم جرافيك مستقل",c:"عمل حر",d:"2019 — حتى الآن",l:"مصر · السعودية · الإمارات",b:["تقديم خدمات التسويق الرقمي وبناء العلامات لشركات في الرعاية الصحية والأدوية والتجميل والسلع الاستهلاكية.","وضع الاستراتيجيات التسويقية وإدارة حملات الأداء وتحسينها لأعلى عائد.","تصميم الهويات والتغليف وصفحات الهبوط والمواد الإعلانية الرقمية."],clients:["المركز الدولي للسمنة والنحافة","Obesity Company","Herbal Bank","الزاهد للأدوية والمستلزمات الطبية (Adol Agency — الإمارات)","د. هشام عبد الستار","Nutrition Pharma","ONZ Media Advertising"]},
+   {t:"مشرف إنتاج",c:"قناة الشمس",d:"2013 — 2018",l:"مصر",b:["الإشراف على الإنتاج والجرافيكس لبرنامجين تلفزيونيين: «توب تريند» و«العالم السابع» مع الإعلامية هبة الزياد."]},
+   {t:"مسؤول مشتريات",c:"زهران ماركت",d:"2011 — 2013",l:"مصر",b:["إدارة عمليات الشراء وسلاسل الإمداد بكفاءة تشغيلية عالية.","إدارة العلاقات مع الموردين والمشتريات والمخزون."]}
+  ],
+  "ach.h":"أبرز <em>الإنجازات</em>",
+  ach:["بناء وإدارة أقسام تسويق من الصفر لعدة شركات.","زيادة العملاء المحتملين المؤهلين وحجوزات المواعيد عبر حملات مبنية على البيانات.","إدارة ميزانيات إعلانية متعددة القنوات وتحقيق عائد مرتفع.","وضع وتنفيذ استراتيجيات ناجحة للعلامات التجارية في قطاعات متعددة.","رفع معدلات التحويل عبر تحسين مسارات البيع وربط أنظمة CRM."],
+  "sk.h":"المهارات <em>والأدوات</em>","sk.s1":"أبرز المهارات","sk.s2":"الأدوات والمنصات",
+  bars:[["التسويق الاستراتيجي",95],["التسويق بالأداء",92],["إدارة الحملات",92],["تحليل البيانات والتقارير",85],["العلامة التجارية والتصميم",88],["قيادة الفرق",90],["CRM والأتمتة",84],["إدارة الميزانيات",88]],
+  "ed.h":"التعليم <em>والتدريب</em>","ed.deg":"بكالوريوس آداب — علم الاجتماع","ed.uni":"جامعة عين شمس · دفعة 2013","ed.lang":"اللغات","ed.ar":"العربية — اللغة الأم","ed.en":"الإنجليزية — أساسي",
+  "ed.ct":"الشهادات والدورات","ed.cp":"دورات في التسويق الرقمي والتصميم الجرافيكي مع أحمد مرشد وMind Shift وEgulf Hacking.",
+  certs:[["الإعلانات المدفوعة","Meta Ads وTikTok Ads وSnapchat Ads"],["التصميم الجرافيكي","الوسائط الرقمية والمطبوعة والإعلانات التفاعلية"],["الهوية البصرية","تصميم الشعارات والتغليف والهوية"],["تحسين التسويق","تحليل البيانات وتتبع الأداء"],["أدوات التحليل","Google Analytics (متوسط) وGTM (مبتدئ)"],["تطوير الويب","صفحات الهبوط والمتاجر الإلكترونية (YouCan وEasy Order)"]],
+  "ct.eb":"متاح لفرص جديدة","ct.h":"خلّينا نكبّر<br><em>علامتك</em>.","ct.p":"تبحث عن قائد تسويق يبني الفريق ويدير الميزانية ويحقق الأرقام؟ تواصل معي.",
+  "ct.wa":"راسلني على واتساب","ct.mail":"أرسل بريداً","ct.phone":"الجوال","ct.email":"البريد","ct.loc":"الموقع","ct.addr":"الرياض، حي الشميسي",
+  ft:"مدير تسويق · خبير تسويق النمو"
+ }
+};
+const ICONS=[
+ '<path d="M3 20h18M6 16V10M11 16V6M16 16v-4M20 16V8"/>',
+ '<path d="M3 17l6-6 4 4 8-8"/><path d="M14 7h7v7"/>',
+ '<circle cx="9" cy="8" r="4"/><path d="M2 21c0-4 3-6 7-6s7 2 7 6M17 11l2 2 4-4"/>',
+ '<path d="M12 2l3 6 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"/>',
+ '<rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 15v-3M12 15V8M16 15v-5"/>',
+ '<circle cx="12" cy="7" r="3"/><circle cx="5" cy="10" r="2"/><circle cx="19" cy="10" r="2"/><path d="M7 20c0-3 2-5 5-5s5 2 5 5M1 20c0-2 1.5-3.5 4-3.5M23 20c0-2-1.5-3.5-4-3.5"/>'
+];
+const TOOLS=[
+ ["Google Ads",'<svg width="22" height="22" viewBox="0 0 24 24"><path fill="#FBBC04" d="M3.2 16.4l6-10.4 3.5 2-6 10.4z"/><path fill="#4285F4" d="M14.8 6l6 10.4-3.5 2-6-10.4z"/><circle cx="5" cy="18" r="2.6" fill="#34A853"/></svg>'],
+ ["Meta Business Suite",'<svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#0866FF" stroke-width="2.4"><path d="M3 15c0-4 2-8 4.5-8S12 12 12 12s2-5 4.5-5S21 11 21 15c0 2-1 3-2.5 3-3 0-4.5-6-6.5-6s-3.5 6-6.5 6C4 18 3 17 3 15z"/></svg>'],
+ ["Snapchat Ads Manager",'<span style="background:#FFFC00;width:100%;height:100%;border-radius:11px;display:grid;place-items:center"><svg width="20" height="20" viewBox="0 0 24 24" fill="#fff" stroke="#111" stroke-width="1.3"><path d="M12 3c3 0 5 2 5 5v2l1.5-.4c.6 0 .8.7.3 1l-1.8.9c.6 2 2 3.3 3.5 3.8-.3.9-1.8 1-2.7 1.2-.2.6-.2 1.2-.8 1.2-.8 0-1.6-.4-2.6 0S13.6 20 12 20s-2.3-.9-3.4-1.3-1.8 0-2.6 0c-.6 0-.6-.6-.8-1.2-.9-.2-2.4-.3-2.7-1.2 1.5-.5 2.9-1.8 3.5-3.8l-1.8-.9c-.5-.3-.3-1 .3-1L7 10.1V8c0-3 2-5 5-5z"/></svg></span>'],
+ ["TikTok Ads Manager",'<span style="background:#000;width:100%;height:100%;border-radius:11px;display:grid;place-items:center"><svg width="20" height="20" viewBox="0 0 24 24"><path fill="#25F4EE" d="M9.5 9.6v-1A6.5 6.5 0 109 21.4a6.5 6.5 0 01.5-11.8z"/><path fill="#FE2C55" d="M17 6.2A4.5 4.5 0 0115 3h-3.3v13a2.7 2.7 0 11-1.9-2.6V9.9A6 6 0 1015 16V9.4a7.7 7.7 0 004.5 1.4V7.5a4.4 4.4 0 01-2.5-1.3z"/><path fill="#fff" d="M16.2 5.8A4.4 4.4 0 0114.5 3h-2.4v13a2.7 2.7 0 01-4.9 1.6A2.7 2.7 0 019.6 13v-2.6a6 6 0 00-3.3 10.4A6 6 0 0014.5 16V9.1a7.7 7.7 0 004.5 1.4V8.2a4.4 4.4 0 01-2.8-2.4z"/></svg></span>'],
+ ["Google Analytics",'<svg width="22" height="22" viewBox="0 0 24 24"><rect x="15" y="3" width="5" height="18" rx="2.5" fill="#F9AB00"/><rect x="9" y="9" width="5" height="12" rx="2.5" fill="#E37400"/><circle cx="5.5" cy="18.5" r="2.5" fill="#E37400"/></svg>'],
+ ["Google Tag Manager",'<svg width="22" height="22" viewBox="0 0 24 24"><path fill="#8AB4F8" d="M12 2l10 10-10 10L2 12z"/><path fill="#4285F4" d="M12 7l5 5-5 5-5-5z"/><circle cx="12" cy="18.5" r="2.2" fill="#246FDB"/></svg>'],
+ ["Canva",'<span style="background:linear-gradient(135deg,#00C4CC,#7D2AE8);width:100%;height:100%;border-radius:11px;display:grid;place-items:center;color:#fff;font:italic 700 15px Georgia,serif">C</span>'],
+ ["CRM & Automation",'<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#a9822f" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg>']
+];
+const $=s=>document.querySelector(s);
+let lang='en';
+try{lang=localStorage.getItem('az-lang')||'en'}catch(e){}
+
+function render(){
+  const t=I[lang];
+  document.documentElement.lang=lang; document.documentElement.dir=lang==='ar'?'rtl':'ltr';
+  document.title=lang==='ar'?'أحمد زهران — مدير تسويق':'Ahmed Zahran — Marketing Manager';
+  $('#langBtn').textContent=lang==='ar'?'English':'العربية';
+  document.querySelectorAll('[data-i18n]').forEach(e=>{const v=t[e.dataset.i18n]; if(v!=null){ v.includes('<br>')?e.innerHTML=v:e.textContent=v }});
+  document.querySelectorAll('[data-i18n-html]').forEach(e=>{const v=t[e.dataset.i18nHtml]; if(v!=null)e.innerHTML=v});
+  $('#sectors').innerHTML=t.sectors.map(s=>`<span>${s}</span>`).join('');
+  $('#svc').innerHTML=t.svc.map((s,i)=>`<div class="card rv ${'d'+(i%3)}"><span class="idx">0${i+1}</span><div class="ic"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">${ICONS[i]}</svg></div><h3>${s[0]}</h3><p>${s[1]}</p></div>`).join('');
+  const mq=t.mq.map(s=>`<span>${s}</span>`).join(''); $('#mq').innerHTML=mq+mq;
+  $('#jobs').innerHTML=t.jobs.map(j=>`<article class="job rv"><div><div class="when">${j.d}</div><div class="where">${j.l}</div>${j.now?`<span class="badge">${t.now}</span>`:''}</div><div><h3>${j.t}</h3><h4>${j.c}</h4><ul>${j.b.map(b=>`<li>${b}</li>`).join('')}</ul>${j.clients?`<div class="sub" style="margin:26px 0 0">${t.keyClients}</div><div class="clients">${j.clients.map(c=>`<span>${c}</span>`).join('')}</div>`:''}</div></article>`).join('');
+  $('#ach').innerHTML=t.ach.map((a,i)=>`<div class="a rv d${i%5}"><b>0${i+1}</b><p>${a}</p></div>`).join('');
+  $('#bars').innerHTML=t.bars.map(b=>`<div class="bar"><div class="top"><span>${b[0]}</span><span>${b[1]}%</span></div><div class="track"><div class="fill" data-w="${b[1]}"></div></div></div>`).join('');
+  $('#tools').innerHTML=TOOLS.map(x=>`<div class="tool"><i>${x[1]}</i>${lang==='ar'&&x[0]==='CRM & Automation'?'CRM والأتمتة':x[0]}</div>`).join('');
+  $('#certs').innerHTML=t.certs.map(c=>`<li><span><b>${c[0]}</b><br>${c[1]}</span></li>`).join('');
+  observe();
+  document.querySelectorAll('.arr').forEach(a=>a.style.transform=lang==='ar'?'scaleX(-1)':'');
+}
+
+let io;
+function observe(){
+  io&&io.disconnect();
+  io=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target;el.classList.add('in');
+    el.querySelectorAll&&el.querySelectorAll('.fill').forEach(f=>f.style.width=f.dataset.w+'%');
+    el.querySelectorAll&&el.querySelectorAll('[data-count]').forEach(count);
+    io.unobserve(el)}),{threshold:.15,rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.rv').forEach(e=>e.classList.contains('in')?(e.querySelectorAll('.fill').forEach(f=>f.style.width=f.dataset.w+'%')):io.observe(e));
+}
+function count(el){if(el.dataset.done)return;el.dataset.done=1;const n=+el.dataset.count,t0=performance.now();
+  (function f(t){const p=Math.min((t-t0)/1400,1);el.textContent=Math.round(n*(1-Math.pow(1-p,3)));p<1&&requestAnimationFrame(f)})(t0)}
+
+$('#langBtn').onclick=()=>{lang=lang==='en'?'ar':'en';try{localStorage.setItem('az-lang',lang)}catch(e){};render()};
+const nav=$('#nav');addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>30),{passive:true});
+const mm=$('#mmenu');$('#burger').onclick=()=>mm.classList.add('open');$('#mclose').onclick=()=>mm.classList.remove('open');
+mm.querySelectorAll('a').forEach(a=>a.onclick=()=>mm.classList.remove('open'));
+const g=$('#glow');addEventListener('pointermove',e=>{g.style.left=e.clientX+'px';g.style.top=e.clientY+'px';
+  const c=e.target.closest&&e.target.closest('.card');if(c){const r=c.getBoundingClientRect();c.style.setProperty('--mx',(e.clientX-r.left)+'px');c.style.setProperty('--my',(e.clientY-r.top)+'px')}},{passive:true});
+$('#yr').textContent=new Date().getFullYear();
+render();
+</script>
+</body>
+</html>
