@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>Barr end card</title>
+<style>
+  @font-face{font-family:Cairo;font-weight:900;src:url(../fonts/Cairo-Black.ttf)}
+  @font-face{font-family:Tajawal;font-weight:700;src:url(../fonts/Tajawal-Bold.ttf)}
+  @font-face{font-family:Tajawal;font-weight:500;src:url(../fonts/Tajawal-Medium.ttf)}
+  @font-face{font-family:Oswald;font-weight:600;src:url(../fonts/Oswald-SemiBold.ttf)}
+  @font-face{font-family:Michroma;src:url(../fonts/Michroma.woff2)}
+  :root{--gold:#D4AF6A;--gold2:#F3D9A0;--gold3:#A9813F}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#0B0806}
+  #root{position:relative;width:1080px;height:1920px;overflow:hidden;background:#0B0806}
+  .a{position:absolute}
+  .gold{background:linear-gradient(180deg,var(--gold2),var(--gold) 55%,var(--gold3));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .c{left:0;right:0;text-align:center}
+  .tag{font:400 22px Michroma;letter-spacing:12px;color:var(--gold2);direction:ltr}
+</style>
+</head>
+<body>
+<div id="root">
+  <!-- scene A: the two versions -->
+  <div id="A" class="a" style="inset:0;background:radial-gradient(ellipse 90% 50% at 50% 45%,#3A2814,#140D07 65%,#0B0806)">
+    <div id="aT" class="a c" style="top:200px"><div class="tag">TWO WAYS TO GO</div><div style="font:900 84px/1.2 Cairo;color:#fff;margin-top:16px">اختار <span class="gold">قوتك</span></div></div>
+    <div id="c1" class="a" style="left:0;right:0;top:470px;height:560px">
+      <div class="a" style="left:150px;top:420px;width:780px;height:60px;border-radius:50%;background:radial-gradient(ellipse,rgba(0,0,0,.8),rgba(0,0,0,0) 70%)"></div>
+      <img class="a" src="img/white.png" alt="Hilux 2027 petrol" style="left:120px;top:20px;width:840px">
+    </div>
+    <div id="l1" class="a c" style="top:1000px"><div style="font:600 80px/1 Oswald;color:#fff;direction:ltr">4.0L <span class="gold">V6</span></div><div style="font:700 40px Tajawal;color:#F1E6D2;margin-top:10px">بنزين · 235 حصان</div></div>
+    <div id="c2" class="a" style="left:0;right:0;top:1130px;height:560px">
+      <div class="a" style="left:150px;top:420px;width:780px;height:60px;border-radius:50%;background:radial-gradient(ellipse,rgba(0,0,0,.8),rgba(0,0,0,0) 70%)"></div>
+      <img class="a" src="img/ash.png" alt="Hilux 2027 diesel" style="left:120px;top:20px;width:840px">
+    </div>
+    <div id="l2" class="a c" style="top:1640px"><div style="font:600 80px/1 Oswald;color:#fff;direction:ltr">2.8L <span class="gold">DIESEL</span></div><div style="font:700 40px Tajawal;color:#F1E6D2;margin-top:10px">ديزل تيربو · عزم للأحمال</div></div>
+  </div>
+  <!-- scene B: end card -->
+  <div id="B" class="a" style="inset:0;opacity:0">
+    <div id="bImg" class="a" style="left:-420px;top:430px;width:1920px;height:873px;background:url(img/hero.png) center/cover"></div>
+    <div class="a" style="inset:0;background:linear-gradient(180deg,#0B0806 0,#0B0806 24%,rgba(11,8,6,0) 40%,rgba(11,8,6,0) 56%,#0B0806 69%)"></div>
+    <img id="bLogo" class="a" src="../fx/mm_logo.png" alt="Max Motors" style="left:390px;top:150px;width:300px">
+    <div id="bT" class="a c" style="top:1320px"><div class="tag">ALL-NEW HILUX 2027</div><div style="font:900 92px/1.2 Cairo;color:#fff;margin-top:14px">هايلكس <span class="gold">2027</span></div><div style="font:700 42px Tajawal;color:#F1E6D2">الجديدة كلياً… اطلبها الحين</div></div>
+    <div id="bC" class="a" style="left:120px;right:120px;top:1640px;border-top:2px solid rgba(212,175,106,.4);padding-top:26px;text-align:center">
+      <div style="font:600 84px/1 Oswald;letter-spacing:4px;color:#fff;direction:ltr">920018915</div>
+      <div style="font:600 34px Oswald;letter-spacing:8px;color:var(--gold);direction:ltr;margin-top:12px">maxmotors.sa</div>
+    </div>
+  </div>
+</div>
+<script>
+// versions (0-4.6s) then end card (4.6-10s); driven frame-by-frame by render.js
+window.DUR = 10;
+const $ = id => document.getElementById(id);
+const cl = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+const ease = x => 1 - Math.pow(1 - cl(x), 3);
+const io = (t, a, d) => ease((t - a) / d);
+const show = (el, k, dy = 40, dx = 0) => { el.style.opacity = k; el.style.transform = `translate(${(1 - k) * dx}px,${(1 - k) * dy}px)`; };
+window.renderAt = t => {
+  const A = cl(1 - (t - 4.3) / 0.5);
+  $('A').style.opacity = cl(t / 0.35) * A;
+  show($('aT'), io(t, 0.1, 0.6));
+  show($('c1'), io(t, 0.3, 0.8), 0, 600); $('c1').querySelector('img').style.transform = `scale(${1 + 0.04 * cl(t / 4.5)})`;
+  show($('l1'), io(t, 0.8, 0.6));
+  show($('c2'), io(t, 1.4, 0.8), 0, -600); $('c2').querySelector('img').style.transform = `scale(${1 + 0.04 * cl((t - 1.4) / 3)})`;
+  show($('l2'), io(t, 1.9, 0.6));
+  $('B').style.opacity = cl((t - 4.4) / 0.6);
+  $('bImg').style.transform = `scale(${1.0 + 0.06 * cl((t - 4.4) / 5.6)})`;
+  show($('bLogo'), io(t, 4.9, 0.7), -30);
+  show($('bT'), io(t, 5.3, 0.7));
+  show($('bC'), io(t, 5.8, 0.7));
+};
+window.ready = Promise.all([document.fonts.ready, ...[...document.images].map(i => i.decode().catch(() => {}))]).then(() => { renderAt(0); return 1; });
+</script>
+</body>
+</html>

@@ -1,0 +1,250 @@
+CAD1 ad - stock footage selection (2026-10-18)
+All clips: free commercial use, no watermark, no attribution required.
+Mixkit = 'Mixkit Stock Video Free License' (https://mixkit.co/license/#videoFree) - verified on each page; only 1080p/4K-available clips are Free licence (720p-only clips on Mixkit are now 'Restricted - personal use only' and were EXCLUDED).
+Coverr = Coverr License (https://coverr.co/license) free commercial use.
+
+extinguisher_1.mp4
+  source:  https://assets.mixkit.co/videos/2456/2456-1080.mp4
+  page:    https://mixkit.co/free-stock-video/a-fire-extinguisher-hanging-on-the-wall-2456/
+  licence: Mixkit Stock Video Free License
+  video:   1920x1080  10.3s  23.976 fps  29 MB
+  shot:    Red CO2-style fire extinguisher hanging on blue industrial wall, slight handheld push-in; extinguisher sits right of frame (crop 9:16 right-of-centre). Small manufacturer label on cylinder not legible at ad size.
+  best:    0-10s (all usable)
+
+pipes_1.mp4
+  source:  https://assets.mixkit.co/videos/4380/4380-1080.mp4
+  page:    https://mixkit.co/free-stock-video/towers-and-steam-outlets-of-an-industrial-plant-4380/
+  licence: Mixkit Stock Video Free License
+  video:   1920x1080  29.0s  24.0 fps  80 MB
+  shot:    Petrochemical/industrial plant towers, white steam against blue sky, static.
+  best:    5-20s
+
+pipes_2.mp4
+  source:  https://assets.mixkit.co/videos/4319/4319-1080.mp4
+  page:    https://mixkit.co/free-stock-video/power-plant-working-4319/
+  licence: Mixkit Stock Video Free License
+  video:   1920x1080  10.0s  30.0 fps  29 MB
+  shot:    Refinery columns and two white chimneys, blue sky, static.
+  best:    0-10s
+
+pipes_3.mp4
+  source:  https://assets.mixkit.co/videos/4360/4360-1080.mp4
+  page:    https://mixkit.co/free-stock-video/petrochemical-plant-lit-up-at-night-4360/
+  licence: Mixkit Stock Video Free License
+  video:   1920x1080  17.0s  30.0 fps  51 MB
+  shot:    Petrochemical plant lit at night, steam plumes, timelapse feel.
+  best:    3-15s
+
+fire_1.mp4
+  source:  https://assets.mixkit.co/videos/52284/52284-1080.mp4
+  page:    https://mixkit.co/free-stock-video/vertical-video-of-blazing-flames-over-a-black-backdrop-52284/
+  licence: Mixkit Stock Video Free License
+  video:   1080x1920  16.1s  24.0 fps  52 MB
+  shot:    VERTICAL 9:16. Flames growing on pure black - great hook / overlay (screen blend).
+  best:    4-14s
+
+fire_2.mp4
+  source:  https://assets.mixkit.co/videos/52288/52288-1080.mp4
+  page:    https://mixkit.co/free-stock-video/blazing-orange-flames-flow-on-a-vertical-black-screen-52288/
+  licence: Mixkit Stock Video Free License
+  video:   1080x1920  16.3s  24.0 fps  58 MB
+  shot:    VERTICAL. Dense orange flames flowing on black.
+  best:    2-14s
+
+fire_3.mp4
+  source:  https://assets.mixkit.co/videos/52290/52290-1080.mp4
+  page:    https://mixkit.co/free-stock-video/vertical-video-of-vibrant-flames-flowing-upwards-over-a-black-52290/
+  licence: Mixkit Stock Video Free License
+  video:   1080x1920  16.0s  24.0 fps  54 MB
+  shot:    VERTICAL. Vibrant flames flowing upwards on black.
+  best:    3-14s
+
+fire_4.mp4
+  source:  https://assets.mixkit.co/videos/52292/52292-1080.mp4
+  page:    https://mixkit.co/free-stock-video/vertical-video-of-flames-slowly-growing-into-a-blazing-fire-52292/
+  licence: Mixkit Stock Video Free License
+  video:   1080x1920  19.5s  24.0 fps  68 MB
+  shot:    VERTICAL. Flames slowly growing into a blazing fire on black (starts nearly black - good build-up hook).
+  best:    0-19s (build-up), 10-19s peak
+
+fire_5.mp4
+  source:  https://assets.mixkit.co/videos/52304/52304-1080.mp4
+  page:    https://mixkit.co/free-stock-video/flames-suddenly-burst-and-intertwine-over-a-black-background-52304/
+  licence: Mixkit Stock Video Free License
+  video:   1920x1080  16.0s  24.0 fps  58 MB
+  shot:    Flames suddenly burst and intertwine, black bg (16:9, slow motion).
+  best:    1-10s
+
+fire_6.mp4
+  source:  https://assets.mixkit.co/videos/52312/52312-1080.mp4
+  page:    https://mixkit.co/free-stock-video/mesmerizing-close-up-of-flames-over-a-black-background-52312/
+  licence: Mixkit Stock Video Free License
+  video:   1920x1080  18.7s  24.0 fps  68 MB
+  shot:    Mesmerizing close-up of flames, black bg, slow motion.
+  best:    2-16s
+
+fire_7.mp4
+  source:  https://assets.mixkit.co/videos/52314/52314-1080.mp4
+  page:    https://mixkit.co/free-stock-video/flames-in-slow-motion-flowing-upwards-over-a-black-background-52314/
+  licence: Mixkit Stock Video Free License
+  video:   1920x1080  16.6s  24.0 fps  55 MB
+  shot:    Flames in slow motion flowing upwards, black bg.
+  best:    2-16s
+
+fire_8.mp4
+  source:  https://assets.mixkit.co/videos/3757/3757-1080.mp4
+  page:    https://mixkit.co/free-stock-video/fire-background-with-flames-moving-to-the-centre-3757/
+  licence: Mixkit Stock Video Free License
+  video:   1920x1080  20.5s  23.976 fps  62 MB
+  shot:    Thin flame wisps moving to centre on black (lighter overlay).
+  best:    3-18s
+
+fire_9.mp4
+  source:  https://assets.mixkit.co/videos/50956/50956-1080.mp4
+  page:    https://mixkit.co/free-stock-video/soft-and-traslucent-smoke-flows-up-on-a-dark-background-50956/
+  licence: Mixkit Stock Video Free License
+  video:   1920x1080  17.4s  23.976 fps  65 MB
+  shot:    Soft translucent smoke on dark background (overlay / transition).
+  best:    2-15s
+
+fire_10.mp4
+  source:  https://assets.mixkit.co/videos/3463/3463-1080.mp4
+  page:    https://mixkit.co/free-stock-video/sparks-of-fire-on-a-black-background-3463/
+  licence: Mixkit Stock Video Free License
+  video:   1080x1920  12.8s  24.0 fps  39 MB
+  shot:    VERTICAL. Embers / sparks floating on black (overlay for text cards).
+  best:    0-12s
+
+construction_1.mp4
+  source:  https://assets.mixkit.co/videos/40723/40723-1080.mp4
+  page:    https://mixkit.co/free-stock-video/complex-industrial-construction-made-with-metal-beams-40723/
+  licence: Mixkit Stock Video Free License
+  video:   1920x1080  12.0s  23.976 fps  39 MB
+  shot:    Low-angle moving shot through steel structural frame / glass building at dusk.
+  best:    0-8s
+
+construction_2.mp4
+  source:  https://assets.mixkit.co/videos/4010/4010-1080.mp4
+  page:    https://mixkit.co/free-stock-video/buildings-under-construction-aerial-view-4010/
+  licence: Mixkit Stock Video Free License
+  video:   1920x1080  9.9s  30.0 fps  32 MB
+  shot:    Tower cranes over high-rises under construction, blue sky (London skyline, no readable text).
+  best:    0-10s
+
+construction_3.mp4
+  source:  https://assets.mixkit.co/videos/4125/4125-1080.mp4
+  page:    https://mixkit.co/free-stock-video/welder-working-at-a-construction-4125/
+  licence: Mixkit Stock Video Free License
+  video:   1920x1080  13.7s  30.0 fps  38 MB
+  shot:    Welder in harness and welding mask working on steel column at height, lift behind.
+  best:    2-13s
+
+construction_4.mp4
+  source:  https://assets.mixkit.co/videos/1436/1436-1080.mp4
+  page:    https://mixkit.co/free-stock-video/two-construction-workers-1436/
+  licence: Mixkit Stock Video Free License
+  video:   1920x1080  15.8s  24.0 fps  46 MB
+  shot:    Two workers in hard hats + hi-vis vests discussing over bricks, close.
+  best:    0-15s
+
+construction_5.mp4
+  source:  https://assets.mixkit.co/videos/1439/1439-1080.mp4
+  page:    https://mixkit.co/free-stock-video/pointing-to-blueprints-1439/
+  licence: Mixkit Stock Video Free License
+  video:   1920x1080  15.0s  24.0 fps  44 MB
+  shot:    Close-up hand pointing on architectural blueprint (good for 'design/engineering').
+  best:    0-15s
+
+construction_6.mp4
+  source:  https://assets.mixkit.co/videos/1440/1440-1080.mp4
+  page:    https://mixkit.co/free-stock-video/man-puts-on-hard-hat-1440/
+  licence: Mixkit Stock Video Free License
+  video:   1920x1080  12.2s  24.0 fps  33 MB
+  shot:    Worker puts on yellow hard hat and looks to camera (portrait; Western face).
+  best:    0-6s (hat on)
+
+construction_7.mp4
+  source:  https://assets.mixkit.co/videos/600/600-1080.mp4
+  page:    https://mixkit.co/free-stock-video/man-in-hard-hat-watching-drone-fly-600/
+  licence: Mixkit Stock Video Free License
+  video:   1920x1080  25.0s  23.976 fps  76 MB
+  shot:    Engineer in hard hat + hi-vis from behind watching drone near high-rise under construction.
+  best:    3-20s
+
+construction_8.mp4
+  source:  https://assets.mixkit.co/videos/42333/42333-1080.mp4
+  page:    https://mixkit.co/free-stock-video/construction-zone-in-a-city-in-an-aerial-shot-42333/
+  licence: Mixkit Stock Video Free License
+  video:   1920x1080  13.1s  23.976 fps  40 MB
+  shot:    Drone aerial over large construction site with tower cranes, golden light.
+  best:    0-13s
+
+construction_9.mp4
+  source:  https://assets.mixkit.co/videos/3971/3971-1080.mp4
+  page:    https://mixkit.co/free-stock-video/sunset-behind-a-building-under-construction-3971/
+  licence: Mixkit Stock Video Free License
+  video:   1920x1080  10.5s  23.976 fps  30 MB
+  shot:    Sunset behind tower crane and building frame silhouette (outro/mood).
+  best:    0-10s
+
+construction_10.mp4
+  source:  https://cdn.coverr.co/videos/coverr-welding-torch-3108/1080p.mp4
+  page:    https://coverr.co/videos/coverr-welding-torch-3108
+  licence: Coverr License (free commercial)
+  video:   1920x1012  25.0s  25.0 fps  13 MB
+  shot:    Gas torch cutting steel beam, sparks, close-up (Coverr).
+  best:    8-20s
+
+city_1.mp4
+  source:  https://assets.mixkit.co/videos/49875/49875-1080.mp4
+  page:    https://mixkit.co/free-stock-video/panoramic-aerial-shot-of-a-metropolis-at-night-49875/
+  licence: Mixkit Stock Video Free License
+  video:   1080x1920  6.6s  24.0 fps  20 MB
+  shot:    VERTICAL. Night aerial of modern glass towers with lit facades and avenues (Austin TX, no logos visible).
+  best:    0-6.5s
+
+city_2.mp4
+  source:  https://assets.mixkit.co/videos/49873/49873-1080.mp4
+  page:    https://mixkit.co/free-stock-video/aerial-view-of-city-roads-and-big-iluminated-city-buildings-49873/
+  licence: Mixkit Stock Video Free License
+  video:   1080x1920  12.5s  24.0 fps  47 MB
+  shot:    VERTICAL. Night drone flight over downtown towers.
+  best:    0-12s
+
+city_3.mp4
+  source:  https://assets.mixkit.co/videos/40654/40654-1080.mp4
+  page:    https://mixkit.co/free-stock-video/night-panorama-of-the-skyscrapers-of-a-big-city-40654/
+  licence: Mixkit Stock Video Free License
+  video:   1080x1920  15.0s  23.976 fps  54 MB
+  shot:    VERTICAL. Night skyscrapers with lit windows, slow move.
+  best:    2-15s
+
+city_4.mp4
+  source:  https://assets.mixkit.co/videos/1675/1675-1080.mp4
+  page:    https://mixkit.co/free-stock-video/top-aerial-view-of-a-factory-during-night-time-1675/
+  licence: Mixkit Stock Video Free License
+  video:   1920x1080  26.0s  23.976 fps  74 MB
+  shot:    Top-down aerial of industrial facility/factory at night, orange lights (warehouse/industrial).
+  best:    0-26s
+
+city_5.mp4
+  source:  https://assets.mixkit.co/videos/42342/42342-1080.mp4
+  page:    https://mixkit.co/free-stock-video/aerial-shot-of-a-city-at-night-42342/
+  licence: Mixkit Stock Video Free License
+  video:   1920x1080  14.6s  23.976 fps  47 MB
+  shot:    Dusk/night high aerial over downtown towers and city lights.
+  best:    0-14s
+
+control_1.mp4
+  source:  https://assets.mixkit.co/videos/50810/50810-1080.mp4
+  page:    https://mixkit.co/free-stock-video/a-young-man-is-watching-several-monitors-with-code-patterns-50810/
+  licence: Mixkit Stock Video Free License
+  video:   1080x1920  11.7s  23.976 fps  41 MB
+  shot:    VERTICAL. Person (back to camera, white hair) facing wall of green data/monitoring screens - control room feel; screens show generic code/graphs.
+  best:    0-11s
+
+GAPS (could not source with a clean commercial licence from reachable sites):
+- sprinkler: no real ceiling fire-sprinkler footage on Mixkit/Coverr free tier; Pexels/Pixabay/Videvo blocked (403); Vecteezy only watermarked previews; Commons/Archive items had unclear or share-alike licences. Suggest motion-graphics/3D sprinkler or own footage.
+- alarm: only Mixkit 'red fire alarm bell' clips exist (47675/47676) and they are RESTRICTED (personal use only) - excluded.
+- Most Mixkit Dubai skyline clips (30991, 20211, 30992, 39451, 20113, 20207) are RESTRICTED licence - excluded. City shots kept are generic modern towers (Austin TX) with no landmarks/logos.
+Deleted after review: Austin Capitol aerial (landmark, 145MB), city aerial with Google logo, Mexico daytime aerial w/ shop signs, weak daytime aerial, steel canopy (weak), CNC screen with FAGOR logo, polluting chimneys, CNC spindle (off-topic).

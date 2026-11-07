@@ -1,0 +1,54 @@
+lib/sfx/extra - sources and licences
+=====================================
+All files: 48 kHz / stereo / 16-bit WAV. Files added 2026-10-19 (falcon/raptor set) are gain-normalised to -1 dBTP
+(4x oversampled true peak); no other edits (no trim, EQ, denoise or fades). Times below are in the 48 kHz WAV.
+
+--- Raptor screech / falcon set -----------------------------------------------------------------------------------
+
+fs575525_48.wav  "red-tailed-hawk-flying-away.wav" by 1888software (Freesound sound 575525)
+  Source page : https://freesound.org/people/1888software/sounds/575525/
+  File used   : https://cdn.freesound.org/previews/575/575525_11447152-hq.mp3 (Freesound 128 kbps HQ preview; the
+                original 48 kHz WAV needs a free Freesound login)
+  Licence     : Creative Commons 0 (CC0 1.0 public-domain dedication) - commercial use incl. paid ads, no attribution
+                https://creativecommons.org/publicdomain/zero/1.0/
+  Provenance  : uploader's own field recording (Zoom H1-N, Nanaimo BC, Canada, 2021) of a wild red-tailed hawk;
+                background noise scrubbed by the uploader.
+  Content     : ONE long screech with a natural decaying tail. 1.49 s; onset 0.006 s, peak 0.125 s, tail to ~1.34 s.
+                Gain +15.97 dB (quiet source). Best "single long screech with natural decay" for the reveal/logo.
+
+fs575524_48.wav  "red-tailed-hawk.wav" by 1888software (Freesound sound 575524)
+  Source page : https://freesound.org/people/1888software/sounds/575524/
+  File used   : https://cdn.freesound.org/previews/575/575524_11447152-hq.mp3 (128 kbps HQ preview; original is 96 kHz WAV)
+  Licence     : CC0 1.0 (as above)
+  Provenance  : same bird and session as 575525 (uploader's field recording, noise scrubbed, silence between calls).
+  Content     : FOUR separate screeches separated by silence; call onsets 0.045 / 6.18 / 13.88 / 20.155 s
+                (loudest = the one at 6.18 s, peak 6.235 s). Each call ~1 s, gated tail (shorter decay than 575525).
+                Gain +7.65 dB. 24.67 s total - cut out the call you want.
+
+2702_48.wav  "Bird flying away" (Mixkit SFX 2702)
+  Source page : https://mixkit.co/free-sound-effects/bird/  (also listed under wings / flying)
+  File used   : https://assets.mixkit.co/active_storage/sfx/2702/2702.wav (original 24-bit / 44.1 kHz)
+  Licence     : Mixkit Sound Effects Free License - commercial use incl. paid advertising, no attribution
+                https://mixkit.co/license/#sfxFree
+  Content     : wing-flap take-off burst (strongest flaps 0.2-0.5 s) then fading flaps; 3.44 s, onset 0.151 s,
+                peak 0.365 s, tail ~2.82 s. Gain +4.87 dB. Layer under a screech for a falcon swoop.
+
+1277_48.wav  "Hawk call squawk" (Mixkit SFX 1277) - pre-existing in this folder (not re-processed)
+  Source      : https://assets.mixkit.co/active_storage/sfx/1277/1277.wav
+  Licence     : Mixkit Sound Effects Free License (as above).
+  Note        : Mixkit 1268 "Hawk bird squawk" is the SAME recording (identical pitch contour) - not added.
+
+Checked and NOT added:
+  - Mixkit 70 "Big wild Eagle calling" (Mixkit SFX licence): short (0.87 s), lower and more harmonic eagle call, but the
+    source WAV is clipped (167 samples at 0 dBFS around 0.5-0.6 s). Usable as a layer at reduced level:
+    https://assets.mixkit.co/active_storage/sfx/70/70.wav
+  - Freesound 548117 / 548118 "Hawk 1 / Hawk 2" by basedMedia (CC0): clean single screeches, but the uploader gives no
+    recording details. https://freesound.org/people/basedMedia/sounds/548117/
+  - Freesound 635419 "Eagle Sound Effect.mp3" (CC0 label): uploader says he got it elsewhere - provenance doubtful.
+  - NPS Yellowstone bald-eagle recordings (public domain): real bald-eagle chatter in rain/wave noise, not a screech.
+  - Mixkit 63 "Medium size bird flutter" (even hovering flaps), 2432, 24: weaker than 2702 for a swoop.
+
+Other files in this folder (1330, 1346, 1736, 1789, 2697, 2826) were added earlier, named by Mixkit SFX id
+(Mixkit Sound Effects Free License); they are not documented in this file.
+1311_48.wav  Mixkit SFX 1311 "Water splash"  https://mixkit.co/free-sound-effects/water/  Mixkit Sound Effects Free License
+1198_48.wav  Mixkit SFX 1198 "Sea water splash"  https://mixkit.co/free-sound-effects/water/  Mixkit Sound Effects Free License

@@ -1,0 +1,105 @@
+OpenTracks (formerly DOVA-SYNDROME) - Audio Source Usage License
+Text captured 2026-10-19 from https://opentracks.com/en/help/articles/license/ (Japanese original: https://opentracks.com/help/articles/license/)
+DOVA-SYNDROME was renamed OpenTracks on 2026-09-15 (dova-s.jp redirects to opentracks.com).
+
+Summary for the Hilux ad (tracks ot_13971, ot_20880, ot_9389, ot_9922, ot_12426, ot_23035):
+  - Free; commercial and corporate use allowed; NO credit / copyright notice required.
+  - "Use in TV programs and commercials" and online video are listed as allowed background-music uses
+    (so, unlike Mixkit, a TV/broadcast version of the ad is also covered).
+  - Editing (cutting, looping, fades, effects) allowed.
+  - Downloaded with the public download button on each track page - no account.
+  - Prohibited: political / religious / ideological content; using the music as the main content; redistributing or
+    selling the audio itself; registering it with Content ID / any fingerprinting system or with JASRAC etc.;
+    AI training; uses that damage the composer's reputation.
+  - Composer-specific terms take precedence where they exist: all downloaded tracks are marked "サイト準拠"
+    (site-compliant = no extra conditions). Yosame Yu (13971) asks for a credit "if possible" (optional).
+  - Japanese law governs; the site gives no warranty and answers no individual permission requests.
+
+Full English text as captured:
+-------------------------------------------------------------------------------------------------------------------
+Before Using Audio Sources (Music & Sound Effects) 1. Please be sure to read this document before using any audio 
+sources on this site (hereinafter "audio sources"). 2. By using the audio sources, the user is deemed to have agreed 
+to this audio source usage license (hereinafter "this License"). 3. The site's Terms of Use also apply to use of the 
+site and audio sources; please be sure to review the Terms of Use . Preconditions 1. No royalties or other usage fees 
+will be charged for the use of the audio sources. 2. Users are not required to display copyright notices or credits 
+when using the audio sources. *The rights to the audio sources are held by the composer/creator of each audio source, 
+who publishes them under their responsibility.* 3. In addition to this License, composers/creators may impose 
+separate usage conditions. In such cases, the composer/creator's conditions take precedence, and this License applies 
+to items not expressly specified otherwise. *However, the preconditions "1" and "2" above and the "Prohibited Uses" 
+described below shall take precedence over any composer/creator conditions.* Warranty for Audio Sources Audio sources 
+on this site are published on the condition that the composer meets the following terms under the site's composer 
+participation rules. 1. They own all rights to the audio source, including copyright, moral rights, and neighboring 
+rights. 2. They have not entered into exclusive writer contracts, copyright assignment contracts, management or 
+representation contracts, etc., with specific music publishers, record companies, production companies, or copyright 
+management organizations concerning the audio source. 3. If publishing a cover or arrangement of an existing song, 
+the original song's copyright has already expired and it is in the public domain. 4. They have not transferred rights 
+in the audio source to a third party, nor set exclusive licenses. 5. If rights to the audio source are shared with 
+third parties, they have obtained permission from all rightsholders to publish on this site. 6. There are no 
+impediments to providing, publishing, and licensing the audio source to users as material on this site under this 
+License. *Audio sources found to violate the above may be removed without prior notice at the site's discretion.* 
+Scope of the License 1. Subject to this License and any composer/creator-imposed conditions, users—whether 
+commercial/non-commercial and individual/corporate—may use the audio sources in any works in the following ways. 
+(a) Use as background music "Use as background music" in this License means using the audio source as background 
+(secondary) to some other primary content. If the audio source is used as the primary element rather than background 
+(hereinafter "Uses Outside License"), it falls outside the scope of this License except in the cases listed in (b) 
+below. See Examples of Background Music Use and Prohibited Uses for details. (b) Use in musical works "Use in musical 
+works" in this License means producing a musical work that is based on the audio source and the composition to which 
+it pertains (hereinafter "musical work") and that satisfies both ① and ② below. ① Adding musical creativity to 
+the audio source or its composition—for example, covers, arrangements, adding vocals, or sampling to create a new 
+song. ② Distributing the musical work on user-generated content free-to-view Internet services (including YouTube, 
+TikTok, etc., hereinafter "UGC services"). Distribution, sale, or public performance on media other than UGC services 
+is prohibited (this includes distribution on Apple Music, Spotify, registration with music recognition services like 
+Shazam, distribution as BGM materials, sales of tangible items such as CDs or music boxes, etc., but is not limited 
+to these). 2. Users may process (edit, apply effects, fade in/out, etc.) the audio sources. 3. Even after an audio 
+source is removed from this site, users who downloaded the audio source from this site may continue to use it under 
+this License. Examples of Background Music Use Use in TV programs and commercials Use in stage productions (plays, 
+readings, etc.) Use in submissions to video contests Use for school assignments Use in online video/content 
+distribution such as YouTube, TikTok, Twitch, IRIAM, podcasts, and other online videos/content *However, broadcasts 
+where the audio source is the main content, such as "music-for-workout BGM" or web radio primarily introducing music, 
+are considered Uses Outside License.* Use in live broadcasts, radio, and other live content *However, broadcasts 
+where the audio source is the main content, such as "music-for-workout BGM" or web radio primarily introducing music, 
+are considered Uses Outside License.* Use in stores, weddings, and other events *Please download the audio source 
+once and use it via external media (burn to CD, use on PC/mobile devices, MP3 players, etc.).* Use in paid or free 
+apps (iPhone, Android, etc.) and web services *This License targets primary users who use the audio sources to create 
+works as described in "Scope of the License"; it does not apply to tool apps or platforms. For embedding into tool 
+apps/platforms and licensing to their users (secondary users), please consult site management in advance.* Use in 
+paid or free products/works (games, DVDs, etc.) Use in presentation videos/materials created with software such as 
+Microsoft PowerPoint Examples of Processing Users may perform the following processing on audio sources. File format 
+conversion (e.g., mp3 → wav/ogg, etc.) Applying effects to audio sources (distortion, pitch shift, etc.) *However, 
+processing that significantly diverges from the original audio source or is judged to severely damage its evaluation 
+is prohibited.* Editing such as cutting the intro, extracting needed parts and creating loops, etc. Prohibited Uses 
+The following uses and methods of using audio sources are prohibited. 1. Use of audio sources in works or content 
+that violate laws (Japanese law) or public order and morals. 2. Use of audio sources in political, religious, or 
+other ideological works or content. 3. Using audio sources in musical works in a manner that does not meet the 
+license scope defined in Use in musical works . (Example of failing to meet ①) Using the audio source or its 
+composition without adding musical creativity—distributing mix-adjusted versions, loop versions, collections of 
+music-for-work, etc. (Example of failing to meet ②) Distribution, sale, or public performance on media other than 
+UGC services (including distribution on Apple Music or Spotify, registration with music recognition services like 
+Shazam, distribution as BGM materials, sales of tangible items like CDs or music boxes, etc., but not limited to 
+these.) 4. Beyond the provisions above, using all or part of the audio source and its composition in musical works in 
+a manner that exceeds the license scope defined for "Use in musical works." 5. Publishing videos or other content 
+where the audio source is the main content (without added value), such as "music-for-work BGM," "healing music," or 
+web radio primarily introducing music. 6. Using audio sources in products, works, apps, or other creations whose 
+primary purpose is to let end users listen to the audio source or whose main function is only to play the audio 
+source. 7. Distributing or selling the audio sources—whether or not composer/creator credit is displayed or 
+misattributed, and whether commercial or non-commercial. *This applies to any method that allows end users to use the 
+audio source alone, regardless of format, including open/closed internet publication or distribution on media such as 
+CDs.* 8. Using audio sources in a state where end users can easily access and duplicate the audio files as audio 
+files without conversion. 9. Public performance of the audio sources such as live performances (including publishing 
+recordings or videos of performances using the audio sources). 10. Creating and publishing/selling sheet music of the 
+audio sources. However, this does not apply if the site management agrees otherwise. 11. Using audio sources to train 
+AI. 12. Using audio sources in ways that are judged to damage or potentially damage the composer/creator's honor or 
+reputation. 13. Registering the audio sources, the compositions to which they pertain, musical works, or other 
+creations (whether within or outside this License's scope) with copyright management organizations such as JASRAC. 
+14. Registering the audio sources, the compositions to which they pertain, musical works, or other creations (whether 
+within or outside this License's scope) in fingerprinting systems on UGC services or other platforms (on YouTube this 
+is called Content ID, but not limited to that). If audio source use is judged to violate this License or 
+composer/creator conditions, a copyright holder (or agent) may file a copyright infringement claim. If a "copyright 
+infringement claim" is filed for use on YouTube, please refer to Using on YouTube . Other 1. We cannot respond to 
+individual permission requests, judgments, or inquiries regarding the intended use of audio sources. Refer to this 
+License and make your own judgment at your own risk. 2. If a "copyright infringement claim" is made for use on 
+YouTube, please refer to Using on YouTube . 3. For details on permitted users and permitted uses of audio assets, see 
+Who may use the tracks and for what purposes . Disclaimer 1. Except in cases of willful misconduct or gross 
+negligence, the site and composers/creators shall not be liable for any troubles arising from the use of the site's 
+content (music, sound effects, pages, etc.). 2. The site's content (music, sound effects, pages, etc.) may be changed 
+or deleted without notice. The site may also be closed at its convenience.

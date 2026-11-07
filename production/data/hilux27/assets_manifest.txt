@@ -1,0 +1,396 @@
+HILUX 2027 (KSA) - OFFICIAL IMAGE ASSETS (downloaded 2026-10-19 from toyota.com.sa / Abdul Latif Jameel Sitecore CDN edge.sitecorecloud.io)
+Native size = the original media file served WITHOUT resize query parameters (the CDN fakes upscales if you ask ?w=bigger; not used).
+Files are byte-identical to the site originals (sha1 verified, no re-encode). Desktop + mobile renditions both downloaded; mobile ones are in */mobile/.
+Page: https://www.toyota.com.sa/en/vehicles/hilux-2027 (+ /ar/). The requested slug /en/vehicles/commercial/hiluxdc-2027 301-redirects to /en/vehicles/hiluxdc-2027 = 404;
+the live page is /en/vehicles/hilux-2027 (media folder is still named "hiluxdc-2027"). EN and AR pages use the SAME image files (except the share image, see old_gen_DONOTUSE).
+Copyright: Abdul Latif Jameel Motors / Toyota - all rights reserved per toyota.com.sa terms; get ALJ permission before using in paid ads.
+Counts: pro/ 64 files (incl. mobile/ and old_gen_DONOTUSE/), gallery/ 14, colors/ 14. Total 92.
+
+====================================================================================================
+PRO
+====================================================================================================
+pro/ksa_hero_desktop_white_front34_desert_dusk_1870x850.webp
+    native: 1870x850 WEBP alpha-channel(opaque)  (152750 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/hero/desktop-hero-image-1870x850.webp
+    note: PAGE HERO (EN+AR identical). White Hilux 2027 double cab, front 3/4 (car's left side), parked on gravel, desert hills, dusk sky; LED headlamps lit. Black over-fenders, 18in black/diamond-cut alloys, black side step, black "HILUX" fender badge, HILUX front plate. No grade badge visible; look = DC-Premium 4.0L (over-fender moulding is listed only for Premium). WEBP has an alpha channel but is effectively opaque (min alpha 241). Largest official image of the car on the page. No text baked in. [used in: OV hero]
+pro/ksa_homeKV_AR_desktop_grey_front34_riyadh_LEGEND_HILUX_AllNew2027_1870x850.webp
+    native: 1870x850 WEBP  (177490 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/home-page/hero-slider/hillux/hilux_kv_01_website-banners_dt_1870x850-ar.webp
+    note: Arabic version of the home-page key visual: same photo; BAKED-IN TEXT "الأسطورة" + "HILUX" + "2027 الجديدة كلياً"; ALJ Arabic logo "عبد اللطيف جميل للسيارات" + 80-years logo. [used in: home AR]
+pro/ksa_homeKV_EN_desktop_grey_front34_riyadh_LEGEND_HILUX_AllNew2027_1870x850.webp
+    native: 1870x850 WEBP  (172546 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/home-page/hero-slider/hillux/hilux_kv_01_website-banners_dt_1870x850-en.webp
+    note: HOME-PAGE hero slider (slide "hillux27", CTA "Discover more" -> /en/vehicles/hilux-2027). Grey Hilux 2027 DC driving (wheel/road motion blur) in Riyadh (Kingdom Centre tower, KAFD towers). BAKED-IN TEXT: "LEGEND HILUX" + "The All-New 2027"; Abdul Latif Jameel MOTORS logo + "80 years and beyond" logo bottom-right. Black over-fenders, silver skid plate, HILUX plate, HILUX door badge, dark honeycomb grille. Grade not identifiable. [used in: home EN]
+pro/ksa_feat_ext_01_tough_agile_design_white_full_front_studio_856x481.webp
+    native: 856x481 WEBP  (74010 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/feature-tabs/exterior/tough-agile-design.webp
+    note: Card "Tough & Agile Design" / "تصميم قوي و انسيابي". White DC dead-front, grey studio; mirror turn-signals and DRLs lit. New-generation 2027 face: TOYOTA letters on a black band, honeycomb grille panel, slim LED headlamps, black over-fenders, silver skid plate, HILUX plate. Round fog lamps in black corner pods. [used in: OV feat Exterior 1]
+pro/ksa_feat_ext_02_headlamp_led_drl_closeup_white_856x481.webp
+    native: 856x481 WEBP  (101678 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/feature-tabs/exterior/headlamp.webp
+    note: Card "Headlamp" / "الأنوار الأمامية". Close-up of the slim LED headlamp (projector + L-shaped LED light-guide DRL) joining the black TOYOTA band; white body, honeycomb grille edge. [used in: OV feat Exterior 2]
+pro/ksa_feat_ext_03_performance_white_rear34_studio_PREMIUM_badge_856x481.webp
+    native: 856x481 WEBP  (97510 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/feature-tabs/exterior/performance.webp
+    note: Card "Performance" / "الأداء". White DC rear 3/4 (car's right side), grey studio. Embossed "TOYOTA" tailgate, black tailgate handle with camera, black "PREMIUM" emblem lower-left of tailgate, HILUX rear-bumper plate, vertical C-shaped LED tail lamps, black over-fenders, mud flaps, 18in black/machined alloys. White DC in the grey studio set; the same car shows a black "PREMIUM" tailgate emblem in the rear shots (= DC-Premium 4.0L, the only grade listed with "Model Black Emblem Premium"). [used in: OV feat Exterior 3]
+pro/ksa_feat_ext_04_18in_alloy_wheel_diamondcut_gloss_black_856x481.webp
+    native: 856x481 WEBP  (140106 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/feature-tabs/exterior/18_-alloy-wheel.webp
+    note: Card "18” Alloy Wheel" ("Diamond Cut sections over Gloss Black Paint"; AR: "جنوط ألمنيوم مقاس 18 بوصة ... للفئات العليا"). Close-up front wheel, black over-fender, fog lamp, side step; white body. 18in wheels only on SGLX 2.7, Premium 4.0, SGLX DSL. [used in: OV feat Exterior 4]
+pro/ksa_feat_ext_05_deck_side_step_rear_bumper_corner_856x481.webp
+    native: 856x481 WEBP  (133948 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/feature-tabs/exterior/deck-side-step-856x481.webp
+    note: Card "Deck Side Step" / "عتبة جانبية للصندوق". Close-up of the black textured rear-bumper corner step, light grey/silver body, mud flap embossed "HILUX", parking sensor. [used in: OV feat Exterior 5]
+pro/ksa_feat_ext_06_led_signature_tail_lamp_white_856x481.webp
+    native: 856x481 WEBP  (159924 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/feature-tabs/exterior/led-signature-tail-lamp.webp
+    note: Card "LED Signature Tail Lamp" / "الأنوار الخلفية LED". Close-up of the vertical C-shaped red LED tail lamp, white body. LED rear lamps only on SGLX 2.7, Premium, GLX DSL, SGLX DSL (GL grades = halogen). [used in: OV feat Exterior 6]
+pro/ksa_feat_int_01_wide_dashboard_LHD_red_seats_856x481.webp
+    native: 856x481 WEBP  (102992 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/feature-tabs/interior/tough-agile-interior.webp
+    note: Card "TOUGH and AGILE Design" / "تصميم قوي للمقصورة". Full dashboard from rear seat, left-hand drive, 12.3in centre screen + 12.3in digital meter, automatic shifter, red/burgundy front seats (seat colour not stated in KSA specs). [used in: OV feat Interior 1]
+pro/ksa_feat_int_02_steering_wheel_meter_screen_856x481.webp
+    native: 856x481 WEBP  (112534 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/feature-tabs/interior/steering-wheel.webp
+    note: Card "Steering Wheel" / "عجلة القيادة". Leather wheel with TOYOTA hub, digital meter and 12.3in screen behind, start button, drive-mode console. [used in: OV feat Interior 2]
+pro/ksa_feat_int_03_steering_wheel_controls_closeup_856x481.webp
+    native: 856x481 WEBP  (157422 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/feature-tabs/interior/steering-controls.webp
+    note: Card "Steering Wheel Controls" / "أزرار التحكم على عجلة القيادة". Close-up of left spoke buttons (back, phone, OK pad, volume, voice). [used in: OV feat Interior 3]
+pro/ksa_feat_int_04_epb_autohold_switches_856x481.webp
+    native: 856x481 WEBP  (156414 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/feature-tabs/interior/electric-parking-brake-epb.webp
+    note: Card "Electric Parking Brake (EPB) with (Auto Hold)". Close-up of shifter boot, P-R-N-D gate print, EPB and HOLD switches, cup holders. EPB only on SGLX 2.7, Premium, SGLX DSL. [used in: OV feat Interior 4]
+pro/ksa_feat_int_05_12-3in_center_display_radio_screen_856x481.webp
+    native: 856x481 WEBP  (117008 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/feature-tabs/interior/123-inch-center-display.webp
+    note: Card "12.3-inch Center Display". Screen shows radio (AM/FM1/FM2/DAB), date "Wed, 12-08-2026", 14:02. 12.3in only on SGLX 2.7, Premium, SGLX DSL (others 8in). [used in: OV feat Interior 5]
+pro/ksa_feat_int_06_12-3in_digital_meter_856x481.webp
+    native: 856x481 WEBP  (150776 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/feature-tabs/interior/123-inch-digital-meter.webp
+    note: Card "12.3-inch Digital Meter". Digital cluster: tacho, 0 km/h, "P", 4WD graphic, 39°C. 12.3in MID only on SGLX 2.7, Premium, SGLX DSL (GLX DSL 7in, GL grades analog). [used in: OV feat Interior 6]
+pro/ksa_feat_int_07_wireless_charger_tray_dark_856x481.webp
+    native: 856x481 WEBP  (118934 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/feature-tabs/interior/wireless-charger.webp
+    note: Card "Wireless Charger". Dark close-up of the tray ahead of the shifter (warning stickers on tray), EPB/HOLD switches. Wireless charger on SGLX 2.7, Premium, GLX DSL, SGLX DSL. [used in: OV feat Interior 7]
+pro/ksa_feat_int_08_4wd_dial_2H_4H_4L_MTS_mode_select_856x481.webp
+    native: 856x481 WEBP  (116710 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/feature-tabs/interior/4wd-system.webp
+    note: Card "4WD System". Console: 2H/4H/4L transfer switch, MTS + DRIVE MODE "MODE SELECT" knob, A-OFF (stop/start off) and VSC-OFF buttons, 2x USB-C. NOTE: MTS and auto stop/start are listed only for diesel grades (MTS: GLX DSL + SGLX DSL), so this console is not the Premium 4.0L spec. [used in: OV feat Interior 8]
+pro/ksa_feat_int_09_auto_ac_panel_seat_ventilation_856x481.webp
+    native: 856x481 WEBP  (97518 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/feature-tabs/interior/air-conditioner.webp
+    note: Card "Air Conditioner". Auto climate panel (AUTO, SYNC, LO/LO) with front-seat VENTILATION buttons (blue LEDs) and hazard switch; seat ventilation is Premium-only in KSA specs. [used in: OV feat Interior 9]
+pro/ksa_feat_int_10_rear_ac_vents_2x_usbc_red_seats_856x481.webp
+    native: 856x481 WEBP  (156054 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/feature-tabs/interior/rear-ac-vents.webp
+    note: Card "Rear Ac Vents". Rear console with two AC vents and two USB-C ports between red/burgundy front seats. Rear vents only on SGLX 2.7, Premium, SGLX DSL. [used in: OV feat Interior 10]
+pro/ksa_feat_perf_01_drive_mode_select_knob_MTS_856x481.webp
+    native: 856x481 WEBP  (118136 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/feature-tabs/performance/drive-mode-select.webp
+    note: Card "Drive Mode Select" (text: "Normal/ECO/SPORT"). Same console as the 4WD card: MODE SELECT knob, MTS / DRIVE MODE labels, 2H/4H/4L, A-OFF, VSC-OFF. [used in: OV feat Performance 1]
+pro/ksa_feat_perf_02_multi_terrain_grey_rear34_desert_dunes_856x481.webp
+    native: 856x481 WEBP  (138372 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/feature-tabs/performance/multi-terrain-select.webp
+    note: Card "Multi-Terrain Select". Grey DC driving up sand dunes past a sandstone cliff, rear 3/4 (car's right side), dust spray. Embossed TOYOTA tailgate, HILUX plate, black over-fenders, C-shaped LED tail lamps; grade badge not legible. MTS is listed only for GLX DSL + SGLX DSL. [used in: OV feat Performance 2]
+pro/ksa_feat_perf_03_engine_inline4_turbo_black_bg_856x481.webp
+    native: 856x481 WEBP  (111532 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/feature-tabs/performance/engine-line-up.webp
+    note: Card "Engine Line-Up" (text names 1GD-FTV 2.8 turbo diesel, 1GR-FE and 2TR-FE petrol). Studio engine on black: an in-line 4-cylinder with turbocharger and engine-driven fan, Toyota logo on cover (consistent with the 2.8 turbo diesel named first; it is NOT a V6). Only engine picture on the site. [used in: OV feat Performance 3]
+pro/ksa_feat_perf_04_rear_diff_lock_button_mode_select_856x481.webp
+    native: 856x481 WEBP  (146614 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/feature-tabs/performance/differential-lock.webp
+    note: Card "Differential lock". Close-up buttons: A-OFF, VSC-OFF, rear diff-lock icon, downhill (DAC) icon, MODE SELECT knob. DAC is listed only for GLX DSL + SGLX DSL. [used in: OV feat Performance 4]
+pro/ksa_feat_safety_01_pvm_card_rear_camera_view_on_screen_856x481.webp
+    native: 856x481 WEBP  (127360 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/feature-tabs/safety/panoramic-rear-view-camera-856x481.webp
+    note: Card "Panoramic view monitor". 12.3in screen showing a REAR-CAMERA view with guide lines in a car park (not a bird's-eye composite, despite the caption). PVM (4 cameras) only on DC-Premium 4.0L. [used in: OV feat Safety 1]
+pro/ksa_feat_safety_02_rear_bumper_sensors_HILUX_plate_856x481.webp
+    native: 856x481 WEBP  (146690 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/feature-tabs/safety/front-or-rear-sensor.webp
+    note: Card "Front / Rear Sensors". White tailgate bottom + black rear bumper with HILUX plate and two rear parking sensors; tailgate camera. Front sensors only on SGLX 2.7, Premium, SGLX DSL. [used in: OV feat Safety 2]
+pro/ksa_feat_safety_03_vsc_diagram_856x481.webp
+    native: 856x481 WEBP  (26036 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc/feature-list/safety/desktop-view/hilux-safety-03_desktop-view_856x481.webp
+    note: Card "VSC Vehicle Stability Control". Line DIAGRAM (with VSC / without VSC), not a photo. File re-used from the OLD "hiluxdc" media folder. [used in: OV feat Safety 3]
+pro/ksa_thumb_white_front34_cutout_513x289.webp
+    native: 513x289 WEBP TRANSPARENT  (44304 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/thumbanail/thumbnail-image-513x289.webp
+    note: Transparent cutout, white DC front 3/4 (car's left side) with soft shadow; black over-fenders, 18in black alloys. Used as grade-card thumbnail, menu thumbnail and EN OpenGraph/share image. [used in: OV/nav thumbnail + EN OG]
+pro/ksa_homecard_platinum_white_front34_cutout_306x122.webp
+    native: 306x122 WEBP TRANSPARENT  (16260 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/thumbanail/platinum-white-pearl-mica-306x122-copy.webp
+    note: Transparent cutout, white DC front 3/4 (file name says Platinum White Pearl Mica). Home/menu "explore vehicles" card. [used in: nav cardImage]
+pro/ksa_menu_white_side_profile_cutout_418x167.webp
+    native: 418x167 WEBP TRANSPARENT  (23270 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/thumbanail/desktop-menu-image-418x167.webp
+    note: Transparent cutout, white DC full left side profile, black over-fenders, 18in black alloys, HILUX fender badge. Vehicle menu image. [used in: nav menuImage]
+pro/ksa_logo_hilux_wordmark_italic.svg
+    native: vector SVG (109.714x18 viewBox) SVG  (2372 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxsc/hilux.svg
+    note: Model logo used on the Hilux 2027 page (route field Logo): bold italic "HILUX" wordmark, black vector. Stored in the "hiluxsc" folder (shared with the Single Cab page); same lettering style as the HILUX plates on the 2027 car. [used in: OV Logo]
+pro/mobile/ksa_hero_mobile_white_front34_desert_dusk_375x666.webp
+    native: 375x666 WEBP  (85400 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/hero/mobile-hero-375x666.webp
+    note: Mobile page hero: same white car and desert-dusk scene as the desktop hero, vertical framing, car in lower third. No text. [used in: OV hero mobile]
+pro/mobile/ksa_homeKV_AR_mobile_grey_front34_riyadh_LEGEND_HILUX_375x666.webp
+    native: 375x666 WEBP  (106424 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/home-page/hero-slider/hillux/hilux_kv_01_website-banners_mob_375x666_ar.webp
+    note: Mobile home-page key visual (AR): same photo, text "الأسطورة HILUX / 2027 الجديدة كلياً", ALJ Arabic logo + 80-years logo. [used in: home AR mobile]
+pro/mobile/ksa_homeKV_EN_mobile_grey_front34_riyadh_LEGEND_HILUX_375x666.webp
+    native: 375x666 WEBP  (106704 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/home-page/hero-slider/hillux/hilux_kv_01_website-banners_mob_375x666_en.webp
+    note: Mobile home-page key visual (EN): grey DC in Riyadh, text "LEGEND HILUX / The All-New 2027" top, ALJ Motors + 80-years logos bottom. [used in: home EN mobile]
+pro/mobile/ksa_feat_ext_01_tough_agile_design_white_full_front_studio_mobile_343x457.webp
+    native: 343x457 WEBP  (41626 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/feature-tabs/exterior/mobile/tough-agile-design.webp
+    note: Mobile (portrait crop) rendition of: Card "Tough & Agile Design" / "تصميم قوي و انسيابي".
+pro/mobile/ksa_feat_ext_02_headlamp_led_drl_closeup_white_mobile_343x457.webp
+    native: 343x457 WEBP  (42106 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/feature-tabs/exterior/mobile/headlamp.webp
+    note: Mobile (portrait crop) rendition of: Card "Headlamp" / "الأنوار الأمامية".
+pro/mobile/ksa_feat_ext_03_performance_white_rear34_studio_PREMIUM_badge_mobile_343x457.webp
+    native: 343x457 WEBP  (32678 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/feature-tabs/exterior/mobile/performance.webp
+    note: Mobile (portrait crop) rendition of: Card "Performance" / "الأداء".
+pro/mobile/ksa_feat_ext_04_18in_alloy_wheel_diamondcut_gloss_black_mobile_343x457.webp
+    native: 343x457 WEBP  (57262 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/feature-tabs/exterior/mobile/18_-alloy-wheel.webp
+    note: Mobile (portrait crop) rendition of: Card "18” Alloy Wheel" ("Diamond Cut sections over Gloss Black Paint"; AR: "جنوط ألمنيوم مقاس 18 بوصة .
+pro/mobile/ksa_feat_ext_05_deck_side_step_rear_bumper_corner_mobile_343x457.webp
+    native: 343x457 WEBP  (53878 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/feature-tabs/exterior/mobile/deck-side-step-343x457.webp
+    note: Mobile (portrait crop) rendition of: Card "Deck Side Step" / "عتبة جانبية للصندوق".
+pro/mobile/ksa_feat_ext_06_led_signature_tail_lamp_white_mobile_343x457.webp
+    native: 343x457 WEBP  (59330 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/feature-tabs/exterior/mobile/led-signature-tail-lamp.webp
+    note: Mobile (portrait crop) rendition of: Card "LED Signature Tail Lamp" / "الأنوار الخلفية LED".
+pro/mobile/ksa_feat_int_01_wide_dashboard_LHD_red_seats_mobile_343x457.webp
+    native: 343x457 WEBP  (43290 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/feature-tabs/interior/mobile/tough-agile-interior.webp
+    note: Mobile (portrait crop) rendition of: Card "TOUGH and AGILE Design" / "تصميم قوي للمقصورة".
+pro/mobile/ksa_feat_int_02_steering_wheel_meter_screen_mobile_343x457.webp
+    native: 343x457 WEBP  (44048 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/feature-tabs/interior/mobile/steering-wheel.webp
+    note: Mobile (portrait crop) rendition of: Card "Steering Wheel" / "عجلة القيادة".
+pro/mobile/ksa_feat_int_03_steering_wheel_controls_closeup_mobile_343x457.webp
+    native: 343x457 WEBP  (49884 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/feature-tabs/interior/mobile/steering-controls.webp
+    note: Mobile (portrait crop) rendition of: Card "Steering Wheel Controls" / "أزرار التحكم على عجلة القيادة".
+pro/mobile/ksa_feat_int_04_epb_autohold_switches_mobile_343x457.webp
+    native: 343x457 WEBP  (55572 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/feature-tabs/interior/mobile/electric-parking-brake-epb.webp
+    note: Mobile (portrait crop) rendition of: Card "Electric Parking Brake (EPB) with (Auto Hold)".
+pro/mobile/ksa_feat_int_05_12-3in_center_display_radio_screen_mobile_343x457.webp
+    native: 343x457 WEBP  (37180 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/feature-tabs/interior/mobile/123-inch-center-display.webp
+    note: Mobile (portrait crop) rendition of: Card "12.
+pro/mobile/ksa_feat_int_06_12-3in_digital_meter_mobile_343x457.webp
+    native: 343x457 WEBP  (52272 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/feature-tabs/interior/mobile/123-inch-digital-meter.webp
+    note: Mobile (portrait crop) rendition of: Card "12.
+pro/mobile/ksa_feat_int_07_wireless_charger_tray_dark_mobile_343x457.webp
+    native: 343x457 WEBP  (44720 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/feature-tabs/interior/mobile/wireless-charger.webp
+    note: Mobile (portrait crop) rendition of: Card "Wireless Charger".
+pro/mobile/ksa_feat_int_08_4wd_dial_2H_4H_4L_MTS_mode_select_mobile_343x457.webp
+    native: 343x457 WEBP  (40626 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/feature-tabs/interior/mobile/4wd-system.webp
+    note: Mobile (portrait crop) rendition of: Card "4WD System".
+pro/mobile/ksa_feat_int_09_auto_ac_panel_seat_ventilation_mobile_343x457.webp
+    native: 343x457 WEBP  (43710 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/feature-tabs/interior/mobile/air-conditioner.webp
+    note: Mobile (portrait crop) rendition of: Card "Air Conditioner".
+pro/mobile/ksa_feat_int_10_rear_ac_vents_2x_usbc_red_seats_mobile_343x457.webp
+    native: 343x457 WEBP  (49058 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/feature-tabs/interior/mobile/rear-ac-vents.webp
+    note: Mobile (portrait crop) rendition of: Card "Rear Ac Vents".
+pro/mobile/ksa_feat_perf_01_drive_mode_select_knob_MTS_mobile_343x457.webp
+    native: 343x457 WEBP  (51204 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/feature-tabs/performance/mobile/drive-mode-select.webp
+    note: Mobile (portrait crop) rendition of: Card "Drive Mode Select" (text: "Normal/ECO/SPORT").
+pro/mobile/ksa_feat_perf_02_multi_terrain_grey_rear34_desert_dunes_mobile_343x457.webp
+    native: 343x457 WEBP  (55854 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/feature-tabs/performance/mobile/multi-terrain-select.webp
+    note: Mobile (portrait crop) rendition of: Card "Multi-Terrain Select".
+pro/mobile/ksa_feat_perf_03_engine_inline4_turbo_black_bg_mobile_343x457.webp
+    native: 343x457 WEBP  (48708 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/feature-tabs/performance/mobile/engine-line-up.webp
+    note: Mobile (portrait crop) rendition of: Card "Engine Line-Up" (text names 1GD-FTV 2.
+pro/mobile/ksa_feat_perf_04_rear_diff_lock_button_mode_select_mobile_343x457.webp
+    native: 343x457 WEBP  (65610 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/feature-tabs/performance/mobile/differential-lock.webp
+    note: Mobile (portrait crop) rendition of: Card "Differential lock".
+pro/mobile/ksa_feat_safety_01_pvm_card_rear_camera_view_on_screen_mobile_343x457.webp
+    native: 343x457 WEBP  (42614 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/feature-tabs/safety/mobile/panoramic-rear-view-camera-343x457.webp
+    note: Mobile (portrait crop) rendition of: Card "Panoramic view monitor".
+pro/mobile/ksa_feat_safety_02_rear_bumper_sensors_HILUX_plate_mobile_343x457.webp
+    native: 343x457 WEBP  (45248 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/feature-tabs/safety/mobile/front-or-rear-sensor.webp
+    note: Mobile (portrait crop) rendition of: Card "Front / Rear Sensors".
+pro/mobile/ksa_feat_safety_03_vsc_diagram_mobile_343x457.webp
+    native: 343x457 WEBP  (20118 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc/feature-list/safety/mobile-view/hilux-safety-03_mobile-view_343x457.webp
+    note: Mobile rendition of the VSC diagram (old hiluxdc folder).
+pro/mobile/ksa_menu_white_side_profile_cutout_274x110.webp
+    native: 274x110 WEBP TRANSPARENT  (14330 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/thumbanail/mobile-menu-image-274x110.webp
+    note: Mobile vehicle-menu image: same white side-profile cutout. [used in: nav menuImageMobile]
+====================================================================================================
+GALLERY
+====================================================================================================
+gallery/ksa_gallery_01_white_full_side_left_studio_638x357.webp
+    native: 638x357 WEBP  (43296 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/gallery/desktop/gallery-638x357-full-side.webp
+    note: White DC full side profile (car's left side), grey studio; black over-fenders, 18in black/machined alloys, HILUX fender badge, black side step. White DC in the grey studio set; the same car shows a black "PREMIUM" tailgate emblem in the rear shots (= DC-Premium 4.0L, the only grade listed with "Model Black Emblem Premium"). [Gallery tab "Exterior", desktop]
+gallery/ksa_gallery_02_white_front34_studio_638x357.webp
+    native: 638x357 WEBP  (52176 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/gallery/desktop/gallery-638x357-front-3q.webp
+    note: White DC front 3/4 (car's left side), grey studio; New-generation 2027 face: TOYOTA letters on a black band, honeycomb grille panel, slim LED headlamps, black over-fenders, silver skid plate, HILUX plate. White DC in the grey studio set; the same car shows a black "PREMIUM" tailgate emblem in the rear shots (= DC-Premium 4.0L, the only grade listed with "Model Black Emblem Premium"). [Gallery tab "Exterior", desktop]
+gallery/ksa_gallery_03_white_rear34_studio_PREMIUM_badge_638x357.webp
+    native: 638x357 WEBP  (51044 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/gallery/desktop/gallery-638x357-rear-view.webp
+    note: White DC rear 3/4 (car's right side), grey studio; embossed TOYOTA tailgate, black "PREMIUM" emblem, HILUX bumper plate, C-shaped LED tail lamps, exhaust visible. [Gallery tab "Exterior", desktop]
+gallery/ksa_gallery_04_white_full_rear_PREMIUM_badge_638x357.webp
+    native: 638x357 WEBP  (36748 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/gallery/desktop/gallery-638x357-full-rear.webp
+    note: White DC dead-rear, grey studio; embossed TOYOTA tailgate, "PREMIUM" emblem lower-left, HILUX plate, red seat backs visible through rear glass. [Gallery tab "Exterior", desktop]
+gallery/ksa_gallery_05_white_full_front_studio_638x357.webp
+    native: 638x357 WEBP  (39562 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/gallery/desktop/gallery-638x357-full-front.webp
+    note: White DC dead-front, grey studio; mirror indicators lit. New-generation 2027 face: TOYOTA letters on a black band, honeycomb grille panel, slim LED headlamps, black over-fenders, silver skid plate, HILUX plate. [Gallery tab "Exterior", desktop]
+gallery/ksa_gallery_06_white_tail_lamp_detail_638x357.webp
+    native: 638x357 WEBP  (56006 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/gallery/desktop/gallery638x357taillampdetail.webp
+    note: Close-up of the C-shaped LED tail lamp and tailgate corner, white body. [Gallery tab "Exterior", desktop]
+gallery/ksa_gallery_07_dashboard_LHD_red_seats_638x357.webp
+    native: 638x357 WEBP  (62370 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/gallery/desktop/gallery-638x357-dashboard.webp
+    note: Wide dashboard view, left-hand drive, 12.3in screen + digital meter, red/burgundy seats (same photo family as interior card 01). [Gallery tab "Exterior", desktop]
+gallery/mobile/ksa_gallery_01_white_full_side_left_studio_mobile_343x193.webp
+    native: 343x193 WEBP  (19324 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/gallery/mobile/gallery-343x193-full-side.webp
+    note: Mobile rendition of gallery 01.
+gallery/mobile/ksa_gallery_02_white_front34_studio_mobile_343x193.webp
+    native: 343x193 WEBP  (22326 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/gallery/mobile/gallery-343x193-front-3q.webp
+    note: Mobile rendition of gallery 02.
+gallery/mobile/ksa_gallery_03_white_rear34_studio_PREMIUM_badge_mobile_343x193.webp
+    native: 343x193 WEBP  (21036 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/gallery/mobile/gallery-343x193-rear-view.webp
+    note: Mobile rendition of gallery 03.
+gallery/mobile/ksa_gallery_04_white_full_rear_PREMIUM_badge_mobile_343x193.webp
+    native: 343x193 WEBP  (16532 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/gallery/mobile/gallery-343x193-full-rear.webp
+    note: Mobile rendition of gallery 04.
+gallery/mobile/ksa_gallery_05_white_full_front_studio_mobile_343x193.webp
+    native: 343x193 WEBP  (17702 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/gallery/mobile/gallery-343x193-full-front.webp
+    note: Mobile rendition of gallery 05.
+gallery/mobile/ksa_gallery_06_white_tail_lamp_detail_mobile_343x193.webp
+    native: 343x193 WEBP  (23598 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/gallery/mobile/gallery343x193taillampdetail.webp
+    note: Mobile rendition of gallery 06.
+gallery/mobile/ksa_gallery_07_dashboard_LHD_red_seats_mobile_343x193.webp
+    native: 343x193 WEBP  (27970 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/2027/gallery/mobile/gallery-343x193-dashboard.webp
+    note: Mobile rendition of gallery 07.
+====================================================================================================
+COLORS
+====================================================================================================
+colors/ksa_color_01_attitude_black_mc_0A0A0A_dcPremium40_front34_cutout_731x411.webp
+    native: 731x411 WEBP TRANSPARENT  (88562 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/color/731x411/attitude-black-732x411.webp
+    note: Colour "Attitude Black MC" / "أسود لامع", swatch #0A0A0A. Transparent cutout with baked-in soft floor shadow, front 3/4 (car's left side), black body, black honeycomb grille. Shown under DC-Premium 4.0L (the only grade with colour data). Look: black over-fenders, 18in black alloys, silver skid plate, HILUX plate, TOYOTA band. File name says 732x411 but native is 731x411.
+colors/ksa_color_02_ash_4D4D4D_dcPremium40_front34_cutout_731x411.webp
+    native: 731x411 WEBP TRANSPARENT  (96070 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/color/731x411/ash-732x411.webp
+    note: Colour "ASH" / "رمادي", swatch #4D4D4D. Transparent cutout with baked-in soft floor shadow, front 3/4 (car's left side), medium-grey metallic body, darker grey grille. Shown under DC-Premium 4.0L (the only grade with colour data). Look: black over-fenders, 18in black alloys, silver skid plate, HILUX plate, TOYOTA band. File name says 732x411 but native is 731x411.
+colors/ksa_color_03_platinum_white_pearl_mc_e6e8e3_dcPremium40_front34_cutout_731x411.webp
+    native: 731x411 WEBP TRANSPARENT  (89174 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/color/731x411/platinum-white-pearl-mica732x411.webp
+    note: Colour "Platinum White Pearl MC" / "أبيض لؤلؤي", swatch #e6e8e3. Transparent cutout with baked-in soft floor shadow, front 3/4 (car's left side), pearl white body, light silver grille. Shown under DC-Premium 4.0L (the only grade with colour data). Look: black over-fenders, 18in black alloys, silver skid plate, HILUX plate, TOYOTA band. File name says 732x411 but native is 731x411.
+colors/ksa_color_04_emotional_red_CF1F1F_dcPremium40_front34_cutout_731x411.webp
+    native: 731x411 WEBP TRANSPARENT  (107844 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/color/731x411/emotional-red-732x411.webp
+    note: Colour "EMOTIONAL RED" / "أحمر عاطفي", swatch #CF1F1F. Transparent cutout with baked-in soft floor shadow, front 3/4 (car's left side), red body, body-colour red honeycomb grille. Shown under DC-Premium 4.0L (the only grade with colour data). Look: black over-fenders, 18in black alloys, silver skid plate, HILUX plate, TOYOTA band. File name says 732x411 but native is 731x411.
+colors/ksa_color_05_silver_metallic_BFBEC2_dcPremium40_front34_cutout_731x411.webp
+    native: 731x411 WEBP TRANSPARENT  (93926 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/color/731x411/silver-metallic-732x411.webp
+    note: Colour "Silver Me" / "فضي", swatch #BFBEC2. Transparent cutout with baked-in soft floor shadow, front 3/4 (car's left side), silver body, silver grille. Shown under DC-Premium 4.0L (the only grade with colour data). Look: black over-fenders, 18in black alloys, silver skid plate, HILUX plate, TOYOTA band. File name says 732x411 but native is 731x411.
+colors/ksa_color_06_sulfur_metallic_C68623_dcPremium40_front34_cutout_731x411.webp
+    native: 731x411 WEBP TRANSPARENT  (107082 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/color/731x411/sulfur-metallic-732x411.webp
+    note: Colour "SULFUR ME" / "أصفر شمسي", swatch #C68623. Transparent cutout with baked-in soft floor shadow, front 3/4 (car's left side), mustard/ochre yellow body, body-colour yellow grille. Shown under DC-Premium 4.0L (the only grade with colour data). Look: black over-fenders, 18in black alloys, silver skid plate, HILUX plate, TOYOTA band. File name says 732x411 but native is 731x411.
+colors/ksa_color_07_super_white_ii_F3F3F5_dcPremium40_front34_cutout_731x411.webp
+    native: 731x411 WEBP TRANSPARENT  (86764 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/color/731x411/superl-white-732x411.webp
+    note: Colour "Super White Ii" / "أبيض", swatch #F3F3F5. Transparent cutout with baked-in soft floor shadow, front 3/4 (car's left side), solid white body, white grille. Shown under DC-Premium 4.0L (the only grade with colour data). Look: black over-fenders, 18in black alloys, silver skid plate, HILUX plate, TOYOTA band. File name says 732x411 but native is 731x411.
+colors/mobile/ksa_color_01_attitude_black_mc_0A0A0A_mobile_329x185.webp
+    native: 329x185 WEBP TRANSPARENT  (27456 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/color/329x185/attitude-black-329x185.webp
+    note: Mobile rendition: Colour "Attitude Black MC" / "أسود لامع", swatch #0A0A0A. Transparent cutout with baked-in soft floor shadow, front 3/4 (car's left side), black body, black honeycomb grille. Shown under DC-Premium 4.0L (the only grade with colour data). Look: black over-fenders, 18in black alloys, silver skid plate, HILUX plate, TOYOTA band. 
+colors/mobile/ksa_color_02_ash_4D4D4D_mobile_329x185.webp
+    native: 329x185 WEBP TRANSPARENT  (28836 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/color/329x185/ash-329x185.webp
+    note: Mobile rendition: Colour "ASH" / "رمادي", swatch #4D4D4D. Transparent cutout with baked-in soft floor shadow, front 3/4 (car's left side), medium-grey metallic body, darker grey grille. Shown under DC-Premium 4.0L (the only grade with colour data). Look: black over-fenders, 18in black alloys, silver skid plate, HILUX plate, TOYOTA band. 
+colors/mobile/ksa_color_03_platinum_white_pearl_mc_e6e8e3_mobile_329x185.webp
+    native: 329x185 WEBP TRANSPARENT  (27858 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/color/329x185/platinum-white-pearl-mica329x185.webp
+    note: Mobile rendition: Colour "Platinum White Pearl MC" / "أبيض لؤلؤي", swatch #e6e8e3. Transparent cutout with baked-in soft floor shadow, front 3/4 (car's left side), pearl white body, light silver grille. Shown under DC-Premium 4.0L (the only grade with colour data). Look: black over-fenders, 18in black alloys, silver skid plate, HILUX plate, TOYOTA band. 
+colors/mobile/ksa_color_04_emotional_red_CF1F1F_mobile_329x185.webp
+    native: 329x185 WEBP TRANSPARENT  (32816 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/color/329x185/emotional-rd-329x185.webp
+    note: Mobile rendition: Colour "EMOTIONAL RED" / "أحمر عاطفي", swatch #CF1F1F. Transparent cutout with baked-in soft floor shadow, front 3/4 (car's left side), red body, body-colour red honeycomb grille. Shown under DC-Premium 4.0L (the only grade with colour data). Look: black over-fenders, 18in black alloys, silver skid plate, HILUX plate, TOYOTA band. 
+colors/mobile/ksa_color_05_silver_metallic_BFBEC2_mobile_329x185.webp
+    native: 329x185 WEBP TRANSPARENT  (28378 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/color/329x185/silver-metallic-329x185.webp
+    note: Mobile rendition: Colour "Silver Me" / "فضي", swatch #BFBEC2. Transparent cutout with baked-in soft floor shadow, front 3/4 (car's left side), silver body, silver grille. Shown under DC-Premium 4.0L (the only grade with colour data). Look: black over-fenders, 18in black alloys, silver skid plate, HILUX plate, TOYOTA band. 
+colors/mobile/ksa_color_06_sulfur_metallic_C68623_mobile_329x185.webp
+    native: 329x185 WEBP TRANSPARENT  (32510 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/color/329x185/sulfur-metallic-329x185.webp
+    note: Mobile rendition: Colour "SULFUR ME" / "أصفر شمسي", swatch #C68623. Transparent cutout with baked-in soft floor shadow, front 3/4 (car's left side), mustard/ochre yellow body, body-colour yellow grille. Shown under DC-Premium 4.0L (the only grade with colour data). Look: black over-fenders, 18in black alloys, silver skid plate, HILUX plate, TOYOTA band. 
+colors/mobile/ksa_color_07_super_white_ii_F3F3F5_mobile_329x185.webp
+    native: 329x185 WEBP TRANSPARENT  (27548 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc-2027/color/329x185/superl-white-329x185.webp
+    note: Mobile rendition: Colour "Super White Ii" / "أبيض", swatch #F3F3F5. Transparent cutout with baked-in soft floor shadow, front 3/4 (car's left side), solid white body, white grille. Shown under DC-Premium 4.0L (the only grade with colour data). Look: black over-fenders, 18in black alloys, silver skid plate, HILUX plate, TOYOTA band. 
+====================================================================================================
+PRO/OLD_GEN_DONOTUSE
+====================================================================================================
+pro/old_gen_DONOTUSE/OLDGEN_AR_share_image_white_DC_side_stripes_520x220.png
+    native: 520x220 PNG TRANSPARENT  (23019 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc/dc-vehicle-thumbnail-520x220.png
+    note: DO NOT USE - OLD-GENERATION Hilux DC (big trapezoid grille with central Toyota emblem, red side-stripe decal). It is the OpenGraph/share image of the ARABIC Hilux 2027 page (EN uses the new 513x289 thumbnail). [used in: OV-AR OpenGraphImage]
+pro/old_gen_DONOTUSE/OLDGEN_fullspecs_page_share_image_white_DC_stripes_520x220.jpg
+    native: 520x220 JPEG  (14636 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc/520x220.png
+    note: DO NOT USE - OLD-GENERATION Hilux DC with side stripes, share image of the stale /hilux-2027/full-specs page. Served with a .png name but the data is JPEG (saved as .jpg, bytes unchanged). [used in: FS OpenGraphImage]
+pro/old_gen_DONOTUSE/OLDGEN_hilux_double_cab_2026_page_hero_1870x850.webp
+    native: 1870x850 WEBP alpha-channel(opaque)  (145132 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxdc/hero-banner/hilux-double-cab-2026.webp
+    note: DO NOT USE - hero of the still-live OLD page "Hilux Double Cab 2026" (/en/vehicles/commercial/1419/hiluxdc, not in the menu): previous-generation front (trapezoid grille, central emblem), red side stripes. Kept only as a reject reference.
+pro/old_gen_DONOTUSE/OTHERMODEL_hilux_DC_GR_oldgen_thumb_513x289.png
+    native: 513x289 PNG TRANSPARENT  (136239 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/thumbnail/hilux-dc-gr-513x289.png
+    note: DO NOT USE - old-generation Hilux DC GR-Sport style cutout (black grille with big TOYOTA letters, GR badges); it is the menu thumbnail of the "Hilux Single Cab 2026" entry. [used in: nav other model]
+pro/old_gen_DONOTUSE/OTHERMODEL_hilux_single_cab_2026_oldgen_card_306x122.webp
+    native: 306x122 WEBP TRANSPARENT  (16932 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxsc/hilux-306x122.webp
+    note: DO NOT USE - menu card of the separate model "Hilux Single Cab 2026" (old generation, chrome grille, stripes). Appears only in the site menu. [used in: nav other model]
+pro/old_gen_DONOTUSE/OTHERMODEL_hilux_single_cab_2026_oldgen_menu_side_418x167.webp
+    native: 418x167 WEBP TRANSPARENT  (20998 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxsc/grades/hilux-single-cab-418x167.webp
+    note: DO NOT USE - menu side image of "Hilux Single Cab 2026" (old generation, steel wheels, stripes). [used in: nav other model]
+pro/old_gen_DONOTUSE/OTHERMODEL_hilux_single_cab_2026_oldgen_menu_side_mobile_274x110.webp
+    native: 274x110 WEBP TRANSPARENT  (11474 bytes)
+    source: https://edge.sitecorecloud.io/abdullatifj9343-aljmotorsb309-aljprod6e5f-d335/media/project/alj/alj-motors/toyota/toyota-ksa/vehicles/commercial/hiluxsc/grades/hilux-single-cab-274x110.webp
+    note: DO NOT USE - mobile menu side image of "Hilux Single Cab 2026" (old generation). [used in: nav other model]
+
+SUMMARY OF WHAT EXISTS / DOES NOT EXIST
+ - Largest official images: hero 1870x850 (white car) and home-page key visual 1870x850 (grey car, text baked in). Feature photos 856x481, colour cutouts 731x411, gallery only 638x357.
+ - Colour cutouts exist ONLY for "DC- Premium 4.0L - 4X4 AT" (7 colours). No cutouts/colours for any other grade (GL, SGLX, GLX, SC).
+ - Every new-generation photo shows a high-grade car (black over-fenders, 18in black/machined alloys, LED tail lamps). The studio/gallery car carries a "PREMIUM" emblem.
+   NO image shows a GL grade (17in steel wheels, halogen rear lamps), the GLX DSL (17in alloy) or a Single Cab of the new generation.
+ - No video on the page (VideoLink/VideoLinkMobile empty; no YouTube/Vimeo ID embedded; only the generic YouTube iframe API script and the ALJ channel link https://www.youtube.com/user/ToyotaALJ in the footer).
+ - No brochure: "Download Brochure" link points to "/en" (AR "/ar"); every grade Brochure field is empty.

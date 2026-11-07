@@ -1,0 +1,408 @@
+{
+ "_src": "Toyota Crown 2026 KSA: official Toyota Canada media B-roll (2023 Crown shoot; editorial licence, ALJ/Toyota written consent needed for paid ads), Riyadh clips supplied by the client from Pexels (14619960, 12709488, 17031007), Pexels 8319108 bukhoor, music Mixkit 846.",
+ "dur": 58.6,
+ "acc": "#D4AF6A",
+ "bars": 0,
+ "wm": 0.42,
+ "wmOff": 54.14,
+ "fadeIn": 0.6,
+ "shots": [
+  {
+   "kind": "vid",
+   "src": "lib/stock/src/s_user/px12709488_1080x1920.mp4",
+   "ss": 2.0,
+   "t0": 0.0,
+   "t1": 3.8,
+   "cx0": 0.5,
+   "z0": 1.0,
+   "z1": 1.06,
+   "lut": "cine"
+  },
+  {
+   "kind": "vid",
+   "src": "lib/stock/src/s_user/px14619960_2160x3840.mp4",
+   "ss": 1.0,
+   "t0": 3.8,
+   "t1": 7.18,
+   "cx0": 0.5,
+   "z0": 1.08,
+   "z1": 1.0,
+   "lut": "cine"
+  },
+  {
+   "kind": "vid",
+   "src": "lib/stock/src/s_user/px17031007_1080x1920.mp4",
+   "ss": 15.0,
+   "t0": 7.18,
+   "t1": 8.96,
+   "cx0": 0.5,
+   "z0": 1.12,
+   "z1": 1.2,
+   "lut": "cine_night"
+  },
+  {
+   "kind": "vid",
+   "src": "dl/crx/ltd_light.mp4",
+   "ss": 4.0,
+   "t0": 8.96,
+   "t1": 10.0,
+   "cx0": 0.55,
+   "cy": 0.3,
+   "z0": 1.15,
+   "z1": 1.15,
+   "lut": "cine_night",
+   "tin": "dip"
+  },
+  {
+   "kind": "vid",
+   "src": "dl/crx/st_light.mp4",
+   "ss": 6.0,
+   "t0": 10.0,
+   "t1": 12.83,
+   "cx0": 0.55,
+   "cy": 0.2,
+   "z0": 1.15,
+   "z1": 1.22,
+   "lut": "cine_night"
+  },
+  {
+   "kind": "vid",
+   "src": "dl/crx/bz_a.mp4",
+   "ss": 36.0,
+   "t0": 12.83,
+   "t1": 15.12,
+   "cx0": 0.4,
+   "cx1": 0.44,
+   "z0": 1.0,
+   "z1": 1.06,
+   "lut": "cine",
+   "tin": "flash"
+  },
+  {
+   "kind": "vid",
+   "src": "dl/crx/gy_b.mp4",
+   "ss": 2.0,
+   "t0": 15.12,
+   "t1": 17.41,
+   "cx0": 0.5,
+   "lut": "cine"
+  },
+  {
+   "kind": "vid",
+   "src": "dl/crx/bz_b.mp4",
+   "ss": 53.0,
+   "t0": 17.41,
+   "t1": 18.55,
+   "cx0": 0.45,
+   "lut": "cine"
+  },
+  {
+   "kind": "vid",
+   "src": "dl/crx/st_grille.mp4",
+   "ss": 3.0,
+   "t0": 18.55,
+   "t1": 19.54,
+   "cx0": 0.5,
+   "cy": 0.2,
+   "z0": 1.15,
+   "z1": 1.22,
+   "lut": "cine_night"
+  },
+  {
+   "kind": "vid",
+   "src": "dl/crx/wp_a.mp4",
+   "ss": 14.0,
+   "t0": 19.54,
+   "t1": 21.84,
+   "cx0": 0.5,
+   "lut": "cine"
+  },
+  {
+   "kind": "vid",
+   "src": "dl/crx/gy_a.mp4",
+   "ss": 2.0,
+   "t0": 21.84,
+   "t1": 24.12,
+   "cx0": 0.5,
+   "lut": "cine"
+  },
+  {
+   "kind": "vid",
+   "src": "dl/crx/wp_b.mp4",
+   "ss": 2.0,
+   "t0": 24.12,
+   "t1": 26.42,
+   "cx0": 0.5,
+   "lut": "cine"
+  },
+  {
+   "kind": "vid",
+   "src": "dl/crx/bz_b.mp4",
+   "ss": 30.0,
+   "t0": 26.42,
+   "t1": 28.66,
+   "cx0": 0.5,
+   "lut": "cine"
+  },
+  {
+   "kind": "vid",
+   "src": "dl/crx/gy_c.mp4",
+   "ss": 4.0,
+   "t0": 28.66,
+   "t1": 30.96,
+   "cx0": 0.5,
+   "lut": "cine"
+  },
+  {
+   "kind": "vid",
+   "src": "dl/crx/st_rear.mp4",
+   "ss": 2.0,
+   "t0": 30.96,
+   "t1": 33.26,
+   "cx0": 0.5,
+   "cy": 0.25,
+   "z0": 1.15,
+   "z1": 1.22,
+   "lut": "cine_night"
+  },
+  {
+   "kind": "vid",
+   "src": "dl/crx/xe_gold.mp4",
+   "ss": 29.0,
+   "t0": 33.26,
+   "t1": 35.54,
+   "cx0": 0.5,
+   "lut": "cine",
+   "tin": "flash"
+  },
+  {
+   "kind": "vid",
+   "src": "dl/crx/xe_gold.mp4",
+   "ss": 9.0,
+   "t0": 35.54,
+   "t1": 37.78,
+   "cx0": 0.5,
+   "lut": "cine"
+  },
+  {
+   "kind": "vid",
+   "src": "dl/crx/ltd_gold.mp4",
+   "ss": 39.5,
+   "t0": 37.78,
+   "t1": 39.95,
+   "cx0": 0.5,
+   "lut": "cine"
+  },
+  {
+   "kind": "vid",
+   "src": "dl/crx/xe_gold.mp4",
+   "ss": 39.2,
+   "t0": 39.95,
+   "t1": 42.25,
+   "cx0": 0.5,
+   "lut": "cine"
+  },
+  {
+   "kind": "vid",
+   "src": "dl/crx/ltd_gold.mp4",
+   "ss": 50.0,
+   "t0": 42.25,
+   "t1": 44.38,
+   "cx0": 0.5,
+   "lut": "cine"
+  },
+  {
+   "kind": "vid",
+   "src": "lib/stock/src/s_user/px14619960_2160x3840.mp4",
+   "ss": 8.0,
+   "t0": 44.38,
+   "t1": 46.4,
+   "cx0": 0.5,
+   "z0": 1.0,
+   "z1": 1.06,
+   "lut": "cine"
+  },
+  {
+   "kind": "vid",
+   "src": "lib/stock/src/s_arabic_detail/px8319108_1080.mp4",
+   "ss": 0.3,
+   "t0": 46.4,
+   "t1": 48.43,
+   "cx0": 0.84,
+   "z0": 1.0,
+   "z1": 1.05,
+   "lut": "cine_night"
+  },
+  {
+   "kind": "vid",
+   "src": "dl/crx/gy_c.mp4",
+   "ss": 29.0,
+   "t0": 48.43,
+   "t1": 50.73,
+   "cx0": 0.5,
+   "lut": "cine"
+  },
+  {
+   "kind": "vid",
+   "src": "dl/crx/xe_gold.mp4",
+   "ss": 46.0,
+   "t0": 50.73,
+   "t1": 54.14,
+   "cx0": 0.5,
+   "z0": 1.0,
+   "z1": 1.04,
+   "lut": "cine"
+  },
+  {
+   "kind": "vid",
+   "src": "lib/stock/src/s_user/px12709488_1080x1920.mp4",
+   "ss": 14.0,
+   "t0": 54.14,
+   "t1": 58.6,
+   "cx0": 0.5,
+   "z0": 1.04,
+   "z1": 1.0,
+   "lut": "cine_night"
+  }
+ ],
+ "mg": [
+  {
+   "type": "chips",
+   "t0": 19.64,
+   "t1": 24.0,
+   "y": 1330,
+   "s0": 0.1,
+   "st": 0.25,
+   "items": [
+    "هايبرد [2.5] لتر",
+    "[218] حصان",
+    "دفع كلي [AWD]"
+   ]
+  },
+  {
+   "type": "chips",
+   "t0": 24.22,
+   "t1": 28.5,
+   "y": 1330,
+   "s0": 0.1,
+   "st": 0.3,
+   "items": [
+    "إضاءة [LED] كاملة",
+    "فتحة سقف بانورامية"
+   ]
+  },
+  {
+   "type": "counter",
+   "t0": 33.26,
+   "t1": 37.6,
+   "y": 640,
+   "num": 344,
+   "unit": "حصان",
+   "sub": "تيربو هايبرد [2.4] · عزم [550] نيوتن متر · فئة [Majesta]",
+   "c0": 0.25,
+   "cnt": 1.9
+  },
+  {
+   "type": "chips",
+   "t0": 37.88,
+   "t1": 42.1,
+   "y": 1330,
+   "s0": 0.1,
+   "st": 0.3,
+   "items": [
+    "جنوط [21] إنش · فئة [Majesta]",
+    "شاشة عرض أمامية [HUD]"
+   ]
+  },
+  {
+   "type": "flare",
+   "t0": 33.309999999999995,
+   "t1": 34.66,
+   "y": 820,
+   "x0": -300,
+   "x1": 1380
+  },
+  {
+   "type": "engines",
+   "t0": 50.73,
+   "t1": 54.14,
+   "dim": 0.62,
+   "kicker": "CROWN 2026",
+   "title": "اختر <acc>فئتك</acc>",
+   "rows": [
+    [
+     "Majesta · تيربو هايبرد [2.4]",
+     "[344] حصان"
+    ],
+    [
+     "Premium · هايبرد [2.5]",
+     "[218] حصان"
+    ],
+    [
+     "Prestige · هايبرد [2.5]",
+     "[218] حصان"
+    ]
+   ],
+   "note": "المواصفات والتجهيزات تختلف حسب الفئة"
+  },
+  {
+   "type": "end",
+   "t0": 54.14,
+   "t1": 58.6,
+   "dim": 0.72,
+   "wa": false,
+   "name": "تويوتا <acc>كراون</acc> [2026]",
+   "cta": "اطلبها الآن من ماكس موتورز"
+  }
+ ],
+ "texts": [
+  {
+   "t0": 0.6,
+   "t1": 3.6,
+   "y": 1420,
+   "cls": "t2",
+   "html": "الرياض… <acc>لا تهدأ</acc>"
+  },
+  {
+   "t0": 4.1,
+   "t1": 7.0,
+   "y": 1420,
+   "cls": "t2",
+   "html": "وفيها… <acc>من يصنع الفرق</acc>"
+  },
+  {
+   "t0": 12.93,
+   "t1": 15.0,
+   "y": 300,
+   "cls": "k",
+   "html": "TOYOTA",
+   "anim": "track",
+   "ls": 22
+  },
+  {
+   "t0": 13.08,
+   "t1": 15.0,
+   "y": 345,
+   "cls": "t1",
+   "html": "CROWN",
+   "anim": "scale",
+   "style": "font:400 168px/1 Michroma;letter-spacing:18px;direction:ltr;color:#F3EFE8;text-shadow:0 10px 60px rgba(0,0,0,.7)"
+  },
+  {
+   "t0": 13.43,
+   "t1": 15.0,
+   "y": 540,
+   "cls": "t3",
+   "html": "[2026] · الفخامة <acc>بمعنى جديد</acc>"
+  },
+  {
+   "t0": 44.48,
+   "t1": 48.3,
+   "y": 1420,
+   "cls": "t2",
+   "html": "حضورك… <acc>يسبقك</acc>"
+  }
+ ],
+ "captions": [],
+ "ovl": []
+}
