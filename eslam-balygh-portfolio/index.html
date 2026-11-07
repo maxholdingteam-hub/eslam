@@ -229,7 +229,9 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
 .tt-phone{justify-self:center;width:min(340px,100%);border:8px solid #1d1d1d;border-radius:44px;background:#0e0e0e;padding:44px 20px 20px;display:flex;flex-direction:column;align-items:center;text-align:center;position:relative;box-shadow:0 40px 90px -30px rgba(255,77,31,.35);transform:rotate(-3deg);transition:transform .5s cubic-bezier(.2,.7,.2,1)}
 .tt-phone:hover{transform:rotate(0) translateY(-6px)}
 .tt-phone .notch{position:absolute;top:12px;width:90px;height:22px;border-radius:12px;background:#1d1d1d}
-.tt-phone .av{width:96px;height:96px;border-radius:50%;object-fit:cover;border:3px solid var(--hot)}
+.tt-phone .av{width:96px;height:96px;border-radius:50%;border:3px solid var(--hot)}
+.tt-phone .av.mono{display:flex;align-items:center;justify-content:center;white-space:nowrap;background:#0a0a0a;font-family:"Anton",sans-serif;font-size:18px;letter-spacing:.03em;color:var(--ink);direction:ltr}
+.tt-phone .av.mono i{font-style:normal;color:var(--hot)}
 .tt-phone b{font-size:19px;margin-top:14px}
 .tt-phone small{color:var(--muted);font-size:12px;margin-top:2px}
 .tt-phone .follow{margin:16px 0 18px;background:#fe2c55;color:#fff;font-weight:700;font-size:14px;padding:10px 46px;border-radius:6px}
@@ -385,7 +387,7 @@ footer .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap}
     </div>
     <a class="tt-phone rv d1" href="https://www.tiktok.com/@esl2mb__" target="_blank" rel="noopener" aria-label="Open @esl2mb__ on TikTok">
       <span class="notch"></span>
-      <img class="av" src="img/avatar.webp" alt="@esl2mb__" width="120" height="120" loading="lazy">
+      <span class="av mono" aria-hidden="true">ESL<i>2</i>MB_</span>
       <b class="ltr">@esl2mb__</b><small>Esl2mb_ · Photographer / Videographer</small>
       <span class="follow" data-i="ttf2">Follow</span>
       <span class="thumbs"><img src="img/pablo-1.webp" alt="" loading="lazy"><img src="img/amrdiab-4.webp" alt="" loading="lazy"><img src="img/cairokee-cap.webp" alt="" loading="lazy"><img src="img/afroto-3.webp" alt="" loading="lazy"><img src="img/tamer-4.webp" alt="" loading="lazy"><img src="img/anyma-2.webp" alt="" loading="lazy"></span>
