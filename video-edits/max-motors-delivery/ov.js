@@ -24,14 +24,14 @@ const css=`
 *{margin:0;padding:0;box-sizing:border-box}
 html,body{width:1080px;height:1920px;background:transparent;overflow:hidden}
 body{font-family:'Cairo',sans-serif;direction:rtl;position:relative}
-.cap{position:absolute;left:0;right:0;top:1270px;text-align:center}
+.cap{position:absolute;left:0;right:0;top:1540px;text-align:center}
 .cap span{display:inline-block;font-weight:800;font-size:72px;color:#fff;line-height:1.25;padding:6px 34px 14px;
  text-shadow:0 4px 18px rgba(0,0,0,.85),0 0 2px #000;-webkit-text-stroke:2px rgba(0,0,0,.35)}
 .big span{font-size:104px;color:#E9C46A;letter-spacing:0}
-.name{position:absolute;right:70px;left:70px;top:1010px;text-align:center}
+.name{position:absolute;right:70px;left:70px;top:1330px;text-align:center}
 .name .l{display:inline-block;background:#E9C46A;color:#111;font-weight:900;font-size:78px;padding:6px 40px 16px;border-radius:14px;box-shadow:0 10px 40px rgba(0,0,0,.5)}
 .name .s{display:block;margin-top:14px;font:600 34px 'Montserrat';letter-spacing:8px;color:#fff;text-shadow:0 2px 10px #000;direction:ltr}
-.q{position:absolute;left:0;right:0;top:300px;text-align:center}
+.q{position:absolute;left:0;right:0;top:1390px;text-align:center}
 .q span{display:inline-block;background:rgba(10,10,12,.72);border:2px solid #E9C46A;color:#fff;font-weight:800;font-size:60px;padding:10px 42px 20px;border-radius:60px}
 .end{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
 .end .a{font-weight:900;font-size:150px;color:#fff;text-shadow:0 8px 40px rgba(0,0,0,.8)}
