@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>لوحة التحكم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0f1d;--side:#0d1426;--panel:#111a30;--panel-2:#16213c;--line:rgba(255,255,255,.08);--line-2:rgba(255,255,255,.14);--ink:#eef1f8;--muted:#9aa6c4;--dim:#6b7695;--gold:#d6af5c;--gold-2:#f1d48e;--ok:#4cc38a;--err:#ff7b72;--r:14px;font-family:"IBM Plex Sans Arabic","Manrope",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{background:var(--bg);color:var(--ink);font-size:14px;line-height:1.55;-webkit-font-smoothing:antialiased}
+button,input,textarea,select{font:inherit;color:inherit}
+a{color:inherit}
+.ltr{direction:ltr;unicode-bidi:isolate}
+[hidden]{display:none!important}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--line-2);background:var(--panel-2);border-radius:10px;padding:9px 14px;cursor:pointer;font-weight:600;font-size:13px;white-space:nowrap;text-decoration:none;transition:border-color .15s,background .15s}
+.btn:hover{border-color:var(--gold)}
+.btn.primary{background:var(--gold);border-color:var(--gold);color:#1a1405}
+.btn.primary:hover{background:var(--gold-2)}
+.btn.danger:hover{border-color:var(--err);color:var(--err)}
+.btn.sm{padding:6px 10px;font-size:12px;border-radius:8px}
+.btn:disabled{opacity:.5;cursor:not-allowed}
+.icon-btn{width:32px;height:32px;padding:0;border-radius:8px}
+input[type=text],input[type=password],input[type=number],input[type=email],textarea,select{width:100%;background:var(--bg);border:1px solid var(--line-2);border-radius:10px;padding:9px 11px;outline:none;transition:border-color .15s;font-size:14px}
+input:focus,textarea:focus,select:focus{border-color:var(--gold)}
+textarea{resize:vertical;min-height:84px}
+/* login */
+.login{min-height:100%;display:grid;place-items:center;padding:20px}
+.login form{width:min(380px,100%);background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:30px;display:grid;gap:16px}
+.login h1{font-size:22px}.login p{color:var(--muted)}
+.err{color:var(--err);font-size:13px;min-height:1em}
+/* shell */
+.shell{display:grid;grid-template-columns:240px 1fr;min-height:100%}
+aside{background:var(--side);border-inline-end:1px solid var(--line);padding:20px 14px;display:flex;flex-direction:column;gap:6px;position:sticky;top:0;height:100vh}
+.brand{display:flex;align-items:center;gap:10px;padding:4px 10px 18px;font-weight:700}
+.brand b{width:34px;height:34px;border-radius:10px;border:1px solid var(--gold);color:var(--gold);display:grid;place-items:center;font-family:Georgia,serif;font-style:italic;font-weight:400}
+.nav button{display:flex;align-items:center;gap:10px;width:100%;background:none;border:0;text-align:start;padding:10px 12px;border-radius:10px;cursor:pointer;color:var(--muted);font-weight:600}
+.nav button:hover{background:var(--panel);color:var(--ink)}
+.nav button.on{background:var(--panel-2);color:var(--ink)}
+.nav button svg{flex-shrink:0}
+.nav .count{margin-inline-start:auto;background:var(--gold);color:#1a1405;border-radius:99px;font-size:11px;padding:1px 7px;font-weight:700}
+aside .spacer{flex:1}
+main{min-width:0;display:flex;flex-direction:column}
+.top{display:flex;align-items:center;gap:10px;padding:14px 24px;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(10,15,29,.9);backdrop-filter:blur(10px);z-index:20;flex-wrap:wrap}
+.top h2{font-size:18px;margin-inline-end:auto}
+.dirty{font-size:12px;color:var(--gold-2)}
+.page{padding:24px;max-width:1200px;width:100%}
+.menu-btn{display:none}
+/* cards */
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.tile{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:18px}
+.tile small{color:var(--muted);font-weight:600}
+.tile .v{font-family:Manrope,sans-serif;font-size:32px;font-weight:800;margin-top:6px;letter-spacing:-.02em}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:18px;margin-top:14px}
+.panel h3{font-size:15px;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+.panel h3 .seg{margin-inline-start:auto}
+.seg{display:inline-flex;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:3px}
+.seg button{border:0;background:none;padding:5px 12px;border-radius:7px;cursor:pointer;color:var(--muted);font-weight:600;font-size:12px}
+.seg button.on{background:var(--panel-2);color:var(--ink)}
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.grid3 .panel{margin-top:14px}
+.chart{position:relative;direction:ltr}
+.chart svg{display:block;width:100%;height:240px;overflow:visible}
+.chart .tip{position:absolute;pointer-events:none;background:#000;border:1px solid var(--line-2);border-radius:8px;padding:6px 10px;font-size:12px;white-space:nowrap;transform:translate(-50%,-110%);opacity:0;transition:opacity .1s}
+.toplist{display:grid;gap:10px}
+.toplist .row{display:grid;grid-template-columns:1fr auto;gap:4px 10px;font-size:13px}
+.toplist .row span:last-child{color:var(--muted);font-family:Manrope}
+.toplist .barbg{grid-column:1/-1;height:6px;background:var(--bg);border-radius:4px;overflow:hidden}
+.toplist .barbg i{display:block;height:100%;background:var(--gold);border-radius:4px}
+.empty{color:var(--dim);font-size:13px;padding:10px 0}
+/* editor */
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px}
+.tabs button{border:1px solid var(--line);background:var(--panel);padding:7px 13px;border-radius:999px;cursor:pointer;font-weight:600;font-size:13px;color:var(--muted)}
+.tabs button.on{background:var(--gold);color:#1a1405;border-color:var(--gold)}
+.field{display:grid;gap:7px;margin-bottom:16px}
+.field>label{font-weight:600;font-size:13px;color:var(--muted)}
+.hint{font-size:12px;color:var(--dim)}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.pair .lab{font-size:11px;color:var(--dim);margin-bottom:4px;display:flex;justify-content:space-between}
+.pair .en input,.pair .en textarea{direction:ltr;text-align:left}
+.toggle{display:inline-flex;align-items:center;gap:10px;cursor:pointer}
+.toggle input{width:40px;height:22px;appearance:none;background:var(--line-2);border-radius:99px;position:relative;cursor:pointer;transition:background .15s}
+.toggle input::after{content:"";position:absolute;top:3px;right:3px;width:16px;height:16px;border-radius:50%;background:#fff;transition:right .15s}
+.toggle input:checked{background:var(--ok)}.toggle input:checked::after{right:21px}
+.list{display:grid;gap:10px}
+.item{border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+.item>header{display:flex;align-items:center;gap:8px;padding:10px 12px;cursor:pointer;user-select:none}
+.item>header .t{flex:1;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.item>header .n{color:var(--dim);font-family:Manrope;font-size:12px;min-width:20px}
+.item>.body{padding:6px 14px 4px;border-top:1px solid var(--line)}
+.item.closed>.body{display:none}
+.item .simple{display:flex;gap:8px;align-items:flex-start;padding:8px}
+.item .simple>div{flex:1}
+.add{border:1px dashed var(--line-2);background:none;border-radius:12px;padding:10px;cursor:pointer;color:var(--muted);font-weight:600}
+.add:hover{border-color:var(--gold);color:var(--gold-2)}
+.img-field{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.img-field .pv{width:96px;height:64px;border-radius:8px;border:1px solid var(--line-2);background:var(--bg) center/cover no-repeat;display:grid;place-items:center;color:var(--dim);font-size:11px;flex-shrink:0}
+.img-field input{flex:1;min-width:180px;direction:ltr}
+/* media */
+.drop{border:2px dashed var(--line-2);border-radius:16px;padding:28px;text-align:center;color:var(--muted);cursor:pointer;transition:border-color .15s,background .15s}
+.drop.over,.drop:hover{border-color:var(--gold);background:rgba(214,175,92,.05)}
+.mgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin-top:16px}
+.mcard{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.mcard .im{aspect-ratio:4/3;background:var(--bg) center/cover no-repeat;display:grid;place-items:center;color:var(--dim);font-weight:700}
+.mcard .meta{padding:8px 10px;font-size:12px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mcard .acts{display:flex;gap:6px;padding:0 10px 10px}
+.mcard.pick{cursor:pointer}.mcard.pick:hover{border-color:var(--gold)}
+/* messages */
+.msg{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:10px}
+.msg.unread{border-color:rgba(214,175,92,.45)}
+.msg header{display:flex;gap:10px;align-items:baseline;flex-wrap:wrap}
+.msg header b{font-size:15px}.msg header small{color:var(--dim);margin-inline-start:auto}
+.msg .who{color:var(--muted);font-size:13px;margin-top:2px}
+.msg p{margin-top:10px;white-space:pre-wrap}
+.msg .acts{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap}
+.dotu{width:8px;height:8px;border-radius:50%;background:var(--gold);display:inline-block}
+/* modal + toast */
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:grid;place-items:center;z-index:50;padding:20px}
+.modal .box{background:var(--side);border:1px solid var(--line-2);border-radius:18px;padding:20px;width:min(900px,100%);max-height:85vh;overflow:auto}
+.modal .box header{display:flex;align-items:center;margin-bottom:14px}.modal .box header h3{flex:1}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--panel-2);border:1px solid var(--line-2);border-radius:12px;padding:11px 18px;z-index:60;font-weight:600;box-shadow:0 10px 40px rgba(0,0,0,.5)}
+.toast.ok{border-color:var(--ok)}.toast.err{border-color:var(--err)}
+.spin{width:18px;height:18px;border:2px solid var(--line-2);border-top-color:var(--gold);border-radius:50%;animation:sp .8s linear infinite;display:inline-block}
+@keyframes sp{to{transform:rotate(360deg)}}
+.steps{display:grid;gap:10px;color:var(--muted)}
+.steps li{margin-inline-start:18px}
+.rev{display:flex;align-items:center;gap:12px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--panel);margin-bottom:8px}
+.rev span{flex:1}
+@media (max-width:900px){
+  .shell{grid-template-columns:1fr}
+  aside{position:fixed;inset:0 auto 0 0;inset-inline-start:0;width:260px;z-index:40;transform:translateX(100%);transition:transform .2s;box-shadow:0 0 60px rgba(0,0,0,.6)}
+  html[dir=rtl] aside{right:0;left:auto}
+  aside.open{transform:none}
+  .menu-btn{display:inline-flex}
+  .tiles{grid-template-columns:1fr 1fr}.grid3{grid-template-columns:1fr}
+  .pair{grid-template-columns:1fr}
+  .page{padding:16px}.top{padding:12px 16px}
+}
+</style>
+</head>
+<body>
+<div id="app"></div>
+<div id="modal-root"></div>
+<script>
+(function(){
+"use strict";
+const $ = (s, r = document) => r.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+const H = {"x-requested-with":"portfolio-admin"};
+async function api(path, opt = {}) {
+  const o = {credentials:"same-origin", ...opt, headers:{...H, ...(opt.headers||{})}};
+  if (o.body && !(o.body instanceof FormData)) { o.headers["content-type"] = "application/json"; o.body = JSON.stringify(o.body); }
+  const r = await fetch(path, o);
+  const j = await r.json().catch(() => ({}));
+  if (r.status === 401 && path !== "/api/login") { showLogin(); throw new Error("login"); }
+  if (!r.ok) throw new Error(j.error || "حصل خطأ");
+  return j;
+}
+function toast(msg, kind = "ok") { const t = document.createElement("div"); t.className = "toast " + kind; t.textContent = msg; document.body.appendChild(t); setTimeout(() => t.remove(), 3200); }
+const I = {
+ dash:'<path d="M3 13h8V3H3zM13 21h8V11h-8zM3 21h8v-6H3zM13 3v6h8V3z"/>', edit:'<path d="M4 20l4-1 11-11-3-3L5 16l-1 4z"/>', cv:'<path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M14 3v6h6M9 14h6M9 17h4"/>',
+ media:'<rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/>', mail:'<rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 6l10 7 10-7"/>',
+ hist:'<path d="M3 12a9 9 0 109-9 9 9 0 00-7 3.4M3 4v4h4M12 7v5l3 2"/>', out:'<path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l-5-5 5-5M5 12h12"/>',
+ eye:'<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"/><circle cx="12" cy="12" r="3"/>', menu:'<path d="M3 6h18M3 12h18M3 18h18"/>', up:'<path d="M12 19V5M5 12l7-7 7 7"/>', down:'<path d="M12 5v14M19 12l-7 7-7-7"/>', trash:'<path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/>', pdf:'<path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M14 3v6h6"/>'
+};
+const ic = (n, s = 18) => `<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${I[n]}</svg>`;
+
+// Arabic labels for fields (by key); the server schema carries English labels.
+const AR = {
+ firstName:"الاسم الأول",lastName:"اسم العائلة",monogram:"الحرفين (اللوجو)",eyebrow:"السطر الصغير فوق الاسم",role:"العنوان الرئيسي (حط *كلمة* بين نجمتين عشان تبقى ملوّنة)",lead:"فقرة التعريف",location:"المكان",currently:"بيشتغل حالياً في",available:"إظهار «متاح لفرص جديدة»",photo:"الصورة الشخصية (اختياري، لو فاضية بيظهر الحرفين)",email:"الإيميل",phone:"رقم الجوال (بالصيغة الدولية)",whatsapp:"رقم الواتساب (أرقام بس مع كود الدولة)",linkedin:"لينك LinkedIn",instagram:"لينك Instagram",tiktok:"لينك TikTok",website:"لينك موقع",cvFile:"ملف CV للتحميل (PDF اختياري)",
+ value:"الرقم",suffix:"بعد الرقم (مثلاً +)",label:"الوصف",big:"الجملة الكبيرة (*كلمة* = ملوّنة)",paragraphs:"الفقرات",tags:"المجالات / الكلمات",text:"النص",icon:"الأيقونة",title:"العنوان",
+ company:"الشركة",period:"الفترة",current:"الوظيفة الحالية",bullets:"المهام",clients:"أبرز العملاء (اختياري)",name:"الاسم",level:"المستوى",degree:"الشهادة",school:"الجامعة · السنة",intro:"سطر تعريفي",items:"العناصر",detail:"التفاصيل",
+ tag:"التصنيف",url:"اللينك",description:"الوصف",features:"المميزات",image:"صورة الكمبيوتر / الصورة الرئيسية",imageMobile:"صورة الموبايل (اختياري)",heading:"العنوان (*كلمة* = ملوّنة، و | = سطر جديد)",address:"العنوان",formEnabled:"إظهار فورم التواصل",
+ theme:"ألوان الموقع",defaultLang:"اللغة الأساسية",seoTitle:"العنوان في جوجل",seoDescription:"الوصف في جوجل",ogImage:"صورة المشاركة (واتساب والسوشيال)"
+};
+const LIST_AR = {skills:{level:"المستوى (0 لـ 100)"},languages:{name:"اللغة — المستوى",level:"عدد النقط (1 لـ 5)"},experience:{role:"المسمى الوظيفي",location:"المكان"},tools:{text:"الأداة"},marquee:{text:"الكلمة"},achievements:{text:"الإنجاز"}};
+const SEC_AR = {profile:"البيانات الأساسية",stats:"الأرقام",about:"نبذة",expertise:"مجالات الخبرة",marquee:"الشريط المتحرك",experience:"الخبرات",achievements:"الإنجازات",skills:"المهارات",tools:"الأدوات",education:"التعليم",languages:"اللغات",certifications:"الشهادات",projects:"المشاريع",contact:"التواصل",settings:"الشكل وجوجل"};
+const OPT_AR = {"navy-gold":"كحلي ودهبي","black-orange":"أسود وبرتقالي","emerald":"أخضر زمردي","plum":"بنفسجي",en:"English",ar:"العربية",chart:"رسم بياني",trend:"نمو",leads:"عملاء",star:"نجمة",report:"تقارير",team:"فريق",megaphone:"ميكروفون",target:"هدف",code:"كود",camera:"كاميرا",pen:"قلم",globe:"عالم"};
+
+let S = { view:"dash", content:null, schema:null, dirty:false, tab:"profile", days:30, unread:0 };
+
+// ================= login =================
+function showLogin(){
+  $("#app").innerHTML = `<div class="login"><form id="lf"><h1>لوحة التحكم</h1><p>ادخل الباسورد عشان تعدّل البورتفوليو.</p>
+    <input type="password" name="password" placeholder="الباسورد" autocomplete="current-password" required autofocus>
+    <div class="err" id="lerr"></div><button class="btn primary" type="submit">دخول</button></form></div>`;
+  $("#lf").onsubmit = async e => { e.preventDefault(); const b = e.target.querySelector("button"); b.disabled = true; $("#lerr").textContent = "";
+    try { await api("/api/login", {method:"POST", body:{password:e.target.password.value}}); boot(); }
+    catch (err) { $("#lerr").textContent = err.message === "Wrong password" ? "الباسورد غلط" : err.message; b.disabled = false; } };
+}
+
+// ================= shell =================
+const VIEWS = [["dash","الرئيسية","dash"],["content","تعديل المحتوى","edit"],["cv","استيراد من CV","cv"],["media","الصور والملفات","media"],["messages","الرسائل","mail"],["history","النسخ السابقة","hist"]];
+async function boot(){
+  try { await api("/api/me"); } catch { return; }
+  const [{schema}, {content}] = await Promise.all([api("/api/schema"), api("/api/content")]);
+  S.schema = schema; S.content = content; S.dirty = false;
+  shell(); go(S.view);
+}
+function shell(){
+  $("#app").innerHTML = `<div class="shell"><aside id="side"><div class="brand"><b class="ltr" id="bm"></b><span>لوحة التحكم</span></div>
+    <nav class="nav">${VIEWS.map(([k,l,i]) => `<button data-v="${k}">${ic(i)}<span>${l}</span>${k==="messages" ? `<span class="count" id="ucount" hidden></span>` : ""}</button>`).join("")}</nav>
+    <div class="spacer"></div>
+    <a class="btn" href="/" target="_blank" rel="noopener">${ic("eye")} عرض الموقع</a>
+    <button class="btn danger" id="logout">${ic("out")} خروج</button></aside>
+    <main><div class="top"><button class="btn icon-btn menu-btn" id="menu" aria-label="القائمة">${ic("menu")}</button><h2 id="vt"></h2><span id="topx" style="display:contents"></span></div><div class="page" id="page"></div></main></div>`;
+  $("#bm").textContent = S.content.profile.monogram || "P";
+  document.querySelectorAll(".nav button").forEach(b => b.onclick = () => { $("#side").classList.remove("open"); go(b.dataset.v); });
+  $("#menu").onclick = () => $("#side").classList.toggle("open");
+  $("#logout").onclick = async () => { await api("/api/logout", {method:"POST"}).catch(()=>{}); showLogin(); };
+  refreshUnread();
+}
+function go(v){
+  if (S.view === "content" && v !== "content" && S.dirty && !confirm("فيه تعديلات مش محفوظة. تسيبها؟")) return;
+  if (v !== "content" && S.dirty) { S.dirty = false; api("/api/content").then(r => S.content = r.content); }
+  S.view = v;
+  document.querySelectorAll(".nav button").forEach(b => b.classList.toggle("on", b.dataset.v === v));
+  $("#vt").textContent = VIEWS.find(x => x[0] === v)[1];
+  $("#topx").innerHTML = "";
+  ({dash:viewDash, content:viewContent, cv:viewCv, media:viewMedia, messages:viewMessages, history:viewHistory})[v]();
+}
+async function refreshUnread(){ try { const s = await api("/api/stats?days=1"); setUnread(s.unread); } catch {} }
+function setUnread(n){ S.unread = n; const c = $("#ucount"); if (c) { c.hidden = !n; c.textContent = n; } }
+addEventListener("beforeunload", e => { if (S.dirty) { e.preventDefault(); e.returnValue = ""; } });
+
+// ================= dashboard =================
+async function viewDash(){
+  const page = $("#page");
+  $("#topx").innerHTML = `<a class="btn" href="/?print=1&lang=en" target="_blank" rel="noopener">${ic("pdf")} PDF إنجليزي</a><a class="btn" href="/?print=1&lang=ar" target="_blank" rel="noopener">${ic("pdf")} PDF عربي</a>`;
+  page.innerHTML = `<div class="empty"><span class="spin"></span></div>`;
+  let s; try { s = await api(`/api/stats?days=${S.days}`); } catch (e) { page.innerHTML = `<div class="err">${esc(e.message)}</div>`; return; }
+  setUnread(s.unread);
+  const ev = Object.fromEntries(s.events.map(e => [e.name, e.n]));
+  const fmt = n => Number(n || 0).toLocaleString("en-US");
+  page.innerHTML = `<div class="tiles">
+      <div class="tile"><small>الزيارات</small><div class="v">${fmt(s.totals.views)}</div></div>
+      <div class="tile"><small>الزوار</small><div class="v">${fmt(s.totals.visitors)}</div></div>
+      <div class="tile"><small>رسائل جديدة</small><div class="v">${fmt(s.unread)}</div></div>
+      <div class="tile"><small>ضغطات واتساب</small><div class="v">${fmt(ev.whatsapp)}</div></div>
+    </div>
+    <div class="panel"><h3>الزيارات اليومية <span class="seg" id="range">${[7,30,90].map(d => `<button data-d="${d}" class="${d===S.days?"on":""}">${d} يوم</button>`).join("")}</span></h3><div class="chart" id="chart"></div></div>
+    <div class="grid3">
+      <div class="panel"><h3>جايين منين</h3>${toplist(s.referrers, "مفيش بيانات لسه (زيارات مباشرة)")}</div>
+      <div class="panel"><h3>الدول</h3>${toplist(s.countries, "مفيش بيانات لسه")}</div>
+      <div class="panel"><h3>الأجهزة واللغة</h3>${toplist([...s.devices.map(d => ({name: d.name === "mobile" ? "موبايل" : "كمبيوتر", n: d.n})), ...s.langs.map(l => ({name: l.name === "ar" ? "بيقرا عربي" : "بيقرا إنجليزي", n: l.n}))], "مفيش بيانات لسه")}</div>
+    </div>
+    <div class="panel"><h3>الضغطات</h3>${toplist(s.events.map(e => ({name: ({whatsapp:"واتساب",email:"إيميل",phone:"اتصال",project:"لينك مشروع",cv:"تحميل CV",linkedin:"LinkedIn",instagram:"Instagram",tiktok:"TikTok",website:"الموقع"})[e.name] || e.name, n: e.n})), "لسه محدش ضغط على حاجة")}</div>`;
+  $("#range").onclick = e => { const b = e.target.closest("button"); if (b) { S.days = +b.dataset.d; viewDash(); } };
+  drawChart($("#chart"), s);
+}
+function toplist(rows, emptyText){
+  if (!rows.length) return `<div class="empty">${emptyText}</div>`;
+  const max = Math.max(...rows.map(r => r.n));
+  return `<div class="toplist">${rows.map(r => `<div class="row"><span>${esc(r.name)}</span><span>${r.n}</span><div class="barbg"><i style="width:${Math.max(3, r.n / max * 100)}%"></i></div></div>`).join("")}</div>`;
+}
+function drawChart(el, s){
+  // one series → single hue, no legend; baseline-anchored bars with 4px rounded tops, 2px gaps, hover tooltip per bar
+  const days = []; const start = new Date(s.since + "T00:00:00Z");
+  const byDay = Object.fromEntries(s.daily.map(d => [d.day, d]));
+  for (let i = 0; i < s.days; i++) { const d = new Date(start.getTime() + i * 86400000).toISOString().slice(0, 10); days.push({day: d, views: byDay[d]?.views || 0, visitors: byDay[d]?.visitors || 0}); }
+  const W = Math.max(el.clientWidth, 300), Hh = 240, padL = 34, padB = 22, padT = 8;
+  const max = Math.max(4, ...days.map(d => d.views)); const step = Math.ceil(max / 4); const top = step * 4;
+  const cw = (W - padL) / days.length, bw = Math.max(2, cw - 2);
+  const y = v => padT + (Hh - padB - padT) * (1 - v / top);
+  let g = "";
+  for (let k = 0; k <= 4; k++) { const v = step * k, yy = y(v); g += `<line x1="${padL}" x2="${W}" y1="${yy}" y2="${yy}" stroke="rgba(255,255,255,${k ? .06 : .18})"/><text x="${padL - 8}" y="${yy + 4}" fill="#6b7695" font-size="11" text-anchor="end">${v}</text>`; }
+  const r = Math.min(4, bw / 2);
+  const bars = days.map((d, i) => { const x = padL + i * cw + 1, h = Math.max(0, (Hh - padB) - y(d.views)); if (!h) return "";
+    const yy = y(d.views), rr = Math.min(r, h);
+    return `<path d="M${x},${Hh - padB} V${yy + rr} Q${x},${yy} ${x + rr},${yy} H${x + bw - rr} Q${x + bw},${yy} ${x + bw},${yy + rr} V${Hh - padB} Z" fill="#d6af5c"/>`; }).join("");
+  const every = Math.ceil(days.length / 7);
+  const labels = days.map((d, i) => i % every ? "" : `<text x="${padL + i * cw + cw / 2}" y="${Hh - 4}" fill="#6b7695" font-size="11" text-anchor="middle">${d.day.slice(5).replace("-", "/")}</text>`).join("");
+  const hits = days.map((d, i) => `<rect x="${padL + i * cw}" y="0" width="${cw}" height="${Hh - padB}" fill="transparent" data-i="${i}"/>`).join("");
+  el.innerHTML = `<svg viewBox="0 0 ${W} ${Hh}" role="img" aria-label="الزيارات اليومية">${g}${bars}${labels}<g id="hits">${hits}</g></svg><div class="tip" id="tip"></div>`;
+  const tip = $("#tip", el);
+  el.querySelector("#hits").addEventListener("mousemove", e => { const i = e.target.dataset.i; if (i == null) return; const d = days[i];
+    tip.innerHTML = `${d.day}<br><b>${d.views}</b> زيارة · <b>${d.visitors}</b> زائر`; tip.style.left = (padL + i * cw + cw / 2) / W * 100 + "%"; tip.style.top = y(d.views) + "px"; tip.style.opacity = 1; });
+  el.querySelector("#hits").addEventListener("mouseleave", () => tip.style.opacity = 0);
+}
+
+// ================= content editor =================
+function viewContent(){
+  $("#topx").innerHTML = `<span class="dirty" id="dirty" ${S.dirty ? "" : "hidden"}>تعديلات مش محفوظة</span><a class="btn" href="/" target="_blank" rel="noopener">${ic("eye")} عرض</a><button class="btn primary" id="save">حفظ</button>`;
+  $("#save").onclick = save;
+  const page = $("#page");
+  page.innerHTML = `<div class="tabs" id="tabs">${S.schema.map(sec => `<button data-k="${sec.key}" class="${sec.key === S.tab ? "on" : ""}">${SEC_AR[sec.key] || sec.label}</button>`).join("")}</div><div id="form"></div>`;
+  $("#tabs").onclick = e => { const b = e.target.closest("button"); if (!b) return; S.tab = b.dataset.k; document.querySelectorAll("#tabs button").forEach(x => x.classList.toggle("on", x === b)); drawForm(); };
+  drawForm();
+}
+function markDirty(){ S.dirty = true; const d = $("#dirty"); if (d) d.hidden = false; }
+async function save(){
+  const b = $("#save"); b.disabled = true; b.innerHTML = `<span class="spin"></span>`;
+  try { const r = await api("/api/content", {method:"PUT", body:{content:S.content, note:"Before save"}}); S.content = r.content; S.dirty = false; const d = $("#dirty"); if (d) d.hidden = true; toast("اتحفظ ✓ والموقع اتحدّث"); $("#bm").textContent = S.content.profile.monogram || "P"; }
+  catch (e) { if (e.message !== "login") toast(e.message, "err"); }
+  b.disabled = false; b.textContent = "حفظ";
+}
+function drawForm(){
+  const sec = S.schema.find(s => s.key === S.tab);
+  const host = $("#form"); host.innerHTML = "";
+  const panel = document.createElement("div"); panel.className = "panel"; host.appendChild(panel);
+  if (sec.type === "list") panel.appendChild(listEditor(sec, S.content, sec.key, sec.key));
+  else sec.fields.forEach(f => panel.appendChild(fieldEditor(f, S.content[sec.key], sec.key)));
+}
+function labelFor(f, parent){ return (LIST_AR[parent] && LIST_AR[parent][f.key]) || AR[f.key] || f.label; }
+function fieldEditor(f, obj, parent){
+  const wrap = document.createElement("div"); wrap.className = "field";
+  const lab = labelFor(f, parent);
+  if (f.type === "list") { wrap.innerHTML = `<label>${esc(lab)}</label>`; wrap.appendChild(listEditor(f, obj, f.key, f.key)); return wrap; }
+  if (f.type === "bool") {
+    wrap.innerHTML = `<label class="toggle"><input type="checkbox" ${obj[f.key] ? "checked" : ""}><span>${esc(lab)}</span></label>`;
+    $("input", wrap).onchange = e => { obj[f.key] = e.target.checked; markDirty(); }; return wrap;
+  }
+  wrap.innerHTML = `<label>${esc(lab)}</label>`;
+  wrap.appendChild(inputFor(f, obj));
+  return wrap;
+}
+function inputFor(f, obj){
+  const box = document.createElement("div");
+  if (f.type === "i18n") {
+    const multi = f.multiline;
+    const tag = multi ? "textarea" : "input";
+    box.className = "pair";
+    box.innerHTML = `<div class="ar"><div class="lab"><span>عربي</span></div><${tag} ${multi ? "" : 'type="text"'} dir="rtl"></${tag}></div><div class="en"><div class="lab"><span>English</span></div><${tag} ${multi ? "" : 'type="text"'} dir="ltr"></${tag}></div>`;
+    const [ar, en] = box.querySelectorAll(tag);
+    ar.value = obj[f.key]?.ar || ""; en.value = obj[f.key]?.en || "";
+    ar.oninput = () => { obj[f.key] = {...obj[f.key], ar: ar.value}; markDirty(); };
+    en.oninput = () => { obj[f.key] = {...obj[f.key], en: en.value}; markDirty(); };
+    return box;
+  }
+  if (f.type === "select") {
+    box.innerHTML = `<select>${f.options.map(o => `<option value="${esc(o)}" ${obj[f.key] === o ? "selected" : ""}>${esc(OPT_AR[o] || o)}</option>`).join("")}</select>`;
+    $("select", box).onchange = e => { obj[f.key] = e.target.value; markDirty(); }; return box;
+  }
+  if (f.type === "image" || f.type === "file") {
+    box.className = "img-field";
+    const isImg = f.type === "image";
+    box.innerHTML = `<div class="pv"></div><input type="text" placeholder="/media/..." dir="ltr"><button class="btn sm" type="button">اختار / ارفع</button><button class="btn sm danger" type="button">مسح</button>`;
+    const pv = $(".pv", box), inp = $("input", box), [pick, clear] = box.querySelectorAll("button");
+    const paint = () => { const v = obj[f.key]; if (isImg && v) { pv.style.backgroundImage = `url("${encodeURI(v)}")`; pv.textContent = ""; } else { pv.style.backgroundImage = ""; pv.textContent = v ? "PDF" : (isImg ? "مفيش صورة" : "مفيش ملف"); } };
+    inp.value = obj[f.key] || ""; paint();
+    inp.oninput = () => { obj[f.key] = inp.value.trim(); paint(); markDirty(); };
+    pick.onclick = () => mediaPicker(isImg ? "image" : "pdf", url => { obj[f.key] = url; inp.value = url; paint(); markDirty(); });
+    clear.onclick = () => { obj[f.key] = ""; inp.value = ""; paint(); markDirty(); };
+    return box;
+  }
+  const inp = document.createElement("input");
+  inp.type = f.type === "number" ? "number" : "text";
+  if (["email","phone","whatsapp","linkedin","instagram","tiktok","website","url","value","suffix","monogram"].includes(f.key) || f.type === "number") inp.dir = "ltr";
+  inp.value = obj[f.key] ?? "";
+  inp.oninput = () => { obj[f.key] = f.type === "number" ? Number(inp.value) : inp.value; markDirty(); };
+  box.appendChild(inp); return box;
+}
+function blank(fields){ const o = {}; for (const f of fields) o[f.key] = f.type === "i18n" ? {en:"",ar:""} : f.type === "list" ? [] : f.type === "bool" ? false : f.type === "number" ? 0 : f.type === "select" ? f.options[0] : ""; return o; }
+function itemTitle(f, item){ const k = f.itemLabel || f.fields[0].key; const v = item[k]; const t = v && typeof v === "object" ? (v.ar || v.en) : v; return String(t || "").replace(/[*|]/g, "") || "عنصر جديد"; }
+function listEditor(f, parentObj, key, parentKey){
+  const box = document.createElement("div"); box.className = "list";
+  const arr = parentObj[key] || (parentObj[key] = []);
+  const simple = f.fields.length === 1;
+  const draw = (openIdx) => {
+    box.innerHTML = "";
+    arr.forEach((item, i) => {
+      const el = document.createElement("div");
+      el.className = "item" + (simple || i === openIdx ? "" : " closed");
+      const tools = `<button class="btn icon-btn sm" data-a="up" title="لفوق" ${i === 0 ? "disabled" : ""}>${ic("up",14)}</button><button class="btn icon-btn sm" data-a="down" title="لتحت" ${i === arr.length - 1 ? "disabled" : ""}>${ic("down",14)}</button><button class="btn icon-btn sm danger" data-a="del" title="مسح">${ic("trash",14)}</button>`;
+      if (simple) {
+        el.innerHTML = `<div class="simple"><span class="n" style="padding-top:10px;color:var(--dim);font-family:Manrope;font-size:12px;min-width:18px">${i + 1}</span><div></div>${tools}</div>`;
+        $(".simple>div", el).appendChild(inputFor(f.fields[0], item));
+      } else {
+        el.innerHTML = `<header><span class="n">${i + 1}</span><span class="t">${esc(itemTitle(f, item))}</span>${tools}</header><div class="body"></div>`;
+        const body = $(".body", el);
+        f.fields.forEach(sf => body.appendChild(fieldEditor(sf, item, parentKey)));
+        $("header", el).addEventListener("click", e => { if (e.target.closest("button")) return; el.classList.toggle("closed"); $(".t", el).textContent = itemTitle(f, item); });
+      }
+      el.querySelectorAll("[data-a]").forEach(b => b.onclick = e => { e.stopPropagation(); const a = b.dataset.a;
+        if (a === "del") { if (!confirm("تمسح العنصر ده؟")) return; arr.splice(i, 1); draw(-1); }
+        if (a === "up" && i > 0) { [arr[i-1], arr[i]] = [arr[i], arr[i-1]]; draw(i - 1); }
+        if (a === "down" && i < arr.length - 1) { [arr[i+1], arr[i]] = [arr[i], arr[i+1]]; draw(i + 1); }
+        markDirty(); });
+      box.appendChild(el);
+    });
+    if (!f.max || arr.length < f.max) {
+      const add = document.createElement("button"); add.type = "button"; add.className = "add"; add.textContent = "+ إضافة";
+      add.onclick = () => { arr.push(blank(f.fields)); markDirty(); draw(arr.length - 1); };
+      box.appendChild(add);
+    }
+  };
+  draw(-1);
+  return box;
+}
+
+// ================= CV import =================
+function viewCv(){
+  $("#page").innerHTML = `<div class="panel"><h3>استيراد البيانات من الـ CV بالذكاء الاصطناعي</h3>
+    <ol class="steps"><li>ارفع الـ CV بصيغة PDF.</li><li>الذكاء الاصطناعي بيقرا كل حاجة ويكتبها بالعربي والإنجليزي في خانات الموقع.</li><li>تراجع وتعدّل في «تعديل المحتوى»، وبعدين تدوس حفظ. مفيش حاجة بتتغير في الموقع قبل الحفظ.</li></ol>
+    <div class="field" style="margin-top:18px"><div class="drop" id="cvdrop">اسحب الـ PDF هنا أو دوس للاختيار<input type="file" accept="application/pdf" hidden id="cvfile"></div><div class="hint" id="cvname"></div></div>
+    <div class="field"><label>ملاحظات للذكاء الاصطناعي (اختياري)</label><textarea id="cvnotes" placeholder="مثلاً: ركّز على خبرة التسويق، أو: اكتب المسمى «مدير تسويق» بدل «مسؤول تسويق»"></textarea></div>
+    <div class="field"><label class="toggle"><input type="checkbox" id="keepProj" checked><span>سيب المشاريع والصور اللي موجودة حالياً</span></label></div>
+    <div class="field"><label class="toggle"><input type="checkbox" id="useCv" checked><span>خلّي الـ CV ده هو ملف «تحميل السيرة الذاتية» في الموقع</span></label></div>
+    <button class="btn primary" id="cvgo" disabled>ابدأ الاستيراد</button> <span id="cvst" class="hint"></span></div>`;
+  let file = null;
+  const drop = $("#cvdrop"), inp = $("#cvfile");
+  const setFile = f => { if (!f) return; if (f.type !== "application/pdf") return toast("لازم يكون PDF", "err"); file = f; $("#cvname").textContent = `${f.name} · ${(f.size / 1024 / 1024).toFixed(1)} MB`; $("#cvgo").disabled = false; };
+  drop.onclick = () => inp.click(); inp.onchange = () => setFile(inp.files[0]);
+  drop.ondragover = e => { e.preventDefault(); drop.classList.add("over"); }; drop.ondragleave = () => drop.classList.remove("over");
+  drop.ondrop = e => { e.preventDefault(); drop.classList.remove("over"); setFile(e.dataTransfer.files[0]); };
+  $("#cvgo").onclick = async () => {
+    const b = $("#cvgo"); b.disabled = true; $("#cvst").innerHTML = `<span class="spin"></span> بيقرا الـ CV… ممكن ياخد دقيقة أو اتنين`;
+    try {
+      const fd = new FormData(); fd.append("file", file); fd.append("notes", $("#cvnotes").value);
+      const r = await api("/api/cv-import", {method:"POST", body:fd});
+      const next = r.content, cur = S.content;
+      next.settings = cur.settings;
+      next.profile.photo = cur.profile.photo;
+      next.profile.cvFile = cur.profile.cvFile;
+      if ($("#keepProj").checked || !next.projects.length) next.projects = cur.projects;
+      if ($("#useCv").checked) { const fd2 = new FormData(); fd2.append("file", file); const m = await api("/api/media", {method:"POST", body:fd2}); next.profile.cvFile = m.url; }
+      S.content = next; S.dirty = true; S.tab = "profile";
+      toast("تم! راجع البيانات واضغط حفظ");
+      go("content");
+    } catch (e) { if (e.message !== "login") { $("#cvst").textContent = ""; toast(e.message, "err"); } b.disabled = false; }
+  };
+}
+
+// ================= media =================
+async function uploadFiles(files, onDone){
+  for (const f of files) {
+    const fd = new FormData(); fd.append("file", f);
+    try { const m = await api("/api/media", {method:"POST", body:fd}); onDone && onDone(m); }
+    catch (e) { if (e.message !== "login") toast(`${f.name}: ${e.message}`, "err"); }
+  }
+}
+function mediaCard(m, pickMode){
+  const isImg = m.type.startsWith("image/");
+  return `<div class="mcard ${pickMode ? "pick" : ""}" data-url="${esc(m.url)}" data-key="${esc(m.key)}"><div class="im" style="${isImg ? `background-image:url('${esc(m.url)}')` : ""}">${isImg ? "" : "PDF"}</div><div class="meta" title="${esc(m.name)}">${esc(m.name)}</div>${pickMode ? "" : `<div class="acts"><button class="btn sm" data-a="copy">نسخ اللينك</button><button class="btn sm danger" data-a="del">${ic("trash",14)}</button></div>`}</div>`;
+}
+function dropZone(el, onFiles){
+  el.ondragover = e => { e.preventDefault(); el.classList.add("over"); }; el.ondragleave = () => el.classList.remove("over");
+  el.ondrop = e => { e.preventDefault(); el.classList.remove("over"); onFiles([...e.dataTransfer.files]); };
+  const inp = el.querySelector("input"); el.onclick = () => inp.click(); inp.onchange = () => { onFiles([...inp.files]); inp.value = ""; };
+}
+async function viewMedia(){
+  const page = $("#page");
+  page.innerHTML = `<div class="drop" id="mdrop">اسحب الصور أو ملفات PDF هنا، أو دوس للاختيار (لحد 15 ميجا للملف)<input type="file" multiple accept="image/*,application/pdf" hidden></div><div class="mgrid" id="mgrid"><div class="empty"><span class="spin"></span></div></div>`;
+  const load = async () => { const {media} = await api("/api/media"); $("#mgrid").innerHTML = media.length ? media.map(m => mediaCard(m)).join("") : `<div class="empty">مفيش ملفات لسه</div>`; };
+  dropZone($("#mdrop"), async files => { toast("بيرفع…"); await uploadFiles(files); load(); toast("اترفع ✓"); });
+  $("#mgrid").onclick = async e => { const b = e.target.closest("button"); if (!b) return; const card = b.closest(".mcard");
+    if (b.dataset.a === "copy") { await navigator.clipboard.writeText(location.origin + card.dataset.url).catch(()=>{}); toast("اتنسخ اللينك"); }
+    if (b.dataset.a === "del" && confirm("تمسح الملف ده؟ لو مستخدم في الموقع هيختفي.")) { await api("/api/media/" + encodeURIComponent(card.dataset.key), {method:"DELETE"}); card.remove(); toast("اتمسح"); } };
+  load();
+}
+function mediaPicker(kind, onPick){
+  const root = $("#modal-root");
+  root.innerHTML = `<div class="modal"><div class="box"><header><h3>اختار ملف</h3><button class="btn sm" id="mx">قفل</button></header>
+    <div class="drop" id="pdrop">ارفع ${kind === "image" ? "صورة" : "ملف PDF"} جديدة<input type="file" accept="${kind === "image" ? "image/*" : "application/pdf"}" hidden></div><div class="mgrid" id="pgrid"><div class="empty"><span class="spin"></span></div></div></div></div>`;
+  const close = () => root.innerHTML = "";
+  $("#mx").onclick = close; $(".modal", root).onclick = e => { if (e.target.classList.contains("modal")) close(); };
+  dropZone($("#pdrop"), files => uploadFiles(files.slice(0, 1), m => { close(); onPick(m.url); }));
+  api("/api/media").then(({media}) => { const list = media.filter(m => kind === "image" ? m.type.startsWith("image/") : m.type === "application/pdf");
+    $("#pgrid").innerHTML = list.length ? list.map(m => mediaCard(m, true)).join("") : `<div class="empty">مفيش ملفات، ارفع واحد</div>`;
+    $("#pgrid").onclick = e => { const c = e.target.closest(".mcard"); if (c) { close(); onPick(c.dataset.url); } }; });
+}
+
+// ================= messages =================
+async function viewMessages(){
+  const page = $("#page"); page.innerHTML = `<div class="empty"><span class="spin"></span></div>`;
+  const {messages} = await api("/api/messages");
+  setUnread(messages.filter(m => !m.is_read).length);
+  if (!messages.length) { page.innerHTML = `<div class="panel"><div class="empty">مفيش رسايل لسه. أول ما حد يبعت من فورم التواصل هتظهر هنا.</div></div>`; return; }
+  page.innerHTML = messages.map(m => { const wa = (m.phone || "").replace(/\D/g, "");
+    return `<div class="msg ${m.is_read ? "" : "unread"}" data-id="${m.id}"><header>${m.is_read ? "" : '<span class="dotu"></span>'}<b>${esc(m.name)}</b><small class="ltr">${esc(m.created_at)} UTC</small></header>
+    <div class="who ltr" style="text-align:right">${esc(m.email)}${m.phone ? " · " + esc(m.phone) : ""}</div><p>${esc(m.body)}</p>
+    <div class="acts"><a class="btn sm" href="mailto:${encodeURIComponent(m.email)}?subject=${encodeURIComponent("Re: your message")}">رد بالإيميل</a>${wa ? `<a class="btn sm" href="https://wa.me/${wa}" target="_blank" rel="noopener">واتساب</a>` : ""}<button class="btn sm" data-a="read">${m.is_read ? "علّم كغير مقروءة" : "علّم كمقروءة"}</button><button class="btn sm danger" data-a="del">مسح</button></div></div>`; }).join("");
+  page.onclick = async e => { const b = e.target.closest("button[data-a]"); if (!b) return; const card = b.closest(".msg"), id = card.dataset.id;
+    if (b.dataset.a === "read") { await api(`/api/messages/${id}`, {method:"PATCH", body:{read: card.classList.contains("unread")}}); viewMessages(); }
+    if (b.dataset.a === "del" && confirm("تمسح الرسالة؟")) { await api(`/api/messages/${id}`, {method:"DELETE"}); viewMessages(); } };
+}
+
+// ================= history =================
+async function viewHistory(){
+  const page = $("#page"); page.innerHTML = `<div class="empty"><span class="spin"></span></div>`;
+  const {revisions} = await api("/api/revisions");
+  page.innerHTML = `<div class="panel"><h3>النسخ السابقة</h3><p class="hint" style="margin-bottom:14px">كل مرة بتحفظ، النسخة اللي قبلها بتتشال هنا (آخر 30 نسخة). تقدر ترجع لأي واحدة.</p>
+    ${revisions.length ? revisions.map(r => `<div class="rev"><span class="ltr" style="text-align:right">${esc(r.created_at)} UTC</span><button class="btn sm" data-id="${r.id}">رجّع النسخة دي</button></div>`).join("") : `<div class="empty">مفيش نسخ لسه</div>`}</div>`;
+  page.onclick = async e => { const b = e.target.closest("button[data-id]"); if (!b || !confirm("ترجع للنسخة دي؟ النسخة الحالية هتتحفظ في السجل.")) return;
+    const r = await api(`/api/revisions/${b.dataset.id}`, {method:"POST"}); S.content = r.content; S.dirty = false; toast("رجعت للنسخة دي ✓"); viewHistory(); };
+}
+
+boot().catch(() => {});
+})();
+</script>
+</body>
+</html>
