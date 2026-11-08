@@ -1,0 +1,475 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>لوحة التحكم</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@400;500;600;700&family=Manrope:wght@500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0a0f1d;--side:#0d1426;--panel:#111a30;--panel-2:#16213c;--line:rgba(255,255,255,.08);--line-2:rgba(255,255,255,.14);--ink:#eef1f8;--muted:#9aa6c4;--dim:#6b7695;--acc:#d6af5c;--acc-2:#f1d48e;--ok:#4cc38a;--warn:#e7b04a;--err:#ff7b72;--blue:#6ea8ff;--r:14px;font-family:"IBM Plex Sans Arabic","Manrope",system-ui,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}html,body{height:100%}
+body{background:var(--bg);color:var(--ink);font-size:14px;line-height:1.55;-webkit-font-smoothing:antialiased}
+button,input,textarea,select{font:inherit;color:inherit}a{color:inherit}.ltr{direction:ltr;unicode-bidi:isolate}[hidden]{display:none!important}
+.num{font-family:Manrope,sans-serif}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;border:1px solid var(--line-2);background:var(--panel-2);border-radius:10px;padding:9px 14px;cursor:pointer;font-weight:600;font-size:13px;white-space:nowrap;text-decoration:none}
+.btn:hover{border-color:var(--acc)}.btn.primary{background:var(--acc);border-color:var(--acc);color:#1a1405}.btn.primary:hover{background:var(--acc-2)}
+.btn.danger:hover{border-color:var(--err);color:var(--err)}.btn.sm{padding:6px 10px;font-size:12px;border-radius:8px}.btn:disabled{opacity:.5;cursor:not-allowed}.icon-btn{width:32px;height:32px;padding:0}
+input[type=text],input[type=password],input[type=number],input[type=email],textarea,select{width:100%;background:var(--bg);border:1px solid var(--line-2);border-radius:10px;padding:9px 11px;outline:none;font-size:14px}
+input:focus,textarea:focus,select:focus{border-color:var(--acc)}textarea{resize:vertical;min-height:84px}
+.login{min-height:100%;display:grid;place-items:center;padding:20px}
+.login form{width:min(380px,100%);background:var(--panel);border:1px solid var(--line);border-radius:20px;padding:30px;display:grid;gap:14px}
+.login h1{font-size:22px}.login p{color:var(--muted)}.err{color:var(--err);font-size:13px;min-height:1em}
+.shell{display:grid;grid-template-columns:250px 1fr;min-height:100%}
+aside{background:var(--side);border-inline-end:1px solid var(--line);padding:18px 12px;display:flex;flex-direction:column;gap:4px;position:sticky;top:0;height:100vh;overflow:auto}
+.brand{display:flex;align-items:center;gap:10px;padding:4px 10px 16px;font-weight:700}
+.brand b{width:34px;height:34px;border-radius:10px;border:1px solid var(--acc);color:var(--acc);display:grid;place-items:center;font-family:Manrope;font-size:12px;font-weight:800}
+.nav button{display:flex;align-items:center;gap:10px;width:100%;background:none;border:0;text-align:start;padding:9px 12px;border-radius:10px;cursor:pointer;color:var(--muted);font-weight:600}
+.nav button:hover{background:var(--panel);color:var(--ink)}.nav button.on{background:var(--panel-2);color:var(--ink)}
+.nav .count{margin-inline-start:auto;background:var(--acc);color:#1a1405;border-radius:99px;font-size:11px;padding:1px 7px;font-weight:700}
+.nav .sep{height:1px;background:var(--line);margin:8px 6px}
+aside .spacer{flex:1}.me{padding:10px 12px;color:var(--muted);font-size:12px}.me b{color:var(--ink);display:block;font-size:13px}
+main{min-width:0;display:flex;flex-direction:column}
+.top{display:flex;align-items:center;gap:10px;padding:14px 24px;border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(10,15,29,.92);backdrop-filter:blur(10px);z-index:20;flex-wrap:wrap}
+.top h2{font-size:18px;margin-inline-end:auto}.dirty{font-size:12px;color:var(--acc-2)}
+.page{padding:24px;max-width:1240px;width:100%}.menu-btn{display:none}
+.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:12px}
+.tile{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:16px}
+.tile small{color:var(--muted);font-weight:600}.tile .v{font-family:Manrope;font-size:30px;font-weight:800;margin-top:4px}.tile .s{color:var(--dim);font-size:12px}
+.panel{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:18px;margin-top:14px}
+.panel h3{font-size:15px;margin-bottom:14px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}.panel h3 .r{margin-inline-start:auto}
+.hint{font-size:12px;color:var(--dim)}
+.seg{display:inline-flex;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:3px}
+.seg button{border:0;background:none;padding:5px 12px;border-radius:7px;cursor:pointer;color:var(--muted);font-weight:600;font-size:12px}.seg button.on{background:var(--panel-2);color:var(--ink)}
+.g2{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}.g2>.panel,.g3>.panel{margin-top:14px}
+.chart{position:relative;direction:ltr}.chart svg{display:block;width:100%;height:230px;overflow:visible}
+.tip{position:absolute;pointer-events:none;background:#000;border:1px solid var(--line-2);border-radius:8px;padding:6px 10px;font-size:12px;white-space:nowrap;transform:translate(-50%,-110%);opacity:0}
+.toplist{display:grid;gap:10px}.toplist .row{display:grid;grid-template-columns:1fr auto;gap:4px 10px;font-size:13px}
+.toplist .row span:last-child{color:var(--muted);font-family:Manrope}.toplist .bb{grid-column:1/-1;height:6px;background:var(--bg);border-radius:4px;overflow:hidden}.toplist .bb i{display:block;height:100%;background:var(--acc);border-radius:4px}
+.empty{color:var(--dim);font-size:13px;padding:10px 0}
+/* tables */
+.tbl{width:100%;border-collapse:collapse;font-size:13px}
+.tbl th{text-align:start;color:var(--dim);font-weight:600;padding:8px 10px;border-bottom:1px solid var(--line);white-space:nowrap}
+.tbl td{padding:11px 10px;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl tr:hover td{background:rgba(255,255,255,.02)}
+.scroll-x{overflow-x:auto}
+.pill{display:inline-block;padding:2px 9px;border-radius:99px;font-size:11px;font-weight:700;border:1px solid var(--line-2);color:var(--muted);margin:1px}
+.pill.link{border-color:rgba(214,175,92,.5);color:var(--acc-2)}.pill.ok{border-color:rgba(76,195,138,.5);color:var(--ok)}.pill.warn{border-color:rgba(231,176,74,.5);color:var(--warn)}.pill.err{border-color:rgba(255,123,114,.5);color:var(--err)}.pill.blue{border-color:rgba(110,168,255,.5);color:var(--blue)}
+.scroll-bar{width:70px;height:6px;background:var(--bg);border-radius:4px;overflow:hidden;display:inline-block;vertical-align:middle}.scroll-bar i{display:block;height:100%;background:var(--acc)}
+/* links */
+.linkrow{display:grid;grid-template-columns:1fr auto;gap:10px;align-items:center;padding:14px;border:1px solid var(--line);border-radius:12px;background:var(--panel);margin-bottom:10px}
+.linkrow.arch{opacity:.55}
+.linkrow .t{font-weight:700;font-size:15px}.linkrow .u{color:var(--muted);font-size:12px;direction:ltr;text-align:right;word-break:break-all}
+.linkrow .st{display:flex;gap:14px;flex-wrap:wrap;margin-top:8px;color:var(--muted);font-size:12px}.linkrow .st b{color:var(--ink);font-family:Manrope}
+.linkrow .acts{display:flex;gap:6px;flex-wrap:wrap;justify-content:flex-end}
+.form-grid{display:grid;grid-template-columns:2fr 2fr 1fr auto;gap:10px;align-items:end}
+.form-grid label{display:grid;gap:6px;font-size:12px;color:var(--muted);font-weight:600}
+/* editor */
+.tabs{display:flex;gap:6px;flex-wrap:wrap;margin-bottom:18px}
+.tabs button{border:1px solid var(--line);background:var(--panel);padding:7px 13px;border-radius:999px;cursor:pointer;font-weight:600;font-size:13px;color:var(--muted)}.tabs button.on{background:var(--acc);color:#1a1405;border-color:var(--acc)}
+.field{display:grid;gap:7px;margin-bottom:16px}.field>label{font-weight:600;font-size:13px;color:var(--muted)}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:10px}.pair .lab{font-size:11px;color:var(--dim);margin-bottom:4px}
+.toggle{display:inline-flex;align-items:center;gap:10px;cursor:pointer}
+.toggle input{width:40px;height:22px;appearance:none;background:var(--line-2);border-radius:99px;position:relative;cursor:pointer;flex-shrink:0}
+.toggle input::after{content:"";position:absolute;top:3px;inset-inline-start:3px;width:16px;height:16px;border-radius:50%;background:#fff;transition:inset-inline-start .15s}
+.toggle input:checked{background:var(--ok)}.toggle input:checked::after{inset-inline-start:21px}
+.list{display:grid;gap:10px}.item{border:1px solid var(--line);border-radius:12px;background:var(--panel)}
+.item>header{display:flex;align-items:center;gap:8px;padding:10px 12px;cursor:pointer;user-select:none}
+.item>header .t{flex:1;font-weight:600;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}.item>header .n{color:var(--dim);font-family:Manrope;font-size:12px;min-width:20px}
+.item>.body{padding:6px 14px 4px;border-top:1px solid var(--line)}.item.closed>.body{display:none}
+.item .simple{display:flex;gap:8px;align-items:flex-start;padding:8px}.item .simple>div{flex:1}
+.add{border:1px dashed var(--line-2);background:none;border-radius:12px;padding:10px;cursor:pointer;color:var(--muted);font-weight:600}.add:hover{border-color:var(--acc);color:var(--acc-2)}
+.img-field{display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+.img-field .pv{width:96px;height:64px;border-radius:8px;border:1px solid var(--line-2);background:var(--bg) center/cover no-repeat;display:grid;place-items:center;color:var(--dim);font-size:11px;flex-shrink:0}
+.img-field input{flex:1;min-width:160px}
+.drop{border:2px dashed var(--line-2);border-radius:16px;padding:26px;text-align:center;color:var(--muted);cursor:pointer}.drop:hover,.drop.over{border-color:var(--acc);background:rgba(214,175,92,.05)}
+.mgrid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px;margin-top:16px}
+.mcard{background:var(--panel);border:1px solid var(--line);border-radius:12px;overflow:hidden;display:flex;flex-direction:column}
+.mcard .im{aspect-ratio:4/3;background:var(--bg) center/cover no-repeat;display:grid;place-items:center;color:var(--dim);font-weight:700}
+.mcard .meta{padding:8px 10px;font-size:12px;color:var(--muted);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.mcard .acts{display:flex;gap:6px;padding:0 10px 10px}.mcard.pick{cursor:pointer}.mcard.pick:hover{border-color:var(--acc)}
+.req{background:var(--panel);border:1px solid var(--line);border-radius:12px;padding:14px 16px;margin-bottom:10px}
+.req.new{border-color:rgba(214,175,92,.45)}.req header{display:flex;gap:10px;align-items:center;flex-wrap:wrap}.req header b{font-size:15px}.req header small{color:var(--dim);margin-inline-start:auto}
+.req .who{color:var(--muted);font-size:13px;margin-top:4px}.req p{margin-top:10px;white-space:pre-wrap}.req .acts{display:flex;gap:8px;margin-top:12px;flex-wrap:wrap;align-items:center}
+.req select{width:auto}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.6);display:grid;place-items:center;z-index:50;padding:20px}
+.modal .box{background:var(--side);border:1px solid var(--line-2);border-radius:18px;padding:20px;width:min(900px,100%);max-height:85vh;overflow:auto}
+.modal .box header{display:flex;align-items:center;margin-bottom:14px}.modal .box header h3{flex:1}
+.toast{position:fixed;bottom:20px;left:50%;transform:translateX(-50%);background:var(--panel-2);border:1px solid var(--line-2);border-radius:12px;padding:11px 18px;z-index:60;font-weight:600}
+.toast.ok{border-color:var(--ok)}.toast.err{border-color:var(--err)}
+.spin{width:18px;height:18px;border:2px solid var(--line-2);border-top-color:var(--acc);border-radius:50%;animation:sp .8s linear infinite;display:inline-block;vertical-align:middle}@keyframes sp{to{transform:rotate(360deg)}}
+.steps{display:grid;gap:8px;color:var(--muted)}.steps li{margin-inline-start:18px}
+.rev{display:flex;align-items:center;gap:12px;padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--panel);margin-bottom:8px}.rev span{flex:1}
+.note{background:rgba(110,168,255,.08);border:1px solid rgba(110,168,255,.25);border-radius:12px;padding:12px 14px;color:#c9dbff;font-size:13px}
+@media (max-width:980px){
+  .shell{grid-template-columns:1fr}
+  aside{position:fixed;top:0;bottom:0;right:0;width:270px;z-index:40;transform:translateX(100%);transition:transform .2s;box-shadow:0 0 60px rgba(0,0,0,.6)}aside.open{transform:none}
+  .menu-btn{display:inline-flex}.g2,.g3,.pair{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.page{padding:16px}.top{padding:12px 16px}
+  .linkrow{grid-template-columns:1fr}.linkrow .acts{justify-content:flex-start}
+}
+</style>
+</head>
+<body>
+<div id="app"></div><div id="modal-root"></div>
+<script>
+(function(){
+"use strict";
+const $ = (s, r = document) => r.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"']/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+async function api(path, opt = {}) {
+  const o = {credentials:"same-origin", ...opt, headers:{"x-requested-with":"company-admin", ...(opt.headers||{})}};
+  if (o.body && !(o.body instanceof FormData)) { o.headers["content-type"] = "application/json"; o.body = JSON.stringify(o.body); }
+  const r = await fetch(path, o); const j = await r.json().catch(() => ({}));
+  if (r.status === 401 && path !== "/api/login") { showLogin(); throw new Error("login"); }
+  if (!r.ok) throw new Error(AR_ERR[j.error] || j.error || "حصل خطأ");
+  return j;
+}
+const AR_ERR = {"Wrong username or password":"اسم المستخدم أو الباسورد غلط","Too many attempts. Try again later.":"محاولات كتير، جرّب بعد شوية","You don't have permission for this":"مش عندك صلاحية للعملية دي","Password must be at least 8 characters":"الباسورد لازم يكون 8 حروف على الأقل","This username already exists":"اسم المستخدم ده موجود","This link already exists, choose another":"اللينك ده موجود، اختار اسم تاني","Write who this link is for":"اكتب اللينك ده لمين","Current password is wrong":"الباسورد الحالي غلط","Telegram is not configured on the server":"تنبيهات تيليجرام مش متفعّلة على السيرفر"};
+function toast(m, k = "ok"){ const t = document.createElement("div"); t.className = "toast " + k; t.textContent = m; document.body.appendChild(t); setTimeout(() => t.remove(), 3200); }
+const I = {dash:'<path d="M3 13h8V3H3zM13 21h8V11h-8zM3 21h8v-6H3zM13 3v6h8V3z"/>',visits:'<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"/><circle cx="12" cy="12" r="3"/>',link:'<path d="M10 14a5 5 0 007 0l3-3a5 5 0 00-7-7l-1 1M14 10a5 5 0 00-7 0l-3 3a5 5 0 007 7l1-1"/>',
+ req:'<rect x="2" y="4" width="20" height="16" rx="2"/><path d="M2 6l10 7 10-7"/>',edit:'<path d="M4 20l4-1 11-11-3-3L5 16l-1 4z"/>',imp:'<path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M14 3v6h6M12 18v-6M9 15l3 3 3-3"/>',media:'<rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/>',
+ hist:'<path d="M3 12a9 9 0 109-9 9 9 0 00-7 3.4M3 4v4h4M12 7v5l3 2"/>',users:'<circle cx="9" cy="8" r="4"/><path d="M2 21c0-4 3-6 7-6s7 2 7 6M16 4a4 4 0 010 8M22 21c0-3-2-5-4-5.5"/>',key:'<circle cx="8" cy="15" r="4"/><path d="M11 12l9-9M17 6l3 3"/>',out:'<path d="M15 3h4a2 2 0 012 2v14a2 2 0 01-2 2h-4M10 17l-5-5 5-5M5 12h12"/>',
+ eye:'<path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8S1 12 1 12z"/><circle cx="12" cy="12" r="3"/>',menu:'<path d="M3 6h18M3 12h18M3 18h18"/>',up:'<path d="M12 19V5M5 12l7-7 7 7"/>',down:'<path d="M12 5v14M19 12l-7 7-7-7"/>',trash:'<path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/>',copy:'<rect x="9" y="9" width="12" height="12" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/>',pdf:'<path d="M14 3H6a2 2 0 00-2 2v14a2 2 0 002 2h12a2 2 0 002-2V9z"/><path d="M14 3v6h6"/>'};
+const ic = (n, s = 18) => `<svg width="${s}" height="${s}" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">${I[n]}</svg>`;
+const fmt = n => Number(n || 0).toLocaleString("en-US");
+const dur = s => { s = Number(s)||0; if (s < 60) return `${s} ث`; const m = Math.floor(s/60); return m < 60 ? `${m} د ${s%60 ? (s%60)+" ث" : ""}` : `${Math.floor(m/60)} س ${m%60} د`; };
+const when = ts => { const d = new Date(String(ts).replace(" ", "T") + "Z"); if (isNaN(d)) return ts; const diff = (Date.now() - d) / 1000;
+  if (diff < 60) return "دلوقتي"; if (diff < 3600) return `من ${Math.floor(diff/60)} دقيقة`; if (diff < 86400) return `من ${Math.floor(diff/3600)} ساعة`;
+  return d.toLocaleString("ar-EG", {day:"numeric", month:"short", hour:"2-digit", minute:"2-digit"}); };
+const SEC = {about:"من نحن",services:"الخدمات",work:"المشاريع",process:"طريقة العمل",clients:"العملاء",testimonials:"الآراء",team:"الفريق",contact:"التواصل"};
+const EVN = {whatsapp:"واتساب",call:"اتصال",email:"إيميل",map:"الخريطة",cta_quote:"طلب عرض سعر",profile_download:"تحميل البروفايل",project_open:"فتح مشروع",project_link:"لينك مشروع",lang_en:"غيّر للإنجليزي",lang_ar:"غيّر للعربي"};
+const evName = n => EVN[n] || (n.startsWith("social_") ? n.slice(7) : n);
+const DEV = {mobile:"موبايل",desktop:"كمبيوتر",tablet:"تابلت"};
+const flag = cc => cc && cc.length === 2 ? String.fromCodePoint(...[...cc.toUpperCase()].map(c => 127397 + c.charCodeAt())) : "";
+const ROLE = {admin:"مدير",editor:"محرر",viewer:"مشاهد"};
+
+let S = {user:null, view:"dash", content:null, schema:null, dirty:false, tab:"brand", days:30, vfilter:"all"};
+
+// =============== login ===============
+function showLogin(){
+  $("#app").innerHTML = `<div class="login"><form id="lf"><h1>لوحة التحكم</h1><p>سجّل دخول عشان تشوف الزيارات وتعدّل الموقع.</p>
+    <input type="text" name="username" placeholder="اسم المستخدم" autocomplete="username" required dir="ltr" value="admin">
+    <input type="password" name="password" placeholder="الباسورد" autocomplete="current-password" required>
+    <div class="err" id="lerr"></div><button class="btn primary" type="submit">دخول</button></form></div>`;
+  $("#lf").onsubmit = async e => { e.preventDefault(); const b = e.target.querySelector("button"); b.disabled = true; $("#lerr").textContent = "";
+    try { await api("/api/login", {method:"POST", body:{username:e.target.username.value, password:e.target.password.value}}); boot(); }
+    catch (err) { $("#lerr").textContent = err.message; b.disabled = false; } };
+}
+
+// =============== shell ===============
+const VIEWS = [
+  ["dash","الرئيسية","dash",["admin","editor","viewer"]],["visits","سجل الزيارات","visits",["admin","editor","viewer"]],["links","اللينكات المتتبعة","link",["admin","editor","viewer"]],["requests","طلبات العملاء","req",["admin","editor","viewer"]],
+  ["-"],["content","تعديل الموقع","edit",["admin","editor"]],["import","استيراد من البروفايل","imp",["admin","editor"]],["media","الصور والملفات","media",["admin","editor"]],["history","النسخ السابقة","hist",["admin","editor"]],
+  ["-"],["users","المستخدمين","users",["admin"]],["account","حسابي","key",["admin","editor","viewer"]]];
+const allowed = v => { const x = VIEWS.find(z => z[0] === v); return x && x[3] && x[3].includes(S.user.role); };
+async function boot(){
+  let me; try { me = await api("/api/me"); } catch { return; }
+  S.user = me.user;
+  const [{schema}, {content}] = await Promise.all([api("/api/schema"), api("/api/content")]);
+  S.schema = schema; S.content = content; S.dirty = false;
+  shell(); go(allowed(S.view) ? S.view : "dash");
+}
+function shell(){
+  $("#app").innerHTML = `<div class="shell"><aside id="side"><div class="brand"><b id="bm"></b><span id="bn"></span></div>
+    <nav class="nav">${VIEWS.map(v => v[0] === "-" ? `<div class="sep"></div>` : (v[3].includes(S.user.role) ? `<button data-v="${v[0]}">${ic(v[2])}<span>${v[1]}</span>${v[0] === "requests" ? `<span class="count" id="rcount" hidden></span>` : ""}</button>` : "")).join("")}</nav>
+    <div class="spacer"></div><div class="me"><b>${esc(S.user.name)}</b>${ROLE[S.user.role]} · <span class="ltr">${esc(S.user.username)}</span></div>
+    <a class="btn" href="/?preview=1" target="_blank" rel="noopener">${ic("eye")} عرض الموقع</a><button class="btn danger" id="logout" style="margin-top:6px">${ic("out")} خروج</button></aside>
+    <main><div class="top"><button class="btn icon-btn menu-btn" id="menu" aria-label="القائمة">${ic("menu")}</button><h2 id="vt"></h2><span id="topx" style="display:contents"></span></div><div class="page" id="page"></div></main></div>`;
+  $("#bm").textContent = (S.content.brand.short || "CO").slice(0,3); $("#bn").textContent = S.content.brand.name.ar || S.content.brand.name.en || "لوحة التحكم";
+  document.querySelectorAll(".nav button").forEach(b => b.onclick = () => { $("#side").classList.remove("open"); go(b.dataset.v); });
+  $("#menu").onclick = () => $("#side").classList.toggle("open");
+  $("#logout").onclick = async () => { await api("/api/logout", {method:"POST"}).catch(()=>{}); showLogin(); };
+}
+function go(v){
+  if (S.view === "content" && v !== "content" && S.dirty && !confirm("فيه تعديلات مش محفوظة. تسيبها؟")) return;
+  if (v !== "content" && S.dirty) { S.dirty = false; api("/api/content").then(r => S.content = r.content); }
+  S.view = v; document.querySelectorAll(".nav button").forEach(b => b.classList.toggle("on", b.dataset.v === v));
+  $("#vt").textContent = VIEWS.find(x => x[0] === v)[1]; $("#topx").innerHTML = ""; $("#page").onclick = null;
+  ({dash, visits, links, requests, content:viewContent, import:viewImport, media:viewMedia, history, users, account})[v]();
+}
+function setReq(n){ const c = $("#rcount"); if (c) { c.hidden = !n; c.textContent = n; } }
+addEventListener("beforeunload", e => { if (S.dirty) { e.preventDefault(); e.returnValue = ""; } });
+const loading = () => $("#page").innerHTML = `<div class="empty"><span class="spin"></span></div>`;
+const seg = (id, opts, cur) => `<span class="seg" id="${id}">${opts.map(([v,l]) => `<button data-v="${v}" class="${String(v) === String(cur) ? "on" : ""}">${l}</button>`).join("")}</span>`;
+
+// =============== dashboard ===============
+async function dash(){
+  $("#topx").innerHTML = `${seg("range", [[7,"7 أيام"],[30,"30 يوم"],[90,"90 يوم"]], S.days)}<a class="btn" href="/?print=1&lang=ar" target="_blank" rel="noopener">${ic("pdf")} PDF</a>`;
+  $("#range").onclick = e => { const b = e.target.closest("button"); if (b) { S.days = +b.dataset.v; dash(); } };
+  loading();
+  const [s, rv] = await Promise.all([api(`/api/stats?days=${S.days}`), api(`/api/visits?days=${S.days}&limit=8`)]);
+  setReq(s.new_requests);
+  const t = s.totals, ev = Object.fromEntries(s.events.map(e => [e.name, e.n]));
+  const pct = (a, b) => b ? Math.round(a / b * 100) : 0;
+  $("#page").innerHTML = `<div class="tiles">
+      <div class="tile"><small>الزيارات</small><div class="v">${fmt(t.visits)}</div><div class="s">${fmt(t.people)} شخص مختلف</div></div>
+      <div class="tile"><small>متوسط وقت الزيارة</small><div class="v" style="font-size:24px">${dur(t.avg_time)}</div><div class="s">${pct(t.finished, t.visits)}% وصلوا لآخر الصفحة</div></div>
+      <div class="tile"><small>فتح اللينكات المتتبعة</small><div class="v">${fmt(t.link_opens)}</div><div class="s">من عملاء بعتنالهم لينك</div></div>
+      <div class="tile"><small>ضغطات واتساب واتصال</small><div class="v">${fmt((ev.whatsapp||0) + (ev.call||0))}</div><div class="s">${fmt(ev.whatsapp||0)} واتساب · ${fmt(ev.call||0)} اتصال</div></div>
+      <div class="tile"><small>طلبات جديدة</small><div class="v">${fmt(s.new_requests)}</div><div class="s">من فورم عرض السعر</div></div>
+    </div>
+    <div class="panel"><h3>الزيارات اليومية</h3><div class="chart" id="chart"></div></div>
+    <div class="panel"><h3>آخر الزيارات <button class="btn sm r" id="allv">كل السجل</button></h3>${visitTable(rv.visits)}</div>
+    <div class="g3">
+      <div class="panel"><h3>الأقسام اللي اتشافت</h3>${toplist(s.sections.map(x => ({name: SEC[x.name] || x.name, n: x.n, of: t.visits})), "لسه مفيش بيانات", true)}</div>
+      <div class="panel"><h3>المدن</h3>${toplist(s.cities.length ? s.cities : s.countries, "لسه مفيش بيانات")}</div>
+      <div class="panel"><h3>جايين منين</h3>${toplist(s.referrers, "كلها زيارات مباشرة لحد دلوقتي")}</div>
+      <div class="panel"><h3>أكتر اللينكات فتحاً</h3>${toplist(s.links, "مفيش لينكات متتبعة اتفتحت")}</div>
+      <div class="panel"><h3>الضغطات</h3>${toplist(s.events.map(e => ({name: evName(e.name), n: e.n})), "لسه محدش ضغط على حاجة")}</div>
+      <div class="panel"><h3>الأجهزة</h3>${toplist(s.devices.map(d => ({name: DEV[d.name] || d.name, n: d.n})), "لسه مفيش بيانات")}</div>
+    </div>`;
+  $("#allv").onclick = () => go("visits");
+  drawChart($("#chart"), s);
+}
+function toplist(rows, empty, pctOf){
+  if (!rows.length) return `<div class="empty">${empty}</div>`;
+  const max = Math.max(...rows.map(r => r.n));
+  return `<div class="toplist">${rows.map(r => `<div class="row"><span>${esc(r.name)}</span><span>${pctOf ? Math.round(r.n / Math.max(1, r.of) * 100) + "%" : r.n}</span><div class="bb"><i style="width:${Math.max(3, r.n / max * 100)}%"></i></div></div>`).join("")}</div>`;
+}
+function drawChart(el, s){
+  // single series → one hue, no legend; bars anchored to the baseline with 4px rounded tops and 2px gaps; tooltip per bar
+  const by = Object.fromEntries(s.daily.map(d => [d.day, d])), start = new Date(s.since + "T00:00:00Z"), days = [];
+  for (let i = 0; i < s.days; i++) { const d = new Date(start.getTime() + i * 864e5).toISOString().slice(0, 10); days.push({day:d, v:by[d]?.visits || 0, p:by[d]?.people || 0}); }
+  const W = Math.max(el.clientWidth, 300), H = 230, pl = 34, pb = 22, pt = 8, max = Math.max(4, ...days.map(d => d.v)), step = Math.ceil(max / 4), top = step * 4;
+  const cw = (W - pl) / days.length, bw = Math.max(2, cw - 2), y = v => pt + (H - pb - pt) * (1 - v / top);
+  let g = ""; for (let k = 0; k <= 4; k++) { const yy = y(step * k); g += `<line x1="${pl}" x2="${W}" y1="${yy}" y2="${yy}" stroke="rgba(255,255,255,${k ? .06 : .18})"/><text x="${pl - 8}" y="${yy + 4}" fill="#6b7695" font-size="11" text-anchor="end">${step * k}</text>`; }
+  const bars = days.map((d, i) => { if (!d.v) return ""; const x = pl + i * cw + 1, yy = y(d.v), h = H - pb - yy, r = Math.min(4, bw / 2, h);
+    return `<path d="M${x},${H - pb} V${yy + r} Q${x},${yy} ${x + r},${yy} H${x + bw - r} Q${x + bw},${yy} ${x + bw},${yy + r} V${H - pb} Z" fill="#d6af5c"/>`; }).join("");
+  const every = Math.ceil(days.length / 7);
+  const labels = days.map((d, i) => i % every ? "" : `<text x="${pl + i * cw + cw / 2}" y="${H - 4}" fill="#6b7695" font-size="11" text-anchor="middle">${d.day.slice(5).replace("-", "/")}</text>`).join("");
+  const hits = days.map((d, i) => `<rect x="${pl + i * cw}" y="0" width="${cw}" height="${H - pb}" fill="transparent" data-i="${i}"/>`).join("");
+  el.innerHTML = `<svg viewBox="0 0 ${W} ${H}" role="img" aria-label="الزيارات اليومية">${g}${bars}${labels}<g class="hits">${hits}</g></svg><div class="tip"></div>`;
+  const tip = $(".tip", el), hz = $(".hits", el);
+  hz.onmousemove = e => { const i = e.target.dataset.i; if (i == null) return; const d = days[i]; tip.innerHTML = `${d.day}<br><b>${d.v}</b> زيارة · <b>${d.p}</b> شخص`; tip.style.left = (pl + i * cw + cw / 2) / W * 100 + "%"; tip.style.top = y(d.v) + "px"; tip.style.opacity = 1; };
+  hz.onmouseleave = () => tip.style.opacity = 0;
+}
+function visitTable(rows){
+  if (!rows.length) return `<div class="empty">لسه مفيش زيارات. أول ما حد يفتح الموقع هيظهر هنا.</div>`;
+  return `<div class="scroll-x"><table class="tbl"><thead><tr><th>الوقت</th><th>مين</th><th>منين</th><th>الجهاز</th><th>المدة</th><th>نزل لحد</th><th>شاف</th><th>عمل</th></tr></thead><tbody>${rows.map(v => {
+    const clicks = (v.clicks || "").split(",").filter(Boolean);
+    return `<tr><td>${esc(when(v.started_at))}</td>
+      <td>${v.link_name ? `<span class="pill link">🔗 ${esc(v.link_name)}</span>` : `<span class="hint">زائر</span>`}${v.is_return ? ` <span class="pill blue">راجع تاني</span>` : ""}</td>
+      <td>${flag(v.country)} ${esc(v.city || v.country || "—")}${v.referrer ? `<div class="hint ltr">${esc(v.referrer)}</div>` : ""}${v.utm_source ? `<div class="hint ltr">${esc(v.utm_source)}${v.utm_campaign ? " / " + esc(v.utm_campaign) : ""}</div>` : ""}</td>
+      <td>${DEV[v.device] || esc(v.device)}<div class="hint">${esc(v.os)} · ${esc(v.browser)}</div></td>
+      <td class="num">${dur(v.duration)}</td>
+      <td><span class="scroll-bar"><i style="width:${v.max_scroll}%"></i></span> <span class="hint num">${v.max_scroll}%</span></td>
+      <td>${(v.sections || "").split(",").filter(Boolean).map(x => `<span class="pill">${esc(SEC[x] || x)}</span>`).join("") || `<span class="hint">—</span>`}</td>
+      <td>${clicks.map(c => `<span class="pill ok">${esc(evName(c))}</span>`).join("")}${v.requested ? `<span class="pill warn">بعت طلب</span>` : ""}${!clicks.length && !v.requested ? `<span class="hint">—</span>` : ""}</td></tr>`; }).join("")}</tbody></table></div>`;
+}
+
+// =============== visits log ===============
+async function visits(){
+  const {links: L} = await api("/api/links");
+  $("#topx").innerHTML = `${seg("range", [[7,"7 أيام"],[30,"30 يوم"],[90,"90 يوم"]], S.days)}<select id="vf" style="width:auto"><option value="all">كل الزيارات</option><option value="tracked">اللينكات المتتبعة بس</option>${L.map(l => `<option value="${l.id}">🔗 ${esc(l.name)}</option>`).join("")}</select>`;
+  $("#vf").value = S.vfilter;
+  $("#range").onclick = e => { const b = e.target.closest("button"); if (b) { S.days = +b.dataset.v; visits(); } };
+  $("#vf").onchange = e => { S.vfilter = e.target.value; visits(); };
+  loading();
+  const q = S.vfilter === "all" ? "" : S.vfilter === "tracked" ? "&tracked=1" : `&link=${S.vfilter}`;
+  const {visits: V} = await api(`/api/visits?days=${S.days}&limit=500${q}`);
+  $("#page").innerHTML = `<div class="note">الزائر العادي بيظهر كـ «زائر» من غير اسم، ده الطبيعي ومحدش يقدر يعرف اسمه. عشان تعرف <b>مين</b> بالظبط فتح البورتفوليو، ابعتله لينك متتبع من صفحة «اللينكات المتتبعة».</div>
+    <div class="panel"><h3>${fmt(V.length)} زيارة</h3>${visitTable(V)}</div>`;
+}
+
+// =============== tracked links ===============
+async function links(){
+  loading();
+  const {links: L} = await api("/api/links");
+  const canEdit = S.user.role !== "viewer";
+  const base = location.origin + "/v/";
+  $("#page").innerHTML = `${canEdit ? `<div class="panel"><h3>لينك جديد لعميل</h3>
+      <div class="form-grid"><label>اللينك ده لمين؟<input type="text" id="ln" placeholder="مثلاً: شركة الراجحي — م. خالد"></label>
+      <label>اسم في اللينك (اختياري)<input type="text" id="ls" placeholder="alrajhi" dir="ltr"></label>
+      <label>اللغة<select id="ll"><option value="">الافتراضية</option><option value="ar">عربي</option><option value="en">English</option></select></label>
+      <button class="btn primary" id="lcreate">إنشاء اللينك</button></div>
+      <label class="toggle" style="margin-top:12px"><input type="checkbox" id="lnot" checked><span>ابعتلي تنبيه تيليجرام أول ما يفتحه</span></label>
+      <p class="hint" style="margin-top:10px">ابعت اللينك ده للعميل بس. كل مرة يفتحه هتعرف إمتى، ومن أنهي مدينة، وقعد قد إيه، وشاف أنهي أقسام، وضغط على إيه.</p></div>` : ""}
+    <div class="panel"><h3>اللينكات (${L.length})</h3>${L.length ? L.map(l => `<div class="linkrow ${l.archived ? "arch" : ""}" data-id="${l.id}" data-slug="${esc(l.slug)}">
+        <div><div class="t">${esc(l.name)} ${l.archived ? `<span class="pill">مقفول</span>` : l.opens ? `<span class="pill ok">اتفتح</span>` : `<span class="pill">لسه ما اتفتحش</span>`}</div>
+          <div class="u">${esc(base + l.slug)}</div>
+          <div class="st"><span>فتحه <b>${l.opens}</b> مرة</span><span>آخر مرة: <b>${l.last_open ? esc(when(l.last_open)) : "—"}</b></span><span>إجمالي الوقت: <b>${dur(l.total_time)}</b></span><span>ضغطات: <b>${l.clicks}</b></span><span>طلبات: <b>${l.requests}</b></span>${l.created_by ? `<span>أنشأه: ${esc(l.created_by)}</span>` : ""}</div></div>
+        <div class="acts"><button class="btn sm" data-a="copy">${ic("copy",14)} نسخ</button><a class="btn sm" target="_blank" rel="noopener" href="https://wa.me/?text=${encodeURIComponent(base + l.slug)}">واتساب</a><button class="btn sm" data-a="log">النشاط</button>
+          ${canEdit ? `<button class="btn sm" data-a="arch">${l.archived ? "فتح" : "قفل"}</button>` : ""}${S.user.role === "admin" ? `<button class="btn sm danger icon-btn" data-a="del" title="مسح">${ic("trash",14)}</button>` : ""}</div></div>`).join("") : `<div class="empty">لسه مفيش لينكات. اعمل أول لينك لعميل من فوق.</div>`}</div>`;
+  if (canEdit) $("#lcreate").onclick = async () => {
+    const b = $("#lcreate"); b.disabled = true;
+    try { const r = await api("/api/links", {method:"POST", body:{name:$("#ln").value, slug:$("#ls").value, lang:$("#ll").value, notify:$("#lnot").checked}});
+      await navigator.clipboard.writeText(base + r.slug).catch(()=>{}); toast("اتعمل اللينك واتنسخ ✓"); links(); }
+    catch (e) { if (e.message !== "login") toast(e.message, "err"); b.disabled = false; } };
+  $("#page").onclick = async e => { const b = e.target.closest("button[data-a]"); if (!b) return; const row = b.closest(".linkrow"), id = row.dataset.id, a = b.dataset.a;
+    if (a === "copy") { await navigator.clipboard.writeText(base + row.dataset.slug).catch(()=>{}); toast("اتنسخ اللينك"); }
+    if (a === "log") { S.vfilter = id; go("visits"); }
+    if (a === "arch") { await api(`/api/links/${id}`, {method:"PATCH", body:{archived: !row.classList.contains("arch")}}); links(); }
+    if (a === "del" && confirm("تمسح اللينك؟ الزيارات القديمة هتفضل بس من غير اسم.")) { await api(`/api/links/${id}`, {method:"DELETE"}); links(); } };
+}
+
+// =============== requests ===============
+const ST = {new:["جديد","warn"],contacted:["اتواصلنا","blue"],won:["اتقفل بيع","ok"],lost:["مكملش","err"]};
+async function requests(){
+  loading();
+  const {requests: R} = await api("/api/requests");
+  setReq(R.filter(r => r.status === "new").length);
+  const canEdit = S.user.role !== "viewer";
+  if (!R.length) { $("#page").innerHTML = `<div class="panel"><div class="empty">لسه مفيش طلبات. أول ما حد يبعت طلب عرض سعر من الموقع هيظهر هنا.</div></div>`; return; }
+  $("#page").innerHTML = R.map(r => { const wa = (r.phone || "").replace(/\D/g, "");
+    return `<div class="req ${r.status === "new" ? "new" : ""}" data-id="${r.id}"><header><b>${esc(r.name)}</b>${r.company ? `<span class="hint">${esc(r.company)}</span>` : ""}<span class="pill ${ST[r.status][1]}">${ST[r.status][0]}</span>${r.link_name ? `<span class="pill link">🔗 ${esc(r.link_name)}</span>` : ""}<small>${esc(when(r.created_at))}</small></header>
+      <div class="who"><span class="ltr">${esc(r.phone)}</span>${r.phone && r.email ? " · " : ""}<span class="ltr">${esc(r.email)}</span>${r.service ? ` · ${esc(r.service)}` : ""}</div><p>${esc(r.body)}</p>
+      <div class="acts">${wa ? `<a class="btn sm" href="https://wa.me/${wa}" target="_blank" rel="noopener">واتساب</a>` : ""}${r.phone ? `<a class="btn sm" href="tel:${esc(r.phone)}">اتصال</a>` : ""}${r.email ? `<a class="btn sm" href="mailto:${encodeURIComponent(r.email)}">إيميل</a>` : ""}
+        ${canEdit ? `<select data-a="status">${Object.entries(ST).map(([k,[l]]) => `<option value="${k}" ${k === r.status ? "selected" : ""}>${l}</option>`).join("")}</select>` : ""}${S.user.role === "admin" ? `<button class="btn sm danger" data-a="del">مسح</button>` : ""}</div></div>`; }).join("");
+  $("#page").onchange = async e => { if (e.target.dataset.a !== "status") return; await api(`/api/requests/${e.target.closest(".req").dataset.id}`, {method:"PATCH", body:{status:e.target.value}}); toast("اتحدّث"); requests(); };
+  $("#page").onclick = async e => { const b = e.target.closest("button[data-a=del]"); if (b && confirm("تمسح الطلب؟")) { await api(`/api/requests/${b.closest(".req").dataset.id}`, {method:"DELETE"}); requests(); } };
+}
+
+// =============== content editor ===============
+const AR = {name:"الاسم",short:"الحروف المختصرة (للوجو)",logo:"اللوجو (نسخة فاتحة للخلفية الغامقة)",tagline:"السطر الصغير فوق العنوان",headline:"العنوان الرئيسي (*كلمة* = ملوّنة، | = سطر جديد)",intro:"فقرة التعريف",heroImage:"صورة خلفية الواجهة",profileFile:"بروفايل الشركة PDF للتحميل (اختياري)",
+ value:"الرقم",suffix:"بعد الرقم (+ أو %)",label:"الوصف",title:"العنوان",story:"قصتنا",vision:"الرؤية",mission:"الرسالة",image:"صورة",values:"القيم",text:"النص",icon:"الأيقونة",
+ category:"التصنيف (للفلترة)",client:"العميل",location:"المكان",year:"السنة",description:"الوصف",cover:"صورة الغلاف",gallery:"صور إضافية",src:"صورة",url:"لينك (اختياري)",featured:"يظهر كبير",
+ quote:"الرأي",role:"المسمى · الشركة",photo:"الصورة",heading:"العنوان (*كلمة* = ملوّنة، | = سطر جديد)",phone:"التليفون",whatsapp:"واتساب (أرقام مع كود الدولة)",email:"الإيميل",address:"العنوان",mapUrl:"لينك جوجل ماب",hours:"ساعات العمل",formEnabled:"إظهار فورم طلب عرض السعر",
+ theme:"ألوان الموقع",defaultLang:"اللغة الأساسية",seoTitle:"العنوان في جوجل",seoDescription:"الوصف في جوجل",ogImage:"صورة المشاركة (واتساب والسوشيال)"};
+const SEC_AR = {brand:"الشركة",stats:"الأرقام",about:"من نحن",services:"الخدمات",projects:"المشاريع",process:"طريقة العمل",clients:"العملاء",testimonials:"آراء العملاء",team:"الفريق",contact:"التواصل",settings:"الشكل وجوجل"};
+const LIST_AR = {team:{name:"الاسم",role:"المسمى"},clients:{name:"اسم العميل",logo:"اللوجو (اختياري)"},projects:{title:"اسم المشروع"},services:{title:"الخدمة"},process:{title:"الخطوة"},testimonials:{name:"الاسم"}};
+const OPT = {"navy-gold":"كحلي ودهبي","black-orange":"أسود وبرتقالي",emerald:"أخضر",plum:"بنفسجي",light:"فاتح (أبيض)",ar:"العربية",en:"English",building:"مبنى",design:"تصميم",chart:"رسم بياني",megaphone:"تسويق",code:"برمجة",camera:"تصوير",truck:"نقل",shield:"حماية",leaf:"بيئة",tools:"صيانة",team:"فريق",star:"نجمة",globe:"عالمي",target:"هدف",car:"سيارات",heart:"رعاية"};
+function viewContent(){
+  $("#topx").innerHTML = `<span class="dirty" id="dirty" ${S.dirty ? "" : "hidden"}>تعديلات مش محفوظة</span><a class="btn" href="/?preview=1" target="_blank" rel="noopener">${ic("eye")} عرض</a><button class="btn primary" id="save">حفظ</button>`;
+  $("#save").onclick = save;
+  $("#page").innerHTML = `<div class="tabs" id="tabs">${S.schema.map(s => `<button data-k="${s.key}" class="${s.key === S.tab ? "on" : ""}">${SEC_AR[s.key] || s.label}</button>`).join("")}</div><div id="form"></div>`;
+  $("#tabs").onclick = e => { const b = e.target.closest("button"); if (!b) return; S.tab = b.dataset.k; document.querySelectorAll("#tabs button").forEach(x => x.classList.toggle("on", x === b)); drawForm(); };
+  drawForm();
+}
+function markDirty(){ S.dirty = true; const d = $("#dirty"); if (d) d.hidden = false; }
+async function save(){ const b = $("#save"); b.disabled = true; b.innerHTML = `<span class="spin"></span>`;
+  try { const r = await api("/api/content", {method:"PUT", body:{content:S.content}}); S.content = r.content; S.dirty = false; $("#dirty").hidden = true; toast("اتحفظ ✓ والموقع اتحدّث"); }
+  catch (e) { if (e.message !== "login") toast(e.message, "err"); } b.disabled = false; b.textContent = "حفظ"; }
+function drawForm(){ const sec = S.schema.find(s => s.key === S.tab), host = $("#form"); host.innerHTML = ""; const p = document.createElement("div"); p.className = "panel"; host.appendChild(p);
+  if (sec.type === "list") p.appendChild(listEditor(sec, S.content, sec.key, sec.key)); else sec.fields.forEach(f => p.appendChild(fieldEditor(f, S.content[sec.key], sec.key))); }
+const labelFor = (f, parent) => (LIST_AR[parent] && LIST_AR[parent][f.key]) || AR[f.key] || f.label;
+function fieldEditor(f, obj, parent){
+  const w = document.createElement("div"); w.className = "field"; const lab = labelFor(f, parent);
+  if (f.type === "list") { w.innerHTML = `<label>${esc(lab)}</label>`; w.appendChild(listEditor(f, obj, f.key, f.key)); return w; }
+  if (f.type === "bool") { w.innerHTML = `<label class="toggle"><input type="checkbox" ${obj[f.key] ? "checked" : ""}><span>${esc(lab)}</span></label>`; $("input", w).onchange = e => { obj[f.key] = e.target.checked; markDirty(); }; return w; }
+  w.innerHTML = `<label>${esc(lab)}</label>`; w.appendChild(inputFor(f, obj)); return w;
+}
+function inputFor(f, obj){
+  const box = document.createElement("div");
+  if (f.type === "i18n") { const tag = f.multiline ? "textarea" : "input"; box.className = "pair";
+    box.innerHTML = `<div><div class="lab">عربي</div><${tag} ${f.multiline ? "" : 'type="text"'} dir="rtl"></${tag}></div><div><div class="lab">English</div><${tag} ${f.multiline ? "" : 'type="text"'} dir="ltr"></${tag}></div>`;
+    const [ar, en] = box.querySelectorAll(tag); ar.value = obj[f.key]?.ar || ""; en.value = obj[f.key]?.en || "";
+    ar.oninput = () => { obj[f.key] = {...obj[f.key], ar: ar.value}; markDirty(); }; en.oninput = () => { obj[f.key] = {...obj[f.key], en: en.value}; markDirty(); }; return box; }
+  if (f.type === "select") { box.innerHTML = `<select>${f.options.map(o => `<option value="${esc(o)}" ${obj[f.key] === o ? "selected" : ""}>${esc(OPT[o] || o)}</option>`).join("")}</select>`; $("select", box).onchange = e => { obj[f.key] = e.target.value; markDirty(); }; return box; }
+  if (f.type === "image" || f.type === "file") { const img = f.type === "image"; box.className = "img-field";
+    box.innerHTML = `<div class="pv"></div><input type="text" placeholder="/media/..." dir="ltr"><button class="btn sm" type="button">اختار / ارفع</button><button class="btn sm danger" type="button">مسح</button>`;
+    const pv = $(".pv", box), inp = $("input", box), [pick, clear] = box.querySelectorAll("button");
+    const paint = () => { const v = obj[f.key]; if (img && v) { pv.style.backgroundImage = `url("${encodeURI(v)}")`; pv.textContent = ""; } else { pv.style.backgroundImage = ""; pv.textContent = v ? "PDF" : (img ? "مفيش صورة" : "مفيش ملف"); } };
+    inp.value = obj[f.key] || ""; paint(); inp.oninput = () => { obj[f.key] = inp.value.trim(); paint(); markDirty(); };
+    pick.onclick = () => mediaPicker(img ? "image" : "pdf", u => { obj[f.key] = u; inp.value = u; paint(); markDirty(); });
+    clear.onclick = () => { obj[f.key] = ""; inp.value = ""; paint(); markDirty(); }; return box; }
+  const inp = document.createElement("input"); inp.type = f.type === "number" ? "number" : "text";
+  if (/phone|whatsapp|email|url|instagram|linkedin|^x$|tiktok|snapchat|youtube|value|suffix|short|year/i.test(f.key)) inp.dir = "ltr";
+  inp.value = obj[f.key] ?? ""; inp.oninput = () => { obj[f.key] = f.type === "number" ? Number(inp.value) : inp.value; markDirty(); }; box.appendChild(inp); return box;
+}
+function blank(fields){ const o = {}; for (const f of fields) o[f.key] = f.type === "i18n" ? {en:"",ar:""} : f.type === "list" ? [] : f.type === "bool" ? false : f.type === "number" ? 0 : f.type === "select" ? f.options[0] : ""; return o; }
+function itemTitle(f, it){ const k = f.itemLabel || f.fields[0].key, v = it[k]; return String((v && typeof v === "object" ? (v.ar || v.en) : v) || "").replace(/[*|]/g, "") || "عنصر جديد"; }
+function listEditor(f, parent, key, pkey){
+  const box = document.createElement("div"); box.className = "list"; const arr = parent[key] || (parent[key] = []); const simple = f.fields.length === 1;
+  const draw = open => { box.innerHTML = "";
+    arr.forEach((it, i) => { const el = document.createElement("div"); el.className = "item" + (simple || i === open ? "" : " closed");
+      const tools = `<button class="btn icon-btn sm" data-a="up" ${i === 0 ? "disabled" : ""}>${ic("up",14)}</button><button class="btn icon-btn sm" data-a="down" ${i === arr.length - 1 ? "disabled" : ""}>${ic("down",14)}</button><button class="btn icon-btn sm danger" data-a="del">${ic("trash",14)}</button>`;
+      if (simple) { el.innerHTML = `<div class="simple"><span class="hint num" style="padding-top:10px;min-width:18px">${i + 1}</span><div></div>${tools}</div>`; $(".simple>div", el).appendChild(inputFor(f.fields[0], it)); }
+      else { el.innerHTML = `<header><span class="n">${i + 1}</span><span class="t">${esc(itemTitle(f, it))}</span>${tools}</header><div class="body"></div>`; const body = $(".body", el);
+        f.fields.forEach(sf => body.appendChild(fieldEditor(sf, it, pkey))); $("header", el).addEventListener("click", e => { if (e.target.closest("button")) return; el.classList.toggle("closed"); $(".t", el).textContent = itemTitle(f, it); }); }
+      el.querySelectorAll("[data-a]").forEach(b => b.onclick = e => { e.stopPropagation(); const a = b.dataset.a;
+        if (a === "del") { if (!confirm("تمسح العنصر ده؟")) return; arr.splice(i, 1); draw(-1); }
+        if (a === "up" && i > 0) { [arr[i-1], arr[i]] = [arr[i], arr[i-1]]; draw(i - 1); }
+        if (a === "down" && i < arr.length - 1) { [arr[i+1], arr[i]] = [arr[i], arr[i+1]]; draw(i + 1); } markDirty(); });
+      box.appendChild(el); });
+    if (!f.max || arr.length < f.max) { const add = document.createElement("button"); add.type = "button"; add.className = "add"; add.textContent = "+ إضافة"; add.onclick = () => { arr.push(blank(f.fields)); markDirty(); draw(arr.length - 1); }; box.appendChild(add); } };
+  draw(-1); return box;
+}
+
+// =============== import ===============
+function viewImport(){
+  $("#page").innerHTML = `<div class="panel"><h3>استيراد بيانات الشركة من البروفايل (PDF) بالذكاء الاصطناعي</h3>
+    <ol class="steps"><li>ارفع بروفايل الشركة بصيغة PDF.</li><li>الذكاء الاصطناعي بيقرا الخدمات والمشاريع والعملاء والأرقام وبيانات التواصل، ويكتبها بالعربي والإنجليزي.</li><li>تراجع في «تعديل الموقع» وتضيف الصور، وبعدين تدوس حفظ. الموقع مش بيتغير قبل الحفظ.</li></ol>
+    <div class="field" style="margin-top:16px"><div class="drop" id="pd">اسحب الـ PDF هنا أو دوس للاختيار<input type="file" accept="application/pdf" hidden></div><div class="hint" id="pn"></div></div>
+    <div class="field"><label>ملاحظات (اختياري)</label><textarea id="pnotes" placeholder="مثلاً: ركّز على مشاريع الرياض، أو اكتب اسم الشركة كده..."></textarea></div>
+    <label class="toggle"><input type="checkbox" id="keepImg" checked><span>سيب الصور واللوجو والمشاريع الموجودة حالياً</span></label><br><br>
+    <label class="toggle"><input type="checkbox" id="useFile" checked><span>خلّي الملف ده هو «تحميل البروفايل» في الموقع</span></label><br><br>
+    <button class="btn primary" id="pgo" disabled>ابدأ الاستيراد</button> <span class="hint" id="pst"></span></div>`;
+  let file = null; const d = $("#pd");
+  dropZone(d, fs => { const f = fs[0]; if (!f || f.type !== "application/pdf") return toast("لازم يكون PDF", "err"); file = f; $("#pn").textContent = `${f.name} · ${(f.size/1048576).toFixed(1)} MB`; $("#pgo").disabled = false; });
+  $("#pgo").onclick = async () => { const b = $("#pgo"); b.disabled = true; $("#pst").innerHTML = `<span class="spin"></span> بيقرا البروفايل… ممكن ياخد دقيقة أو اتنين`;
+    try { const fd = new FormData(); fd.append("file", file); fd.append("notes", $("#pnotes").value);
+      const r = await api("/api/import", {method:"POST", body:fd}); const n = r.content, c = S.content;
+      n.settings = c.settings;
+      if ($("#keepImg").checked) { n.brand.logo = c.brand.logo; n.brand.heroImage = c.brand.heroImage; n.about.image = c.about.image; if (c.projects.length) n.projects = c.projects; }
+      n.brand.profileFile = c.brand.profileFile;
+      if ($("#useFile").checked) { const fd2 = new FormData(); fd2.append("file", file); const m = await api("/api/media", {method:"POST", body:fd2}); n.brand.profileFile = m.url; }
+      S.content = n; S.dirty = true; S.tab = "brand"; toast("تم! راجع البيانات وضيف الصور واضغط حفظ"); go("content"); }
+    catch (e) { if (e.message !== "login") { $("#pst").textContent = ""; toast(e.message, "err"); } b.disabled = false; } };
+}
+
+// =============== media ===============
+function dropZone(el, onFiles){ el.ondragover = e => { e.preventDefault(); el.classList.add("over"); }; el.ondragleave = () => el.classList.remove("over");
+  el.ondrop = e => { e.preventDefault(); el.classList.remove("over"); onFiles([...e.dataTransfer.files]); };
+  const inp = el.querySelector("input"); el.onclick = () => inp.click(); inp.onchange = () => { onFiles([...inp.files]); inp.value = ""; }; }
+async function upload(files, done){ for (const f of files) { const fd = new FormData(); fd.append("file", f); try { const m = await api("/api/media", {method:"POST", body:fd}); done && done(m); } catch (e) { if (e.message !== "login") toast(`${f.name}: ${e.message}`, "err"); } } }
+const mcard = (m, pick) => { const img = m.type.startsWith("image/"); return `<div class="mcard ${pick ? "pick" : ""}" data-url="${esc(m.url)}" data-key="${esc(m.key)}"><div class="im" style="${img ? `background-image:url('${esc(m.url)}')` : ""}">${img ? "" : "PDF"}</div><div class="meta" title="${esc(m.name)}">${esc(m.name)}</div>${pick ? "" : `<div class="acts"><button class="btn sm" data-a="copy">نسخ</button><button class="btn sm danger" data-a="del">${ic("trash",14)}</button></div>`}</div>`; };
+async function viewMedia(){
+  $("#page").innerHTML = `<div class="drop" id="md">اسحب الصور أو ملفات PDF هنا، أو دوس للاختيار (لحد 15 ميجا للملف)<input type="file" multiple accept="image/*,application/pdf" hidden></div><div class="mgrid" id="mg"></div>`;
+  const load = async () => { const {media} = await api("/api/media"); $("#mg").innerHTML = media.length ? media.map(m => mcard(m)).join("") : `<div class="empty">مفيش ملفات لسه</div>`; };
+  dropZone($("#md"), async fs => { toast("بيرفع…"); await upload(fs); load(); toast("اترفع ✓"); });
+  $("#mg").onclick = async e => { const b = e.target.closest("button"); if (!b) return; const c = b.closest(".mcard");
+    if (b.dataset.a === "copy") { await navigator.clipboard.writeText(location.origin + c.dataset.url).catch(()=>{}); toast("اتنسخ"); }
+    if (b.dataset.a === "del" && confirm("تمسح الملف؟ لو مستخدم في الموقع هيختفي.")) { await api("/api/media/" + encodeURIComponent(c.dataset.key), {method:"DELETE"}); c.remove(); } };
+  load();
+}
+function mediaPicker(kind, onPick){
+  const root = $("#modal-root");
+  root.innerHTML = `<div class="modal"><div class="box"><header><h3>اختار ملف</h3><button class="btn sm" id="mx">قفل</button></header><div class="drop" id="pdz">ارفع ${kind === "image" ? "صورة" : "PDF"} جديد<input type="file" accept="${kind === "image" ? "image/*" : "application/pdf"}" hidden></div><div class="mgrid" id="pg"><div class="empty"><span class="spin"></span></div></div></div></div>`;
+  const close = () => root.innerHTML = ""; $("#mx").onclick = close; $(".modal", root).onclick = e => { if (e.target.classList.contains("modal")) close(); };
+  dropZone($("#pdz"), fs => upload(fs.slice(0, 1), m => { close(); onPick(m.url); }));
+  api("/api/media").then(({media}) => { const l = media.filter(m => kind === "image" ? m.type.startsWith("image/") : m.type === "application/pdf");
+    $("#pg").innerHTML = l.length ? l.map(m => mcard(m, true)).join("") : `<div class="empty">مفيش ملفات، ارفع واحد</div>`;
+    $("#pg").onclick = e => { const c = e.target.closest(".mcard"); if (c) { close(); onPick(c.dataset.url); } }; });
+}
+
+// =============== history ===============
+async function history(){
+  loading(); const {revisions} = await api("/api/revisions");
+  $("#page").innerHTML = `<div class="panel"><h3>النسخ السابقة</h3><p class="hint" style="margin-bottom:14px">كل حفظ بيشيل النسخة اللي قبله هنا (آخر 30).</p>${revisions.length ? revisions.map(r => `<div class="rev"><span>${esc(when(r.created_at))}${r.author ? ` · ${esc(r.author)}` : ""}</span><button class="btn sm" data-id="${r.id}">رجّع النسخة دي</button></div>`).join("") : `<div class="empty">مفيش نسخ لسه</div>`}</div>`;
+  $("#page").onclick = async e => { const b = e.target.closest("button[data-id]"); if (!b || !confirm("ترجع للنسخة دي؟")) return; const r = await api(`/api/revisions/${b.dataset.id}`, {method:"POST"}); S.content = r.content; toast("رجعت ✓"); history(); };
+}
+
+// =============== users ===============
+async function users(){
+  loading(); const {users: U} = await api("/api/users");
+  $("#page").innerHTML = `<div class="panel"><h3>مستخدم جديد</h3><div class="form-grid" style="grid-template-columns:1fr 1fr 1fr 1fr auto">
+      <label>الاسم<input type="text" id="un"></label><label>اسم الدخول<input type="text" id="uu" dir="ltr" placeholder="sara"></label><label>الباسورد<input type="text" id="up" dir="ltr" placeholder="8 حروف على الأقل"></label>
+      <label>الصلاحية<select id="ur"><option value="viewer">مشاهد (يشوف الإحصائيات بس)</option><option value="editor">محرر (يعدّل الموقع واللينكات)</option><option value="admin">مدير (كل حاجة)</option></select></label><button class="btn primary" id="uadd">إضافة</button></div></div>
+    <div class="panel"><h3>المستخدمين</h3><div class="scroll-x"><table class="tbl"><thead><tr><th>الاسم</th><th>الدخول</th><th>الصلاحية</th><th>آخر دخول</th><th></th></tr></thead><tbody>${U.map(u => `<tr data-id="${u.id}"><td>${esc(u.name)}</td><td class="ltr">${esc(u.username)}</td>
+      <td><select data-a="role" style="width:auto" ${u.id === S.user.id ? "disabled" : ""}>${Object.entries(ROLE).map(([k,l]) => `<option value="${k}" ${k === u.role ? "selected" : ""}>${l}</option>`).join("")}</select></td>
+      <td>${u.last_login ? esc(when(u.last_login)) : "—"}</td><td style="white-space:nowrap"><button class="btn sm" data-a="pw">باسورد جديد</button> ${u.id === S.user.id ? "" : `<button class="btn sm danger" data-a="del">مسح</button>`}</td></tr>`).join("")}</tbody></table></div></div>`;
+  $("#uadd").onclick = async () => { try { await api("/api/users", {method:"POST", body:{name:$("#un").value, username:$("#uu").value, password:$("#up").value, role:$("#ur").value}}); toast("اتضاف ✓"); users(); } catch (e) { if (e.message !== "login") toast(e.message, "err"); } };
+  $("#page").onchange = async e => { if (e.target.dataset.a !== "role") return; try { await api(`/api/users/${e.target.closest("tr").dataset.id}`, {method:"PATCH", body:{role:e.target.value}}); toast("اتغيرت الصلاحية"); } catch (er) { toast(er.message, "err"); users(); } };
+  $("#page").onclick = async e => { const b = e.target.closest("button[data-a]"); if (!b) return; const id = b.closest("tr").dataset.id;
+    if (b.dataset.a === "pw") { const p = prompt("الباسورد الجديد (8 حروف على الأقل):"); if (!p) return; try { await api(`/api/users/${id}`, {method:"PATCH", body:{password:p}}); toast("اتغير الباسورد"); } catch (er) { toast(er.message, "err"); } }
+    if (b.dataset.a === "del" && confirm("تمسح المستخدم ده؟")) { await api(`/api/users/${id}`, {method:"DELETE"}); users(); } };
+}
+
+// =============== account ===============
+function account(){
+  $("#page").innerHTML = `<div class="panel" style="max-width:520px"><h3>تغيير الباسورد</h3>
+    <div class="field"><label>الباسورد الحالي</label><input type="password" id="c1" autocomplete="current-password"></div>
+    <div class="field"><label>الباسورد الجديد (8 حروف على الأقل)</label><input type="password" id="c2" autocomplete="new-password"></div>
+    <button class="btn primary" id="cgo">حفظ</button></div>
+    ${S.user.role === "admin" ? `<div class="panel" style="max-width:520px"><h3>تنبيهات تيليجرام</h3><p class="hint" style="margin-bottom:12px">لو متفعّلة على السيرفر، بيوصلك تنبيه فوراً لما عميل يفتح لينك متتبع أو يبعت طلب.</p><button class="btn" id="tg">ابعت رسالة تجربة</button></div>` : ""}`;
+  $("#cgo").onclick = async () => { try { await api("/api/password", {method:"POST", body:{current:$("#c1").value, next:$("#c2").value}}); toast("اتغير الباسورد ✓"); $("#c1").value = $("#c2").value = ""; } catch (e) { if (e.message !== "login") toast(e.message, "err"); } };
+  const tg = $("#tg"); if (tg) tg.onclick = async () => { try { await api("/api/settings/telegram-test", {method:"POST"}); toast("وصلت؟ ✓"); } catch (e) { toast(e.message, "err"); } };
+}
+
+boot().catch(() => {});
+})();
+</script>
+</body>
+</html>

@@ -1,0 +1,17 @@
+{
+  "name": "company-cms",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "db:init:local": "wrangler d1 migrations apply company --local",
+    "db:init:remote": "wrangler d1 migrations apply company --remote",
+    "deploy": "wrangler deploy"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^1.6.0"
+  },
+  "devDependencies": {
+    "wrangler": "^4.158.0"
+  }
+}
