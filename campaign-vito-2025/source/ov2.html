@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ar">
+<head>
+<meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;500;700;800;900&family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;background:transparent;overflow:hidden}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:Alexandria,sans-serif;color:#fff}
+.layer{position:absolute;inset:0}
+.gold{background:linear-gradient(180deg,#fff4cf 0%,#f0cc72 40%,#b98a2e 68%,#f6dc93 100%);-webkit-background-clip:text;background-clip:text;color:transparent;padding:0 .12em .2em;margin:0 -.12em -.2em}
+.chrome{background:linear-gradient(180deg,#ffffff 0%,#e3e6ea 42%,#8a919b 58%,#f5f6f8 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+.sh{filter:drop-shadow(0 4px 18px rgba(0,0,0,.85)) drop-shadow(0 1px 3px rgba(0,0,0,.9))}
+.txt{position:absolute;left:70px;right:70px;text-align:center;direction:rtl}
+.lat{font-family:Montserrat,sans-serif;direction:ltr}
+.kick{font:600 24px Montserrat;letter-spacing:.55em;color:#e9c46a;direction:ltr;padding-left:.55em}
+.line{height:2px;width:140px;margin:22px auto 0;background:linear-gradient(90deg,transparent,#e9c46a,transparent)}
+#topGrad{background:linear-gradient(180deg,rgba(0,0,0,.85) 0%,rgba(0,0,0,.6) 20%,transparent 36%)}
+#botGrad{background:linear-gradient(0deg,rgba(0,0,0,.55) 0%,transparent 22%)}
+#flash{background:#fff;opacity:0}
+#cta{display:inline-block;padding:24px 76px;border-radius:80px;background:linear-gradient(180deg,#f8dc8a,#c8962e);color:#140d02;font-weight:800;font-size:50px}
+</style>
+</head>
+<body>
+<div id="stage">
+  <div class="layer" id="topGrad"></div>
+  <div class="layer" id="botGrad"></div>
+  <div class="layer" id="texts"></div>
+  <div class="layer" id="offer" style="opacity:0">
+    <div class="layer" style="background:linear-gradient(180deg,rgba(0,0,0,.92) 0%,rgba(0,0,0,.75) 30%,rgba(0,0,0,.15) 45%,rgba(0,0,0,.15) 65%,rgba(0,0,0,.85) 78%,rgba(0,0,0,.95) 100%)"></div>
+    <div id="stamp" class="txt" style="top:190px">
+      <div id="o1" class="kick" style="direction:rtl;font-family:Alexandria;font-weight:700;font-size:36px;letter-spacing:.08em;padding:0">عرض خاص للكاش</div>
+      <div id="o2l" class="line" style="width:220px;margin-top:26px"></div>
+      <div id="o2" style="margin-top:20px"><span class="gold" style="font-size:150px;font-weight:900;line-height:1.3;white-space:nowrap">خصم قوي</span></div>
+      <div id="o3" style="font-size:70px;font-weight:700;margin-top:6px">عند الدفع كاش</div>
+      <div id="o4" style="font-size:40px;font-weight:500;margin-top:26px;color:#e8dcc4">لفترة محدودة</div>
+      <div id="o5" style="position:fixed;left:0;right:0;top:1440px">
+        <div style="font-size:34px;font-weight:500;color:#e8dcc4">اتصل الآن</div>
+        <div class="lat gold" style="font-weight:700;font-size:86px;letter-spacing:.06em">920018915</div>
+      </div>
+    </div>
+  </div>
+  <div class="layer" id="end" style="opacity:0">
+    <div class="layer" style="background:radial-gradient(1000px 900px at 50% 36%,#1d1608,#050505 72%)"></div>
+    <div class="layer" id="horizon" style="background:radial-gradient(ellipse 60% 4% at 50% 47%,rgba(255,215,120,.55),transparent 70%)"></div>
+    <div style="position:absolute;left:0;right:0;top:300px;text-align:center">
+      <div id="logo" style="width:600px;margin:0 auto;position:relative"><img src="img/lockup.png" style="width:100%;display:block"><div id="lgShine" style="position:absolute;inset:0;-webkit-mask:url(img/lockup.png) center/100% 100% no-repeat;mask:url(img/lockup.png) center/100% 100% no-repeat;mix-blend-mode:overlay"></div></div>
+      <div id="e0" class="line" style="width:300px;margin-top:56px"></div>
+      <div id="e1" style="direction:rtl;font-weight:700;font-size:60px;margin-top:46px">مرسيدس فيتو 2025</div>
+      <div id="e2" style="direction:rtl;font-weight:500;font-size:44px;margin-top:10px;color:#e8dcc4">خصم قوي عند الدفع كاش</div>
+      <div style="margin-top:60px"><div id="cta">احجز الآن</div></div>
+      <div id="e3" style="margin-top:56px">
+        <div style="direction:rtl;font-weight:500;font-size:34px;color:#cfc3a8">الرقم الموحد</div>
+        <div class="lat gold" style="font-weight:700;font-size:84px;letter-spacing:.06em">920018915</div>
+        <div style="direction:rtl;font-weight:500;font-size:36px;color:#e8dcc4;margin-top:10px">واتساب <span class="lat" style="font-weight:600;letter-spacing:.04em">0533393397</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="layer" id="flash"></div>
+</div>
+<script>
+const CFG=window.CFG; const $=s=>document.querySelector(s);
+const clamp=(x,a=0,b=1)=>Math.max(a,Math.min(b,x)), lerp=(a,b,t)=>a+(b-a)*t;
+const eo=t=>1-Math.pow(1-clamp(t),3), eio=t=>{t=clamp(t);return t<.5?4*t*t*t:1-Math.pow(-2*t+2,3)/2};
+const prog=(t,a,d)=>clamp((t-a)/d);
+CFG.scenes.forEach((s,i)=>{const d=document.createElement('div');d.className='layer';d.id='tx'+i;d.innerHTML=s.html;$('#texts').appendChild(d);});
+function anim(el,t,dur){
+  el.querySelectorAll('[data-d]').forEach(k=>{
+    const d=+k.dataset.d, p=eo(prog(t,d,.7)), ex=eio(prog(t,dur-.35,.35));
+    if(k.classList.contains('line')){k.style.transform=`scaleX(${p*(1-ex)})`;return;}
+    k.style.opacity=p*(1-ex); k.style.transform=`translateY(${lerp(28,0,p)-ex*14}px)`; k.style.filter=`blur(${lerp(8,0,p)+ex*6}px)`;
+    if(k.dataset.ls) k.style.letterSpacing=lerp(+k.dataset.ls+.25,+k.dataset.ls,eo(prog(t,d,1.6)))+'em';
+  });
+}
+window.render=function(T){
+  const S=CFG.scenes;
+  S.forEach((s,i)=>{const el=$('#tx'+i); if(T<s.a||T>=s.b){el.style.opacity=0;return;} el.style.opacity=1; anim(el,T-s.a,s.b-s.a);});
+  let fl=0; CFG.hits.forEach(h=>{const d=T-h; if(d>=0&&d<.3) fl=Math.max(fl,(1-d/.3)*.55);});
+  $('#flash').style.opacity=fl;
+  const vis=T<CFG.offerAt; $('#topGrad').style.opacity=vis?1:0; $('#botGrad').style.opacity=vis?1:0;
+  // offer
+  const ot=T-CFG.offerAt, off=$('#offer');
+  if(T>=CFG.offerAt && T<CFG.endAt+.3){
+    off.style.opacity=clamp(ot/.15)*(1-clamp((T-CFG.endAt)/.3));
+    const q=(id,d,dy=30)=>{const p=eo(prog(ot,d,.6)); const e=$(id); e.style.opacity=p; e.style.transform=`translateY(${lerp(dy,0,p)}px)`; e.style.filter=`blur(${lerp(8,0,p)}px)`;};
+    q('#o1',.15); $('#o2l').style.transform=`scaleX(${eo(prog(ot,.25,.7))})`;
+    const p2=prog(ot,0,.4); const o2=$('#o2'); o2.style.opacity=clamp(p2*2.5); o2.style.transform=`scale(${lerp(1.35,1,eo(p2))})`; o2.style.filter=`blur(${lerp(14,0,eo(p2))}px)`;
+    q('#o3',.45); q('#o4',.7); q('#o5',1.1,40);
+    const sp=((ot-.5)%2.2)/2.2*160-30; o2.querySelector('span').style.backgroundImage=`linear-gradient(105deg,rgba(255,255,255,0) ${sp-7}%,rgba(255,255,255,.9) ${sp}%,rgba(255,255,255,0) ${sp+7}%),linear-gradient(180deg,#fff4cf 0%,#f0cc72 40%,#b98a2e 68%,#f6dc93 100%)`;
+  } else off.style.opacity=0;
+  // end
+  const et=T-CFG.endAt, end=$('#end');
+  if(T>=CFG.endAt){
+    end.style.opacity=clamp(et/.3);
+    const lp=eo(prog(et,.1,1.2)); $('#logo').style.opacity=lp; $('#logo').style.transform=`scale(${lerp(.9,1,lp)})`; $('#logo').style.filter=`blur(${lerp(10,0,lp)}px)`;
+    const ls=lerp(-40,140,clamp((et-.9)/1.3)); $('#lgShine').style.background=`linear-gradient(110deg,transparent ${ls-10}%,rgba(255,255,255,.95) ${ls}%,transparent ${ls+10}%)`;
+    $('#horizon').style.opacity=eo(prog(et,.3,1.2)); $('#horizon').style.transform=`scaleX(${lerp(.3,1,eo(prog(et,.3,1.5)))})`;
+    $('#e0').style.transform=`scaleX(${eo(prog(et,.9,.8))})`;
+    [['#e1',1.1],['#e2',1.3],['#cta',1.6],['#e3',1.9]].forEach(([id,d])=>{const p=eo(prog(et,d,.6)); const e=$(id); e.style.opacity=p; e.style.transform=`translateY(${lerp(30,0,p)}px)`;});
+    end.style.filter=`brightness(${1-eio(prog(T,CFG.total-.5,.5))})`;
+  } else end.style.opacity=0;
+};
+window.ready=()=>document.fonts.ready.then(()=>Promise.all([...document.images].map(i=>i.complete?1:new Promise(r=>{i.onload=i.onerror=r}))));
+</script>
+</body>
+</html>
