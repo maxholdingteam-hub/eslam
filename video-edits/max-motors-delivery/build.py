@@ -25,11 +25,12 @@ DIALOG = {
     "D1": ("IMG_0341", 3.20, 7.25),     # "للعميل الأستاذ محمد، الله يبارك لك..."
     "D2": ("IMG_0341", 8.70, 12.2333),  # question + "الله يطول بعمرك، ولا غلطة"
 }
-DIALOG_AT = {"D0": 0.0, "D1": 2.25, "D2": 189 / FPS}
+PRE = 2.0  # cold open: the full low-angle walk-up before the narrator starts
+DIALOG_AT = {"D0": PRE, "D1": PRE + 2.25, "D2": PRE + 189 / FPS}
 
 # (clip, src_start | ("sync", dialog_id), frames, speed, zoom_from, zoom_to, extra)
 SHOTS = [
-    ("IMG_0337", 3.40, 94, 1.30, 1.06, 1.00, ",fade=t=in:d=0.2"),            # OPENER: low angle, opens door + gets in
+    ("IMG_0337", 0.60, 154, 1.33, 1.06, 1.00, ",fade=t=in:d=0.2"),           # OPENER: low angle, walks up, opens door, gets in
     ("IMG_0341", ("sync", "D1"), 95, 1.0, 1.00, 1.06, ",fade=t=in:d=0.25:color=white"),  # Mohammed
     ("IMG_0341", ("sync", "D2"), 62, 1.0, 1.00, 1.03, ""),                   # question
     ("IMG_0341", ("sync", "D2"), 44, 1.0, 1.14, 1.17, ""),                   # answer, punch-in
@@ -42,16 +43,16 @@ SHOTS = [
 
 LEAD = 0.07  # captions appear a hair before the word, like pro subtitles
 CAPS = [  # (png, start, end) in output seconds, from word timestamps
-    ("tag", 0.00, 3.13),
-    ("c01", 0.00, 1.13), ("c02", 1.13, 2.25), ("c03", 2.25, 2.81), ("c04", 3.13, 5.30),
-    ("c05", 3.85, 4.75), ("c06", 4.75, 5.33), ("c07", 5.33, 6.30),
-    ("q01", 6.34, 8.36), ("c08", 8.36, 9.04), ("c09", 9.04, 9.83),
-    ("end", 16.87, 19.1667),
+    ("tag", 0.00, 5.13),
+    ("c01", 2.00, 3.13), ("c02", 3.13, 4.25), ("c03", 4.25, 4.81), ("c04", 5.13, 7.30),
+    ("c05", 5.85, 6.75), ("c06", 6.75, 7.33), ("c07", 7.33, 8.30),
+    ("q01", 8.34, 10.36), ("c08", 10.36, 11.04), ("c09", 11.04, 11.83),
+    ("end", 18.87, 21.1667),
 ]
 
 SFX = [  # (file, at, gain_db)
-    ("boom", 0.00, -6), ("whoosh", 2.70, -10), ("boom", 3.13, -9),
-    ("whoosh", 9.38, -11), ("riser", 15.10, -12), ("boom", 16.70, -5),
+    ("boom", 0.00, -6), ("whoosh", 4.70, -10), ("boom", 5.13, -9),
+    ("whoosh", 11.38, -11), ("riser", 17.10, -12), ("boom", 18.70, -5),
 ]
 
 
