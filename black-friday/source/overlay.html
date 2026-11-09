@@ -1,0 +1,106 @@
+<!doctype html>
+<html lang="ar" dir="rtl"><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@500;700&family=Montserrat:wght@600;800;900&display=block" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{width:1080px;height:1920px;overflow:hidden;background:transparent}
+:root{--gold:#d9b46a;--gold2:#f6e2a8;--ink:#0b0b0c}
+#stage{position:relative;width:1080px;height:1920px;overflow:hidden;font-family:'IBM Plex Sans Arabic',sans-serif;color:#fff}
+.abs{position:absolute}
+.goldtxt{background:linear-gradient(180deg,#fff7d6,var(--gold) 58%,#9b7631);-webkit-background-clip:text;color:transparent}
+#shadeTop{left:0;right:0;top:0;height:900px;background:linear-gradient(180deg,rgba(0,0,0,.82),rgba(0,0,0,.45) 55%,rgba(0,0,0,0))}
+#shadeBot{left:0;right:0;bottom:0;height:700px;background:linear-gradient(0deg,rgba(0,0,0,.85),rgba(0,0,0,0))}
+#brandTop{top:80px;left:0;right:0;display:flex;justify-content:center;align-items:center;gap:16px;direction:ltr}
+#brandTop img{height:84px}
+#brandTop .wm{font-family:Montserrat;font-weight:800;font-size:40px;letter-spacing:8px}
+#tag{top:200px;left:50%;transform:translateX(-50%);direction:ltr;font-family:Montserrat;font-weight:800;font-size:34px;letter-spacing:4px;
+ padding:8px 26px;border:2px solid var(--gold);border-radius:999px;color:var(--gold2);white-space:nowrap}
+#head{top:290px;left:40px;right:40px;text-align:center}
+#head .l{display:block;font-weight:700;font-size:96px;line-height:1.22;text-shadow:0 6px 30px rgba(0,0,0,.6)}
+#head .l span{display:inline-block}
+#big{top:560px;left:0;right:0;text-align:center}
+#big .pct{font-family:Montserrat;font-weight:900;font-size:270px;line-height:1;direction:ltr;filter:drop-shadow(0 10px 40px rgba(217,180,106,.45))}
+#big .off{font-weight:700;font-size:66px;margin-top:-6px;text-shadow:0 4px 20px rgba(0,0,0,.7)}
+#chips{top:1430px;left:60px;right:60px;display:flex;flex-wrap:wrap;justify-content:center;gap:18px}
+#chips div{font-weight:700;font-size:44px;padding:14px 34px;border-radius:999px;background:rgba(255,255,255,.14);border:2px solid rgba(255,255,255,.5);backdrop-filter:blur(10px)}
+#sub{top:1600px;left:0;right:0;text-align:center;font-weight:500;font-size:46px;color:var(--gold2);text-shadow:0 4px 16px rgba(0,0,0,.8)}
+#intro{inset:0;background:#000;display:flex;flex-direction:column;align-items:center;justify-content:center}
+#intro .k{font-weight:700;font-size:96px;color:#fff;margin-bottom:-10px}
+#intro .n{font-family:Montserrat;font-weight:900;font-size:300px;line-height:1;direction:ltr;letter-spacing:-6px}
+#intro .n i{font-style:normal;display:inline-block}
+#flash{inset:0;background:#fff}
+#end{inset:0;background:radial-gradient(circle at 50% 40%,#211b10,#000 72%);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:34px}
+#end img{width:320px}
+#end .wm{font-family:Montserrat;font-weight:900;font-size:96px;letter-spacing:12px;direction:ltr}
+#end .n{font-family:Montserrat;font-weight:800;font-size:56px;letter-spacing:10px;color:var(--gold2);direction:ltr}
+#end .t{font-weight:700;font-size:62px}
+#end .btn{background:linear-gradient(180deg,var(--gold2),var(--gold));color:var(--ink);font-weight:700;font-size:50px;padding:22px 70px;border-radius:999px}
+#end .s{font-size:36px;color:#bbb}
+</style></head><body>
+<div id="stage">
+ <div id="shadeTop" class="abs"></div><div id="shadeBot" class="abs"></div>
+ <div id="brandTop" class="abs"></div>
+ <div id="tag" class="abs">11.11 SALE</div>
+ <div id="head" class="abs"></div>
+ <div id="big" class="abs"><div class="pct goldtxt" id="pct">0%</div><div class="off" id="off"></div></div>
+ <div id="chips" class="abs"></div>
+ <div id="sub" class="abs"></div>
+ <div id="flash" class="abs"></div>
+ <div id="end" class="abs"></div>
+ <div id="intro" class="abs"><div class="k" id="ik">عروض</div><div class="n"><i class="goldtxt">1</i><i class="goldtxt">1</i><i class="goldtxt">.</i><i class="goldtxt">1</i><i class="goldtxt">1</i></div></div>
+</div>
+<script>
+const LOGO='../../max-design-site/img/logo-hd.webp';
+const BR={
+ md:{top:`<img src="${LOGO}">`,end:`<img src="${LOGO}"><div class="n">MAX DESIGN</div>`},
+ mm:{top:`<span class="wm goldtxt">MAX MOTORS</span>`,end:`<div class="wm goldtxt">MAX</div><div class="n" style="margin-top:-30px">MOTORS</div>`}
+};
+const VIDS={
+ mm1:{b:'mm',a:['اللي تنتظره','وصل'],b2:['على كل السيارات','لفترة محدودة'],off:'خصم',chips:['سيدان','SUV','فخمة'],sub:'عرض 11.11 في ماكس موتورز',cta:'احجز سيارتك الحين'},
+ mm2:{b:'mm',a:['العدّاد','وقف عند'],b2:['أسرع عرض','في السنة'],off:'خصم على سيارتك',chips:[],sub:'لا يفوتك — 11.11',cta:'تواصل معنا الحين'},
+ mm3:{b:'mm',a:['11.11','بدأ في ماكس موتورز'],b2:['اختار سيارتك','وخذ الخصم'],off:'خصم',chips:['جديدة','فخمة','عائلية'],sub:'العرض لفترة محدودة',cta:'زورنا في المعرض'},
+ mm4:{b:'mm',a:['أقوى عرض','في السنة'],b2:['من الرياض','لكل المملكة'],off:'خصم على السيارات',chips:[],sub:'عروض 11.11 من ماكس موتورز',cta:'احجز الحين'},
+ mm5:{b:'mm',a:['مفتاحك','صار أقرب'],b2:['استلم سيارتك','بخصم 25%'],off:'خصم',chips:['تسليم سريع','ضمان'],sub:'11.11 — لفترة محدودة',cta:'احجز سيارتك الحين'},
+ md2:{b:'md',a:['من فاضي','لفخم'],b2:['صمّم بيتك','مع ماكس ديزاين'],off:'خصم على التصميم',chips:['فلل','شقق','مجالس'],sub:'عروض 11.11',cta:'احجز استشارتك الحين'},
+ md3:{b:'md',a:['هدية 11.11','من ماكس ديزاين'],b2:['تصميم داخلي','بلمسة فخامة'],off:'خصم',chips:[],sub:'العرض لفترة محدودة',cta:'احجز استشارتك الحين'},
+ md4:{b:'md',a:['صمّم فلتك','بلمسة فخامة'],b2:['قصور • فلل','بتفاصيل تفرق'],off:'خصم على تصميم الفلل',chips:[],sub:'عروض 11.11',cta:'احجز استشارتك الحين'},
+ md5:{b:'md',a:['فكرتك…','تصير حقيقة'],b2:['من الاسكتش','للتنفيذ'],off:'خصم',chips:['تصميم','تنفيذ','إشراف'],sub:'عروض 11.11 من ماكس ديزاين',cta:'احجز استشارتك الحين'},
+};
+const V=VIDS[new URLSearchParams(location.search).get('v')||'mm1'];
+const $=id=>document.getElementById(id);
+$('brandTop').innerHTML=BR[V.b].top;
+$('end').innerHTML=BR[V.b].end+`<div class="t">عروض 11.11 — خصم <span dir="ltr">25%</span></div><div class="btn">${V.cta}</div><div class="s">العرض لفترة محدودة</div>`;
+$('off').textContent=V.off;$('sub').textContent=V.sub;
+$('chips').innerHTML=V.chips.map(c=>`<div>${c}</div>`).join('');
+const mkL=ls=>ls.map(l=>`<span class="l">${l.split(' ').map(w=>`<span>${w}</span>`).join(' ')}</span>`).join('');
+const cl=(x,a=0,b=1)=>Math.min(b,Math.max(a,x)),p=(t,s,d)=>cl((t-s)/d),eo=x=>1-Math.pow(1-x,3);
+const eb=x=>{const c=1.70158;return 1+(c+1)*Math.pow(x-1,3)+c*Math.pow(x-1,2)};
+const CUT=6.2,END=10.2;window.DUR=13;window.CUT=CUT;window.END=END;
+let cur=null;
+window.seek=function(t){
+ // intro 11.11
+ [...document.querySelectorAll('#intro i')].forEach((d,i)=>{const q=eb(p(t,0.2+i*0.09,.35));d.style.opacity=cl(q*3);d.style.transform=`translateY(${(1-q)*-160}px) scale(${1.4-0.4*q})`});
+ const ik=eo(p(t,0.05,.3));$('ik').style.opacity=ik;$('ik').style.transform=`translateY(${(1-ik)*40}px)`;
+ const pulse=p(t,0.85,.25);document.querySelector('#intro .n').style.transform=`scale(${1+0.08*Math.sin(pulse*Math.PI)})`;
+ $('intro').style.clipPath=`circle(${(1-eo(p(t,1.35,.45)))*150}% at 50% 50%)`;
+ // headline A then B
+ const set=t<CUT?'a':'b2';if(set!==cur){$('head').innerHTML=mkL(V[set]);cur=set}
+ const st=set==='a'?1.65:CUT+0.15;
+ [...$('head').querySelectorAll('.l span')].forEach((w,i)=>{const q=eb(p(t,st+i*0.13,.35));w.style.opacity=cl(q*3);w.style.transform=`translateY(${(1-q)*60}px) scale(${0.7+0.3*q})`});
+ $('head').style.opacity=set==='a'?1-p(t,CUT-0.25,.2):1;
+ // 25%
+ const c=p(t,2.5,.8);$('pct').textContent=Math.round(25*eo(c))+'%';
+ const pc=eb(p(t,2.5,.45));$('big').style.opacity=cl(pc*3);$('big').style.transform=`scale(${0.5+0.5*pc})`;
+ $('pct').style.transform=`scale(${1+0.12*Math.sin(p(t,3.3,.25)*Math.PI)+0.1*Math.sin(p(t,CUT,.3)*Math.PI)})`;
+ $('off').style.opacity=p(t,3.4,.3);
+ [...$('chips').children].forEach((d,i)=>{const q=eb(p(t,3.8+i*0.15,.35));d.style.opacity=cl(q*2);d.style.transform=`scale(${0.6+0.4*q})`});
+ $('sub').style.opacity=p(t,4.3,.4);
+ const tg=eb(p(t,1.6,.4));$('tag').style.opacity=cl(tg*2);$('tag').style.transform=`translateX(-50%) scale(${0.7+0.3*tg})`;
+ $('flash').style.opacity=Math.max(Math.sin(p(t,CUT-0.12,.3)*Math.PI)*0.85,Math.sin(p(t,END-0.15,.35)*Math.PI)*0.95);
+ // end card
+ $('end').style.opacity=t>=END?1:0;
+ [...$('end').children].forEach((el,i)=>{const q=eb(p(t,END+0.05+i*0.14,.4));el.style.opacity=cl(q*2);el.style.transform=`translateY(${(1-q)*50}px) scale(${0.85+0.15*q})`});
+ const btn=$('end').querySelector('.btn');btn.style.transform+=` scale(${1+0.04*Math.sin(Math.max(0,t-END-1)*8)})`;
+};
+window.seek(0);
+</script></body></html>
