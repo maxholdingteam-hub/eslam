@@ -25,6 +25,15 @@ html,body{width:1080px;height:1920px;background:transparent;overflow:hidden}
 <div id="stage">
   <div class="layer" id="topGrad"></div>
   <div class="layer" id="botGrad"></div>
+  <div class="layer" id="hook" style="opacity:0">
+    <div class="layer" style="background:linear-gradient(180deg,rgba(0,0,0,.88) 0%,rgba(0,0,0,.7) 34%,rgba(0,0,0,.25) 55%,rgba(0,0,0,.35) 100%)"></div>
+    <div class="txt" style="top:170px">
+      <div id="h1" style="font-size:44px;font-weight:700;color:#e9c46a">عرض اليوم من ماكس موتورز</div>
+      <div id="hl" class="line" style="width:260px;margin-top:26px"></div>
+      <div id="h2" style="margin-top:18px"><span class="gold" style="font-size:160px;font-weight:900;line-height:1.25;white-space:nowrap">خصم قوي</span></div>
+      <div id="h3" class="sh" style="font-size:92px;font-weight:800;margin-top:0;white-space:nowrap">على الكاش</div>
+    </div>
+  </div>
   <div class="layer" id="texts"></div>
   <div class="layer" id="offer" style="opacity:0">
     <div class="layer" style="background:linear-gradient(180deg,rgba(0,0,0,.92) 0%,rgba(0,0,0,.75) 30%,rgba(0,0,0,.15) 45%,rgba(0,0,0,.15) 65%,rgba(0,0,0,.85) 78%,rgba(0,0,0,.95) 100%)"></div>
@@ -75,6 +84,14 @@ function anim(el,t,dur){
 window.render=function(T){
   const S=CFG.scenes;
   S.forEach((s,i)=>{const el=$('#tx'+i); if(T<s.a||T>=s.b){el.style.opacity=0;return;} el.style.opacity=1; anim(el,T-s.a,s.b-s.a);});
+  const hk=$('#hook'), HE=CFG.hookEnd||2.3;
+  if(T<HE+.05){ const ex=eio(prog(T,HE-.3,.3)); hk.style.opacity=1-ex;
+    const p2=prog(T,.05,.35); const h2=$('#h2'); h2.style.opacity=clamp(p2*2.5); h2.style.transform=`scale(${lerp(1.5,1,eo(p2))})`; h2.style.filter=`blur(${lerp(16,0,eo(p2))}px)`;
+    const p3=eo(prog(T,.35,.4)); $('#h3').style.opacity=p3; $('#h3').style.transform=`translateY(${lerp(40,0,p3)}px)`;
+    const p1=eo(prog(T,.55,.45)); $('#h1').style.opacity=p1; $('#h1').style.transform=`translateY(${lerp(-24,0,p1)}px)`;
+    $('#hl').style.transform=`scaleX(${eo(prog(T,.6,.6))})`;
+    const sp=((T-.4)%1.6)/1.6*160-30; h2.querySelector('span').style.backgroundImage=`linear-gradient(105deg,rgba(255,255,255,0) ${sp-7}%,rgba(255,255,255,.9) ${sp}%,rgba(255,255,255,0) ${sp+7}%),linear-gradient(180deg,#fff4cf 0%,#f0cc72 40%,#b98a2e 68%,#f6dc93 100%)`;
+  } else hk.style.opacity=0;
   let fl=0; CFG.hits.forEach(h=>{const d=T-h; if(d>=0&&d<.3) fl=Math.max(fl,(1-d/.3)*.55);});
   $('#flash').style.opacity=fl;
   const vis=T<CFG.offerAt; $('#topGrad').style.opacity=vis?1:0; $('#botGrad').style.opacity=vis?1:0;
