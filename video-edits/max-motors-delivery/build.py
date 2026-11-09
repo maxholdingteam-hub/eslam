@@ -29,14 +29,13 @@ DIALOG_AT = {"D0": 0.0, "D1": 2.25, "D2": 189 / FPS}
 
 # (clip, src_start | ("sync", dialog_id), frames, speed, zoom_from, zoom_to, extra)
 SHOTS = [
-    ("IMG_0340", 0.30, 33, 0.60, 1.12, 1.00, ",fade=t=in:d=0.3"),            # grille close-up, slow-mo
-    ("IMG_0338", 1.80, 34, 0.60, 1.00, 1.07, ""),                            # hood + lights, slow-mo
-    ("IMG_0334", 0.00, 27, 0.70, 1.00, 1.07, ""),                            # tail light, slow-mo
+    ("IMG_0337", 3.40, 94, 1.30, 1.06, 1.00, ",fade=t=in:d=0.2"),            # OPENER: low angle, opens door + gets in
     ("IMG_0341", ("sync", "D1"), 95, 1.0, 1.00, 1.06, ",fade=t=in:d=0.25:color=white"),  # Mohammed
     ("IMG_0341", ("sync", "D2"), 62, 1.0, 1.00, 1.03, ""),                   # question
     ("IMG_0341", ("sync", "D2"), 44, 1.0, 1.14, 1.17, ""),                   # answer, punch-in
-    ("IMG_0337", 1.60, 72, 0.75, 1.00, 1.06, ",fade=t=in:d=0.25"),           # walks to car, slow-mo
-    ("IMG_0337", 4.40, 80, 1.15, 1.04, 1.00, ""),                            # gets in, low angle (music only)
+    ("IMG_0338", 1.80, 39, 0.60, 1.00, 1.07, ",fade=t=in:d=0.2"),            # hood + lights, slow-mo
+    ("IMG_0334", 0.00, 33, 0.70, 1.00, 1.07, ""),                            # tail light, slow-mo
+    ("IMG_0342", 0.85, 80, 1.0, 1.00, 1.06, ""),                             # in the car (music only)
     ("IMG_0337", 8.60, 54, 0.80, 1.00, 1.06, ""),                            # exterior pan, slow-mo
     ("IMG_0339", 3.50, 74, 1.0, 1.12, 1.00, ",gblur=sigma=14,eq=brightness=-0.16,fade=t=in:d=0.4"),
 ]
