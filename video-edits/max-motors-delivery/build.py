@@ -16,13 +16,8 @@ TMP = os.path.join(OUT, "_tmp")
 os.makedirs(TMP, exist_ok=True)
 FPS = 30
 
-# Natural night grade: removes the sodium/magenta cast, deep blacks, true skin + paint colour.
-GRADE = ("colorbalance=rs=-0.04:gs=0.01:bs=0.02:rm=-0.04:gm=0.02:rh=-0.02,"
-         "eq=contrast=1.10:saturation=1.08:gamma=0.98,"
-         "curves=all='0/0 0.25/0.22 0.5/0.5 0.75/0.78 1/1',"
-         "vignette=PI/5,unsharp=5:5:0.3,noise=alls=3:allf=t,"
-         "drawbox=x=0:y=0:w=iw:h=150:color=black:t=fill,"
-         "drawbox=x=0:y=ih-150:w=iw:h=150:color=black:t=fill")
+# Keep the iPhone's own colours: proper full->video range conversion, then only a light polish.
+GRADE = "eq=contrast=1.04:saturation=1.07,unsharp=5:5:0.25"
 
 # Dialog pieces (clip, src_start, src_end); silences between them are cut out.
 DIALOG = {
@@ -82,13 +77,14 @@ for i, (clip, src, frames, sp, z0, z1, extra) in enumerate(SHOTS):
     f = os.path.join(TMP, f"s{i:02d}.mp4")
     z = f"clip({z0}+({z1}-{z0})*t/{dur:.4f},{min(z0, z1)},{max(z0, z1)})"
     slow = f"minterpolate=fps={FPS}:mi_mode=blend," if sp < 1 else f"fps={FPS},"
-    vf = (f"format=yuv420p,scale=1080:1920:force_original_aspect_ratio=increase,crop=1080:1920,"
+    vf = (f"scale=1080:1920:force_original_aspect_ratio=increase:in_range=full:out_range=tv,format=yuv420p,crop=1080:1920,"
           f"setpts=PTS/{sp},{slow}"
           f"scale=w='2*trunc(1080*{z}/2)':h=-2:eval=frame,crop=1080:1920,"
           f"{GRADE}{extra},format=yuv420p,setsar=1")
     run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-y", "-ss", f"{src:.4f}", "-t", f"{dur * sp + 0.3:.4f}",
          "-i", os.path.join(CLIPS, clip + ".MOV"), "-vf", vf, "-frames:v", str(frames), "-an",
-         "-c:v", "libx264", "-preset", "medium", "-crf", "16", "-r", str(FPS), f])
+         "-c:v", "libx264", "-preset", "medium", "-crf", "16", "-r", str(FPS),
+         "-color_range", "tv", "-colorspace", "bt709", "-color_primaries", "bt709", "-color_trc", "bt709", f])
     seg_files.append(f)
 total = frame_pos / FPS
 print("video length", total)
@@ -163,6 +159,7 @@ fc.append("".join(mix) + f"amix=inputs={len(mix)}:normalize=0:duration=first,"
 final = os.path.join(OUT, "MaxMotors-Emgrand-Delivery-Cinematic-9x16.mp4")
 run(["ffmpeg", "-hide_banner", "-loglevel", "error", "-y", *inputs, "-filter_complex", ";".join(fc),
      "-map", "[vout]", "-map", "[aout]", "-c:v", "libx264", "-preset", "slow", "-b:v", "14M",
-     "-maxrate", "18M", "-bufsize", "28M", "-profile:v", "high", "-pix_fmt", "yuv420p", "-r", str(FPS),
+     "-maxrate", "18M", "-bufsize", "28M", "-profile:v", "high", "-pix_fmt", "yuv420p", "-r", str(FPS), "-color_range", "tv",
+     "-colorspace", "bt709", "-color_primaries", "bt709", "-color_trc", "bt709",
      "-c:a", "aac", "-b:a", "192k", "-movflags", "+faststart", "-t", f"{total:.4f}", final])
 print("done", final)
