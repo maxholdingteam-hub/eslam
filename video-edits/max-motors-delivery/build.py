@@ -36,7 +36,7 @@ SHOTS = [
     ("IMG_0341", ("sync", "D2"), 62, 1.0, 1.00, 1.03, ""),                   # question
     ("IMG_0341", ("sync", "D2"), 44, 1.0, 1.14, 1.17, ""),                   # answer, punch-in
     ("IMG_0337", 1.60, 72, 0.75, 1.00, 1.06, ",fade=t=in:d=0.25"),           # walks to car, slow-mo
-    ("IMG_0342", 0.85, 80, 1.0, 1.00, 1.06, ""),                             # gets in (music only)
+    ("IMG_0337", 4.40, 80, 1.15, 1.04, 1.00, ""),                            # gets in, low angle (music only)
     ("IMG_0337", 8.60, 54, 0.80, 1.00, 1.06, ""),                            # exterior pan, slow-mo
     ("IMG_0339", 3.50, 74, 1.0, 1.12, 1.00, ",gblur=sigma=14,eq=brightness=-0.16,fade=t=in:d=0.4"),
 ]
