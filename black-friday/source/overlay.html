@@ -20,6 +20,9 @@ html,body{width:1080px;height:1920px;overflow:hidden;background:transparent}
 #head .l span{display:inline-block}
 #big{top:560px;left:0;right:0;text-align:center}
 #big .pct{font-family:Montserrat;font-weight:900;font-size:270px;line-height:1;direction:ltr;filter:drop-shadow(0 10px 40px rgba(217,180,106,.45))}
+#big .pct.ar{font-family:'IBM Plex Sans Arabic';font-weight:700;font-size:210px;line-height:1.2;direction:rtl;white-space:nowrap;margin-bottom:14px}
+#big .pct.ar.long{font-size:165px}
+#big .pct.num{font-size:250px}
 #big .off{font-weight:700;font-size:66px;margin-top:-6px;text-shadow:0 4px 20px rgba(0,0,0,.7)}
 #chips{top:1430px;left:60px;right:60px;display:flex;flex-wrap:wrap;justify-content:center;gap:18px}
 #chips div{font-weight:700;font-size:44px;padding:14px 34px;border-radius:999px;background:rgba(255,255,255,.14);border:2px solid rgba(255,255,255,.5);backdrop-filter:blur(10px)}
@@ -57,11 +60,11 @@ const BR={
  mm:{top:`<img src="assets/maxmotors-logo.png" style="height:120px">`,end:`<img src="assets/maxmotors-logo.png" style="width:560px">`,phone:'920018915'}
 };
 const VIDS={
- mm1:{b:'mm',a:['اللي تنتظره','وصل'],b2:['على كل السيارات','لفترة محدودة'],off:'خصم',chips:['سيدان','SUV','فخمة'],sub:'عرض 11.11 في ماكس موتورز',cta:'احجز سيارتك الحين'},
- mm2:{b:'mm',a:['العدّاد','وقف عند'],b2:['أسرع عرض','في السنة'],off:'خصم على سيارتك',chips:[],sub:'لا يفوتك — 11.11',cta:'تواصل معنا الحين'},
- mm3:{b:'mm',a:['11.11','بدأ في ماكس موتورز'],b2:['اختار سيارتك','وخذ الخصم'],off:'خصم',chips:['جديدة','فخمة','عائلية'],sub:'العرض لفترة محدودة',cta:'زورنا في المعرض'},
- mm4:{b:'mm',a:['أقوى عرض','في السنة'],b2:['من الرياض','لكل المملكة'],off:'خصم على السيارات',chips:[],sub:'عروض 11.11 من ماكس موتورز',cta:'احجز الحين'},
- mm5:{b:'mm',a:['مفتاحك','صار أقرب'],b2:['استلم سيارتك','بخصم 25%'],off:'خصم',chips:['تسليم سريع','ضمان'],sub:'11.11 — لفترة محدودة',cta:'احجز سيارتك الحين'},
+ mm1:{b:'mm',a:['سيارتك الجديدة','صارت أسهل'],big:'تمويل',off:'استفد من عروض البنوك في 11.11',b2:['اختار سيارتك','وخلّ التمويل علينا'],chips:['سيدان','SUV','فخمة'],sub:'عروض 11.11 في ماكس موتورز',cta:'احجز سيارتك الحين'},
+ mm2:{b:'mm',a:['ليش تنتظر','الراتب الجاي؟'],big:'قسّطها',off:'استفد من عروض البنوك في 11.11',b2:['سيارتك الحين','وادفع على راحتك'],chips:[],sub:'لا يفوتك — 11.11',cta:'تواصل معنا الحين'},
+ mm3:{b:'mm',a:['11.11','بدأ في ماكس موتورز'],big:'عروض البنوك',off:'استفد من التمويل على سيارتك',b2:['اختار سيارتك','وقسّطها'],chips:['جديدة','فخمة','عائلية'],sub:'العرض لفترة محدودة',cta:'زورنا في المعرض'},
+ mm4:{b:'mm',a:['حلم السيارة','صار أقرب'],big:'تمويل',off:'بعروض البنوك في 11.11',b2:['من الرياض','لكل المملكة'],chips:[],sub:'عروض 11.11 من ماكس موتورز',cta:'احجز الحين'},
+ mm5:{b:'mm',a:['مفتاحك','صار أقرب'],big:'11.11',off:'استفد من عروض البنوك والتمويل',b2:['استلم سيارتك','بالتقسيط'],chips:['تمويل','أقساط'],sub:'11.11 — لفترة محدودة',cta:'احجز سيارتك الحين'},
  md2:{b:'md',a:['من فاضي','لفخم'],b2:['صمّم بيتك','مع ماكس ديزاين'],off:'خصم على التصميم',chips:['فلل','شقق','مجالس'],sub:'عروض 11.11',cta:'احجز استشارتك الحين'},
  md3:{b:'md',a:['هدية 11.11','من ماكس ديزاين'],b2:['تصميم داخلي','بلمسة فخامة'],off:'خصم',chips:[],sub:'العرض لفترة محدودة',cta:'احجز استشارتك الحين'},
  md4:{b:'md',a:['صمّم فلتك','بلمسة فخامة'],b2:['قصور • فلل','بتفاصيل تفرق'],off:'خصم على تصميم الفلل',chips:[],sub:'عروض 11.11',cta:'احجز استشارتك الحين'},
@@ -70,8 +73,8 @@ const VIDS={
 const V=VIDS[new URLSearchParams(location.search).get('v')||'mm1'];
 const $=id=>document.getElementById(id);
 $('brandTop').innerHTML=BR[V.b].top;
-$('end').innerHTML=BR[V.b].end+`<div class="t">عروض 11.11 — خصم <span dir="ltr">25%</span></div><div class="btn">${V.cta}</div>${BR[V.b].phone?`<div class="ph"><svg viewBox="0 0 24 24" width="52" height="52" fill="#f6e2a8"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>${BR[V.b].phone}</span></div>`:''}<div class="s">العرض لفترة محدودة</div>`;
-$('off').textContent=V.off;$('sub').textContent=V.sub;
+$('end').innerHTML=BR[V.b].end+`<div class="t">${V.big?'استفد من عروض البنوك والتمويل':'عروض 11.11 — خصم <span dir="ltr">25%</span>'}</div><div class="btn">${V.cta}</div>${BR[V.b].phone?`<div class="ph"><svg viewBox="0 0 24 24" width="52" height="52" fill="#f6e2a8"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg><span>${BR[V.b].phone}</span></div>`:''}<div class="s">العرض لفترة محدودة</div>`;
+$('off').textContent=V.off;if(V.big){$('pct').textContent=V.big;$('pct').classList.add(/^[0-9.]+$/.test(V.big)?'num':'ar');if(V.big.length>6)$('pct').classList.add('long')}$('sub').textContent=V.sub;
 $('chips').innerHTML=V.chips.map(c=>`<div>${c}</div>`).join('');
 const mkL=ls=>ls.map(l=>`<span class="l">${l.split(' ').map(w=>`<span>${w}</span>`).join(' ')}</span>`).join('');
 const cl=(x,a=0,b=1)=>Math.min(b,Math.max(a,x)),p=(t,s,d)=>cl((t-s)/d),eo=x=>1-Math.pow(1-x,3);
@@ -90,7 +93,7 @@ window.seek=function(t){
  [...$('head').querySelectorAll('.l span')].forEach((w,i)=>{const q=eb(p(t,st+i*0.13,.35));w.style.opacity=cl(q*3);w.style.transform=`translateY(${(1-q)*60}px) scale(${0.7+0.3*q})`});
  $('head').style.opacity=set==='a'?1-p(t,CUT-0.25,.2):1;
  // 25%
- const c=p(t,2.5,.8);$('pct').textContent=Math.round(25*eo(c))+'%';
+ const c=p(t,2.5,.8);if(!V.big)$('pct').textContent=Math.round(25*eo(c))+'%';
  const pc=eb(p(t,2.5,.45));$('big').style.opacity=cl(pc*3);$('big').style.transform=`scale(${0.5+0.5*pc})`;
  $('pct').style.transform=`scale(${1+0.12*Math.sin(p(t,3.3,.25)*Math.PI)+0.1*Math.sin(p(t,CUT,.3)*Math.PI)})`;
  $('off').style.opacity=p(t,3.4,.3);
