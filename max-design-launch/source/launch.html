@@ -1,0 +1,297 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>Max Design Launch</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=Cormorant+Garamond:wght@500;600;700&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* Max Design launch, "from paper to reality": gold line drawings on night black become the finished spaces.
+   Tokens follow max-design-site (void / gold / bone / ash, Amiri + IBM Plex Sans Arabic + Cormorant + Montserrat). */
+:root{
+  --void:#070706; --void2:#100f0c; --gold:#d9b46b; --hot:#f6dc9c; --deep:#7d5f2a; --bone:#efe8da; --ash:#8f8676;
+  --gold-grad:linear-gradient(135deg,#f6dc9c,#d9b46b 45%,#9c7a3c);
+  --ar:"Amiri","Traditional Arabic",serif; --body:"IBM Plex Sans Arabic",Tahoma,sans-serif;
+  --en:"Cormorant Garamond",Georgia,serif; --mark:"Montserrat",Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+body{background:#222;display:flex;flex-direction:column;gap:40px;align-items:flex-start;padding:40px;font-family:var(--body);color:var(--bone)}
+section{position:relative;overflow:hidden;background:var(--void);flex:none}
+.post{width:1080px;height:1350px}
+.pano{width:3240px;height:1350px}
+.story{width:1080px;height:1920px}
+img{display:block}
+.cover{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+/* film grain, shared */
+section::after{content:"";position:absolute;inset:0;pointer-events:none;opacity:.09;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='220' height='220'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%' height='100%' filter='url(%23n)'/></svg>")}
+.frame{position:absolute;inset:44px;border:1px solid rgba(217,180,107,.38);pointer-events:none;z-index:5}
+.frame::before,.frame::after{content:"";position:absolute;width:26px;height:26px;border-color:var(--gold);border-style:solid}
+.frame::before{top:-6px;right:-6px;border-width:2px 2px 0 0}
+.frame::after{bottom:-6px;left:-6px;border-width:0 0 2px 2px}
+.eyebrow{font-family:var(--mark);font-weight:600;font-size:22px;letter-spacing:.42em;color:var(--gold);text-transform:uppercase;direction:ltr}
+.ar{font-family:var(--ar);font-weight:700;line-height:1.25;color:var(--bone)}
+.gold{background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.num{font-family:var(--en);font-weight:600;line-height:.8;direction:ltr}
+.foot{position:absolute;left:96px;right:96px;bottom:92px;display:flex;justify-content:space-between;align-items:center;z-index:6;direction:ltr}
+.brand{display:flex;align-items:center;gap:16px;font-family:var(--mark);font-weight:600;letter-spacing:.28em;font-size:20px;color:var(--bone)}
+.brand img{width:62px;height:auto}
+.handle{font-family:var(--mark);font-size:20px;letter-spacing:.12em;color:var(--ash)}
+.shade{position:absolute;inset:0;pointer-events:none}
+
+/* ---------- P1 teaser 03: the plan lying on a dark table ---------- */
+#p1 .plan{position:absolute;left:50%;top:44%;width:1900px;transform:translate(-50%,-50%) perspective(1500px) rotateX(52deg) rotateZ(-8deg);
+  -webkit-mask-image:radial-gradient(closest-side,#000 55%,transparent 100%);mask-image:radial-gradient(closest-side,#000 55%,transparent 100%);opacity:.95}
+#p1 .glow{position:absolute;inset:0;background:radial-gradient(50% 35% at 50% 45%,rgba(217,180,107,.16),transparent 70%)}
+#p1 .n{position:absolute;top:120px;left:110px;font-size:330px}
+#p1 .eyebrow{position:absolute;top:150px;right:110px}
+#p1 .copy{position:absolute;right:110px;left:110px;bottom:230px;text-align:right}
+#p1 h1{font-size:118px}
+#p1 p{font-size:36px;color:var(--ash);margin-top:18px}
+
+/* ---------- P2 teaser 02: drawing above, the same palace built below ---------- */
+#p2 .top{position:absolute;inset:0 0 50% 0;background:radial-gradient(70% 80% at 50% 70%,rgba(217,180,107,.12),transparent 70%)}
+#p2 .elev{position:absolute;left:50%;top:30%;width:880px;transform:translate(-50%,-50%)}
+#p2 .bottom{position:absolute;inset:50% 0 0 0;overflow:hidden}
+#p2 .bottom img{width:100%;height:100%;object-fit:cover;object-position:50% 58%}
+#p2 .bottom .shade{background:linear-gradient(180deg,rgba(7,7,6,.5),transparent 30%,rgba(7,7,6,.6) 55%,rgba(7,7,6,.96) 100%)}
+#p2 .seam{position:absolute;left:0;right:0;top:50%;height:2px;background:var(--gold-grad);z-index:4;box-shadow:0 0 30px rgba(246,220,156,.6)}
+#p2 .tag{position:absolute;right:110px;z-index:4;font-family:var(--body);font-weight:600;font-size:24px;letter-spacing:.06em;padding:10px 22px;border:1px solid var(--gold);color:var(--hot);background:rgba(7,7,6,.7)}
+#p2 .t1{top:calc(50% - 76px)} #p2 .t2{top:calc(50% + 28px)}
+#p2 .n{position:absolute;bottom:430px;left:110px;font-size:170px;z-index:4}
+#p2 .eyebrow{position:absolute;top:140px;right:110px;z-index:4}
+#p2 h1{position:absolute;right:110px;left:110px;bottom:220px;font-size:112px;z-index:4;text-align:right}
+
+/* ---------- P3 teaser 01: an arch door, ajar ---------- */
+#p3 .glow{position:absolute;inset:0;background:radial-gradient(40% 45% at 50% 42%,rgba(217,180,107,.22),transparent 70%)}
+#p3 .arch{position:absolute;left:50%;top:150px;width:560px;height:780px;transform:translateX(-50%);border-radius:280px 280px 0 0;overflow:hidden;border:2px solid var(--gold);box-shadow:0 0 0 14px rgba(7,7,6,1),0 0 0 15px rgba(217,180,107,.45),0 40px 120px rgba(217,180,107,.25)}
+#p3 .arch img{width:100%;height:100%;object-fit:cover;object-position:50% 50%}
+#p3 .n{position:absolute;top:120px;left:110px;font-size:230px}
+#p3 .eyebrow{position:absolute;top:150px;right:110px}
+#p3 .copy{position:absolute;left:110px;right:110px;bottom:220px;text-align:center}
+#p3 h1{font-size:120px}
+#p3 p{font-size:34px;color:var(--ash);margin-top:12px}
+
+/* ---------- P4-6 reveal panorama (one 3240px canvas, sliced into three posts) ---------- */
+#pano .l{position:absolute;left:0;top:0;width:1300px;height:100%}
+#pano .r{position:absolute;right:0;top:0;width:1300px;height:100%}
+#pano .l img,#pano .r img{width:100%;height:100%;object-fit:cover}
+#pano .l .shade{background:linear-gradient(90deg,rgba(7,7,6,.2),rgba(7,7,6,.35) 60%,var(--void) 100%)}
+#pano .r .shade{background:linear-gradient(270deg,rgba(7,7,6,.2),rgba(7,7,6,.35) 60%,var(--void) 100%)}
+#pano .glow{position:absolute;left:1080px;width:1080px;top:0;bottom:0;background:radial-gradient(55% 45% at 50% 42%,rgba(217,180,107,.28),transparent 72%)}
+#pano .logo{position:absolute;left:50%;top:250px;width:560px;transform:translateX(-50%);filter:drop-shadow(0 30px 80px rgba(217,180,107,.35))}
+#pano .word{position:absolute;left:1080px;width:1080px;top:690px;text-align:center}
+#pano .word .en{font-family:var(--mark);font-weight:600;font-size:46px;letter-spacing:.5em;color:var(--bone);direction:ltr;padding-left:.5em}
+#pano .word .arw{font-family:var(--ar);font-weight:700;font-size:92px;margin-top:4px}
+#pano .now{position:absolute;left:1080px;width:1080px;top:150px;text-align:center}
+#pano .rule{position:absolute;left:96px;right:96px;top:1010px;height:1px;background:linear-gradient(90deg,transparent,var(--gold) 8%,var(--gold) 92%,transparent)}
+#pano .lab{position:absolute;top:1040px;font-family:var(--ar);font-weight:700;font-size:64px;color:var(--bone);width:1080px;text-align:center}
+#pano .lab.c{left:1080px;font-size:72px}
+#pano .lab.rt{left:2160px} #pano .lab.lt{left:0}
+#pano .dot{color:var(--gold);padding:0 .3em}
+#pano .site{position:absolute;left:1080px;width:1080px;top:1170px;text-align:center;font-family:var(--mark);font-size:22px;letter-spacing:.3em;color:var(--ash);direction:ltr}
+#pano .frame{inset:44px}
+
+/* ---------- P7 services ---------- */
+#p7 .head{position:absolute;top:150px;right:110px;left:110px;text-align:right}
+#p7 h1{font-size:104px;margin-top:18px}
+#p7 .grid{position:absolute;top:400px;left:110px;right:110px;display:grid;grid-template-columns:repeat(3,1fr);gap:34px 30px}
+#p7 .card .ph{height:280px;border-radius:150px 150px 0 0;overflow:hidden;border:1px solid rgba(217,180,107,.55)}
+#p7 .card img{width:100%;height:100%;object-fit:cover}
+#p7 .card b{display:block;margin-top:10px;font-family:var(--ar);font-weight:700;font-size:40px;text-align:center;color:var(--bone)}
+
+/* ---------- P8 process ---------- */
+#p8 .bg{position:absolute;inset:0}
+#p8 .bg img{width:100%;height:100%;object-fit:cover;filter:saturate(.8)}
+#p8 .bg .shade{background:linear-gradient(180deg,rgba(7,7,6,.94) 0%,rgba(7,7,6,.82) 55%,rgba(7,7,6,.95) 100%)}
+#p8 .lines{position:absolute;left:50%;top:58%;width:1500px;transform:translate(-50%,-50%) rotate(-6deg);opacity:.22}
+#p8 .head{position:absolute;top:150px;right:110px;left:110px;text-align:right}
+#p8 h1{font-size:104px;margin-top:18px}
+#p8 ol{position:absolute;top:480px;right:110px;left:110px;list-style:none;display:grid;gap:0}
+#p8 li{display:grid;grid-template-columns:150px 1fr;align-items:center;gap:24px;padding:30px 0;border-top:1px solid rgba(217,180,107,.3)}
+#p8 li:last-child{border-bottom:1px solid rgba(217,180,107,.3)}
+#p8 li .num{font-size:96px;text-align:left}
+#p8 li b{display:block;font-family:var(--ar);font-weight:700;font-size:50px;color:var(--bone)}
+#p8 li span{display:block;font-size:28px;color:var(--ash);margin-top:2px}
+
+/* ---------- P9 booking ---------- */
+#p9 .shade{background:linear-gradient(180deg,rgba(7,7,6,.35) 0%,rgba(7,7,6,.15) 30%,rgba(7,7,6,.88) 62%,var(--void) 100%)}
+#p9 .head{position:absolute;right:110px;left:110px;top:150px;text-align:right}
+#p9 .copy{position:absolute;right:110px;left:110px;bottom:220px;text-align:right}
+#p9 h1{font-size:110px}
+#p9 .cta{display:inline-block;margin-top:34px;padding:22px 48px;background:var(--gold-grad);color:var(--void);font-family:var(--body);font-weight:600;font-size:38px}
+#p9 .info{display:flex;gap:44px;margin-top:40px;font-size:30px;color:var(--bone);flex-wrap:wrap}
+#p9 .info span{direction:ltr;unicode-bidi:isolate}
+#p9 .info i{font-style:normal;color:var(--gold);margin-left:10px}
+
+/* ---------- stories ---------- */
+.story .foot{bottom:150px}
+#s1 .plan{position:absolute;left:50%;top:63%;width:2400px;transform:translate(-50%,-50%) perspective(1600px) rotateX(55deg) rotateZ(-10deg);
+  -webkit-mask-image:radial-gradient(closest-side,#000 50%,transparent 100%);mask-image:radial-gradient(closest-side,#000 50%,transparent 100%)}
+#s1 .glow{position:absolute;inset:0;background:radial-gradient(55% 30% at 50% 52%,rgba(217,180,107,.18),transparent 70%)}
+#s1 .top{position:absolute;top:250px;left:0;right:0;text-align:center}
+#s1 .n{font-size:520px;margin-top:40px}
+#s1 .d{font-family:var(--ar);font-weight:700;font-size:80px;margin-top:-10px}
+#s1 .copy{position:absolute;bottom:300px;left:0;right:0;text-align:center;padding:70px 100px 60px;background:linear-gradient(180deg,transparent,rgba(7,7,6,.92) 30%,rgba(7,7,6,.92))}
+#s1 h1{font-size:96px}
+#s1 p{font-size:36px;color:var(--ash);margin-top:14px}
+
+#s2 .shade{background:radial-gradient(36% 18% at 50% 22%,rgba(7,7,6,.85),transparent 100%),linear-gradient(180deg,rgba(7,7,6,.75) 0%,rgba(7,7,6,.35) 30%,rgba(7,7,6,.4) 55%,rgba(7,7,6,.96) 85%)}
+#s2 .logo{position:absolute;left:50%;top:330px;width:520px;transform:translateX(-50%);filter:drop-shadow(0 30px 80px rgba(0,0,0,.6))}
+#s2 .top{position:absolute;top:220px;left:0;right:0;text-align:center}
+#s2 .copy{position:absolute;bottom:360px;left:100px;right:100px;text-align:center}
+#s2 .copy .en{font-family:var(--mark);font-weight:600;font-size:40px;letter-spacing:.5em;direction:ltr;padding-left:.5em}
+#s2 h1{font-size:150px;margin-top:6px}
+#s2 p{font-size:46px;color:var(--hot);font-family:var(--ar);margin-top:10px}
+
+#s3 .glow{position:absolute;inset:0;background:radial-gradient(45% 30% at 50% 33%,rgba(217,180,107,.22),transparent 70%)}
+#s3 .arch{position:absolute;left:50%;top:230px;width:700px;height:900px;transform:translateX(-50%);border-radius:350px 350px 0 0;overflow:hidden;border:2px solid var(--gold);box-shadow:0 0 0 16px var(--void),0 0 0 17px rgba(217,180,107,.45)}
+#s3 .arch img{width:100%;height:100%;object-fit:cover}
+#s3 .copy{position:absolute;top:1200px;left:100px;right:100px;text-align:center}
+#s3 h1{font-size:100px}
+#s3 .info{margin-top:28px;display:grid;gap:10px;font-size:36px}
+#s3 .info span{direction:ltr;unicode-bidi:isolate}
+#s3 .sticker{margin:40px auto 0;width:560px;height:120px;border:1px dashed rgba(217,180,107,.0)}
+</style>
+</head>
+<body>
+
+<!-- P1 · teaser 03 -->
+<section class="post" id="p1">
+  <div class="glow"></div>
+  <img class="plan" src="a/plan-gold.png" alt="">
+  <div class="frame"></div>
+  <div class="num gold n">03</div>
+  <div class="eyebrow">Coming soon</div>
+  <div class="copy">
+    <h1 class="ar">كل شي يبدأ <span class="gold">بخط</span></h1>
+    <p>شي جديد يترسم في الرياض… ترقّبونا</p>
+  </div>
+  <div class="foot"><div class="brand"><img src="a/logo.png" alt="">MAX DESIGN</div><div class="handle">@maxdesign.sa</div></div>
+</section>
+
+<!-- P2 · teaser 02 -->
+<section class="post" id="p2">
+  <div class="top"></div>
+  <img class="elev" src="a/elev-gold.png" alt="">
+  <div class="bottom"><img src="a/025-108.webp" alt=""><div class="shade"></div></div>
+  <div class="seam"></div>
+  <div class="tag t1">على الورق</div>
+  <div class="tag t2">على أرض الواقع</div>
+  <div class="frame"></div>
+  <div class="num gold n">02</div>
+  <div class="eyebrow">Paper to reality</div>
+  <h1 class="ar">الخط <span class="gold">يصير مساحة</span></h1>
+  <div class="foot"><div class="brand"><img src="a/logo.png" alt="">MAX DESIGN</div><div class="handle">@maxdesign.sa</div></div>
+</section>
+
+<!-- P3 · teaser 01 -->
+<section class="post" id="p3">
+  <div class="glow"></div>
+  <div class="arch"><img src="a/s-palace.webp" alt=""></div>
+  <div class="frame"></div>
+  <div class="num gold n">01</div>
+  <div class="eyebrow">Tomorrow</div>
+  <div class="copy">
+    <h1 class="ar">بكرة <span class="gold">نفتح الباب</span></h1>
+    <p>كونوا أول من يدخل</p>
+  </div>
+  <div class="foot"><div class="brand"><img src="a/logo.png" alt="">MAX DESIGN</div><div class="handle">@maxdesign.sa</div></div>
+</section>
+
+<!-- P4-6 · reveal panorama -->
+<section class="pano" id="pano">
+  <div class="l"><img src="a/s-villa.webp" alt=""><div class="shade"></div></div>
+  <div class="r"><img src="a/s-palace.webp" alt=""><div class="shade"></div></div>
+  <div class="glow"></div>
+  <div class="now"><div class="eyebrow">Officially open</div></div>
+  <img class="logo" src="a/logo.png" alt="">
+  <div class="word"><div class="en">MAX DESIGN</div><div class="arw gold">ماكس ديزاين</div></div>
+  <div class="rule"></div>
+  <div class="lab rt">قصور<span class="dot">·</span>فلل<span class="dot">·</span>شقق</div>
+  <div class="lab c gold">نصمم أسلوب حياة</div>
+  <div class="lab lt">محلات<span class="dot">·</span>مقرات شركات</div>
+  <div class="site">MAXDESIGN.SA</div>
+  <div class="frame"></div>
+</section>
+
+<!-- P7 · services -->
+<section class="post" id="p7">
+  <div class="frame"></div>
+  <div class="head"><div class="eyebrow">What we design</div><h1 class="ar">وش <span class="gold">نصمم لك؟</span></h1></div>
+  <div class="grid">
+    <div class="card"><div class="ph"><img src="a/s-palace.webp" alt=""></div><b>قصور</b></div>
+    <div class="card"><div class="ph"><img src="a/s-villa.webp" alt=""></div><b>فلل</b></div>
+    <div class="card"><div class="ph"><img src="a/s-apartment.webp" alt=""></div><b>شقق</b></div>
+    <div class="card"><div class="ph"><img src="a/s-retail.webp" alt=""></div><b>محلات</b></div>
+    <div class="card"><div class="ph"><img src="a/s-office.webp" alt=""></div><b>مقرات شركات</b></div>
+    <div class="card"><div class="ph"><img src="a/s-design.webp" alt=""></div><b>تصميم وتنفيذ</b></div>
+  </div>
+  <div class="foot"><div class="brand"><img src="a/logo.png" alt="">MAX DESIGN</div><div class="handle">@maxdesign.sa</div></div>
+</section>
+
+<!-- P8 · process -->
+<section class="post" id="p8">
+  <div class="bg"><img src="a/s-design.webp" alt=""><div class="shade"></div></div>
+  <img class="lines" src="a/plan2-gold.png" alt="">
+  <div class="frame"></div>
+  <div class="head"><div class="eyebrow">How we work</div><h1 class="ar">من الورق <span class="gold">إلى الواقع</span></h1></div>
+  <ol>
+    <li><div class="num gold">01</div><div><b>نسمعك ونرسم الفكرة</b><span>زيارة، قياس، ومخطط أولي</span></div></li>
+    <li><div class="num gold">02</div><div><b>تصميم ثلاثي الأبعاد</b><span>تشوف مساحتك قبل ما تنبني</span></div></li>
+    <li><div class="num gold">03</div><div><b>تنفيذ بإشراف مهندسينا</b><span>خامات مختارة وجدول واضح</span></div></li>
+    <li><div class="num gold">04</div><div><b>نسلمك المفتاح</b><span>جاهزة للسكن من أول يوم</span></div></li>
+  </ol>
+  <div class="foot"><div class="brand"><img src="a/logo.png" alt="">MAX DESIGN</div><div class="handle">@maxdesign.sa</div></div>
+</section>
+
+<!-- P9 · booking -->
+<section class="post" id="p9">
+  <img class="cover" src="a/hero.webp" alt="">
+  <div class="shade"></div>
+  <div class="frame"></div>
+  <div class="head"><div class="eyebrow">Book a visit</div></div>
+  <div class="copy">
+    <h1 class="ar">مساحتك الجاية <span class="gold">تبدأ هنا</span></h1>
+    <div class="cta">احجز موعد التصميم</div>
+    <div class="info"><div><i>واتساب</i><span>057 927 7975</span></div><div><i>الموقع</i><span>maxdesign.sa</span></div></div>
+    <div class="info" style="margin-top:14px;color:var(--ash)"><div>الرياض · حي القادسية</div></div>
+  </div>
+  <div class="foot"><div class="brand"><img src="a/logo.png" alt="">MAX DESIGN</div><div class="handle">@maxdesign.sa</div></div>
+</section>
+
+<!-- S1 · story teaser -->
+<section class="story" id="s1">
+  <div class="glow"></div>
+  <img class="plan" src="a/plan-gold.png" alt="">
+  <div class="frame"></div>
+  <div class="top"><div class="eyebrow">Coming soon</div><div class="num gold n">03</div><div class="d gold">أيام</div></div>
+  <div class="copy"><h1 class="ar">شي جديد <span class="gold">يترسم</span></h1><p>فعّلوا التنبيه عشان تكونون أول من يشوف</p></div>
+  <div class="foot"><div class="brand"><img src="a/logo.png" alt="">MAX DESIGN</div><div class="handle">@maxdesign.sa</div></div>
+</section>
+
+<!-- S2 · story reveal -->
+<section class="story" id="s2">
+  <img class="cover" src="a/s-palace.webp" alt="">
+  <div class="shade"></div>
+  <div class="frame"></div>
+  <div class="top"><div class="eyebrow">Officially open</div></div>
+  <img class="logo" src="a/logo.png" alt="">
+  <div class="copy"><div class="en">MAX DESIGN</div><h1 class="ar gold">ماكس ديزاين</h1><p>رسميًا… نصمم أسلوب حياة</p></div>
+  <div class="foot"><div class="brand"><img src="a/logo.png" alt="">MAX DESIGN</div><div class="handle">@maxdesign.sa</div></div>
+</section>
+
+<!-- S3 · story booking (space under the details for Instagram's link sticker) -->
+<section class="story" id="s3">
+  <div class="glow"></div>
+  <div class="arch"><img src="a/s-villa.webp" alt=""></div>
+  <div class="frame"></div>
+  <div class="copy">
+    <h1 class="ar">احجز <span class="gold">موعد التصميم</span></h1>
+    <div class="info"><div><span>057 927 7975</span></div><div style="color:var(--gold)"><span>maxdesign.sa</span></div></div>
+    <div class="sticker"></div>
+  </div>
+  <div class="foot"><div class="brand"><img src="a/logo.png" alt="">MAX DESIGN</div><div class="handle">@maxdesign.sa</div></div>
+</section>
+
+</body>
+</html>

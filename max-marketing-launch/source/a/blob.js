@@ -1,0 +1,10 @@
+export const blobVS = `uniform float uT,uAmp,uHover;varying vec3 vN,vV;varying float vD;
+      void main(){float d=snoise(normal*1.4+uT*.35)*uAmp+snoise(normal*3.2-uT*.5)*.08*(1.+uHover*2.);vD=d;
+      vec3 p=position+normal*d;vec4 mv=modelViewMatrix*vec4(p,1.);vN=normalize(normalMatrix*normal);vV=-mv.xyz;gl_Position=projectionMatrix*mv;}`;
+export const blobFS = `varying vec3 vN,vV;varying float vD;uniform float uT;
+      void main(){vec3 n=normalize(vN),v=normalize(vV);float f=pow(1.-max(dot(n,v),0.),2.2);
+      vec3 deep=vec3(.16,.11,.04),mid=vec3(.85,.66,.32),light=vec3(1.,.88,.62);
+      float k=.5+.5*sin(vD*9.+uT*.6+n.y*3.);
+      vec3 c=mix(deep,mid,.2+.8*k);c=mix(c,light,smoothstep(.25,1.,f)*.85);c+=vec3(1.,.85,.5)*pow(f,4.)*.45;
+      vec3 L=normalize(vec3(.6,.8,.5));float s=pow(max(dot(reflect(-L,n),v),0.),40.);c+=vec3(1.,.97,.9)*s*.7;
+      gl_FragColor=vec4(c,1.);}`;
