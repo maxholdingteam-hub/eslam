@@ -1,0 +1,241 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Max Design Quotation 000295</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+/* Max Design quotation, same system as Quotation 000294: the company letterhead as the page,
+   gold section heads with a hairline, a near-black table head, sand-striped rows. One data set feeds EN and AR. */
+:root{
+  --gold:#a8812f; --gold-l:#c9a45a; --ink:#1f1c17; --text:#2b2824; --mute:#6f675b;
+  --rule:#e3d2a8; --stripe:#f7f0e1; --box:#fbf7ee;
+  --en:"Montserrat",Arial,sans-serif; --ar:"Tajawal","Montserrat",Tahoma,sans-serif;
+}
+@page{size:A4;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#fff}
+body{font-family:var(--en);color:var(--text);font-size:9.6pt;line-height:1.45}
+html[lang=ar] body{font-family:var(--ar);font-size:10.4pt}
+.page{width:210mm;height:297mm;position:relative;overflow:hidden;page-break-after:always;
+  background:url("a/letterhead.png") center/100% 100% no-repeat}
+.page:last-child{page-break-after:auto}
+.body{position:absolute;left:19mm;right:19mm;top:35.2mm;bottom:31mm;display:flex;flex-direction:column;gap:4.4mm}
+.title{text-align:center;font-weight:700;font-size:12pt;letter-spacing:.42em;color:var(--ink);padding-bottom:3mm;border-bottom:.4mm solid var(--gold-l);margin:0 -2mm}
+html[lang=ar] .title{letter-spacing:.06em;font-size:14pt;font-weight:800}
+.num{font-family:var(--en);font-variant-numeric:tabular-nums}
+html[lang=ar] .num{direction:ltr;unicode-bidi:isolate}
+/* meta */
+.meta{display:grid;grid-template-columns:1fr 1fr;column-gap:10mm}
+.meta div{display:flex;justify-content:space-between;gap:4mm;padding:1.6mm 0;border-bottom:.25mm dashed var(--rule);font-size:8.8pt}
+html[lang=ar] .meta div{font-size:9.8pt}
+.meta span{color:var(--mute)}
+.meta b{font-weight:700;color:var(--ink);text-align:end}
+.meta b.gold{color:var(--gold);font-size:11pt}
+/* section heads */
+.sh{display:flex;justify-content:space-between;align-items:baseline;border-bottom:.3mm solid var(--rule);padding-bottom:1.2mm}
+.sh h2{font-size:12pt;font-weight:600;color:var(--gold)}
+html[lang=ar] .sh h2{font-size:13.5pt;font-weight:800}
+.sh small{font-size:7.6pt;font-weight:700;letter-spacing:.24em;color:var(--mute)}
+html[lang=ar] .sh small{letter-spacing:.02em;font-size:8.6pt}
+.lead{color:var(--text);margin-top:-2mm}
+.note{font-size:8.6pt;color:var(--mute);margin-top:-3mm}
+html[lang=ar] .note{font-size:9.4pt}
+/* tables */
+table{width:100%;border-collapse:collapse}
+thead th{background:var(--ink);color:#fff;font-weight:600;font-size:8.6pt;padding:2.2mm 2.4mm;text-align:start}
+html[lang=ar] thead th{font-size:9.6pt;font-weight:700}
+tbody td{padding:1.9mm 2.4mm;border-bottom:.25mm solid var(--rule);vertical-align:top}
+tbody tr.z td{background:var(--stripe)}
+td.r,th.r{text-align:end}
+td.c,th.c{text-align:center}
+.sub td{font-weight:700;color:var(--ink);background:#efe4c9!important}
+.sec td{font-weight:700;color:var(--gold);background:#fff!important;padding-top:2.6mm}
+.tot td{background:var(--ink)!important;color:#fff;font-weight:700;border:0}
+.tot td.g{color:var(--gold-l)}
+.small td{font-size:8.5pt;padding:1.45mm 2.2mm}
+html[lang=ar] .small td{font-size:9.2pt;padding-top:1.2mm;padding-bottom:1.2mm}
+.desc small{display:block;color:var(--mute);font-size:7.6pt;margin-top:.4mm}
+html[lang=ar] .desc small{font-size:8.2pt;margin-top:0;line-height:1.3}
+/* summary boxes */
+.boxes{display:grid;grid-template-columns:.8fr 1.2fr;gap:3mm}
+.bx{display:flex;align-items:center;justify-content:space-between;padding:4.2mm 5mm;border:.3mm solid var(--rule);background:var(--box)}
+.bx span{color:var(--mute)}
+.bx b{font-size:14pt;font-weight:700;color:var(--ink);white-space:nowrap}
+.bx.dark{background:var(--ink);border-color:var(--ink)}
+.bx.dark span{color:#d6c7a5}
+.bx.dark b{color:var(--gold-l);font-size:16pt}
+.words{margin-top:-3mm;font-size:9pt}
+/* scope cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:2.6mm}
+.card{border:.3mm solid var(--rule);padding:2.6mm 3mm;display:flex;gap:2.4mm;background:rgba(255,255,255,.85)}
+.card .n{font-family:var(--en);font-size:12pt;font-weight:600;color:var(--gold);line-height:1}
+.card b{display:block;font-weight:700;color:var(--ink);font-size:9pt}
+html[lang=ar] .card b{font-size:10pt}
+.card p{font-size:7.8pt;color:var(--mute);line-height:1.4;margin-top:.6mm}
+html[lang=ar] .card p{font-size:8.6pt}
+/* optional */
+.opt{border:.3mm dashed var(--gold-l);background:var(--box);padding:3.4mm 4mm;display:grid;gap:1.6mm}
+.opt h3{font-size:9.6pt;color:var(--gold);font-weight:700}
+.opt .row{display:flex;justify-content:space-between;gap:4mm}
+.opt .row b{color:var(--ink);white-space:nowrap}
+/* notes */
+.notes{display:grid;grid-template-columns:24mm 1fr;row-gap:1.3mm;column-gap:4mm;font-size:8.7pt;line-height:1.38}
+html[lang=ar] .notes{font-size:9.4pt}
+.notes dt{font-weight:700;color:var(--gold)}
+.notes dd{color:var(--text)}
+/* acceptance */
+.sign{display:grid;grid-template-columns:1fr 1fr;gap:8mm}
+.sign div{border:.3mm solid var(--rule);padding:3mm 5mm;display:grid;gap:2.4mm;background:rgba(255,255,255,.85)}
+.sign h4{color:var(--gold);font-size:10pt;font-weight:700}
+.sign p{display:flex;gap:3mm;color:var(--mute);font-size:9pt}
+.sign p i{flex:1;border-bottom:.25mm solid var(--mute);font-style:normal}
+.pgno{position:absolute;bottom:24.5mm;left:0;right:0;text-align:center;font-size:7pt;color:var(--mute);letter-spacing:.2em}
+</style>
+</head>
+<body>
+<div id="doc"></div>
+<script>
+/* ------------ one source of truth for both languages ------------ */
+const L = new URLSearchParams(location.search).get("lang") === "ar" ? "ar" : "en";
+document.documentElement.lang = L; document.documentElement.dir = L === "ar" ? "rtl" : "ltr";
+const t = (en, ar) => L === "ar" ? ar : en;
+const money = v => v.toLocaleString("en-US", {minimumFractionDigits:2, maximumFractionDigits:2});
+const qty = v => v.toLocaleString("en-US", {minimumFractionDigits:2, maximumFractionDigits:2});
+
+/* items exactly as the BoQ (Engr. Talha Niaz, 09 Nov 2026, Drawing A-209) */
+const TRAV = [t("Travertine Tile Cladding 60×90 cm","تكسية حجر ترافرتين 60×90 سم"), t("Dry-fix stainless anchors + adhesive, 5% wastage incl.","تثبيت جاف بمرابط ستانلس ستيل ولاصق، شامل 5% هالك")];
+const CLAD = [t("Black Solid Cladding Panels, 20 cm band","ألواح تكسية سوداء مصمتة، شريط ارتفاع 20 سم"), t("Matte black, powder-coated aluminium carrier","أسود مطفي على هيكل ألمنيوم مدهون بودرة")];
+const LOUV = [t("Exterior WPC/PVC Vertical Louvers, walnut","لوفرات رأسية خارجية WPC/PVC لون جوزي"), t("On aluminium rails, UV & weather resistant","على مجاري ألمنيوم، مقاومة للأشعة والعوامل الجوية")];
+const WIN  = [t("Black Aluminium Windows, double glazed","نوافذ ألمنيوم سوداء بزجاج مزدوج"), t("Powder-coated, thermally broken frames, complete","مدهونة بودرة، قطاعات عازلة حراريًا، كاملة")];
+const SECTIONS = [
+  {code:"A", name:t("North Elevation","الواجهة الشمالية"), items:[["A.1",TRAV,"m²",119,150],["A.2",CLAD,"m²",8,200],["A.3",LOUV,"m²",20,200],["A.4",WIN,"m²",12,250]],
+   brief:t("Travertine 119 m² · Louvers 20 m² · Cladding 8 m² · Windows 12 m²","ترافرتين 119 م² · لوفرات 20 م² · تكسية 8 م² · نوافذ 12 م²")},
+  {code:"B", name:t("South Elevation","الواجهة الجنوبية"), items:[["B.1",TRAV,"m²",119,150],["B.2",CLAD,"m²",8,200],["B.3",LOUV,"m²",20,200],["B.4",WIN,"m²",12,250]],
+   brief:t("Travertine 119 m² · Louvers 20 m² · Cladding 8 m² · Windows 12 m²","ترافرتين 119 م² · لوفرات 20 م² · تكسية 8 م² · نوافذ 12 م²")},
+  {code:"C", name:t("East Elevation","الواجهة الشرقية"), items:[["C.1",TRAV,"m²",180,150],["C.2",CLAD,"m²",5.4,200],["C.3",LOUV,"m²",25,200]],
+   brief:t("Travertine 180 m² · Louvers 25 m² · Cladding 5.4 m²","ترافرتين 180 م² · لوفرات 25 م² · تكسية 5.4 م²")},
+  {code:"D", name:t("West Elevation","الواجهة الغربية"), items:[["D.1",TRAV,"m²",180,150],["D.2",CLAD,"m²",5.4,200],["D.3",LOUV,"m²",25,200]],
+   brief:t("Travertine 180 m² · Louvers 25 m² · Cladding 5.4 m²","ترافرتين 180 م² · لوفرات 25 م² · تكسية 5.4 م²")},
+  {code:"E", name:t("General Items & Accessories","بنود عامة وملحقات"), items:[
+     ["E.1",[t("Scaffolding, access & protection","السقالات والوصول والحماية"),t("Full perimeter, erect & dismantle as per sequence","كامل المحيط، تركيب وفك حسب التسلسل")],t("ls","مقطوعية"),1,8000],
+     ["E.2",[t("Waterproofing membrane","غشاء العزل المائي"),t("Optional, priced separately below","اختياري، مسعّر منفصلًا بالأسفل")],"—",null,null],
+     ["E.3",[t("Joint sealants, expansion joints & edge trims","سيليكون الفواصل وفواصل التمدد وزوايا الحواف"),t("Colour-matched silicone and aluminium trims","سيليكون بلون مطابق وزوايا ألمنيوم")],t("lm","م.ط"),320,20],
+     ["E.4",[t("Cleaning, protection & handover","التنظيف والحماية والتسليم"),t("Final clean and touch-up of all surfaces","تنظيف نهائي ومعالجة جميع الأسطح")],t("ls","مقطوعية"),1,3500]],
+   brief:t("Scaffolding · Sealants & trims 320 lm · Cleaning & handover","سقالات · سيليكون وزوايا 320 م.ط · تنظيف وتسليم")}
+];
+SECTIONS.forEach(s => s.total = s.items.reduce((a, [, , , q, r]) => a + (q && r ? q * r : 0), 0));
+const TOTAL = SECTIONS.reduce((a, s) => a + s.total, 0);
+const OPT = {qty:598, rate:65}; OPT.amount = OPT.qty * OPT.rate;
+const TRAV_AREA = 119 + 119 + 180 + 180;
+const PAY = [[t("Advance payment on signing","دفعة مقدمة عند توقيع العقد"),30],[t("On delivery of materials to site","عند توريد المواد للموقع"),30],
+             [t("On completion of cladding & louver installation","عند إنهاء تركيب التكسية واللوفرات"),30],[t("On final handover","عند التسليم النهائي"),10]];
+if (TOTAL !== 136960 || OPT.amount !== 38870 || PAY.reduce((a, p) => a + p[1], 0) !== 100) document.title = "CHECK TOTALS";  // guard against a mistyped figure
+
+const words = t("One hundred thirty-six thousand nine hundred sixty Saudi Riyals only, exclusive of VAT.",
+                "مائة وستة وثلاثون ألفًا وتسعمائة وستون ريالًا سعوديًا فقط، غير شامل ضريبة القيمة المضافة.");
+const N = n => `<span class="num">${n}</span>`;
+const title = `<div class="title">${t("QUOTATION · ELEVATION WORKS","عرض سعر · أعمال الواجهات")}</div>`;
+const pg = (i, n) => `<div class="pgno">${N(i + " / " + n)}</div>`;
+
+/* ------------ page 1: header, price summary, scope ------------ */
+const p1 = `<section class="page"><div class="body">
+${title}
+<div class="meta">
+  <div><span>${t("Project","المشروع")}</span><b>${t("External Elevation Works – Compound","أعمال الواجهات الخارجية – مجمع")}</b></div>
+  <div><span>${t("Quotation No.","رقم العرض")}</span><b class="gold num">000295</b></div>
+  <div><span>${t("Location","الموقع")}</span><b>${t("Riyadh, Kingdom of Saudi Arabia","الرياض، المملكة العربية السعودية")}</b></div>
+  <div><span>${t("Date","التاريخ")}</span><b>${t("11 November 2026","11 نوفمبر 2026")}</b></div>
+  <div><span>${t("Basis","أساس التسعير")}</span><b>${t("Supply & install · re-measurable","توريد وتركيب · قابل لإعادة القياس")}</b></div>
+  <div><span>${t("Validity","صلاحية العرض")}</span><b>${t("15 days","15 يومًا")}</b></div>
+  <div><span>${t("Reference","المرجع")}</span><b>${t("BoQ · Drawing A-209 · Project 26-061","جدول الكميات · مخطط A-209 · مشروع 26-061")}</b></div>
+  <div><span>${t("Prepared by","إعداد")}</span><b>${t("Engr. Talha Niaz","م. طلحة نياز")}</b></div>
+</div>
+
+<div class="sh"><h2>01 · ${t("Price Summary","ملخص السعر")}</h2><small>${t("CURRENCY: SAR","العملة: ريال سعودي")}</small></div>
+<p class="lead">${t("Supply and installation of the external elevation works, priced from the CAD-verified Bill of Quantities. Item-by-item detail is in Section 03.",
+                   "توريد وتركيب أعمال الواجهات الخارجية، مسعّرة من جدول الكميات المعتمد على ملف الأوتوكاد. تفاصيل البنود في القسم 03.")}</p>
+<table class="small">
+  <thead><tr><th style="width:11mm">${t("No.","م")}</th><th>${t("Section","القسم")}</th><th>${t("Main quantities","الكميات الرئيسية")}</th><th class="r" style="width:30mm">${t("Amount (SAR)","المبلغ (ريال)")}</th></tr></thead>
+  <tbody>${SECTIONS.map((s, i) => `<tr class="${i % 2 ? "z" : ""}"><td>${N("0" + (i + 1))}</td><td><b>${s.name}</b></td><td style="color:var(--mute)">${s.brief}</td><td class="r">${N(money(s.total))}</td></tr>`).join("")}</tbody>
+</table>
+<div class="boxes">
+  <div class="bx"><span>${t("Travertine Cladding","مساحة الترافرتين")}</span><b>${N(TRAV_AREA + " m²")}</b></div>
+  <div class="bx dark"><span>${t("Total (Ex-VAT)","الإجمالي قبل الضريبة")}</span><b>${N("SAR " + money(TOTAL))}</b></div>
+</div>
+<p class="words">${words}</p>
+
+<div class="sh"><h2>02 · ${t("Scope of Works","نطاق الأعمال")}</h2><small>${t("6 WORK PACKAGES","6 حزم أعمال")}</small></div>
+<div class="cards">
+${[[t("Travertine Cladding","تكسية الترافرتين"),t("60×90 cm tiles, 10 mm groove, dry-fix stainless anchors and adhesive on a prepared substrate.","بلاط 60×90 سم بفاصل 10 مم، تثبيت جاف بمرابط ستانلس ولاصق على سطح مجهّز.")],
+   [t("Black Cladding Bands","أشرطة التكسية السوداء"),t("Matte black solid panels as 20 cm parapet bands on an aluminium carrier.","ألواح سوداء مطفية كشرائط بارتفاع 20 سم على هيكل ألمنيوم.")],
+   [t("WPC/PVC Louvers","اللوفرات WPC/PVC"),t("Vertical walnut-finish louvers on powder-coated aluminium rails.","لوفرات رأسية بلون جوزي على مجاري ألمنيوم مدهونة بودرة.")],
+   [t("Aluminium Windows","نوافذ الألمنيوم"),t("Black, double glazed, thermally broken frames with sills and hardware.","سوداء بزجاج مزدوج وقطاعات عازلة، مع العتبات والإكسسوارات.")],
+   [t("Sealants & Trims","السيليكون والزوايا"),t("Colour-matched silicone, expansion joints and aluminium edge trims.","سيليكون بلون مطابق وفواصل تمدد وزوايا حواف ألمنيوم.")],
+   [t("Access & Handover","السقالات والتسليم"),t("Scaffolding and protection, final cleaning, touch-up and handover.","سقالات وحماية، تنظيف نهائي ومعالجة وتسليم.")]]
+  .map(([h, p], i) => `<div class="card"><span class="n">${"0" + (i + 1)}</span><div><b>${h}</b><p>${p}</p></div></div>`).join("")}
+</div>
+</div>${pg(1, 4)}</section>`;
+
+/* ------------ page 2: detailed BoQ ------------ */
+let z = 0;
+const rowsOf = list => list.map(s => `<tr class="sec"><td>${N(s.code)}</td><td colspan="5">${s.name}</td></tr>` +
+  s.items.map(([code, [d, m], unit, q, r]) => `<tr class="${z++ % 2 ? "z" : ""}"><td>${N(code)}</td><td class="desc">${d}<small>${m}</small></td><td class="c">${unit}</td>
+    <td class="r">${q == null ? "—" : N(qty(q))}</td><td class="r">${r == null ? "—" : N(money(r))}</td><td class="r">${q == null ? t("Excluded","غير مشمول") : N(money(q * r))}</td></tr>`).join("") +
+  `<tr class="sub"><td></td><td colspan="4">${t("Subtotal – ","إجمالي ")}${s.name}</td><td class="r">${N(money(s.total))}</td></tr>`).join("");
+const boqHead = `<thead><tr><th style="width:10mm">${t("Item","البند")}</th><th>${t("Description","الوصف")}</th><th class="c" style="width:15mm">${t("Unit","الوحدة")}</th><th class="r" style="width:16mm">${t("Qty","الكمية")}</th><th class="r" style="width:20mm">${t("Rate","سعر الوحدة")}</th><th class="r" style="width:24mm">${t("Amount (SAR)","المبلغ (ريال)")}</th></tr></thead>`;
+const p2 = `<section class="page"><div class="body" style="gap:4.2mm">
+${title}
+<div class="sh"><h2>03 · ${t("Detailed Bill of Quantities","جدول الكميات التفصيلي")}</h2><small>${t("SUPPLY & INSTALL","توريد وتركيب")}</small></div>
+<table class="small">${boqHead}<tbody>${rowsOf(SECTIONS.slice(0, 3))}</tbody></table>
+<p class="note" style="margin-top:0">${t("Continued on the next page: West Elevation, General Items and the grand total.","يتبع في الصفحة التالية: الواجهة الغربية والبنود العامة والإجمالي العام.")}</p>
+</div>${pg(2, 4)}</section>`;
+
+const p3 = `<section class="page"><div class="body" style="gap:4mm">
+${title}
+<div class="sh"><h2>03 · ${t("Detailed Bill of Quantities (continued)","جدول الكميات التفصيلي (تابع)")}</h2><small>${t("SUPPLY & INSTALL","توريد وتركيب")}</small></div>
+<table class="small">${boqHead}<tbody>${rowsOf(SECTIONS.slice(3))}<tr class="tot"><td></td><td colspan="4">${t("Grand Total – External Elevation Works (Ex-VAT)","الإجمالي العام – أعمال الواجهات الخارجية (غير شامل الضريبة)")}</td><td class="r g">${N(money(TOTAL))}</td></tr></tbody></table>
+<div class="opt">
+  <h3>${t("Optional item · not included in the total","بند اختياري · غير مشمول في الإجمالي")}</h3>
+  <div class="row"><span>${N("E.2a")} ${t("Waterproofing membrane and substrate preparation for all cladding areas","غشاء عزل مائي وتجهيز السطح لكامل مساحات التكسية")}</span><b>${N(qty(OPT.qty) + " m² × " + money(OPT.rate) + " = SAR " + money(OPT.amount))}</b></div>
+  <div class="row" style="color:var(--mute)"><span>${t("Liquid-applied or bituminous; can be omitted if the substrate is already protected. To be confirmed by the client.","سائل أو بيتوميني؛ يمكن الاستغناء عنه إذا كان السطح معزولًا مسبقًا. يُؤكد من قبل العميل.")}</span></div>
+  <div class="row"><span>${t("Total including the optional waterproofing (Ex-VAT)","الإجمالي مع العزل المائي الاختياري (غير شامل الضريبة)")}</span><b>${N("SAR " + money(TOTAL + OPT.amount))}</b></div>
+</div>
+</div>${pg(3, 4)}</section>`;
+
+/* ------------ page 4: notes, acceptance ------------ */
+const p4 = `<section class="page"><div class="body" style="gap:3.8mm">
+${title}
+<div class="sh"><h2>04 · ${t("Payment Schedule","جدول الدفعات")}</h2><small>${N(t("TOTAL: SAR ","الإجمالي: ") + money(TOTAL) + t(""," ريال"))}</small></div>
+<p class="lead">${t("The total is payable in four instalments, each due on reaching the milestone below.","يُسدد الإجمالي على أربع دفعات، تستحق كل دفعة عند الوصول للمرحلة الموضحة.")}</p>
+<table class="small">
+  <thead><tr><th style="width:12mm">${t("No.","م")}</th><th>${t("Milestone","المرحلة")}</th><th class="c" style="width:20mm">${t("Share","النسبة")}</th><th class="r" style="width:32mm">${t("Amount (SAR)","المبلغ (ريال)")}</th></tr></thead>
+  <tbody>${PAY.map(([m, p], i) => `<tr class="${i % 2 ? "z" : ""}"><td>${N("0" + (i + 1))}</td><td>${m}</td><td class="c" style="color:var(--gold);font-weight:700">${N(p + "%")}</td><td class="r"><b>${N(money(TOTAL * p / 100))}</b></td></tr>`).join("")}
+  <tr class="tot"><td></td><td>${t("Total","الإجمالي")}</td><td class="c g">${N("100%")}</td><td class="r g">${N(money(TOTAL))}</td></tr></tbody>
+</table>
+<p class="note">${t("Amounts are exclusive of VAT. If the optional waterproofing is added, each instalment is recalculated on the revised total.","المبالغ غير شاملة ضريبة القيمة المضافة. في حال إضافة العزل المائي الاختياري تُحسب الدفعات على الإجمالي المعدّل.")}</p>
+
+
+<div class="sh"><h2>05 · ${t("Commercial Notes","الشروط التجارية")}</h2></div>
+<dl class="notes">
+  <dt>${t("Scope","النطاق")}</dt><dd>${t("Supply and installation of the works listed in Section 03 for the North, South, East and West elevations, as per Drawing A-209.","توريد وتركيب الأعمال الواردة في القسم 03 للواجهات الشمالية والجنوبية والشرقية والغربية حسب المخطط A-209.")}</dd>
+  <dt>${t("Quantities","الكميات")}</dt><dd>${t("Re-measurable. Quantities are taken from the CAD-verified BoQ; the final amount is adjusted to the measured site survey and approved shop drawings at the unit rates above.","قابلة لإعادة القياس. الكميات مأخوذة من جدول الكميات المعتمد على ملف الأوتوكاد، ويُعدّل المبلغ النهائي حسب القياس الفعلي في الموقع والمخططات التنفيذية المعتمدة بنفس أسعار الوحدات أعلاه.")}</dd>
+  <dt>${t("Payment","الدفع")}</dt><dd>${t("Payable in instalments as per the payment schedule in Section 04. Work starts once the advance payment is received.","تُسدد على دفعات حسب جدول الدفعات في القسم 04، ويبدأ العمل بعد استلام الدفعة المقدمة.")}</dd>
+  <dt>${t("VAT","الضريبة")}</dt><dd>${t("Amounts above are exclusive of VAT, if applicable. VAT will be charged in accordance with applicable Saudi regulations and the supplier's VAT registration status.","المبالغ أعلاه غير شاملة ضريبة القيمة المضافة إن وُجدت، وتُحتسب الضريبة وفق الأنظمة السعودية وحالة تسجيل المورّد الضريبي.")}</dd>
+  <dt>${t("Exclusions","الاستثناءات")}</dt><dd>${t("Waterproofing (optional item), structural or substrate repairs, permits and authority fees, and any works not listed in Section 03.","العزل المائي (بند اختياري)، والإصلاحات الإنشائية أو إصلاح الأسطح، والتصاريح والرسوم الحكومية، وأي أعمال غير واردة في القسم 03.")}</dd>
+  <dt>${t("Warranty","الضمان")}</dt><dd>${t("12-month defects liability period from the date of handover.","فترة ضمان عيوب 12 شهرًا من تاريخ التسليم.")}</dd>
+  <dt>${t("Validity","الصلاحية")}</dt><dd>${t("This quotation is valid for 15 days from the quotation date.","هذا العرض صالح لمدة 15 يومًا من تاريخه.")}</dd>
+</dl>
+
+<div class="sh"><h2>06 · ${t("Acceptance","الموافقة")}</h2></div>
+<div class="sign">
+  <div><h4>${t("For the Client","عن العميل")}</h4><p>${t("Name","الاسم")}<i></i></p><p>${t("Signature","التوقيع")}<i></i></p><p>${t("Date","التاريخ")}<i></i></p></div>
+  <div><h4>${t("For Max Design","عن ماكس ديزاين")}</h4><p>${t("Name","الاسم")}<i></i></p><p>${t("Signature","التوقيع")}<i></i></p><p>${t("Date","التاريخ")}<i></i></p></div>
+</div>
+</div>${pg(4, 4)}</section>`;
+
+document.getElementById("doc").innerHTML = p1 + p2 + p3 + p4;
+window.__ready = true;
+</script>
+</body>
+</html>
