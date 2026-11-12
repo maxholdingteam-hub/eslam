@@ -153,8 +153,8 @@ ${title}
 </div>
 
 <div class="sh"><h2>01 · ${t("Price Summary","ملخص السعر")}</h2><small>${t("CURRENCY: SAR","العملة: ريال سعودي")}</small></div>
-<p class="lead">${t("Supply and installation of the external elevation works, priced from the CAD-verified Bill of Quantities. Item-by-item detail is in Section 03.",
-                   "توريد وتركيب أعمال الواجهات الخارجية، مسعّرة من جدول الكميات المعتمد على ملف الأوتوكاد. تفاصيل البنود في القسم 03.")}</p>
+<p class="lead">${t("Supply and installation of the external elevation works, priced from the CAD-verified Bill of Quantities. ",
+                   "توريد وتركيب أعمال الواجهات الخارجية، مسعّرة من جدول الكميات المعتمد على ملف الأوتوكاد.")}</p>
 <table class="small">
   <thead><tr><th style="width:11mm">${t("No.","م")}</th><th>${t("Section","القسم")}</th><th>${t("Main quantities","الكميات الرئيسية")}</th><th class="r" style="width:30mm">${t("Amount (SAR)","المبلغ (ريال)")}</th></tr></thead>
   <tbody>${SECTIONS.map((s, i) => `<tr class="${i % 2 ? "z" : ""}"><td>${N("0" + (i + 1))}</td><td><b>${s.name}</b></td><td style="color:var(--mute)">${s.brief}</td><td class="r">${N(money(s.total))}</td></tr>`).join("")}</tbody>
@@ -165,17 +165,7 @@ ${title}
 </div>
 <p class="words">${words}</p>
 
-<div class="sh"><h2>02 · ${t("Scope of Works","نطاق الأعمال")}</h2><small>${t("6 WORK PACKAGES","6 حزم أعمال")}</small></div>
-<div class="cards">
-${[[t("Travertine Cladding","تكسية الترافرتين"),t("60×90 cm tiles, 10 mm groove, dry-fix stainless anchors and adhesive on a prepared substrate.","بلاط 60×90 سم بفاصل 10 مم، تثبيت جاف بمرابط ستانلس ولاصق على سطح مجهّز.")],
-   [t("Black Cladding Bands","أشرطة التكسية السوداء"),t("Matte black solid panels as 20 cm parapet bands on an aluminium carrier.","ألواح سوداء مطفية كشرائط بارتفاع 20 سم على هيكل ألمنيوم.")],
-   [t("WPC/PVC Louvers","اللوفرات WPC/PVC"),t("Vertical walnut-finish louvers on powder-coated aluminium rails.","لوفرات رأسية بلون جوزي على مجاري ألمنيوم مدهونة بودرة.")],
-   [t("Aluminium Windows","نوافذ الألمنيوم"),t("Black, double glazed, thermally broken frames with sills and hardware.","سوداء بزجاج مزدوج وقطاعات عازلة، مع العتبات والإكسسوارات.")],
-   [t("Sealants & Trims","السيليكون والزوايا"),t("Colour-matched silicone, expansion joints and aluminium edge trims.","سيليكون بلون مطابق وفواصل تمدد وزوايا حواف ألمنيوم.")],
-   [t("Access & Handover","السقالات والتسليم"),t("Scaffolding and protection, final cleaning, touch-up and handover.","سقالات وحماية، تنظيف نهائي ومعالجة وتسليم.")]]
-  .map(([h, p], i) => `<div class="card"><span class="n">${"0" + (i + 1)}</span><div><b>${h}</b><p>${p}</p></div></div>`).join("")}
-</div>
-</div>${pg(1, 4)}</section>`;
+</div></section>`;
 
 /* ------------ page 2: detailed BoQ ------------ */
 let z = 0;
@@ -234,7 +224,7 @@ ${title}
 </div>
 </div>${pg(4, 4)}</section>`;
 
-document.getElementById("doc").innerHTML = p1 + p2 + p3 + p4;
+document.getElementById("doc").innerHTML = p1;   /* one-page quotation: price summary only */
 window.__ready = true;
 </script>
 </body>
