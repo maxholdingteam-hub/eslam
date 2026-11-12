@@ -5,6 +5,7 @@ Quotations on the Max Design letterhead, in English and Arabic from one source f
 - `source/q000295.html`: Quotation 000295, external elevation works, one page with the price summary, priced from the BoQ by Engr. Talha Niaz (Drawing A-209, 09 Nov 2026). The scope, detailed BoQ, payment, notes and acceptance pages are still defined in the file but not printed.
 - `source/a/letterhead.png`: the company letterhead page, taken from Quotation 000294 with its "design works" subtitle removed.
 - `out/`: the printed PDFs.
+- `boq/`: the BoQ PDF, with "Fixed on powder-coated Alu rails." removed from the A.3 methodology.
 
 To print again after editing:
 
