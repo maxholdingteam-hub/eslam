@@ -1,0 +1,692 @@
+<title>خطة قناة بيت توتة</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Baloo+Bhaijaan+2:wght@500;700;800&family=IBM+Plex+Sans+Arabic:wght@400;500;600&family=IBM+Plex+Mono:wght@400&display=swap">
+<style>
+/* Layout: a single long "channel bible" — sticky chapter bar, one reading column, cards only for characters and songs */
+:root{
+  --bg:#FBF7F2; --surface:#FFFFFF; --ink:#2A1E26; --muted:#6E5F68; --line:#E8DDD8;
+  --tota:#8E2C5B;      /* mulberry — توتة */
+  --sun:#F2B632;       /* Tota's yellow dress */
+  --nile:#2F7C8C;      /* Bondoq's blue */
+  --soft:#F6E8EE;
+  --ok:#2E7D4F;
+  --f-display:"Baloo Bhaijaan 2","IBM Plex Sans Arabic",system-ui,sans-serif;
+  --f-body:"IBM Plex Sans Arabic",system-ui,"Segoe UI",Tahoma,sans-serif;
+  --f-mono:"IBM Plex Mono",ui-monospace,Menlo,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#1C1519; --surface:#271D23; --ink:#F3E9EE; --muted:#B5A3AD; --line:#3C2E36;
+  --tota:#E07AA8; --sun:#F5C65A; --nile:#6BC0D0; --soft:#33232C; --ok:#6CCB93; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#1C1519; --surface:#271D23; --ink:#F3E9EE; --muted:#B5A3AD; --line:#3C2E36;
+  --tota:#E07AA8; --sun:#F5C65A; --nile:#6BC0D0; --soft:#33232C; --ok:#6CCB93; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--f-body);font-size:16px;line-height:1.8;direction:rtl}
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:10;background:var(--bg)}
+.wrap{max-width:900px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));padding-block:0 64px}
+h1,h2,h3{font-family:var(--f-display);line-height:1.3;text-wrap:balance;margin:0}
+h2{font-size:1.9rem;color:var(--tota)}
+h3{font-size:1.25rem}
+p{margin:0}
+a{color:var(--tota)}
+:focus-visible{outline:3px solid var(--sun);outline-offset:2px}
+
+/* chapter bar */
+nav.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--bg);border-bottom:1px solid var(--line)}
+nav.bar .in{max-width:900px;margin:0 auto;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px));display:flex;gap:6px;overflow-x:auto;padding-block:10px;scrollbar-width:none}
+nav.bar a{flex:none;text-decoration:none;color:var(--muted);font-size:.9rem;padding:4px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface)}
+nav.bar a:hover{color:var(--tota);border-color:var(--tota)}
+
+/* hero */
+header.hero{padding-block:40px 28px;display:grid;gap:18px}
+.eyebrow{font-size:.85rem;letter-spacing:.04em;color:var(--muted)}
+.hero h1{font-size:clamp(2.6rem,8vw,4.2rem);color:var(--tota);font-weight:800}
+.hero h1 span{color:var(--sun);-webkit-text-stroke:0}
+.hero .tag{font-size:1.2rem;color:var(--ink)}
+.chips{display:flex;flex-wrap:wrap;gap:8px}
+.chip{font-size:.9rem;padding:4px 12px;border-radius:999px;background:var(--soft);color:var(--ink)}
+.chip b{color:var(--tota)}
+
+section{padding-block:36px;border-top:1px solid var(--line);display:grid;gap:18px;scroll-margin-top:64px}
+.lead{color:var(--muted);max-width:65ch}
+.cols{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:14px}
+.cols>*{min-width:0}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:18px;display:grid;gap:10px;align-content:start}
+.card .sw{width:38px;height:38px;border-radius:50%;flex:none}
+.card .head{display:flex;gap:12px;align-items:center}
+.card .role{font-size:.85rem;color:var(--muted)}
+ul,ol{margin:0;padding-inline-start:1.3em;display:grid;gap:4px}
+.note{background:var(--soft);border-radius:12px;padding:14px 16px}
+.warn{border-inline-start:4px solid var(--sun);background:var(--surface);border-radius:8px;padding:12px 16px}
+
+/* name */
+.namebox{display:grid;gap:8px;padding:22px;border-radius:18px;background:var(--tota);color:#fff}
+.namebox .big{font-family:var(--f-display);font-size:2.6rem;font-weight:800;line-height:1.2}
+.namebox .sub{opacity:.92}
+.alts{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:10px}
+.alts div{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:12px}
+.alts b{font-family:var(--f-display);font-size:1.15rem}
+.alts small{display:block;color:var(--muted);line-height:1.6}
+
+/* prompt blocks */
+.prompt{position:relative;direction:ltr;text-align:left;font-family:var(--f-mono);font-size:.8rem;line-height:1.6;background:var(--bg);border:1px dashed var(--line);border-radius:10px;padding:12px 12px 12px 12px;white-space:pre-wrap;word-break:break-word}
+.copy{font-family:var(--f-body);font-size:.8rem;border:1px solid var(--line);background:var(--surface);color:var(--ink);border-radius:8px;padding:3px 10px;cursor:pointer;justify-self:start}
+.copy:hover{border-color:var(--tota);color:var(--tota)}
+
+/* tables */
+.tw{overflow-x:auto;border:1px solid var(--line);border-radius:12px;background:var(--surface)}
+table{border-collapse:collapse;width:100%;font-size:.92rem}
+th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:right;vertical-align:top}
+th{font-weight:600;background:var(--soft);white-space:nowrap}
+tr:last-child td{border-bottom:0}
+td.num{font-variant-numeric:tabular-nums;white-space:nowrap}
+.sb td:last-child{min-width:280px}
+
+/* pillars bar */
+.mix{display:flex;height:34px;border-radius:10px;overflow:hidden;font-size:.82rem;color:#fff;font-weight:600}
+.mix div{display:flex;align-items:center;justify-content:center;white-space:nowrap;overflow:hidden}
+
+/* songs */
+.song{background:var(--surface);border:1px solid var(--line);border-radius:14px;padding:20px;display:grid;gap:12px}
+.lyrics{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:14px}
+.lyrics>div{min-width:0}
+.lyrics h4{margin:0 0 4px;font-size:.85rem;color:var(--muted);font-weight:500}
+.lyrics p{font-family:var(--f-display);font-size:1.12rem;line-height:1.9;white-space:pre-line}
+.lyrics .ch p{color:var(--tota)}
+.meta{font-size:.85rem;color:var(--muted)}
+
+/* pipeline */
+.steps{display:grid;gap:10px;counter-reset:s}
+.steps>div{display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:start}
+.steps>div::before{counter-increment:s;content:counter(s);font-family:var(--f-display);font-weight:800;font-size:1.2rem;width:40px;height:40px;border-radius:50%;background:var(--soft);color:var(--tota);display:grid;place-items:center}
+.steps>div>div{min-width:0}
+
+/* checklist */
+.check{display:grid;gap:6px}
+.check label{display:flex;gap:10px;align-items:flex-start;padding:8px 12px;border-radius:10px;background:var(--surface);border:1px solid var(--line);cursor:pointer}
+.check input{margin-top:6px;accent-color:var(--tota);width:18px;height:18px;flex:none}
+.check input:checked+span{color:var(--muted);text-decoration:line-through}
+.progress{font-size:.9rem;color:var(--ok);font-weight:600}
+
+footer{padding-top:28px;border-top:1px solid var(--line);color:var(--muted);font-size:.85rem}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+</style>
+
+<nav class="bar" aria-label="أقسام الخطة"><div class="in">
+  <a href="#name">الاسم</a><a href="#characters">الشخصيات</a><a href="#content">المحتوى</a><a href="#songs">الأغاني</a><a href="#more">فيديوهات 5–10</a><a href="#ep1">الحلقة الأولى</a><a href="#production">الإنتاج</a><a href="#calendar">أول 30 فيديو</a><a href="#plan">خطة 6 شهور</a><a href="#budget">الميزانية</a><a href="#money">الربح</a><a href="#start">ابدأ</a>
+</div></nav>
+
+<div class="wrap">
+
+<header class="hero">
+  <div class="eyebrow">ملف القناة الكامل · نوفمبر 2026</div>
+  <h1>بيت <span>توتة</span></h1>
+  <p class="tag">أغاني وحواديت مصرية لأحلى أطفال. الحاجات اليومية الصغيرة بتبقى أغنية تتحفظ.</p>
+  <div class="chips">
+    <span class="chip">اللغة: <b>عربي، لهجة مصرية خفيفة</b></span>
+    <span class="chip">السن: <b>من 2 لـ 6 سنين</b></span>
+    <span class="chip">المحتوى الأساسي: <b>أغاني الروتين اليومي</b></span>
+    <span class="chip">النشر: <b>2–3 فيديو في الأسبوع + Shorts</b></span>
+    <span class="chip">الإنتاج: <b>Higgsfield + Suno + CapCut</b></span>
+  </div>
+  <p class="lead">الملف ده معمول على نتايج البحث: أغاني الروتين بشخصيات ثابتة هي أكتر نوع بيجيب مشاهدات في المحتوى العربي، وأرباح فيديوهات الأطفال قليلة (حوالي 160–880 دولار لكل مليون مشاهدة)، والفلوس الكبيرة في امتلاك الشخصيات. علشان كده الخطة كلها مبنية على شخصيات أصلية بتاعتك.</p>
+</header>
+
+<!-- NAME -->
+<section id="name">
+  <h2>اسم القناة</h2>
+  <div class="namebox">
+    <div class="big">بيت توتة</div>
+    <div class="sub">بالإنجليزي: <b>Beit Tota</b> · الهاندل المقترح: <b>@BeitTota</b> (أو ‎@BeitTotaKids لو مأخوذ)</div>
+  </div>
+  <div class="cols">
+    <div class="card"><h3>ليه الاسم ده؟</h3>
+      <ul>
+        <li>جاي من آخر كل حدوتة مصرية: <b>«توتة توتة، فرغت الحدوتة»</b>. كل أم وأب في مصر يعرفوه.</li>
+        <li>كلمتين سهلين، الطفل يقدر ينطقهم ويطلب القناة بالاسم.</li>
+        <li>«بيت» بيفتح الباب لعيلة كاملة من الشخصيات، مش شخصية واحدة.</li>
+        <li>التوت لونه مميز (لون القناة)، فالهوية سهل تتعرف من الصورة المصغّرة.</li>
+      </ul>
+    </div>
+    <div class="card"><h3>قبل ما تثبّته</h3>
+      <ul>
+        <li>دوّر على يوتيوب وإنستجرام وتيك توك على «بيت توتة» و«Beit Tota». في بحث سريع ملقيتش قناة بالاسم ده، بس البحث مش كافي.</li>
+        <li>احجز الهاندل نفسه على يوتيوب وإنستجرام وتيك توك وفيسبوك في نفس اليوم.</li>
+        <li>لو ناوي تبيع منتجات بعدين، سجّل الاسم كعلامة تجارية في مصر.</li>
+      </ul>
+    </div>
+  </div>
+  <h3>أسماء بديلة لو الاسم مأخوذ</h3>
+  <div class="alts">
+    <div><b>حواديت تيتة</b><small>مناسب أكتر لو ركزت على القصص</small></div>
+    <div><b>شلة بندق</b><small>شقي وخفيف، مناسب للأولاد والبنات</small></div>
+    <div><b>دنيا توتة</b><small>نفس الشخصية بطابع أوسع</small></div>
+    <div><b>بلكونة الحواديت</b><small>مصري جداً ومختلف</small></div>
+    <div><b>زعتر وأصحابه</b><small>لو حبيت القطة تبقى البطل</small></div>
+  </div>
+</section>
+
+<!-- CHARACTERS -->
+<section id="characters">
+  <h2>الشخصيات</h2>
+  <p class="lead">شخصيات قليلة وثابتة. الطفل بيتعلق بوش يعرفه، ودي أهم حاجة تملكها في المشروع. كل شخصية ليها <b>برومبت ثابت</b>: انسخه زي ما هو في هيجس فيلد، ومتغيرش الوصف أبداً بين الحلقات.</p>
+
+  <div class="card">
+    <h3>الستايل العام (يتحط في أول كل برومبت)</h3>
+    <div class="prompt" id="p-style">3D animated children's cartoon, soft rounded shapes, big expressive eyes, warm soft lighting, pastel colors with mulberry-pink and sunny-yellow accents, cozy modern Egyptian apartment, clean simple backgrounds, gentle and friendly mood, high quality family animation, no text</div>
+    <button class="copy" data-copy="p-style" type="button">انسخ</button>
+  </div>
+
+  <div class="cols">
+    <div class="card">
+      <div class="head"><div class="sw" style="background:var(--sun)"></div><div><h3>توتة</h3><div class="role">البطلة · 5 سنين</div></div></div>
+      <p>فضولية وبتحب تغني، دايماً بتشرح لأخوها الصغير يعمل الحاجة إزاي. بتقول «يلا بينا!» كتير.</p>
+      <div class="prompt" id="p-tota">TOTA: a cheerful 5-year-old Egyptian girl, warm light-brown skin, big round dark-brown eyes, two curly dark-brown pigtails tied with mulberry-pink ribbons, rosy cheeks, small gap-tooth smile, wearing a sunny-yellow dress with small white polka dots and pink sneakers</div>
+      <button class="copy" data-copy="p-tota" type="button">انسخ</button>
+    </div>
+    <div class="card">
+      <div class="head"><div class="sw" style="background:var(--nile)"></div><div><h3>بُندق</h3><div class="role">أخوها الصغير · 3 سنين</div></div></div>
+      <p>شقي ومضحك، بيقلّد كل حاجة توتة بتعملها بس بيغلط فيها، وده مصدر الضحك. كلمته: «أنا كمان!».</p>
+      <div class="prompt" id="p-bondoq">BONDOQ: a playful 3-year-old Egyptian boy, chubby cheeks, short messy dark curly hair with one curl sticking up, big curious eyes, wearing a sky-blue t-shirt with a small hazelnut print, navy shorts, and blue sneakers</div>
+      <button class="copy" data-copy="p-bondoq" type="button">انسخ</button>
+    </div>
+    <div class="card">
+      <div class="head"><div class="sw" style="background:#E8893A"></div><div><h3>زعتر</h3><div class="role">قطة البيت</div></div></div>
+      <p>مبيتكلمش، بيعمل أصوات وحركات بس. بيقلّد الأطفال بطريقة كوميدية، وده بيخلي القناة مفهومة حتى لأصغر طفل.</p>
+      <div class="prompt" id="p-zaatar">ZAATAR: a small fluffy orange tabby kitten with white paws, a white chest patch, big green eyes, and a little green collar with a round bell</div>
+      <button class="copy" data-copy="p-zaatar" type="button">انسخ</button>
+    </div>
+    <div class="card">
+      <div class="head"><div class="sw" style="background:var(--tota)"></div><div><h3>تيتة نعمات</h3><div class="role">الجدة · راوية الحواديت</div></div></div>
+      <p>حنينة ودمها خفيف، بتحكي «حواديت تيتة» قبل النوم وبتختمها بـ«توتة توتة، فرغت الحدوتة». هي صوت القيم في القناة.</p>
+      <div class="prompt" id="p-teta">TETA NEAMAT: a kind Egyptian grandmother in her 60s, round glasses, warm smile, soft wrinkles, wearing a loose mulberry-colored house dress and a light cream headscarf, often holding a cup of tea or a storybook</div>
+      <button class="copy" data-copy="p-teta" type="button">انسخ</button>
+    </div>
+    <div class="card">
+      <div class="head"><div class="sw" style="background:var(--ok)"></div><div><h3>ماما</h3><div class="role">ظهور قليل</div></div></div>
+      <p>بتظهر في البداية والنهاية: بتصحّيهم، بتشجعهم، بتبوسهم قبل النوم. ظهورها قليل علشان الأطفال يفضلوا هم الأبطال.</p>
+      <div class="prompt" id="p-mama">MAMA: a young Egyptian mother in her early 30s, gentle smile, dark hair in a loose bun, wearing a soft green cardigan over a cream top</div>
+      <button class="copy" data-copy="p-mama" type="button">انسخ</button>
+    </div>
+  </div>
+  <div class="note"><b>علشان الشخصيات تفضل شبه بعض:</b> أول حاجة اعمل لكل شخصية «شيت» فيه صورة من الأمام والجنب والضهر، واحفظه. بعد كده كل مشهد يبدأ من صورة الشيت (Image-to-Video)، مش من نص بس. ولو هيجس فيلد فيه خاصية حفظ الشخصية، احفظ كل واحدة باسمها.</div>
+  <div class="prompt" id="p-sheet">[STYLE] + [CHARACTER] — character reference sheet, full body, front view, side view, back view, and three facial expressions (happy, surprised, sleepy), plain light background, consistent proportions</div>
+  <button class="copy" data-copy="p-sheet" type="button">انسخ برومبت الشيت</button>
+</section>
+
+<!-- CONTENT -->
+<section id="content">
+  <h2>خريطة المحتوى</h2>
+  <p class="lead">أربع سلاسل ثابتة. أغاني الروتين هي الأساس لأنها أكتر حاجة الطفل بيعيدها، والباقي بيكمّل وبيدي القناة قيمة حقيقية (ودي بتحميك من سياسة «المحتوى المكرر»).</p>
+  <div class="mix" role="img" aria-label="توزيع المحتوى: 60٪ أغاني روتين، 20٪ تعلّم مع توتة، 15٪ حواديت تيتة، 5٪ مواسم">
+    <div style="flex:60;background:var(--tota)">أغاني الروتين 60٪</div>
+    <div style="flex:20;background:var(--nile)">تعلّم 20٪</div>
+    <div style="flex:15;background:#B07A1E">حواديت 15٪</div>
+    <div style="flex:5;background:var(--ok)">5٪</div>
+  </div>
+  <div class="tw"><table>
+    <thead><tr><th>السلسلة</th><th>المدة</th><th>اللغة</th><th>أمثلة</th></tr></thead>
+    <tbody>
+      <tr><td><b>أغاني بيت توتة</b><br><span class="meta">روتين وعادات</span></td><td class="num">2–3 دقايق</td><td>مصري خفيف</td><td>فرّش سنانك، غسّل إيدك، يلا ناكل، يلا ننام، الحمّام، لبس الهدوم، ترتيب اللعب، عيد ميلاد بندق</td></tr>
+      <tr><td><b>تعلّم مع توتة</b></td><td class="num">2–4 دقايق</td><td>فصحى مبسطة</td><td>أغنية الحروف (حرف في كل حلقة)، الأرقام من 1 لـ 10، الألوان، الأشكال، الحيوانات وأصواتها</td></tr>
+      <tr><td><b>حواديت تيتة</b><br><span class="meta">قيم وأخلاق</span></td><td class="num">4–6 دقايق</td><td>مصري</td><td>بندق والكدب، توتة بتشارك لعبتها، لما زعلنا ماما، الجار الجديد. كل حدوتة بتخلص بـ«توتة توتة»</td></tr>
+      <tr><td><b>مواسم</b></td><td class="num">2–3 دقايق</td><td>مصري</td><td>وحوي يا وحوي (نسخة جديدة)، فانوس توتة، السحور مع تيتة، كحك العيد، أول يوم مدرسة</td></tr>
+    </tbody>
+  </table></div>
+  <h3>من كل أغنية هتطلّع 4 حاجات</h3>
+  <div class="cols">
+    <div class="card"><b>النسخة الأصلية</b><span class="meta">فيديو 16:9، من 2 لـ 3 دقايق</span></div>
+    <div class="card"><b>نسخة «بدون إيقاع»</b><span class="meta">نفس الفيديو بصوت وكورس من غير آلات. فيه أهالي كتير بيدوروا عليها، وفيديو واحد منها على قناة كبيرة جاب 72 مليون مشاهدة.</span></div>
+    <div class="card"><b>2–3 Shorts</b><span class="meta">الكورس لوحده بشكل عمودي 9:16. دول للانتشار، مش للفلوس.</span></div>
+    <div class="card"><b>تدخل في تجميعة</b><span class="meta">كل 8–12 أغنية يتعملوا فيديو 30–45 دقيقة. التجميعات بترفع ساعات المشاهدة جداً.</span></div>
+  </div>
+</section>
+
+<!-- SONGS -->
+<section id="songs">
+  <h2>الأغاني الجاهزة</h2>
+  <p class="lead">التتر وأول 3 أغاني. الكلمات بسيطة ومتكررة علشان الطفل يحفظها، وكل أغنية فيها حاجة بيتعلمها (العد، الترتيب، الخطوات).</p>
+
+  <div class="song">
+    <h3>تتر القناة: «بيت توتة»</h3>
+    <div class="meta">20–30 ثانية · في أول كل فيديو طويل، وممكن يبقى Short لوحده</div>
+    <div class="lyrics">
+      <div class="ch"><h4>الكلمات</h4><p>تعالوا يا حبايب تعالوا
+على بيت توتة.. يلا بينا!
+فيه غُنا وفيه حواديت
+وفيه ضحك ولعب لينا
+
+توتة وبندق وزعتر
+وتيتة بحكايتها الحلوة
+كل يوم حكاية جديدة
+في بيت توتة.. توتة توتة!</p></div>
+    </div>
+    <div class="prompt" id="s-theme">Upbeat cheerful Arabic children's song, Egyptian style, ukulele, xylophone, hand claps, light darbuka, bright happy children's choir, catchy simple melody, 110 bpm, playful</div>
+    <button class="copy" data-copy="s-theme" type="button">انسخ ستايل Suno</button>
+  </div>
+
+  <div class="song">
+    <h3>أغنية 1: «فرّش سنانك»</h3>
+    <div class="meta">حوالي دقيقتين · بتعلّم خطوات تفريش السنان والعد للعشرة</div>
+    <div class="lyrics">
+      <div class="ch"><h4>الكورس (يتكرر 3 مرات)</h4><p>فرّش فرّش فرّش سنانك
+فوق وتحت.. ويمين وشمال
+فرّش فرّش فرّش سنانك
+تبقى بيضا.. وتلمع كمان!</p></div>
+      <div><h4>المقطع الأول</h4><p>صحيت توتة الصبح بدري
+قالت: يا بندق يلا بينا!
+فرشة حمرا لتوتة
+وفرشة زرقا لبندق
+حتة معجون صغنونة
+قد حباية البندق!</p></div>
+      <div><h4>المقطع التاني</h4><p>لفّة لفّة زي القطر
+توت توت على السنان
+نعد سوا لحد عشرة:
+واحد، اتنين، تلاتة، أربعة، خمسة
+ستة، سبعة، تمانية، تسعة.. عشرة!</p></div>
+      <div><h4>المقطع التالت</h4><p>نمضمض ونقول: بُخ!
+وزعتر يتنطط: مياو!
+ونبص في المراية ونضحك
+أحلى ضحكة.. أهي أهو!</p></div>
+    </div>
+    <div class="prompt" id="s-1">Happy bouncy Arabic children's song, Egyptian dialect, two kids singing (girl lead, small boy echo), ukulele, glockenspiel, claps, toy train whistle sound effect, simple repetitive chorus, 115 bpm</div>
+    <button class="copy" data-copy="s-1" type="button">انسخ ستايل Suno</button>
+  </div>
+
+  <div class="song">
+    <h3>أغنية 2: «مية وصابون»</h3>
+    <div class="meta">حوالي دقيقتين · غسيل الإيدين: إمتى ولازم إزاي</div>
+    <div class="lyrics">
+      <div class="ch"><h4>الكورس</h4><p>مية وصابون.. مية وصابون
+نفرك نفرك.. بالصابون
+رغوة بيضا زي السحاب
+وإيدينا نضيفة.. يا سلام!</p></div>
+      <div><h4>المقطع الأول</h4><p>قبل الأكل وبعد اللعب
+وأما نرجع من الشارع
+نفتح الحنفية شوية
+ونغسل ما بين الصوابع</p></div>
+      <div><h4>المقطع التاني</h4><p>فوق الإيد وتحت الإيد
+والضوافر كمان يا جميل
+بندق عمل فقاعة كبيرة
+وطارت.. طارت.. لفوق خالص!</p></div>
+      <div><h4>المقطع التالت</h4><p>نشطّف بالمية الحلوة
+ونقفل الحنفية: تِك!
+ننشّف إيدينا بالفوطة
+وتيتة تقول: برافو عليك!</p></div>
+    </div>
+    <div class="prompt" id="s-2">Playful Arabic children's song, Egyptian dialect, kids choir, marimba, pizzicato strings, bubble pop sound effects, water splash sounds, call-and-response, 108 bpm, cheerful</div>
+    <button class="copy" data-copy="s-2" type="button">انسخ ستايل Suno</button>
+  </div>
+
+  <div class="song">
+    <h3>أغنية 3: «يلا ننام»</h3>
+    <div class="meta">حوالي 3 دقايق · تهويدة هادية. أغاني النوم بيتعاد تشغيلها كتير كل ليلة، ونسختها الطويلة (ساعة أو أكتر) ممكن تبقى فيديو لوحدها</div>
+    <div class="lyrics">
+      <div class="ch"><h4>الكورس</h4><p>نام يا بندق.. نامي يا توتة
+القمر بيحرس أحلامكم
+تصبحوا على خير يا حبايب
+بكرة يوم حلو مستنيكم</p></div>
+      <div><h4>المقطع الأول</h4><p>الشمس راحت تنام
+والنجوم طلعت بتلمع
+والعصافير في عشها
+وزعتر نام على الوسادة</p></div>
+      <div><h4>المقطع التاني</h4><p>لبسنا البيجامة
+وفرّشنا السنان
+وماما باستنا بوسة
+وتيتة حكت حدوتة</p></div>
+      <div><h4>الختام (همس)</h4><p>توتة توتة..
+فرغت الحدوتة..
+تصبحوا على خير.</p></div>
+    </div>
+    <div class="prompt" id="s-3">Gentle soft Arabic lullaby for children, Egyptian dialect, warm female voice humming, music box, soft oud, light strings, slow 70 bpm, calm dreamy and soothing</div>
+    <button class="copy" data-copy="s-3" type="button">انسخ ستايل Suno</button>
+  </div>
+  <div class="warn">جرّب كذا نسخة في Suno واختار الأحلى. لو النطق المصري طلع مش مظبوط، الحل إن طفل أو صوت حقيقي يغني على اللحن (من 300 لـ 800 جنيه للأغنية من فريلانسر)، وده كمان بيخليك تملك الأغنية بالكامل.</div>
+</section>
+
+<!-- MORE SONGS -->
+<section id="more">
+  <h2>الفيديوهات من 5 لـ 10</h2>
+  <p class="lead">الكلمات كاملة لـ 5 أغاني، وسكربت أول حدوتة لتيتة. أغاني «تعلّم مع توتة» مكتوبة بالفصحى المبسطة، والباقي بالمصري.</p>
+
+  <div class="song">
+    <h3>5 · «يلا ناكل»</h3>
+    <div class="meta">روتين · حوالي دقيقتين · آداب الأكل وتجربة أكل جديد</div>
+    <div class="lyrics">
+      <div class="ch"><h4>الكورس</h4><p>يلا ناكل.. يلا ناكل
+بسم الله نبدأ الأكل
+بالإيد اليمين يا حبيبي
+لقمة صغيرة.. وعلى مهل</p></div>
+      <div><h4>المقطع الأول</h4><p>طبق توتة فيه جزر
+برتقاني زي الشمس
+وطبق بندق فيه خيار
+أخضر.. كرنش كرنش كرنش!</p></div>
+      <div><h4>المقطع التاني</h4><p>بندق قال: مش عايز كوسة!
+تيتة قالت: دوق حتة
+داقها بندق وقال: الله!
+الكوسة طلعت حلوة بجد!</p></div>
+      <div><h4>المقطع التالت</h4><p>خلّصنا الطبق كله
+ونقول: الحمد لله
+نشيل الطبق للحوض
+وشكراً.. شكراً يا ماما!</p></div>
+    </div>
+    <div class="prompt" id="s-5">Cheerful Arabic children's song, Egyptian dialect, kids choir with a grandma voice line, accordion, ukulele, light darbuka, crunchy food sound effects, bouncy, 112 bpm</div>
+    <button class="copy" data-copy="s-5" type="button">انسخ ستايل Suno</button>
+  </div>
+
+  <div class="song">
+    <h3>6 · «حرف الألف»</h3>
+    <div class="meta">تعلّم · فصحى مبسطة · حوالي دقيقتين · أول حلقة في سلسلة الحروف (نفس القالب لكل حرف)</div>
+    <div class="lyrics">
+      <div class="ch"><h4>الكورس</h4><p>ألِف.. ألِف.. أَ أَ أَ
+ألِفٌ واقفةٌ مثلَ العصا
+ألِف.. ألِف.. أَ أَ أَ
+أوّلُ حرفٍ.. هيّا معًا!</p></div>
+      <div><h4>المقطع الأول</h4><p>أَ أَ أرنب.. يقفزُ هُوب!
+أَ أَ أسد.. يزأرُ: آه!
+أَ أَ أناناس.. لونُه أصفر
+أَ أَ أُمّي.. أُحبُّها!</p></div>
+      <div><h4>المقطع التاني</h4><p>نرسمُ خطًّا من فوق لتحت
+بالقلمِ.. بهدوءٍ هكذا
+توتةُ رسمت ألفًا كبيرة
+وبندقُ رسمَ ألفًا صغيرة!</p></div>
+    </div>
+    <div class="note"><b>في المونتاج:</b> حرف الألف كبير في نص الشاشة، وكل كلمة تظهر معاها صورتها (أرنب، أسد، أناناس، أم). في الآخر إيد بترسم الألف ببطء علشان الطفل يقلدها.</div>
+    <div class="prompt" id="s-6">Educational Arabic alphabet song for toddlers, Modern Standard Arabic, clear slow pronunciation, girl lead with kids choir echo, xylophone, soft piano, hand claps, simple catchy melody, 100 bpm</div>
+    <button class="copy" data-copy="s-6" type="button">انسخ ستايل Suno</button>
+  </div>
+
+  <div class="song">
+    <h3>7 · «وقت الحمّام»</h3>
+    <div class="meta">روتين · حوالي دقيقتين ونص · خطوات الاستحمام ونصايح أمان (المية الدافية، الأرض بتزحلق)</div>
+    <div class="lyrics">
+      <div class="ch"><h4>الكورس</h4><p>بقبق بقبق.. وقت الحمّام
+رغوة وفقاقيع في كل مكان
+والبطة الصفرا بتعوم معانا
+كواك كواك.. يا سلام!</p></div>
+      <div><h4>المقطع الأول</h4><p>نقلع هدومنا ونحطها في السبت
+والمية دافية.. مش سخنة
+ماما بتجرّب بإيدها الأول
+تمام يا ماما؟ تمام!</p></div>
+      <div><h4>المقطع التاني</h4><p>نغسل الشعر.. ونغمّض عينينا
+والودان والرقبة كمان
+وبين صوابع الرجلين: زغزغة!
+بندق بيضحك.. هههه!</p></div>
+      <div><h4>المقطع التالت</h4><p>نطلع بالراحة.. الأرض بتزحلق
+وفوطة كبيرة تلفّنا لف
+ريحتنا حلوة زي الورد
+ويلا ننام في حضن تيتة</p></div>
+    </div>
+    <div class="prompt" id="s-7">Playful splashy Arabic children's song, Egyptian dialect, kids choir, marimba, ukulele, bubble and rubber duck squeak sound effects, water splashes, happy, 110 bpm</div>
+    <button class="copy" data-copy="s-7" type="button">انسخ ستايل Suno</button>
+  </div>
+
+  <div class="song">
+    <h3>8 · «الأرقام من 1 لـ 10»</h3>
+    <div class="meta">تعلّم · فصحى مبسطة · حوالي دقيقتين ونص · كل رقم معاه حاجة يعدّها الطفل على الشاشة</div>
+    <div class="lyrics">
+      <div class="ch"><h4>الكورس</h4><p>واحد، اثنان، ثلاثة.. هيّا نعُدّ
+أربعة، خمسة، ستة.. ولا نملّ
+سبعة، ثمانية، تسعة.. اقتربنا
+عشرة! برافو.. عددنا كلنا!</p></div>
+      <div><h4>من 1 لـ 5</h4><p>واحد: شمسٌ واحدةٌ في السماء
+اثنان: عينانِ أرى بهما
+ثلاثة: ثلاثُ بطّاتٍ في البِركة
+أربعة: أربعُ أرجلٍ لزعتر
+خمسة: خمسُ أصابعَ في يدي</p></div>
+      <div><h4>من 6 لـ 10</h4><p>ستة: ستُّ حبّاتِ فراولة
+سبعة: سبعةُ ألوانٍ في قوسِ قزح
+ثمانية: ثمانيةُ أرجلٍ للأخطبوط
+تسعة: تسعُ نجماتٍ تلمع
+عشرة: عشرةُ أصابع.. نصفّقُ بها!</p></div>
+    </div>
+    <div class="prompt" id="s-8">Educational Arabic counting song for toddlers, Modern Standard Arabic, clear pronunciation, kids choir, glockenspiel, pizzicato strings, a soft ding on each number, steady easy rhythm, 105 bpm</div>
+    <button class="copy" data-copy="s-8" type="button">انسخ ستايل Suno</button>
+  </div>
+
+  <div class="song">
+    <h3>10 · «نلبس هدومنا»</h3>
+    <div class="meta">روتين · حوالي دقيقتين · الاعتماد على النفس وترتيب لبس الهدوم</div>
+    <div class="lyrics">
+      <div class="ch"><h4>الكورس</h4><p>نلبس.. نلبس.. هدومنا لوحدنا
+واحدة واحدة.. من غير ما نستعجل
+نلبس.. نلبس.. إحنا كبرنا
+توتة وبندق.. شاطرين خالص!</p></div>
+      <div><h4>المقطع الأول</h4><p>الفانلة الأول.. الراس تطلع من فوق
+إيد يمين.. وإيد شمال
+بندق لبسها بالمقلوب!
+نقلعها.. ونلبسها تاني تمام</p></div>
+      <div><h4>المقطع التاني</h4><p>البنطلون: رِجل.. ورِجل
+والشراب: واحد.. واحد
+الجزمة اليمين في الرجل اليمين
+والشمال في الشمال.. شاطر!</p></div>
+      <div><h4>المقطع التالت</h4><p>نقفل الزراير من تحت لفوق
+ونبص في المراية.. الله!
+زعتر لابس طاقية صغيرة
+ويلا بينا نخرج نلعب!</p></div>
+    </div>
+    <div class="prompt" id="s-10">Upbeat Arabic children's song, Egyptian dialect, girl and little boy singing, kids choir, ukulele, bass, hand claps, funny boing sound effect, energetic, 118 bpm</div>
+    <button class="copy" data-copy="s-10" type="button">انسخ ستايل Suno</button>
+  </div>
+
+  <div class="song">
+    <h3>9 · حواديت تيتة: «بندق والزرافة المكسورة»</h3>
+    <div class="meta">حدوتة · 4–5 دقايق · القيمة: الصراحة والاعتراف بالغلط · تيتة بتحكي كراوية، فمعظم الكلام مش محتاج حركة شفايف</div>
+    <div class="tw"><table>
+      <thead><tr><th>#</th><th>اللي بيحصل</th><th>الكلام</th></tr></thead>
+      <tbody>
+        <tr><td class="num">1</td><td>تيتة قاعدة على الكنبة بكوباية شاي، وبتبص للكاميرا</td><td><b>تيتة:</b> «تعالوا يا حبايب، اقعدوا جنبي.. النهارده هحكيلكم حدوتة حصلت هنا، في بيت توتة.»</td></tr>
+        <tr><td class="num">2</td><td>توتة بتلعب بزرافة خشب صغيرة اسمها «زوزو»</td><td><b>تيتة:</b> «توتة كان عندها زرافة خشب اسمها زوزو، تيتة جابتهالها هدية. وكانت بتحبها أوي أوي.»</td></tr>
+        <tr><td class="num">3</td><td>توتة خارجة مع ماما، والزرافة على الترابيزة. بندق بيبصلها</td><td><b>تيتة:</b> «وفي يوم، توتة خرجت مع ماما.. وبندق شاف زوزو لوحدها.»</td></tr>
+        <tr><td class="num">4</td><td>بندق بيطيّر الزرافة في الهوا زي الطيارة، وزعتر بيجري وراه</td><td><b>بندق:</b> «طيري يا زوزو.. ويييي!» (صوت بس)</td></tr>
+        <tr><td class="num">5</td><td>الزرافة بتقع، ورقبتها بتتكسر. بندق مخضوض</td><td>صوت: «طَخ!» ثم سكوت. <b>تيتة:</b> «يا خبر! رقبة زوزو اتكسرت.»</td></tr>
+        <tr><td class="num">6</td><td>بندق بيخبي الزرافة تحت الكنبة. زعتر شايفه</td><td><b>تيتة:</b> «بندق خاف.. وخبّاها تحت الكنبة.»</td></tr>
+        <tr><td class="num">7</td><td>توتة رجعت بتدوّر في كل حتة. سحابة رمادي صغيرة بتظهر فوق راس بندق</td><td><b>توتة:</b> «بندق، مشفتش زوزو؟» <b>بندق:</b> «لأ.. مشفتهاش.»</td></tr>
+        <tr><td class="num">8</td><td>توتة زعلانة. السحابة فوق بندق بتكبر ولونها بيغمق</td><td><b>تيتة:</b> «ومن ساعة ما بندق قال كده، حس إن في سحابة تقيلة فوق راسه.. وكل ما توتة تزعل، السحابة تكبر.»</td></tr>
+        <tr><td class="num">9</td><td>بالليل، بندق مش عارف ينام. بيروح أوضة تيتة</td><td><b>بندق:</b> «تيتة.. أنا عملت حاجة وحشة.»</td></tr>
+        <tr><td class="num">10</td><td>تيتة بتحضنه وبتسمعه</td><td><b>تيتة:</b> «قولّي يا حبيبي. الغلط بيحصل لكل الناس، بس الصراحة هي اللي بتصلّحه.»</td></tr>
+        <tr><td class="num">11</td><td>الصبح: بندق بيدّي توتة الزرافة المكسورة، وراسه في الأرض</td><td><b>بندق:</b> «أنا آسف يا توتة.. أنا اللي كسرتها، وخفت أقولك.»</td></tr>
+        <tr><td class="num">12</td><td>توتة زعلانة شوية، وبعدين بتحضنه</td><td><b>توتة:</b> «زعلت عليها.. بس شكراً إنك قلتلي الحقيقة.»</td></tr>
+        <tr><td class="num">13</td><td>تيتة بتلزق الرقبة بالغرا، والأطفال بيتفرجوا. زعتر ماسك بكرة لزق. السحابة بتختفي والشمس بتطلع</td><td><b>تيتة:</b> «والغرا ده بتاع الكبار بس، ماشي؟»</td></tr>
+        <tr><td class="num">14</td><td>تيتة بتبص للكاميرا، والأطفال نايمين على رجليها</td><td><b>تيتة:</b> «عرفتوا يا حبايب؟ الصراحة بتخلي القلب خفيف زي الريشة. وتوتة توتة.. فرغت الحدوتة!»</td></tr>
+      </tbody>
+    </table></div>
+    <div class="note"><b>صوت تيتة:</b> سجّله بصوت ست كبيرة حقيقية من العيلة أو من فريلانسر. ده هيفرق جداً عن الصوت المولّد في الإحساس. ولو استخدمت ElevenLabs، جرّب الأول، لأن اللهجة المصرية فيه لسه مش مضبوطة.</div>
+    <div class="prompt" id="p-ep9">Visual metaphor shot: BONDOQ standing in the living room looking guilty, a small grey cartoon rain cloud floating above his head growing bigger, TOTA in the background looking sad, soft warm lighting</div>
+    <button class="copy" data-copy="p-ep9" type="button">انسخ برومبت مشهد السحابة</button>
+  </div>
+</section>
+
+<!-- EPISODE 1 -->
+<section id="ep1">
+  <h2>الحلقة الأولى: «فرّش سنانك»</h2>
+  <p class="lead">ستوري بورد مشهد بمشهد. حط <b>الستايل العام + وصف الشخصية</b> قبل كل برومبت. كل مشهد من 5 لـ 8 ثواني، ومشاهد الكورس بتتعاد في كل مرة الكورس يرجع، فمحتاج تولّد حوالي 14 مقطع بس.</p>
+  <div class="tw"><table class="sb">
+    <thead><tr><th>#</th><th>الوقت</th><th>الكلام / الصوت</th><th>برومبت المشهد (Higgsfield)</th></tr></thead>
+    <tbody>
+      <tr><td class="num">1</td><td class="num">0:00</td><td>التتر</td><td><div class="prompt">Exterior of a cozy Egyptian apartment building at sunrise, a balcony full of green plants and a mulberry-pink door, birds flying, camera slowly pushes in toward the balcony window</div></td></tr>
+      <tr><td class="num">2</td><td class="num">0:25</td><td>صحيت توتة الصبح بدري</td><td><div class="prompt">TOTA wakes up in her bed, stretches her arms and yawns happily, morning sunlight through the window, medium shot</div></td></tr>
+      <tr><td class="num">3</td><td class="num">0:31</td><td>قالت: يا بندق يلا بينا!</td><td><div class="prompt">TOTA gently shakes sleepy BONDOQ who is hugging a plush toy in his small bed, he opens one eye and smiles, ZAATAR sleeping at the foot of the bed</div></td></tr>
+      <tr><td class="num">4</td><td class="num">0:37</td><td>فرشة حمرا.. فرشة زرقا</td><td><div class="prompt">Close-up of a bright clean bathroom sink with a cup holding a red toothbrush and a blue toothbrush, TOTA's and BONDOQ's hands reach in and pick them up</div></td></tr>
+      <tr><td class="num">5</td><td class="num">0:43</td><td>حتة معجون صغنونة</td><td><div class="prompt">Extreme close-up of a tiny pea-sized dot of toothpaste being squeezed onto a blue toothbrush, BONDOQ looks at it with big amazed eyes</div></td></tr>
+      <tr><td class="num">6</td><td class="num">0:49</td><td>الكورس: فوق وتحت</td><td><div class="prompt">TOTA and BONDOQ stand on a small step stool in front of the bathroom mirror brushing their teeth up and down in rhythm, ZAATAR on the counter copying them with his paw, front view</div></td></tr>
+      <tr><td class="num">7</td><td class="num">0:55</td><td>الكورس: يمين وشمال</td><td><div class="prompt">Side view of TOTA and BONDOQ brushing left and right, swaying their heads to the music, foam bubbles floating in the air</div></td></tr>
+      <tr><td class="num">8</td><td class="num">1:05</td><td>لفّة لفّة زي القطر</td><td><div class="prompt">Playful fantasy shot: a tiny colorful toy train made of toothbrush bristles rides in circles over giant shiny white teeth, sparkles, whimsical</div></td></tr>
+      <tr><td class="num">9</td><td class="num">1:12</td><td>العد من 1 لـ 10</td><td><div class="prompt">TOTA and BONDOQ brushing while counting on their fingers, colorful soap bubbles pop one by one beside them (numbers added in editing)</div></td></tr>
+      <tr><td class="num">10</td><td class="num">1:25</td><td>نمضمض ونقول: بُخ!</td><td><div class="prompt">BONDOQ spits water into the sink with a funny splash, ZAATAR jumps back startled with fur puffed up, comedic moment</div></td></tr>
+      <tr><td class="num">11</td><td class="num">1:31</td><td>أحلى ضحكة.. أهي أهو!</td><td><div class="prompt">TOTA and BONDOQ give a huge smile at the mirror, their teeth sparkle with little star glints, ZAATAR smiles too</div></td></tr>
+      <tr><td class="num">12</td><td class="num">1:37</td><td>(موسيقى)</td><td><div class="prompt">MAMA appears at the bathroom door clapping proudly, TOTA and BONDOQ run to hug her</div></td></tr>
+      <tr><td class="num">13</td><td class="num">1:43</td><td>الكورس الأخير</td><td><span class="meta">إعادة المشهدين 6 و7، ومعاهم لقطة جديدة:</span><div class="prompt">ZAATAR holding a tiny kitten toothbrush, pretending to brush his fangs, proud face</div></td></tr>
+      <tr><td class="num">14</td><td class="num">2:00</td><td>توتة: «باي باي.. نتقابل في أغنية جديدة!»</td><td><div class="prompt">TOTA and BONDOQ wave goodbye to the camera in the living room, ZAATAR's tail swishes, camera slowly pulls back</div></td></tr>
+    </tbody>
+  </table></div>
+  <div class="note"><b>في المونتاج:</b> حط الأرقام على الشاشة وهما بيعدّوا، والكلمات الأساسية بخط كبير وألوان (فوق، تحت، يمين، شمال). ركّب صوت زعتر (مياو) وصوت القطر (توت توت). الصورة المصغّرة: توتة وبندق مبتسمين وسنانهم بتلمع، وعليها كلمتين بس: «فرّش سنانك».</div>
+</section>
+
+<!-- PRODUCTION -->
+<section id="production">
+  <h2>طريقة الإنتاج</h2>
+  <p class="lead">الخطوات دي بتطلّع أغنية كاملة في حوالي <b>يومين لـ 3 أيام شغل</b> لشخص واحد بعد ما تتعوّد.</p>
+  <div class="steps">
+    <div><div><b>الكلمات والسكربت</b><br><span class="meta">أنا بكتبهم (زي اللي فوق). أنت بتراجعهم وتعدّل اللهجة على ذوقك.</span></div></div>
+    <div><div><b>الأغنية في Suno</b><br><span class="meta">الكلمات + ستايل الموسيقى. طلّع 4–6 نسخ واختار الأحلى، وبعدين طلّع نسخة «بدون إيقاع» (صوت وكورس بس).</span></div></div>
+    <div><div><b>المشاهد في Higgsfield</b><br><span class="meta">صور الشخصيات من الشيت ← صورة لكل مشهد ← تحريكها لفيديو 5–8 ثواني. الحركة تفضل بسيطة (رقص، تفريش، تلويح) علشان الشكل ميتغيرش.</span></div></div>
+    <div><div><b>المونتاج في CapCut</b><br><span class="meta">ركّب المشاهد على الأغنية، ضيف الأرقام والكلمات والمؤثرات. اعمل قالب ثابت للمقدمة والنهاية.</span></div></div>
+    <div><div><b>النسخ التانية</b><br><span class="meta">نسخة بدون إيقاع (نفس الفيديو بصوت تاني) + 2–3 Shorts من الكورس بشكل عمودي.</span></div></div>
+    <div><div><b>الرفع</b><br><span class="meta">اختار «مصنوع للأطفال» (Made for Kids)، عنوان بالشكل ده: «فرّش سنانك | أغاني أطفال | بيت توتة»، وصورة مصغّرة بألوان القناة.</span></div></div>
+  </div>
+  <h3>الأسبوع العادي</h3>
+  <div class="tw"><table>
+    <thead><tr><th>اليوم</th><th>الشغل</th></tr></thead>
+    <tbody>
+      <tr><td>السبت</td><td>كلمات أغنيتين + توليد الموسيقى</td></tr>
+      <tr><td>الأحد – الاتنين</td><td>مشاهد الأغنية الأولى + المونتاج</td></tr>
+      <tr><td>التلات – الأربع</td><td>مشاهد الأغنية التانية + المونتاج</td></tr>
+      <tr><td>الخميس</td><td>نسخ بدون إيقاع + Shorts + جدولة النشر</td></tr>
+      <tr><td>الجمعة</td><td>راحة + مراجعة الإحصائيات</td></tr>
+    </tbody>
+  </table></div>
+  <div class="note"><b>مواعيد النشر:</b> أغنية يوم الأحد، وأغنية يوم الأربع، ونسخة بدون إيقاع يوم الجمعة، وShort كل يوم الساعة 5 العصر بتوقيت القاهرة (وقت ما الأطفال بيتفرجوا في مصر والخليج).</div>
+</section>
+
+<!-- CALENDAR -->
+<section id="calendar">
+  <h2>أول 30 فيديو</h2>
+  <p class="lead">بالترتيب ده. أول 4 لازم يكونوا جاهزين <b>قبل</b> ما تنشر أي حاجة، علشان تبقى دايماً متقدم أسبوعين.</p>
+  <div class="tw"><table>
+    <thead><tr><th>#</th><th>العنوان</th><th>السلسلة</th></tr></thead>
+    <tbody>
+      <tr><td class="num">1</td><td>بيت توتة (التتر) + تعرّف على الشلة</td><td>تعريف</td></tr>
+      <tr><td class="num">2</td><td>فرّش سنانك</td><td>روتين</td></tr>
+      <tr><td class="num">3</td><td>مية وصابون</td><td>روتين</td></tr>
+      <tr><td class="num">4</td><td>يلا ننام</td><td>روتين</td></tr>
+      <tr><td class="num">5</td><td>يلا ناكل (الخضار بتاعي)</td><td>روتين</td></tr>
+      <tr><td class="num">6</td><td>حرف الألف مع توتة</td><td>تعلّم</td></tr>
+      <tr><td class="num">7</td><td>وقت الحمّام والبطة الصفرا</td><td>روتين</td></tr>
+      <tr><td class="num">8</td><td>الأرقام من 1 لـ 10</td><td>تعلّم</td></tr>
+      <tr><td class="num">9</td><td>حواديت تيتة: بندق واللعبة المكسورة (الصراحة)</td><td>حدوتة</td></tr>
+      <tr><td class="num">10</td><td>نلبس هدومنا</td><td>روتين</td></tr>
+      <tr><td class="num">11</td><td>حرف الباء: بندق وبطة</td><td>تعلّم</td></tr>
+      <tr><td class="num">12</td><td>فانوس توتة (رمضان)</td><td>مواسم</td></tr>
+      <tr><td class="num">13</td><td>السحور مع تيتة (رمضان)</td><td>مواسم</td></tr>
+      <tr><td class="num">14</td><td>نرتّب لعبنا</td><td>روتين</td></tr>
+      <tr><td class="num">15</td><td>تجميعة 30 دقيقة: أحلى أغاني بيت توتة</td><td>تجميعة</td></tr>
+      <tr><td class="num">16</td><td>الألوان مع زعتر</td><td>تعلّم</td></tr>
+      <tr><td class="num">17</td><td>حواديت تيتة: توتة بتشارك</td><td>حدوتة</td></tr>
+      <tr><td class="num">18</td><td>كحك العيد</td><td>مواسم</td></tr>
+      <tr><td class="num">19</td><td>أصوات الحيوانات في المزرعة</td><td>تعلّم</td></tr>
+      <tr><td class="num">20</td><td>بندق اتعوّر (أغنية الجرح البسيط)</td><td>روتين</td></tr>
+      <tr><td class="num">21</td><td>عيد ميلاد بندق</td><td>روتين</td></tr>
+      <tr><td class="num">22</td><td>حرف التاء: توتة وتفاحة</td><td>تعلّم</td></tr>
+      <tr><td class="num">23</td><td>نعدّي الشارع بأمان</td><td>روتين</td></tr>
+      <tr><td class="num">24</td><td>حواديت تيتة: الجار الجديد</td><td>حدوتة</td></tr>
+      <tr><td class="num">25</td><td>الأشكال: دايرة ومربع ومثلث</td><td>تعلّم</td></tr>
+      <tr><td class="num">26</td><td>يوم مطر في بيت توتة</td><td>روتين</td></tr>
+      <tr><td class="num">27</td><td>تجميعة أغاني النوم (ساعة كاملة)</td><td>تجميعة</td></tr>
+      <tr><td class="num">28</td><td>شكراً يا ماما (الأدب والكلمات الحلوة)</td><td>روتين</td></tr>
+      <tr><td class="num">29</td><td>أيام الأسبوع</td><td>تعلّم</td></tr>
+      <tr><td class="num">30</td><td>تجميعة 45 دقيقة: الأغاني الأكتر مشاهدة</td><td>تجميعة</td></tr>
+    </tbody>
+  </table></div>
+  <div class="warn"><b>مهم:</b> رمضان 2027 متوقع يبدأ حوالي 8 فبراير، يعني في الشهر التالت من الخطة. محتوى رمضان والعيد لازم يتنشر قبلها بأسبوع أو اتنين علشان يلحق موسم البحث.</div>
+</section>
+
+<!-- PLAN -->
+<section id="plan">
+  <h2>خطة 6 شهور</h2>
+  <p class="lead">الأرقام دي أهداف تقيس بيها نفسك، مش وعود. قنوات الأطفال الجديدة بتاخد وقت، وحتى Cocomelon العربي احتاجت سنين.</p>
+  <div class="tw"><table>
+    <thead><tr><th>الشهر</th><th>الشغل</th><th>الهدف</th></tr></thead>
+    <tbody>
+      <tr><td><b>1</b><br><span class="meta">ديسمبر 2026</span></td><td>حجز الاسم والهاندلز، الاشتراك في الأدوات، شيت لكل شخصية، التتر، وتجهيز 4 فيديوهات بالكامل. لسه مفيش نشر.</td><td>4 فيديوهات جاهزة + هوية القناة (لوجو، بانر، قالب صورة مصغّرة)</td></tr>
+      <tr><td><b>2</b><br><span class="meta">يناير 2027</span></td><td>الإطلاق: أغنيتين في الأسبوع + نسخ بدون إيقاع + Short كل يوم. البدء في محتوى رمضان.</td><td>8 أغاني منشورة، 25 Short، ونعرف أكتر أغنية اتشافت</td></tr>
+      <tr><td><b>3</b><br><span class="meta">فبراير 2027</span></td><td>رمضان: فانوس توتة والسحور. أول تجميعة 30 دقيقة. أول حدوتة لتيتة.</td><td>أول فيديو يعدّي 10 آلاف مشاهدة</td></tr>
+      <tr><td><b>4</b><br><span class="meta">مارس 2027</span></td><td>العيد + كحك العيد. ركّز على نوع الأغاني اللي نجح، واعمل منها أكتر. ابدأ سلسلة الحروف بانتظام.</td><td>500–1,000 مشترك</td></tr>
+      <tr><td><b>5</b><br><span class="meta">أبريل 2027</span></td><td>تجميعة النوم (ساعة) + تجميعة الأكتر مشاهدة. حسّن الصور المصغّرة على حسب نسبة الضغط.</td><td>الاقتراب من 4,000 ساعة مشاهدة</td></tr>
+      <tr><td><b>6</b><br><span class="meta">مايو 2027</span></td><td>التقديم على برنامج الشركاء لما الشروط تكمل. تجربة مسار صوت إنجليزي على أنجح 3 فيديوهات. تجهيز ملف تعريفي للقناة يتعرض على الرعاة والمنصات.</td><td>1,000 مشترك + 4,000 ساعة = تفعيل الأرباح</td></tr>
+    </tbody>
+  </table></div>
+  <div class="note"><b>شروط الأرباح:</b> 1,000 مشترك، ومعاهم 4,000 ساعة مشاهدة في 12 شهر أو 10 مليون مشاهدة Shorts في 90 يوم. التجميعات الطويلة أسرع طريق للساعات. وخلي بالك إن يوتيوب هيطبّق شروط جديدة لبرنامج الشركاء من 1 فبراير 2027، فراجعها لما تقدّم.</div>
+</section>
+
+<!-- BUDGET -->
+<section id="budget">
+  <h2>الميزانية الشهرية</h2>
+  <p class="lead">بداية اقتصادية. الأسعار بالجنيه على أساس حوالي 54 جنيه للدولار، وأغلبها من مواقع وسيطة، فاتأكد من السعر قبل ما تدفع.</p>
+  <div class="tw"><table>
+    <thead><tr><th>الأداة</th><th>بتعمل إيه</th><th>بالدولار</th><th>بالجنيه تقريباً</th></tr></thead>
+    <tbody>
+      <tr><td><b>Higgsfield</b></td><td>صور الشخصيات وتحريك المشاهد</td><td class="num">حسب الباقة</td><td class="num">راجع سعر الباقة اللي فيها كريدت كفاية لـ 8 أغاني</td></tr>
+      <tr><td><b>Suno Pro</b></td><td>الموسيقى والغنا</td><td class="num">10$</td><td class="num">540</td></tr>
+      <tr><td><b>ElevenLabs Starter</b></td><td>صوت تيتة في الحواديت (اختياري في الأول)</td><td class="num">6$</td><td class="num">325</td></tr>
+      <tr><td><b>CapCut</b></td><td>المونتاج</td><td class="num">0–10$</td><td class="num">0–540</td></tr>
+      <tr><td><b>صوت حقيقي</b></td><td>طفل أو مغني لأغنية لما Suno ميضبطش النطق</td><td class="num">حسب الاتفاق</td><td class="num">300–800 للأغنية</td></tr>
+    </tbody>
+  </table></div>
+  <div class="warn"><b>حقوق الاستخدام:</b> الأغاني اللي اتعملت على باقة Suno المجانية <b>عمرها ما تتكسب منها</b>، حتى لو اشتركت بعدين، فاشترك من أول يوم. وحتى في الباقة المدفوعة، Suno بيديك حق الاستخدام التجاري بس مش ملكية الأغنية بالكامل. علشان كده لما القناة تكبر، الأغاني المهمة (زي التتر) يتعمل لها تسجيل بصوت ولحن تملكهم 100٪. نفس الكلام لهيجس فيلد: اتأكد إن باقتك فيها استخدام تجاري.</div>
+</section>
+
+<!-- MONEY -->
+<section id="money">
+  <h2>خطة الربح</h2>
+  <div class="cols">
+    <div class="card"><h3>المرحلة 1: الإعلانات</h3><p class="meta">من الشهر 6 تقريباً</p><p>دخل صغير في الأول. المليون مشاهدة بتجيب حوالي 160–880 دولار. ده بيغطي الأدوات وبيثبت إن الفكرة شغالة.</p></div>
+    <div class="card"><h3>المرحلة 2: الشخصيات برّه يوتيوب</h3><p class="meta">من 100 ألف مشترك تقريباً</p><p>كتب تلوين وقصص مطبوعة، ستيكرات، ومنتجات بتتباع للأهالي برّه يوتيوب (لأن رف المنتجات مقفول في محتوى الأطفال).</p></div>
+    <div class="card"><h3>المرحلة 3: الترخيص</h3><p class="meta">لما يبقى عندك مكتبة 50+ حلقة</p><p>بيع حق عرض الحلقات لمنصات وقنوات أطفال في المنطقة، وده اللي عملته قنوات كبيرة قبل كده. هنا الفلوس الكبيرة.</p></div>
+    <div class="card"><h3>المرحلة 4: لغات تانية</h3><p class="meta">بعد ما الشكل ينجح</p><p>مسار صوت إنجليزي على نفس الفيديوهات، وبعدين قناة إنجليزي منفصلة بأصوات أصلية.</p></div>
+  </div>
+  <div class="note">الرعايات جوّه الفيديو محدودة: أي فيديو فيه إعلان مدفوع بيطلع من تطبيق YouTube Kids. علشان كده خلي الرعايات في فيديوهات قليلة ومنفصلة، أو برّه القناة.</div>
+</section>
+
+<!-- START -->
+<section id="start">
+  <h2>ابدأ من هنا</h2>
+  <p class="lead">علّم على كل خطوة لما تخلّصها. التقدم بيتحفظ على جهازك.</p>
+  <div class="progress" id="prog">0 من 12</div>
+  <div class="check" id="checks">
+    <label><input type="checkbox" id="c1"><span>أبحث عن «بيت توتة» على يوتيوب وإنستجرام وتيك توك وأتأكد إن الاسم فاضي</span></label>
+    <label><input type="checkbox" id="c2"><span>أعمل قناة يوتيوب بالاسم وأحجز ‎@BeitTota على كل المنصات</span></label>
+    <label><input type="checkbox" id="c3"><span>أظبط القناة كلها على «مصنوع للأطفال» من الإعدادات</span></label>
+    <label><input type="checkbox" id="c4"><span>أشترك في Suno Pro وباقة هيجس فيلد فيها استخدام تجاري</span></label>
+    <label><input type="checkbox" id="c5"><span>أعمل شيت لتوتة وبندق وزعتر وأحفظه</span></label>
+    <label><input type="checkbox" id="c6"><span>أعمل التتر في Suno وأختار أحلى نسخة</span></label>
+    <label><input type="checkbox" id="c7"><span>أنتج «فرّش سنانك» بالكامل (أغنية + 14 مشهد + مونتاج)</span></label>
+    <label><input type="checkbox" id="c8"><span>أنتج «مية وصابون» و«يلا ننام»</span></label>
+    <label><input type="checkbox" id="c9"><span>أعمل لوجو وبانر وقالب صورة مصغّرة بألوان القناة</span></label>
+    <label><input type="checkbox" id="c10"><span>أجهز أول 4 فيديوهات ونسخهم بدون إيقاع وShorts قبل ما أنشر</span></label>
+    <label><input type="checkbox" id="c11"><span>أفعّل AdSense وأقدّم بيانات الضرايب في يوتيوب (نموذج W-8BEN) علشان الخصم يبقى أقل</span></label>
+    <label><input type="checkbox" id="c12"><span>أنشر أول فيديو 🎉</span></label>
+  </div>
+  <h3>قواعد ذهبية</h3>
+  <ul>
+    <li><b>كل فيديو فيه فكرة جديدة.</b> متكررش نفس القالب بكلام مختلف. يوتيوب بيوقف أرباح القناة كلها لو حس إن المحتوى «معمول بالجملة».</li>
+    <li><b>متستخدمش أي شخصية أو أغنية مش بتاعتك.</b> الأغاني الشعبية القديمة ممكن تتعمل بلحن وتوزيع جديد، بس الشخصيات كلها بتاعتك.</li>
+    <li><b>الانتظام أهم من الكمال.</b> أغنيتين كل أسبوع لمدة 6 شهور أحسن من 10 أغاني في أول شهر وبعدها توقف.</li>
+    <li><b>بص على الإحصائيات كل أسبوع:</b> اعمل أكتر من النوع اللي الأطفال بيعيدوه، ووقّف اللي محدش بيكمّله.</li>
+  </ul>
+</section>
+
+<footer>ملف قناة «بيت توتة» · كل الشخصيات والكلمات في الملف ده أصلية ومعمولة للقناة دي · الأرقام من بحث نوفمبر 2026 ومحتاجة مراجعة قبل الصرف.</footer>
+</div>
+
+<script>
+document.querySelectorAll('.copy').forEach(function(b){
+  b.addEventListener('click',function(){
+    var el=document.getElementById(b.dataset.copy); if(!el) return;
+    var t=el.textContent.trim(), old=b.textContent;
+    function done(){b.textContent='اتنسخ ✓';setTimeout(function(){b.textContent=old},1400)}
+    function fallback(){var r=document.createRange();r.selectNodeContents(el);var s=getSelection();s.removeAllRanges();s.addRange(r);b.textContent='اتحدد، انسخ يدوي'}
+    try{navigator.clipboard.writeText(t).then(done,fallback)}catch(e){fallback()}
+  });
+});
+(function(){
+  var boxes=[].slice.call(document.querySelectorAll('#checks input')), prog=document.getElementById('prog'), key='beit-tota-checks';
+  var saved={}; try{saved=JSON.parse(localStorage.getItem(key)||'{}')}catch(e){}
+  function upd(){var n=boxes.filter(function(x){return x.checked}).length;prog.textContent=n+' من '+boxes.length+(n===boxes.length?' · مبروك! 🎉':'')}
+  boxes.forEach(function(x){x.checked=!!saved[x.id];x.addEventListener('change',function(){saved[x.id]=x.checked;try{localStorage.setItem(key,JSON.stringify(saved))}catch(e){}upd()})});
+  upd();
+})();
+</script>
