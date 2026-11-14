@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>Jumuah Mubarakah</title>
+<style>
+  @font-face{font-family:Ruqaa;font-weight:700;src:url(../fonts/ArefRuqaa.ttf)}
+  @font-face{font-family:Tajawal;font-weight:700;src:url(../fonts/Tajawal-Bold.ttf)}
+  @font-face{font-family:Tajawal;font-weight:500;src:url(../fonts/Tajawal-Medium.ttf)}
+  @font-face{font-family:Oswald;font-weight:600;src:url(../fonts/Oswald-SemiBold.ttf)}
+  :root{--gold:#D4AF6A;--gold2:#F3D9A0;--gold3:#A9813F}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#000}
+  #root{position:relative;width:1080px;height:1350px;overflow:hidden;background:#0B0A09}
+  .a{position:absolute}
+  .gold{background:linear-gradient(180deg,#FBE7B5,var(--gold) 55%,var(--gold3));-webkit-background-clip:text;background-clip:text;color:transparent}
+</style>
+</head>
+<body>
+<!-- Friday greeting on the real Max Holding showroom at dusk -->
+<div id="root">
+  <img class="a" src="img/showroom.jpg" alt="Max Holding showroom at dusk" style="left:0;top:0;width:1080px;height:1350px;object-fit:cover">
+  <div class="a" style="inset:0;background:linear-gradient(180deg,rgba(11,10,9,0) 0,rgba(11,10,9,0) 64%,rgba(11,10,9,.82) 78%,#0B0A09 92%)"></div>
+  <div class="a" style="left:0;right:0;top:1000px;text-align:center">
+    <div class="gold" style="font:700 150px/1.15 Ruqaa;text-shadow:none">جمعة مباركة</div>
+    <div style="font:500 36px Tajawal;color:#EDE3D0;margin-top:2px">تقبّل الله منّا ومنكم صالح الأعمال</div>
+  </div>
+  <div class="a" style="left:0;right:0;top:1255px;display:flex;align-items:center;justify-content:center;gap:26px;direction:ltr">
+    <img src="../fx/mm_logo.png" alt="Max Motors" style="width:76px">
+    <div style="width:1.5px;height:44px;background:rgba(212,175,106,.6)"></div>
+    <div style="font:600 30px Oswald;letter-spacing:2px;color:#fff">920018915</div>
+    <div style="width:1.5px;height:44px;background:rgba(212,175,106,.6)"></div>
+    <div style="font:600 26px Oswald;letter-spacing:3px;color:var(--gold)">maxmotors.sa</div>
+  </div>
+</div>
+<script>
+Promise.all([document.fonts.ready, ...[...document.images].map(i => i.decode().catch(() => {}))]).then(() => document.body.dataset.ready = 1);
+</script>
+</body>
+</html>

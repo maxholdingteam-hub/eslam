@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>Top 4 luxury SUVs carousel</title>
+<style>
+  @font-face{font-family:Cairo;font-weight:900;src:url(../fonts/Cairo-Black.ttf)}
+  @font-face{font-family:Cairo;font-weight:700;src:url(../fonts/Cairo-Bold.ttf)}
+  @font-face{font-family:Tajawal;font-weight:700;src:url(../fonts/Tajawal-Bold.ttf)}
+  @font-face{font-family:Tajawal;font-weight:500;src:url(../fonts/Tajawal-Medium.ttf)}
+  @font-face{font-family:Oswald;font-weight:600;src:url(../fonts/Oswald-SemiBold.ttf)}
+  @font-face{font-family:Anton;src:url(../fonts/Anton.woff2)}
+  @font-face{font-family:Michroma;src:url(../fonts/Michroma.woff2)}
+  :root{--gold:#D4AF6A;--gold2:#F3D9A0;--gold3:#A9813F}
+  *{box-sizing:border-box;margin:0;padding:0}
+  html,body{background:#000}
+  #root{position:relative;width:1080px;height:1350px;overflow:hidden;background:#0B0B0C}
+  .a{position:absolute}
+  .lat{direction:ltr;font-family:Michroma}
+  .gold{background:linear-gradient(180deg,var(--gold2),var(--gold) 55%,var(--gold3));-webkit-background-clip:text;background-clip:text;color:transparent}
+  .ph{position:absolute;overflow:hidden}
+  .ph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+  .spec{flex:1;text-align:center}
+  .spec b{display:block;font:600 58px/1 Oswald;color:#fff;direction:ltr}
+  .spec i{display:block;font:500 23px Tajawal;font-style:normal;color:#BDB4A6;margin-top:6px}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+// 5-slide carousel: cover grid + four luxury SUVs (figures from the maxmotors.sa listings)
+const D = new URLSearchParams(location.search).get('d') || '0';
+const root = document.getElementById('root');
+const CARS = [
+  { img: 'lx', pos: '30% 40%', en: 'LEXUS LX 700h', ar: 'لكزس LX 700h', line: 'هايبرد بروح الصحراء', specs: [['457', 'حصان'], ['790', 'نيوتن متر'], ['V6', 'توين تيربو هايبرد']] },
+  { img: 'rr', pos: '38% 55%', en: 'RANGE ROVER', ar: 'رانج روفر فوج أوتوبيوجرافي', line: 'الفخامة الأصلية', specs: [['AWD', 'دفع رباعي ذكي'], ['AIR', 'تعليق هوائي'], ['2026', 'موديل']] },
+  { img: 'gv', pos: '52% 60%', en: 'GENESIS GV80', ar: 'جينيسيس GV80 رويال', line: 'فخامة كورية بلا منافس', specs: [['375', 'حصان'], ['530', 'نيوتن متر'], ['AWD', 'دفع رباعي']] },
+  { img: 'seq', pos: '62% 60%', en: 'SEQUOIA CAPSTONE', ar: 'تويوتا سيكويا كابستون', line: 'صالون متحرك بسبعة مقاعد', specs: [['437', 'حصان'], ['790', 'نيوتن متر'], ['3.4L', 'هايبرد توين تيربو']] }
+];
+const contact = y => `<div class="a" style="left:60px;right:60px;top:${y}px;display:flex;align-items:center;justify-content:space-between;border-top:1.5px solid rgba(212,175,106,.3);padding-top:16px">
+  <div style="font:700 28px Tajawal;color:#fff">متوفرة الآن في <span class="gold">ماكس موتورز</span></div>
+  <div style="direction:ltr;text-align:left;line-height:1.05"><div style="font:600 40px Oswald;letter-spacing:2px;color:#fff">920018915</div><div style="font:600 19px Oswald;letter-spacing:3px;color:var(--gold)">maxmotors.sa</div></div></div>`;
+const bar = n => `<div class="a" style="left:60px;right:60px;top:40px;display:flex;gap:10px;direction:ltr">${[0, 1, 2, 3, 4].map(i => `<span style="flex:1;height:5px;border-radius:3px;background:${i <= n ? 'var(--gold)' : 'rgba(255,255,255,.25)'}"></span>`).join('')}</div>`;
+const logo = (x, y, w) => `<img class="a" src="../fx/mm_logo.png" alt="Max Motors" style="left:${x}px;top:${y}px;width:${w}px">`;
+const cover = () => `${CARS.map((c, i) => `<div class="ph" style="left:${(i % 2) * 545}px;top:${Math.floor(i / 2) * 395}px;width:535px;height:385px"><img src="img/${c.img}.jpg" alt="" style="object-position:${c.pos}"></div>
+    <div class="a" style="left:${(i % 2) * 545 + 18}px;top:${Math.floor(i / 2) * 395 + 300}px;direction:ltr;font:72px/1 Anton;color:#fff;text-shadow:0 4px 18px rgba(0,0,0,.7)">0${i + 1}</div>`).join('')}
+    <div class="a" style="left:0;right:0;top:620px;height:180px;background:linear-gradient(180deg,rgba(11,11,12,0),#0B0B0C)"></div>
+    ${logo(480, 820, 120)}
+    <div class="a" style="left:0;right:0;top:930px;text-align:center"><div style="font:900 92px/1.15 Cairo;color:#fff">أفخم <span class="gold" dir="ltr" style="unicode-bidi:isolate">4 SUV</span></div>
+      <div style="font:900 58px/1.3 Cairo;color:#fff">في ماكس موتورز</div>
+      <div style="font:700 40px Tajawal;color:var(--gold2);margin-top:16px">أنت تختار أي واحدة؟ اسحب ←</div></div>
+    ${contact(1200)}${bar(0)}`;
+const car = i => { const c = CARS[i], last = i === 3;
+  return `<div class="ph" style="left:0;top:0;width:1080px;height:800px"><img src="img/${c.img}.jpg" alt="${c.en}" style="object-position:${c.pos}"></div>
+    <div class="a" style="left:0;right:0;top:0;height:200px;background:linear-gradient(180deg,rgba(11,11,12,.75),rgba(11,11,12,0))"></div>
+    <div class="a" style="left:0;right:0;top:600px;height:210px;background:linear-gradient(180deg,rgba(11,11,12,0),#0B0B0C)"></div>
+    ${bar(i + 1)}
+    ${logo(56, 72, 104)}
+    <div class="a" style="left:40px;top:640px;direction:ltr;font:300px/0.85 Anton;color:transparent;-webkit-text-stroke:3px var(--gold)">0${i + 1}</div>
+    <div class="a" style="right:60px;top:760px;text-align:right"><div class="lat" style="font-size:22px;letter-spacing:8px;color:var(--gold2)">${c.en}</div>
+      <div style="font:900 ${c.ar.length > 18 ? 52 : 62}px/1.25 Cairo;color:#fff;margin-top:8px">${c.ar}</div>
+      <div style="font:500 32px Tajawal;color:#CFC6B8">${c.line}</div></div>
+    <div class="a" style="left:50px;right:50px;top:${last ? 1000 : 1035}px;display:flex;direction:rtl">${c.specs.map((s, j) => (j ? '<div style="width:1.5px;background:rgba(212,175,106,.35)"></div>' : '') + `<div class="spec"><b>${s[0]}</b><i>${s[1]}</i></div>`).join('')}</div>
+    ${last ? `<div class="a" style="left:0;right:0;top:1128px;text-align:center;font:900 38px Cairo;color:var(--gold2)">اختار رقمك واكتبه في الكومنت 👇</div>` : ''}
+    ${contact(last ? 1200 : 1180)}`; };
+root.innerHTML = D === '0' ? cover() : car(+D - 1);
+Promise.all([document.fonts.ready, ...[...document.images].map(i => i.decode().catch(() => {}))]).then(() => document.body.dataset.ready = 1);
+</script>
+</body>
+</html>
