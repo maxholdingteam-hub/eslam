@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<title>Max Design reel overlays</title>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=IBM+Plex+Sans+Arabic:wght@500;600;700&family=Montserrat:wght@500;600&display=swap" rel="stylesheet">
+<style>
+/* Transparent 1080x1920 layers composited over the reel clips (and 1080x1350 for posts).
+   Max Design identity: gold #d9b46b on night black, Amiri display, Plex Sans Arabic body. */
+:root{--gold:#d9b46b;--hot:#f6dc9c;--void:#070706;--bone:#efe8da;--gold-grad:linear-gradient(135deg,#f6dc9c,#d9b46b 50%,#a88a4f)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{background:transparent;font-family:"IBM Plex Sans Arabic",Tahoma,sans-serif}
+.layer{position:relative;width:1080px;height:1920px;overflow:hidden}
+.post{height:1350px}
+.shade-top{position:absolute;left:0;right:0;top:0;height:560px;background:linear-gradient(180deg,rgba(7,7,6,.72),rgba(7,7,6,0))}
+.shade-bot{position:absolute;left:0;right:0;bottom:0;height:620px;background:linear-gradient(0deg,rgba(7,7,6,.85),rgba(7,7,6,0))}
+.hook{position:absolute;top:210px;left:70px;right:70px;text-align:center;font-family:"Amiri",serif;font-weight:700;font-size:92px;line-height:1.25;color:#fff;text-shadow:0 6px 30px rgba(0,0,0,.55)}
+.hook .g{background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent;text-shadow:none;filter:drop-shadow(0 6px 24px rgba(0,0,0,.5))}
+.tag{position:absolute;left:50%;transform:translateX(-50%);bottom:250px;padding:12px 28px;border:1.5px solid rgba(217,180,107,.8);border-radius:999px;font-weight:600;font-size:30px;color:var(--hot);background:rgba(7,7,6,.55);white-space:nowrap}
+.brand{position:absolute;bottom:120px;left:0;right:0;display:flex;justify-content:center;align-items:center;gap:18px;direction:ltr}
+.brand img{width:84px}
+.brand span{font-family:"Montserrat",sans-serif;font-weight:600;letter-spacing:.32em;font-size:26px;color:var(--bone)}
+.concept{position:absolute;top:110px;right:60px;font-size:24px;font-weight:600;color:rgba(239,232,218,.85);letter-spacing:.02em;padding:8px 18px;border-radius:999px;background:rgba(7,7,6,.45)}
+/* end card */
+.end{background:rgba(7,7,6,.78)}
+.end .logo{position:absolute;top:520px;left:50%;width:360px;transform:translateX(-50%);filter:drop-shadow(0 20px 60px rgba(217,180,107,.35))}
+.end h2{position:absolute;top:840px;left:0;right:0;text-align:center;font-family:"Amiri",serif;font-size:110px;line-height:1.2;color:#fff}
+.end h2 b{background:var(--gold-grad);-webkit-background-clip:text;background-clip:text;color:transparent}
+.end p{position:absolute;top:1020px;left:0;right:0;text-align:center;font-family:"Amiri",serif;font-size:58px;color:var(--bone)}
+.end .cta{position:absolute;top:1190px;left:50%;transform:translateX(-50%);padding:22px 54px;background:var(--gold-grad);color:var(--void);font-weight:700;font-size:40px;border-radius:999px;white-space:nowrap}
+.end .ph{position:absolute;top:1320px;left:0;right:0;text-align:center;font-family:"Montserrat",sans-serif;font-weight:600;font-size:44px;color:#fff;direction:ltr;letter-spacing:.04em}
+.end .site{position:absolute;top:1395px;left:0;right:0;text-align:center;font-family:"Montserrat",sans-serif;font-size:28px;color:var(--gold);letter-spacing:.3em;direction:ltr}
+/* post slides */
+.post .hook{top:120px;font-size:84px}
+.post .tag{bottom:150px}
+.post .brand{bottom:60px}
+.post .brand img{width:70px}
+.post .shade-top{height:440px}
+.post .shade-bot{height:420px}
+.post .concept{top:auto;bottom:66px;right:auto;left:54px;font-size:20px}
+</style>
+</head>
+<body>
+<div id="root"></div>
+<script>
+/* one overlay per (room, kind); render.js screenshots each #layer with a transparent background */
+const ROOMS = {
+  s1: {hook:['لو هذا <span class="g">مجلسك</span>…','هذي <span class="g">رؤيتنا</span> له'], tag:'مجلس فيلا · الرياض'},
+  s2: {hook:['لو هذي <span class="g">صالتك</span>…','هذي <span class="g">رؤيتنا</span> لها'], tag:'صالة معيشة · الرياض'},
+  s3: {hook:['لو هذي <span class="g">غرفتك</span>…','هذي <span class="g">رؤيتنا</span> لها'], tag:'غرفة نوم رئيسية · الرياض'}
+};
+const q = new URLSearchParams(location.search), room = q.get('room'), kind = q.get('kind');
+const R = ROOMS[room] || ROOMS.s1;
+const brand = `<div class="brand"><img src="../../max-marketing-site/brand/max-logo-film.webp" alt=""><span>MAX DESIGN</span></div>`;
+const concept = `<div class="concept">تصميم مفاهيمي</div>`;
+const html = {
+  // reel: hook over the raw site / sketch part
+  hook: `<div class="layer" id="layer"><div class="shade-top"></div><div class="hook">${R.hook[0]}</div>${concept}</div>`,
+  // reel: second line once the room is finished
+  reveal: `<div class="layer" id="layer"><div class="shade-top"></div><div class="shade-bot"></div><div class="hook">${R.hook[1]}</div><div class="tag">${R.tag}</div>${brand}${concept}</div>`,
+  // reel: closing card
+  end: `<div class="layer end" id="layer"><img class="logo" src="../../max-marketing-site/brand/max-logo-film.webp" alt=""><h2>ماكس <b>ديزاين</b></h2><p>نصمم أسلوب حياة</p><div class="cta">احجز موعد التصميم</div><div class="ph">057 927 7975</div><div class="site">MAXDESIGN.SA</div></div>`,
+  // posts (4:5)
+  p1: `<div class="layer post" id="layer"><div class="shade-top"></div><div class="hook">${R.hook[0]}</div><div class="shade-bot"></div>${brand}${concept}</div>`,
+  p2: `<div class="layer post" id="layer"><div class="shade-top"></div><div class="hook">${R.hook[1]}</div><div class="shade-bot"></div><div class="tag">${R.tag}</div>${brand}${concept}</div>`,
+  p3: `<div class="layer post" id="layer"><div class="shade-top"></div><div class="hook">من الموقع <span class="g">للمفتاح</span></div><div class="shade-bot"></div><div class="tag">احجز موعد التصميم · <span style="direction:ltr;unicode-bidi:isolate">057 927 7975</span></div>${brand}${concept}</div>`
+}[kind];
+document.getElementById('root').innerHTML = html;
+window.__ready = true;
+</script>
+</body>
+</html>
