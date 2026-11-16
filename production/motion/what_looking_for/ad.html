@@ -1,0 +1,112 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;700;800;900&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#0e0e10;font-family:Tajawal}
+.scene{position:absolute;inset:0;overflow:hidden}
+.bg{position:absolute;inset:0;background-size:cover}
+.dark .bg{background-image:url(as/dark.jpg)}
+.dark .glow{position:absolute;left:-200px;right:-200px;top:520px;height:900px;background:radial-gradient(ellipse at center,rgba(212,168,75,.20),rgba(0,0,0,0) 60%)}
+.cream .bg{background-image:url(as/cream.jpg)}
+.hdr{position:absolute;left:0;right:0;top:56px;text-align:center}
+.hdr img{width:300px}
+.ftr{position:absolute;left:120px;right:120px;bottom:70px;display:flex;align-items:center;gap:24px;font-family:Arial;font-weight:700;font-size:30px;letter-spacing:3px}
+.ftr i{flex:1;height:2px}
+.dark .ftr{color:#D4A84B}.dark .ftr i{background:rgba(212,168,75,.5)}
+.cream .ftr{color:#7a5b1e}.cream .ftr i{background:rgba(122,91,30,.4)}
+.el{position:absolute;will-change:transform,opacity}
+.t{direction:rtl;text-align:center;font-weight:900;line-height:1.05;white-space:nowrap}
+.dark .t{color:#F7F3EA}.cream .t{color:#121214}
+.g{color:#D4A84B!important}
+.dark .t{text-shadow:0 6px 22px rgba(0,0,0,.65)}
+.brush{position:absolute;z-index:-1}
+img.c{filter:drop-shadow(0 18px 24px rgba(0,0,0,.35))}
+.pill{background:#D4A84B;color:#111;border-radius:80px;padding:18px 70px;font-family:Arial;font-weight:900;font-size:76px;letter-spacing:5px}
+.edge{position:absolute;left:0;right:0;height:60px}
+</style></head><body>
+<div class="scene cream" id="s1"><div class="bg"></div>
+ <img class="el c" id="s1g" src="as/c_glass.png" style="width:520px;left:280px;top:820px">
+ <div class="el t" id="s1a" style="top:470px;left:0;right:0;font-size:150px">وش <span class="g">تدوّر</span><br>عليه؟</div></div>
+<div class="scene cream" id="s2"><div class="bg"></div>
+ <img class="el" id="s2br" src="as/c_brush.png" style="width:640px;left:220px;top:575px;height:120px">
+ <div class="el t" id="s2w" style="top:400px;left:0;right:0;font-size:180px">عائلية</div>
+ <div class="el t" id="s2s" style="top:720px;left:0;right:0;font-size:96px">واسعة ومريحة</div>
+ <img class="el c" id="s2c" src="as/c_carnival.png" style="width:900px;left:90px;top:900px">
+ <img class="el c" id="s2k" src="as/c_stamp.png" style="width:230px;left:790px;top:860px"></div>
+<div class="scene dark" id="s3"><div class="bg"></div><div class="glow"></div>
+ <img class="el" id="s3br" src="as/c_brush.png" style="width:640px;left:220px;top:575px;height:120px">
+ <div class="el t" id="s3w" style="top:400px;left:0;right:0;font-size:180px">بيك اب</div>
+ <div class="el t" id="s3s" style="top:720px;left:0;right:0;font-size:96px">للشغل والبر</div>
+ <img class="el c" id="s3c" src="as/c_dmax.png" style="width:900px;left:90px;top:900px">
+ <img class="el c" id="s3k" src="as/c_stamp.png" style="width:230px;left:790px;top:860px"></div>
+<div class="scene dark" id="s4"><div class="bg"></div><div class="glow"></div>
+ <img class="el" id="s4br" src="as/c_brush.png" style="width:640px;left:220px;top:575px;height:120px">
+ <div class="el t" id="s4w" style="top:400px;left:0;right:0;font-size:180px">فخمة</div>
+ <div class="el t" id="s4s" style="top:720px;left:0;right:0;font-size:96px">تليق فيك</div>
+ <img class="el c" id="s4c" src="as/c_maybach.png" style="width:900px;left:90px;top:900px">
+ <img class="el c" id="s4k" src="as/c_stamp.png" style="width:230px;left:790px;top:860px"></div>
+<div class="scene cream" id="s5"><div class="bg"></div>
+ <img class="el" id="s5br" src="as/c_brush.png" style="width:640px;left:220px;top:575px;height:120px">
+ <div class="el t" id="s5w" style="top:400px;left:0;right:0;font-size:180px">اقتصادية</div>
+ <div class="el t" id="s5s" style="top:720px;left:0;right:0;font-size:96px">توفّر عليك</div>
+ <img class="el c" id="s5c" src="as/c_swift.png" style="width:900px;left:90px;top:900px">
+ <img class="el c" id="s5k" src="as/c_stamp.png" style="width:230px;left:790px;top:860px"></div>
+<div class="scene dark" id="s6"><div class="bg"></div><div class="glow"></div>
+ <img class="el" id="s6br" src="as/c_brush.png" style="width:640px;left:220px;top:575px;height:120px">
+ <div class="el t" id="s6w" style="top:400px;left:0;right:0;font-size:180px">فان</div>
+ <div class="el t" id="s6s" style="top:720px;left:0;right:0;font-size:96px">لشركتك وأعمالك</div>
+ <img class="el c" id="s6c" src="as/c_van.png" style="width:900px;left:90px;top:900px">
+ <img class="el c" id="s6k" src="as/c_stamp.png" style="width:230px;left:790px;top:860px"></div>
+<div class="scene cream" id="s7"><div class="bg"></div>
+ <div class="el t" id="s7a" style="top:380px;left:0;right:0;font-size:150px">كلها <span class="g">عندنا</span></div>
+ <img class="el c" id="s7f" src="as/c_keys.png" style="width:660px;left:210px;top:600px">
+ <div class="el t" id="s7b" style="top:1400px;left:0;right:0;font-size:80px">في</div>
+ <img class="el" id="s7l" src="as/logo_full.png" style="width:760px;left:160px;top:1500px;filter:brightness(.55) sepia(1) saturate(3)"></div>
+<div class="scene dark" id="s8"><div class="bg"></div><div class="glow"></div>
+ <img class="el c" id="s8s" src="as/c_scale.png" style="width:860px;left:110px;top:620px">
+ <div class="el t g" id="s8a" style="top:470px;left:600px;width:420px;font-size:140px">كاش</div>
+ <div class="el t" id="s8o" style="top:500px;left:490px;width:110px;font-size:80px">أو</div>
+ <div class="el t g" id="s8b" style="top:470px;left:60px;width:440px;font-size:140px">تمويل</div>
+ <div class="el t" id="s8c" style="top:1500px;left:0;right:0;font-size:84px">الخيار لك</div></div>
+<div class="scene dark" id="s9"><div class="bg"></div><div class="glow"></div>
+ <div class="el t" id="s9a" style="top:300px;left:0;right:0;font-size:120px">سجّل <span class="g">بياناتك</span></div>
+ <img class="el c" id="s9p" src="as/c_phone.png" style="width:560px;left:260px;top:520px">
+ <div class="el t" id="s9b" style="top:1330px;left:0;right:0;font-size:96px">ونتواصل معك</div>
+ <div class="el" id="s9c" style="top:1500px;left:0;right:0;text-align:center"><span class="pill" style="font-family:Tajawal;letter-spacing:0">سجّل الآن</span></div>
+ <div class="el t g" id="s9n" style="top:1670px;left:0;right:0;font-size:64px;font-family:Arial;letter-spacing:4px">920018915</div></div>
+<script>
+const SC=[['s1', 0, 1.56], ['s2', 1.56, 4.3], ['s3', 4.3, 6.82], ['s4', 6.82, 8.62], ['s5', 8.62, 11.1], ['s6', 11.1, 13.82], ['s7', 13.82, 16.34], ['s8', 16.34, 17.84], ['s9', 17.84, 99]];
+// header/footer on every scene
+for(const [id] of SC){const s=document.getElementById(id);
+ if(id!=='s9'){const h=document.createElement('div');h.className='hdr';h.innerHTML='<img src="as/logo_full.png">';s.appendChild(h);}
+ const f=document.createElement('div');f.className='ftr';f.innerHTML='<i></i><span>920018915</span><i></i>';s.appendChild(f);}
+const O=0.3; // voice offset
+// element animations: [id, at, type]
+const A=[['s1a', 0, 'pop'], ['s1g', 0.25, 'slideR'], ['s2w', 1.56, 'pop'], ['s2br', 1.6600000000000001, 'wipe'], ['s2c', 1.8, 'slideR'], ['s2s', 2.76, 'up'], ['s2k', 3.11, 'stamp'], ['s3w', 4.3, 'pop'], ['s3br', 4.3999999999999995, 'wipe'], ['s3c', 4.55, 'slideL'], ['s3s', 5.08, 'up'], ['s3k', 5.43, 'stamp'], ['s4w', 6.82, 'pop'], ['s4br', 6.92, 'wipe'], ['s4c', 7.0, 'slideR'], ['s4s', 7.42, 'up'], ['s4k', 7.77, 'stamp'], ['s5w', 8.62, 'pop'], ['s5br', 8.719999999999999, 'wipe'], ['s5c', 8.9, 'slideL'], ['s5s', 9.68, 'up'], ['s5k', 10.03, 'stamp'], ['s6w', 11.1, 'pop'], ['s6br', 11.2, 'wipe'], ['s6c', 11.4, 'slideR'], ['s6s', 11.86, 'up'], ['s6k', 12.209999999999999, 'stamp'], ['s7a', 13.82, 'pop'], ['s7f', 14.1, 'pop'], ['s7b', 14.9, 'up'], ['s7l', 15.24, 'pop'], ['s8s', 16.34, 'tilt'], ['s8a', 16.34, 'pop'], ['s8o', 16.96, 'pop'], ['s8b', 17.22, 'pop'], ['s8c', 17.4, 'up'], ['s9a', 17.84, 'pop'], ['s9p', 18.1, 'rise'], ['s9b', 19.08, 'up'], ['s9c', 19.8, 'pop'], ['s9n', 20.3, 'up']];
+const cl=x=>Math.max(0,Math.min(1,x)), eo=x=>1-Math.pow(1-x,3), bo=x=>{const c1=1.70158,c3=c1+1;return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2)};
+function render(t){
+ for(const [id,s,e] of SC){const el=document.getElementById(id); const S=s+O, E=e+O;
+  if(t<S-0.001||t>=E+0.4){el.style.display='none';continue;} el.style.display='block';
+  // enter: torn wipe up from bottom over previous
+  const k=cl((t-S)/0.38); const y=(1-eo(k))*1920; el.style.transform=`translateY(${id==='s1'?0:y}px)`; el.style.zIndex=SC.findIndex(x=>x[0]===id);
+  // slow push
+  el.querySelector('.bg').style.transform=`scale(${1+0.02*cl((t-S)/4)})`;
+ }
+ for(const [id,at,ty] of A){const el=document.getElementById(id); const T=at+O; const k=cl((t-T)/0.45);
+  let tr='',op=k>0?1:0; const kk=eo(k), kb=bo(k);
+  if(ty==='up'){tr=`translateY(${(1-kk)*70}px)`;op=cl((t-T)/0.25);}
+  else if(ty==='pop'){tr=`scale(${0.4+0.6*kb})`;op=cl((t-T)/0.15);}
+  else if(ty==='drop'){tr=`translateY(${(1-kb)*-500}px) rotate(${(1-kk)*-25}deg)`;op=cl((t-T)/0.1);}
+  else if(ty==='slideR'){tr=`translateX(${(1-kk)*1200}px) rotate(${(1-kk)*6}deg)`;}
+  else if(ty==='slideL'){tr=`translateX(${(1-kk)*-1200}px) rotate(${(1-kk)*-6}deg)`;}
+  else if(ty==='rise'){tr=`translateY(${(1-kk)*500}px) scale(${0.85+0.15*kk})`;op=cl((t-T)/0.3);}
+  else if(ty==='stamp'){tr=`scale(${2.2-1.2*kb}) rotate(${(1-kk)*-30}deg)`;op=cl((t-T)/0.12);}
+  else if(ty==='tilt'){tr=`rotate(${Math.sin((t-T)*7)*10*Math.exp(-(t-T)*1.8)}deg)`;op=cl((t-T)/0.2);}
+  else if(ty==='wipe'){el.style.clipPath=`inset(0 0 0 ${(1-kk)*100}%)`;tr='';}
+  // idle float after entering
+  if(k>=1 && (ty==='slideR'||ty==='slideL'||ty==='rise'||ty==='drop')) tr+=` translateY(${Math.sin((t-T)*2.2)*6}px)`;
+  el.style.opacity=op; el.style.transform=tr;
+ }
+ 
+}
+window.render=render; render(0);
+</script></body></html>
