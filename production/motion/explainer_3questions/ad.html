@@ -1,0 +1,101 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@700;800;900&family=Lalezar&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#111;font-family:Tajawal}
+#cam{position:absolute;inset:0;transform-origin:50% 50%}
+.sc{position:absolute;inset:0;overflow:hidden;display:none}
+.noise{position:absolute;inset:0;background:url(as/noise.png);opacity:.18;mix-blend-mode:multiply}
+.e{position:absolute;will-change:transform,opacity}
+.t{direction:rtl;text-align:center;font-family:Lalezar,Tajawal;line-height:1.15;white-space:nowrap;left:0;right:0}
+.hl{position:relative;display:inline-block;padding:0 22px}
+.hl::before{content:'';position:absolute;left:0;right:0;top:22%;bottom:8%;background:var(--hc,#F2C14E);transform:skew(-8deg) scaleX(var(--hx,1));transform-origin:right;z-index:-1;border-radius:6px}
+img.c{filter:drop-shadow(0 16px 18px rgba(0,0,0,.35))}
+.badge{left:0;right:0;text-align:center}
+.badge span{display:inline-block;background:#111;color:#F2C14E;font-family:Lalezar,Tajawal;font-size:96px;padding:18px 60px 6px;border-radius:24px;transform:rotate(-3deg);box-shadow:10px 10px 0 rgba(0,0,0,.25)}
+.pill{display:inline-block;background:#F2C14E;color:#111;border-radius:80px;padding:14px 70px;font-family:Arial;font-weight:900;font-size:72px;letter-spacing:4px}
+svg{position:absolute;overflow:visible}
+.lbl{direction:rtl;text-align:center;font-family:Lalezar,Tajawal}
+</style></head><body><div id="cam"></div>
+<script>
+const O=0.3;
+const BLK='#121214',YEL='#F2C14E',RED='#E5383B',CRM='#F4EAD5',TEAL='#1FA39A';
+// scene: [id,start,end,bg]
+const SC=[['A',0,3.48,YEL],['B',3.48,6.8,BLK],['C',6.8,9.38,RED],['D',9.38,14.52,CRM],['E',14.52,20.9,YEL],['F',20.9,23.74,BLK],['G',23.74,31.58,CRM],['H',31.58,34.6,RED],['I',34.6,39.3,CRM],['J',39.3,40.76,YEL],['K',40.76,99,BLK]];
+// elements: [scene, at, anim, html(style inside)]
+const E=[
+['A',0,'up',`<div class="e t" style="top:250px;font-size:120px;color:#111">تبي تشتري سيارة؟</div>`],
+['A',0.2,'pop',`<img class="e c" src="as/c_turki_think.png" style="width:1000px;left:40px;top:1220px">`],
+['A',1.64,'up',`<div class="e t" style="top:430px;font-size:84px;color:#111">وما تدري من وين <span class="hl" style="--hc:#fff">تبدأ؟</span></div>`],
+['A',1.98,'pop',`<div class="e t" style="top:1060px;left:110px;right:auto;font-size:200px;color:#E5383B;transform-origin:center">؟</div>`],
+['A',2.3,'pop',`<div class="e t" style="top:1150px;left:auto;right:110px;font-size:160px;color:#111">؟</div>`],
+['A',2.6,'pop',`<div class="e t" style="top:900px;left:auto;right:330px;font-size:120px;color:#fff">؟</div>`],
+['B',3.48,'up',`<div class="e t" style="top:420px;font-size:110px;color:#fff">خلّنا <span class="hl" style="--hc:#E5383B">نبسّطها</span> لك</div>`],
+['B',4.84,'stamp',`<div class="e t" style="top:640px;font-size:520px;color:#F2C14E">3</div>`],
+['B',5.0,'draw',`<svg style="left:290px;top:690px" width="500" height="560"><ellipse cx="250" cy="280" rx="230" ry="260" fill="none" stroke="#fff" stroke-width="10" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/></svg>`],
+['B',5.48,'up',`<div class="e t" style="top:1330px;font-size:120px;color:#fff">أسئلة بس!</div>`],
+['C',6.8,'stamp',`<div class="e badge" style="top:330px"><span>السؤال الأول</span></div>`],
+['C',7.96,'up',`<div class="e t" style="top:560px;font-size:140px;color:#fff">كم <span class="hl" style="--hc:#111">ميزانيتك؟</span></div>`],
+['C',8.24,'pop',`<img class="e c" src="as/c_calc.png" style="width:560px;left:260px;top:860px">`],
+['D',9.38,'up',`<div class="e t" style="top:260px;font-size:80px;color:#111">لا تحسب <span style="position:relative">سعر السيارة<svg style="left:-10px;top:40px" width="420" height="40"><path d="M5 20 L410 15" stroke="#E5383B" stroke-width="12" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" class="lateDraw" data-at="10.5"/></svg></span> بس…</div>`],
+['D',11.26,'up',`<div class="e t" style="top:400px;font-size:120px;color:#111">احسب <span class="hl">كل شي</span></div>`],
+['D',11.68,'pop',`<img class="e c" src="as/c_wrench.png" style="width:380px;left:620px;top:700px">`],
+['D',11.8,'up',`<div class="e lbl" style="left:620px;width:380px;top:1110px;font-size:80px;color:#111">الصيانة</div>`],
+['D',12.54,'pop',`<img class="e c" src="as/c_shield.png" style="width:380px;left:80px;top:800px">`],
+['D',12.66,'up',`<div class="e lbl" style="left:80px;width:380px;top:1230px;font-size:80px;color:#111">التأمين</div>`],
+['D',13.38,'pop',`<img class="e c" src="as/c_fuel.png" style="width:400px;left:350px;top:1330px">`],
+['D',13.5,'up',`<div class="e lbl" style="left:340px;width:420px;top:1720px;font-size:80px;color:#111">البنزين</div>`],
+['E',14.52,'up',`<div class="e t" style="top:250px;font-size:110px;color:#111">والكاش ما يكفي؟</div>`],
+['E',16.14,'pop',`<div class="e t" style="top:420px;font-size:100px;color:#111"><span class="hl" style="--hc:#fff">عادي…</span> فيه <span style="color:#E5383B">تمويل</span></div>`],
+['E',17.9,'pop',`<img class="e c" src="as/c_belt.png" style="width:640px;left:220px;top:660px">`],
+['E',18.48,'up',`<div class="e lbl" style="left:540px;width:500px;top:1360px;font-size:84px;color:#111">قسط يريّحك ✔</div>`],
+['E',19.6,'up',`<div class="e lbl" style="left:40px;width:500px;top:1360px;font-size:84px;color:#E5383B">مو يخنقك ✘</div>`],
+['E',19.7,'draw',`<svg style="left:80px;top:1500px" width="420" height="80"><path d="M10 40 C 120 0, 300 80, 410 30" fill="none" stroke="#E5383B" stroke-width="10" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/></svg>`],
+['F',20.9,'stamp',`<div class="e badge" style="top:560px"><span style="background:#F2C14E;color:#111">السؤال الثاني</span></div>`],
+['F',22.2,'up',`<div class="e t" style="top:820px;font-size:110px;color:#fff">وش <span class="hl" style="--hc:#E5383B">بتستخدمها</span> فيه؟</div>`],
+['G',23.74,'slideR',`<img class="e c" src="as/c_kids.png" style="width:420px;left:600px;top:200px">`],
+['G',23.74,'up',`<div class="e lbl" style="left:40px;width:560px;top:300px;font-size:76px;color:#111">عندك عيال؟</div>`],
+['G',24.88,'pop',`<div class="e lbl" style="left:40px;width:560px;top:410px;font-size:100px;color:#111"><span class="hl" style="--hc:#1FA39A;color:#fff">مساحة</span></div>`],
+['G',26.08,'slideL',`<img class="e c" src="as/c_truck.png" style="width:460px;left:40px;top:760px">`],
+['G',26.08,'up',`<div class="e lbl" style="left:500px;width:560px;top:830px;font-size:76px;color:#111">شغلك يبي حمولة؟</div>`],
+['G',27.5,'pop',`<div class="e lbl" style="left:500px;width:560px;top:940px;font-size:100px;color:#111"><span class="hl">بيكاب</span></div>`],
+['G',28.0,'slideR',`<img class="e c" src="as/c_dune.png" style="width:440px;left:600px;top:1280px">`],
+['G',28.0,'up',`<div class="e lbl" style="left:40px;width:560px;top:1340px;font-size:76px;color:#111">تحب البر والكشتات؟</div>`],
+['G',30.06,'pop',`<div class="e lbl" style="left:40px;width:560px;top:1450px;font-size:100px;color:#111"><span class="hl" style="--hc:#E5383B;color:#fff">دفع رباعي</span></div>`],
+['H',31.58,'stamp',`<div class="e badge" style="top:560px"><span style="background:#fff;color:#E5383B">السؤال الثالث</span></div>`],
+['H',32.9,'up',`<div class="e t" style="top:820px;font-size:110px;color:#fff">وش <span class="hl" style="--hc:#111">أهم شي</span> عندك؟</div>`],
+['I',34.6,'slideR',`<img class="e c" src="as/c_piggy.png" style="width:440px;left:580px;top:520px">`],
+['I',34.6,'up',`<div class="e lbl" style="left:560px;width:480px;top:330px;font-size:84px;color:#111">التوفير؟</div>`],
+['I',35.56,'pop',`<div class="e lbl" style="left:560px;width:480px;top:1000px;font-size:92px;color:#111"><span class="hl">اقتصادية</span></div>`],
+['I',36.9,'slideL',`<img class="e c" src="as/c_crown.png" style="width:420px;left:70px;top:540px">`],
+['I',36.9,'up',`<div class="e lbl" style="left:40px;width:480px;top:330px;font-size:84px;color:#111">الفخامة؟</div>`],
+['I',37.74,'pop',`<div class="e lbl" style="left:20px;width:520px;top:1000px;font-size:72px;color:#111"><span class="hl" style="--hc:#111;color:#F2C14E">عندنا اللي يرضيك</span></div>`],
+['I',34.8,'draw',`<svg style="left:530px;top:380px" width="20" height="900"><path d="M10 0 L10 900" stroke="#111" stroke-width="6" stroke-dasharray="1" pathLength="1" stroke-dashoffset="1"/></svg>`],
+['J',39.3,'pop',`<img class="e c" src="as/c_turki_idea.png" style="width:1040px;left:20px;top:1260px">`],
+['J',39.3,'up',`<div class="e t" style="top:330px;font-size:150px;color:#111">ها… <span class="hl" style="--hc:#fff">جاوبت؟</span></div>`],
+['K',41.08,'pop',`<img class="e" src="as/logo_full.png" style="width:760px;left:160px;top:420px">`],
+['K',42.16,'up',`<div class="e t" style="top:720px;font-size:90px;color:#fff">ماركات كثيرة في <span class="hl" style="--hc:#E5383B">مكان واحد</span></div>`],
+['K',44.38,'up',`<div class="e t" style="top:900px;font-size:110px;color:#F2C14E">كاش أو تمويل</div>`],
+['K',45.78,'up',`<div class="e t" style="top:1080px;font-size:90px;color:#fff">ونساعدك <span class="hl">تختار صح</span></div>`],
+['K',46.6,'pop',`<div class="e t" style="top:1340px"><span class="pill">920018915</span></div>`]];
+const cam=document.getElementById('cam');
+SC.forEach(([id,a,b,bg])=>{const d=document.createElement('div');d.className='sc';d.id='S'+id;d.style.background=bg;d.innerHTML='<div class="noise"></div>';cam.appendChild(d);});
+const EL=E.map(([s,at,an,h],i)=>{const w=document.createElement('div');w.innerHTML=h;const el=w.firstElementChild;document.getElementById('S'+s).appendChild(el);return {el,at,an,s,base:el.style.transform||''};});
+const cl=x=>Math.max(0,Math.min(1,x)),eo=x=>1-Math.pow(1-x,3),bo=x=>{const c1=2.2,c3=c1+1;return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2)};
+function hash(n){return Math.sin(n*127.1)*43758.5453%1}
+function render(TT){const t=TT-O; let shake=0, punch=0;
+ SC.forEach(([id,a,b])=>{const on=t>=a-0.001&&t<b; document.getElementById('S'+id).style.display=on?'block':'none'; if(on){const k=t-a; shake=Math.max(shake,Math.exp(-k*9)); punch=Math.exp(-k*7);} });
+ EL.forEach(({el,at,an})=>{const k=cl((t-at)/0.4); let op=t>=at?1:0, tr='';
+  if(an==='up'){tr=`translateY(${(1-eo(k))*80}px)`;op=cl((t-at)/0.2);}
+  else if(an==='pop'){tr=`scale(${t<at?0:bo(k)}) rotate(${Math.sin((t-at)*2.4)*1.5}deg)`;}
+  else if(an==='stamp'){const kk=cl((t-at)/0.25); tr=`scale(${2.4-1.4*eo(kk)}) rotate(${(1-kk)*12-2}deg)`;op=kk;}
+  else if(an==='slideR'){tr=`translateX(${(1-eo(k))*900}px) rotate(${(1-eo(k))*10}deg)`;}
+  else if(an==='slideL'){tr=`translateX(${(1-eo(k))*-900}px) rotate(${(1-eo(k))*-10}deg)`;}
+  else if(an==='draw'){el.querySelectorAll('path,ellipse').forEach(p=>p.setAttribute('stroke-dashoffset',1-eo(cl((t-at)/0.5))));}
+  if(an!=='draw'){el.style.transform=tr;} el.style.opacity=op;
+  el.querySelectorAll('.hl').forEach(h=>h.style.setProperty('--hx',eo(cl((t-at-0.15)/0.3))));
+  el.querySelectorAll('.lateDraw').forEach(p=>p.setAttribute('stroke-dashoffset',1-eo(cl((t-(+p.dataset.at))/0.4))));
+ });
+ const sx=Math.sin(t*90)*14*shake, sy=Math.cos(t*77)*10*shake; cam.style.transform=`translate(${sx}px,${sy}px) scale(${1+0.06*punch})`;
+}
+window.render=render; render(0);
+</script></body></html>
