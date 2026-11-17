@@ -1,0 +1,73 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;700;800;900&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#d9b878;font-family:Tajawal}
+#cam{position:absolute;left:0;top:0;transform-origin:0 0}
+#map{position:absolute;left:0;top:0;width:1520px;height:2688px}
+.m{position:absolute;filter:drop-shadow(0 14px 18px rgba(0,0,0,.35))}
+.card{position:absolute;left:70px;right:70px;top:170px;background:rgba(244,236,219,.96);border:4px solid #C9A04A;border-radius:34px;padding:30px 40px 36px;box-shadow:0 20px 40px rgba(0,0,0,.25);direction:rtl;text-align:center}
+.card .n{display:inline-block;width:110px;height:110px;line-height:118px;border-radius:50%;background:#121214;color:#D4A84B;font-size:72px;font-weight:900;margin-bottom:6px}
+.card .h{font-size:96px;font-weight:900;color:#121214;line-height:1.1}
+.card .h b{color:#B8872F}
+.card .s{font-size:58px;font-weight:700;color:#4a3a1c;margin-top:8px}
+.card img{position:absolute;width:250px;top:-60px;filter:drop-shadow(0 10px 14px rgba(0,0,0,.3))}
+.hdr{position:absolute;top:40px;left:0;right:0;text-align:center}
+.hdr span{display:inline-block;background:rgba(18,18,20,.88);padding:12px 34px;border-radius:40px}
+.hdr img{width:250px;display:block}
+.end{position:absolute;inset:0;background:linear-gradient(180deg,rgba(14,14,16,0) 0%,rgba(14,14,16,.0) 35%,rgba(14,14,16,.85) 62%,rgba(14,14,16,.95) 100%)}
+.endt{position:absolute;left:0;right:0;direction:rtl;text-align:center;color:#F7F3EA;font-weight:900}
+.pill{display:inline-block;background:#D4A84B;color:#111;border-radius:80px;padding:16px 80px;font-size:76px;font-weight:900}
+.ph{font-family:Arial;letter-spacing:4px;color:#D4A84B;font-size:60px;font-weight:900}
+.conf{position:absolute;width:18px;height:30px;background:#D4A84B;border-radius:3px}
+</style></head><body>
+<div id="cam"><img id="map" src="as/map.png">
+ <img class="m" id="pin1" src="as/c_pin.png" style="width:150px">
+ <img class="m" id="pin2" src="as/c_pin.png" style="width:150px">
+ <img class="m" id="pin3" src="as/c_pin.png" style="width:150px">
+ <img class="m" id="show" src="as/c_showroom.png" style="width:760px">
+ <img class="m" id="car" src="as/c_topcar.png" style="width:120px">
+</div>
+<div class="hdr"><span><img src="as/logo_full.png"></span></div>
+<div class="card" id="c0"><div class="h">تبي سيارة <b>جديدة؟</b></div><div class="s" id="c0s">الطريق لها أسهل مما تتوقع</div></div>
+<div class="card" id="c1"><img src="as/c_catalogue.png" style="left:-40px"><div class="n">١</div><div class="h">اختار <b>سيارتك</b></div><div class="s" id="c1s">من ماركات كثيرة</div></div>
+<div class="card" id="c2"><img src="as/c_wallet.png" style="left:-30px;width:210px"><div class="n">٢</div><div class="h"><b>كاش</b> أو <b>تمويل</b></div><div class="s" id="c2s">اللي يناسبك</div></div>
+<div class="card" id="c3"><img src="as/c_gift.png" style="left:-40px"><div class="n">٣</div><div class="h">استلم <b>مفتاحك</b></div><div class="s" id="c3s">ومبروك عليك!</div></div>
+<div id="confs"></div>
+<div class="end" id="end"></div>
+<div class="endt" id="e1" style="top:1180px;font-size:84px">طريقك لسيارتك الجاية</div>
+<div class="endt" id="e2" style="top:1340px"><span class="pill">سجِّل الحين</span></div>
+<div class="endt ph" id="e3" style="top:1530px">920018915</div>
+<script>
+const ROAD=[[0, 817.3], [16, 839.1], [32, 880.9], [48, 901.8], [64, 935.6], [80, 978.7], [96, 975.6], [112, 959.1], [128, 951.1], [144, 934.2], [160, 866.7], [176, 737.3], [192, 711.1], [208, 833.3], [224, 935.6], [240, 950.7], [256, 920.4], [272, 891.1], [288, 867.6], [304, 857.3], [320, 853.3], [336, 864.4], [352, 884.4], [368, 911.1], [384, 937.3], [400, 962.7], [416, 981.8], [432, 997.3], [448, 1003.6], [464, 1001.3], [480, 999.6], [496, 993.3], [512, 980.9], [528, 935.1], [544, 880.9], [560, 819.1], [576, 766.2], [592, 728.4], [608, 700.0], [624, 669.8], [640, 642.7], [656, 612.4], [672, 582.2], [688, 565.8], [704, 554.7], [720, 550.2], [736, 551.6], [752, 564.9], [768, 583.6], [784, 595.1], [800, 616.0], [816, 659.6], [832, 699.6], [848, 735.6], [864, 783.6], [880, 823.6], [896, 835.1], [912, 862.7], [928, 887.6], [944, 908.0], [960, 924.9], [976, 924.9], [992, 923.6], [1008, 932.4], [1024, 939.6], [1040, 934.7], [1056, 908.0], [1072, 894.2], [1088, 895.6], [1104, 875.1], [1120, 850.2], [1136, 813.8], [1152, 761.8], [1168, 699.1], [1184, 670.2], [1200, 608.9], [1216, 558.7], [1232, 527.6], [1248, 498.7], [1264, 451.1], [1280, 434.7], [1296, 414.7], [1312, 404.9], [1328, 394.7], [1344, 383.1], [1360, 377.3], [1376, 371.1], [1392, 368.4], [1408, 374.2], [1424, 387.6], [1440, 406.2], [1456, 419.1], [1472, 445.8], [1488, 465.3], [1504, 472.9], [1520, 480.0], [1536, 520.4], [1552, 568.9], [1568, 612.0], [1584, 652.9], [1600, 719.6], [1616, 772.0], [1632, 812.4], [1648, 831.6], [1664, 856.0], [1680, 885.8], [1696, 909.3], [1712, 918.7], [1728, 924.0], [1744, 950.2], [1760, 960.4], [1776, 969.3], [1792, 970.7], [1808, 960.4], [1824, 945.3], [1840, 936.4], [1856, 924.0], [1872, 920.9], [1888, 911.1], [1904, 890.7], [1920, 881.8], [1936, 863.6], [1952, 829.8], [1968, 793.8], [1984, 752.0], [2000, 729.3], [2016, 717.3], [2032, 712.4], [2048, 688.0], [2064, 664.0], [2080, 654.2], [2096, 646.7], [2112, 617.3], [2128, 589.8], [2144, 569.3], [2160, 556.4], [2176, 548.0], [2192, 535.6], [2208, 541.8], [2224, 541.8], [2240, 551.1], [2256, 553.8], [2272, 559.6], [2288, 560.0], [2304, 561.3], [2320, 556.4], [2336, 533.8], [2352, 516.4], [2368, 543.6], [2384, 552.9], [2400, 552.0], [2416, 580.0], [2432, 600.4], [2448, 624.4], [2464, 644.9], [2480, 641.3], [2496, 622.7], [2512, 633.8], [2528, 662.7], [2544, 675.6], [2560, 674.2], [2576, 685.8], [2592, 648.0], [2608, 633.3], [2624, 648.4], [2640, 629.8], [2656, 631.6], [2672, 678.7]];
+const O=0.3, S=1.18, MW=1520*S, MH=2688*S;
+const cl=x=>Math.max(0,Math.min(1,x)), eio=x=>x<.5?2*x*x:1-Math.pow(-2*x+2,2)/2, bo=x=>{const c1=1.70158,c3=c1+1;return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2)}, eo=x=>1-Math.pow(1-x,3);
+function rx(y){let a=ROAD[0],b=ROAD[ROAD.length-1];for(let i=0;i<ROAD.length-1;i++){if(ROAD[i][0]<=y&&ROAD[i+1][0]>=y){a=ROAD[i];b=ROAD[i+1];break;}} const k=b[0]===a[0]?0:(y-a[0])/(b[0]-a[0]); return a[1]+(b[1]-a[1])*k;}
+const P1=2050,P2=1420,P3=800,PE=470;
+// car y keyframes: [time, y]
+const K=[[0,2640],[1.8,2600],[4.1,P1+40],[6.9,P1+40],[8.0,P2+40],[10.6,P2+40],[11.5,P3+40],[14.3,P3+40],[15.3,PE+120],[30,PE+120]];
+function carY(t){for(let i=0;i<K.length-1;i++){const [t0,y0]=K[i],[t1,y1]=K[i+1]; if(t>=t0&&t<=t1) return y0+(y1-y0)*eio((t-t0)/(t1-t0));} return K[K.length-1][1];}
+const conf=document.getElementById('confs'); const CF=[]; for(let i=0;i<40;i++){const d=document.createElement('div');d.className='conf';d.style.background=i%3?'#D4A84B':'#f7f3ea';conf.appendChild(d);CF.push([Math.sin(i*12.9)*0.5+0.5,Math.sin(i*7.3)*0.5+0.5,Math.sin(i*3.1)]);}
+function place(id,y,dx,dy,w){const e=document.getElementById(id); e.style.left=(rx(y)+dx-w/2)+'px'; e.style.top=(y+dy)+'px';}
+function render(T){const t=T-O;
+ const cy=carY(t), cx=rx(cy); const ang=Math.atan2(rx(cy-40)-rx(cy+40), 80)*180/Math.PI;
+ // camera: zoom out at end
+ const zEnd=eio(cl((t-15.0)/1.6)); const z=S*(1-0.35*zEnd);
+ let ox=540-cx*z, oy=1250-cy*z; ox=Math.min(0,Math.max(1080-1520*z,ox)); oy=Math.min(0,Math.max(1920-2688*z,oy));
+ const cam=document.getElementById('cam'); cam.style.transform=`translate(${ox}px,${oy}px) scale(${z})`;
+ const car=document.getElementById('car'); car.style.left=(cx-60)+'px'; car.style.top=(cy-100)+'px'; car.style.transform=`rotate(${ang}deg)`;
+ // pins drop
+ [[ 'pin1',P1,4.14],['pin2',P2,8.02],['pin3',P3,11.46]].forEach(([id,y,at])=>{const k=cl((t-at)/0.5); const e=document.getElementById(id); place(id,y,0,-170,150); e.style.opacity=k>0?1:0; e.style.transform=`translateY(${(1-bo(k))*-260}px) scale(${0.7+0.3*bo(k)})`;});
+ place('show',PE,0,-300,700); const ks=cl((t-14.6)/0.6); document.getElementById('show').style.opacity=ks; document.getElementById('show').style.transform=`scale(${0.6+0.4*bo(ks)})`;
+ // cards
+ const cards=[['c0',-1,4.0,1.80],['c1',4.4,7.9,6.2],['c2',8.3,11.3,10.2],['c3',11.8,15.0,13.4]];
+ cards.forEach(([id,a,b,sa])=>{const e=document.getElementById(id); const kin=cl((t-a)/0.4), kout=cl((t-b)/0.3); const v=Math.min(kin,1-kout);
+  e.style.opacity=v; e.style.transform=`translateY(${(1-eo(kin))*-80 + eo(kout)*-80}px) scale(${0.92+0.08*eo(kin)})`;
+  const s=document.getElementById(id+'s'); s.style.opacity=cl((t-sa)/0.3);});
+ // confetti at 13.5
+ const kc=t-13.5; CF.forEach(([a,b,c],i)=>{const d=conf.children[i]; if(kc<0||kc>2.2){d.style.display='none';return;} d.style.display='block'; const x=540+(a-0.5)*900*Math.min(1,kc*2), y=620+(-500*(1-b*0.4))*kc+600*kc*kc; d.style.left=x+'px'; d.style.top=y+'px'; d.style.transform=`rotate(${c*400*kc}deg)`; d.style.opacity=1-cl((kc-1.6)/0.6);});
+ // end
+ const ke=cl((t-15.4)/0.6); document.getElementById('end').style.opacity=ke;
+ [['e1',16.42],['e2',18.38],['e3',18.9]].forEach(([id,at])=>{const k=cl((t-at)/0.45); const e=document.getElementById(id); e.style.opacity=cl((t-at)/0.2); e.style.transform=`scale(${0.5+0.5*bo(k)})`;});
+}
+window.render=render; render(0);
+</script></body></html>
