@@ -1,0 +1,90 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@700;800;900&family=Lalezar&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#111;font-family:Tajawal}
+#cam{position:absolute;inset:0;transform-origin:50% 50%}
+.sc{position:absolute;inset:0;overflow:hidden;display:none}
+.noise{position:absolute;inset:0;background:url(as/noise.png);opacity:.18;mix-blend-mode:multiply}
+.e{position:absolute;will-change:transform,opacity}
+.t{direction:rtl;text-align:center;font-family:Lalezar,Tajawal;line-height:1.15;white-space:nowrap;left:0;right:0}
+.hl{position:relative;display:inline-block;padding:0 22px}
+.hl::before{content:'';position:absolute;left:0;right:0;top:22%;bottom:8%;background:var(--hc,#F2C14E);transform:skew(-8deg) scaleX(var(--hx,1));transform-origin:right;z-index:-1;border-radius:6px}
+img.c{filter:drop-shadow(0 16px 18px rgba(0,0,0,.35))}
+.badge{left:0;right:0;text-align:center}
+.badge span{display:inline-block;background:#111;color:#F2C14E;font-family:Lalezar,Tajawal;font-size:96px;padding:18px 60px 6px;border-radius:24px;transform:rotate(-3deg);box-shadow:10px 10px 0 rgba(0,0,0,.25)}
+.pill{display:inline-block;background:#F2C14E;color:#111;border-radius:80px;padding:14px 70px;font-family:Arial;font-weight:900;font-size:72px;letter-spacing:4px}
+svg{position:absolute;overflow:visible}
+.lbl{direction:rtl;text-align:center;font-family:Lalezar,Tajawal}
+.num{left:0;right:0;text-align:center}.num span{display:inline-block;width:210px;height:210px;line-height:250px;border-radius:50%;background:#111;color:#F2C14E;font-family:Lalezar;font-size:170px;box-shadow:10px 10px 0 rgba(0,0,0,.2)}
+#tag{position:absolute;top:70px;left:0;right:0;text-align:center;z-index:9}#tag span{display:inline-block;direction:rtl;background:#111;color:#fff;font-family:Tajawal;font-weight:800;font-size:40px;padding:10px 32px;border-radius:40px}#tag b{color:#F2C14E}
+</style></head><body><div id="cam"></div><div id="tag"><span><b>أبو تركي يختصرها</b> · الحلقة 3</span></div>
+<script>
+const O=0.3;
+const BLK='#121214',YEL='#F2C14E',RED='#E5383B',CRM='#F4EAD5',TEAL='#1FA39A';
+const SC=[['A',0,5.76,RED],['B',5.76,11.14,CRM],['C',11.14,15.62,YEL],['D',15.62,20.78,TEAL],['E',20.78,25.56,CRM],['F',25.56,28.42,BLK],['G',28.42,32.44,YEL],['K',32.44,38.9,BLK],['Z',38.9,99,BLK]];
+const N=(n)=>`<div class="e num" style="top:200px"><span>${n}</span></div>`;
+const E=[
+['A',0,'up',`<div class="e t" style="top:220px;font-size:120px;color:#fff">لا تطلع من المعرض</div>`],
+['A',1.38,'up',`<div class="e t" style="top:390px;font-size:110px;color:#fff"><span class="hl" style="--hc:#111;color:#F2C14E">بسيارتك الجديدة</span></div>`],
+['A',3.16,'up',`<div class="e t" style="top:580px;font-size:84px;color:#fff">إلا بعد ما تشيّك على</div>`],
+['A',4.56,'stamp',`<div class="e t" style="top:700px;font-size:190px;color:#F2C14E">هالخمسة!</div>`],
+['A',0.15,'pop',`<img class="e c" src="as/c_t_wait.png" style="width:720px;left:180px;top:1000px">`],
+['B',5.76,'stamp',N(1)],
+['B',6.64,'up',`<div class="e t" style="top:440px;font-size:130px;color:#111">البودي</div>`],
+['B',7.68,'pop',`<img class="e c" src="as/c_body.png" style="width:640px;left:220px;top:640px">`],
+['B',7.68,'up',`<div class="e t" style="top:1320px;font-size:80px;color:#111">لِف حولها في النور</div>`],
+['B',9.1,'up',`<div class="e t" style="top:1460px;font-size:96px;color:#111">وشوف الصبغ <span class="hl" style="--hc:#E5383B;color:#fff">والخدوش</span></div>`],
+['C',11.14,'stamp',N(2)],
+['C',11.9,'up',`<div class="e t" style="top:440px;font-size:130px;color:#111">الكفرات</div>`],
+['C',12.2,'slideR',`<img class="e c" src="as/c_tire.png" style="width:760px;left:160px;top:650px">`],
+['C',14.1,'draw',`<svg style="left:410px;top:985px" width="300" height="200"><ellipse cx="150" cy="100" rx="140" ry="80" fill="none" stroke="#E5383B" stroke-width="12" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/></svg>`],
+['C',13.08,'up',`<div class="e t" style="top:1400px;font-size:96px;color:#111">شوف <span class="hl" style="--hc:#fff">تاريخ الصنع</span></div>`],
+['D',15.62,'stamp',N(3)],
+['D',16.48,'up',`<div class="e t" style="top:440px;font-size:130px;color:#fff">الأوراق</div>`],
+['D',16.7,'pop',`<img class="e c" src="as/c_docs.png" style="width:600px;left:240px;top:640px">`],
+['D',17.48,'up',`<div class="e t" style="top:1280px;font-size:84px;color:#fff">الاستمارة ✔</div>`],
+['D',18.42,'up',`<div class="e t" style="top:1400px;font-size:84px;color:#fff">الضمان ✔</div>`],
+['D',19.14,'up',`<div class="e t" style="top:1520px;font-size:84px;color:#111">كتيّب السيارة ✔</div>`],
+['E',20.78,'stamp',N(4)],
+['E',21.64,'up',`<div class="e t" style="top:440px;font-size:130px;color:#111">الداخل</div>`],
+['E',21.9,'pop',`<img class="e c" src="as/c_dash.png" style="width:720px;left:180px;top:660px">`],
+['E',22.92,'pop',`<div class="e lbl" style="left:700px;width:340px;top:1320px;font-size:80px;color:#111"><span class="hl">الشاشة</span></div>`],
+['E',23.7,'pop',`<div class="e lbl" style="left:370px;width:340px;top:1320px;font-size:80px;color:#111"><span class="hl" style="--hc:#1FA39A;color:#fff">المكيّف</span></div>`],
+['E',24.44,'pop',`<div class="e lbl" style="left:40px;width:340px;top:1320px;font-size:80px;color:#111"><span class="hl" style="--hc:#E5383B;color:#fff">الكاميرا</span></div>`],
+['F',25.56,'stamp',`<div class="e t" style="top:260px;font-size:170px;color:#F2C14E">والخامس</div>`],
+['F',26.6,'up',`<div class="e t" style="top:520px;font-size:110px;color:#fff">ناس كثير <span class="hl" style="--hc:#E5383B">ينسونه!</span></div>`],
+['F',25.8,'pop',`<img class="e c" src="as/c_t_mag.png" style="width:720px;left:180px;top:900px">`],
+['G',28.42,'stamp',N(5)],
+['G',28.42,'up',`<div class="e t" style="top:440px;font-size:130px;color:#111">المفتاحين</div>`],
+['G',28.7,'pop',`<img class="e c" src="as/c_keys.png" style="width:600px;left:240px;top:640px">`],
+['G',29.3,'up',`<div class="e t" style="top:1330px;font-size:84px;color:#111">تأكّد إنك استلمت</div>`],
+['G',30.84,'up',`<div class="e t" style="top:1460px;font-size:100px;color:#111"><span class="hl" style="--hc:#111;color:#F2C14E">المفتاح الاحتياطي</span></div>`],
+['K',32.64,'pop',`<img class="e" src="as/logo_full.png" style="width:660px;left:210px;top:220px">`],
+['K',33.92,'up',`<div class="e t" style="top:470px;font-size:96px;color:#fff">نسلّمك سيارتك <span style="color:#F2C14E">جاهزة</span></div>`],
+['K',35.64,'up',`<div class="e t" style="top:640px;font-size:84px;color:#fff">وموظّفينا يشيّكون معك</div>`],
+['K',37.4,'pop',`<div class="e t" style="top:790px;font-size:110px;color:#fff"><span class="hl" style="--hc:#E5383B">خطوة بخطوة</span></div>`],
+['K',34.2,'pop',`<img class="e c" src="as/c_t_clap.png" style="width:660px;left:210px;top:1040px">`],
+['Z',38.9,'pop',`<img class="e" src="as/logo_full.png" style="width:760px;left:160px;top:640px">`],
+['Z',39.1,'pop',`<div class="e t" style="top:1000px"><span class="pill">920018915</span></div>`]];
+const cam=document.getElementById('cam');
+SC.forEach(([id,a,b,bg])=>{const d=document.createElement('div');d.className='sc';d.id='S'+id;d.style.background=bg;d.innerHTML='<div class="noise"></div>';cam.appendChild(d);});
+const EL=E.map(([s,at,an,h],i)=>{const w=document.createElement('div');w.innerHTML=h;const el=w.firstElementChild;document.getElementById('S'+s).appendChild(el);return {el,at,an,s,base:el.style.transform||''};});
+const cl=x=>Math.max(0,Math.min(1,x)),eo=x=>1-Math.pow(1-x,3),bo=x=>{const c1=2.2,c3=c1+1;return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2)};
+function hash(n){return Math.sin(n*127.1)*43758.5453%1}
+function render(TT){const t=TT-O; let shake=0, punch=0;
+ SC.forEach(([id,a,b])=>{const on=t>=a-0.001&&t<b; document.getElementById('S'+id).style.display=on?'block':'none'; if(on){const k=t-a; shake=Math.max(shake,Math.exp(-k*9)); punch=Math.exp(-k*7);} });
+ EL.forEach(({el,at,an})=>{const k=cl((t-at)/0.4); let op=t>=at?1:0, tr='';
+  if(an==='up'){tr=`translateY(${(1-eo(k))*80}px)`;op=cl((t-at)/0.2);}
+  else if(an==='pop'){tr=`scale(${t<at?0:bo(k)}) rotate(${Math.sin((t-at)*2.4)*1.5}deg)`;}
+  else if(an==='stamp'){const kk=cl((t-at)/0.25); tr=`scale(${2.4-1.4*eo(kk)}) rotate(${(1-kk)*12-2}deg)`;op=kk;}
+  else if(an==='slideR'){tr=`translateX(${(1-eo(k))*900}px) rotate(${(1-eo(k))*10}deg)`;}
+  else if(an==='slideL'){tr=`translateX(${(1-eo(k))*-900}px) rotate(${(1-eo(k))*-10}deg)`;}
+  else if(an==='draw'){el.querySelectorAll('path,ellipse').forEach(p=>p.setAttribute('stroke-dashoffset',1-eo(cl((t-at)/0.5))));}
+  if(an!=='draw'){el.style.transform=tr;} el.style.opacity=op;
+  el.querySelectorAll('.hl').forEach(h=>h.style.setProperty('--hx',eo(cl((t-at-0.15)/0.3))));
+  el.querySelectorAll('.lateDraw').forEach(p=>p.setAttribute('stroke-dashoffset',1-eo(cl((t-(+p.dataset.at))/0.4))));
+ });
+ const sx=Math.sin(t*90)*14*shake, sy=Math.cos(t*77)*10*shake; document.getElementById('tag').style.opacity=t>=38.9?0:1; cam.style.transform=`translate(${sx}px,${sy}px) scale(${1+0.06*punch})`;
+}
+window.render=render; render(0);
+</script></body></html>
