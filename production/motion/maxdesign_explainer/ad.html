@@ -1,0 +1,87 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@700;800;900&family=Lalezar&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#111;font-family:Tajawal}
+#cam{position:absolute;inset:0;transform-origin:50% 50%}
+.sc{position:absolute;inset:0;overflow:hidden;display:none}
+.noise{position:absolute;inset:0;background:url(as/noise.png);opacity:.18;mix-blend-mode:multiply}
+.e{position:absolute;will-change:transform,opacity}
+.t{direction:rtl;text-align:center;font-family:Lalezar,Tajawal;line-height:1.15;white-space:nowrap;left:0;right:0}
+.hl{position:relative;display:inline-block;padding:0 22px}
+.hl::before{content:'';position:absolute;left:0;right:0;top:22%;bottom:8%;background:var(--hc,#C9A24D);transform:skew(-8deg) scaleX(var(--hx,1));transform-origin:right;z-index:-1;border-radius:6px}
+img.c{filter:drop-shadow(0 16px 18px rgba(0,0,0,.35))}
+.badge{left:0;right:0;text-align:center}
+.badge span{display:inline-block;background:#111;color:#C9A24D;font-family:Lalezar,Tajawal;font-size:96px;padding:18px 60px 6px;border-radius:24px;transform:rotate(-3deg);box-shadow:10px 10px 0 rgba(0,0,0,.25)}
+.pill{display:inline-block;background:#C9A24D;color:#111;border-radius:80px;padding:14px 70px;font-family:Arial;font-weight:900;font-size:72px;letter-spacing:4px}
+svg{position:absolute;overflow:visible}
+.lbl{direction:rtl;text-align:center;font-family:Lalezar,Tajawal}
+</style></head><body><div id="cam"></div>
+<script>
+const O=0.3;
+const BLK='#0F0E0C',GLD='#C9A24D',CRM='#F2EAD8',TER='#A8492B';
+const SC=[['A',0,2.94,CRM],['B',2.94,6.64,BLK],['C',6.64,10.1,TER],['D',10.1,14.4,CRM],['E',14.4,17.3,BLK],['F',17.3,20.98,GLD],['G',20.98,24.66,TER],['H',24.66,27.8,CRM],['I',27.8,31.4,BLK],['K',31.4,99,BLK]];
+const E=[
+['A',0,'up',`<div class="e t" style="top:260px;font-size:150px;color:#111">تبني <span class="hl">بيتك؟</span></div>`],
+['A',0.3,'pop',`<img class="e c" src="as/c_villa.png" style="width:860px;left:110px;top:820px">`],
+['A',1.26,'up',`<div class="e t" style="top:480px;font-size:96px;color:#111">أو تجدّد <span style="color:#A8492B">فلّتك؟</span></div>`],
+['B',2.94,'stamp',`<div class="e badge" style="top:240px"><span style="background:#A8492B;color:#fff">انتبه!</span></div>`],
+['B',4.06,'up',`<div class="e t" style="top:450px;font-size:140px;color:#fff"><span style="color:#C9A24D">3</span> غلطات</div>`],
+['B',5.0,'up',`<div class="e t" style="top:650px;font-size:110px;color:#fff"><span class="hl" style="--hc:#A8492B">تكلّفك كثير</span></div>`],
+['B',3.2,'pop',`<img class="e c" src="as/c_t_shock.png" style="width:760px;left:160px;top:960px">`],
+['C',6.64,'stamp',`<div class="e badge" style="top:300px"><span>الغلطة الأولى</span></div>`],
+['C',7.92,'up',`<div class="e t" style="top:520px;font-size:120px;color:#fff">تبدأ التنفيذ</div>`],
+['C',8.98,'up',`<div class="e t" style="top:690px;font-size:120px;color:#fff">قبل <span class="hl" style="--hc:#111;color:#C9A24D">التصميم</span></div>`],
+['C',9.26,'pop',`<img class="e c" src="as/c_plan.png" style="width:640px;left:220px;top:980px">`],
+['C',9.5,'draw',`<svg style="left:240px;top:1000px" width="600" height="560"><path d="M30 30 L570 530 M570 30 L30 530" fill="none" stroke="#111" stroke-width="22" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/></svg>`],
+['D',10.1,'up',`<div class="e t" style="top:240px;font-size:96px;color:#111">وكل تعديل <span class="hl">بعدين…</span></div>`],
+['D',11.68,'slideR',`<img class="e c" src="as/c_hammer.png" style="width:560px;left:470px;top:470px">`],
+['D',12.1,'up',`<div class="e lbl" style="left:40px;width:440px;top:620px;font-size:110px;color:#A8492B">هدم</div>`],
+['D',12.6,'slideL',`<img class="e c" src="as/c_money.png" style="width:470px;left:60px;top:960px">`],
+['D',12.6,'up',`<div class="e lbl" style="left:560px;width:460px;top:1080px;font-size:110px;color:#111">فلوس</div>`],
+['D',13.44,'pop',`<img class="e c" src="as/c_hour.png" style="width:300px;left:600px;top:1400px">`],
+['D',13.44,'up',`<div class="e lbl" style="left:80px;width:460px;top:1530px;font-size:110px;color:#111"><span class="hl">ووقت</span></div>`],
+['E',14.4,'stamp',`<div class="e badge" style="top:600px"><span style="background:#C9A24D;color:#111">الغلطة الثانية</span></div>`],
+['E',15.9,'up',`<div class="e t" style="top:860px;font-size:120px;color:#fff">الإضاءة <span class="hl" style="--hc:#A8492B">آخر شي</span></div>`],
+['F',17.3,'drop',`<div class="e" style="left:0;right:0;top:0;height:1000px"><div style="position:absolute;left:190px;top:420px;width:700px;height:700px;background:radial-gradient(circle,rgba(255,250,220,.95),rgba(255,240,190,0) 65%)"></div><img class="c" src="as/c_lamp.png" style="position:absolute;width:560px;left:260px;top:-40px"></div>`],
+['F',18.7,'up',`<div class="e t" style="top:1100px;font-size:92px;color:#111">هي اللي تعطي المكان</div>`],
+['F',19.4,'up',`<div class="e t" style="top:1280px;font-size:170px;color:#111">روحه <span class="hl" style="--hc:#fff">ودفاه</span></div>`],
+['G',20.98,'stamp',`<div class="e badge" style="top:300px"><span>الغلطة الثالثة</span></div>`],
+['G',22.5,'up',`<div class="e t" style="top:520px;font-size:120px;color:#fff">تشتري الأثاث</div>`],
+['G',23.46,'up',`<div class="e t" style="top:690px;font-size:120px;color:#fff">قبل ما <span class="hl" style="--hc:#111;color:#C9A24D">تقيس</span></div>`],
+['G',23.8,'slideL',`<img class="e c" src="as/c_tape.png" style="width:640px;left:220px;top:1000px">`],
+['H',24.66,'draw',`<svg style="left:240px;top:330px" width="600" height="420"><rect x="10" y="10" width="580" height="400" rx="8" fill="none" stroke="#111" stroke-width="10" stroke-dasharray="1" pathLength="1" stroke-dashoffset="1"/></svg>`],
+['H',24.9,'up',`<div class="e lbl" style="left:240px;width:600px;top:350px;font-size:64px;color:#111">المجلس</div>`],
+['H',25.44,'slideR',`<img class="e c" src="as/c_sofa.png" style="width:1000px;left:40px;top:480px">`],
+['H',26.14,'up',`<div class="e t" style="top:1010px;font-size:104px;color:#111">الكنب <span class="hl" style="--hc:#A8492B;color:#fff">أكبر</span> من المجلس!</div>`],
+['H',26.86,'pop',`<img class="e c" src="as/c_t_laugh.png" style="width:600px;left:240px;top:1190px">`],
+['I',27.8,'stamp',`<div class="e t" style="top:200px;font-size:220px;color:#C9A24D">الحل؟</div>`],
+['I',28.74,'up',`<div class="e t" style="top:500px;font-size:120px;color:#fff">صمّم <span class="hl" style="--hc:#C9A24D;color:#111">أوّل</span></div>`],
+['I',29.6,'up',`<div class="e t" style="top:680px;font-size:100px;color:#fff">ونفّذ مع جهة وحدة</div>`],
+['I',29.0,'pop',`<img class="e c" src="as/c_t_point.png" style="width:720px;left:180px;top:960px">`],
+['K',31.4,'pop',`<img class="e" src="as/logo_full.png" style="width:760px;left:160px;top:380px">`],
+['K',32.46,'up',`<div class="e t" style="top:820px;font-size:120px;color:#fff">تصميم <span style="color:#C9A24D">وتنفيذ</span></div>`],
+['K',34.2,'up',`<div class="e t" style="top:1010px;font-size:90px;color:#fff">من أوّل فكرة… <span class="hl" style="--hc:#A8492B">إلى التسليم</span></div>`],
+['K',35.6,'pop',`<div class="e t" style="top:1300px"><span class="pill">0579277975</span></div>`]];
+const cam=document.getElementById('cam');
+SC.forEach(([id,a,b,bg])=>{const d=document.createElement('div');d.className='sc';d.id='S'+id;d.style.background=bg;d.innerHTML='<div class="noise"></div>';cam.appendChild(d);});
+const EL=E.map(([s,at,an,h],i)=>{const w=document.createElement('div');w.innerHTML=h;const el=w.firstElementChild;document.getElementById('S'+s).appendChild(el);return {el,at,an,s,base:el.style.transform||''};});
+const cl=x=>Math.max(0,Math.min(1,x)),eo=x=>1-Math.pow(1-x,3),bo=x=>{const c1=2.2,c3=c1+1;return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2)};
+function hash(n){return Math.sin(n*127.1)*43758.5453%1}
+function render(TT){const t=TT-O; let shake=0, punch=0;
+ SC.forEach(([id,a,b])=>{const on=t>=a-0.001&&t<b; document.getElementById('S'+id).style.display=on?'block':'none'; if(on){const k=t-a; shake=Math.max(shake,Math.exp(-k*9)); punch=Math.exp(-k*7);} });
+ EL.forEach(({el,at,an})=>{const k=cl((t-at)/0.4); let op=t>=at?1:0, tr='';
+  if(an==='up'){tr=`translateY(${(1-eo(k))*80}px)`;op=cl((t-at)/0.2);}
+  else if(an==='pop'){tr=`scale(${t<at?0:bo(k)}) rotate(${Math.sin((t-at)*2.4)*1.5}deg)`;}
+  else if(an==='stamp'){const kk=cl((t-at)/0.25); tr=`scale(${2.4-1.4*eo(kk)}) rotate(${(1-kk)*12-2}deg)`;op=kk;}
+  else if(an==='drop'){tr=`translateY(${(1-bo(k))*-700}px)`;}
+  else if(an==='slideR'){tr=`translateX(${(1-eo(k))*900}px) rotate(${(1-eo(k))*10}deg)`;}
+  else if(an==='slideL'){tr=`translateX(${(1-eo(k))*-900}px) rotate(${(1-eo(k))*-10}deg)`;}
+  else if(an==='draw'){el.querySelectorAll('path,ellipse,rect').forEach(p=>p.setAttribute('stroke-dashoffset',1-eo(cl((t-at)/0.5))));}
+  if(an!=='draw'){el.style.transform=tr;} el.style.opacity=op;
+  el.querySelectorAll('.hl').forEach(h=>h.style.setProperty('--hx',eo(cl((t-at-0.15)/0.3))));
+  el.querySelectorAll('.lateDraw').forEach(p=>p.setAttribute('stroke-dashoffset',1-eo(cl((t-(+p.dataset.at))/0.4))));
+ });
+ const sx=Math.sin(t*90)*14*shake, sy=Math.cos(t*77)*10*shake; cam.style.transform=`translate(${sx}px,${sy}px) scale(${1+0.06*punch})`;
+}
+window.render=render; render(0);
+</script></body></html>
