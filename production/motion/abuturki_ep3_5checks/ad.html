@@ -21,51 +21,51 @@ svg{position:absolute;overflow:visible}
 <script>
 const O=0.3;
 const BLK='#121214',YEL='#F2C14E',RED='#E5383B',CRM='#F4EAD5',TEAL='#1FA39A';
-const SC=[['A',0,5.76,RED],['B',5.76,11.14,CRM],['C',11.14,15.62,YEL],['D',15.62,20.78,TEAL],['E',20.78,25.56,CRM],['F',25.56,28.42,BLK],['G',28.42,32.44,YEL],['K',32.44,38.9,BLK],['Z',38.9,99,BLK]];
+const SC=[['A',0,5.78,RED],['B',5.78,11.0,CRM],['C',11.0,15.22,YEL],['D',15.22,20.34,TEAL],['E',20.34,24.92,CRM],['F',24.92,27.62,BLK],['G',27.62,31.88,YEL],['K',31.88,38.4,BLK],['Z',38.4,99,BLK]];
 const N=(n)=>`<div class="e num" style="top:200px"><span>${n}</span></div>`;
 const E=[
 ['A',0,'up',`<div class="e t" style="top:220px;font-size:120px;color:#fff">لا تطلع من المعرض</div>`],
-['A',1.38,'up',`<div class="e t" style="top:390px;font-size:110px;color:#fff"><span class="hl" style="--hc:#111;color:#F2C14E">بسيارتك الجديدة</span></div>`],
-['A',3.16,'up',`<div class="e t" style="top:580px;font-size:84px;color:#fff">إلا بعد ما تشيّك على</div>`],
-['A',4.56,'stamp',`<div class="e t" style="top:700px;font-size:190px;color:#F2C14E">هالخمسة!</div>`],
+['A',1.42,'up',`<div class="e t" style="top:390px;font-size:110px;color:#fff"><span class="hl" style="--hc:#111;color:#F2C14E">بسيارتك الجديدة</span></div>`],
+['A',2.92,'up',`<div class="e t" style="top:580px;font-size:84px;color:#fff">إلا بعد ما تتأكّد من</div>`],
+['A',4.66,'stamp',`<div class="e t" style="top:700px;font-size:190px;color:#F2C14E">هالخمسة!</div>`],
 ['A',0.15,'pop',`<img class="e c" src="as/c_t_wait.png" style="width:720px;left:180px;top:1000px">`],
-['B',5.76,'stamp',N(1)],
-['B',6.64,'up',`<div class="e t" style="top:440px;font-size:130px;color:#111">البودي</div>`],
-['B',7.68,'pop',`<img class="e c" src="as/c_body.png" style="width:640px;left:220px;top:640px">`],
-['B',7.68,'up',`<div class="e t" style="top:1320px;font-size:80px;color:#111">لِف حولها في النور</div>`],
-['B',9.1,'up',`<div class="e t" style="top:1460px;font-size:96px;color:#111">وشوف الصبغ <span class="hl" style="--hc:#E5383B;color:#fff">والخدوش</span></div>`],
-['C',11.14,'stamp',N(2)],
-['C',11.9,'up',`<div class="e t" style="top:440px;font-size:130px;color:#111">الكفرات</div>`],
-['C',12.2,'slideR',`<img class="e c" src="as/c_tire.png" style="width:760px;left:160px;top:650px">`],
-['C',14.1,'draw',`<svg style="left:410px;top:985px" width="300" height="200"><ellipse cx="150" cy="100" rx="140" ry="80" fill="none" stroke="#E5383B" stroke-width="12" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/></svg>`],
-['C',13.08,'up',`<div class="e t" style="top:1400px;font-size:96px;color:#111">شوف <span class="hl" style="--hc:#fff">تاريخ الصنع</span></div>`],
-['D',15.62,'stamp',N(3)],
-['D',16.48,'up',`<div class="e t" style="top:440px;font-size:130px;color:#fff">الأوراق</div>`],
-['D',16.7,'pop',`<img class="e c" src="as/c_docs.png" style="width:600px;left:240px;top:640px">`],
-['D',17.48,'up',`<div class="e t" style="top:1280px;font-size:84px;color:#fff">الاستمارة ✔</div>`],
-['D',18.42,'up',`<div class="e t" style="top:1400px;font-size:84px;color:#fff">الضمان ✔</div>`],
-['D',19.14,'up',`<div class="e t" style="top:1520px;font-size:84px;color:#111">كتيّب السيارة ✔</div>`],
-['E',20.78,'stamp',N(4)],
-['E',21.64,'up',`<div class="e t" style="top:440px;font-size:130px;color:#111">الداخل</div>`],
-['E',21.9,'pop',`<img class="e c" src="as/c_dash.png" style="width:720px;left:180px;top:660px">`],
-['E',22.92,'pop',`<div class="e lbl" style="left:700px;width:340px;top:1320px;font-size:80px;color:#111"><span class="hl">الشاشة</span></div>`],
-['E',23.7,'pop',`<div class="e lbl" style="left:370px;width:340px;top:1320px;font-size:80px;color:#111"><span class="hl" style="--hc:#1FA39A;color:#fff">المكيّف</span></div>`],
-['E',24.44,'pop',`<div class="e lbl" style="left:40px;width:340px;top:1320px;font-size:80px;color:#111"><span class="hl" style="--hc:#E5383B;color:#fff">الكاميرا</span></div>`],
-['F',25.56,'stamp',`<div class="e t" style="top:260px;font-size:170px;color:#F2C14E">والخامس</div>`],
-['F',26.6,'up',`<div class="e t" style="top:520px;font-size:110px;color:#fff">ناس كثير <span class="hl" style="--hc:#E5383B">ينسونه!</span></div>`],
-['F',25.8,'pop',`<img class="e c" src="as/c_t_mag.png" style="width:720px;left:180px;top:900px">`],
-['G',28.42,'stamp',N(5)],
-['G',28.42,'up',`<div class="e t" style="top:440px;font-size:130px;color:#111">المفتاحين</div>`],
-['G',28.7,'pop',`<img class="e c" src="as/c_keys.png" style="width:600px;left:240px;top:640px">`],
-['G',29.3,'up',`<div class="e t" style="top:1330px;font-size:84px;color:#111">تأكّد إنك استلمت</div>`],
-['G',30.84,'up',`<div class="e t" style="top:1460px;font-size:100px;color:#111"><span class="hl" style="--hc:#111;color:#F2C14E">المفتاح الاحتياطي</span></div>`],
-['K',32.64,'pop',`<img class="e" src="as/logo_full.png" style="width:660px;left:210px;top:220px">`],
-['K',33.92,'up',`<div class="e t" style="top:470px;font-size:96px;color:#fff">نسلّمك سيارتك <span style="color:#F2C14E">جاهزة</span></div>`],
-['K',35.64,'up',`<div class="e t" style="top:640px;font-size:84px;color:#fff">وموظّفينا يشيّكون معك</div>`],
-['K',37.4,'pop',`<div class="e t" style="top:790px;font-size:110px;color:#fff"><span class="hl" style="--hc:#E5383B">خطوة بخطوة</span></div>`],
-['K',34.2,'pop',`<img class="e c" src="as/c_t_clap.png" style="width:660px;left:210px;top:1040px">`],
-['Z',38.9,'pop',`<img class="e" src="as/logo_full.png" style="width:760px;left:160px;top:640px">`],
-['Z',39.1,'pop',`<div class="e t" style="top:1000px"><span class="pill">920018915</span></div>`]];
+['B',5.78,'stamp',N(1)],
+['B',6.64,'up',`<div class="e t" style="top:440px;font-size:130px;color:#111">الصبغ</div>`],
+['B',7.58,'pop',`<img class="e c" src="as/c_body.png" style="width:640px;left:220px;top:640px">`],
+['B',7.58,'up',`<div class="e t" style="top:1320px;font-size:80px;color:#111">لِف حولها في النور</div>`],
+['B',8.84,'up',`<div class="e t" style="top:1460px;font-size:96px;color:#111">ودوّر على <span class="hl" style="--hc:#E5383B;color:#fff">أي خدش</span></div>`],
+['C',11.0,'stamp',N(2)],
+['C',11.7,'up',`<div class="e t" style="top:440px;font-size:130px;color:#111">الكفرات</div>`],
+['C',11.9,'slideR',`<img class="e c" src="as/c_tire.png" style="width:760px;left:160px;top:650px">`],
+['C',13.86,'draw',`<svg style="left:410px;top:985px" width="300" height="200"><ellipse cx="150" cy="100" rx="140" ry="80" fill="none" stroke="#E5383B" stroke-width="12" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/></svg>`],
+['C',12.82,'up',`<div class="e t" style="top:1400px;font-size:96px;color:#111">شوف <span class="hl" style="--hc:#fff">تاريخ الصنع</span></div>`],
+['D',15.22,'stamp',N(3)],
+['D',16.12,'up',`<div class="e t" style="top:440px;font-size:130px;color:#fff">الأوراق</div>`],
+['D',16.4,'pop',`<img class="e c" src="as/c_docs.png" style="width:600px;left:240px;top:640px">`],
+['D',17.1,'up',`<div class="e t" style="top:1280px;font-size:84px;color:#fff">الاستمارة ✔</div>`],
+['D',18.0,'up',`<div class="e t" style="top:1400px;font-size:84px;color:#fff">الضمان ✔</div>`],
+['D',18.72,'up',`<div class="e t" style="top:1520px;font-size:84px;color:#111">كتيّب السيارة ✔</div>`],
+['E',20.34,'stamp',N(4)],
+['E',21.12,'up',`<div class="e t" style="top:440px;font-size:130px;color:#111">الداخل</div>`],
+['E',21.4,'pop',`<img class="e c" src="as/c_dash.png" style="width:720px;left:180px;top:660px">`],
+['E',22.34,'pop',`<div class="e lbl" style="left:700px;width:340px;top:1320px;font-size:80px;color:#111"><span class="hl">الشاشة</span></div>`],
+['E',23.14,'pop',`<div class="e lbl" style="left:370px;width:340px;top:1320px;font-size:80px;color:#111"><span class="hl" style="--hc:#1FA39A;color:#fff">المكيّف</span></div>`],
+['E',23.88,'pop',`<div class="e lbl" style="left:40px;width:340px;top:1320px;font-size:80px;color:#111"><span class="hl" style="--hc:#E5383B;color:#fff">الكاميرا</span></div>`],
+['F',24.92,'stamp',`<div class="e t" style="top:260px;font-size:170px;color:#F2C14E">والخامس</div>`],
+['F',25.94,'up',`<div class="e t" style="top:520px;font-size:110px;color:#fff">ناس كثير <span class="hl" style="--hc:#E5383B">ينسونه!</span></div>`],
+['F',25.1,'pop',`<img class="e c" src="as/c_t_mag.png" style="width:720px;left:180px;top:900px">`],
+['G',27.62,'stamp',N(5)],
+['G',27.62,'up',`<div class="e t" style="top:440px;font-size:130px;color:#111">المفتاحين</div>`],
+['G',27.9,'pop',`<img class="e c" src="as/c_keys.png" style="width:600px;left:240px;top:640px">`],
+['G',28.96,'up',`<div class="e t" style="top:1330px;font-size:84px;color:#111">تأكّد إنك استلمت</div>`],
+['G',30.26,'up',`<div class="e t" style="top:1460px;font-size:100px;color:#111"><span class="hl" style="--hc:#111;color:#F2C14E">المفتاح الاحتياطي</span></div>`],
+['K',32.08,'pop',`<img class="e" src="as/logo_full.png" style="width:660px;left:210px;top:220px">`],
+['K',33.38,'up',`<div class="e t" style="top:470px;font-size:96px;color:#fff">نسلّمك سيارتك <span style="color:#F2C14E">جاهزة</span></div>`],
+['K',35.14,'up',`<div class="e t" style="top:640px;font-size:84px;color:#fff">وموظّفينا يراجعونها معك</div>`],
+['K',37.04,'pop',`<div class="e t" style="top:790px;font-size:110px;color:#fff"><span class="hl" style="--hc:#E5383B">خطوة بخطوة</span></div>`],
+['K',33.6,'pop',`<img class="e c" src="as/c_t_clap.png" style="width:660px;left:210px;top:1040px">`],
+['Z',38.4,'pop',`<img class="e" src="as/logo_full.png" style="width:760px;left:160px;top:640px">`],
+['Z',38.6,'pop',`<div class="e t" style="top:1000px"><span class="pill">920018915</span></div>`]];
 const cam=document.getElementById('cam');
 SC.forEach(([id,a,b,bg])=>{const d=document.createElement('div');d.className='sc';d.id='S'+id;d.style.background=bg;d.innerHTML='<div class="noise"></div>';cam.appendChild(d);});
 const EL=E.map(([s,at,an,h],i)=>{const w=document.createElement('div');w.innerHTML=h;const el=w.firstElementChild;document.getElementById('S'+s).appendChild(el);return {el,at,an,s,base:el.style.transform||''};});
@@ -84,7 +84,7 @@ function render(TT){const t=TT-O; let shake=0, punch=0;
   el.querySelectorAll('.hl').forEach(h=>h.style.setProperty('--hx',eo(cl((t-at-0.15)/0.3))));
   el.querySelectorAll('.lateDraw').forEach(p=>p.setAttribute('stroke-dashoffset',1-eo(cl((t-(+p.dataset.at))/0.4))));
  });
- const sx=Math.sin(t*90)*14*shake, sy=Math.cos(t*77)*10*shake; document.getElementById('tag').style.opacity=t>=38.9?0:1; cam.style.transform=`translate(${sx}px,${sy}px) scale(${1+0.06*punch})`;
+ const sx=Math.sin(t*90)*14*shake, sy=Math.cos(t*77)*10*shake; document.getElementById('tag').style.opacity=t>=38.4?0:1; cam.style.transform=`translate(${sx}px,${sy}px) scale(${1+0.06*punch})`;
 }
 window.render=render; render(0);
 </script></body></html>
