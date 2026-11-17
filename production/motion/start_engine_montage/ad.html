@@ -1,0 +1,69 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;700;800;900&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#000;font-family:Tajawal}
+.ph{position:absolute;inset:0;overflow:hidden}
+.ph img{position:absolute;left:0;top:0;width:1080px;height:1920px;object-fit:cover;transform-origin:50% 50%}
+.grade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,.45) 0%,rgba(0,0,0,0) 28%,rgba(0,0,0,0) 55%,rgba(0,0,0,.7) 100%)}
+.tx{position:absolute;left:0;right:0;direction:rtl;text-align:center;color:#fff;font-weight:900;overflow:hidden;line-height:1.4;padding:14px 40px 0}
+.tx span{display:inline-block}
+.g{color:#E2B654}
+.bar{position:absolute;height:8px;background:#E2B654;left:50%;transform:translateX(-50%)}
+.lbl{position:absolute;left:0;right:0;text-align:center;direction:rtl;font-weight:800;color:#E2B654;letter-spacing:2px}
+#flash{position:absolute;inset:0;background:#fff;opacity:0;pointer-events:none}
+#leak{position:absolute;inset:-200px;background:radial-gradient(circle at 20% 30%,rgba(255,150,40,.55),rgba(255,120,0,0) 45%),radial-gradient(circle at 85% 70%,rgba(255,200,90,.35),rgba(0,0,0,0) 40%);mix-blend-mode:screen;opacity:0}
+.grid{position:absolute;inset:0;display:none}
+.grid img{position:absolute;width:540px;height:960px;object-fit:cover}
+#end{position:absolute;inset:0;background:rgba(8,8,10,.78);opacity:0;display:flex;flex-direction:column;align-items:center;justify-content:center;direction:rtl}
+#end img{width:640px}
+.btn{margin-top:60px;background:#E2B654;color:#111;font-size:80px;font-weight:900;border-radius:90px;padding:18px 90px}
+.num{margin-top:40px;color:#fff;font-family:Arial;font-weight:900;font-size:66px;letter-spacing:6px}
+.wm{position:absolute;top:60px;left:0;right:0;text-align:center}.wm img{width:260px;opacity:.95}
+</style></head><body>
+<div id="stage"></div>
+<div class="grid" id="grid"><img src="ph/p04.png" style="left:0;top:0"><img src="ph/p05.png" style="left:540px;top:0"><img src="ph/p06.png" style="left:0;top:960px"><img src="ph/p07.png" style="left:540px;top:960px"></div>
+<div id="texts"></div>
+<div id="leak"></div>
+<div class="wm"><img src="ph/logo_full.png"></div>
+<div id="end"><img src="ph/logo_full.png"><div class="btn">سجّل الآن</div><div class="num">920018915</div></div>
+<div id="flash"></div>
+<script>
+const O=0.2;
+// scenes: img, start, end, zoomFrom, zoomTo, panX, panY, inType
+const S=[['p01',0,1.86,1.25,1.05,0,0,'none'],['p02',1.86,3.48,1.0,1.15,0,0,'flash'],['p03',3.48,4.84,1.2,1.05,-30,0,'punch'],
+['p04',4.84,5.86,1.12,1.0,40,0,'whipL'],['p05',5.86,6.62,1.12,1.0,-40,0,'whipR'],['p06',6.62,7.44,1.12,1.0,40,0,'whipL'],['p07',7.44,8.24,1.12,1.0,-40,0,'whipR'],
+['GRID',8.24,9.12,1,1,0,0,'punch'],['p08',9.12,11.74,1.0,1.18,0,-40,'flash'],['p09',11.74,13.7,1.25,1.0,0,0,'punch'],['p10',13.7,99,1.0,1.15,0,30,'whipL']];
+// texts: html, at, out, top, size, kind
+const T=[['اضغط',0,0.84,1250,170],['<span class="g">تشغيل</span>',0.84,1.86,1250,190],
+['وِجهتك الجاية؟',1.86,3.48,1300,130],['سيارة <span class="g">جديدة</span>',3.48,4.84,1300,150],
+['عائلية',4.84,5.86,1480,170],['بيكاب',5.86,6.62,1480,170],['فخمة',6.62,7.44,1480,170],['اقتصادية',7.44,8.24,1480,160],
+['<span style="background:#E2B654;color:#111;padding:0 50px;border-radius:30px">اختار</span>',8.24,9.12,830,190],
+['<span class="g">كاش</span> أو <span class="g">تمويل</span>',9.12,11.74,1260,150],['اللي يريحك',10.88,11.74,1460,100],
+['الوِجهة: <span class="g">ماكس موتورز</span>',12.0,13.7,1330,110],['سجّل بياناتك',13.7,15.2,1260,140],['وخلّنا نوصّلك <span class="g">لسيارتك</span>',15.2,16.6,1260,110]];
+const st=document.getElementById('stage'), tx=document.getElementById('texts');
+S.forEach(s=>{if(s[0]==='GRID')return; const d=document.createElement('div');d.className='ph';d.id='S'+s[0];d.innerHTML=`<img src="ph/${s[0]}.png"><div class="grade"></div>`;st.appendChild(d);});
+T.forEach((t,i)=>{const d=document.createElement('div');d.className='tx';d.id='T'+i;d.style.top=t[3]+'px';d.style.fontSize=t[4]+'px';d.innerHTML=`<span>${t[0]}</span>`;tx.appendChild(d);
+ const b=document.createElement('div');b.className='bar';b.id='B'+i;b.style.top=(t[3]+t[4]*1.45+14)+'px';tx.appendChild(b);});
+const cl=x=>Math.max(0,Math.min(1,x)),eo=x=>1-Math.pow(1-x,3),eio=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2;
+function render(TT){const t=TT-O; let flash=0;
+ S.forEach(([id,a,b,z0,z1,px,py,ty])=>{const on=t>=a-0.001&&t<b; if(id==='GRID'){const g=document.getElementById('grid');g.style.display=on?'block':'none';
+   if(on){const k=cl((t-a)/0.35); [...g.children].forEach((im,i)=>{const kk=eo(cl((t-a-i*0.06)/0.3)); im.style.transform=`scale(${0.6+0.4*kk})`; im.style.opacity=kk;});} return;}
+  const el=document.getElementById('S'+id); el.style.display=on?'block':'none'; if(!on)return;
+  const dur=Math.min(b,a+3)-a; const k=cl((t-a)/dur); const z=z0+(z1-z0)*eio(k);
+  let tr=`translate(${px*k}px,${py*k}px) scale(${z})`, filt='';
+  const ki=cl((t-a)/0.28);
+  if(ty==='punch'){tr=`scale(${z*(1.25-0.25*eo(ki))})`;}
+  if(ty==='whipL'||ty==='whipR'){const dir=ty==='whipL'?-1:1; tr=`translateX(${dir*(1-eo(ki))*1100}px) scale(${z})`; filt=`blur(${(1-ki)*18}px)`;}
+  if(ty==='flash'&&ki<1) flash=Math.max(flash,(1-ki)*0.9);
+  el.firstChild.style.transform=tr; el.firstChild.style.filter=filt;});
+ T.forEach(([h,a,b],i)=>{const el=document.getElementById('T'+i), bar=document.getElementById('B'+i); const on=t>=a&&t<b+0.0; el.style.display=on?'block':'none'; bar.style.display=on?'block':'none'; if(!on)return;
+  const k=eo(cl((t-a)/0.35)); el.firstChild.style.transform=`translateY(${(1-k)*110}%)`; bar.style.width=(k*220)+'px';});
+ // light leak pulses at transitions
+ const lk=[1.86,3.48,9.12,11.74,13.7].reduce((m,x)=>Math.max(m,Math.exp(-Math.pow((t-x)/0.35,2))),0); document.getElementById('leak').style.opacity=lk*0.9;
+ // end card
+ const ke=cl((t-16.6)/0.5); const e=document.getElementById('end'); e.style.opacity=ke; e.style.transform=`scale(${1.08-0.08*eo(ke)})`;
+ document.querySelector('.wm').style.opacity=1-ke;
+ document.getElementById('flash').style.opacity=flash;
+}
+window.render=render; render(0);
+</script></body></html>
