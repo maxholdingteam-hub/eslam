@@ -1,0 +1,82 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@700;800;900&family=Lalezar&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#111;font-family:Tajawal}
+#cam{position:absolute;inset:0;transform-origin:50% 50%}
+.sc{position:absolute;inset:0;overflow:hidden;display:none}
+.noise{position:absolute;inset:0;background:url(as/noise.png);opacity:.18;mix-blend-mode:multiply}
+.e{position:absolute;will-change:transform,opacity}
+.t{direction:rtl;text-align:center;font-family:Lalezar,Tajawal;line-height:1.15;white-space:nowrap;left:0;right:0}
+.hl{position:relative;display:inline-block;padding:0 22px}
+.hl::before{content:'';position:absolute;left:0;right:0;top:22%;bottom:8%;background:var(--hc,#F2C14E);transform:skew(-8deg) scaleX(var(--hx,1));transform-origin:right;z-index:-1;border-radius:6px}
+img.c{filter:drop-shadow(0 16px 18px rgba(0,0,0,.35))}
+.badge{left:0;right:0;text-align:center}
+.badge span{display:inline-block;background:#111;color:#F2C14E;font-family:Lalezar,Tajawal;font-size:96px;padding:18px 60px 6px;border-radius:24px;transform:rotate(-3deg);box-shadow:10px 10px 0 rgba(0,0,0,.25)}
+.pill{display:inline-block;background:#F2C14E;color:#111;border-radius:80px;padding:14px 70px;font-family:Arial;font-weight:900;font-size:72px;letter-spacing:4px}
+svg{position:absolute;overflow:visible}
+.lbl{direction:rtl;text-align:center;font-family:Lalezar,Tajawal}
+.num{left:0;right:0;text-align:center}.num span{display:inline-block;width:210px;height:210px;line-height:250px;border-radius:50%;background:#111;color:#F2C14E;font-family:Lalezar;font-size:170px;box-shadow:10px 10px 0 rgba(0,0,0,.2)}
+#tag{position:absolute;top:70px;left:0;right:0;text-align:center;z-index:9}#tag span{display:inline-block;direction:rtl;background:#111;color:#fff;font-family:Tajawal;font-weight:800;font-size:40px;padding:10px 32px;border-radius:40px}#tag b{color:#F2C14E}
+</style></head><body><div id="cam"></div><div id="tag"><span><b>أبو تركي يختصرها</b> · حلقة خاصة · تحدّي</span></div>
+<script>
+const O=0.3;
+const BLK='#121214',YEL='#F2C14E',RED='#E5383B',CRM='#F4EAD5',TEAL='#1FA39A';
+const SC=[['A',0,4.74,YEL],['B',4.74,7.66,CRM],['C',7.66,12.04,RED],['D',12.04,16.64,TEAL],['E',16.64,19.08,BLK],['K',19.08,23.4,CRM],['Z',23.4,99,BLK]];
+const CAR=(n,w,l,t)=>`<img class="e c" src="as/s_${n}.png" style="width:${w}px;left:${l}px;top:${t}px">`;
+const CARC=(n,w,l,t)=>`<img class="e c" src="as/c_${n}.png" style="width:${w}px;left:${l}px;top:${t}px">`;
+const E=[
+['A',0,'up',`<div class="e t" style="top:230px;font-size:140px;color:#111">خمّن السيارة</div>`],
+['A',1.56,'stamp',`<div class="e t" style="top:420px;font-size:170px;color:#fff"><span class="hl" style="--hc:#111;color:#F2C14E">من ظلّها!</span></div>`],
+['A',2.66,'up',`<div class="e t" style="top:690px;font-size:80px;color:#111">أبو تركي يتحدّاك 😏</div>`],
+['A',0.1,'pop',`<img class="e c" src="as/c_t_dare.png" style="width:700px;left:190px;top:960px">`],
+['A',2.0,'pop',`<div class="e t" style="top:900px;left:60px;right:auto;font-size:200px;color:#E5383B">؟</div>`],
+['A',2.3,'pop',`<div class="e t" style="top:1000px;left:auto;right:70px;font-size:160px;color:#111">؟</div>`],
+['B',4.74,'up',`<div class="e t" style="top:300px;font-size:110px;color:#111">الأولى <span class="hl" style="--hc:#E5383B;color:#fff">سهلة؟</span></div>`],
+['B',4.9,'pop',CAR('patrol',920,80,620)],
+['B',6.22,'fade',CARC('patrol',920,80,620)],
+['B',6.22,'stamp',`<div class="e t" style="top:1240px;font-size:130px;color:#fff"><span class="hl" style="--hc:#111;color:#F2C14E">نيسان باترول</span></div>`],
+['C',7.66,'up',`<div class="e t" style="top:300px;font-size:120px;color:#fff">الثانية</div>`],
+['C',7.8,'pop',CAR('camry',980,50,700)],
+['C',8.64,'up',`<div class="e t" style="top:470px;font-size:84px;color:#fff">سيدان الكل يعرفها</div>`],
+['C',10.68,'fade',CARC('camry',980,50,700)],
+['C',10.68,'stamp',`<div class="e t" style="top:1180px;font-size:130px;color:#fff"><span class="hl" style="--hc:#111;color:#F2C14E">تويوتا كامري</span></div>`],
+['D',12.04,'up',`<div class="e t" style="top:300px;font-size:120px;color:#fff">والثالثة</div>`],
+['D',12.2,'pop',CAR('hummer',900,90,700)],
+['D',12.98,'up',`<div class="e t" style="top:470px;font-size:84px;color:#111">كهربائية وما لها صوت</div>`],
+['D',15.18,'fade',CARC('hummer',900,90,700)],
+['D',15.18,'stamp',`<div class="e t" style="top:1140px;font-size:120px;color:#fff"><span class="hl" style="--hc:#111;color:#F2C14E">جي إم سي همر</span></div>`],
+['E',16.64,'up',`<div class="e t" style="top:300px;font-size:120px;color:#fff">كم وحدة <span style="color:#F2C14E">عرفت؟</span></div>`],
+['E',17.82,'pop',`<div class="e t" style="top:500px;font-size:110px;color:#fff"><span class="hl" style="--hc:#E5383B">اكتب لنا تحت 👇</span></div>`],
+['E',16.8,'pop',`<img class="e c" src="as/c_t_ear.png" style="width:720px;left:180px;top:900px">`],
+['K',19.08,'up',`<div class="e t" style="top:230px;font-size:100px;color:#111">وكلها متوفرة في</div>`],
+['K',20.3,'pop',`<div class="e" style="left:150px;top:390px;width:780px;height:290px;background:#121214;border-radius:30px;display:flex;align-items:center;justify-content:center"><img src="as/logo_full.png" style="width:660px"></div>`],
+['K',21.48,'stamp',`<div class="e t" style="top:740px;font-size:130px;color:#111"><span class="hl" style="--hc:#F2C14E">كاش أو تمويل</span></div>`],
+['K',19.2,'slideR',CARC('patrol',380,680,1000)],
+['K',19.35,'slideL',CARC('hummer',380,30,1020)],
+['K',19.5,'pop',CARC('camry',440,320,1190)],
+['K',20.0,'pop',`<img class="e c" src="as/c_t_wow.png" style="width:520px;left:280px;top:1390px">`],
+['Z',23.4,'pop',`<img class="e" src="as/logo_full.png" style="width:760px;left:160px;top:640px">`],
+['Z',23.6,'pop',`<div class="e t" style="top:1000px"><span class="pill">920018915</span></div>`]];
+const cam=document.getElementById('cam');
+SC.forEach(([id,a,b,bg])=>{const d=document.createElement('div');d.className='sc';d.id='S'+id;d.style.background=bg;d.innerHTML='<div class="noise"></div>';cam.appendChild(d);});
+const EL=E.map(([s,at,an,h],i)=>{const w=document.createElement('div');w.innerHTML=h;const el=w.firstElementChild;document.getElementById('S'+s).appendChild(el);return {el,at,an,s,base:el.style.transform||''};});
+const cl=x=>Math.max(0,Math.min(1,x)),eo=x=>1-Math.pow(1-x,3),bo=x=>{const c1=2.2,c3=c1+1;return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2)};
+function hash(n){return Math.sin(n*127.1)*43758.5453%1}
+function render(TT){const t=TT-O; let shake=0, punch=0;
+ SC.forEach(([id,a,b])=>{const on=t>=a-0.001&&t<b; document.getElementById('S'+id).style.display=on?'block':'none'; if(on){const k=t-a; shake=Math.max(shake,Math.exp(-k*9)); punch=Math.exp(-k*7);} });
+ EL.forEach(({el,at,an})=>{const k=cl((t-at)/0.4); let op=t>=at?1:0, tr='';
+  if(an==='up'){tr=`translateY(${(1-eo(k))*80}px)`;op=cl((t-at)/0.2);}
+  else if(an==='pop'){tr=`scale(${t<at?0:bo(k)}) rotate(${Math.sin((t-at)*2.4)*1.5}deg)`;}
+  else if(an==='stamp'){const kk=cl((t-at)/0.25); tr=`scale(${2.4-1.4*eo(kk)}) rotate(${(1-kk)*12-2}deg)`;op=kk;}
+  else if(an==='fade'){op=cl((t-at)/0.22); tr=`scale(${1+0.08*(1-eo(cl((t-at)/0.5)))})`;}
+  else if(an==='slideR'){tr=`translateX(${(1-eo(k))*900}px) rotate(${(1-eo(k))*10}deg)`;}
+  else if(an==='slideL'){tr=`translateX(${(1-eo(k))*-900}px) rotate(${(1-eo(k))*-10}deg)`;}
+  else if(an==='draw'){el.querySelectorAll('path,ellipse').forEach(p=>p.setAttribute('stroke-dashoffset',1-eo(cl((t-at)/0.5))));}
+  if(an!=='draw'){el.style.transform=tr;} el.style.opacity=op;
+  el.querySelectorAll('.hl').forEach(h=>h.style.setProperty('--hx',eo(cl((t-at-0.15)/0.3))));
+  el.querySelectorAll('.lateDraw').forEach(p=>p.setAttribute('stroke-dashoffset',1-eo(cl((t-(+p.dataset.at))/0.4))));
+ });
+ const sx=Math.sin(t*90)*14*shake, sy=Math.cos(t*77)*10*shake; document.getElementById('tag').style.opacity=t>=23.4?0:1; cam.style.transform=`translate(${sx}px,${sy}px) scale(${1+0.06*punch})`;
+}
+window.render=render; render(0);
+</script></body></html>
