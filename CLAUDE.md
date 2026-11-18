@@ -45,5 +45,6 @@ Marketing content for **Max Motors** (Saudi car dealer) and its sister brand **M
   - Ep. 2, cash or finance: `explainer_cash_or_finance`
   - Ep. 3, 5 checks before you drive off: `abuturki_ep3_5checks`
   - Ep. 4, first week (part 2): `abuturki_ep4_firstweek`
+  - Special (promo), why Max Motors: `abuturki_special_whymaxmotors`
 - **Finished videos:** `MaxMotors_Ads/`, `MaxMotors_Reels/`, `MaxDesign/`.
 - **Site listings:** `MaxMotors_Site_Listings/<Brand>/<Model>` (full quality), a `_مضغوط` folder (compressed) and a zip, plus `بيانات_السيارة.txt`.
