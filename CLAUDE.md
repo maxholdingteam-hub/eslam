@@ -9,7 +9,7 @@ Marketing content for **Max Motors** (Saudi car dealer) and its sister brand **M
 - **Campaign messaging:** "كاش أو تمويل" only. No prices and no offers.
 - **Don't repeat:** use a new style, assets and music in every video.
 - **Captions:** always deliver a caption with every video, and a cover when asked.
-- **Presenter:** use Abu Turki (Max Motors' presenter) instead of AI people. His reference photo is `production/tools/abu_turki_ref.png`; new expressions are made with Higgsfield edits. He has to approve the edited expressions.
+- **Presenter:** use Abu Turki (Max Motors' presenter) instead of AI people. **Update: never say or write his name** (not in voiceover, on-screen text, tags or captions); keep using his photos as usual. His reference photo is `production/tools/abu_turki_ref.png`; new expressions are made with Higgsfield edits. He has to approve the edited expressions.
 - **Site listings:** skip any car with no interior photo. When the source is a competitor such as Emad Al-Din, use their photos as a design reference only: generate new images in our template and never take their logos, plates or watermarks.
 
 ## Voiceover (important)
@@ -41,7 +41,7 @@ Marketing content for **Max Motors** (Saudi car dealer) and its sister brand **M
 
 ## Project files
 - Every video lives in `production/motion/<name>/` (`ad.html`, `cover.html`, `as/`, `voiceover.mp3`).
-- **The «أبو تركي يختصرها» series (explainer style, paper cut-outs):**
+- **The explainer series (paper cut-outs).** It used to be called «أبو تركي يختصرها»; new episodes use the tag «نختصرها لك» without his name:
   - Ep. 1, 3 questions: `explainer_3questions`
   - Ep. 2, cash or finance: `explainer_cash_or_finance`
   - Ep. 3, 5 checks before you drive off: `abuturki_ep3_5checks`
@@ -49,5 +49,6 @@ Marketing content for **Max Motors** (Saudi car dealer) and its sister brand **M
   - Special (promo), why Max Motors: `abuturki_special_whymaxmotors`
   - Special (promo), guess the car from its silhouette: `abuturki_special_guessthecar`
   - Challenge: 6-second quiz (5 zoomed details, countdown, score): `abuturki_quiz_6seconds`
+- **Promo, 4 steps on a board-game road map (no name):** `promo_4steps_roadmap`
 - **Finished videos:** `MaxMotors_Ads/`, `MaxMotors_Reels/`, `MaxDesign/`.
 - **Site listings:** `MaxMotors_Site_Listings/<Brand>/<Model>` (full quality), a `_مضغوط` folder (compressed) and a zip, plus `بيانات_السيارة.txt`.

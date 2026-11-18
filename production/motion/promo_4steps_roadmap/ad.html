@@ -1,0 +1,92 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@700;800;900&family=Lalezar&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#F4EAD5;font-family:Tajawal}
+#world{position:absolute;left:0;top:0;width:1080px;height:3800px;background:#F4EAD5}
+#world .noise{position:absolute;inset:0;background:url(as/noise.png);opacity:.22;mix-blend-mode:multiply}
+.grid{position:absolute;inset:0;background-image:linear-gradient(rgba(0,0,0,.05) 2px,transparent 2px),linear-gradient(90deg,rgba(0,0,0,.05) 2px,transparent 2px);background-size:90px 90px}
+svg#road{position:absolute;left:0;top:0;overflow:visible}
+.e{position:absolute;will-change:transform,opacity}
+.t{direction:rtl;text-align:center;font-family:Lalezar,Tajawal;line-height:1.15;white-space:nowrap}
+.hl{position:relative;display:inline-block;padding:0 20px;isolation:isolate}
+.hl::before{content:'';position:absolute;left:0;right:0;top:22%;bottom:8%;background:var(--hc,#F2C14E);transform:skew(-8deg);z-index:-1;border-radius:6px}
+img.c{filter:drop-shadow(0 14px 16px rgba(0,0,0,.3))}
+.pin{width:150px;height:150px;border-radius:50%;background:#111;color:#F2C14E;font-family:Lalezar;font-size:110px;display:flex;align-items:center;justify-content:center;padding-top:14px;box-sizing:border-box;border:8px solid #fff;box-shadow:0 10px 20px rgba(0,0,0,.3)}
+.card{background:#fff;border-radius:28px;padding:22px 26px;box-shadow:10px 10px 0 rgba(0,0,0,.15);border:5px solid #111}
+#token{position:absolute;width:150px;left:0;top:0;transform-origin:50% 50%;z-index:5}
+#over,#end{position:absolute;inset:0;pointer-events:none}
+#end{background:#121214;opacity:0}
+.pill{display:inline-block;background:#F2C14E;color:#111;border-radius:80px;padding:14px 70px;font-family:Arial;font-weight:900;font-size:72px;letter-spacing:4px}
+#tag{position:absolute;top:70px;left:0;right:0;text-align:center;z-index:9}#tag span{display:inline-block;direction:rtl;background:#111;color:#fff;font-weight:800;font-size:40px;padding:10px 32px;border-radius:40px}#tag b{color:#F2C14E}
+</style></head><body>
+<div id="world"><div class="grid"></div><div class="noise"></div>
+<svg id="road" width="1080" height="3800">
+ <path id="rp" d="M540 3700 C 540 3350, 260 3200, 280 2900 C 300 2600, 800 2450, 790 2150 C 780 1850, 280 1700, 290 1400 C 300 1100, 720 950, 720 640" fill="none" stroke="#3a3a3e" stroke-width="120" stroke-linecap="round"/>
+ <path d="M540 3700 C 540 3350, 260 3200, 280 2900 C 300 2600, 800 2450, 790 2150 C 780 1850, 280 1700, 290 1400 C 300 1100, 720 950, 720 640" fill="none" stroke="#fff" stroke-width="8" stroke-dasharray="40 34" opacity=".85"/>
+ <path id="trail" d="M540 3700 C 540 3350, 260 3200, 280 2900 C 300 2600, 800 2450, 790 2150 C 780 1850, 280 1700, 290 1400 C 300 1100, 720 950, 720 640" fill="none" stroke="#F2C14E" stroke-width="20" stroke-linecap="round" opacity=".9"/>
+</svg>
+<img id="token" src="as/c_topcar.png">
+</div>
+<div id="over"></div>
+<div id="end"></div>
+<div id="tag"><span><b>نختصرها لك</b> · 4 خطوات</span></div>
+<script>
+// world elements: [at, anim, html]
+const W=[
+[4.86,'pop',`<div class="e pin" style="left:60px;top:2830px">1</div>`],
+[5.2,'pop',`<div class="e card t" style="left:470px;top:2600px;width:520px;font-size:62px">تجي <span class="hl">ماكس موتورز</span></div>`],
+[6.86,'up',`<div class="e t" style="left:470px;top:2770px;width:570px;font-size:60px;color:#111">وتختار من ماركات كثيرة</div>`],
+[7.6,'pop',`<img class="e c" src="as/c_car1.png" style="width:420px;left:600px;top:2880px">`],
+[7.9,'pop',`<img class="e c" src="as/c_car2.png" style="width:420px;left:520px;top:3060px">`],
+[8.2,'pop',`<img class="e c" src="as/c_car3.png" style="width:380px;left:660px;top:3240px">`],
+[9.42,'pop',`<div class="e pin" style="left:880px;top:2080px">2</div>`],
+[9.8,'pop',`<img class="e c" src="as/c_wallet.png" style="width:420px;left:60px;top:1850px">`],
+[10.98,'pop',`<div class="e card t" style="left:40px;top:2200px;width:520px;font-size:76px">كاش أو تمويل</div>`],
+[12.9,'pop',`<div class="e pin" style="left:60px;top:1330px">3</div>`],
+[13.2,'pop',`<img class="e c" src="as/c_folder.png" style="width:420px;left:560px;top:1120px">`],
+[13.76,'pop',`<div class="e card t" style="left:470px;top:1500px;width:540px;font-size:56px">موظّفينا يجهّزون لك<br><span class="hl">الأوراق</span></div>`],
+[16.16,'pop',`<div class="e pin" style="left:860px;top:560px">4</div>`],
+[16.3,'pop',`<img class="e c" src="as/c_flag.png" style="width:240px;left:830px;top:330px">`],
+[17.6,'pop',`<div class="e card t" style="left:40px;top:480px;width:560px;font-size:64px">تستلم <span class="hl" style="--hc:#E5383B;color:#fff">مفتاحك</span></div>`],
+[17.3,'pop',`<img class="e c" src="as/c_t_key.png" style="width:440px;left:100px;top:720px">`],
+[18.4,'stamp',`<div class="e t" style="left:40px;top:615px;width:560px;font-size:90px;color:#111">وتمشي!</div>`]];
+// screen overlays
+const S=[
+[0,'up',`<div class="e t" style="left:0;right:0;top:230px;text-align:center"><span class="card" style="display:inline-block;font-size:120px;color:#111;padding:10px 40px 0">سيارتك الجديدة</span></div>`,4.7],
+[2.04,'stamp',`<div class="e t" style="left:0;right:0;top:470px;font-size:96px;color:#fff"><span style="display:inline-block;background:#111;color:#F2C14E;padding:12px 36px 0;border-radius:18px;transform:rotate(-2deg)">بينك وبينها 4 خطوات بس!</span></div>`,4.7],
+[0.2,'pop',`<img class="e c" src="as/c_t_map.png" style="width:760px;left:160px;top:960px">`,4.7]];
+const E2=[
+[19.56,'pop',`<img class="e" src="as/logo_full.png" style="width:720px;left:180px;top:560px">`,22.9],
+[20.9,'up',`<div class="e t" style="left:0;right:0;top:900px;font-size:120px;color:#fff">أسهل <span class="hl" style="--hc:#E5383B">مشوار</span></div>`,22.9],
+[21.5,'up',`<div class="e t" style="left:0;right:0;top:1080px;font-size:110px;color:#F2C14E">لسيارتك</div>`,22.9],
+[22.9,'pop',`<img class="e" src="as/logo_full.png" style="width:760px;left:160px;top:640px">`,99],
+[23.1,'pop',`<div class="e t" style="left:0;right:0;top:1000px"><span class="pill">920018915</span></div>`,99]];
+const world=document.getElementById('world'),over=document.getElementById('over'),end=document.getElementById('end');
+function mk(list,parent){return list.map(([at,an,h,out])=>{const w=document.createElement('div');w.innerHTML=h;const el=w.firstElementChild;parent.appendChild(el);return {el,at,an,out};});}
+const WE=mk(W,world),SE=mk(S,over),EE=mk(E2,end);
+const rp=document.getElementById('rp'),trail=document.getElementById('trail'),L=rp.getTotalLength(),tok=document.getElementById('token');
+trail.setAttribute('stroke-dasharray',L); 
+// stop lengths: find fractions near stops
+function nearest(x,y){let best=0,bd=1e9;for(let s=0;s<=L;s+=4){const p=rp.getPointAtLength(s);const d=(p.x-x)**2+(p.y-y)**2;if(d<bd){bd=d;best=s;}}return best;}
+const stops=[0,nearest(280,2900),nearest(790,2150),nearest(290,1400),L];
+const legs=[[3.9,5.0],[8.7,9.6],[12.0,13.0],[15.1,16.3]];
+const cl=x=>Math.max(0,Math.min(1,x)),eio=x=>x<.5?4*x*x*x:1-Math.pow(-2*x+2,3)/2,eo=x=>1-Math.pow(1-x,3),bo=x=>{const c1=2.0,c3=c1+1;return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2)};
+function animate(arr,t){arr.forEach(({el,at,an,out})=>{const k=cl((t-at)/0.4);let op=t>=at?1:0,tr='';
+ if(an==='up'){tr=`translateY(${(1-eo(k))*70}px)`;op=cl((t-at)/0.2);}
+ else if(an==='pop'){tr=`scale(${t<at?0:bo(k)})`;}
+ else if(an==='stamp'){const kk=cl((t-at)/0.25);tr=`scale(${2.2-1.2*eo(kk)}) rotate(${(1-kk)*10-2}deg)`;op=kk;}
+ if(out!==undefined&&t>=out) op=Math.max(0,1-(t-out)/0.3);
+ el.style.transform=tr;el.style.opacity=op;});}
+function render(TT){const t=TT-0.3;
+ let s=0; for(let i=0;i<4;i++){const [a,b]=legs[i]; if(t>=b) s=stops[i+1]; else if(t>a){s=stops[i]+(stops[i+1]-stops[i])*eio(cl((t-a)/(b-a))); break;} else {s=stops[i]; break;}}
+ const p=rp.getPointAtLength(s),p2=rp.getPointAtLength(Math.min(L,s+6)),p1=rp.getPointAtLength(Math.max(0,s-6));
+ const ang=Math.atan2(p2.y-p1.y,p2.x-p1.x)*180/Math.PI+90;
+ tok.style.transform=`translate(${p.x-75}px,${p.y-150}px) rotate(${ang}deg)`;
+ trail.setAttribute('stroke-dashoffset',L-s);
+ const camY=Math.max(1920-3800,Math.min(0,1100-p.y)); world.style.transform=`translateY(${camY}px)`;
+ animate(WE,t); animate(SE,t);
+ const ke=cl((t-19.3)/0.5); end.style.opacity=ke; animate(EE,t);
+ document.getElementById('tag').style.opacity=t>=22.9?0:1;
+}
+window.render=render; render(0);
+</script></body></html>
