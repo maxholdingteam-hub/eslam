@@ -1,0 +1,81 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Aref+Ruqaa:wght@700&family=Tajawal:wght@700;800;900&family=Lalezar&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#5b3a22;font-family:Tajawal}
+#board{position:absolute;left:34px;top:34px;right:34px;bottom:34px;border-radius:18px;background:radial-gradient(ellipse at 40% 30%,#2c3631,#1b211e 70%);box-shadow:inset 0 0 120px rgba(0,0,0,.6),0 0 0 14px #7a5032,0 0 0 18px #4a2e1a;overflow:hidden}
+#board .noise{position:absolute;inset:0;background:url(as/noise.png);opacity:.35;mix-blend-mode:screen;filter:invert(1) brightness(.5)}
+.smudge{position:absolute;inset:0;background:radial-gradient(circle at 70% 60%,rgba(255,255,255,.05),transparent 40%),radial-gradient(circle at 20% 80%,rgba(255,255,255,.04),transparent 35%)}
+.e{position:absolute;will-change:transform,opacity}
+.t{direction:rtl;text-align:center;white-space:nowrap;left:0;right:0;color:#F2EEE3;text-shadow:0 0 2px rgba(255,255,255,.35)}
+.ruq{font-family:'Aref Ruqaa',serif}
+.lz{font-family:Lalezar,Tajawal}
+.y{color:#F2C14E}.p{color:#F59B8E}.g{color:#9FE0B5}
+img.c{filter:drop-shadow(0 18px 22px rgba(0,0,0,.55))}
+svg{position:absolute;overflow:visible}
+.line{direction:rtl;font-family:Lalezar;font-size:46px;color:#F2EEE3;display:flex;align-items:center;gap:14px;width:600px}
+.line i{flex:1;border-bottom:4px dotted rgba(242,238,227,.55);transform:translateY(-8px)}
+.rc{background:#fbf8f0;color:#222;border-radius:6px;padding:30px 40px;box-shadow:0 20px 40px rgba(0,0,0,.5);direction:rtl;font-family:Lalezar;width:560px;
+ -webkit-mask:linear-gradient(#000 0 0) top/100% calc(100% - 22px) no-repeat,radial-gradient(circle 14px at 14px 100%,transparent 98%,#000) bottom left/28px 22px repeat-x}
+.rc .r{display:flex;justify-content:space-between;font-size:56px;margin:14px 0;align-items:center}
+.box{display:inline-block;width:58px;height:58px;border:5px solid #222;border-radius:8px;position:relative;margin-left:16px;vertical-align:middle}
+.pill{display:inline-block;background:#F2C14E;color:#111;border-radius:80px;padding:14px 70px;font-family:Arial;font-weight:900;font-size:72px;letter-spacing:4px}
+#endc{position:absolute;inset:0;background:#121214;opacity:0}
+</style></head><body><div id="board"><div class="noise"></div><div class="smudge"></div></div><div id="endc"></div>
+<script>
+const O=0.3;
+// scenes: [id, start, end]
+const SC=[['A',0,2.58],['M',2.58,16.76],['P',16.76,20.12],['K',20.12,23.0],['Z',23.0,99]];
+const CH='<path d="M10 20 C 120 6, 260 30, 420 14" fill="none" stroke="#F2C14E" stroke-width="10" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" opacity=".9"/>';
+const E=[
+['A',0,'up',`<div class="e t ruq" style="top:150px;font-size:96px">منيو <span class="y">ماكس موتورز</span></div>`],
+['A',0.15,'draw',`<svg style="left:330px;top:285px" width="420" height="40">${CH}</svg>`],
+['A',0.0,'up',`<div class="e t lz" style="top:390px;font-size:110px">أهلاً فيك! 👋</div>`],
+['A',1.26,'stamp',`<div class="e t lz y" style="top:560px;font-size:130px">وش تطلب اليوم؟</div>`],
+['A',0.1,'pop',`<img class="e c" src="as/c_t_waiter.png" style="width:720px;left:180px;top:880px">`],
+// menu list header + running list
+['M',2.58,'up',`<div class="e t ruq" style="top:110px;font-size:76px">المنيو 📖</div>`],
+['M',3.4,'up',`<div class="e line" style="left:240px;top:225px"><span>العائلي</span><i></i><span class="y">✔</span></div>`],
+['M',7.78,'up',`<div class="e line" style="left:240px;top:290px"><span>الفخم</span><i></i><span class="y">✔</span></div>`],
+['M',10.44,'up',`<div class="e line" style="left:240px;top:355px"><span>الدفع الرباعي</span><i></i><span class="y">✔</span></div>`],
+['M',13.54,'up',`<div class="e line" style="left:240px;top:420px"><span>الاقتصادي</span><i></i><span class="y">✔</span></div>`],
+];
+// featured items (shown between [at, next])
+const IT=[['العائلي','مساحة وراحة لكل العيال','m1',3.4,5.04,7.78,'g'],['الفخم','للي يحب يتميّز','m2',7.78,8.54,10.44,'y'],['الدفع الرباعي','للبر والكشتات','m3',10.44,11.64,13.54,'p'],['الاقتصادي','يوفّر عليك كل يوم','m4',13.54,14.44,16.76,'y']];
+IT.forEach(([ti,de,img,at,dat,out,col])=>{
+ E.push(['M',at,'stamp',`<div class="e t ruq ${col}" style="top:560px;font-size:150px" data-out="${out}">${ti}</div>`]);
+ E.push(['M',at+0.15,'draw',`<svg style="left:330px;top:770px" width="420" height="40" data-out="${out}">${CH}</svg>`]);
+ E.push(['M',at+0.3,'slideR',`<img class="e c" src="as/c_${img}.png" style="width:900px;left:90px;top:900px" data-out="${out}">`]);
+ E.push(['M',dat,'up',`<div class="e t lz" style="top:1480px;font-size:84px" data-out="${out}">${de}</div>`]);
+});
+E.push(
+['P',16.76,'up',`<div class="e t ruq" style="top:200px;font-size:120px">والدفع؟</div>`],
+['P',16.9,'pop',`<div class="e rc" style="left:260px;top:440px"><div style="text-align:center;font-size:62px;border-bottom:4px dashed #999;padding-bottom:10px">طريقة الدفع</div>
+ <div class="r"><span><span class="box"><b class="tk" data-at="17.5" style="position:absolute;left:4px;top:-18px;font-size:72px;color:#1FA39A">✔</b></span>كاش</span></div>
+ <div class="r"><span><span class="box"><b class="tk" data-at="18.18" style="position:absolute;left:4px;top:-18px;font-size:72px;color:#1FA39A">✔</b></span>تمويل</span></div></div>`],
+['P',18.78,'stamp',`<div class="e t lz y" style="top:1080px;font-size:140px">على كيفك!</div>`],
+['P',17.0,'pop',`<img class="e c" src="as/c_t_waiter.png" style="width:520px;left:280px;top:1300px">`],
+['K',20.12,'pop',`<img class="e" src="as/logo_full.png" style="width:720px;left:180px;top:260px">`],
+['K',21.4,'stamp',`<div class="e t ruq y" style="top:600px;font-size:130px">اطلب سيارتك</div>`],
+['K',20.3,'pop',`<img class="e c" src="as/c_t_kiss.png" style="width:640px;left:220px;top:960px">`],
+['Z',23.0,'pop',`<img class="e" src="as/logo_full.png" style="width:760px;left:160px;top:640px">`],
+['Z',23.2,'pop',`<div class="e t" style="top:1000px"><span class="pill">920018915</span></div>`]);
+const board=document.getElementById('board'),endc=document.getElementById('endc');
+const holders={};SC.forEach(([id])=>{const d=document.createElement('div');d.style.cssText='position:absolute;inset:0;display:none';(id==='Z'?endc:board).appendChild(d);holders[id]=d;});
+const EL=E.map(([s,at,an,h])=>{const w=document.createElement('div');w.innerHTML=h;const el=w.firstElementChild;holders[s].appendChild(el);return {el,at,an,out:el.dataset.out?+el.dataset.out:null};});
+const cl=x=>Math.max(0,Math.min(1,x)),eo=x=>1-Math.pow(1-x,3),bo=x=>{const c1=2.0,c3=c1+1;return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2)};
+function render(TT){const t=TT-O;
+ SC.forEach(([id,a,b])=>{holders[id].style.display=(t>=a-0.001&&t<b)?'block':'none';});
+ EL.forEach(({el,at,an,out})=>{const k=cl((t-at)/0.4);let op=t>=at?1:0,tr='';
+  if(an==='up'){tr=`translateY(${(1-eo(k))*60}px)`;op=cl((t-at)/0.2);}
+  else if(an==='pop'){tr=`scale(${t<at?0:bo(k)})`;}
+  else if(an==='stamp'){const kk=cl((t-at)/0.25);tr=`scale(${2.0-1.0*eo(kk)}) rotate(${(1-kk)*8-1}deg)`;op=kk;}
+  else if(an==='slideR'){tr=`translateX(${(1-eo(k))*1100}px) rotate(${(1-eo(k))*8}deg)`;}
+  else if(an==='draw'){el.querySelectorAll('path').forEach(p=>p.setAttribute('stroke-dashoffset',1-eo(cl((t-at)/0.5))));}
+  if(out!==null&&t>=out-0.25){const ko=cl((t-out+0.25)/0.25); op=1-ko; if(an!=='draw') tr+=` translateX(${-ko*300}px)`;}
+  if(an!=='draw') el.style.transform=tr; el.style.opacity=op;
+  el.querySelectorAll('.tk').forEach(b=>{const kt=cl((t-(+b.dataset.at))/0.25); b.style.opacity=kt; b.style.transform=`scale(${0.3+0.7*bo(kt)})`;});
+ });
+ endc.style.opacity=t>=23.0?1:0;
+}
+window.render=render; render(0);
+</script></body></html>

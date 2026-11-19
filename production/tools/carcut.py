@@ -11,7 +11,9 @@ a=(np.asarray(cut.split()[-1]).astype(float)/255>0.5)
 hsv=np.asarray(im.convert('HSV')).astype(float); H,W=a.shape
 sat=hsv[...,1]/255; val=hsv[...,2]/255
 box=np.zeros_like(a); box[:int(H*0.65),:int(W*0.42)]=True
-a=a & ~(box & (sat>0.22) & (val>0.12))
+hue=hsv[...,0]*360/255
+gold=(hue>18)&(hue<55)
+a=a & ~(box & (sat>0.22) & (val>0.12) & gold)
 from scipy import ndimage as ndi
 op=ndi.binary_opening(a,iterations=4)
 lab,n=ndi.label(op)
@@ -31,5 +33,5 @@ arr=np.clip(arr+(np.sin(xx*0.9)*np.sin(yy*0.9))*16,0,255)
 A=Image.fromarray((a*255).astype(np.uint8)).filter(ImageFilter.GaussianBlur(1))
 border=A.filter(ImageFilter.MaxFilter(21)).filter(ImageFilter.GaussianBlur(1.5))
 out=Image.new('RGBA',im.size,(0,0,0,0)); white=Image.new('RGBA',im.size,(250,248,242,255)); white.putalpha(border); out.alpha_composite(white)
-body=Image.fromarray(arr.astype(np.uint8)).convert('RGBA'); body.putalpha(A); out.alpha_composite(body)
-out=out.crop(out.getbbox()); out.save(f'/tmp/mmw/e6/as/{name}.png'); print(name,out.size)
+body=(im.convert('RGBA') if (len(sys.argv)>4 and sys.argv[4]=='color') else Image.fromarray(arr.astype(np.uint8)).convert('RGBA')); body.putalpha(A); out.alpha_composite(body)
+out=out.crop(out.getbbox()); out.save(f'./{name}.png'); print(name,out.size)

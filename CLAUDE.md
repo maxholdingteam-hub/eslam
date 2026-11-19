@@ -34,8 +34,8 @@ Marketing content for **Max Motors** (Saudi car dealer) and its sister brand **M
 | `mix.py` | Mixes voiceover, music and SFX with loudnorm -14 |
 | `poll.sh` | Waits for Higgsfield jobs to finish |
 | `sp.py` | Splices a voiceover phrase |
-| `carcut.py SRC NAME CROP` | Cuts a car out of a site-listing image (removes the template's M logo) in the series' paper-cutout style |
-| `sfx/`, `music/` | Sound library |
+| `carcut.py SRC NAME CROP [color]` | Cuts a car out of a site-listing image (removes the template's gold M logo), halftone by default or `color` |
+| `sfx/`, `music/` | Sound library. All the older tracks have been used; generate new music with `elevenlabs_music_v2_5` (Higgsfield, `--force_instrumental true`) |
 
 - **Higgsfield CLI** is sometimes slow. Submit with `--json` without `--wait`, then use `poll.sh`.
 
@@ -50,5 +50,6 @@ Marketing content for **Max Motors** (Saudi car dealer) and its sister brand **M
   - Special (promo), guess the car from its silhouette: `abuturki_special_guessthecar`
   - Challenge: 6-second quiz (5 zoomed details, countdown, score): `abuturki_quiz_6seconds`
 - **Promo, 4 steps on a board-game road map (no name):** `promo_4steps_roadmap`
+- **Promo, chalkboard menu «وش تطلب اليوم؟» (color car cut-outs, own music):** `promo_menu`
 - **Finished videos:** `MaxMotors_Ads/`, `MaxMotors_Reels/`, `MaxDesign/`.
 - **Site listings:** `MaxMotors_Site_Listings/<Brand>/<Model>` (full quality), a `_مضغوط` folder (compressed) and a zip, plus `بيانات_السيارة.txt`.
