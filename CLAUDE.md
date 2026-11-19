@@ -13,9 +13,19 @@ Marketing content for **Max Motors** (Saudi car dealer) and its sister brand **M
 - **Site listings:** skip any car with no interior photo. When the source is a competitor such as Emad Al-Din, use their photos as a design reference only: generate new images in our template and never take their logos, plates or watermarks.
 
 ## Voiceover (important)
-- **Client decision: no AI voiceover from now on.** Every AI voice we tried (Marcus, Omar, MiniMax) mispronounced Saudi dialect. Videos run on music, sound effects and moving on-screen text that carries the whole message. Many people watch reels with the sound off, so the text has to be clear and complete on its own.
-- If Abu Turki records his own voice later, sync it to the motion; that is the only accepted source of voice.
-- For timing without a voiceover, give each line enough reading time (about 1.5–2.5 s), and put a SFX (whoosh, pop, ding) under every scene change.
+- **Approved voice: the presenter's own cloned voice, with his consent.** It is a Higgsfield custom voice ("Max Motors Presenter (Saudi)", `voice_type element`, `voice_id fe647dd5-fc13-478b-bd36-524972f8c876`), cloned from his real Saudi voice in the Kashta reel (`production/tools/presenter_voice_ref.mp3`).
+  - **Engine:** `text2speech_v2 --variant elevenlabs --voice_id <id> --voice_type element --prompt "<text>"`. This gives the best dialect.
+  - **Engines not to use:** Seed Audio is weak in Arabic, and MiniMax drops words.
+  - **Rejected generic voices:** Marcus, Omar and MiniMax mispronounced Saudi dialect. Don't use them.
+- **Writing the script:**
+  - Short lines.
+  - Avoid foreign loanwords (البودي, تشيّك…), and avoid «تدوّر», which comes out as «تتدوّر».
+  - Avoid ق where you can.
+- **Every line:**
+  - Generate 2 takes per line, as separate clips.
+  - Check them with whisper medium and pick the cleanest.
+- **Before publishing:** the client should listen to the result.
+- **Videos without voiceover:** still allowed. Give each line 1.5–2.5 s of reading time and put a SFX under every scene change.
 
 ## Tools (`production/tools/`)
 | File | What it does |
@@ -45,5 +55,6 @@ Marketing content for **Max Motors** (Saudi car dealer) and its sister brand **M
   - Challenge: 6-second quiz (5 zoomed details, countdown, score): `abuturki_quiz_6seconds`
 - **Promo, 4 steps on a board-game road map (no name):** `promo_4steps_roadmap`
 - **Promo, chalkboard menu «وش تطلب اليوم؟» (color car cut-outs, own music):** `promo_menu`
+- **Promo, chat with voice notes in the presenter's cloned voice:** `promo_chat_voicenotes`
 - **Finished videos:** `MaxMotors_Ads/`, `MaxMotors_Reels/`, `MaxDesign/`.
 - **Site listings:** `MaxMotors_Site_Listings/<Brand>/<Model>` (full quality), a `_مضغوط` folder (compressed) and a zip, plus `بيانات_السيارة.txt`.
