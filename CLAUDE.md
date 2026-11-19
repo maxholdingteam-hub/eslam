@@ -13,7 +13,7 @@ Marketing content for **Max Motors** (Saudi car dealer) and its sister brand **M
 - **Site listings:** skip any car with no interior photo. When the source is a competitor such as Emad Al-Din, use their photos as a design reference only: generate new images in our template and never take their logos, plates or watermarks.
 
 ## Voiceover (important)
-- The TTS is ElevenLabs v4 through Higgsfield, voice Marcus (`6f98d3dd-324f-4845-8c28-c1d1647a06cd`). It is not a native Arabic voice.
+- **Approved voice (from the client): Omar**, a native Arabic voice. Model `inworld_text_to_speech` (Higgsfield), `--voice "Omar (ar)"`, `--prompt` is the text. The output is WAV. The old voice Marcus (ElevenLabs v4, `6f98d3dd-…`) is not native Arabic and caused pronunciation errors, so don't use it.
 - **Writing the script:**
   - Avoid foreign loanwords (البودي, تشيّك…).
   - Avoid ق where you can, or add diacritics (قَبْل).
