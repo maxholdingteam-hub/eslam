@@ -72,5 +72,6 @@ For any large request, start with `head-of-marketing`: it plans, delegates and g
 - **Promo, 4 steps on a board-game road map (no name):** `promo_4steps_roadmap`
 - **Promo, chalkboard menu «وش تطلب اليوم؟» (color car cut-outs, own music):** `promo_menu`
 - **Promo, chat with voice notes in the presenter's cloned voice:** `promo_chat_voicenotes`
+- **Promo «نداء أخير», airport split-flap board (made by the agent team):** `promo_lastcall`
 - **Finished videos:** `MaxMotors_Ads/`, `MaxMotors_Reels/`, `MaxDesign/`.
 - **Site listings:** `MaxMotors_Site_Listings/<Brand>/<Model>` (full quality), a `_مضغوط` folder (compressed) and a zip, plus `بيانات_السيارة.txt`.

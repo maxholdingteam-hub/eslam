@@ -1,0 +1,149 @@
+{
+ "l1": {
+  "file": "/tmp/mmw/e11/vo/l1.mp3",
+  "take": "l1a",
+  "duration": 2.116,
+  "words": [
+   {
+    "word": "نداء",
+    "start": 0.0,
+    "end": 0.56
+   },
+   {
+    "word": "اخير",
+    "start": 0.56,
+    "end": 1.14
+   },
+   {
+    "word": "لصاحب",
+    "start": 1.14,
+    "end": 1.7
+   },
+   {
+    "word": "الموتر",
+    "start": 1.7,
+    "end": 2.06
+   }
+  ]
+ },
+ "l2": {
+  "file": "/tmp/mmw/e11/vo/l2.mp3",
+  "take": "l2a",
+  "duration": 1.411,
+  "words": [
+   {
+    "word": "الوجهة",
+    "start": 0.0,
+    "end": 0.84
+   },
+   {
+    "word": "بيتك",
+    "start": 0.84,
+    "end": 1.28
+   }
+  ]
+ },
+ "l3": {
+  "file": "/tmp/mmw/e11/vo/l3.mp3",
+  "take": "l3a",
+  "duration": 3.082,
+  "words": [
+   {
+    "word": "كاش",
+    "start": 0.0,
+    "end": 0.68
+   },
+   {
+    "word": "أو",
+    "start": 0.68,
+    "end": 0.92
+   },
+   {
+    "word": "تمويل",
+    "start": 0.92,
+    "end": 1.74
+   },
+   {
+    "word": "البوابتين",
+    "start": 1.74,
+    "end": 2.52
+   },
+   {
+    "word": "مفتوحة",
+    "start": 2.52,
+    "end": 3.02
+   }
+  ]
+ },
+ "l4": {
+  "file": "/tmp/mmw/e11/vo/l4.mp3",
+  "take": "l4r4",
+  "duration": 2.194,
+  "words": [
+   {
+    "word": "سيارتك",
+    "start": 0.0,
+    "end": 0.66
+   },
+   {
+    "word": "جاهزة",
+    "start": 0.66,
+    "end": 1.5
+   },
+   {
+    "word": "تنتظرك",
+    "start": 1.5,
+    "end": 2.14
+   }
+  ]
+ },
+ "l5": {
+  "file": "/tmp/mmw/e11/vo/l5.mp3",
+  "take": "l5a",
+  "duration": 1.567,
+  "words": [
+   {
+    "word": "لا",
+    "start": 0.0,
+    "end": 0.36
+   },
+   {
+    "word": "تفوت",
+    "start": 0.36,
+    "end": 0.86
+   },
+   {
+    "word": "رحلتك",
+    "start": 0.86,
+    "end": 1.5
+   }
+  ]
+ },
+ "l6": {
+  "file": "/tmp/mmw/e11/vo/l6.mp3",
+  "take": "l6a",
+  "duration": 2.508,
+  "words": [
+   {
+    "word": "اتصل",
+    "start": 0.0,
+    "end": 0.48
+   },
+   {
+    "word": "الحين",
+    "start": 0.48,
+    "end": 1.4
+   },
+   {
+    "word": "وثبت",
+    "start": 1.4,
+    "end": 2.0
+   },
+   {
+    "word": "مكانك",
+    "start": 2.0,
+    "end": 2.46
+   }
+  ]
+ }
+}
