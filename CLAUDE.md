@@ -25,7 +25,7 @@ Marketing content for **Max Motors** (Saudi car dealer) and its sister brand **M
   - Generate 2 takes per line, as separate clips.
   - Check them with whisper medium and pick the cleanest.
 - **Before publishing:** the client should listen to the result.
-- **Current client preference:** no voiceover. The client disliked the cloned voice and the presenter's real desk photo. Use his halftone paper cut-outs only (the explainer style from 16–17 Nov). Videos without voiceover are allowed. Give each line 1.5–2.5 s of reading time and put a SFX under every scene change.
+- **Current client preference (latest):** the voice from the 16–17 Nov videos, Marcus (ElevenLabs v4, `6f98d3dd-324f-4845-8c28-c1d1647a06cd`), with every word checked. Splice in any phrase that comes out wrong. The client disliked the cloned voice and the presenter's real desk photo, so use his halftone paper cut-outs only (the 16–17 Nov explainer style). Videos without voiceover are still allowed. Give each line 1.5–2.5 s of reading time and put a SFX under every scene change.
 
 ## Team (AI agents in `.claude/agents/`)
 For any large request, start with `head-of-marketing`: it plans, delegates and gives final approval with the checklist.
@@ -73,6 +73,6 @@ For any large request, start with `head-of-marketing`: it plans, delegates and g
 - **Promo, chalkboard menu «وش تطلب اليوم؟» (color car cut-outs, own music):** `promo_menu`
 - **Promo, chat with voice notes in the presenter's cloned voice:** `promo_chat_voicenotes`
 - **Promo «نداء أخير», airport split-flap board (made by the agent team):** `promo_lastcall`
-- **Promo «صح ولا غلط؟», 4 myths with stamps, in the series' paper cut-out style (no voiceover):** `promo_trueorfalse`
+- **Promo «صح ولا غلط؟», 4 myths with stamps, in the series' paper cut-out style (Marcus voice):** `promo_trueorfalse`
 - **Finished videos:** `MaxMotors_Ads/`, `MaxMotors_Reels/`, `MaxDesign/`.
 - **Site listings:** `MaxMotors_Site_Listings/<Brand>/<Model>` (full quality), a `_مضغوط` folder (compressed) and a zip, plus `بيانات_السيارة.txt`.

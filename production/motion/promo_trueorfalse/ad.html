@@ -24,42 +24,42 @@ svg{position:absolute;overflow:visible}
 <script>
 const O=0.3;
 const BLK='#121214',YEL='#F2C14E',RED='#E5383B',CRM='#F4EAD5',TEAL='#1FA39A';
-const SC=[['A',0,3.4,YEL],['B',3.4,10.0,CRM],['C',10.0,16.6,RED],['D',16.6,23.2,TEAL],['E',23.2,29.8,CRM],['K',29.8,33.0,BLK],['L',33.0,36.0,YEL],['Z',36.0,99,BLK]];
+const SC=[['A',0,5.44,YEL],['B',5.44,12.84,CRM],['C',12.84,19.82,RED],['D',19.82,26.62,TEAL],['E',26.62,32.6,CRM],['K',32.6,35.84,BLK],['L',35.84,40.0,YEL],['Z',40.0,99,BLK]];
 const N=(n)=>`<div class="e num" style="top:200px"><span>${n}</span></div>`;
 const SEAL=(txt,col,top)=>`<div class="e seal" style="top:${top}px;color:${col}"><span>${txt}</span></div>`;
 const E=[
-['A',0.1,'stamp',`<div class="e t" style="top:230px;font-size:170px;color:#111">صح ولا غلط؟</div>`],
-['A',1.2,'up',`<div class="e t" style="top:470px;font-size:84px;color:#111"><span class="hl" style="--hc:#fff">4 أشياء الكل يصدّقها</span></div>`],
-['A',1.9,'up',`<div class="e t" style="top:600px;font-size:84px;color:#111">عن شراء السيارة</div>`],
+['A',0.0,'stamp',`<div class="e t" style="top:230px;font-size:170px;color:#111">صح ولا غلط؟</div>`],
+['A',1.96,'up',`<div class="e t" style="top:470px;font-size:84px;color:#111"><span class="hl" style="--hc:#fff">4 أشياء الكل يصدّقها</span></div>`],
+['A',4.1,'up',`<div class="e t" style="top:600px;font-size:84px;color:#111">عن شراء السيارة</div>`],
 ['A',0.3,'pop',`<img class="e c" src="as/c_t_doubt.png" style="width:640px;left:220px;top:1010px">`],
-['B',3.4,'stamp',N(1)],
-['B',3.7,'up',`<div class="e q" style="top:430px;font-size:90px;color:#111">«التمويل إجراءاته<br>طويلة ومتعبة»</div>`],
-['B',4.2,'pop',`<img class="e c" src="as/c_pile.png" style="width:520px;left:280px;top:690px">`],
-['B',6.4,'stamp',SEAL('غلط ✘','#E5383B',820)],
-['B',7.3,'up',`<div class="e t" style="top:1460px;font-size:88px;color:#111">موظّفينا <span class="hl" style="--hc:#F2C14E">يجهّزون الأوراق معك</span></div>`],
-['C',10.0,'stamp',N(2)],
-['C',10.3,'up',`<div class="e q" style="top:430px;font-size:96px;color:#fff">«لازم تلف على كل المعارض»</div>`],
-['C',10.8,'pop',`<img class="e c" src="as/c_pins.png" style="width:640px;left:220px;top:700px">`],
-['C',13.0,'stamp',SEAL('غلط ✘','#111',820)],
-['C',13.9,'up',`<div class="e t" style="top:1460px;font-size:88px;color:#fff">ماركات كثيرة <span class="hl" style="--hc:#111;color:#F2C14E">في مكان واحد</span></div>`],
-['D',16.6,'stamp',N(3)],
-['D',16.9,'up',`<div class="e q" style="top:430px;font-size:90px;color:#fff">«الكاش دايماً أحسن<br>من التمويل»</div>`],
-['D',17.4,'pop',`<img class="e c" src="as/c_coin.png" style="width:440px;left:320px;top:690px">`],
-['D',19.6,'stamp',SEAL('مو شرط!','#111',820)],
-['D',20.5,'up',`<div class="e t" style="top:1460px;font-size:88px;color:#fff">الأحسن: <span class="hl" style="--hc:#111;color:#F2C14E">اللي يريّحك أنت</span></div>`],
-['E',23.2,'stamp',N(4)],
-['E',23.5,'up',`<div class="e q" style="top:420px;font-size:80px;color:#111">«تقدر تعرف خياراتك<br>قبل لا تجي المعرض»</div>`],
-['E',24.0,'pop',`<img class="e c" src="as/c_calc.png" style="width:440px;left:320px;top:700px">`],
-['E',26.2,'stamp',SEAL('صح ✔','#1FA39A',820)],
-['E',27.1,'up',`<div class="e t" style="top:1460px;font-size:88px;color:#111">كلّمنا <span class="hl" style="--hc:#1FA39A;color:#fff">ونحسبها معك</span></div>`],
-['K',29.9,'stamp',`<div class="e t" style="top:260px;font-size:110px;color:#fff">كم وحدة كنت <span style="color:#F2C14E">مصدّقها؟</span></div>`],
-['K',31.0,'up',`<div class="e t" style="top:460px;font-size:100px;color:#fff"><span class="hl" style="--hc:#E5383B">اكتبها تحت 👇</span></div>`],
-['K',30.1,'pop',`<img class="e c" src="as/c_t_stamp.png" style="width:700px;left:190px;top:1000px">`],
-['L',33.0,'pop',`<div class="e" style="left:150px;top:520px;width:780px;height:280px;background:#121214;border-radius:30px;display:flex;align-items:center;justify-content:center"><img src="as/logo_full.png" style="width:660px"></div>`],
-['L',33.8,'stamp',`<div class="e t" style="top:900px;font-size:140px;color:#111">كاش أو تمويل</div>`],
-['L',34.6,'up',`<div class="e t" style="top:1100px;font-size:96px;color:#111"><span class="hl" style="--hc:#fff">والخيار لك</span></div>`],
-['Z',36.0,'pop',`<img class="e" src="as/logo_full.png" style="width:760px;left:160px;top:640px">`],
-['Z',36.2,'pop',`<div class="e t" style="top:1000px"><span class="pill">920018915</span></div>`]];
+['B',5.44,'stamp',N(1)],
+['B',6.44,'up',`<div class="e q" style="top:430px;font-size:90px;color:#111">«التمويل إجراءاته<br>طويلة ومتعبة»</div>`],
+['B',6.8,'pop',`<img class="e c" src="as/c_pile.png" style="width:520px;left:280px;top:690px">`],
+['B',9.5,'stamp',SEAL('غلط ✘','#E5383B',820)],
+['B',10.5,'up',`<div class="e t" style="top:1460px;font-size:88px;color:#111">موظّفينا <span class="hl" style="--hc:#F2C14E">يجهّزون الأوراق معك</span></div>`],
+['C',12.84,'stamp',N(2)],
+['C',13.98,'up',`<div class="e q" style="top:430px;font-size:96px;color:#fff">«لازم تلف على كل المعارض»</div>`],
+['C',14.3,'pop',`<img class="e c" src="as/c_pins.png" style="width:640px;left:220px;top:700px">`],
+['C',16.28,'stamp',SEAL('غلط ✘','#111',820)],
+['C',17.24,'up',`<div class="e t" style="top:1460px;font-size:88px;color:#fff">ماركات كثيرة <span class="hl" style="--hc:#111;color:#F2C14E">في مكان واحد</span></div>`],
+['D',19.82,'stamp',N(3)],
+['D',21.1,'up',`<div class="e q" style="top:430px;font-size:90px;color:#fff">«الكاش دايماً أحسن<br>من التمويل»</div>`],
+['D',21.4,'pop',`<img class="e c" src="as/c_coin.png" style="width:440px;left:320px;top:690px">`],
+['D',23.52,'stamp',SEAL('مو شرط!','#111',820)],
+['D',24.6,'up',`<div class="e t" style="top:1460px;font-size:88px;color:#fff">الأحسن: <span class="hl" style="--hc:#111;color:#F2C14E">اللي يريّحك أنت</span></div>`],
+['E',26.62,'stamp',N(4)],
+['E',27.7,'up',`<div class="e q" style="top:420px;font-size:80px;color:#111">«تعرف خياراتك<br>قبل لا تجي المعرض»</div>`],
+['E',28.0,'pop',`<img class="e c" src="as/c_calc.png" style="width:440px;left:320px;top:700px">`],
+['E',30.12,'stamp',SEAL('صح ✔','#1FA39A',820)],
+['E',31.12,'up',`<div class="e t" style="top:1460px;font-size:88px;color:#111">كلّمنا <span class="hl" style="--hc:#1FA39A;color:#fff">ونحسبها معك</span></div>`],
+['K',32.6,'stamp',`<div class="e t" style="top:260px;font-size:110px;color:#fff">كم وحدة <span style="color:#F2C14E">صدّقتها؟</span></div>`],
+['K',34.74,'up',`<div class="e t" style="top:460px;font-size:100px;color:#fff"><span class="hl" style="--hc:#E5383B">اكتبها تحت 👇</span></div>`],
+['K',32.7,'pop',`<img class="e c" src="as/c_t_stamp.png" style="width:700px;left:190px;top:1000px">`],
+['L',35.84,'pop',`<div class="e" style="left:150px;top:520px;width:780px;height:280px;background:#121214;border-radius:30px;display:flex;align-items:center;justify-content:center"><img src="as/logo_full.png" style="width:660px"></div>`],
+['L',37.34,'stamp',`<div class="e t" style="top:900px;font-size:140px;color:#111">كاش أو تمويل</div>`],
+['L',38.64,'up',`<div class="e t" style="top:1100px;font-size:96px;color:#111"><span class="hl" style="--hc:#fff">والخيار لك</span></div>`],
+['Z',40.0,'pop',`<img class="e" src="as/logo_full.png" style="width:760px;left:160px;top:640px">`],
+['Z',40.2,'pop',`<div class="e t" style="top:1000px"><span class="pill">920018915</span></div>`]];
 const cam=document.getElementById('cam');
 SC.forEach(([id,a,b,bg])=>{const d=document.createElement('div');d.className='sc';d.id='S'+id;d.style.background=bg;d.innerHTML='<div class="noise"></div>';cam.appendChild(d);});
 const EL=E.map(([s,at,an,h],i)=>{const w=document.createElement('div');w.innerHTML=h;const el=w.firstElementChild;document.getElementById('S'+s).appendChild(el);return {el,at,an,s,base:el.style.transform||''};});
@@ -78,7 +78,7 @@ function render(TT){const t=TT-O; let shake=0, punch=0;
   el.querySelectorAll('.hl').forEach(h=>h.style.setProperty('--hx',eo(cl((t-at-0.15)/0.3))));
   el.querySelectorAll('.lateDraw').forEach(p=>p.setAttribute('stroke-dashoffset',1-eo(cl((t-(+p.dataset.at))/0.4))));
  });
- const sx=Math.sin(t*90)*14*shake, sy=Math.cos(t*77)*10*shake; document.getElementById('tag').style.opacity=t>=36.0?0:1; cam.style.transform=`translate(${sx}px,${sy}px) scale(${1+0.06*punch})`;
+ const sx=Math.sin(t*90)*14*shake, sy=Math.cos(t*77)*10*shake; document.getElementById('tag').style.opacity=t>=40.0?0:1; cam.style.transform=`translate(${sx}px,${sy}px) scale(${1+0.06*punch})`;
 }
 window.render=render; render(0);
 </script></body></html>
