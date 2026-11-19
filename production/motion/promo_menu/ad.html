@@ -24,23 +24,23 @@ svg{position:absolute;overflow:visible}
 <script>
 const O=0.3;
 // scenes: [id, start, end]
-const SC=[['A',0,2.58],['M',2.58,16.76],['P',16.76,20.12],['K',20.12,23.0],['Z',23.0,99]];
+const SC=[['A',0,3.3],['M',3.3,19.62],['P',19.62,24.14],['K',24.14,27.9],['Z',27.9,99]];
 const CH='<path d="M10 20 C 120 6, 260 30, 420 14" fill="none" stroke="#F2C14E" stroke-width="10" stroke-linecap="round" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" opacity=".9"/>';
 const E=[
 ['A',0,'up',`<div class="e t ruq" style="top:150px;font-size:96px">منيو <span class="y">ماكس موتورز</span></div>`],
 ['A',0.15,'draw',`<svg style="left:330px;top:285px" width="420" height="40">${CH}</svg>`],
 ['A',0.0,'up',`<div class="e t lz" style="top:390px;font-size:110px">أهلاً فيك! 👋</div>`],
-['A',1.26,'stamp',`<div class="e t lz y" style="top:560px;font-size:130px">وش تطلب اليوم؟</div>`],
+['A',1.32,'stamp',`<div class="e t lz y" style="top:560px;font-size:130px">وش تطلب اليوم؟</div>`],
 ['A',0.1,'pop',`<img class="e c" src="as/c_t_waiter.png" style="width:720px;left:180px;top:880px">`],
 // menu list header + running list
-['M',2.58,'up',`<div class="e t ruq" style="top:110px;font-size:76px">المنيو 📖</div>`],
-['M',3.4,'up',`<div class="e line" style="left:240px;top:225px"><span>العائلي</span><i></i><span class="y">✔</span></div>`],
-['M',7.78,'up',`<div class="e line" style="left:240px;top:290px"><span>الفخم</span><i></i><span class="y">✔</span></div>`],
-['M',10.44,'up',`<div class="e line" style="left:240px;top:355px"><span>الدفع الرباعي</span><i></i><span class="y">✔</span></div>`],
-['M',13.54,'up',`<div class="e line" style="left:240px;top:420px"><span>الاقتصادي</span><i></i><span class="y">✔</span></div>`],
+['M',3.3,'up',`<div class="e t ruq" style="top:110px;font-size:76px">المنيو 📖</div>`],
+['M',4.02,'up',`<div class="e line" style="left:240px;top:225px"><span>العائلي</span><i></i><span class="y">✔</span></div>`],
+['M',9.26,'up',`<div class="e line" style="left:240px;top:290px"><span>الفخم</span><i></i><span class="y">✔</span></div>`],
+['M',12.58,'up',`<div class="e line" style="left:240px;top:355px"><span>الدفع الرباعي</span><i></i><span class="y">✔</span></div>`],
+['M',16.32,'up',`<div class="e line" style="left:240px;top:420px"><span>الاقتصادي</span><i></i><span class="y">✔</span></div>`],
 ];
 // featured items (shown between [at, next])
-const IT=[['العائلي','مساحة وراحة لكل العيال','m1',3.4,5.04,7.78,'g'],['الفخم','للي يحب يتميّز','m2',7.78,8.54,10.44,'y'],['الدفع الرباعي','للبر والكشتات','m3',10.44,11.64,13.54,'p'],['الاقتصادي','يوفّر عليك كل يوم','m4',13.54,14.44,16.76,'y']];
+const IT=[['العائلي','مساحة وراحة لكل العيال','m1',4.02,5.82,9.26,'g'],['الفخم','للي يحب يتميّز','m2',9.26,10.5,12.58,'y'],['الدفع الرباعي','للبر والكشتات','m3',12.58,14.42,16.32,'p'],['الاقتصادي','يوفّر عليك كل يوم','m4',16.32,17.72,19.62,'y']];
 IT.forEach(([ti,de,img,at,dat,out,col])=>{
  E.push(['M',at,'stamp',`<div class="e t ruq ${col}" style="top:560px;font-size:150px" data-out="${out}">${ti}</div>`]);
  E.push(['M',at+0.15,'draw',`<svg style="left:330px;top:770px" width="420" height="40" data-out="${out}">${CH}</svg>`]);
@@ -48,17 +48,17 @@ IT.forEach(([ti,de,img,at,dat,out,col])=>{
  E.push(['M',dat,'up',`<div class="e t lz" style="top:1480px;font-size:84px" data-out="${out}">${de}</div>`]);
 });
 E.push(
-['P',16.76,'up',`<div class="e t ruq" style="top:200px;font-size:120px">والدفع؟</div>`],
-['P',16.9,'pop',`<div class="e rc" style="left:260px;top:440px"><div style="text-align:center;font-size:62px;border-bottom:4px dashed #999;padding-bottom:10px">طريقة الدفع</div>
- <div class="r"><span><span class="box"><b class="tk" data-at="17.5" style="position:absolute;left:4px;top:-18px;font-size:72px;color:#1FA39A">✔</b></span>كاش</span></div>
- <div class="r"><span><span class="box"><b class="tk" data-at="18.18" style="position:absolute;left:4px;top:-18px;font-size:72px;color:#1FA39A">✔</b></span>تمويل</span></div></div>`],
-['P',18.78,'stamp',`<div class="e t lz y" style="top:1080px;font-size:140px">على كيفك!</div>`],
-['P',17.0,'pop',`<img class="e c" src="as/c_t_waiter.png" style="width:520px;left:280px;top:1300px">`],
-['K',20.12,'pop',`<img class="e" src="as/logo_full.png" style="width:720px;left:180px;top:260px">`],
-['K',21.4,'stamp',`<div class="e t ruq y" style="top:600px;font-size:130px">اطلب سيارتك</div>`],
-['K',20.3,'pop',`<img class="e c" src="as/c_t_kiss.png" style="width:640px;left:220px;top:960px">`],
-['Z',23.0,'pop',`<img class="e" src="as/logo_full.png" style="width:760px;left:160px;top:640px">`],
-['Z',23.2,'pop',`<div class="e t" style="top:1000px"><span class="pill">920018915</span></div>`]);
+['P',19.62,'up',`<div class="e t ruq" style="top:200px;font-size:120px">والدفع؟</div>`],
+['P',19.76,'pop',`<div class="e rc" style="left:260px;top:440px"><div style="text-align:center;font-size:62px;border-bottom:4px dashed #999;padding-bottom:10px">طريقة الدفع</div>
+ <div class="r"><span><span class="box"><b class="tk" data-at="20.66" style="position:absolute;left:4px;top:-18px;font-size:72px;color:#1FA39A">✔</b></span>كاش</span></div>
+ <div class="r"><span><span class="box"><b class="tk" data-at="21.84" style="position:absolute;left:4px;top:-18px;font-size:72px;color:#1FA39A">✔</b></span>تمويل</span></div></div>`],
+['P',22.76,'stamp',`<div class="e t lz y" style="top:1080px;font-size:140px">على كيفك!</div>`],
+['P',19.86,'pop',`<img class="e c" src="as/c_t_waiter.png" style="width:520px;left:280px;top:1300px">`],
+['K',24.14,'pop',`<img class="e" src="as/logo_full.png" style="width:720px;left:180px;top:260px">`],
+['K',26.18,'stamp',`<div class="e t ruq y" style="top:600px;font-size:130px">اطلب سيارتك</div>`],
+['K',24.3,'pop',`<img class="e c" src="as/c_t_kiss.png" style="width:640px;left:220px;top:960px">`],
+['Z',27.9,'pop',`<img class="e" src="as/logo_full.png" style="width:760px;left:160px;top:640px">`],
+['Z',28.1,'pop',`<div class="e t" style="top:1000px"><span class="pill">920018915</span></div>`]);
 const board=document.getElementById('board'),endc=document.getElementById('endc');
 const holders={};SC.forEach(([id])=>{const d=document.createElement('div');d.style.cssText='position:absolute;inset:0;display:none';(id==='Z'?endc:board).appendChild(d);holders[id]=d;});
 const EL=E.map(([s,at,an,h])=>{const w=document.createElement('div');w.innerHTML=h;const el=w.firstElementChild;holders[s].appendChild(el);return {el,at,an,out:el.dataset.out?+el.dataset.out:null};});
@@ -75,7 +75,7 @@ function render(TT){const t=TT-O;
   if(an!=='draw') el.style.transform=tr; el.style.opacity=op;
   el.querySelectorAll('.tk').forEach(b=>{const kt=cl((t-(+b.dataset.at))/0.25); b.style.opacity=kt; b.style.transform=`scale(${0.3+0.7*bo(kt)})`;});
  });
- endc.style.opacity=t>=23.0?1:0;
+ endc.style.opacity=t>=27.9?1:0;
 }
 window.render=render; render(0);
 </script></body></html>
