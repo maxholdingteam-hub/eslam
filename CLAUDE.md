@@ -13,15 +13,9 @@ Marketing content for **Max Motors** (Saudi car dealer) and its sister brand **M
 - **Site listings:** skip any car with no interior photo. When the source is a competitor such as Emad Al-Din, use their photos as a design reference only: generate new images in our template and never take their logos, plates or watermarks.
 
 ## Voiceover (important)
-- **Approved voice (from the client): Omar**, a native Arabic voice. Model `inworld_text_to_speech` (Higgsfield), `--voice "Omar (ar)"`, `--prompt` is the text. The output is WAV. The old voice Marcus (ElevenLabs v4, `6f98d3dd-…`) is not native Arabic and caused pronunciation errors, so don't use it.
-- **Writing the script:**
-  - Avoid foreign loanwords (البودي, تشيّك…).
-  - Avoid ق where you can, or add diacritics (قَبْل).
-- **Every take:**
-  - Generate 2–3 takes.
-  - Check them word by word with whisper medium, then check suspicious words in isolation in Arabic and in English.
-  - Pick the cleanest take, and fix single errors by splicing in a re-recorded phrase (`sp.py`).
-- **Before publishing:** the client should listen to the result. A real recording by Abu Turki is best.
+- **Client decision: no AI voiceover from now on.** Every AI voice we tried (Marcus, Omar, MiniMax) mispronounced Saudi dialect. Videos run on music, sound effects and moving on-screen text that carries the whole message. Many people watch reels with the sound off, so the text has to be clear and complete on its own.
+- If Abu Turki records his own voice later, sync it to the motion; that is the only accepted source of voice.
+- For timing without a voiceover, give each line enough reading time (about 1.5–2.5 s), and put a SFX (whoosh, pop, ding) under every scene change.
 
 ## Tools (`production/tools/`)
 | File | What it does |
