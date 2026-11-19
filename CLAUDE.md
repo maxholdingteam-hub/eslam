@@ -27,6 +27,22 @@ Marketing content for **Max Motors** (Saudi car dealer) and its sister brand **M
 - **Before publishing:** the client should listen to the result.
 - **Videos without voiceover:** still allowed. Give each line 1.5–2.5 s of reading time and put a SFX under every scene change.
 
+## Team (AI agents in `.claude/agents/`)
+For any large request, start with `head-of-marketing`: it plans, delegates and gives final approval with the checklist.
+
+| Agent | Role |
+| --- | --- |
+| `head-of-marketing` | The head: plans, delegates, reviews against the rules |
+| `content-strategist` | Ideas, hooks, trends, weekly publishing calendar |
+| `copywriter` | Saudi-dialect on-screen text, scripts, captions |
+| `voice-producer` | Voiceover in the approved voice, pronunciation checks |
+| `motion-editor` | Builds and renders the video, mixes the audio |
+| `designer` | Covers, posters, cut-out assets, presenter expressions |
+| `listings-specialist` | Site listing photo packs |
+| `media-buyer` | Paid campaign planning (does not spend without approval) |
+| `ads-manager` | Campaign tracking and weekly reports |
+| `data-analyst` | Account performance analysis and market research |
+
 ## Tools (`production/tools/`)
 | File | What it does |
 | --- | --- |
