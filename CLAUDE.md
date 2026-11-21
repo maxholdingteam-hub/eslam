@@ -80,5 +80,6 @@ For any large request, start with `head-of-marketing`: it plans, delegates and g
 - **Reel «كم واحد يصيدها؟», real Riyadh KAFD photo + car sticker, 920018915 hidden on a building, zoom reveal (no voice; from a TikTok trend):** `promo_hiddennumber`
 - **Reel «مهمة جديدة», open-world game loading-screen style (GTA 6 trend, original art, no game logos), objectives checklist:** `promo_mission_gta`
 - **Reel cards trend: presenter (Higgsfield, from his ref photo; Kling 3.0 Turbo clips) swipes our كاش/تمويل cards, car appears. Needs his approval before publishing. Printable cards + shoot plan for a real version in `production/shoots/trend_cards/`:** `trend_cards_reveal`
+- **Reel «كم واحد يصيدها؟» pause challenge: car sweeps fast through a fixed white outline every 0.8 s, exactly one fitting frame per pass (the real format of the TikTok trend):** `reel_catchthecar`
 - **Finished videos:** `MaxMotors_Ads/`, `MaxMotors_Reels/`, `MaxDesign/`.
 - **Site listings:** `MaxMotors_Site_Listings/<Brand>/<Model>` (full quality), a `_مضغوط` folder (compressed) and a zip, plus `بيانات_السيارة.txt`.

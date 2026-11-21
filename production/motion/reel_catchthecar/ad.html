@@ -1,0 +1,25 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@800;900&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#222}
+#bg{position:absolute;left:0;top:0;width:1080px;height:1920px;object-fit:cover}
+#ol{position:absolute;width:857px;left:111px;top:1161px}
+#car{position:absolute;width:820px;top:1180px;left:130px;filter:drop-shadow(0 30px 30px rgba(0,0,0,.45))}
+#q{position:absolute;left:0;right:0;top:560px;text-align:center;direction:rtl;font-family:Tajawal;font-weight:900;font-size:76px;color:#b3122e;text-shadow:0 0 18px rgba(255,255,255,.6)}
+#s{position:absolute;left:0;right:0;top:665px;text-align:center;direction:rtl;font-family:Tajawal;font-weight:800;font-size:46px;color:#fff;text-shadow:0 2px 0 #000,0 0 14px rgba(0,0,0,.7)}
+#logo{position:absolute;left:40px;top:70px;width:300px;background:rgba(0,0,0,.55);padding:14px 22px;border-radius:18px}
+#end{position:absolute;inset:0;background:#0d0d0f;opacity:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:80px}
+#end .n{font-family:Tajawal;font-weight:900;font-size:110px;color:#111;background:#F2C14E;padding:14px 60px;border-radius:30px}
+</style></head><body>
+<img id="bg" src="as/bg.jpg"><img id="ol" src="as/outline.png"><img id="car" src="as/car.png">
+<img id="logo" src="as/logo_full.png">
+<div id="q">كم واحد يصيدها من أول مرة؟</div><div id="s">وقّف المقطع لما تدخل السيارة في الإطار ✋</div>
+<div id="end"><img src="as/logo_full.png" style="width:780px"><div class="n">920018915</div></div>
+<script>
+window.render=function(t){
+ const f=Math.round(t*30),k=f%24,x=130+(k-12)*110;
+ document.getElementById('car').style.left=x+'px';
+ document.getElementById('car').style.visibility=t<10.4?'visible':'hidden';
+ document.getElementById('end').style.opacity=Math.max(0,Math.min(1,(t-10.45)/.3));
+};window.render(0);
+</script></body></html>
