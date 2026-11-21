@@ -1,0 +1,141 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Max Design Invoice</title>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+/* Max Design quotation, same system as Quotation 000294: the company letterhead as the page,
+   gold section heads with a hairline, a near-black table head, sand-striped rows. One data set feeds EN and AR. */
+:root{
+  --gold:#a8812f; --gold-l:#c9a45a; --ink:#1f1c17; --text:#2b2824; --mute:#6f675b;
+  --rule:#e3d2a8; --stripe:#f7f0e1; --box:#fbf7ee;
+  --en:"Montserrat",Arial,sans-serif; --ar:"Tajawal","Montserrat",Tahoma,sans-serif;
+}
+@page{size:A4;margin:0}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#fff}
+body{font-family:var(--en);color:var(--text);font-size:9.6pt;line-height:1.45}
+html[lang=ar] body{font-family:var(--ar);font-size:10.4pt}
+.page{width:210mm;height:297mm;position:relative;overflow:hidden;page-break-after:always;
+  background:url("a/letterhead.png") center/100% 100% no-repeat}
+.page:last-child{page-break-after:auto}
+.body{position:absolute;left:19mm;right:19mm;top:35.2mm;bottom:31mm;display:flex;flex-direction:column;gap:4.4mm}
+.title{text-align:center;font-weight:700;font-size:12pt;letter-spacing:.42em;color:var(--ink);padding-bottom:3mm;border-bottom:.4mm solid var(--gold-l);margin:0 -2mm}
+html[lang=ar] .title{letter-spacing:.06em;font-size:14pt;font-weight:800}
+.num{font-family:var(--en);font-variant-numeric:tabular-nums}
+html[lang=ar] .num{direction:ltr;unicode-bidi:isolate}
+/* meta */
+.meta{display:grid;grid-template-columns:1fr 1fr;column-gap:10mm}
+.meta div{display:flex;justify-content:space-between;gap:4mm;padding:1.6mm 0;border-bottom:.25mm dashed var(--rule);font-size:8.8pt}
+html[lang=ar] .meta div{font-size:9.8pt}
+.meta span{color:var(--mute)}
+.meta b{font-weight:700;color:var(--ink);text-align:end}
+.meta b.gold{color:var(--gold);font-size:11pt}
+/* section heads */
+.sh{display:flex;justify-content:space-between;align-items:baseline;border-bottom:.3mm solid var(--rule);padding-bottom:1.2mm}
+.sh h2{font-size:12pt;font-weight:600;color:var(--gold)}
+html[lang=ar] .sh h2{font-size:13.5pt;font-weight:800}
+.sh small{font-size:7.6pt;font-weight:700;letter-spacing:.24em;color:var(--mute)}
+html[lang=ar] .sh small{letter-spacing:.02em;font-size:8.6pt}
+.lead{color:var(--text);margin-top:-2mm}
+.note{font-size:8.6pt;color:var(--mute);margin-top:-3mm}
+html[lang=ar] .note{font-size:9.4pt}
+/* tables */
+table{width:100%;border-collapse:collapse}
+thead th{background:var(--ink);color:#fff;font-weight:600;font-size:8.6pt;padding:2.2mm 2.4mm;text-align:start}
+html[lang=ar] thead th{font-size:9.6pt;font-weight:700}
+tbody td{padding:1.9mm 2.4mm;border-bottom:.25mm solid var(--rule);vertical-align:top}
+tbody tr.z td{background:var(--stripe)}
+td.r,th.r{text-align:end}
+td.c,th.c{text-align:center}
+.sub td{font-weight:700;color:var(--ink);background:#efe4c9!important}
+.sec td{font-weight:700;color:var(--gold);background:#fff!important;padding-top:2.6mm}
+.tot td{background:var(--ink)!important;color:#fff;font-weight:700;border:0}
+.tot td.g{color:var(--gold-l)}
+.small td{font-size:8.5pt;padding:1.45mm 2.2mm}
+html[lang=ar] .small td{font-size:9.2pt;padding-top:1.2mm;padding-bottom:1.2mm}
+.desc small{display:block;color:var(--mute);font-size:7.6pt;margin-top:.4mm}
+html[lang=ar] .desc small{font-size:8.2pt;margin-top:0;line-height:1.3}
+/* summary boxes */
+.boxes{display:grid;grid-template-columns:.8fr 1.2fr;gap:3mm}
+.bx{display:flex;align-items:center;justify-content:space-between;padding:4.2mm 5mm;border:.3mm solid var(--rule);background:var(--box)}
+.bx span{color:var(--mute)}
+.bx b{font-size:14pt;font-weight:700;color:var(--ink);white-space:nowrap}
+.bx.dark{background:var(--ink);border-color:var(--ink)}
+.bx.dark span{color:#d6c7a5}
+.bx.dark b{color:var(--gold-l);font-size:16pt}
+.words{margin-top:-3mm;font-size:9pt}
+/* scope cards */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:2.6mm}
+.card{border:.3mm solid var(--rule);padding:2.6mm 3mm;display:flex;gap:2.4mm;background:rgba(255,255,255,.85)}
+.card .n{font-family:var(--en);font-size:12pt;font-weight:600;color:var(--gold);line-height:1}
+.card b{display:block;font-weight:700;color:var(--ink);font-size:9pt}
+html[lang=ar] .card b{font-size:10pt}
+.card p{font-size:7.8pt;color:var(--mute);line-height:1.4;margin-top:.6mm}
+html[lang=ar] .card p{font-size:8.6pt}
+/* optional */
+.opt{border:.3mm dashed var(--gold-l);background:var(--box);padding:3.4mm 4mm;display:grid;gap:1.6mm}
+.opt h3{font-size:9.6pt;color:var(--gold);font-weight:700}
+.opt .row{display:flex;justify-content:space-between;gap:4mm}
+.opt .row b{color:var(--ink);white-space:nowrap}
+/* notes */
+.notes{display:grid;grid-template-columns:24mm 1fr;row-gap:1.3mm;column-gap:4mm;font-size:8.7pt;line-height:1.38}
+html[lang=ar] .notes{font-size:9.4pt}
+.notes dt{font-weight:700;color:var(--gold)}
+.notes dd{color:var(--text)}
+/* acceptance */
+.sign{display:grid;grid-template-columns:1fr 1fr;gap:8mm}
+.sign div{border:.3mm solid var(--rule);padding:3mm 5mm;display:grid;gap:2.4mm;background:rgba(255,255,255,.85)}
+.sign h4{color:var(--gold);font-size:10pt;font-weight:700}
+.sign p{display:flex;gap:3mm;color:var(--mute);font-size:9pt}
+.sign p i{flex:1;border-bottom:.25mm solid var(--mute);font-style:normal}
+.pgno{position:absolute;bottom:24.5mm;left:0;right:0;text-align:center;font-size:7pt;color:var(--mute);letter-spacing:.2em}
+</style>
+</head>
+<body>
+<div id="doc"></div>
+<script>
+const L = new URLSearchParams(location.search).get("lang") === "ar" ? "ar" : "en";
+document.documentElement.lang = L; document.documentElement.dir = L === "ar" ? "rtl" : "ltr";
+const t = (en, ar) => L === "ar" ? ar : en;
+const money = v => v.toLocaleString("en-US", {minimumFractionDigits:2, maximumFractionDigits:2});
+const N = n => `<span class="num">${n}</span>`;
+
+const ITEMS = [
+  [t("Execution works – second instalment","أعمال التنفيذ – الدفعة الثانية"), 13750],
+  [t("External elevations design","تصميم الواجهات الخارجية"), 2000],
+  [t("Additional works","أعمال إضافية"), 650]
+];
+const TOTAL = ITEMS.reduce((a, i) => a + i[1], 0);
+if (TOTAL !== 16400) document.title = "CHECK TOTALS";
+const words = t("Sixteen thousand four hundred Saudi Riyals only.","ستة عشر ألفًا وأربعمائة ريال سعودي فقط لا غير.");
+
+document.getElementById("doc").innerHTML = `<section class="page"><div class="body">
+<div class="title">${t("INVOICE","فاتورة")}</div>
+<div class="meta">
+  <div><span>${t("Project","المشروع")}</span><b>${t("Al-Sulaimaniyah Compound","كمبوند السليمانية")}</b></div>
+  <div><span>${t("Invoice No.","رقم الفاتورة")}</span><b class="gold num">INV-2026-001</b></div>
+  <div><span>${t("Client","العميل")}</span><b>________________</b></div>
+  <div><span>${t("Date","التاريخ")}</span><b>${t("21 November 2026","21 نوفمبر 2026")}</b></div>
+</div>
+
+<div class="sh"><h2>${t("Invoice Details","تفاصيل الفاتورة")}</h2><small>${t("CURRENCY: SAR","العملة: ريال سعودي")}</small></div>
+<table>
+  <thead><tr><th style="width:12mm">${t("No.","م")}</th><th>${t("Description","البيان")}</th><th class="r" style="width:38mm">${t("Amount (SAR)","المبلغ (ريال)")}</th></tr></thead>
+  <tbody>${ITEMS.map(([d, a], i) => `<tr class="${i % 2 ? "z" : ""}"><td>${N("0" + (i + 1))}</td><td><b>${d}</b></td><td class="r"><b>${N(money(a))}</b></td></tr>`).join("")}
+  <tr class="tot"><td></td><td>${t("Total","الإجمالي")}</td><td class="r g">${N(money(TOTAL))}</td></tr></tbody>
+</table>
+<div class="boxes"><div class="bx"><span>${t("Items","عدد البنود")}</span><b>${N(ITEMS.length)}</b></div>
+<div class="bx dark"><span>${t("Total Due","المبلغ المستحق")}</span><b>${N("SAR " + money(TOTAL))}</b></div></div>
+<p class="words">${words}</p>
+
+<div class="sign" style="margin-top:6mm">
+  <div><h4>${t("Received by (Client)","استلم (العميل)")}</h4><p>${t("Name","الاسم")}<i></i></p><p>${t("Signature","التوقيع")}<i></i></p><p>${t("Date","التاريخ")}<i></i></p></div>
+  <div><h4>${t("For Max Design","عن ماكس ديزاين")}</h4><p>${t("Name","الاسم")}<i></i></p><p>${t("Signature","التوقيع")}<i></i></p><p>${t("Date","التاريخ")}<i></i></p></div>
+</div>
+</div></section>`;
+window.__ready = true;
+</script>
+</body>
+</html>
