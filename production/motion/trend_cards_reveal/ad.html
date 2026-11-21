@@ -1,0 +1,36 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@800;900&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#000}
+#v{position:absolute;left:0;top:0;width:1080px;height:1920px;object-fit:cover}
+#cards{position:absolute;left:540px;top:960px;width:0;height:0}
+#cards img{position:absolute;width:520px;filter:drop-shadow(0 20px 30px rgba(0,0,0,.5))}
+.tx{position:absolute;left:0;right:0;top:230px;text-align:center;direction:rtl;font-family:Tajawal;font-weight:900;font-size:74px;color:#fff;text-shadow:0 4px 0 #000,0 0 20px rgba(0,0,0,.8);opacity:0}
+.tx span{color:#F2C14E}
+#end{position:absolute;inset:0;background:#0d0d0f;opacity:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:80px}
+#end .n{font-family:Tajawal;font-weight:900;font-size:110px;color:#111;background:#F2C14E;padding:14px 60px;border-radius:30px}
+</style></head><body>
+<img id="v" src="fa/001.jpg">
+<div class="tx" id="t1">اختار… <span>كاش</span> ولا <span>تمويل</span>؟</div>
+<div class="tx" id="t2">وسيارتك تنتظرك 🔥</div>
+<div id="cards"><img src="as/card_cash.png" style="left:-500px;top:-370px;transform:rotate(-9deg)"><img src="as/card_fin.png" style="left:-40px;top:-350px;transform:rotate(8deg)"></div>
+<div id="end"><img src="as/logo_full.png" style="width:780px"><div class="n">920018915</div></div>
+<script>
+const $=id=>document.getElementById(id);
+function E(t,a,d){return Math.max(0,Math.min(1,(t-a)/d))}
+function ez(p){return 1-Math.pow(1-p,3)}
+const CUT=4.6;
+window.render=function(t){
+ let src;if(t<CUT){src='fa/'+String(Math.min(151,1+Math.floor(t*30))).padStart(3,'0')+'.jpg'}else{src='fb/'+String(Math.min(151,1+Math.floor((t-CUT)*30))).padStart(3,'0')+'.jpg'}
+ // card overlay: grows to cover lens 4.25-4.6, then whips left 4.6-5.0
+ const g=E(t,4.25,.35),w=E(t,CUT,.4);const c=$('cards');
+ c.style.opacity=(t>=4.25&&t<5.0)?1:0;
+ c.style.transform=`translateX(${-ez(w)*2600}px) scale(${.55+2.9*g*g}) rotate(${-8*w}deg)`;
+ c.style.filter=w>0&&w<1?`blur(${12*Math.sin(Math.PI*w)}px)`:'none';
+ $('t1').style.opacity=E(t,.3,.3)*(1-E(t,4.0,.2));$('t1').style.transform=`scale(${.8+.2*ez(E(t,.3,.3))})`;
+ $('t2').style.opacity=E(t,5.4,.3)*(1-E(t,9.5,.2));$('t2').style.transform=`scale(${.8+.2*ez(E(t,5.4,.3))})`;
+ $('end').style.opacity=E(t,9.65,.3);
+ const v=$('v');if(v.getAttribute('src')===src)return;
+ return new Promise(r=>{v.onload=()=>r();v.src=src});
+};
+</script></body></html>

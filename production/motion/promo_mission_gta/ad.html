@@ -1,0 +1,69 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Lalezar&family=Tajawal:wght@800;900&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#000}
+.full{position:absolute;inset:0;overflow:hidden;opacity:0}
+.full img{position:absolute;width:1080px;height:1910px;object-fit:cover;left:0;top:0}
+.pan{position:absolute;overflow:hidden;border:10px solid #000;box-shadow:0 20px 50px rgba(0,0,0,.6)}
+.pan img{position:absolute;width:100%;height:auto;left:0}
+#ttl{position:absolute;left:0;right:0;bottom:140px;text-align:center;direction:rtl;font-family:Lalezar;font-size:190px;line-height:1;color:#fff;-webkit-text-stroke:10px #000;paint-order:stroke;text-shadow:0 12px 0 #000}
+#sub{position:absolute;left:0;right:0;bottom:60px;text-align:center;direction:rtl;font-family:Tajawal;font-weight:900;font-size:60px;color:#F2C14E;-webkit-text-stroke:6px #000;paint-order:stroke}
+.hud{position:absolute;font-family:Tajawal;font-weight:900;direction:rtl;color:#fff}
+#mis{left:0;right:0;top:300px;text-align:center;font-size:58px;text-shadow:0 4px 0 #000,0 0 16px #000}
+#mis b{display:block;font-family:Lalezar;font-weight:400;font-size:120px;color:#F2C14E;-webkit-text-stroke:8px #000;paint-order:stroke}
+#mm{position:absolute;left:50px;bottom:70px;width:300px;height:300px;border-radius:50%;border:8px solid #111;overflow:hidden;background:#3b4a3c;box-shadow:0 0 0 4px #fff}
+#obj{position:absolute;right:50px;top:160px;width:720px;background:rgba(0,0,0,.72);border-radius:16px;padding:34px 40px;box-sizing:border-box;direction:rtl}
+#obj h3{margin:0 0 18px;font-family:Tajawal;font-weight:900;font-size:54px;color:#F2C14E}
+.o{display:flex;align-items:center;gap:24px;font-family:Tajawal;font-weight:800;font-size:56px;color:#fff;padding:14px 0}
+.bx{width:58px;height:58px;border:5px solid #fff;border-radius:8px;flex:none;position:relative}
+.bx i{position:absolute;inset:-12px -8px auto auto;font-style:normal;font-size:76px;color:#3ddc84;line-height:1;transform:scale(0)}
+#done{position:absolute;left:0;right:0;top:980px;text-align:center;direction:rtl;opacity:0}
+#done .a{font-family:Lalezar;font-size:170px;line-height:1;color:#F2C14E;-webkit-text-stroke:12px #000;paint-order:stroke;text-shadow:0 10px 0 #000}
+#done .b{font-family:Tajawal;font-weight:900;font-size:76px;color:#fff;-webkit-text-stroke:7px #000;paint-order:stroke;margin-top:10px}
+#bar{position:absolute;left:0;right:0;top:940px;height:430px;background:linear-gradient(90deg,transparent,rgba(0,0,0,.65) 20%,rgba(0,0,0,.65) 80%,transparent);opacity:0}
+#flash{position:absolute;inset:0;background:#fff;opacity:0}
+#end{position:absolute;inset:0;background:#0d0d0f;opacity:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:80px}
+#end .n{font-family:Tajawal;font-weight:900;font-size:110px;color:#111;background:#F2C14E;padding:14px 60px;border-radius:30px}
+</style></head><body>
+<div id="L" style="position:absolute;inset:0;background:#000">
+ <div class="pan" id="a1" style="left:40px;top:120px;width:560px;height:1060px"><img src="as/p1.jpg" style="top:-40px"></div>
+ <div class="pan" id="a2" style="left:560px;top:80px;width:480px;height:760px"><img src="as/p2.jpg" style="top:-120px"></div>
+ <div class="pan" id="a3" style="left:520px;top:800px;width:520px;height:760px"><img src="as/p3.jpg" style="top:-60px"></div>
+ <div id="ttl">ماكس موتورز</div><div id="sub">الرياض · كاش أو تمويل</div>
+</div>
+<div class="full" id="F2"><img src="as/p2.jpg"><div class="hud" id="mis">مهمة جديدة<b>سيارتك الجديدة</b></div><div id="mm"><canvas id="mmc" width="300" height="300"></canvas></div></div>
+<div class="full" id="F3"><img src="as/p3.jpg"><div id="obj"><h3>الأهداف</h3>
+ <div class="o"><span class="bx"><i id="c1">✔</i></span>اختار سيارتك</div>
+ <div class="o"><span class="bx"><i id="c2">✔</i></span>الدفع: كاش أو تمويل</div>
+ <div class="o"><span class="bx"><i id="c3">✔</i></span>استلم المفتاح</div></div></div>
+<div class="full" id="F1"><img src="as/p1.jpg"><div id="bar"></div><div id="done"><div class="a">المهمة اكتملت!</div><div class="b"><bdi dir="ltr">+1</bdi> سيارة جديدة 🔑</div></div></div>
+<div id="flash"></div>
+<div id="end"><img src="as/logo_full.png" style="width:780px"><div class="n">920018915</div></div>
+<script>
+function E(t,a,d){return Math.max(0,Math.min(1,(t-a)/d))}
+function ez(p){return 1-Math.pow(1-p,3)}
+function back(p){const c=1.7;p=p-1;return 1+p*p*((c+1)*p+c)}
+const $=id=>document.getElementById(id);
+const mm=$('mmc').getContext('2d');
+window.render=function(t){
+ // loading collage 0-4.6
+ [['a1',.1,-1],['a2',.5,1],['a3',.9,1]].forEach(([id,a,d])=>{const p=ez(E(t,a,.5));$(id).style.transform=`translateX(${(1-p)*d*900}px) rotate(${d*2-1}deg)`;$(id).querySelector('img').style.transform=`scale(${1.05+t*.01}) translateY(${-t*6}px)`});
+ const tp=E(t,1.4,.4);$('ttl').style.transform=`scale(${back(tp)})`;$('ttl').style.opacity=tp;$('sub').style.opacity=E(t,1.9,.3);
+ $('L').style.opacity=1-E(t,4.5,.2);
+ // F2 4.6-7.6
+ $('F2').style.opacity=E(t,4.5,.2)*(1-E(t,7.5,.2));$('F2').querySelector('img').style.transform=`scale(${1.04+.03*E(t,4.5,3)})`;
+ const mp=E(t,4.9,.4);$('mis').style.opacity=mp;$('mis').style.transform=`scale(${.7+.3*back(mp)})`;
+ mm.fillStyle='#3b4a3c';mm.fillRect(0,0,300,300);mm.save();mm.translate(150,150);mm.rotate(t*.15);mm.strokeStyle='#777';mm.lineWidth=14;for(let i=-3;i<4;i++){mm.beginPath();mm.moveTo(i*70,-200);mm.lineTo(i*70,200);mm.stroke();mm.beginPath();mm.moveTo(-200,i*70);mm.lineTo(200,i*70);mm.stroke()}
+ mm.strokeStyle='#F2C14E';mm.lineWidth=10;mm.beginPath();mm.moveTo(0,0);mm.lineTo(0,-70);mm.lineTo(70,-70);mm.lineTo(70,-140);mm.stroke();mm.fillStyle='#F2C14E';mm.beginPath();mm.arc(70,-140,14,0,7);mm.fill();mm.restore();
+ mm.fillStyle='#fff';mm.beginPath();mm.moveTo(150,128);mm.lineTo(166,168);mm.lineTo(150,160);mm.lineTo(134,168);mm.fill();
+ // F3 7.6-12.2
+ $('F3').style.opacity=E(t,7.5,.2)*(1-E(t,12.1,.2));$('F3').querySelector('img').style.transform=`scale(${1.04+.03*E(t,7.5,4.6)})`;
+ const op=E(t,7.8,.35);$('obj').style.opacity=op;$('obj').style.transform=`translateX(${(1-ez(op))*-80}px)`;
+ [['c1',8.6],['c2',9.8],['c3',11.0]].forEach(([id,a])=>$(id).style.transform=`scale(${back(E(t,a,.3))})`);
+ // F1 12.2-15
+ $('F1').style.opacity=E(t,12.1,.2);$('F1').querySelector('img').style.transform=`scale(${1.08-.04*E(t,12.1,3)})`;
+ $('flash').style.opacity=.85*(1-E(t,12.25,.35))*(t>12.2?1:0);
+ const dp=E(t,12.3,.4);$('done').style.opacity=dp;$('done').style.transform=`scale(${back(dp)})`;$('bar').style.opacity=dp;
+ $('end').style.opacity=E(t,15.1,.35);
+};window.render(0);
+</script></body></html>

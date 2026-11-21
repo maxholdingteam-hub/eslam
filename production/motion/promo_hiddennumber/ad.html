@@ -1,0 +1,36 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@800;900&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#222}
+#sc{position:absolute;inset:0;transform-origin:50% 50%}
+#bg{position:absolute;left:0;top:0;width:1080px;height:1920px;object-fit:cover}
+#num{position:absolute;left:846px;top:905px;font-family:Tajawal;font-weight:900;font-size:27px;letter-spacing:1px;color:rgba(255,236,190,.72);transform:rotate(-10deg) skewX(-10deg);text-shadow:0 0 6px rgba(255,210,120,.55);mix-blend-mode:screen}
+#car{position:absolute;width:820px;left:130px;top:1180px;filter:drop-shadow(0 30px 30px rgba(0,0,0,.45))}
+#q{position:absolute;left:0;right:0;top:560px;text-align:center;direction:rtl;font-family:Tajawal;font-weight:900;font-size:76px;color:#b3122e;text-shadow:0 0 18px rgba(255,255,255,.55)}
+#logo{position:absolute;left:40px;top:70px;width:300px;background:rgba(0,0,0,.55);padding:14px 22px;border-radius:18px}
+#ring{position:absolute;left:822px;top:880px;width:210px;height:90px;border:7px solid #F2C14E;border-radius:50%;box-shadow:0 0 18px #F2C14E;opacity:0}
+#hint{position:absolute;left:0;right:0;top:1660px;text-align:center;direction:rtl;font-family:Tajawal;font-weight:900;font-size:60px;color:#111;opacity:0}
+#hint span{background:#F2C14E;padding:8px 36px;border-radius:24px}
+#end{position:absolute;inset:0;background:#0d0d0f;opacity:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:80px}
+#end .n{font-family:Tajawal;font-weight:900;font-size:110px;color:#111;background:#F2C14E;padding:14px 60px;border-radius:30px}
+</style></head><body>
+<div id="sc"><img id="bg" src="as/bg.jpg"><div id="num">920018915</div><div id="ring"></div><img id="car" src="as/car.png"></div>
+<img id="logo" src="as/logo_full.png">
+<div id="q">كم واحد يصيدها من أول مرة؟</div>
+<div id="hint"><span>الرقم كان مخبّى هنا 👀</span></div>
+<div id="end"><img src="as/logo_full.png" style="width:780px"><div class="n">920018915</div></div>
+<script>
+function E(t,a,d){return Math.max(0,Math.min(1,(t-a)/d))}
+function ez(p){return p<.5?2*p*p:1-Math.pow(-2*p+2,2)/2}
+window.render=function(t){
+ const z=ez(E(t,8.2,1.3));const s=1+.03*Math.min(t,8)/8;const S=s*(1+1.6*z);
+ // zoom toward number (center ~ 927,925)
+ const cx=927,cy=925;const tx=(540-cx)*z*1.0,ty=(960-cy)*z*1.0;
+ document.getElementById('sc').style.transform=`translate(${tx}px,${ty}px) scale(${S})`;
+ document.getElementById('sc').style.transformOrigin=`${540+(cx-540)*z}px ${960+(cy-960)*z}px`;
+ const r=E(t,8.0,.35);document.getElementById('ring').style.opacity=r;document.getElementById('ring').style.transform=`scale(${1.6-0.6*r}) rotate(-6deg)`;
+ document.getElementById('q').style.opacity=1-E(t,8.0,.3);document.getElementById('car').style.opacity=1-E(t,8.0,.4);
+ const h=E(t,8.6,.3);document.getElementById('hint').style.opacity=h;document.getElementById('hint').style.transform=`scale(${.7+.3*h})`;
+ document.getElementById('end').style.opacity=E(t,10.6,.35);
+};window.render(0);
+</script></body></html>

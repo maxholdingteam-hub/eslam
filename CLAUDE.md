@@ -76,5 +76,9 @@ For any large request, start with `head-of-marketing`: it plans, delegates and g
 - **Promo «صح ولا غلط؟», 4 myths with stamps, in the series' paper cut-out style (Marcus voice):** `promo_trueorfalse`
 - **Promo «قطاع الشركات», company fleets: cars for management, sites and staff buses, cash or corporate finance (paper cut-outs, Marcus voice):** `promo_companies`
 - **Promo «وجهتك: سيارتك الجديدة», realistic in-car navigation screen with turn banners and cards (Marcus voice as the nav voice; not paper cut-outs):** `promo_navigation`
+- **Promo «نتيجة البحث», light search-engine UI: typed questions, suggestions, first result Max Motors (Marcus voice):** `promo_search`
+- **Reel «كم واحد يصيدها؟», real Riyadh KAFD photo + car sticker, 920018915 hidden on a building, zoom reveal (no voice; from a TikTok trend):** `promo_hiddennumber`
+- **Reel «مهمة جديدة», open-world game loading-screen style (GTA 6 trend, original art, no game logos), objectives checklist:** `promo_mission_gta`
+- **Reel cards trend: presenter (Higgsfield, from his ref photo; Kling 3.0 Turbo clips) swipes our كاش/تمويل cards, car appears. Needs his approval before publishing. Printable cards + shoot plan for a real version in `production/shoots/trend_cards/`:** `trend_cards_reveal`
 - **Finished videos:** `MaxMotors_Ads/`, `MaxMotors_Reels/`, `MaxDesign/`.
 - **Site listings:** `MaxMotors_Site_Listings/<Brand>/<Model>` (full quality), a `_مضغوط` folder (compressed) and a zip, plus `بيانات_السيارة.txt`.
