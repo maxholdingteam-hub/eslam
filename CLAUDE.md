@@ -74,5 +74,6 @@ For any large request, start with `head-of-marketing`: it plans, delegates and g
 - **Promo, chat with voice notes in the presenter's cloned voice:** `promo_chat_voicenotes`
 - **Promo «نداء أخير», airport split-flap board (made by the agent team):** `promo_lastcall`
 - **Promo «صح ولا غلط؟», 4 myths with stamps, in the series' paper cut-out style (Marcus voice):** `promo_trueorfalse`
+- **Promo «قطاع الشركات», company fleets: cars for management, sites and staff buses, cash or corporate finance (paper cut-outs, Marcus voice):** `promo_companies`
 - **Finished videos:** `MaxMotors_Ads/`, `MaxMotors_Reels/`, `MaxDesign/`.
 - **Site listings:** `MaxMotors_Site_Listings/<Brand>/<Model>` (full quality), a `_مضغوط` folder (compressed) and a zip, plus `بيانات_السيارة.txt`.
