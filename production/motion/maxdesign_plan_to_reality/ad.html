@@ -1,0 +1,68 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;800;900&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#0b3a6e}
+#grid{position:absolute;inset:0;background-image:linear-gradient(rgba(255,255,255,.07) 2px,transparent 2px),linear-gradient(90deg,rgba(255,255,255,.07) 2px,transparent 2px);background-size:54px 54px}
+#cam{position:absolute;inset:0;transform-origin:330px 560px}
+#r1{position:absolute;left:0;top:0;width:1080px;height:1920px;object-fit:cover;opacity:0}
+#plan{position:absolute;left:-33px;top:115px;width:1145px;height:1680px}
+#plan text{font-family:Tajawal;opacity:0}
+#r2w{position:absolute;inset:0;opacity:0;overflow:hidden}
+#r2{position:absolute;left:0;top:0;width:1080px;height:1920px;object-fit:cover}
+.cap{position:absolute;left:0;right:0;text-align:center;direction:rtl;font-family:Tajawal;font-weight:900;color:#fff;text-shadow:0 6px 30px rgba(0,0,0,.6);opacity:0}
+.cap span{color:#D4AF37}
+#logo{position:absolute;left:50%;top:40px;width:200px;margin-left:-100px;z-index:5;filter:drop-shadow(0 4px 10px rgba(0,0,0,.6))}
+#chips{position:absolute;left:0;right:0;bottom:200px;display:flex;justify-content:center;gap:20px;direction:rtl;opacity:0}
+#chips b{font-family:Tajawal;font-weight:900;font-size:46px;color:#111;background:#D4AF37;padding:10px 30px;border-radius:40px}
+#end{position:absolute;inset:0;background:#0e0c0a;opacity:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:70px;z-index:9}
+#end .n{font-family:Tajawal;font-weight:900;font-size:110px;color:#111;background:linear-gradient(#f3d77a,#c9a133);padding:14px 60px;border-radius:30px}
+</style></head><body>
+<div id="grid"></div>
+<div id="cam"><img id="r1" src="as/r1.jpg"><svg id="plan" viewBox="0 0 1000 1400" preserveAspectRatio="none">
+<g fill="none" stroke="#fff" stroke-linecap="square">
+<path class="w" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" d="M80 80H920V1320H80Z" stroke-width="16"/>
+<path class="w" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" d="M80 620H520M600 620H920M520 80V420M520 500V620M80 980H380M460 980H920M560 980V1320M300 620V980" stroke-width="10"/>
+<path class="f" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" d="M140 130h300v70h-300zM140 200v240h60v-240M380 200v240h60v-240M230 300h120v100h-120z" stroke-width="4"/>
+<path class="f" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" d="M580 120h300v60h-300zM580 180v120h60v-120M820 180v120h60v-120M660 420h200v120h-200z" stroke-width="4"/>
+<path class="f" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" d="M120 660h60v300h-60zM180 660h100v60h-100z" stroke-width="4"/>
+<path class="f" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" d="M340 660h540v60h-540zM620 800h200v110h-200z" stroke-width="4"/>
+<path class="f" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" d="M120 1020h200v190h-200zM120 1020h200v40h-200z" stroke-width="4"/>
+<path class="f" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" d="M620 1020h220v200h-220zM620 1020h220v50h-220z" stroke-width="4"/>
+<path class="d" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" d="M520 420a80 80 0 0 1 80 80M520 620a80 80 0 0 0 80 -80M380 980a80 80 0 0 1 80 -80" stroke-width="3" />
+</g>
+<g fill="#cfe3ff" font-size="46" font-weight="800" text-anchor="middle">
+<text x="300" y="560">المجلس</text><text x="720" y="600">الصالة</text><text x="235" y="850">المطبخ</text><text x="600" y="955">الطعام</text><text x="300" y="1290">غرفة نوم</text><text x="740" y="1295">الماستر</text></g>
+
+</svg></div>
+<div id="r2w"><img id="r2" src="as/r2.jpg"></div>
+<div class="cap" id="c1" style="top:820px;font-size:120px">كل بيت حلو…</div>
+<div class="cap" id="c2" style="top:980px;font-size:100px">يبدأ <span>بخط</span> ✏️</div>
+<div class="cap" id="c3" style="top:1790px;font-size:62px">مخطّط مدروس لكل مساحة</div>
+<div class="cap" id="c4" style="top:1790px;font-size:62px;color:#111;text-shadow:none">وتشوف بيتك <span style="color:#8a6a12">3D</span> قبل التنفيذ</div>
+<div class="cap" id="c5" style="top:1380px;font-size:96px">ونسلّمك المكان<br><span>جاهز</span> 🔑</div>
+<div id="chips"><b>تصميم</b><b>تنفيذ</b><b>تشطيب</b></div>
+<img id="logo" src="as/md.png">
+<div id="end"><img src="as/md.png" style="width:640px"><div class="n">0579277975</div></div>
+<script>
+const $=id=>document.getElementById(id);
+function E(t,a,d){return Math.max(0,Math.min(1,(t-a)/d))}
+function io(p){return p<.5?4*p*p*p:1-Math.pow(-2*p+2,3)/2}
+function ez(p){return 1-Math.pow(1-p,3)}
+const W=[...document.querySelectorAll('#plan .w')],F=[...document.querySelectorAll('#plan .f')],D=[...document.querySelectorAll('#plan .d')],T=[...document.querySelectorAll('#plan text')];
+function cap(id,a,b){const p=E(t0,a,.35)*(1-E(t0,b,.3));$(id).style.opacity=p;$(id).style.transform=`translateY(${(1-ez(E(t0,a,.35)))*40}px)`}
+let t0=0;
+window.render=function(t){t0=t;
+ W.forEach((p,i)=>p.style.strokeDashoffset=1-E(t,1.7+i*.5,.9));
+ F.forEach((p,i)=>p.style.strokeDashoffset=1-E(t,3.0+i*.22,.6));
+ D.forEach((p,i)=>p.style.strokeDashoffset=1-E(t,4.4,.5));
+ T.forEach((x,i)=>x.style.opacity=E(t,4.6+i*.1,.3));
+ cap('c1',.2,1.6);cap('c2',.8,1.6);cap('c3',2.0,5.8);cap('c4',6.3,9.9);
+ const x=E(t,5.8,1.0);$('r1').style.opacity=x;$('plan').style.opacity=1-E(t,6.2,.9);$('grid').style.opacity=1-x;
+ document.body.style.background=x>.5?'#e9e6e1':'#0b3a6e';
+ const z=io(E(t,7.2,3.4)),d=E(t,10.3,.8);$('cam').style.transform=`scale(${1+1.3*z+2.5*d*d})`;
+ $('r2w').style.opacity=E(t,10.5,.55);$('r2').style.transform=`scale(${1.2-.15*ez(E(t,10.5,4.5))})`;
+ cap('c5',11.4,15.3);const ch=E(t,12.2,.4);$('chips').style.opacity=ch*(1-E(t,15.3,.3));
+ $('logo').style.opacity=1-E(t,15.4,.2);
+ $('end').style.opacity=E(t,15.5,.35);
+};window.render(0);
+</script></body></html>

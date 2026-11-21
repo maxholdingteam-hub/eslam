@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1400" width="1000" height="1400" font-family="Tajawal" >
+<g fill="none" stroke="#fff" stroke-linecap="square">
+<path class="w" d="M80 80H920V1320H80Z" stroke-width="16"/>
+<path class="w" d="M80 620H520M600 620H920M520 80V420M520 500V620M80 980H380M460 980H920M560 980V1320M300 620V980" stroke-width="10"/>
+<path class="f" d="M140 130h300v70h-300zM140 200v240h60v-240M380 200v240h60v-240M230 300h120v100h-120z" stroke-width="4"/>
+<path class="f" d="M580 120h300v60h-300zM580 180v120h60v-120M820 180v120h60v-120M660 420h200v120h-200z" stroke-width="4"/>
+<path class="f" d="M120 660h60v300h-60zM180 660h100v60h-100z" stroke-width="4"/>
+<path class="f" d="M340 660h540v60h-540zM620 800h200v110h-200z" stroke-width="4"/>
+<path class="f" d="M120 1020h200v190h-200zM120 1020h200v40h-200z" stroke-width="4"/>
+<path class="f" d="M620 1020h220v200h-220zM620 1020h220v50h-220z" stroke-width="4"/>
+<path class="d" d="M520 420a80 80 0 0 1 80 80M520 620a80 80 0 0 0 80 -80M380 980a80 80 0 0 1 80 -80" stroke-width="3" stroke-dasharray="8 6"/>
+</g>
+<g fill="#cfe3ff" font-size="46" font-weight="800" text-anchor="middle">
+<text x="300" y="560">المجلس</text><text x="720" y="600">الصالة</text><text x="235" y="850">المطبخ</text><text x="600" y="955">الطعام</text><text x="300" y="1290">غرفة نوم</text><text x="740" y="1295">الماستر</text></g>
+</svg>
