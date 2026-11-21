@@ -1,0 +1,96 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+Arabic:wght@500;700&family=Tajawal:wght@800;900&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#0d1117;font-family:'IBM Plex Sans Arabic';direction:rtl}
+#wrap{position:absolute;inset:0;perspective:1400px;perspective-origin:50% 30%;overflow:hidden}
+#map{position:absolute;left:-460px;top:-200px;width:2000px;height:2400px;transform-origin:50% 75%;transform:rotateX(52deg)}
+#sky{position:absolute;left:0;right:0;top:0;height:520px;background:linear-gradient(#05070b,#0d1117 85%,rgba(13,17,23,0));z-index:1}
+.ban{position:absolute;left:36px;right:36px;top:70px;height:250px;border-radius:34px;background:#0f7a4a;color:#fff;z-index:5;box-shadow:0 18px 40px rgba(0,0,0,.5);display:flex;align-items:center;padding:0 40px;box-sizing:border-box;gap:34px}
+.ban .ic{width:150px;height:150px;flex:none}
+.ban .tx{flex:1}
+.ban .d{font-family:Tajawal;font-weight:900;font-size:84px;line-height:1}
+.ban .s{font-size:52px;font-weight:700;opacity:.95;line-height:1.25;white-space:nowrap}
+.bot{position:absolute;left:0;right:0;bottom:0;height:250px;background:#161b22;z-index:5;border-radius:44px 44px 0 0;display:flex;align-items:center;justify-content:space-around;color:#fff;box-shadow:0 -10px 30px rgba(0,0,0,.4)}
+.bot .k{font-size:36px;color:#8b949e;text-align:center}.bot .v{font-family:Tajawal;font-weight:900;font-size:66px;color:#fff;text-align:center}
+.card{position:absolute;left:70px;right:70px;z-index:6;background:#fff;border-radius:40px;box-shadow:0 30px 70px rgba(0,0,0,.55);color:#111;padding:40px 50px;box-sizing:border-box;text-align:center}
+.card h2{margin:0;font-family:Tajawal;font-weight:900;font-size:76px;line-height:1.15}
+.card p{margin:10px 0 0;font-size:46px;color:#555;font-weight:500}
+.chip{display:inline-flex;align-items:center;gap:20px;font-family:Tajawal;font-weight:900;font-size:70px;padding:24px 50px;border-radius:30px;border:6px solid #d0d7de;color:#999;margin:16px}
+.chip.on{border-color:#0f7a4a;color:#0f7a4a;background:#e6f4ec}
+.row{display:flex;align-items:center;justify-content:space-between;font-size:52px;font-weight:700;padding:22px 10px;border-bottom:3px solid #eee}
+.row:last-child{border:0}.tick{width:66px;height:66px;border-radius:50%;background:#0f7a4a;color:#fff;font-size:44px;display:flex;align-items:center;justify-content:center;transform:scale(0)}
+#end{position:absolute;inset:0;background:#0d1117;z-index:20;opacity:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:80px}
+#end .n{font-family:Tajawal;font-weight:900;font-size:110px;color:#111;background:#F2C14E;padding:14px 60px;border-radius:30px;direction:ltr}
+#conf{position:absolute;inset:0;z-index:7;pointer-events:none}
+</style></head><body>
+<div id="wrap"><canvas id="map" width="2000" height="2400"></canvas></div>
+<div id="sky"></div>
+<div class="ban" id="ban"><svg class="ic" id="ic" viewBox="0 0 100 100"></svg><div class="tx"><div class="d" id="bd"></div><div class="s" id="bs"></div></div></div>
+<div class="bot"><div><div class="k">الوصول</div><div class="v">اليوم</div></div><div><div class="k">المتبقي</div><div class="v" id="rem">1.9 كم</div></div><div><div class="k">الوجهة</div><div class="v" style="font-size:54px">سيارتك الجديدة</div></div></div>
+
+<div class="card" id="c2" style="top:1180px"><img src="as/logo_full.png" style="width:560px;filter:invert(1) hue-rotate(180deg) brightness(.5)"><p>معرض سيارات · مفتوح الآن</p></div>
+<div class="card" id="c3" style="top:980px;padding-top:30px"><img src="as/car01.png" style="width:820px;display:block;margin:0 auto"><h2>اختار سيارتك</h2><p>على راحتك</p></div>
+<div class="card" id="c4" style="top:1040px"><h2 style="margin-bottom:20px">طريقة الدفع</h2><span class="chip" id="k1">كاش <b class="ck">✔</b></span><span class="chip" id="k2">تمويل <b class="ck">✔</b></span></div>
+<div class="card" id="c5" style="top:1000px;text-align:right"><h2 style="text-align:center;margin-bottom:10px">الأوراق؟ نخلّصها عنك</h2>
+ <div class="row">العقد<span class="tick" id="t1">✔</span></div><div class="row">التأمين<span class="tick" id="t2">✔</span></div><div class="row">نقل الملكية<span class="tick" id="t3">✔</span></div></div>
+<div class="card" id="c6" style="top:880px;padding-top:30px"><div style="font-size:120px;line-height:1">🏁</div><h2>وصلت وجهتك</h2><img src="as/car01.png" style="width:760px;display:block;margin:10px auto 0"><h2 style="color:#0f7a4a" id="mb">مبروك السيارة!</h2></div>
+<canvas id="conf" width="1080" height="1920"></canvas>
+<div id="end"><img src="as/logo_full.png" style="width:780px"><div class="n">920018915</div></div>
+<script>
+const O=0.3;
+const R=[[1000,2700],[1000,1700],[1400,1700],[1400,1150],[1100,1150],[1100,500]];
+const seg=[];let TL=0;for(let i=1;i<R.length;i++){const l=Math.hypot(R[i][0]-R[i-1][0],R[i][1]-R[i-1][1]);seg.push(l);TL+=l}
+function at(d){d=Math.max(0,Math.min(TL,d));for(let i=0;i<seg.length;i++){if(d<=seg[i]){const f=d/seg[i];return[R[i][0]+(R[i+1][0]-R[i][0])*f,R[i][1]+(R[i+1][1]-R[i][1])*f]}d-=seg[i]}return R[R.length-1]}
+function rnd(s){return()=>{s=(s*16807)%2147483647;return s/2147483647}}
+const cv=document.getElementById('map'),x=cv.getContext('2d');
+// static base map
+const base=document.createElement('canvas');base.width=4000;base.height=4000;const b=base.getContext('2d');
+(function(){const r=rnd(7);b.fillStyle='#1b222c';b.fillRect(0,0,4000,4000);
+ for(let gx=-100;gx<4000;gx+=150)for(let gy=-100;gy<4000;gy+=150){const w=150-26,p=r();b.fillStyle=p<.12?'#163a27':p<.5?'#242c38':'#212935';b.fillRect(gx+13,gy+13,w,w);
+  if(p>.5){b.fillStyle='#2b3442';const n=1+Math.floor(r()*3);for(let k=0;k<n;k++)b.fillRect(gx+20+r()*60,gy+20+r()*60,30+r()*40,30+r()*40)}}
+ b.strokeStyle='#3a4556';b.lineWidth=26;for(let g=-100;g<4000;g+=150){b.beginPath();b.moveTo(g,0);b.lineTo(g,4000);b.stroke();b.beginPath();b.moveTo(0,g);b.lineTo(4000,g);b.stroke()}
+ b.strokeStyle='#4d5a6e';b.lineWidth=44;[[1000,'v'],[1700,'h'],[1150,'h'],[1400,'v'],[1100,'v'],[500,'h']].forEach(([g,o])=>{b.beginPath();o=='v'?(b.moveTo(g,0),b.lineTo(g,4000)):(b.moveTo(0,g),b.lineTo(4000,g));b.stroke()});
+ b.fillStyle='#1d3d5c';b.beginPath();b.ellipse(500,900,260,140,.4,0,7);b.fill();})();
+function E(t,a,d=.45){return Math.max(0,Math.min(1,(t-a)/d))}
+function back(p){const c=1.7;p=p-1;return 1+p*p*((c+1)*p+c)}
+function ez(p){return 1-Math.pow(1-p,3)}
+function card(id,t,a,z){const e=document.getElementById(id);const pin=E(t,a,.45),pout=E(t,z,.3);const s=back(pin)*(1-pout*.15);e.style.opacity=Math.min(pin*2,1)*(1-pout);e.style.transform=`translateY(${(1-ez(pin))*240+pout*60}px) scale(${s})`;e.style.display=(t<a||t>z+.35)?'none':'block'}
+const IC={up:'<path d="M50 88V22M24 46l26-26 26 26" stroke="#fff" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/>',
+ right:'<path d="M30 88V52q0-16 16-16h34M62 18l20 18-20 18" stroke="#fff" stroke-width="12" fill="none" stroke-linecap="round" stroke-linejoin="round"/>',
+ pin:'<path d="M50 92s30-30 30-52a30 30 0 0 0-60 0c0 22 30 52 30 52z" fill="#fff"/><circle cx="50" cy="40" r="11" fill="#0f7a4a"/>',
+ flag:'<path d="M26 92V12M26 14h52l-12 18 12 18H26" stroke="#fff" stroke-width="10" fill="#fff" stroke-linejoin="round"/>'};
+const BN=[[0,'up','وجهتك','سيارتك الجديدة'],[3.9,'right','100 م','ادخل معرض ماكس موتورز'],[8.0,'pin','اختار','سيارتك على راحتك'],[10.9,'up','الدفع؟','كاش أو تمويل'],[14.0,'up','الأوراق؟','نخلّصها عنك'],[17.07,'flag','وصلت','مبروك السيارة!']];
+let last=-1;
+// confetti particles
+const CP=[];(function(){const r=rnd(3);const col=['#F2C14E','#E5383B','#1FA39A','#fff','#4ea1ff'];for(let i=0;i<140;i++)CP.push([540+(r()-.5)*200,900,(r()-.5)*1400,-900-r()*900,col[i%5],r()*6,10+r()*14])})();
+window.render=function(t){
+ // drive progress: arrive at 17.1
+ const u=Math.min(1,t/17.3),P=u<.9?u*.97:.873+.127*ez((u-.9)/.1);const d=P*TL;
+ const p=at(d),a=at(d-60),q=at(d+90);const h=Math.atan2(q[0]-a[0],-(q[1]-a[1]));
+ x.setTransform(1,0,0,1,0,0);x.fillStyle='#1b222c';x.fillRect(0,0,2000,2400);
+ x.translate(1000,1800);x.rotate(-h);x.translate(-p[0],-p[1]);x.drawImage(base,0,0);
+ // route ahead
+ x.lineCap='round';x.lineJoin='round';x.strokeStyle='#1e6ff0';x.lineWidth=40;x.beginPath();x.moveTo(p[0],p[1]);let acc=0;for(let i=0;i<seg.length;i++){acc+=seg[i];if(acc>d)x.lineTo(R[i+1][0],R[i+1][1])}x.stroke();
+ x.strokeStyle='#7fb0ff';x.lineWidth=12;x.stroke();
+ // destination pin
+ const D=R[R.length-1];x.save();x.translate(D[0],D[1]);x.rotate(h);x.fillStyle='#E5383B';x.beginPath();x.arc(0,-70,46,0,7);x.fill();x.beginPath();x.moveTo(-30,-40);x.lineTo(30,-40);x.lineTo(0,0);x.fill();x.fillStyle='#fff';x.beginPath();x.arc(0,-70,18,0,7);x.fill();x.restore();
+ // car arrow
+ x.setTransform(1,0,0,1,0,0);x.translate(1000,1800);x.fillStyle='rgba(30,111,240,.25)';x.beginPath();x.arc(0,0,90+10*Math.sin(t*5),0,7);x.fill();
+ x.fillStyle='#fff';x.beginPath();x.moveTo(0,-62);x.lineTo(44,48);x.lineTo(0,26);x.lineTo(-44,48);x.closePath();x.fill();x.fillStyle='#1e6ff0';x.beginPath();x.moveTo(0,-46);x.lineTo(32,36);x.lineTo(0,18);x.lineTo(-32,36);x.closePath();x.fill();
+ // banner
+ let k=0;for(let i=0;i<BN.length;i++)if(t>=BN[i][0])k=i;const bn=BN[k];const ban=document.getElementById('ban');
+ if(k!==last){document.getElementById('ic').innerHTML=IC[bn[1]];document.getElementById('bs').textContent=bn[3];last=k}
+ let dd=bn[2];if(k===1){const m=Math.max(0,Math.round((1-E(t,4.0,1.4))*10)*10);dd=m>0?m+' م':'الآن'}document.getElementById('bd').textContent=dd;
+ const bp=E(t,bn[0],.35);ban.style.transform=`translateY(${(1-ez(bp))*-40}px)`;ban.style.opacity=.4+.6*bp;ban.style.background=k===5?'#1e6ff0':'#0f7a4a';
+ document.getElementById('rem').textContent=t>=17.1?'0 كم':((1-P)*1.9).toFixed(1)+' كم';
+ card('c2',t,5.6,7.85);card('c3',t,8.1,10.75);card('c4',t,11.0,13.85);card('c5',t,14.1,16.9);card('c6',t,17.15,99);
+ [['k1',11.93],['k2',12.59]].forEach(([id,a])=>{document.getElementById(id).className='chip'+(t>=a?' on':'');document.getElementById(id).style.transform=`scale(${1+.12*Math.sin(Math.PI*E(t,a,.3))})`});
+ document.querySelectorAll('.ck').forEach(e=>e.style.visibility='visible');
+ [['t1',14.9],['t2',15.3],['t3',15.7]].forEach(([id,a])=>document.getElementById(id).style.transform=`scale(${back(E(t,a,.3))})`);
+ document.getElementById('mb').style.transform=`scale(${back(E(t,18.5,.4))})`;
+ const cc=document.getElementById('conf').getContext('2d');cc.clearRect(0,0,1080,1920);const ct=t-17.2;
+ if(ct>0&&ct<3.2)CP.forEach(c=>{const X=c[0]+c[2]*ct*.6,Y=c[1]+c[3]*ct+900*ct*ct;cc.save();cc.translate(X,Y);cc.rotate(c[5]+ct*6);cc.fillStyle=c[4];cc.fillRect(-c[6]/2,-c[6]/4,c[6],c[6]/2);cc.restore()});
+ document.getElementById('end').style.opacity=E(t,20.3,.4);
+};
+window.render(0);
+</script></body></html>
