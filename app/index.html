@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0d0d0f">
+<meta name="description" content="ماكس موتورز — سيارات جديدة من ماركات كثيرة، كاش أو تمويل.">
+<title>ماكس موتورز</title>
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@400;500;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header class="top">
+  <a href="#/" class="brand" aria-label="الرئيسية"><img src="icons/logo.png" alt="ماكس موتورز"></a>
+  <a class="call-mini" href="tel:920018915" aria-label="اتصال">☎ 920018915</a>
+</header>
+<main id="view" tabindex="-1"></main>
+<nav class="tabs" aria-label="التنقل">
+  <a href="#/" data-tab="home"><span class="ic">⌂</span>الرئيسية</a>
+  <a href="#/cars" data-tab="cars"><span class="ic">🚘</span>السيارات</a>
+  <a href="#/fav" data-tab="fav"><span class="ic">♥</span>المفضلة</a>
+  <a href="#/companies" data-tab="companies"><span class="ic">🏢</span>الشركات</a>
+  <a href="#/contact" data-tab="contact"><span class="ic">☎</span>تواصل</a>
+</nav>
+<div id="sheet" class="sheet" hidden></div>
+<div id="toast" class="toast" hidden></div>
+<script src="config.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
