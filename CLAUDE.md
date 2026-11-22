@@ -83,6 +83,7 @@ For any large request, start with `head-of-marketing`: it plans, delegates and g
 - **Reel «مهمة جديدة», open-world game loading-screen style (GTA 6 trend, original art, no game logos), objectives checklist:** `promo_mission_gta`
 - **Reel cards trend: presenter (Higgsfield, from his ref photo; Kling 3.0 Turbo clips) swipes our كاش/تمويل cards, car appears. Needs his approval before publishing. Printable cards + shoot plan for a real version in `production/shoots/trend_cards/`:** `trend_cards_reveal`
 - **Reel «كم واحد يصيدها؟» pause challenge: car sweeps fast through a fixed white outline every 0.8 s, exactly one fitting frame per pass (the real format of the TikTok trend):** `reel_catchthecar`
+- **Promo «وين ما كان مشوارك» — cinematic live-action look: 5 Seedance 2.5 1080p clips (80 credits each) from gpt_image stills built on listing photos (H9 highway dawn, Camry KAFD rain night, Jetour dune, Staria villa door opening, H9 showroom); Marcus VO lines placed per scene:** `promo_cinematic_journey`
 - **Max Design «قبل / بعد»: 3 realistic spaces (facade, majlis, kitchen) raw → finished with a slider wipe (no voice):** `maxdesign_before_after`
 - **Max Design «من المخطّط للحقيقة»: blueprint plan draws itself, crossfades into a matching 3D cutaway, dives into the real majlis (no voice):** `maxdesign_plan_to_reality`
 - **Finished videos:** `MaxMotors_Ads/`, `MaxMotors_Reels/`, `MaxDesign/`.
