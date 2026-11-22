@@ -1,23 +1,41 @@
 <!doctype html><html><head><meta charset="utf-8">
-<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;800;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;900&display=swap" rel="stylesheet">
 <style>
-html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#0b0b0d;font-family:Tajawal}
-#hero{position:absolute;left:0;top:0;width:1080px;height:1200px;overflow:hidden}
-#hero img{position:absolute;left:0;width:1080px;height:1920px}
-#hero:after{content:'';position:absolute;inset:0;background:linear-gradient(rgba(11,11,13,.55),rgba(11,11,13,0) 26%,rgba(11,11,13,0) 70%,#0b0b0d)}
-#gl{position:absolute;left:390px;right:390px;top:1215px;height:5px;background:linear-gradient(90deg,#a9813f,#f3d77a,#a9813f);border-radius:3px}
-#cat{position:absolute;left:0;right:0;top:1250px;text-align:center}
-#cat span{display:inline-block;direction:rtl;border:3px solid #D4AF37;color:#F2C14E;font-weight:800;font-size:40px;padding:6px 30px 4px;border-radius:40px}
-#ti{position:absolute;left:40px;right:40px;top:1335px;text-align:center;direction:rtl;color:#fff;font-weight:900;font-size:112px;line-height:1.12}
-#ti b{color:#F2C14E;font-weight:900}
-#lg{position:absolute;left:50%;top:1600px;width:300px;margin-left:-150px;opacity:.9}
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#040405;font-family:Cairo}
+#bg{position:absolute;inset:0;background:radial-gradient(ellipse 70% 38% at 50% 40%,#1a1410 0%,#070708 60%,#040405 100%)}
+#mw{position:absolute;left:90px;top:300px;width:900px;opacity:.95}
+#hz{position:absolute;left:0;right:0;top:1098px;height:4px;background:linear-gradient(90deg,rgba(255,140,40,0),#ff9a3c 25%,#ffd29a 50%,#ff9a3c 75%,rgba(255,140,40,0))}
+#hzg{position:absolute;left:0;right:0;top:1040px;height:120px;background:radial-gradient(ellipse 60% 50% at 50% 50%,rgba(255,130,40,.45),rgba(255,130,40,0) 70%)}
+#floor{position:absolute;left:0;right:0;top:1100px;bottom:0;background:linear-gradient(#0b0a09,#040405 45%)}
+#stage{position:absolute;inset:0}
+.sub{position:absolute}
+.ref{position:absolute;transform:scaleY(-1);opacity:.22;-webkit-mask-image:linear-gradient(to top,rgba(0,0,0,.9),rgba(0,0,0,0) 45%);mask-image:linear-gradient(to top,rgba(0,0,0,.9),rgba(0,0,0,0) 45%)}
+#cat{position:absolute;left:0;right:0;top:1190px;text-align:center}
+#cat span{display:inline-block;direction:rtl;border:2px solid #c9a133;color:#F3D9A0;font-weight:700;font-size:38px;padding:2px 30px;border-radius:40px;background:rgba(201,161,51,.08)}
+#ti{position:absolute;left:40px;right:40px;top:1265px;text-align:center;direction:rtl;color:#fff;font-weight:900;font-size:116px;line-height:1.15}
+#ti b{font-weight:900;background:linear-gradient(180deg,#F3D9A0,#D4AF6A 55%,#A9813F);-webkit-background-clip:text;background-clip:text;color:transparent}
+#lg{position:absolute;left:50%;top:1600px;width:280px;margin-left:-140px}
+.ol{position:absolute;filter:brightness(0) invert(1);opacity:.9}
 </style></head><body>
-<div id="hero"><img id="im"></div><div id="gl"></div><div id="cat"><span id="ca"></span></div><div id="ti"></div><img id="lg" src="logo.png">
+<div id="bg"></div><img id="mw" src="as/mwire.png"><div id="hzg"></div><div id="floor"></div><div id="hz"></div>
+<div id="stage"></div>
+<div id="cat"><span id="ca"></span></div><div id="ti"></div><img id="lg" src="as/logo.png">
 <script>
 let D=[];fetch('covers.json').then(r=>r.json()).then(d=>D=d);
-window.render=async function(i){i=Math.round(i);const c=D[i];const im=document.getElementById('im');
- await new Promise(r=>{im.onload=r;im.src=c.img});im.style.top=(-c.top)+'px';
+const HZ=1100;
+function ld(src){return new Promise(r=>{const i=new Image();i.onload=()=>r(i);i.src=src})}
+async function place(src,w,cx,extra=''){const im=await ld(src);const h=im.naturalHeight*w/im.naturalWidth;const l=cx-w/2,t=HZ-h;
+ return `<img class="sub" src="${src}" style="left:${l}px;top:${t}px;width:${w}px;${extra}"><img class="ref" src="${src}" style="left:${l}px;top:${HZ}px;width:${w}px;${extra}">`}
+window.render=async function(i){i=Math.round(i);const c=D[i];let h='';
+ if(c.type==='car') h=await place(`as/${c.s}.png`,960,540);
+ else if(c.type==='two'){h=await place(`as/${c.s[1]}.png`,640,330)+await place(`as/${c.s[0]}.png`,640,760);}
+ else if(c.type==='person'){const im=await ld(`as/${c.s}.png`);let w=Math.min(800,720*im.naturalWidth/im.naturalHeight*1.0);w=Math.min(w,820);const hh=im.naturalHeight*w/im.naturalWidth;if(hh>760){w=w*760/hh}h=await place(`as/${c.s}.png`,w,540);}
+ else if(c.type==='silhouette') h=await place(`as/${c.s}.png`,960,540,'filter:brightness(0) drop-shadow(0 0 3px #D4AF6A) drop-shadow(0 0 14px rgba(212,175,106,.6))');
+ else if(c.type==='outline'){const im=await ld(`as/${c.s}.png`);const w=760,hh=im.naturalHeight*w/im.naturalWidth;
+   h=`<div style="position:absolute;left:${540-w/2-14}px;top:${HZ-hh-14}px;width:${w+28}px;height:${hh+28}px;border:5px dashed rgba(255,255,255,.85);border-radius:40px"></div>`+await place(`as/${c.s}.png`,w,700);}
+ document.getElementById('stage').innerHTML=h;
+ await Promise.all([...document.querySelectorAll('#stage img')].map(x=>x.complete?1:new Promise(r=>x.onload=r)));
  document.getElementById('ca').textContent=c.cat;const ti=document.getElementById('ti');ti.innerHTML=c.title;
- let fs=112;ti.style.fontSize=fs+'px';while(ti.scrollHeight>260&&fs>70){fs-=4;ti.style.fontSize=fs+'px'}
- const w=document.createElement('div');}
+ let fs=116;ti.style.fontSize=fs+'px';while(ti.scrollHeight>300&&fs>72){fs-=4;ti.style.fontSize=fs+'px'}
+};
 </script></body></html>
