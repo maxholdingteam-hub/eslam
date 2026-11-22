@@ -1,0 +1,61 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@300;500;900&family=Lalezar&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#000}
+#v{position:absolute;left:0;top:0;width:1080px;height:1920px;object-fit:cover}
+#vig{position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,0) 30%,rgba(0,0,0,0) 75%,rgba(0,0,0,.45))}
+#logo{position:absolute;bottom:70px;left:50%;width:230px;margin-left:-115px;opacity:.85}
+.cat{position:absolute;top:150px;right:70px;direction:rtl;text-align:right;opacity:0}
+.cat small{display:block;font-family:Tajawal;font-weight:500;font-size:54px;color:#fff;text-shadow:0 2px 14px rgba(0,0,0,.9),0 0 4px #000}
+.cat b{display:block;font-family:Lalezar;font-weight:400;font-size:190px;line-height:1;color:#F2C14E;text-shadow:0 8px 40px rgba(0,0,0,.6)}
+.cat i{display:block;height:6px;background:#F2C14E;margin-top:10px;width:0;margin-right:0}
+#hook{position:absolute;left:0;right:0;top:760px;text-align:center;direction:rtl;font-family:Lalezar;font-size:150px;color:#fff;opacity:0;text-shadow:0 8px 40px rgba(0,0,0,.7)}
+#hook span{color:#F2C14E}
+#grid{position:absolute;inset:0;opacity:0}
+#grid .g{position:absolute;width:540px;height:960px;overflow:hidden}
+#grid .g img{width:100%;height:100%;object-fit:cover}
+#gtx{position:absolute;left:0;right:0;top:770px;height:380px;background:rgba(0,0,0,.78);display:flex;flex-direction:column;align-items:center;justify-content:center;direction:rtl;opacity:0}
+#gtx .a{font-family:Tajawal;font-weight:500;font-size:62px;color:#eee}
+#gtx .b{font-family:Lalezar;font-size:120px;color:#fff;line-height:1.1}
+#gtx .b span{color:#F2C14E}
+#gtx .c{font-family:Lalezar;font-size:96px;color:#111;background:#F2C14E;padding:6px 50px 0;border-radius:20px;position:absolute;opacity:0}
+#flash{position:absolute;inset:0;background:#fff;opacity:0}
+#end{position:absolute;inset:0;background:#0b0b0d;opacity:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:80px}
+#end .n{font-family:Tajawal;font-weight:900;font-size:110px;color:#111;background:linear-gradient(#f3d77a,#c9a133);padding:14px 60px;border-radius:30px}
+</style></head><body>
+<img id="v" src="fr1/001.jpg"><div id="vig"></div>
+<div id="hook">كل واحد<br><span>وذوقه</span></div>
+<div class="cat" id="c1"><small>فيه اللي يبي</small><b>الفخامة</b><i></i></div>
+<div class="cat" id="c2"><small>واللي يبي</small><b>المغامرة</b><i></i></div>
+<div class="cat" id="c3"><small>واللي يبي</small><b>السرعة</b><i></i></div>
+<div class="cat" id="c4"><small>واللي يبيها</small><b>للشغل</b><i></i></div>
+<div id="grid"><div class="g" style="left:540px;top:0"><img id="g1"></div><div class="g" style="left:0;top:0"><img id="g2"></div><div class="g" style="left:540px;top:960px"><img id="g3"></div><div class="g" style="left:0;top:960px"><img id="g4"></div>
+ <div id="gtx"><div class="a" id="ga">وأيًّا كان ذوقك…</div><div class="b" id="gb">سيارتك <span>عندنا</span></div><div class="c" id="gc">كاش أو تمويل</div></div></div>
+<img id="logo" src="as/logo.png">
+<div id="flash"></div>
+<div id="end"><img src="as/logo.png" style="width:780px"><div class="n">920018915</div></div>
+<script>
+const $=id=>document.getElementById(id);
+function E(t,a,d){return Math.max(0,Math.min(1,(t-a)/d))}
+function ez(p){return 1-Math.pow(1-p,3)}
+function back(p){const c=1.7;p=p-1;return 1+p*p*((c+1)*p+c)}
+const fr=(k,f)=>`fr${k}/${String(Math.max(1,Math.min(151,f))).padStart(3,'0')}.jpg`;
+function load(img,src){if(img.getAttribute('src')===src)return null;return new Promise(r=>{img.onload=img.onerror=()=>r();img.src=src})}
+const CAT=[['c1',3.0,4.75],['c2',5.4,9.7],['c3',10.4,14.7],['c4',15.4,19.7]];
+window.render=function(t){
+ $('hook').style.opacity=E(t,.4,.5)*(1-E(t,2.7,.3));$('hook').style.transform=`scale(${1.15-.15*ez(E(t,.4,.8))})`;
+ CAT.forEach(([id,a,b])=>{const e=$(id);e.style.opacity=E(t,a,.3)*(1-E(t,b,.3));e.querySelector('b').style.transform=`translateX(${(1-ez(E(t,a,.5)))*-120}px)`;e.querySelector('i').style.width=ez(E(t,a+.2,.6))*380+'px'});
+ let fl=0;[5,10,15,20].forEach(c=>{if(t>=c&&t<c+.25)fl=.5*(1-(t-c)/.25)});$('flash').style.opacity=fl;
+ const gp=E(t,20,.5);$('grid').style.opacity=gp;
+ [1,2,3,4].forEach((k,i)=>{const g=$('g'+k).parentNode;const p=E(t,20+i*.12,.5);g.style.transform=`scale(${.85+.15*ez(p)})`;g.style.opacity=p});
+ $('gtx').style.opacity=E(t,20.3,.4)*(1-E(t,25.2,.3));
+ $('ga').style.opacity=1-E(t,23.3,.2);$('gb').style.opacity=E(t,21.6,.4)*(1-E(t,23.3,.2));
+ const cp=E(t,23.5,.35);$('gc').style.opacity=cp;$('gc').style.transform=`scale(${back(cp)})`;
+ $('logo').style.opacity=.85*(1-E(t,25.2,.3));
+ $('end').style.opacity=E(t,25.4,.4);
+ const ps=[];
+ if(t<20){const k=Math.floor(t/5)+1;ps.push(load($('v'),fr(k,1+Math.floor((t-(k-1)*5)*30))));}
+ else if(t<25.9){for(let k=1;k<=4;k++)ps.push(load($('g'+k),fr(k,60+Math.floor((t-20)*15))));}
+ return Promise.all(ps.filter(Boolean));
+};
+</script></body></html>
