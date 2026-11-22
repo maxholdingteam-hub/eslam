@@ -1,0 +1,23 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@500;800;900&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#0b0b0d;font-family:Tajawal}
+#hero{position:absolute;left:0;top:0;width:1080px;height:1200px;overflow:hidden}
+#hero img{position:absolute;left:0;width:1080px;height:1920px}
+#hero:after{content:'';position:absolute;inset:0;background:linear-gradient(rgba(11,11,13,.55),rgba(11,11,13,0) 26%,rgba(11,11,13,0) 70%,#0b0b0d)}
+#gl{position:absolute;left:390px;right:390px;top:1215px;height:5px;background:linear-gradient(90deg,#a9813f,#f3d77a,#a9813f);border-radius:3px}
+#cat{position:absolute;left:0;right:0;top:1250px;text-align:center}
+#cat span{display:inline-block;direction:rtl;border:3px solid #D4AF37;color:#F2C14E;font-weight:800;font-size:40px;padding:6px 30px 4px;border-radius:40px}
+#ti{position:absolute;left:40px;right:40px;top:1335px;text-align:center;direction:rtl;color:#fff;font-weight:900;font-size:112px;line-height:1.12}
+#ti b{color:#F2C14E;font-weight:900}
+#lg{position:absolute;left:50%;top:1600px;width:300px;margin-left:-150px;opacity:.9}
+</style></head><body>
+<div id="hero"><img id="im"></div><div id="gl"></div><div id="cat"><span id="ca"></span></div><div id="ti"></div><img id="lg" src="logo.png">
+<script>
+let D=[];fetch('covers.json').then(r=>r.json()).then(d=>D=d);
+window.render=async function(i){i=Math.round(i);const c=D[i];const im=document.getElementById('im');
+ await new Promise(r=>{im.onload=r;im.src=c.img});im.style.top=(-c.top)+'px';
+ document.getElementById('ca').textContent=c.cat;const ti=document.getElementById('ti');ti.innerHTML=c.title;
+ let fs=112;ti.style.fontSize=fs+'px';while(ti.scrollHeight>260&&fs>70){fs-=4;ti.style.fontSize=fs+'px'}
+ const w=document.createElement('div');}
+</script></body></html>
