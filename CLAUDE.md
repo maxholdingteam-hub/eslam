@@ -3,6 +3,7 @@
 Marketing content for **Max Motors** (Saudi car dealer) and its sister brand **Max Design** (interior and architectural design and build). The user writes in Arabic; reply in Egyptian Arabic. Captions and voiceovers are in Saudi dialect.
 
 ## Standing rules (from the client)
+- **Credits: never spend Higgsfield credits (images, video, voice, music) without the client's explicit approval first.** State the plan and estimated cost, then wait for a yes.
 - Keep the look realistic.
 - **Max Motors end card:** logo and the unified number **920018915** only, nothing else.
 - **Max Design number:** **0579277975**.
@@ -71,6 +72,7 @@ For any large request, start with `head-of-marketing`: it plans, delegates and g
   - Special (promo), why Max Motors: `abuturki_special_whymaxmotors`
   - Special (promo), guess the car from its silhouette: `abuturki_special_guessthecar`
   - Challenge: 6-second quiz (5 zoomed details, countdown, score): `abuturki_quiz_6seconds`
+  - Ep. «سيدان ولا جيب؟» (city/fuel → sedan, family/desert → SUV, try both; new halftone assets + 2 new presenter expressions, Marcus vb take): `series_sedan_or_suv`
 - **Promo, 4 steps on a board-game road map (no name):** `promo_4steps_roadmap`
 - **Promo, chalkboard menu «وش تطلب اليوم؟» (color car cut-outs, own music):** `promo_menu`
 - **Promo, chat with voice notes in the presenter's cloned voice:** `promo_chat_voicenotes`
@@ -84,6 +86,7 @@ For any large request, start with `head-of-marketing`: it plans, delegates and g
 - **Reel cards trend: presenter (Higgsfield, from his ref photo; Kling 3.0 Turbo clips) swipes our كاش/تمويل cards, car appears. Needs his approval before publishing. Printable cards + shoot plan for a real version in `production/shoots/trend_cards/`:** `trend_cards_reveal`
 - **Reel «كم واحد يصيدها؟» pause challenge: car sweeps fast through a fixed white outline every 0.8 s, exactly one fitting frame per pass (the real format of the TikTok trend):** `reel_catchthecar`
 - **Promo «وين ما كان مشوارك» — cinematic live-action look: 5 Seedance 2.5 1080p clips (80 credits each) from gpt_image stills built on listing photos (H9 highway dawn, Camry KAFD rain night, Jetour dune, Staria villa door opening, H9 showroom); Marcus VO lines placed per scene:** `promo_cinematic_journey`
+- **Unused cinematic «كل واحد وذوقه» (Rolls Ghost palace, Defender Tuwaiq, Ferrari Al Hada, Sierra date farm; client switched to the series style mid-way). Stills + prompts + Higgsfield job ids (`as/vids.txt`) saved; clips not yet downloaded:** `promo_cinematic_taste`
 - **Max Design «قبل / بعد»: 3 realistic spaces (facade, majlis, kitchen) raw → finished with a slider wipe (no voice):** `maxdesign_before_after`
 - **Max Design «من المخطّط للحقيقة»: blueprint plan draws itself, crossfades into a matching 3D cutaway, dives into the real majlis (no voice):** `maxdesign_plan_to_reality`
 - **Finished videos:** `MaxMotors_Ads/`, `MaxMotors_Reels/`, `MaxDesign/`.
