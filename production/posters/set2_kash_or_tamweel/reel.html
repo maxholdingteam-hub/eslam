@@ -31,7 +31,7 @@ t1.textContent=C.t1;t2.textContent=C.t2;sub.textContent=C.sub;
 function E(t,a,d){return Math.max(0,Math.min(1,(t-a)/d))}function ez(p){return 1-Math.pow(1-p,3)}function back(p){const c=1.7;p=p-1;return 1+p*p*((c+1)*p+c)}
 const N=C.n;
 window.render=function(t){
- const f=Math.min(N,1+Math.floor(Math.min(t,N/30-0.04)*30));const src=`fr${K}/${String(f).padStart(3,'0')}.jpg`;
+ const SP=C.sp||30,MX=C.maxf||N;const f=Math.min(MX,1+Math.floor(t*SP));const src=`fr${K}/${String(f).padStart(3,'0')}.jpg`;
  const z=1+0.06*E(t,5,4.5);v.style.transform=`scale(${z})`;
  logo.style.opacity=E(t,.2,.5);logo.style.transform=`translateY(${(1-ez(E(t,.2,.6)))*-30}px)`;
  [[t1,.6],[t2,1.2],[sub,2.0]].forEach(([e,a])=>{e.style.opacity=E(t,a,.4);e.style.transform=`translateY(${(1-ez(E(t,a,.5)))*40}px)`});
