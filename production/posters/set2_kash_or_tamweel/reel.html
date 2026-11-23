@@ -1,0 +1,44 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;800;900&family=Michroma&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#000;font-family:Cairo}
+#v{position:absolute;left:0;top:0;width:1080px;height:1920px;object-fit:cover;transform-origin:50% 70%}
+#tg{position:absolute;left:0;right:0;top:0;height:1050px;background:linear-gradient(rgba(0,0,0,.85),rgba(0,0,0,.5) 55%,rgba(0,0,0,0))}
+#logo{position:absolute;left:0;right:0;top:250px;text-align:center;opacity:0}
+#logo img{width:210px;filter:drop-shadow(0 6px 14px rgba(0,0,0,.6)) saturate(1.15) brightness(1.08)}
+#logo div{font-family:Michroma;font-size:38px;letter-spacing:6px;margin-top:-4px;background:linear-gradient(180deg,#fff3c4,#e7b94d 45%,#a8741a 80%,#e9c36a);-webkit-background-clip:text;background-clip:text;color:transparent}
+.l{position:absolute;left:30px;right:30px;text-align:center;direction:rtl;font-weight:900;opacity:0}
+#t1{top:500px;color:#fff;font-size:120px;text-shadow:0 6px 24px rgba(0,0,0,.7)}
+#t2{top:640px;font-size:130px;background:linear-gradient(180deg,#fff3c4 0%,#f1c75b 38%,#c38a22 70%,#f5d77f 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 6px 10px rgba(0,0,0,.75))}
+#sub{top:820px;color:#fff;font-weight:600;font-size:46px;text-shadow:0 3px 12px rgba(0,0,0,.9)}
+#btn{position:absolute;left:0;right:0;top:905px;text-align:center;opacity:0}
+#btn span{display:inline-block;direction:rtl;font-weight:800;font-size:52px;color:#2a1a00;padding:10px 70px 12px;background:linear-gradient(180deg,#fbe39a,#e2b04a 50%,#b9832a);clip-path:polygon(4% 0,96% 0,100% 50%,96% 100%,4% 100%,0 50%)}
+#bar{position:absolute;left:0;right:0;top:1580px;height:100px;background:rgba(0,0,0,.88);border-top:1px solid rgba(231,185,77,.35);display:flex;align-items:center;justify-content:space-between;padding:0 60px;opacity:0}
+#bar .u{font-weight:800;font-size:44px;color:#e7b94d;direction:ltr}#bar .n{font-weight:900;font-size:58px;color:#fff;direction:ltr}
+#sweep{position:absolute;top:0;bottom:0;width:260px;left:-300px;background:linear-gradient(90deg,rgba(255,240,200,0),rgba(255,240,200,.35),rgba(255,240,200,0));transform:skewX(-18deg)}
+#end{position:absolute;inset:0;background:#000;opacity:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:80px}
+#end .n{font-weight:900;font-size:110px;color:#2a1a00;background:linear-gradient(180deg,#fbe39a,#e2b04a 50%,#b9832a);padding:6px 60px 12px;border-radius:24px;direction:ltr}
+</style></head><body>
+<img id="v"><div id="tg"></div>
+<div id="logo"><img src="emblem.png"><div>MAX MOTORS</div></div>
+<div class="l" id="t1"></div><div class="l" id="t2"></div><div class="l" id="sub"></div>
+<div id="btn"><span>كاش أو تمويل</span></div><div id="sweep"></div>
+<div id="bar"><span class="n">920018915</span><span class="u">maxmotors.sa</span></div>
+<div id="end"><img src="logo.png" style="width:780px"><div class="n">920018915</div></div>
+<script>
+const Q=new URLSearchParams(location.search);const K=Q.get('k');const C=JSON.parse(decodeURIComponent(Q.get('c')));
+t1.textContent=C.t1;t2.textContent=C.t2;sub.textContent=C.sub;
+function E(t,a,d){return Math.max(0,Math.min(1,(t-a)/d))}function ez(p){return 1-Math.pow(1-p,3)}function back(p){const c=1.7;p=p-1;return 1+p*p*((c+1)*p+c)}
+const N=C.n;
+window.render=function(t){
+ const f=Math.min(N,1+Math.floor(Math.min(t,N/30-0.04)*30));const src=`fr${K}/${String(f).padStart(3,'0')}.jpg`;
+ const z=1+0.06*E(t,5,4.5);v.style.transform=`scale(${z})`;
+ logo.style.opacity=E(t,.2,.5);logo.style.transform=`translateY(${(1-ez(E(t,.2,.6)))*-30}px)`;
+ [[t1,.6],[t2,1.2],[sub,2.0]].forEach(([e,a])=>{e.style.opacity=E(t,a,.4);e.style.transform=`translateY(${(1-ez(E(t,a,.5)))*40}px)`});
+ const bp=E(t,2.7,.4);btn.style.opacity=bp;btn.style.transform=`scale(${back(bp)})`;
+ sweep.style.left=(-300+1700*E(t,1.4,1.0))+'px';
+ bar.style.opacity=E(t,3.2,.4);
+ end.style.opacity=E(t,9.0,.4);
+ if(v.getAttribute('src')===src)return;return new Promise(r=>{v.onload=r;v.src=src});
+};
+</script></body></html>

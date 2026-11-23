@@ -1,0 +1,31 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@600;800;900&family=Michroma&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;width:1080px;height:1920px;background:#000;font-family:Cairo}
+#p{position:absolute;left:0;top:0;width:1080px;height:1350px;overflow:hidden;background:#000}
+#im{position:absolute;left:0;top:0;width:1080px;height:1350px;object-fit:cover}
+#tg{position:absolute;left:0;right:0;top:0;height:760px;background:linear-gradient(rgba(0,0,0,.88),rgba(0,0,0,.6) 50%,rgba(0,0,0,0))}
+#logo{position:absolute;left:0;right:0;top:38px;text-align:center}
+#logo img{width:170px;filter:drop-shadow(0 6px 14px rgba(0,0,0,.6)) saturate(1.15) brightness(1.08)}
+#logo div{font-family:Michroma;font-size:32px;letter-spacing:5px;margin-top:-4px;background:linear-gradient(180deg,#fff3c4,#e7b94d 45%,#a8741a 80%,#e9c36a);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 3px 4px rgba(0,0,0,.7))}
+#ti{position:absolute;left:30px;right:30px;top:248px;text-align:center;direction:rtl;font-weight:900;line-height:1.1}
+#ti .w{display:block;color:#fff;font-size:104px;text-shadow:0 6px 24px rgba(0,0,0,.7)}
+#ti .g{display:block;font-size:112px;background:linear-gradient(180deg,#fff3c4 0%,#f1c75b 38%,#c38a22 70%,#f5d77f 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 6px 10px rgba(0,0,0,.75))}
+#sub{position:absolute;left:0;right:0;top:500px;text-align:center;direction:rtl;color:#fff;font-weight:600;font-size:40px;text-shadow:0 3px 12px rgba(0,0,0,.9)}
+#btn{position:absolute;left:0;right:0;top:572px;text-align:center}
+#btn span{display:inline-block;direction:rtl;font-weight:800;font-size:44px;color:#2a1a00;padding:8px 60px 10px;background:linear-gradient(180deg,#fbe39a,#e2b04a 50%,#b9832a);clip-path:polygon(4% 0,96% 0,100% 50%,96% 100%,4% 100%,0 50%)}
+#bar{position:absolute;left:0;right:0;bottom:0;height:96px;background:rgba(0,0,0,.9);border-top:1px solid rgba(231,185,77,.35);display:flex;align-items:center;justify-content:space-between;padding:0 54px}
+#bar .u{font-weight:800;font-size:40px;color:#e7b94d;direction:ltr}#bar .n{font-weight:900;font-size:54px;color:#fff;direction:ltr}
+</style></head><body><div id="p">
+<img id="im"><div id="tg"></div>
+<div id="logo"><img src="emblem.png"><div>MAX MOTORS</div></div>
+<div id="ti"><span class="w" id="t1"></span><span class="g" id="t2"></span></div>
+<div id="sub"></div><div id="btn"><span id="bt"></span></div>
+<div id="bar"><span class="n">920018915</span><span class="u">maxmotors.sa</span></div></div>
+<script>
+let D=[];fetch('posts.json').then(r=>r.json()).then(d=>D=d);
+window.render=async function(i){i=Math.round(i);const c=D[i];const im=document.getElementById('im');
+ await new Promise(r=>{im.onload=r;im.src=c.img});im.style.objectPosition=`50% ${c.pos??100}%`;
+ t1.textContent=c.t1;t2.textContent=c.t2;sub.textContent=c.sub;bt.textContent=c.btn||'كاش أو تمويل';
+ for(const [id,f] of [['t1',104],['t2',112]]){const e=document.getElementById(id);let fs=f;e.style.fontSize=fs+'px';while(e.scrollWidth>1010&&fs>60){fs-=4;e.style.fontSize=fs+'px'}}};
+</script></body></html>
