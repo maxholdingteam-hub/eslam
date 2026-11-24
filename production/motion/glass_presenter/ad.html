@@ -96,7 +96,7 @@ window.render=async function(t){await ready;
    el.style.opacity=(i==0?1:Math.min(1,pi*1.4))*(1-po);
    el.style.transform=`translateX(${x}px)`;
    el.style.filter=g?`blur(${2+4*Math.sin(Math.PI*Math.max(pi<0.7?pi/0.7:0,po))}px) drop-shadow(4px 0 0 rgba(255,60,60,.5)) drop-shadow(-4px 0 0 rgba(60,220,255,.5))`:'none';
-   el.querySelectorAll('.row').forEach((r,j)=>{const rp=E(t,a+0.35+j*0.12,.2);r.style.opacity=rp;r.style.transform=`translateX(${(1-rp)*-30}px)`});
+   el.querySelectorAll('.row').forEach((r,j)=>{const rp=E(t,a+0.12+j*0.07,.14);r.style.opacity=rp;r.style.transform=`translateX(${(1-rp)*-30}px)`});
   });
  }
  $('end').style.opacity=E(t,C.ev.end,.35);
