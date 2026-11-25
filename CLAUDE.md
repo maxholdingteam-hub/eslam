@@ -27,6 +27,7 @@ Marketing content for **Max Motors** (Saudi car dealer) and its sister brand **M
   - Short lines.
   - Avoid foreign loanwords (البودي, تشيّك…), and avoid «تدوّر», which comes out as «تتدوّر».
   - Avoid ق where you can.
+  - Write «البَرّ» with diacritics; plain «البر» is mispronounced.
 - **Every line:**
   - Generate 2 takes per line, as separate clips.
   - Check them with whisper medium and pick the cleanest.
@@ -79,7 +80,7 @@ For any large request, start with `head-of-marketing`: it plans, delegates and g
   - Ep. «كهربائية ولا بنزين؟» (city + home charging → electric BYD Seal, travel/desert → petrol Patrol; new cut-outs + 2 new presenter expressions; VO spliced from two Marcus takes; cover = post identity on a golden photo of both cars): `series_ev_or_gas`
   - Ep. «فل كامل ولا ستاندر؟» (basics + saving → Camry standard; panorama/leather/sensors → H9 full; "ستاندر" spelled the Saudi way; Marcus take va checked in English; identity cover): `series_full_or_standard`
   - Ep. «كامري ولا أزيرا؟» (comparison: Camry 4-cyl 2.5L economy/daily vs Azera V6 3.5L luxury/quiet/highway power; both 8-speed auto, 5 seats; no hp numbers; Marcus take va; new cut-outs + 2 new presenter expressions t_versus/t_cross2; identity cover on Riyadh boulevard photo): `series_camry_or_azera`
-  - Ep. «باترول ولا لاندكروزر؟» (both 3.5L twin-turbo V6 + 4×4; Patrol 2026 = new design, wide screens, luxury; LC = durability, desert, lasts years; ending «وعندنا اللي يناسبك» since LC isn't in our listings; VO = va hook + vb rest; new cut-outs + presenter expressions t_think/t_point; identity cover on dunes): `series_patrol_or_landcruiser`
+  - Ep. «باترول ولا لاندكروزر؟» (both 3.5L twin-turbo V6 + 4×4; Patrol 2026 = new design, wide screens, luxury; LC = durability, desert, lasts years; ending «وعندنا اللي يناسبك» since LC isn't in our listings; VO = va hook + vb rest, with the two «البر» lines regenerated as «البَرّ» (diacritics fix the pronunciation); new cut-outs + presenter expressions t_think/t_point; identity cover on dunes): `series_patrol_or_landcruiser`
 - **Promo, 4 steps on a board-game road map (no name):** `promo_4steps_roadmap`
 - **Promo, chalkboard menu «وش تطلب اليوم؟» (color car cut-outs, own music):** `promo_menu`
 - **Promo, chat with voice notes in the presenter's cloned voice:** `promo_chat_voicenotes`

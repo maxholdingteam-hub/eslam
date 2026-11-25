@@ -24,15 +24,15 @@ svg{position:absolute;overflow:visible}
 <script>
 const O=0.3;
 const BLK='#121214',YEL='#F2C14E',RED='#E5383B',CRM='#F4EAD5',TEAL='#1FA39A';
-const SC=[['A',0,4.1,RED],['B',4.1,9.9,BLK],['C',9.9,16.9,TEAL],['D',16.9,23.3,YEL],['E',23.3,29.9,CRM],['F',29.9,33.8,BLK],['Z',33.8,99,BLK]];
+const SC=[['A',0.00,4.10,RED],['B',4.10,9.90,BLK],['C',9.90,16.90,TEAL],['D',16.90,24.27,YEL],['E',24.27,31.45,CRM],['F',31.45,35.35,BLK],['Z',35.35,99.00,BLK]];
 const E=[
-['A',0.0,'stamp',`<div class="e t" style="top:190px;font-size:160px;color:#fff">باترول <span style="color:#F2C14E">ولا</span></div>`],
+['A',0.00,'stamp',`<div class="e t" style="top:190px;font-size:160px;color:#fff">باترول <span style="color:#F2C14E">ولا</span></div>`],
 ['A',1.28,'stamp',`<div class="e t" style="top:380px;font-size:140px;color:#fff">لاندكروزر؟</div>`],
-['A',0.2,'slideR',`<img class="e c" src="as/c_pat.png" style="width:500px;left:560px;top:640px">`],
-['A',0.9,'slideL',`<img class="e c" src="as/c_lc.png" style="width:480px;left:30px;top:600px">`],
-['A',0.6,'pop',`<div class="e num" style="top:660px"><span style="width:150px;height:150px;line-height:175px;font-size:90px">VS</span></div>`],
+['A',0.20,'slideR',`<img class="e c" src="as/c_pat.png" style="width:500px;left:560px;top:640px">`],
+['A',0.90,'slideL',`<img class="e c" src="as/c_lc.png" style="width:480px;left:30px;top:600px">`],
+['A',0.60,'pop',`<div class="e num" style="top:660px"><span style="width:150px;height:150px;line-height:175px;font-size:90px">VS</span></div>`],
 ['A',2.69,'pop',`<div class="e badge" style="top:940px"><span>نختصرها لك</span></div>`],
-['A',0.3,'up',`<img class="e c" src="as/c_t_think.png" style="width:640px;left:220px;top:1130px">`],
+['A',0.30,'up',`<img class="e c" src="as/c_t_think.png" style="width:640px;left:220px;top:1130px">`],
 ['B',4.31,'stamp',`<div class="e t" style="top:230px;font-size:150px;color:#fff">الاثنين:</div>`],
 ['B',5.27,'pop',`<img class="e c" src="as/c_o_turbo.png" style="width:600px;left:240px;top:470px">`],
 ['B',5.27,'up',`<div class="e t" style="top:1120px;font-size:100px;color:#fff"><span class="hl" style="--hc:#F2C14E;color:#111">6 سلندر تيربو</span></div>`],
@@ -44,24 +44,24 @@ const E=[
 ['C',13.21,'pop',`<img class="e c" src="as/c_o_screens.png" style="width:520px;left:30px;top:1010px">`],
 ['C',13.21,'stamp',`<div class="e lbl" style="left:560px;width:480px;top:1090px"><span class="pill" style="font-family:Lalezar;letter-spacing:0;font-weight:400;font-size:64px;padding:12px 44px 2px;background:#fff;color:#111">شاشات عريضة</span></div>`],
 ['C',14.51,'stamp',`<div class="e lbl" style="left:560px;width:480px;top:1250px;line-height:1.35"><span class="pill" style="font-family:Lalezar;letter-spacing:0;font-weight:400;font-size:64px;padding:12px 44px 2px;background:#F2C14E;color:#111">فخامة</span><br><span class="pill" style="font-family:Lalezar;letter-spacing:0;font-weight:400;font-size:56px;padding:12px 44px 2px;background:#121214;color:#fff">بكل التفاصيل</span></div>`],
-['D',17.47,'slideL',`<img class="e c" src="as/c_lc.png" style="width:700px;left:190px;top:200px">`],
-['D',17.53,'stamp',`<div class="e seal" style="top:640px;color:#121214"><span style="font-size:96px;padding:10px 40px 0;border-width:10px">اللاندكروزر</span></div>`],
-['D',18.57,'stamp',`<div class="e t" style="top:850px"><span class="pill" style="font-family:Lalezar;letter-spacing:0;font-weight:400;font-size:76px;padding:12px 44px 2px;background:#121214;color:#fff">معروف بالتحمّل</span></div>`],
-['D',20.35,'pop',`<img class="e c" src="as/c_o_dune.png" style="width:520px;left:520px;top:1040px">`],
-['D',20.35,'up',`<div class="e lbl" style="left:30px;width:480px;top:1110px;font-size:88px;color:#111"><span class="hl" style="--hc:#fff">ثابت بالبر</span></div>`],
-['D',21.25,'up',`<div class="e lbl" style="left:30px;width:480px;top:1260px;font-size:80px;color:#111;line-height:1.2">ويعيش معك<br><span class="hl" style="--hc:#E5383B;color:#fff">سنين</span></div>`],
-['E',23.81,'up',`<div class="e lbl" style="left:560px;width:490px;top:250px;font-size:66px;color:#111;line-height:1.25">تبي <span class="hl" style="--hc:#F2C14E">الفخامة</span><br>والشاشات؟</div>`],
-['E',25.85,'pop',`<img class="e c" src="as/c_pat.png" style="width:490px;left:560px;top:520px">`],
-['E',25.9,'stamp',`<div class="e lbl" style="left:560px;width:490px;top:820px"><span class="pill" style="font-family:Lalezar;letter-spacing:0;font-weight:400;font-size:60px;padding:12px 44px 2px;background:#121214;color:#fff">الباترول</span></div>`],
-['E',26.91,'up',`<div class="e lbl" style="left:30px;width:490px;top:250px;font-size:66px;color:#111;line-height:1.25">تبي <span class="hl" style="--hc:#F2C14E">التحمّل</span><br>والبر؟</div>`],
-['E',28.81,'pop',`<img class="e c" src="as/c_lc.png" style="width:470px;left:40px;top:500px">`],
-['E',28.86,'stamp',`<div class="e lbl" style="left:30px;width:490px;top:820px"><span class="pill" style="font-family:Lalezar;letter-spacing:0;font-weight:400;font-size:60px;padding:12px 44px 2px;background:#121214;color:#fff">اللاندكروزر</span></div>`],
-['E',24.0,'up',`<img class="e c" src="as/c_t_think.png" style="width:520px;left:280px;top:1260px">`],
-['F',30.31,'up',`<div class="e t" style="top:330px;font-size:104px;color:#fff;line-height:1.25">وعندنا<br><span class="hl" style="--hc:#F2C14E;color:#111">اللي يناسبك</span></div>`],
-['F',31.97,'stamp',`<div class="e t" style="top:690px"><span class="pill" style="font-family:Lalezar;letter-spacing:0;font-weight:400;font-size:96px;padding:18px 60px 4px">كاش أو تمويل</span></div>`],
-['F',30.4,'up',`<img class="e c" src="as/c_t_point.png" style="width:700px;left:190px;top:960px">`],
-['Z',33.8,'pop',`<img class="e" src="as/logo_full.png" style="width:760px;left:160px;top:640px">`],
-['Z',34.0,'pop',`<div class="e t" style="top:1000px"><span class="pill">920018915</span></div>`]];
+['D',17.30,'slideL',`<img class="e c" src="as/c_lc.png" style="width:700px;left:190px;top:200px">`],
+['D',17.38,'stamp',`<div class="e seal" style="top:640px;color:#121214"><span style="font-size:96px;padding:10px 40px 0;border-width:10px">اللاندكروزر</span></div>`],
+['D',18.70,'stamp',`<div class="e t" style="top:850px"><span class="pill" style="font-family:Lalezar;letter-spacing:0;font-weight:400;font-size:76px;padding:12px 44px 2px;background:#121214;color:#fff">معروف بالتحمّل</span></div>`],
+['D',20.70,'pop',`<img class="e c" src="as/c_o_dune.png" style="width:520px;left:520px;top:1040px">`],
+['D',20.70,'up',`<div class="e lbl" style="left:30px;width:480px;top:1110px;font-size:88px;color:#111"><span class="hl" style="--hc:#fff">ثابت بالبر</span></div>`],
+['D',22.34,'up',`<div class="e lbl" style="left:30px;width:480px;top:1260px;font-size:80px;color:#111;line-height:1.2">ويعيش معك<br><span class="hl" style="--hc:#E5383B;color:#fff">سنين</span></div>`],
+['E',24.78,'up',`<div class="e lbl" style="left:560px;width:490px;top:250px;font-size:66px;color:#111;line-height:1.25">تبي <span class="hl" style="--hc:#F2C14E">الفخامة</span><br>والشاشات؟</div>`],
+['E',26.82,'pop',`<img class="e c" src="as/c_pat.png" style="width:490px;left:560px;top:520px">`],
+['E',26.87,'stamp',`<div class="e lbl" style="left:560px;width:490px;top:820px"><span class="pill" style="font-family:Lalezar;letter-spacing:0;font-weight:400;font-size:60px;padding:12px 44px 2px;background:#121214;color:#fff">الباترول</span></div>`],
+['E',27.88,'up',`<div class="e lbl" style="left:30px;width:490px;top:250px;font-size:66px;color:#111;line-height:1.25">تبي <span class="hl" style="--hc:#F2C14E">التحمّل</span><br>والبر؟</div>`],
+['E',30.25,'pop',`<img class="e c" src="as/c_lc.png" style="width:470px;left:40px;top:500px">`],
+['E',30.30,'stamp',`<div class="e lbl" style="left:30px;width:490px;top:820px"><span class="pill" style="font-family:Lalezar;letter-spacing:0;font-weight:400;font-size:60px;padding:12px 44px 2px;background:#121214;color:#fff">اللاندكروزر</span></div>`],
+['E',24.97,'up',`<img class="e c" src="as/c_t_think.png" style="width:520px;left:280px;top:1260px">`],
+['F',31.86,'up',`<div class="e t" style="top:330px;font-size:104px;color:#fff;line-height:1.25">وعندنا<br><span class="hl" style="--hc:#F2C14E;color:#111">اللي يناسبك</span></div>`],
+['F',33.52,'stamp',`<div class="e t" style="top:690px"><span class="pill" style="font-family:Lalezar;letter-spacing:0;font-weight:400;font-size:96px;padding:18px 60px 4px">كاش أو تمويل</span></div>`],
+['F',31.95,'up',`<img class="e c" src="as/c_t_point.png" style="width:700px;left:190px;top:960px">`],
+['Z',35.35,'pop',`<img class="e" src="as/logo_full.png" style="width:760px;left:160px;top:640px">`],
+['Z',35.55,'pop',`<div class="e t" style="top:1000px"><span class="pill">920018915</span></div>`]];
 const cam=document.getElementById('cam');
 SC.forEach(([id,a,b,bg])=>{const d=document.createElement('div');d.className='sc';d.id='S'+id;d.style.background=bg;d.innerHTML='<div class="noise"></div>';cam.appendChild(d);});
 const EL=E.map(([s,at,an,h],i)=>{const w=document.createElement('div');w.innerHTML=h;const el=w.firstElementChild;document.getElementById('S'+s).appendChild(el);return {el,at,an,s,base:el.style.transform||''};});
@@ -80,7 +80,7 @@ function render(TT){const t=TT-O; let shake=0, punch=0;
   el.querySelectorAll('.hl').forEach(h=>h.style.setProperty('--hx',eo(cl((t-at-0.15)/0.3))));
   el.querySelectorAll('.lateDraw').forEach(p=>p.setAttribute('stroke-dashoffset',1-eo(cl((t-(+p.dataset.at))/0.4))));
  });
- const sx=Math.sin(t*90)*14*shake, sy=Math.cos(t*77)*10*shake; document.getElementById('tag').style.opacity=t>=33.8?0:1; cam.style.transform=`translate(${sx}px,${sy}px) scale(${1+0.06*punch})`;
+ const sx=Math.sin(t*90)*14*shake, sy=Math.cos(t*77)*10*shake; document.getElementById('tag').style.opacity=t>=35.35?0:1; cam.style.transform=`translate(${sx}px,${sy}px) scale(${1+0.06*punch})`;
 }
 window.render=render; render(0);
 </script></body></html>
