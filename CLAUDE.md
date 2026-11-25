@@ -77,6 +77,7 @@ For any large request, start with `head-of-marketing`: it plans, delegates and g
   - Challenge: 6-second quiz (5 zoomed details, countdown, score): `abuturki_quiz_6seconds`
   - Ep. «سيدان ولا جيب؟» (city/fuel → sedan, family/desert → SUV, try both; new halftone assets + 2 new presenter expressions, Marcus vb take): `series_sedan_or_suv`
   - Ep. «كهربائية ولا بنزين؟» (city + home charging → electric BYD Seal, travel/desert → petrol Patrol; new cut-outs + 2 new presenter expressions; VO spliced from two Marcus takes; cover = post identity on a golden photo of both cars): `series_ev_or_gas`
+  - Ep. «فل كامل ولا ستاندر؟» (basics + saving → Camry standard; panorama/leather/sensors → H9 full; "ستاندر" spelled the Saudi way; Marcus take va checked in English; identity cover): `series_full_or_standard`
 - **Promo, 4 steps on a board-game road map (no name):** `promo_4steps_roadmap`
 - **Promo, chalkboard menu «وش تطلب اليوم؟» (color car cut-outs, own music):** `promo_menu`
 - **Promo, chat with voice notes in the presenter's cloned voice:** `promo_chat_voicenotes`
