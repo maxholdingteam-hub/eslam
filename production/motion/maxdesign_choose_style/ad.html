@@ -1,0 +1,69 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#0c0b09;font-family:Cairo;direction:rtl}
+.L{position:absolute;inset:0;overflow:hidden}
+.L img.bg{position:absolute;left:-54px;top:-96px;width:1188px;height:2112px;object-fit:cover}
+.edge{position:absolute;top:0;bottom:0;width:10px;background:linear-gradient(#fff3c4,#d9a944,#b9832a);box-shadow:0 0 40px #d9a944}
+.vg{position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,.55),rgba(0,0,0,0) 20%,rgba(0,0,0,0) 48%,rgba(0,0,0,.72) 72%,rgba(0,0,0,.9))}
+.num{position:absolute;top:170px;left:50%;width:170px;height:170px;margin-left:-85px;border-radius:50%;background:linear-gradient(180deg,#fbe39a,#d9a944 55%,#b9832a);color:#1a1204;font-weight:900;font-size:110px;line-height:180px;text-align:center;box-shadow:0 10px 30px rgba(0,0,0,.5)}
+.nm{position:absolute;left:0;right:0;bottom:330px;text-align:center;color:#fff;font-weight:900;font-size:130px;text-shadow:0 6px 30px rgba(0,0,0,.7)}
+.ds{position:absolute;left:0;right:0;bottom:250px;text-align:center;color:#f1dfb0;font-weight:700;font-size:48px;text-shadow:0 4px 20px rgba(0,0,0,.8)}
+#logo{position:absolute;top:50px;left:50%;width:220px;margin-left:-110px;filter:drop-shadow(0 4px 10px rgba(0,0,0,.7))}
+#intro{position:absolute;inset:0;background:#0c0b09}
+#intro img{position:absolute;inset:0;width:1080px;height:1920px;object-fit:cover;filter:blur(14px) brightness(.45)}
+.it{position:absolute;left:0;right:0;text-align:center;color:#fff;font-weight:900}
+#grid{position:absolute;inset:0;background:#0c0b09}
+.cell{position:absolute;width:520px;height:690px;overflow:hidden;border-radius:26px;border:4px solid #d9a944}
+.cell img{width:100%;height:100%;object-fit:cover}
+.cell span{position:absolute;top:16px;right:16px;width:86px;height:86px;border-radius:50%;background:linear-gradient(180deg,#fbe39a,#d9a944 55%,#b9832a);color:#1a1204;font-weight:900;font-size:58px;line-height:92px;text-align:center}
+.cell i{position:absolute;bottom:0;left:0;right:0;padding:10px 0 14px;background:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.85));color:#fff;font-style:normal;font-weight:900;font-size:50px;text-align:center}
+#end{position:absolute;inset:0;background:#0c0b09;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:70px}
+#end .n{font-weight:900;font-size:100px;color:#1a1204;background:linear-gradient(180deg,#fbe39a,#d9a944 55%,#b9832a);padding:6px 60px 14px;border-radius:30px;direction:ltr}
+</style></head><body>
+<div id="intro"><img src="as/s_najdi.jpg">
+ <div class="it" id="i1" style="top:640px;font-size:110px">نفس المجلس</div>
+ <div class="it" id="i2" style="top:800px;font-size:150px;background:linear-gradient(180deg,#fff3c4,#f1c75b 40%,#c38a22 75%,#f5d77f);-webkit-background-clip:text;background-clip:text;color:transparent">بـ 4 ستايلات</div>
+ <div class="it" id="i3" style="top:1040px;font-size:70px;color:#f1dfb0">أي واحد يشبهك؟</div>
+</div>
+<div id="S"></div>
+<div id="grid"><div class="it" id="gq" style="top:175px;font-size:84px">وش تختار؟</div>
+ <div class="cell" id="c1" style="right:20px;top:315px"><img src="as/s_najdi.jpg"><span>1</span><i>نجدي</i></div>
+ <div class="cell" id="c2" style="left:20px;top:315px"><img src="as/s_modern.jpg"><span>2</span><i>مودرن</i></div>
+ <div class="cell" id="c3" style="right:20px;top:1020px"><img src="as/s_classic.jpg"><span>3</span><i>كلاسيك</i></div>
+ <div class="cell" id="c4" style="left:20px;top:1020px"><img src="as/s_minimal.jpg"><span>4</span><i>مينيمال</i></div>
+ <div class="it" id="gc" style="top:1735px;font-size:62px;color:#f1dfb0">اكتب رقمك بالتعليقات 👇</div>
+</div>
+<img id="logo" src="as/md.png">
+<div id="end"><img src="as/md.png" style="width:760px"><div class="n">0579277975</div></div>
+<script>
+const ST=[['s_najdi','نجدي','دفء الطين وخشب الأثل'],['s_modern','مودرن','خطوط نظيفة وإضاءة مخفية'],['s_classic','كلاسيك','ذهب وكريستال وفخامة'],['s_minimal','مينيمال','هدوء ومساحة وبساطة']];
+const T0=2.6,D=4.0,G0=T0+4*D,E0=G0+5.2;
+const S=document.getElementById('S');
+ST.forEach((s,i)=>{S.insertAdjacentHTML('beforeend',`<div class="L" id="L${i}"><img class="bg" src="as/${s[0]}.jpg"><div class="vg"></div><div class="num">${i+1}</div><div class="nm">${s[1]}</div><div class="ds">${s[2]}</div><div class="edge"></div></div>`)});
+const $=i=>document.getElementById(i),cl=(x)=>Math.max(0,Math.min(1,x)),ez=p=>1-Math.pow(1-p,3),eb=p=>{const c=1.7;return 1+(c+1)*Math.pow(p-1,3)+c*Math.pow(p-1,2)};
+function fade(e,a,d=.4){const p=cl((t_-a)/d);e.style.opacity=p;e.style.transform=`translateY(${(1-ez(p))*40}px)`}
+let t_=0;
+window.render=function(t){t_=t;
+ $('intro').style.display=t<T0+0.7?'block':'none';
+ fade($('i1'),0.15);fade($('i2'),0.75);fade($('i3'),1.5);
+ $('intro').querySelector('img').style.transform=`scale(${1+t*0.02})`;
+ ST.forEach((s,i)=>{const a=T0+i*D,L=$('L'+i);
+  if(t<a||t>a+D+0.8&&i<3||t>=G0+0.6){L.style.display='none';return}
+  L.style.display='block';L.style.zIndex=10+i;
+  const w=ez(cl((t-a)/0.7));L.style.clipPath=`inset(0 0 0 ${(1-w)*100}%)`;
+  const e=L.querySelector('.edge');e.style.left=((1-w)*1080-5)+'px';e.style.opacity=w<1?1:0;
+  L.querySelector('.bg').style.transform=`scale(${1+(t-a)*0.025}) translateX(${(t-a)*-6}px)`;
+  const n=L.querySelector('.num'),p=cl((t-a-0.5)/0.4);n.style.transform=`scale(${eb(p)})`;n.style.opacity=p>0?1:0;
+  const nm=L.querySelector('.nm');const q=cl((t-a-0.7)/0.45);nm.style.opacity=q;nm.style.transform=`translateY(${(1-ez(q))*60}px)`;nm.style.letterSpacing=(1-ez(q))*20+'px';
+  const ds=L.querySelector('.ds');const r=cl((t-a-1.1)/0.45);ds.style.opacity=r;ds.style.transform=`translateY(${(1-ez(r))*40}px)`;
+ });
+ const g=$('grid');g.style.display=t>=G0?'block':'none';g.style.zIndex=30;
+ fade($('gq'),G0+0.1);[1,2,3,4].forEach(k=>{const c=$('c'+k),p=cl((t-G0-0.15*k)/0.45);c.style.opacity=p;c.style.transform=`scale(${0.6+0.4*eb(p)})`;
+   const hi=Math.floor((t-G0-1.6)/0.35);c.style.boxShadow=(t>G0+1.6&&t<E0-0.8&&((hi%4)+1)==k)?'0 0 50px 12px #d9a944':'none'});
+ fade($('gc'),G0+1.2);
+ $('logo').style.display=t<E0?'block':'none';$('logo').style.zIndex=40;
+ const en=$('end');en.style.zIndex=50;en.style.opacity=cl((t-E0)/0.4);en.style.display=t>=E0?'flex':'none';
+};
+window.DUR=E0+3.2;
+</script></body></html>

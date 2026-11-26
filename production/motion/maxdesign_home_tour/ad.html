@@ -1,0 +1,40 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#0c0b09;font-family:Cairo;direction:rtl}
+#v{position:absolute;inset:0;width:1080px;height:1920px;object-fit:cover}
+#vg{position:absolute;inset:0;background:linear-gradient(rgba(0,0,0,.5),rgba(0,0,0,0) 18%,rgba(0,0,0,0) 60%,rgba(0,0,0,.75))}
+#logo{position:absolute;top:56px;left:50%;width:230px;margin-left:-115px;filter:drop-shadow(0 4px 10px rgba(0,0,0,.7))}
+#leak{position:absolute;inset:0;background:radial-gradient(ellipse at 70% 40%,rgba(255,214,130,.95),rgba(217,169,68,.5) 40%,rgba(0,0,0,0) 75%);opacity:0;mix-blend-mode:screen}
+.rm{position:absolute;left:0;right:0;bottom:300px;text-align:center;opacity:0}
+.rm .k{display:inline-block;font-weight:700;font-size:34px;color:#1a1204;background:linear-gradient(180deg,#fbe39a,#d9a944 55%,#b9832a);padding:2px 30px 6px;border-radius:30px;letter-spacing:2px}
+.rm .n{font-weight:900;font-size:120px;color:#fff;text-shadow:0 6px 30px rgba(0,0,0,.7);line-height:1.2}
+.rm i{display:block;width:0;height:5px;margin:6px auto 0;background:linear-gradient(90deg,#b9832a,#fbe39a,#b9832a)}
+#hook{position:absolute;left:90px;right:90px;top:290px;padding:20px 0 30px;border-radius:36px;background:rgba(12,11,9,.62);backdrop-filter:blur(6px);text-align:center;color:#fff;font-weight:900;font-size:92px;line-height:1.2;text-shadow:0 6px 30px rgba(0,0,0,.8);opacity:0}
+#hook b{background:linear-gradient(180deg,#fff3c4,#f1c75b 40%,#c38a22 75%,#f5d77f);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.1em}
+#end{position:absolute;inset:0;background:#0c0b09;opacity:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:56px}
+#end .t{font-weight:900;font-size:84px;color:#fff;text-align:center;line-height:1.25}
+#end .t b{color:#d9a944}
+#end .n{font-weight:900;font-size:96px;color:#1a1204;background:linear-gradient(180deg,#fbe39a,#d9a944 55%,#b9832a);padding:4px 56px 12px;border-radius:30px;direction:ltr}
+</style></head><body>
+<img id="v" src="fr1/001.jpg"><div id="vg"></div><div id="leak"></div><img id="logo" src="as/md.png">
+<div id="hook">تعال نتمشّى<br>في <b>بيت من تصميمنا</b></div>
+<div class="rm" id="r0"><span class="k">01</span><div class="n">المدخل</div><i></i></div>
+<div class="rm" id="r1"><span class="k">02</span><div class="n">المجلس</div><i></i></div>
+<div class="rm" id="r2"><span class="k">03</span><div class="n">المطبخ</div><i></i></div>
+<div class="rm" id="r3"><span class="k">04</span><div class="n">غرفة النوم</div><i></i></div>
+<div id="end"><img src="as/md.png" style="width:640px"><div class="t">نصمّم <b>وننفّذ</b><br><span style="font-size:58px;font-weight:700;color:#f1dfb0">من أول فكرة… إلى تسليم المفتاح</span></div><div class="n">0579277975</div></div>
+<script>
+const $=i=>document.getElementById(i),cl=x=>Math.max(0,Math.min(1,x)),ez=p=>1-Math.pow(1-p,3);
+const CL=5.0,E0=20.0;
+window.render=function(t){
+ const h=$('hook'),hp=cl((t-0.3)/0.6)*(1-cl((t-3.2)/0.5));h.style.opacity=hp;h.style.transform=`translateY(${(1-ez(cl((t-0.3)/0.6)))*50}px)`;
+ [0,1,2,3].forEach(k=>{const a=k*CL+(k==0?3.4:0.5),b=(k+1)*CL-0.35,e=$('r'+k);const p=cl((t-a)/0.5)*(1-cl((t-b)/0.3));e.style.opacity=p;e.style.transform=`translateY(${(1-ez(cl((t-a)/0.5)))*60}px)`;e.querySelector('.n').style.letterSpacing=(1-ez(cl((t-a)/0.7)))*14+'px';e.querySelector('i').style.width=ez(cl((t-a-0.3)/0.6))*220+'px'});
+ let lk=0;[5,10,15,20].forEach(c=>{const d=t-c;if(d>-0.25&&d<0.35)lk=Math.max(lk,d<0?(d+0.25)/0.25:1-d/0.35)});$('leak').style.opacity=lk*0.9;
+ $('logo').style.opacity=1-cl((t-E0)/0.3);$('end').style.opacity=cl((t-E0)/0.45);
+ const ec=$('end');ec.style.transform=`scale(${1.04-0.04*ez(cl((t-E0)/0.8))})`;
+ const k=Math.min(4,Math.floor(t/CL)+1),f=Math.min(151,1+Math.floor((t-(k-1)*CL)*30));
+ const src=`fr${k}/${String(f).padStart(3,'0')}.jpg`,v=$('v');if(t>=E0+0.5||v.getAttribute('src')===src)return;
+ return new Promise(r=>{v.onload=()=>r();v.src=src});
+};
+</script></body></html>

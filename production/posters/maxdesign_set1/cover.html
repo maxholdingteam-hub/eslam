@@ -1,0 +1,24 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#0c0b09;font-family:Cairo;direction:rtl}
+#im{position:absolute;inset:0;width:1080px;height:1920px;object-fit:cover}
+#grid{position:absolute;inset:0;display:none}
+#grid img{position:absolute;width:536px;height:560px;object-fit:cover;object-position:50% 62%}
+#tg{position:absolute;left:0;right:0;top:0;height:420px;background:linear-gradient(rgba(12,11,9,.95),rgba(12,11,9,.7) 35%,rgba(0,0,0,0))}
+#bg{position:absolute;left:0;right:0;bottom:0;height:1100px;background:linear-gradient(rgba(12,11,9,0),rgba(12,11,9,.8) 40%,rgba(12,11,9,.96) 80%)}
+#logo{position:absolute;top:30px;left:50%;width:330px;margin-left:-165px;filter:drop-shadow(0 4px 12px rgba(0,0,0,.7))}
+#box{position:absolute;left:50px;right:50px;top:1000px;text-align:center;color:#fff}
+#tag{display:inline-block;font-weight:700;font-size:40px;color:#1a1204;background:linear-gradient(180deg,#fbe39a,#d9a944 55%,#b9832a);padding:4px 44px 10px;border-radius:40px;margin-bottom:16px}
+#t{font-weight:900;font-size:112px;line-height:1.18;text-shadow:0 6px 24px rgba(0,0,0,.6)}
+#t b{background:linear-gradient(180deg,#fff3c4,#f1c75b 40%,#c38a22 75%,#f5d77f);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.18em}
+#bar{position:absolute;left:0;right:0;top:1580px;height:100px;background:rgba(12,11,9,.9);border-top:1px solid rgba(217,169,68,.45);display:flex;align-items:center;justify-content:space-between;padding:0 60px}
+#bar .r{font-weight:700;font-size:34px;color:#d9a944}#bar .n{font-weight:900;font-size:48px;color:#fff;direction:ltr}
+</style></head><body>
+<img id="im"><div id="grid"><img src="s_najdi.png" style="right:0;top:120px"><img src="s_modern.png" style="left:0;top:120px"><img src="s_classic.png" style="right:0;top:684px"><img src="s_minimal.png" style="left:0;top:684px"></div>
+<div id="tg"></div><div id="bg"></div><img id="logo" src="md.png">
+<div id="box"><div id="tag"></div><div id="t"></div></div>
+<div id="bar"><span class="r">تصميم · تنفيذ · تشطيب</span><span class="n">0579277975</span></div>
+<script>const q=new URLSearchParams(location.search);
+if(q.get('grid')){document.getElementById('grid').style.display='block';document.getElementById('im').style.display='none'}else document.getElementById('im').src=q.get('img');
+document.getElementById('tag').textContent=q.get('tag');document.getElementById('t').innerHTML=q.get('t');</script></body></html>

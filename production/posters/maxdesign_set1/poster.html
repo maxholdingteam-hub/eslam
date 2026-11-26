@@ -1,0 +1,25 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;width:1080px;height:1350px;overflow:hidden;background:#0c0b09;font-family:Cairo}
+#im{position:absolute;inset:0;width:1080px;height:1350px;object-fit:cover}
+#tg{position:absolute;left:0;right:0;top:0;height:300px;background:linear-gradient(rgba(0,0,0,.65),rgba(0,0,0,0))}
+#bg{position:absolute;left:0;right:0;bottom:0;height:640px;background:linear-gradient(rgba(12,11,9,0),rgba(12,11,9,.78) 40%,rgba(12,11,9,.96) 75%)}
+#logo{position:absolute;top:44px;left:50%;transform:translateX(-50%);width:300px;filter:drop-shadow(0 4px 10px rgba(0,0,0,.6))}
+#box{position:absolute;left:60px;right:60px;bottom:150px;text-align:center;direction:rtl;color:#fff}
+#tag{display:inline-block;font-weight:700;font-size:30px;color:#1a1204;background:linear-gradient(180deg,#fbe39a,#d9a944 55%,#b9832a);padding:4px 34px 8px;border-radius:40px;margin-bottom:18px}
+#t{font-weight:900;font-size:96px;line-height:1.15;text-shadow:0 6px 24px rgba(0,0,0,.6)}
+#t b{background:linear-gradient(180deg,#fff3c4,#f1c75b 40%,#c38a22 75%,#f5d77f);-webkit-background-clip:text;background-clip:text;color:transparent;padding-bottom:.15em}
+#s{font-weight:400;font-size:38px;color:#e9e2d2;margin-top:10px}
+#bar{position:absolute;left:0;right:0;bottom:0;height:110px;background:#0c0b09;border-top:1px solid rgba(217,169,68,.45);display:flex;align-items:center;justify-content:space-between;padding:0 60px;direction:rtl}
+#bar .r{font-weight:700;font-size:32px;color:#d9a944}
+#bar .n{font-weight:900;font-size:46px;color:#fff;direction:ltr}
+</style></head><body>
+<img id="im"><div id="tg"></div><div id="bg"></div><img id="logo" src="md.png">
+<div id="box"><div id="tag"></div><div id="t"></div><div id="s"></div></div>
+<div id="bar"><span class="r">تصميم · تنفيذ · تشطيب</span><span class="n">0579277975</span></div>
+<script>
+const q=new URLSearchParams(location.search);
+document.getElementById('im').src=q.get('img');document.getElementById('im').style.objectPosition=q.get('pos')||'center';
+document.getElementById('tag').textContent=q.get('tag');document.getElementById('t').innerHTML=q.get('t');document.getElementById('s').textContent=q.get('s');
+</script></body></html>
