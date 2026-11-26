@@ -1,0 +1,31 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@700;800;900&family=Michroma&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#000;font-family:Cairo}
+#im{position:absolute;left:0;top:0;width:1080px;height:1920px;object-fit:cover}
+#tg{position:absolute;left:0;right:0;top:0;height:1150px;background:linear-gradient(#000 0%,rgba(0,0,0,.9) 22%,rgba(0,0,0,.55) 60%,rgba(0,0,0,0))}
+#bg2{position:absolute;left:0;right:0;bottom:0;height:520px;background:linear-gradient(rgba(0,0,0,0),rgba(0,0,0,.65))}
+#logo{position:absolute;left:0;right:0;top:262px;text-align:center}
+#logo img{width:220px;filter:drop-shadow(0 6px 14px rgba(0,0,0,.6)) saturate(1.15) brightness(1.08)}
+#logo div{font-family:Michroma;font-size:40px;letter-spacing:6px;margin-top:-4px;background:linear-gradient(180deg,#fff3c4,#e7b94d 45%,#a8741a 80%,#e9c36a);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 3px 4px rgba(0,0,0,.7))}
+#ti{position:absolute;left:30px;right:30px;top:498px;text-align:center;direction:rtl;font-weight:900;line-height:1.12}
+#ti .w{display:table;margin:0 auto;color:#fff;font-size:150px;text-shadow:0 6px 24px rgba(0,0,0,.7)}
+#ti .g{display:table;margin:0 auto -0.28em;padding:0 0 0.28em;font-size:180px;background:linear-gradient(180deg,#fff3c4 0%,#f1c75b 38%,#c38a22 70%,#f5d77f 100%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 6px 10px rgba(0,0,0,.75))}
+#cat{position:absolute;left:0;right:0;top:955px;text-align:center}
+#cat span{display:inline-block;direction:rtl;font-weight:800;font-size:44px;color:#2a1a00;padding:8px 54px 10px;background:linear-gradient(180deg,#fbe39a,#e2b04a 50%,#b9832a);clip-path:polygon(4% 0,96% 0,100% 50%,96% 100%,4% 100%,0 50%);box-shadow:0 8px 20px rgba(0,0,0,.5)}
+#bar{position:absolute;left:0;right:0;top:1580px;height:100px;background:rgba(0,0,0,.88);border-top:1px solid rgba(231,185,77,.35);display:flex;align-items:center;justify-content:space-between;padding:0 60px}
+#bar .u{font-weight:800;font-size:44px;color:#e7b94d;direction:ltr}
+#bar .n{font-weight:900;font-size:58px;color:#fff;direction:ltr;letter-spacing:1px}
+</style></head><body>
+<img id="im"><div id="tg"></div><div id="bg2"></div>
+<div id="logo"><img src="emblem.png"><div>MAX MOTORS</div></div>
+<div id="ti"><span class="w" id="t1"></span><span class="g" id="t2"></span></div>
+<div id="cat"><span id="ca"></span></div>
+<div id="bar"><span class="n">920018915</span><span class="u">maxmotors.sa</span></div>
+<script>
+let D=[];fetch('covers.json').then(r=>r.json()).then(d=>D=d);
+window.render=async function(i){i=Math.round(i);const c=D[i];const im=document.getElementById('im');
+ await new Promise(r=>{im.onload=r;im.src=c.img});im.style.objectPosition=`50% ${c.pos||50}%`;im.style.transform=`translateY(${c.shift||0}px)`;
+ document.getElementById('t1').textContent=c.t1;document.getElementById('t2').textContent=c.t2;document.getElementById('ca').textContent=c.cat;
+ for(const id of ['t1','t2']){const e=document.getElementById(id);let fs=id=='t1'?150:180;e.style.fontSize=fs+'px';while(e.scrollWidth>1010){fs-=4;e.style.fontSize=fs+'px';if(fs<64)break}}};
+</script></body></html>
