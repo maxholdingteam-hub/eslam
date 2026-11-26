@@ -1,0 +1,90 @@
+<!doctype html><html><head><meta charset="utf-8">
+<link href="https://fonts.googleapis.com/css2?family=Tajawal:wght@700;800;900&family=Lalezar&display=swap" rel="stylesheet">
+<style>
+html,body{margin:0;width:1080px;height:1920px;overflow:hidden;background:#111;font-family:Tajawal}
+#cam{position:absolute;inset:0;transform-origin:50% 50%}
+.sc{position:absolute;inset:0;overflow:hidden;display:none}
+.noise{position:absolute;inset:0;background:url(as/noise.png);opacity:.18;mix-blend-mode:multiply}
+.e{position:absolute;will-change:transform,opacity}
+.t{direction:rtl;text-align:center;font-family:Lalezar,Tajawal;line-height:1.15;white-space:nowrap;left:0;right:0}
+.hl{position:relative;display:inline-block;padding:0 22px}
+.hl::before{content:'';position:absolute;left:0;right:0;top:22%;bottom:8%;background:var(--hc,#F2C14E);transform:skew(-8deg) scaleX(var(--hx,1));transform-origin:right;z-index:-1;border-radius:6px}
+img.c{filter:drop-shadow(0 16px 18px rgba(0,0,0,.35))}
+.badge{left:0;right:0;text-align:center}
+.badge span{display:inline-block;background:#111;color:#F2C14E;font-family:Lalezar,Tajawal;font-size:96px;padding:18px 60px 6px;border-radius:24px;transform:rotate(-3deg);box-shadow:10px 10px 0 rgba(0,0,0,.25)}
+.pill{display:inline-block;background:#F2C14E;color:#111;border-radius:80px;padding:14px 70px;font-family:Arial;font-weight:900;font-size:72px;letter-spacing:4px}
+svg{position:absolute;overflow:visible}
+.lbl{direction:rtl;text-align:center;font-family:Lalezar,Tajawal}
+.num{left:0;right:0;text-align:center}.num span{display:inline-block;width:210px;height:210px;line-height:250px;border-radius:50%;background:#111;color:#F2C14E;font-family:Lalezar;font-size:170px;box-shadow:10px 10px 0 rgba(0,0,0,.2)}
+#tag{position:absolute;top:70px;left:0;right:0;text-align:center;z-index:9}#tag span{display:inline-block;direction:rtl;background:#111;color:#fff;font-family:Tajawal;font-weight:800;font-size:40px;padding:10px 32px;border-radius:40px}#tag b{color:#F2C14E}
+.seal{left:0;right:0;text-align:center}
+.seal span{display:inline-block;border:14px solid currentColor;border-radius:26px;padding:16px 56px 0;font-family:Lalezar;font-size:160px;line-height:1.1;background:rgba(255,255,255,.88);transform:rotate(-10deg);box-shadow:0 10px 30px rgba(0,0,0,.25)}
+.q{direction:rtl;text-align:center;font-family:Lalezar;line-height:1.25;left:70px;width:940px}
+</style></head><body><div id="cam"></div><div id="tag"><span><b>نختصرها لك</b> · باترول ولا سيكويا؟</span></div>
+<script>
+const O=0.3;
+const BLK='#121214',YEL='#F2C14E',RED='#E5383B',CRM='#F4EAD5',TEAL='#1FA39A';
+const SC=[['A',0,3.6,TEAL],['B',3.6,7.55,CRM],['C',7.55,15.5,BLK],['D',15.5,22.2,RED],['E',22.2,28.6,YEL],['F',28.6,32.2,BLK],['Z',32.2,99,BLK]];
+const E=[
+['A',0.0,'stamp',`<div class="e t" style="top:190px;font-size:160px;color:#fff">باترول <span style="color:#F2C14E">ولا</span></div>`],
+['A',1.28,'stamp',`<div class="e t" style="top:380px;font-size:160px;color:#fff">سيكويا؟</div>`],
+['A',0.2,'slideR',`<img class="e c" src="as/c_pat.png" style="width:520px;left:540px;top:640px">`],
+['A',0.94,'slideL',`<img class="e c" src="as/c_seq.png" style="width:520px;left:20px;top:680px">`],
+['A',0.6,'pop',`<div class="e num" style="top:660px"><span style="width:150px;height:150px;line-height:175px;font-size:90px">VS</span></div>`],
+['A',2.22,'pop',`<div class="e badge" style="top:950px"><span>نختصرها لك</span></div>`],
+['A',0.3,'up',`<img class="e c" src="as/c_t_scale.png" style="width:760px;left:160px;top:1130px">`],
+['B',3.86,'stamp',`<div class="e t" style="top:250px;font-size:150px;color:#111">الاثنين:</div>`],
+['B',3.95,'pop',`<img class="e c" src="as/c_pat.png" style="width:500px;left:550px;top:520px">`],
+['B',4.05,'pop',`<img class="e c" src="as/c_seq.png" style="width:500px;left:30px;top:560px">`],
+['B',4.68,'stamp',`<div class="e t" style="top:930px"><span class="pill" style="font-family:Lalezar;letter-spacing:0;font-weight:400;font-size:96px;padding:12px 44px 2px;background:#121214;color:#fff">7 مقاعد</span></div>`],
+['B',5.94,'stamp',`<div class="e t" style="top:1130px"><span class="pill" style="font-family:Lalezar;letter-spacing:0;font-weight:400;font-size:96px;padding:12px 44px 2px;background:#F2C14E;color:#111">دفع رباعي 4×4</span></div>`],
+['C',7.82,'slideR',`<img class="e c" src="as/c_pat.png" style="width:820px;left:130px;top:220px">`],
+['C',7.88,'stamp',`<div class="e seal" style="top:650px;color:#121214"><span style="font-size:96px;padding:10px 40px 0;border-width:10px">الباترول</span></div>`],
+['C',8.68,'up',`<div class="e t" style="top:870px;font-size:100px;color:#fff"><span class="hl" style="--hc:#F2C14E;color:#111">6 سلندر تيربو</span></div>`],
+['C',10.38,'up',`<div class="e t" style="top:1040px;font-size:100px;color:#fff"><span class="hl" style="--hc:#fff;color:#111">9 سرعات</span></div>`],
+['C',11.74,'stamp',`<div class="e t" style="top:1260px"><span class="pill" style="font-family:Lalezar;letter-spacing:0;font-weight:400;font-size:84px;padding:12px 44px 2px;background:#F2C14E;color:#111">تصميم جديد كلياً</span></div>`],
+['C',13.86,'stamp',`<div class="e t" style="top:1430px"><span class="pill" style="font-family:Lalezar;letter-spacing:0;font-weight:400;font-size:84px;padding:12px 44px 2px;background:#E5383B;color:#fff">هيبة على الخط</span></div>`],
+['D',15.78,'slideL',`<img class="e c" src="as/c_seq.png" style="width:840px;left:120px;top:250px">`],
+['D',15.84,'stamp',`<div class="e seal" style="top:620px;color:#121214"><span style="font-size:96px;padding:10px 40px 0;border-width:10px">السيكويا</span></div>`],
+['D',16.88,'pop',`<img class="e c" src="as/c_o_hybrid.png" style="width:500px;left:30px;top:830px">`],
+['D',16.88,'up',`<div class="e lbl" style="left:560px;width:480px;top:860px;font-size:96px;color:#fff"><span class="hl" style="--hc:#121214;color:#F2C14E">هايبرد</span></div>`],
+['D',17.72,'up',`<div class="e lbl" style="left:560px;width:480px;top:1010px;font-size:74px;color:#fff;line-height:1.2">بنزين<br>+ كهربا</div>`],
+['D',19.3,'up',`<div class="e t" style="top:1260px;font-size:100px;color:#fff"><span class="hl" style="--hc:#fff;color:#111">10 سرعات</span></div>`],
+['D',20.48,'pop',`<img class="e c" src="as/c_o_fuel.png" style="width:300px;left:700px;top:1430px">`],
+['D',20.48,'stamp',`<div class="e lbl" style="left:40px;width:640px;top:1500px"><span class="pill" style="font-family:Lalezar;letter-spacing:0;font-weight:400;font-size:80px;padding:12px 44px 2px;background:#F2C14E;color:#111">توفّر بالبنزين</span></div>`],
+['E',22.5,'up',`<div class="e lbl" style="left:560px;width:490px;top:250px;font-size:66px;color:#111;line-height:1.25">تبي <span class="hl" style="--hc:#fff">الهيبة</span><br>والتصميم؟</div>`],
+['E',24.44,'pop',`<img class="e c" src="as/c_pat.png" style="width:490px;left:560px;top:520px">`],
+['E',24.5,'stamp',`<div class="e lbl" style="left:560px;width:490px;top:820px"><span class="pill" style="font-family:Lalezar;letter-spacing:0;font-weight:400;font-size:60px;padding:12px 44px 2px;background:#121214;color:#fff">الباترول</span></div>`],
+['E',25.38,'up',`<div class="e lbl" style="left:30px;width:490px;top:250px;font-size:66px;color:#111;line-height:1.25">تبي <span class="hl" style="--hc:#fff">الهايبرد</span><br>والتوفير؟</div>`],
+['E',27.42,'pop',`<img class="e c" src="as/c_seq.png" style="width:490px;left:30px;top:540px">`],
+['E',27.48,'stamp',`<div class="e lbl" style="left:30px;width:490px;top:820px"><span class="pill" style="font-family:Lalezar;letter-spacing:0;font-weight:400;font-size:60px;padding:12px 44px 2px;background:#121214;color:#fff">السيكويا</span></div>`],
+['E',22.6,'up',`<img class="e c" src="as/c_t_scale.png" style="width:640px;left:220px;top:1180px">`],
+['F',28.84,'up',`<div class="e t" style="top:250px;font-size:110px;color:#fff">وعندنا <span class="hl" style="--hc:#F2C14E;color:#111">الاثنين</span></div>`],
+['F',29.44,'pop',`<img class="e c" src="as/c_pat.png" style="width:470px;left:570px;top:450px">`],
+['F',29.5,'pop',`<img class="e c" src="as/c_seq.png" style="width:470px;left:40px;top:480px">`],
+['F',30.06,'stamp',`<div class="e t" style="top:760px"><span class="pill" style="font-family:Lalezar;letter-spacing:0;font-weight:400;font-size:96px;padding:18px 60px 4px">كاش أو تمويل</span></div>`],
+['F',29.0,'up',`<img class="e c" src="as/c_t_thumbs.png" style="width:640px;left:220px;top:1000px">`],
+['Z',32.2,'pop',`<img class="e" src="as/logo_full.png" style="width:760px;left:160px;top:640px">`],
+['Z',32.4,'pop',`<div class="e t" style="top:1000px"><span class="pill">920018915</span></div>`]];
+const cam=document.getElementById('cam');
+SC.forEach(([id,a,b,bg])=>{const d=document.createElement('div');d.className='sc';d.id='S'+id;d.style.background=bg;d.innerHTML='<div class="noise"></div>';cam.appendChild(d);});
+const EL=E.map(([s,at,an,h],i)=>{const w=document.createElement('div');w.innerHTML=h;const el=w.firstElementChild;document.getElementById('S'+s).appendChild(el);return {el,at,an,s,base:el.style.transform||''};});
+const cl=x=>Math.max(0,Math.min(1,x)),eo=x=>1-Math.pow(1-x,3),bo=x=>{const c1=2.2,c3=c1+1;return 1+c3*Math.pow(x-1,3)+c1*Math.pow(x-1,2)};
+function hash(n){return Math.sin(n*127.1)*43758.5453%1}
+function render(TT){const t=TT-O; let shake=0, punch=0;
+ SC.forEach(([id,a,b])=>{const on=t>=a-0.001&&t<b; document.getElementById('S'+id).style.display=on?'block':'none'; if(on){const k=t-a; shake=Math.max(shake,Math.exp(-k*9)); punch=Math.exp(-k*7);} });
+ EL.forEach(({el,at,an})=>{const k=cl((t-at)/0.4); let op=t>=at?1:0, tr='';
+  if(an==='up'){tr=`translateY(${(1-eo(k))*80}px)`;op=cl((t-at)/0.2);}
+  else if(an==='pop'){tr=`scale(${t<at?0:bo(k)}) rotate(${Math.sin((t-at)*2.4)*1.5}deg)`;}
+  else if(an==='stamp'){const kk=cl((t-at)/0.25); tr=`scale(${2.4-1.4*eo(kk)}) rotate(${(1-kk)*12-2}deg)`;op=kk;}
+  else if(an==='slideR'){tr=`translateX(${(1-eo(k))*900}px) rotate(${(1-eo(k))*10}deg)`;}
+  else if(an==='slideL'){tr=`translateX(${(1-eo(k))*-900}px) rotate(${(1-eo(k))*-10}deg)`;}
+  else if(an==='draw'){el.querySelectorAll('path,ellipse').forEach(p=>p.setAttribute('stroke-dashoffset',1-eo(cl((t-at)/0.5))));}
+  if(an!=='draw'){el.style.transform=tr;} el.style.opacity=op;
+  el.querySelectorAll('.hl').forEach(h=>h.style.setProperty('--hx',eo(cl((t-at-0.15)/0.3))));
+  el.querySelectorAll('.lateDraw').forEach(p=>p.setAttribute('stroke-dashoffset',1-eo(cl((t-(+p.dataset.at))/0.4))));
+ });
+ const sx=Math.sin(t*90)*14*shake, sy=Math.cos(t*77)*10*shake; document.getElementById('tag').style.opacity=t>=32.2?0:1; cam.style.transform=`translate(${sx}px,${sy}px) scale(${1+0.06*punch})`;
+}
+window.render=render; render(0);
+</script></body></html>
